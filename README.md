@@ -18,7 +18,7 @@
 
 ## 🌱 Getting Started
 
-This course has 15 lessons covering the fundamentals of building AI Agents with Copilot Studio. 
+This course has lessons covering the fundamentals of building AI Agents with Copilot Studio. 
 
 Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) and [fork this repo](https://github.com/microsoft/copilot-studio-for-beginners/fork) to run the code.
 
