@@ -18,21 +18,15 @@
 
 ## 🌱 Getting Started
 
-This course has 15 lessons covering the fundamentals of building AI Agents with Copilot Studio. 
+This course has lessons covering the fundamentals of building AI Agents with Copilot Studio. 
 
 Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) and [fork this repo](https://github.com/microsoft/copilot-studio-for-beginners/fork) to run the code.
 
 ### What You Need 
 
-Each lesson in this course includes code examples, which can be found in the code_samples folder. You can [fork this repo](https://github.com/microsoft/copilot-studio-for-beginners/fork) to create your own copy.  
+Each lesson includes step by step instructions for building agents in Copilot Studio and accompanying videos. You will need a Microsoft 365 Environment and Copilot Studio access to complete the course. 
 
-The code example in these exercises, utilize Azure AI Foundry and GitHub Model Catalogs for interacting with Language Models:
-
-- [Github Models](https://aka.ms/ai-agents-beginners/github-models) - Free / Limited
-- [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Azure Account Required
-
-
-For more information on running the code for this course, go to the [Course Setup](./00-course-setup/README.md).
+For more information on gettign a developer environment for this course, go to the [Course Setup](./00-course-setup/README.md).
 
 ## 🙏 Want to help?
 
