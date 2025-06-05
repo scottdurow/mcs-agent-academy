@@ -1,10 +1,10 @@
 # Copilot Studio for Beginners - A Course
 
-[![GitHub license](https://img.shields.io/github/license/microsoft/copilot-studio-for-beginners.svg)](https://github.com/microsoft/copilot-studio-for-beginners/blob/master/LICENSE?WT.mc_id=academic-105485-koreyst)
-[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/copilot-studio-for-beginners.svg)](https://GitHub.com/microsoft/copilot-studio-for-beginners/graphs/contributors/?WT.mc_id=academic-105485-koreyst)
-[![GitHub issues](https://img.shields.io/github/issues/microsoft/copilot-studio-for-beginners.svg)](https://GitHub.com/microsoft/copilot-studio-for-beginners/issues/?WT.mc_id=academic-105485-koreyst)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/copilot-studio-for-beginners.svg)](https://GitHub.com/microsoft/copilot-studio-for-beginners/pulls/?WT.mc_id=academic-105485-koreyst)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=academic-105485-koreyst)
+[![GitHub license](https://img.shields.io/github/license/microsoft/copilot-studio-for-beginners.svg)](https://github.com/microsoft/copilot-studio-for-beginners/blob/master/LICENSE)
+[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/copilot-studio-for-beginners.svg)](https://GitHub.com/microsoft/copilot-studio-for-beginners/graphs/contributors/)
+[![GitHub issues](https://img.shields.io/github/issues/microsoft/copilot-studio-for-beginners.svg)](https://GitHub.com/microsoft/copilot-studio-for-beginners/issues/)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/copilot-studio-for-beginners.svg)](https://GitHub.com/microsoft/copilot-studio-for-beginners/pulls/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ### Language Support
 [![English](https://img.shields.io/badge/English-brightgreen.svg?style=flat-square)](README.md)
