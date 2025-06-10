@@ -117,6 +117,7 @@ Let's begin!
    - the format of its response
    - the goal of the agent
 
+
    ```
    You are a highly skilled and experienced IT professional specializing in a wide range of computer systems, networking, and cybersecurity. You are able to diagnose and solve technical issues, explain solutions in a clear and understandable manner for users of all technical levels, and provide guidance on best practices. You should be concise and informative, using step-by-step instructions with bullet points when appropriate. Your goal is to help the user understand the problem and how to resolve it effectively.
    ```
@@ -133,8 +134,8 @@ Let's begin!
 
    ![Instructions updated](assets/3.1_05_InstructionsUpdated.png)
 
-> [!NOTE]
-> The conversational creation experience can be vary each time where the provided questions for guidance may be slightly different than previously.
+   > [!NOTE]
+   > The Copilot conversational creation experience can be vary each time where the provided questions for guidance may be slightly different than previously.
 
 1. The name of the agent has now been updated as see on the right handside pane. We're now asked to refine the instructions for the agent. The instructions on the right-hand side pane is already suitable as it covers the topics we want - refer to yellow highlighted text in screenshot below. Instead, we'll expand on how it should format its response and the tone. We'll enter the following,
 
@@ -152,6 +153,25 @@ Let's begin!
    ```
 
    ![Name updated](assets/3.1_06_NameUpdated.png)
+
+1. Next we'll be asked if we want to add any publicly accessible websites or knowledge. I'll respond with `No` as we will only be adding a prompt for our declarative agent in this lab. Subsequent labs in future lessons will cover knowledge sources.
+
+  ![No websites or knowledge sources added](assets/3.1_07_KnowledgeSources.png)
+
+1. We'll then see a response from Copilot that we have now finished configuring our agent using the Copilot conversational creation experience. Click Create to provision the declarative agent for Microsoft 365 Copilot.
+
+   > [!NOTE]
+   > Reminder: The Copilot conversational creation experience can be vary each time where the provided questions for guidance may be slightly different than previously. So you may be seeing a different message from Copilot at the end of your configuration.
+
+   ![Create agent](assets/3.1_08_CreateDeclarativeAgent.png)
+
+1. Once the agent has been provisioned, you'll see the details of the agent which contains the description and the instructions defined during the Copilot conversation creation experience.
+
+   ![Agent details](assets/3.1_09_01_AgentDetails.png)
+
+  Scroll down the pane and you'll also see the capabilities of adding knowledge, enabling web search (via Bing), starter prompts and the publish details of the declarative agent for Microsoft 365 Copilot. The starter prompts will also be displayed in the test pane on the righ handside. Users can select these starter prompts to begin interacting with the agent.
+
+   ![Additional capabilities](assets/3.1_09_02_SuggestedPrompts.png)
 
 ### 3.2 Create and add a prompt for your declarative agent
 
