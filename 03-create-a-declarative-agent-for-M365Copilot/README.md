@@ -35,7 +35,7 @@ The following table higlightes the differences when building a declarative agent
 |---------------------------|-------------------------------------------------------|------------------------------------------------------------|
 | **Knowledge**       | Web, SharePoint, Teams chats, Outlook emails, Copilot connectors     | Web search (via Bing), SharePoint, Dataverse, Dynamics 365, Copilot connectors  |
 | **Tools**       | None     | 1400+ Power Platform connectors, custom connectors, prompt, computer use, REST API, Model Context Protocol   |
-| **Channel**           | Agent only published to Microsoft 365 Copilot, can't be used in Teams chat     | Agent published to Microsoft 365 Copilot and Teams      |
+| **Channel**           | Agent only published to Microsoft 365 Copilot     | Agent published to Microsoft 365 Copilot and Teams      |
 | **Sharing permissions**         | Users are only viewers    | Users can be editors or viewers   |
 
 There's more capabilities offered for declarative agents built in Microsoft Copilot Studio which we'll learn about next.
@@ -99,7 +99,59 @@ Let's begin!
 
 ### 3.1 Create a declarative agent
 
-Lorem ipsum
+1. Navigate to https://copilotstudio.microsoft.com/ and sign in using your credentials. Make sure to switch to your environment that you're using for these labs.
+
+1. Select **Agents** from the menu and select **Copilot for Microsoft 365**.
+
+   ![Copilot for Microsoft 365](assets/3.1_02_CopilotForM365.png)
+
+1. Next, we're going to create a declarative agent by selecting **+ Add** agent.
+
+   ![Add Agent](assets/3.1_03_AddAgent.png))
+
+1. We'll then see the conversational creation experience load where we can chat in natural language with Copilot to describe the declarative agent we want to build, and use the provided questions for guidance. 
+
+   Let's enter a detailed description that outlines the following,
+   - the task of the agent
+   - what type of inquiries it can handle
+   - the format of its response
+   - the goal of the agent
+
+   ```
+   You are a highly skilled and experienced IT professional specializing in a wide range of computer systems, networking, and cybersecurity. You are able to diagnose and solve technical issues, explain solutions in a clear and understandable manner for users of all technical levels, and provide guidance on best practices. You should be concise and informative, using step-by-step instructions with bullet points when appropriate. Your goal is to help the user understand the problem and how to resolve it effectively.
+   ```
+
+   ![Create Prompt](assets/3.1_04_CreatePrompt.png)
+
+1. After submitting the prompt, a noticeable update will appear on the right handside pane with the details and instructions of the agent as defined by the prompt. Next you'll be asked to confirm the name of your agent and Copilot will have suggested a name. 
+
+   Either enter `yes` to accept the suggested name or enter a different name such as the following,
+
+   ```
+   Contoso Tech Support Pro
+   ```
+
+   ![Instructions updated](assets/3.1_05_InstructionsUpdated.png)
+
+> [!NOTE]
+> The conversational creation experience can be vary each time where the provided questions for guidance may be slightly different than previously.
+
+1. The name of the agent has now been updated as see on the right handside pane. We're now asked to refine the instructions for the agent. The instructions on the right-hand side pane is already suitable as it covers the topics we want - refer to yellow highlighted text in screenshot below. Instead, we'll expand on how it should format its response and the tone. We'll enter the following,
+
+   ```
+   Concise and Informative:
+   - Bullet Points: Use bullet points for clarity and to break down information into digestible parts.
+   - Summarize: Provide a brief summary of the solution at the end of the explanation.
+
+   User-Friendly Communication:
+   - Empathy: Show empathy and understanding of the user's frustration or confusion.
+   - Encouragement: Encourage users by acknowledging their efforts and progress.
+
+   Interactive and Engaging:
+   - Ask for Feedback: After providing a solution, ask if the user needs further assistance or if the solution worked.
+   ```
+
+   ![Name updated](assets/3.1_06_NameUpdated.png)
 
 ### 3.2 Create and add a prompt for your declarative agent
 
