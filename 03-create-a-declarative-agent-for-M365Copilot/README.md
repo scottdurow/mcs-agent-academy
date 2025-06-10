@@ -60,7 +60,7 @@ Let's expand what we've learnt from the feature comparison table.
   - Alternatively, you can also leverage Model Context Protocol servers and REST APIs directly within your declarative agent
 
 - **AI prompts**: Use a prompt to analyze and transform text, documents, images and data with natural language and AI reasoning.
-  - Change the GPT model from Basic, Standard, Premium
+  - Select the chat model, choose from Basic, Standard, Premium
   - Option to bring-your-own Azure AI Foundry model to ground your prompt in
 
 - **More deployment configuration options**: Select channels and define user permissions
@@ -200,6 +200,42 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
 1. Scroll down to the **Tools** section and select **+ Add tool**
 
    ![Add tool](assets/3.2_01_AddTool.png)
+
+1. The Tools modal will appear and a list of Power Platform connectors is displayed. To add a Prompt, select **+ New tool**.
+
+   ![New tool](assets/3.2_02_NewTool.png)
+
+1. A list of other tools is displayed - Prompt, Custom connector, REST API and Model Context Protocol. If your organization has meets the [requirements for Computer Use](https://learn.microsoft.com/en-us/microsoft-copilot-studio/computer-use?tabs=new#requirements), this will also appear in the list. Select Prompt.
+
+   ![Select prompt](assets/3.2_03_SelectPrompt.png)
+
+1. Enter a name for the prompt. Let's name our prompt `IT Expert`.
+
+   ![Enter name](assets/3.2_04_NamePrompt.png)
+
+1. Select the **downwards icon** next to the **Model** to see the different chat models you can choose from. By default, the Basic model is selected and you also have the option to bring-your-own-model using Azure AI Foundy Models. We'll stick with the Basic model.
+
+   ![Change model](assets/3.2_05_ChangeModel.png)
+
+1. Next, let's provide our prompt with instructions. There's 3 methods that you can choose from
+
+   - Manually enter your own instructions
+   - Use Copilot to generate instructions for you based on your description of what you want the prompt to do
+   - Use a preset template from the prompt library to create a prompt
+
+   We'll go with the manual option. We'll use the [IT Expert prompt](https://adoption.microsoft.com/en-us/sample-solution-gallery/sample/pnp-powerplatform-prompts-it-expert/) from the [Power Platform Prompt library](https://aka.ms/power-prompts). Copy and paste the prompt.
+
+   ```
+   I want you to act as an IT Expert. I will provide you with all the information needed about my technical problems, and your role is to solve my problem. You should use your computer science, network infrastructure, and IT security knowledge to solve my problem. Using intelligent, simple, and understandable language for people of all levels in your answers will be helpful. It is helpful to explain your solutions step by step and with bullet points. Try to avoid too many technical details, but use them when necessary. I want you to reply with the solution, not write any explanations. My problem is [Problem]
+   ```
+
+   Similar to the approach we took when providing instructions for our agent during the conversational creation experience with Copilot, we'll include a task, what type of inquiries it can handle, the format of its response and the goal of the prompt. 
+
+   ![Prompt instructions](assets/3.2_06_PromptInstructions.png)
+
+1. Next, we can define the user input parameters of our prompt. These can be text and images, and sample data to test with. There's also the capability to ground the prompt with knowledge from Dataverse tables. For this exercise, we only have one user input to define which is the problem input. This is currently a placeholder in our prompt as `[Problem]`. We'll now configure this input either by entering the `/` character or selecting **+Add content** and then select **Text**.
+
+   ![Text input](assets/3.2_07_AddContent.png)
 
 ### 3.3 Test your declarative agent
 
