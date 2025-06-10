@@ -47,7 +47,7 @@ Let's expand what we've learnt from the feature comparison table.
 - **Detailed Instructions**: You can provide detailed instructions and capabilities to define the agent's purpose and behavior precisely.
   - This includes invoking tools simply from using natural language
 
-- **Enterprise Knowledge Access**: Enables access to enterprise knowledge that respect user permissions
+- **Enterprise Knowledge Access**: Enables access to enterprise knowledge that respect user permissions.
   - SharePoint integration
   - Dataverse integration
   - Dynamics 365 integration
@@ -63,7 +63,7 @@ Let's expand what we've learnt from the feature comparison table.
   - Select the chat model, choose from Basic, Standard, Premium
   - Option to bring-your-own Azure AI Foundry model to ground your prompt in
 
-- **More deployment configuration options**: Select channels and define user permissions
+- **More deployment configuration options**: Select channels and define user permissions.
   - Teams enablement is another interactive path for declarative agents, users are already familiar with the Teams user interface
   - Edit user permisisons can be shared to prevent single point of dependency on the owner of the agent
 
