@@ -154,7 +154,7 @@ Let's begin!
 
 1. Next we'll be asked if we want to add any publicly accessible websites or knowledge. I'll respond with `No` as we will only be adding a prompt for our declarative agent in this lab. Subsequent labs in future lessons will cover knowledge sources.
 
-  ![No websites or knowledge sources added](assets/3.1_07_KnowledgeSources.png)
+   ![No websites or knowledge sources added](assets/3.1_07_KnowledgeSources.png)
 
 1. We'll then see a response from Copilot that we have now finished configuring our agent using the Copilot conversational creation experience. Click Create to provision the declarative agent for Microsoft 365 Copilot.
 
@@ -175,15 +175,31 @@ Let's begin!
 
    ![Edit details](assets/3.1_10_01_EditDetails.png)
 
-   Here you can change the icon and the background color.
+   Here you can change the icon and the background color. Select **Save** and then select **Save** again to update the details of the agent.
 
    ![Change icon](assets/3.1_10_02_ChangeIcon.png)
 
-   Next we'll learn how to add a tool to our agent, we'll create a prompt.
+1. Let's do a quick test of the agent we've created. Select one of the ***Starter Prompts* in the test pane on the left hand side.
+
+   ![Change icon](assets/3.1_11_TestUsingStarterPrompt.png)
+
+1. Our agent will then respond. Notice how it respected the instructions by providing bullet points into digestable parts, and used empathy in its response.
+
+   ![Change icon](assets/3.1_12_TestResponse.png)
+
+   If you scroll to the bottom of the message, notice how it also asked for feedback after providing a solution as instructed.
+
+   ![Change icon](assets/3.1_13_TestResponse.png)
+
+In a few minutes you've added a declarative agent for Microsoft 365 Copilot in Copilot Studio 🙌🏻
+
+Next we'll learn how to add a tool to our agent, we'll create a prompt.
 
 ### 3.2 Create and add a prompt for your declarative agent
 
-Lorem ipsum
+1. Scroll down to the **Tools** section and select **+ Add tool**
+
+   ![Add tool](assets/3.2_01_AddTool.png)
 
 ### 3.3 Test your declarative agent
 
