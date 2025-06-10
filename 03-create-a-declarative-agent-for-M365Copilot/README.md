@@ -7,11 +7,9 @@ This lesson will cover:
 - Why would I use Microsoft Copilot Studio to build a declarative agent?
     - Feature comparison
     - Extending Microsoft 365 Copilot in Copilot Studio
-- Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot
-    - Understanding Business-to-Employee (B2E)
-    - Use case scenario
 - Lab 03: Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot
     - Understanding Business-to-Employee (B2E)
+    - Use case scenario
     - Prerequisites
     - 3.1 Create a declarative agent
     - 3.2 Create and add a prompt for your declarative agent
@@ -24,12 +22,12 @@ Declarative agents are tailored versions of Microsoft 365 Copilot. You can custo
 
 ## Why would I use Microsoft Copilot Studio to build a declarative agent?
 
-There's a chance you've already explored [Copilot Studio agent builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder) in Microsoft 365 Copilot and so you're probably wondering why build a declrative agent in Microsoft Copilot Studio? 🤔
+There's a chance you've already explored [Copilot Studio agent builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder) in Microsoft 365 Copilot and so you're probably wondering why build a declarative agent in Microsoft Copilot Studio? 🤔
 
 Microsoft Copilot Studio offers a comprehensive set of tools and features for declarative agents that go beyond the limitations of Copilot Studio agent builder.  Let's break this down further for declarative agents.
 
 ### Feature comparison
-The following table higlightes the differences when building a declarative agent in Copilot Studio Agent Builder and Copilot Studio. 
+The following table higlights the differences when building a declarative agent in Copilot Studio Agent Builder and Copilot Studio. 
 
 | Feature                   | Copilot Studio Agent Builder in Microsoft 365 Copilot                          | Extend Microsoft 365 Copilot in Copilot Studio                                |
 |---------------------------|-------------------------------------------------------|------------------------------------------------------------|
@@ -59,7 +57,7 @@ Let's expand what we've learnt from the feature comparison table.
 
 - **Integration with External Services**: Allows you to choose from 1400+ Power Platform connectors that integrate with external services, providing more complex and powerful functionalities.
   - Examples include [docusign](https://learn.microsoft.com/en-us/connectors/docusign/), [ServiceNow](https://learn.microsoft.com/en-us/connectors/service-now/), [Salesforce](https://learn.microsoft.com/en-us/connectors/salesforce/), [SAP](https://learn.microsoft.com/en-us/connectors/sap/) and more
-  - Alternatively, you can also leverage MCP clients and REST APIs directly within your declarative agent
+  - Alternatively, you can also leverage Model Context Protocol servers and REST APIs directly within your declarative agent
 
 - **AI prompts**: Use a prompt to analyze and transform text, documents, images and data with natural language and AI reasoning.
   - Change the GPT model from Basic, Standard, Premium
@@ -107,7 +105,7 @@ Let's begin!
 
 1. Next, we're going to create a declarative agent by selecting **+ Add** agent.
 
-   ![Add Agent](assets/3.1_03_AddAgent.png))
+   ![Add Agent](assets/3.1_03_AddAgent.png)
 
 1. We'll then see the conversational creation experience load where we can chat in natural language with Copilot to describe the declarative agent we want to build, and use the provided questions for guidance. 
 
@@ -169,9 +167,19 @@ Let's begin!
 
    ![Agent details](assets/3.1_09_01_AgentDetails.png)
 
-  Scroll down the pane and you'll also see the capabilities of adding knowledge, enabling web search (via Bing), starter prompts and the publish details of the declarative agent for Microsoft 365 Copilot. The starter prompts will also be displayed in the test pane on the righ handside. Users can select these starter prompts to begin interacting with the agent.
+   Scroll down the pane and you'll also see the capabilities of adding knowledge, enabling web search (via Bing), starter prompts and the publish details of the declarative agent for Microsoft 365 Copilot. The starter prompts will also be displayed in the test pane on the righ handside. Users can select these starter prompts to begin interacting with the agent.
 
    ![Additional capabilities](assets/3.1_09_02_SuggestedPrompts.png)
+
+1. In the Details section of the agent, you have the ability to change the agent icon as well. Select **Edit**.
+
+   ![Edit details](assets/3.1_10_01_EditDetails.png)
+
+   Here you can change the icon and the background color.
+
+   ![Change icon](assets/3.1_10_02_ChangeIcon.png)
+
+   Next we'll learn how to add a tool to our agent, we'll create a prompt.
 
 ### 3.2 Create and add a prompt for your declarative agent
 
