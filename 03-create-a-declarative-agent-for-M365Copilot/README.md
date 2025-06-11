@@ -6,25 +6,25 @@ This lesson will cover:
 - What is a declarative agent
 - Why would I use Microsoft Copilot Studio to build a declarative agent?
     - Feature comparison
-    - Extending Microsoft 365 Copilot in Copilot Studio
+    - Extending Microsoft 365 Copilot with declarative agents built in Copilot Studio
 - Lab 03: Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot
     - Understanding Business-to-Employee (B2E)
     - Use case scenario
     - Prerequisites
     - 3.1 Create a declarative agent
     - 3.2 Create and add a prompt for your declarative agent
-    - 3.3 Test your declarative agent
+    - 3.3 Update instructions and test your declarative agent
     - 3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams
 
-## What is a declarative agent for Microsoft 365 Copilot?
+## 🕵🏻‍♀️ What is a declarative agent for Microsoft 365 Copilot?
 
 Declarative agents are tailored versions of Microsoft 365 Copilot. You can customize Microsoft 365 Copilot to meet specific business needs by providing it with instructions to support a particular process, ground it with enterprise knowledge, and leverage tools for wider extensibility. This allows organizations to create personalized experiences with greater functionality for their users.
 
-## Why would I use Microsoft Copilot Studio to build a declarative agent?
+## 🤔 Why would I use Microsoft Copilot Studio to build a declarative agent?
 
-There's a chance you've already explored [Copilot Studio agent builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder) in Microsoft 365 Copilot and so you're probably wondering why build a declarative agent in Microsoft Copilot Studio? 🤔
+As a maker, there's a chance you've already explored [Copilot Studio agent builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder) in Microsoft 365 Copilot and so you're probably wondering _why build a declarative agent in Microsoft Copilot Studio?_ 🤔
 
-Microsoft Copilot Studio offers a comprehensive set of tools and features for declarative agents that go beyond the limitations of Copilot Studio agent builder.  Let's break this down further for declarative agents.
+Microsoft Copilot Studio offers a comprehensive set of tools and features for declarative agents that go beyond the limitations of Copilot Studio agent builder. Similar to Copilot Studio agent builder, you don't need to know programming or software development to build in Microsoft Copilot Studio. Let's break this down further to understand the differences between Copilot Studio Agent Builder and Copilot Studio for building declarative agents.
 
 ### Feature comparison
 The following table higlights the differences when building a declarative agent in Copilot Studio Agent Builder and Copilot Studio. 
@@ -32,13 +32,17 @@ The following table higlights the differences when building a declarative agent 
 | Feature                   | Copilot Studio Agent Builder in Microsoft 365 Copilot                          | Extend Microsoft 365 Copilot in Copilot Studio                                |
 |---------------------------|-------------------------------------------------------|------------------------------------------------------------|
 | **Knowledge**       | Web, SharePoint, Teams chats, Outlook emails, Copilot connectors     | Web search (via Bing), SharePoint, Dataverse, Dynamics 365, Copilot connectors  |
-| **Tools**       | None     | 1400+ Power Platform connectors, custom connectors, prompt, computer use, REST API, Model Context Protocol   |
+| **Tools**       | Code interpreter, image generator     | 1400+ Power Platform connectors, custom connectors, prompt, computer use, REST API, Model Context Protocol   |
+| **Starter prompts**         | Configure prompts users to get started    | Configure prompts users to get started   |
 | **Channel**           | Agent only published to Microsoft 365 Copilot     | Agent published to Microsoft 365 Copilot and Teams      |
 | **Sharing permissions**         | Users are only viewers    | Users can be editors or viewers   |
 
 There's more capabilities offered for declarative agents built in Microsoft Copilot Studio which we'll learn about next.
 
-### Extending Microsoft 365 Copilot in Copilot Studio
+   - To learn more about Copilot Studio Agent Builder, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/make/agent-builder/01-first-agent/)
+   - For pro-development of extending a declarative agent beyond Copilot Studio Agent Builder for Microsoft 365 Copilot, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/)
+
+### Extending Microsoft 365 Copilot with declarative agents built in Copilot Studio
 
 Let's expand what we've learnt from the feature comparison table. 
 
@@ -217,27 +221,111 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
 
    ![Change model](assets/3.2_05_ChangeModel.png)
 
-1. Next, let's provide our prompt with instructions. There's 3 methods that you can choose from
+1. Next, we'll provide our prompt with instructions. There's 3 methods that you can choose from
 
-   - Manually enter your own instructions
    - Use Copilot to generate instructions for you based on your description of what you want the prompt to do
    - Use a preset template from the prompt library to create a prompt
+   - Manually enter your own instructions
 
-   We'll go with the manual option. We'll use the [IT Expert prompt](https://adoption.microsoft.com/en-us/sample-solution-gallery/sample/pnp-powerplatform-prompts-it-expert/) from the [Power Platform Prompt library](https://aka.ms/power-prompts). Copy and paste the prompt.
+1. Let's first try using Copilot generate instructions based on a description entered. Enter the following into the Copilot field and submit.
+
+   ```
+   I need an IT expert that can help answer questions related to networking, computer systems, user devices and anything else IT related
+   ```
+   ![Get started with Copilot](assets/3.2_07_UseCopilot_EnterPrompt.png)
+
+1. Copilot will then begin to generate a prompt for us.
+
+   ![Copilot drafts prompts](assets/3.2_08_CopilotDraftingPrompt.png)
+
+1. The Copilot generated draft instructions will then appear.
+
+   ![Copilot generated draft instructions](assets/3.2_09_CopilotGeneratedInstructions.png)
+
+1. Scroll down to the bottom of the instrutions and you'll see the user input parameter already defined by Copilot. You then have the option to
+   - Keep the draft instructions generated
+   - Refresh the draft instructions using Copilot
+   - Clear the draft instructions
+
+   Delete the draft instructions by selecting the **rubbish bin** icon and we'll next try the prompt library.
+
+   ![Prompt instructions](assets/3.2_10_Options.png)   
+
+1. Select the **prompt library** link.
+
+   ![Select prompt library](assets/3.2_11_SelectPromptLibrary.png)
+
+1. You'll see a list of prompt templates to choose from. These are from the [Power Platform Prompt library](https://aka.ms/power-prompts). 
+
+   ![Prompt library](assets/3.2_12_PromptLibrary.png)
+
+1. Search for the `IT expert` prompt and select it.
+
+   ![Select IT expert prompt](assets/3.2_13_ITExpertPrompt.png)
+
+1. The prompt will then be added as the instructions with the input parameter as defined by the prompt template. Similar to the approach we took when providing instructions for our agent during the conversational creation experience with Copilot, this prompt template outlines a task, what type of inquiries it can handle, the format of its response and the goal of the prompt. 
+
+   ![Prompt instructions](assets/3.2_14_ITExpertPromptInstructions.png)
+
+1. Clear the instructions and we'll next try manually entering the instructions. We'll use the [IT Expert prompt](https://adoption.microsoft.com/en-us/sample-solution-gallery/sample/pnp-powerplatform-prompts-it-expert/) from the [Power Platform Prompt library](https://aka.ms/power-prompts). Copy and paste the prompt.
 
    ```
    I want you to act as an IT Expert. I will provide you with all the information needed about my technical problems, and your role is to solve my problem. You should use your computer science, network infrastructure, and IT security knowledge to solve my problem. Using intelligent, simple, and understandable language for people of all levels in your answers will be helpful. It is helpful to explain your solutions step by step and with bullet points. Try to avoid too many technical details, but use them when necessary. I want you to reply with the solution, not write any explanations. My problem is [Problem]
    ```
 
-   Similar to the approach we took when providing instructions for our agent during the conversational creation experience with Copilot, we'll include a task, what type of inquiries it can handle, the format of its response and the goal of the prompt. 
-
-   ![Prompt instructions](assets/3.2_06_PromptInstructions.png)
+   ![Prompt instructions](assets/3.2_15_PromptInstructions.png)
 
 1. Next, we can define the user input parameters of our prompt. These can be text and images, and sample data to test with. There's also the capability to ground the prompt with knowledge from Dataverse tables. For this exercise, we only have one user input to define which is the problem input. This is currently a placeholder in our prompt as `[Problem]`. We'll now configure this input either by entering the `/` character or selecting **+Add content** and then select **Text**.
 
-   ![Text input](assets/3.2_07_AddContent.png)
+   ![Text input](assets/3.2_16_AddContent.png)
 
-### 3.3 Test your declarative agent
+1. We can now enter a name for our input parameter and sample data. 
+
+   Enter the following as the name
+
+   ```
+   problem input
+   ```
+
+   Enter the following as the sample data
+
+   ```
+   My laptop gets an error with a blue screen
+   ```
+
+   Then select **Close**.
+
+   ![Configure problem input](assets/3.2_17_NameSampleData.png)
+
+1. The problem input parameter will now be added to the instructions with the configured sample data. We can now test our prompt!
+
+   ![Problem input added](assets/3.2_18_InputAdded.png)
+
+1. Select **Test** to the test the response.
+
+   ![Test instructions](assets/3.2_19_Test.png)
+
+1. The response will then display. Notice how the response provides headings with bullet points as per the instructions. Scroll down and review the remainder of the model response.
+
+   ![Model response](assets/3.2_20_ModelResponse.png)
+
+1. Before we save our prompt, let's learn about the settings that can be configured for this prompt. Select the **elipsis (...) icon**.
+
+   ![Prompt settings](assets/3.2_21_Settings.png)
+
+1. Here we'll see three settings that can be configured.
+
+   - Temperature: Lower temperatures lead to predictable results, while higher temperatures allow more diverse or creative responses.
+   - Record retrieval: Specify the number of records retrieved for your knowledge sources.
+   - Include links in the response: When selected, the response includes link citations for the retrieved records.
+
+   Select the **X** icon to exit from Settings.
+
+   ![Configure settings](assets/3.2_22_ConfigureSettings.png)
+
+   We'll next update our instructions to invoke the prompt and test our agent.
+
+### 3.3 Update instructions and test your declarative agent
 
 Lorem ipsum
 
