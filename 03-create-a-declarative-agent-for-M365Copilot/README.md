@@ -339,14 +339,71 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
 
 ### 3.3 Update instructions and test your declarative agent
 
-Lorem ipsum
+1. Scroll up to the details and select **Edit**. This will enable the fields to be editable.
+
+   ![Select Edit](assets/3.3_01_EditInstructions.png)
+
+1. We can now update our instructions to invoke our prompt by referencing the name of the prompt. Clear the instructions, then copy and paste the following.
+
+   ```
+   - When a user asks questions about their device, run the "IT Expert" prompt. Use their question as the problem input of the "IT Expert" prompt.
+   ```
+
+   Notice how the final sentence is instructing the agent to use the question asked by the user as the value for the problem input parameter. The agent will use the question as the problem input for the prompt. Next, select **Save**.
+
+   ![Update instructions to invoke prompt](assets/3.3_02_UpdateInstructionsWithPrompt.png)   
+
+1. We're now ready to test our updated instructions of our declarative agent. Select the **refresh icon** in the test pane.
+
+   ![Select refresh icon](assets/3.3_03_RefreshTestPane.png)
+
+1. Next, enter the following prompt below and submit.
+
+   ```
+   Can you help me, my laptop is encountering a blue screen
+   ```
+
+   ![Perform test](assets/3.3_04_PerformTest.png)
+
+1. The agent invokes the prompt and responds, with a citation to the agent.
+
+   ![Prompt instructions](assets/3.3_05_ModelResponse.png)
+
+Let's now publish our declarative agent 😃
 
 ### 3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams
 
-Lorem ipsum
+1. Select **Publish**.
 
 > [!IMPORTANT]
 > Reminder: To publish a declarative agent built in Copilot Studio to Microsoft 365 Copilot and Teams, you need a Microsoft 365 Copilot user license.
+
+   ![Publish agent](assets/3.4_01_PublishAgent.png)
+
+1. A modal will appear which displays the Channels and publishing details that can be updated.
+   
+   - Channels: The agent will be published to Microsoft 365 Copilot and Microsoft Teams.
+   - Agent app information: This is what will be displayed when the user adds the agent to Microsoft 365 Copilot or in Microsoft Teams. These are fields that can be updated as needed. For example, you can update the **Short description**, **Long description**, **Developer name**.
+
+   > [!TIP]
+   > If you don't see all the fields displayed on your browser, try zooming out e.g. 75%
+
+   ![Agent app details](assets/3.4_02_ConfigurePublishingAgentDetails.png)
+
+1. Select **Publish**. Copilot Studio will then begin publishing the agent.
+
+   ![Publishing agent](assets/3.4_03_PublishingAgent.png)
+
+1. When publishing is completed, we'll see the [Availability options](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions#set-availability-options) of the agent.
+
+   | Availability option    | Description | 
+   | ---------- | ---------- | 
+   | Share Link | You can copy a deep link into Microsoft Teams to invoke the published agent. Opening the link in the tenant opens a chat experience with the agent. | 
+   | Show to my teammates and shared users  | Lets you grant access to others to participate in authoring the agent, or to security groups to grant them access to use the agent in Microsoft 365 Chat or Teams.  | 
+   | Show to everyone in my org   | Show to everyone in my org   | 
+   | Download as a .zip    | Download as a zip folder. This availability option lets you manually upload to Teams/Microsoft 365 Copilot to submit to the admin to review, or upload directly to the organizational catalog.    | 
+
+   ![Availability options](assets/3.4_04_AvailabilityOptions.png)   
 
 ## Next lesson
 Congratulations! 👏🏻 You've built a declarative agent by building a Prompt and instructing the agent to use the Prompt when helping employees with their IT related questions.
@@ -354,3 +411,5 @@ Congratulations! 👏🏻 You've built a declarative agent by building a Prompt 
 This is the end of Lab 03 - Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot, select the link below to move to the next lesson.
 
 ⏭️ [Move to **Creating a solution** lesson](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md)
+
+#### Footnotes
