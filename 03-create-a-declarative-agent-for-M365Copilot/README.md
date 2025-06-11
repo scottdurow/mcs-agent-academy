@@ -323,7 +323,19 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
 
    ![Configure settings](assets/3.2_22_ConfigureSettings.png)
 
-   We'll next update our instructions to invoke the prompt and test our agent.
+1. Select **Save** to save the prompt.
+
+   ![Save prompt](assets/3.2_23_SavePrompt.png)
+
+1. Next, select **Add to agent** to add the prompt to our declarative agent.
+
+   ![Prompt instructions](assets/3.2_24_AddToAgent.png)
+
+1. The prompt will now appear under Tools 🙌🏻
+
+   ![Prompt added](assets/3.2_25_PromptAdded.png)
+
+   We'll next update our instructions to invoke the prompt and test our declarative agent.
 
 ### 3.3 Update instructions and test your declarative agent
 
