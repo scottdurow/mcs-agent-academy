@@ -247,7 +247,7 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
    - Refresh the draft instructions using Copilot
    - Clear the draft instructions
 
-   Delete the draft instructions by selecting the **rubbish bin** icon and we'll next try the prompt library.
+   Clear the draft instructions by selecting the **rubbish bin** icon and we'll next try the prompt library.
 
    ![Prompt instructions](assets/3.2_10_Options.png)   
 
@@ -346,7 +346,7 @@ Lorem ipsum
 Lorem ipsum
 
 > [!IMPORTANT]
-> Reminder: To publish a declarative agent built in opilot Studio to Microsoft 365 Copilot and Teams, you need a Microsoft 365 Copilot user license.
+> Reminder: To publish a declarative agent built in Copilot Studio to Microsoft 365 Copilot and Teams, you need a Microsoft 365 Copilot user license.
 
 ## Next lesson
 Congratulations! 👏🏻 You've built a declarative agent by building a Prompt and instructing the agent to use the Prompt when helping employees with their IT related questions.
