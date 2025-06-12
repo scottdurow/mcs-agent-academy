@@ -37,12 +37,7 @@ While Microsoft 365 Copilot provides general AI assistance across Office apps, y
 - **You want to automate multi-step workflows**  
   - For example: “When someone submits an expense, send it for approval, update the finance tracker, and notify the manager.” A custom agent can handle every step, triggered by a single command or event.  
 - **You need a contextual, in-tool experience**  
-  - Imagine a “New Hire Onboarding” agent in Teams that guides HR staff through every policy, sends necessary forms, and schedules orientation meetings—right inside your existing collaboration platform.  
-
-In short, use Copilot Studio when you have a specific business scenario or proprietary data that the standard Copilot experience doesn’t cover. You can choose between:
-- A **declarative (low-code) approach** in the Copilot Studio canvas  
-- A **pro-code approach** using the Microsoft 365 Agents SDK in Visual Studio Code  
-
+  - Imagine a New Hire Onboarding agent in Teams that guides HR staff through every policy, sends necessary forms, and schedules orientation meetings—right inside your existing collaboration platform.  
 ---
 
 ## Four Building Blocks of an Agent
@@ -66,7 +61,7 @@ Below, we’ll define each building block and show how they work together to mak
   - During a conversation, the agent remembers previous turns so it can refer back to what was already discussed (for instance, if the user first says, “My printer is offline,” then later asks, “Did you check the ink level?” the agent recalls the printer context).
 
 - **Knowledge Sources (Grounding Data)**  
-  - You connect your agent to up to 20 data sources—SharePoint libraries, documentation sites, wikis, or other databases.  
+  - You connect your agent to up to multiple data sources—SharePoint libraries, documentation sites, wikis, or other databases.  
   - When a user asks a question, the agent pulls relevant excerpts from those sources so answers are **grounded** in your organization’s actual policies, product manuals, or any proprietary information.  
   - You can even force the agent to only respond with information from those sources, preventing it from guessing or “hallucinating” answers.
 
@@ -76,7 +71,7 @@ Below, we’ll define each building block and show how they work together to mak
 
 ### 2. Tools (Actions)
 
-**Tools (Actions)** define what the agent can “do” beyond chatting. Each action is a task the agent executes programmatically, such as:
+**Tools (Actions)** define what the agent can do beyond chatting. Each action is a task the agent executes programmatically, such as:
 
 - Sending an email or Teams message  
 - Creating or updating a calendar event  
@@ -86,11 +81,10 @@ Below, we’ll define each building block and show how they work together to mak
 #### How Actions Work
 
 1. **Define Inputs & Outputs**  
-   - For example, a “Send Email” action might require:  
+   - For example, a Send Email action might require:  
      - `RecipientEmailAddress`  
      - `SubjectLine`  
      - `EmailBody`  
-   - And it might return a success flag or error message if something goes wrong.
 
 2. **Combine Actions into Workflows**  
    - Often, fulfilling a user request involves multiple steps.  

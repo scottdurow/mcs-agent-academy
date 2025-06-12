@@ -9,32 +9,25 @@
 ### Language Support
 [![English](https://img.shields.io/badge/English-brightgreen.svg?style=flat-square)](README.md)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/copilot-studio-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/copilot-studio-for-beginners/watchers/?WT.mc_id=academic-105485-koreyst)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/copilot-studio-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/copilot-studio-for-beginners/network/?WT.mc_id=academic-105485-koreyst)
-[![GitHub stars](https://img.shields.io/github/stars/microsoft/copilot-studio-for-beginners.svg?style=social&label=Star)](https://GitHub.com/microsoft/copilot-studio-for-beginners/stargazers/?WT.mc_id=academic-105485-koreyst)
-
-[![Azure AI Discord](https://dcbadge.limes.pink/api/server/kzRShWzttr)](https://discord.gg/kzRShWzttr)
-
+[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/copilot-studio-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/copilot-studio-for-beginners/watchers/)
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/copilot-studio-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/copilot-studio-for-beginners/network/)
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/copilot-studio-for-beginners.svg?style=social&label=Star)](https://GitHub.com/microsoft/copilot-studio-for-beginners/stargazers/)
 
 ## 🌱 Getting Started
 
-This course has lessons covering the fundamentals of building AI Agents with Copilot Studio. 
+This course has 12 lessons covering the fundamentals of building AI Agents with Copilot Studio. 
 
-Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) and [fork this repo](https://github.com/microsoft/copilot-studio-for-beginners/fork) to run the code.
+Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars)
 
 ### What You Need 
 
 Each lesson includes step by step instructions for building agents in Copilot Studio and accompanying videos. You will need a Microsoft 365 Environment and Copilot Studio access to complete the course. 
 
-For more information on gettign a developer environment for this course, go to the [Course Setup](./00-course-setup/README.md).
+For more information on getting a developer environment for this course, go to the [Course Setup](./00-course-setup/README.md).
 
 ## 🙏 Want to help?
 
-Do you have suggestions or found spelling or code errors? [Raise an issue](https://github.com/microsoft/copilot-studio-for-beginners/issues?WT.mc_id=academic-105485-koreyst) or [Create a pull request](https://github.com/microsoft/copilot-studio-for-beginners/pulls?WT.mc_id=academic-105485-koreyst)
-
-If you get stuck or have any questions about building AI Agents, join our [Azure AI Foundry Community Discord](https://discord.gg/kzRShWzttr) 
-
-If you have product feedback or errors while building visit our [Azure AI Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
+Do you have suggestions or found spelling or code errors? [Raise an issue](https://github.com/microsoft/copilot-studio-for-beginners/issues) or [Create a pull request](https://github.com/microsoft/copilot-studio-for-beginners/pulls)
 
 ## 📂 Each lesson includes
 
@@ -55,11 +48,11 @@ If you have product feedback or errors while building visit our [Azure AI Foundr
 
 Check out these other courses to continue learning about AI and Agents:
 
-- [**NEW** Model Context Protocol (MCP) For Beginners](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+
+- [Copilot Developer Camp](https://microsoft.github.io/copilot-camp/)
+- [AI Agents for Beginners](https://microsoft.github.io/ai-agents-for-beginners/)
+- [Model Context Protocol (MCP) For Beginners](https://github.com/microsoft/mcp-for-beginners)
+- [Microsoft Copilot Studio <3 MCP Lab](https://aka.ms/mcsmcplab)
 
 ## Contributing
 
