@@ -104,40 +104,12 @@ In the context of Copilot Studio, the term **agent** can refer to multiple flavo
 1. **Conversational vs. Autonomous**  
    - **Conversational:** Focus on dialogue flow and preserving context (e.g., “Session Memory”).  
    - **Autonomous:** Add “Action Blocks” that let the agent call out to external tools or services.
-
----
-
-## Next Steps
-
-1. **Hands-On: Build a Simple Conversational Agent**  
-   - Head to the [Quickstart: First Chat Agent](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-get-started) to create a “Customer Support” style chatbot in Copilot Studio.  
-
-1. **Experiment with RAG**  
-   - Explore the [SharePoint Connector](https://learn.microsoft.com/microsoft-copilot-studio/utils/sharepoint-connector) or [Azure Cognitive Search Connector](https://learn.microsoft.com/microsoft-copilot-studio/utils/azure-search-connector) to inject fresh data into your chat flows.  
-
-1. **Prototype an Autonomous Workflow**  
-   - Follow the [Action Block Tutorial](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-action-blocks) to build an agent that can both chat and call a Power Automate flow.  
-
-1. **Deep Dive: LLM & RAG Theory**  
-   - Check out these resources to strengthen your foundation:  
-      - **LLMs & Tokenization:** https://learn.microsoft.com/azure/ai-services/openai/concepts/tokenization  
-      - **RAG Patterns:** https://learn.microsoft.com/azure/ai-services/openai/concepts/rag  
-
 ---
 
 ## Additional Resources
 
 - **Copilot Studio Documentation Home**  
   https://learn.microsoft.com/microsoft-copilot-studio/  
-
-- **Microsoft 365 Copilot Extensibility**  
-  https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview  
-
-- **Power Virtual Agents vs. Copilot Studio**  
-  https://learn.microsoft.com/power-platform/compare/power-virtual-agents-vs-copilot-studio  
-
-- **Blog: Best Practices for Prompt Engineering**  
-  https://techcommunity.microsoft.com/t5/microsoft-copilot-studio-blog/how-to-craft-effective-prompts-for-copilot-agents/  
 
 ---
 
