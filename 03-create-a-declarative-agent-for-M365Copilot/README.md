@@ -39,8 +39,8 @@ The following table higlights the differences when building a declarative agent 
 
 There's more capabilities offered for declarative agents built in Microsoft Copilot Studio which we'll learn about next.
 
-   - To learn more about Copilot Studio Agent Builder, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/make/agent-builder/01-first-agent/)
-   - For pro-development of extending a declarative agent beyond Copilot Studio Agent Builder for Microsoft 365 Copilot, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/)
+>   - To learn more about Copilot Studio Agent Builder, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/make/agent-builder/01-first-agent/)
+>   - For pro-development of extending a declarative agent beyond Copilot Studio Agent Builder for Microsoft 365 Copilot, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/)
 
 ### Extending Microsoft 365 Copilot with declarative agents built in Copilot Studio
 
@@ -57,7 +57,7 @@ Let's expand what we've learnt from the feature comparison table.
   - Dynamics 365 integration
   - Microsoft 365 Copilot connectors enabled by your organization administrator
 
-
+   ![Customization](assets/3.0_01_Customization.png)
 
 #### Advanced Capabilities
 
@@ -71,6 +71,8 @@ Let's expand what we've learnt from the feature comparison table.
 
 - **More deployment configuration options**: Select channels and define user permissions.
   - Edit user permisisons can be shared to prevent single point of dependency on the owner of the agent
+
+   ![Customization](assets/3.0_02_AdvancedCapabilities.png)
 
 In summary, declarative agents in Microsoft Copilot Studio allow customization of Microsoft 365 Copilot to suit business needs through integration of enterprise knowledge systems, tools to connect to external services or AI GPT models.
 
@@ -498,7 +500,19 @@ Let's now publish our declarative agent 😃
 
    ![Pin agent](assets/3.4_18_PinAgent.png)
 
-//In a few minutes, you've learnt how to publish your declarative agent and test it in Microsoft 365 Copilot and in Teams 😊
+1. Let's next test our agent. Enter the following prompt and submit.
+
+   ```
+   Can you help me, my laptop is encountering a blue screen
+   ```
+
+   ![Pin agent](assets/3.4_19_SelectStarterPrompt.png)
+
+1. A model response from our prompt will then be displayed.
+
+   ![Reponse in Teams](assets/3.4_20_AgentInTeams.png)
+
+In a few minutes, you've learnt how to publish your declarative agent and test it in Microsoft 365 Copilot and in Teams 😊
 
 ## Next lesson
 Congratulations! 👏🏻 You've built a declarative agent in Copilot Studio where you added a Prompt, instructed the agent to use the Prompt and how to test + publish your agent to Microsoft 365 Copilot and Teams.
