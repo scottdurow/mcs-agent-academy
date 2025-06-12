@@ -496,11 +496,9 @@ Let's now publish our declarative agent 😃
 
 1. We'll then see our agent load. The agent can be pinned to the menu by rightclicking on the app and select **Pin**.
 
+   ![Pin agent](assets/3.4_18_PinAgent.png)
 
-
-   ![Prompt model response](assets/3.4_18_PromptModelResponse.png)
-
-In a few minutes, you've learnt how to publish your declarative agent and test it in Microsoft 365 Copilot and in Teams 😊
+//In a few minutes, you've learnt how to publish your declarative agent and test it in Microsoft 365 Copilot and in Teams 😊
 
 ## Next lesson
 Congratulations! 👏🏻 You've built a declarative agent in Copilot Studio where you added a Prompt, instructed the agent to use the Prompt and how to test + publish your agent to Microsoft 365 Copilot and Teams.
