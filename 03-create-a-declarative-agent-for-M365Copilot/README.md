@@ -383,7 +383,7 @@ Let's now publish our declarative agent 😃
 1. A modal will appear which displays the Channels and publishing details that can be updated.
    
    - Channels: The agent will be published to Microsoft 365 Copilot and Microsoft Teams.
-   - Agent app information: This is what will be displayed when the user adds the agent to Microsoft 365 Copilot or in Microsoft Teams. These are fields that can be updated as needed. For example, you can update the **Short description**, **Long description**, **Developer name**.
+   - Agent app information: This is what will be displayed when the user adds the agent to Microsoft 365 Copilot or in Microsoft Teams. These are fields that can be updated as needed. For example, you can update the **Short description**, **Long description**, **Developer name** with your name.
 
    > [!TIP]
    > If you don't see all the fields displayed on your browser, try zooming out e.g. 75%
@@ -398,18 +398,111 @@ Let's now publish our declarative agent 😃
 
    | Availability option    | Description | 
    | ---------- | ---------- | 
-   | Share Link | You can copy a deep link into Microsoft Teams to invoke the published agent. Opening the link in the tenant opens a chat experience with the agent. | 
+   | Share Link | Copy the link to distribute it with shared users to open the agent in Microsoft 365 Copilot | 
    | Show to my teammates and shared users  | Lets you grant access to others to participate in authoring the agent, or to security groups to grant them access to use the agent in Microsoft 365 Chat or Teams.  | 
-   | Show to everyone in my org   | Show to everyone in my org   | 
-   | Download as a .zip    | Download as a zip folder. This availability option lets you manually upload to Teams/Microsoft 365 Copilot to submit to the admin to review, or upload directly to the organizational catalog.    | 
+   | Show to everyone in my org   | Submit to the tenant admin to add to the organizational catalog for all tenant users to add the agent. The agent will show under Built by your org in Microsoft 365 Copilot and in Teams    | 
+   | Download as a .zip    | Download as a zip file to upload as a custom app in Teams    | 
 
-   ![Availability options](assets/3.4_04_AvailabilityOptions.png)   
+   ![Availability options](assets/3.4_04_AvailabilityOptions.png)
+
+1. Let's take a look at sharing the agent. Select **Show to my teamates and shared users**. A pane will appear where you can search for users you want to to share the agent with either by entering their name, an email or a security group. You can review this list anytime to edit who has access to the agent. 
+
+   There's also two checkboxes
+   - _Send an email invitation to news users_ - new users will receive an email invitation
+   - _Visible Built with Power Platform_ - agent becomes available in the Built with Power Platform section of the Teams app store
+
+   For more details, refer to [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams)
+
+   Select **Cancel** or the **X** icon to exit from the pane.
+
+   ![Share agent](assets/3.4_05_ShareAgent.png)
+
+1. Select Copy link and in a new browser tab, paste the link. 
+
+   ![Copy link](assets/3.4_06_CopyLink.png)
+
+1. Microsoft 365 Copilot will load and a modal will appear with the agent app details. 
+   Notice how the developer name, the short description and long description is displayed. These are from the publishing details updated in an earlier step. 
+   
+   Select **Add**.
+
+   ![Availability options](assets/3.4_07_AgentAppDetails.png)
+
+1. Our declarative agent will load next. We can see the starter prompts to select from which quickly allows to get some help immediately. Let's select the **Hardware Problem** prompt which will automatically prepopulate the message Copilot field. Submit the question to Copilot.
+
+   ![Select starter prompt](assets/3.4_08_SelectStarterPrompt.png)
+
+1. The agent will then invoke our IT Expert prompt and we'll see the model response returned as a message in our declarative agent.
+
+   ![Reponse](assets/3.4_09_Response.png)
+
+1. But _how do we know_ the declarative agent invoke the prompt? 👀 Well, here's a tip!
+
+   > [!TIP]
+   > You can test and debug agents in Microsoft 365 Copilot by enabling [developer mode](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/debugging-copilot-agent#use-developer-mode-in-copilot-chat).
+
+   Enter the following in the message Copilot field and submit.
+
+   ```
+   -developer on
+   ```   
+
+   A confirmation message will appear to let you know developer mode is now enabled.
+
+   ![Developer mode enabled](assets/3.4_10_DeveloperModeEnabled.png)
+   
+1. Submit the following question to invoke the prompt.
+
+   ```
+   Can you help me, my laptop is encountering a blue screen
+   ```
+
+   ![Enter question](assets/3.4_11_EnterQuestion.png)
+
+1. We'll see a model reponse from our IT Expert prompt again returned as a message. Scroll down to the bottom of the message and a card with debug information is displayed. Expand **Agent Debug Info** by selecting it.
+
+   ![Agent debug info](assets/3.4_12_AgentDebugInfo.png)
+
+1. Here you'll find information on the agent metadata that occured at runtime. In our use case, we'll be focusing on the _Actions_ section
+
+   - matched actions highlight the current status of functions found during the app's search 
+   - selected actions higlight the current status of functions chosen to run based on the app's decision-making process
+
+   So here we can see the agent orchestartor chose to invoke the IT Expert prompt as per the instructions of our declarative agent. This is further outlined in the _Executed Actions_ setting which also tells us that it successfully invoked the prompt.
+
+   ![Review agent debug info](assets/3.4_13_ReviewAgentDebugInfo.png)
+
+1. To turn off developer mode, enter the following in the message Copilot field and submit.
+
+   ```
+   -developer off
+   ``` 
+
+   A confirmation message will appear to let you know developer mode is disabled. Cool, now you know how to verify whether your declarative agent in Microsoft 365 Copilot invoked your prompt 🌞
+
+   ![Developer mode disabled](assets/3.4_14_DeveloperModeDisabled.png)
+
+1. We'll now test our agent in Microsoft Teams. Navigate to **Apps** using the left hand side menu and select **Teams** under the _Apps_ section.
+
+   ![Select Teams in Apps](assets/3.4_15_NavigateToApps.png)
+   
+1. Teams will then load in a new browser tab and you'll see Microsoft 365 Copilot load by default, with the right handside pane listing all of your available agents. Select the **Contoso Tech Support Pro** agent.
+
+   ![Microsoft 365 Copilot in Teams](assets/3.4_16_CopilotAgentsInTeams.png)
+
+1. Select the same starter prompt as before and submit.
+
+   ![Select starter prompt](assets/3.4_17_SelectStarterPrompt.png)
+
+1. We'll then see a model response of our IT Expert prompt again. 
+
+   ![Prompt model response](assets/3.4_18_PromptModelResponse.png)
+
+In a few minutes, you've learnt how to publish your declarative agent and test it in Microsoft 365 Copilot and in Teams 😊
 
 ## Next lesson
-Congratulations! 👏🏻 You've built a declarative agent by building a Prompt and instructing the agent to use the Prompt when helping employees with their IT related questions.
+Congratulations! 👏🏻 You've built a declarative agent in Copilot Studio where you added a Prompt, instructed the agent to use the Prompt and how to test + publish your agent to Microsoft 365 Copilot and Teams.
 
-This is the end of Lab 03 - Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot, select the link below to move to the next lesson.
+This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot**, select the link below to move to the next lesson.
 
 ⏭️ [Move to **Creating a solution** lesson](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md)
-
-#### Footnotes
