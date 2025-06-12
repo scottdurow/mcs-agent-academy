@@ -2,19 +2,19 @@
 
 ## Introduction
 
-This lesson will cover:
-- What is a declarative agent
-- Why would I use Microsoft Copilot Studio to build a declarative agent?
-    - Feature comparison
-    - Extending Microsoft 365 Copilot with declarative agents built in Copilot Studio
-- Lab 03: Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot
-    - Understanding Business-to-Employee (B2E)
-    - Use case scenario
-    - Prerequisites
-    - 3.1 Create a declarative agent
-    - 3.2 Create and add a prompt for your declarative agent
-    - 3.3 Update instructions and test your declarative agent
-    - 3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams
+📖 This lesson will cover:
+- [What is a declarative agent for Microsoft 365 Copilot?](#️-what-is-a-declarative-agent-for-microsoft-365-copilot)
+- [Why would I use Microsoft Copilot Studio to build a declarative agent?](#-why-would-i-use-microsoft-copilot-studio-to-build-a-declarative-agent)
+    - [Feature comparison](#feature-comparison)
+    - [Extending Microsoft 365 Copilot with declarative agents built in Copilot Studio](#extending-microsoft-365-copilot-with-declarative-agents-built-in-copilot-studio)
+- [Lab 03: Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](#-lab-03-build-a-declarative-agent-in-microsoft-copilot-studio-for-microsoft-365-copilot)
+    - [Understanding Business-to-Employee (B2E)](#understanding-business-to-employee-b2e)
+    - [Use case scenario](#use-case-scenario)
+    - [Prerequisites](#prerequsities)
+    - [3.1 Create a declarative agent](#31-create-a-declarative-agent)
+    - [3.2 Create and add a prompt for your declarative agent](#32-create-and-add-a-prompt-for-your-declarative-agent)
+    - [3.3 Update instructions and test your declarative agent](#33-update-instructions-and-test-your-declarative-agent)
+    - [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
 
 ## 🕵🏻‍♀️ What is a declarative agent for Microsoft 365 Copilot?
 
@@ -22,7 +22,7 @@ Declarative agents are tailored versions of Microsoft 365 Copilot. You can custo
 
 ## 🤔 Why would I use Microsoft Copilot Studio to build a declarative agent?
 
-As a maker, there's a chance you've already explored [Copilot Studio agent builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder) in Microsoft 365 Copilot and so you're probably wondering _why build a declarative agent in Microsoft Copilot Studio?_ 🤔
+As a maker, there's a chance you've already explored [Copilot Studio agent builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder) in Microsoft 365 Copilot and so you're probably wondering _why build a declarative agent in Microsoft Copilot Studio?_
 
 Microsoft Copilot Studio offers a comprehensive set of tools and features for declarative agents that go beyond the limitations of Copilot Studio agent builder. Similar to Copilot Studio agent builder, you don't need to know programming or software development to build in Microsoft Copilot Studio. Let's break this down further to understand the differences between Copilot Studio Agent Builder and Copilot Studio for building declarative agents.
 
@@ -33,7 +33,7 @@ The following table higlights the differences when building a declarative agent 
 |---------------------------|-------------------------------------------------------|------------------------------------------------------------|
 | **Knowledge**       | Web, SharePoint, Teams chats, Outlook emails, Copilot connectors     | Web search (via Bing), SharePoint, Dataverse, Dynamics 365, Copilot connectors  |
 | **Tools**       | Code interpreter, image generator     | 1400+ Power Platform connectors, custom connectors, prompt, computer use, REST API, Model Context Protocol   |
-| **Starter prompts**         | Configure prompts users to get started    | Configure prompts users to get started   |
+| **Starter prompts**         | Configure prompts for users to get started quickly   | Configure prompts for users to get started quickly  |
 | **Channel**           | Agent only published to Microsoft 365 Copilot     | Agent published to Microsoft 365 Copilot and Teams      |
 | **Sharing permissions**         | Users are only viewers    | Users can be editors or viewers   |
 
@@ -57,6 +57,8 @@ Let's expand what we've learnt from the feature comparison table.
   - Dynamics 365 integration
   - Microsoft 365 Copilot connectors enabled by your organization administrator
 
+
+
 #### Advanced Capabilities
 
 - **Integration with External Services**: Allows you to choose from 1400+ Power Platform connectors that integrate with external services, providing more complex and powerful functionalities.
@@ -64,13 +66,11 @@ Let's expand what we've learnt from the feature comparison table.
   - Alternatively, you can also leverage Model Context Protocol servers and REST APIs directly within your declarative agent
 
 - **AI prompts**: Use a prompt to analyze and transform text, documents, images and data with natural language and AI reasoning.
-  - Select the chat model, choose from Basic, Standard, Premium
+  - Select the chat model, choose from Basic (Default), Standard, Premium
   - Option to bring-your-own Azure AI Foundry model to ground your prompt in
 
 - **More deployment configuration options**: Select channels and define user permissions.
-  - Teams enablement is another interactive path for declarative agents, users are already familiar with the Teams user interface
   - Edit user permisisons can be shared to prevent single point of dependency on the owner of the agent
-
 
 In summary, declarative agents in Microsoft Copilot Studio allow customization of Microsoft 365 Copilot to suit business needs through integration of enterprise knowledge systems, tools to connect to external services or AI GPT models.
 
@@ -436,7 +436,7 @@ Let's now publish our declarative agent 😃
 
    ![Reponse](assets/3.4_09_Response.png)
 
-1. But _how do we know_ the declarative agent invoke the prompt? 👀 Well, here's a tip!
+1. But _how do we know_ the declarative agent invoked the prompt? 👀 Well, here's a tip!
 
    > [!TIP]
    > You can test and debug agents in Microsoft 365 Copilot by enabling [developer mode](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/debugging-copilot-agent#use-developer-mode-in-copilot-chat).
@@ -486,15 +486,17 @@ Let's now publish our declarative agent 😃
 
    ![Select Teams in Apps](assets/3.4_15_NavigateToApps.png)
    
-1. Teams will then load in a new browser tab and you'll see Microsoft 365 Copilot load by default, with the right handside pane listing all of your available agents. Select the **Contoso Tech Support Pro** agent.
+1. Teams will then load in a new browser tab and you'll see Microsoft 365 Copilot load by default, with the right handside pane listing all of your available agents, including the **Contoso Tech Support Pro** declarative agent.
 
    ![Microsoft 365 Copilot in Teams](assets/3.4_16_CopilotAgentsInTeams.png)
 
-1. Select the same starter prompt as before and submit.
+1. Select **Apps** on the left hand side menu. Either search for **Contoso Tech Support Pro** or scroll down and select the agent.
 
-   ![Select starter prompt](assets/3.4_17_SelectStarterPrompt.png)
+   ![Select agent from Apps](assets/3.4_17_SelectAgentFromApps.png)
 
-1. We'll then see a model response of our IT Expert prompt again. 
+1. We'll then see our agent load. The agent can be pinned to the menu by rightclicking on the app and select **Pin**.
+
+
 
    ![Prompt model response](assets/3.4_18_PromptModelResponse.png)
 
