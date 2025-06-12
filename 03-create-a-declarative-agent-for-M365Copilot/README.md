@@ -142,7 +142,7 @@ Let's begin!
    > [!NOTE]
    > The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously.
 
-1. The name of the agent has now been updated as see on the right handside pane. We're now asked to refine the instructions for the agent. The instructions on the right-hand side pane is already suitable as it covers the topics we want - refer to yellow highlighted text in screenshot below. Instead, we'll expand on how it should format its response and the tone. We'll enter the following,
+1. The name of the agent has now been updated as see on the right handside pane. We're now asked to refine the instructions for the agent. The instructions on the right handside pane is already suitable as it covers the topics we want - refer to yellow highlighted text in screenshot below. Instead, we'll expand on how it should format its response and the tone. We'll enter the following,
 
    ```
    Concise and Informative:
