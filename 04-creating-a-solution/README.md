@@ -2,16 +2,19 @@
 
 ## Introduction
 
-- Solution? What's that?
-- Why should I use a solution for my agent?
-- Power Platform solution lifecycle
-- Lab 04: Create a new Solution
-    - Prerequisites
-    - 4.1 Create a Solution publisher
-    - 4.2 Create a Solution
+- [Solution? What's that?](#️-solution-whats-that)
+- [Why should I use a Solution for my agent?](#-why-should-i-use-a-solution-for-my-agent)
+- [Understanding Solution Publishers](#understanding-solution-publishers)
+- [Power Platform Solution lifecycle](#-power-platform-solution-lifecycle)
+- [Lab 04: Create a new Solution](#-lab-04-create-a-new-solution)
+    - [Prerequisites](#prerequisite)
+    - [4.1 Create a Solution publisher](#41-create-a-solution-publisher)
+    - [4.2 Create a Solution](#42-create-a-solution)
 
 ## 🕵🏻‍♀️ Solution? What's that?
 In Microsoft Power Platform, solutions are like containers or packages that hold all the parts of your apps or agents - these could be tables, forms, flows, and custom logic. Solutions are essential for Application Lifecycle Management (ALM), they enable you to manage your app and agents from idea to development, testing, deployment, and updates.
+
+Solutions are created in the **Power Apps maker portal** - a web based interface where you can build and customize apps, Dataverse, flows, explore AI components and more. This is where we'll create a solution shortly in the upcoming 🧪 lab for this lesson.
 
    ![Solutions](assets/4.0_01_Solutions.png)    
 
@@ -21,7 +24,7 @@ There are two types of solutions:
 - **Managed solutions** - used when you're ready to deploy your app to testing or production. These are locked down to prevent accidental changes.
 
 
-## 🤔 Why _should_ I use a solution for my agent?
+## 🤔 Why _should_ I use a Solution for my agent?
 Think of Solutions as a toolbox. When you need to fix or build something (an agent) in a different location (environment), you gather all the necessary tools (components) and put them in your toolbox (Solution). You can then carry this toolbox to the new location (environment) and use the tools (components) to complete your work, or add new tools (components) to customize your agent or project you're building.
 
 💬 Elaiza, your friendly cloud advocate popping in here 🙋🏻‍♀️ to share some words: 
@@ -49,9 +52,35 @@ It's good practice to create an agent in a dedicated solution in your source [de
 🧩 **Team Collaboration**
 - Developers and makers can work together using unmanaged solutions in development, then hand off a managed solution for deployment.
 
-## 🧭 Power Platform solution lifecycle
+## Understanding Solution Publishers
 
-**1. Create Solution in Development** - start by creating a new solution in your development environment.
+A Solution Publisher in Power Platform is like a label or brand that identifies who created or owns a solution. It’s a small but important part of managing your apps, agents and flow customizations, especially when working in teams or across environments.
+
+When you create a solution, you must choose a publisher. This publisher defines:
+
+- A prefix that gets added to all custom components (like tables, fields, and flows).
+
+- A name and contact info for the organization or person who owns the solution.
+
+### 🤔 Why is it important? 
+1. **Easy identification** - the prefix (like new_ or abc_) helps you quickly identify which components belong to which solution or team.
+
+2. **Avoids conflicts** - if two teams create a column called status, their prefixes (teamA_status, teamB_status) prevent naming collisions.
+
+3. **Supports ALM** - when moving solutions between environments (Dev → Test → Prod), the publisher helps track ownership and maintain consistency.
+
+### ✨ Example
+Let’s say you create a publisher called Contoso Solutions with the prefix `cts_`.
+
+If you add a custom column called _Priority_, it will be stored as `cts_Priority` in the solution.
+
+Anyone who comes across the column at a solution level regardless of what environment they're in, they can easily identify it as a column that's associated to Contoso Solutions.
+
+## 🧭 Power Platform Solution lifecycle
+
+So now you understand the purpose of a Solution, let's next learn about the lifecycle.
+
+**1. Create Solution in Development ennvironment** - start by creating a new solution in your development environment.
 
 **2. Add Components** - add apps, flows, tables, and other elements to your solution.
 
@@ -61,7 +90,7 @@ It's good practice to create an agent in a dedicated solution in your source [de
 
 **5. Import to Production Environment** - deploy the tested solution to your live production environment.
 
-**6. Apply Updates or Patches** - make improvements or fixes using patches or upgrades and repeat the cycle.
+**6. Apply Patches, Updates or Upgrades** - make improvements or fixes using patches, updated, or upgrades. 🔁 Repeat the cycle!
 
 ### ✨ Example
 
@@ -84,12 +113,36 @@ We're going to stick with the example from earlier, where we're going to create 
 
 Let's begin!
 
-### Prerequisite
+### Prerequisites
 - Makers must have permissions to create in and have access to a Copilot Studio environment.
 
 ### 4.1 Create a Solution publisher
 
-Placeholder text
+1. Using the same Copilot Studio environment used in the previous lesosn, select the elipsis icon (. . .) on the left handside menu in Copilot Studio. Select Power Apps.
+
+    _insert screenshot_
+
+1. The Power Apps maker portal will load in a new browser tab and we can begin creating our solution! Select **Solutions** in the left handside menu.
+
+    _insert screenshot_
+
+1. Next, select **+ New solution**
+
+    _insert screenshot_
+
+1. We're now going to create a new Solution Publisher. Select **+ New publisher**.
+
+
+
+1. The **New publisher** pane will appear with required and non-required fields to be populated in the **Properties** tab.
+
+| Property    | Description | Required |
+| ---------- | ---------- | :----------: |
+| Display name | Display name for the publisher | Yes   |
+| Name  | The unique name and schema name for the publisher  | Yes    |
+| Description   | Outlines the purpose of the solution    | No     |
+| Prefix    | Publisher prefix which will be applied to newly created components   | Yes      |
+| Choice value prefix   | Generates a number based on the publisher prefix. This number is used when you add options to choices and provides an indicator of which solution was used to add the option.   | Yes      |
 
 ### 4.2 Create a Solution
 
