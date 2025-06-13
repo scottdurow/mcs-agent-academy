@@ -13,6 +13,8 @@
 ## 🕵🏻‍♀️ Solution? What's that?
 In Microsoft Power Platform, solutions are like containers or packages that hold all the parts of your apps or agents - these could be tables, forms, flows, and custom logic. Solutions are essential for Application Lifecycle Management (ALM), they enable you to manage your app and agents from idea to development, testing, deployment, and updates.
 
+   ![Solutions](assets/4.0_01_Solutions.png)    
+
 There are two types of solutions:
 
 - **Unmanaged solutions** - used during development. You can freely edit and customize as needed.
@@ -66,16 +68,19 @@ It's good practice to create an agent in a dedicated solution in your source [de
 Imagine you're building an IT helpdesk agent to help employees with issues such as device problems, network troubleshooting, printer setup and more.
 
 - You start in a development environment using an unmanaged solution.
-- Once it's ready, you export it as a managed solution and import it into a target environment such as a test or user acceptance testing (UAT) environment.
+
+- Once it's ready, you export it as a managed solution and import it into a target environment such as a system test or user acceptance testing (UAT) environment.
+
 - After testing, you move it to production - all without touching the original development version.
 
 ## 🧪 Lab 04: Create a new Solution
 
 We're now going to learn
 - How to create a Solution publisher
+
 - How to create a Solution
 
-We're going to stick with the example from earlier, where we're going to create a solution in the dedicated Copilot Studio environment.
+We're going to stick with the example from earlier, where we're going to create a solution in the dedicated Copilot Studio environment to build our IT helpdesk agent in.
 
 Let's begin!
 
