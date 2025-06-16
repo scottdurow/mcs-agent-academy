@@ -258,7 +258,6 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
    ![Solutions](assets/4.2_05_CurrentPreferredSolutionSelected.png)
 
-
 ## Next lesson
 Congratulations! 👏🏻 You've created a Publisher and used it in your newly created Solution to build your agent in!
 

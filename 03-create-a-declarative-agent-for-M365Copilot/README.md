@@ -525,7 +525,7 @@ Congratulations! 👏🏻 You've built a declarative agent in Copilot Studio whe
 
 This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot**, select the link below to move to the next lesson.
 
-⏭️ [Move to **Creating a solution** lesson](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md)
+⏭️ [Move to **Add a new Topic with trigger** lesson](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md)
 
 ## 📚 Additional learning
 🔗 [Build declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)
