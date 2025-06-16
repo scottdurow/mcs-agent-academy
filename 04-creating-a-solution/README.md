@@ -12,11 +12,27 @@
     - [4.2 Create a Solution](#42-create-a-solution)
 
 ## 🕵🏻‍♀️ Solution? What's that?
-In Microsoft Power Platform, solutions are like containers or packages that hold all the parts of your apps or agents - these could be tables, forms, flows, and custom logic. Solutions are essential for Application Lifecycle Management (ALM), they enable you to manage your app and agents from idea to development, testing, deployment, and updates.
+In Microsoft Power Platform, solutions are like containers or packages that hold all the parts of your apps or agents - these could be tables, forms, flows, and custom logic. Solutions are essential for Application Lifecycle Management (ALM), they enable you to manage your app and agents from idea to development, testing, deployment, and updates. 
 
-Solutions are created in the **Power Apps maker portal** - a web based interface where you can build and customize apps, Dataverse, flows, explore AI components and more. This is where we'll create a solution shortly in the upcoming 🧪 lab for this lesson.
+In Copilot Studio, every agent you create is stored in a Power Platform solution. By default, agents are created in the Default solution, unless you create a new custom solution to create your agent in. This is what we'll learn in this lesson and in the hands-on lab.
+
+Solutions tradtionally have been created in the **Power Apps maker portal** - a web based interface where you can build and customize apps, Dataverse, flows, explore AI components and more.
 
    ![Solutions](assets/4.0_01_Solutions.png)    
+
+In Copilot Studio, there is now the **Solution Explorer** where you can manage your solutions directly. This means you can do the usual solution-related tasks:
+
+- **Create a solution** - custom solutions enable agents to be exported and imported between environments.
+- **Set your preferred solution** - choose the solution agents will be created in by default.
+- **Add or remove components** - other than agent, your agent could be referencing other components such as environment variables or cloud flows. Therefore these components needed to be included in the solution. 
+- **Export solutions** - to move them to another environment.
+- **Import solutions** - that were created elsewhere, including [upgrading or updating solutions](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions). 
+- **Create and manage solution pipelines** - automate the deployment of solutions between environments.
+- **Git integration** - enables developers to connect solutions with Git respositores for version control, collaboration and ALM. Intended to be used in developer environments only.
+
+You no longer need to switch to the Power Apps maker portal to manage your solutions, it can be done right inside Copilot Studio 🪄
+
+_insert screenshot_
 
 There are two types of solutions:
 
@@ -114,35 +130,73 @@ We're going to stick with the example from earlier, where we're going to create 
 Let's begin!
 
 ### Prerequisites
-- Makers must have permissions to create in and have access to a Copilot Studio environment.
+In Copilot Studio, what you can do in the solution explorer depends on your user security role.
+If you don’t have permission to manage solutions in the Power Apps admin center, you won’t be able to do those tasks in Copilot Studio either.
+
+To make sure everything works smoothly, check that you have the right seucurity roles and permissions. Or if you don't manage environments in your organisation, ask your IT adminstrator (or the equiavelent) team who manages your tenant/environments.
+
+The following are the security roles that enables users to create a solution in their environment.
+
+| Security role    | Description |
+| ---------- | ---------- |
+| Environment Maker | Provides the necessary permissions to create, customize, and manage resources within a specific environment, including solutions  |
+| System Customizer  | Wider permissions than Environment Maker, including the ability to customize the environment and manage security roles
+| System Administrator   | Highest level of permissions and can manage all aspects of the environment, including creating and assigning security roles     |
 
 ### 4.1 Create a Solution publisher
 
-1. Using the same Copilot Studio environment used in the previous lesosn, select the elipsis icon (. . .) on the left handside menu in Copilot Studio. Select Power Apps.
+1. Using the same Copilot Studio environment used in the previous lesosn, select the **elipsis icon (. . .)** on the left handside menu in Copilot Studio. Select **Solutions** under the **Explore** header.
 
-    _insert screenshot_
+   ![Solutions](assets/4.1_01_Solutions.png)    
 
-1. The Power Apps maker portal will load in a new browser tab and we can begin creating our solution! Select **Solutions** in the left handside menu.
+1. The **Solution Explorer** in Copilot Studio will load. Select **+ New solution**
 
-    _insert screenshot_
+   ![Solutions](assets/4.1_02_NewSolution.png)    
 
-1. Next, select **+ New solution**
+1. The **New solution** pane will appear where we can define the details of our solution. First, we need to create a new publisher. Select **+ New publisher**.
 
-    _insert screenshot_
+   ![Solutions](assets/4.1_03_NewPublisher.png)  
 
-1. We're now going to create a new Solution Publisher. Select **+ New publisher**.
+1. The **Properties** tab of the **New publisher** pane will appear with required and non-required fields to be populated in the **Properties** tab. This is where we can outline the details of the publisher which will be used as the label or brand that identifies who created or owns the solution.
 
+    | Property    | Description | Required |
+    | ---------- | ---------- | :----------: |
+    | Display name | Display name for the publisher | Yes   |
+    | Name  | The unique name and schema name for the publisher  | Yes    |
+    | Description   | Outlines the purpose of the solution    | No     |
+    | Prefix    | Publisher prefix which will be applied to newly created components   | Yes      |
+    | Choice value prefix   | Generates a number based on the publisher prefix. This number is used when you add options to choices and provides an indicator of which solution was used to add the option.   | Yes      |
 
+    Copy and paste the following as the **Display name**,
+
+   ```
+   Contoso Solutions
+   ```
+
+   Copy and paste the following as the **Name**,
+
+   ```
+   ContosoSolutions
+   ```
+
+    Copy and paste the following as the **Description**,
+
+   ```
+   Copilot Studio for Beginners
+   ```
+
+    Copy and paste the following for the **Prefix**,
+
+   ```
+   Can you help me, my laptop is encountering a blue screen
+   ```
+
+    By default, the **Choice value** prefix will display an integer value. Update this integer value to the nearest thousand. For example, in my screenshot below, it was initially _77074_. Update this from _77074_ to `77000`.
+
+   ![Solutions](assets/4.1_04_PublisherProperties.png)  
 
 1. The **New publisher** pane will appear with required and non-required fields to be populated in the **Properties** tab.
 
-| Property    | Description | Required |
-| ---------- | ---------- | :----------: |
-| Display name | Display name for the publisher | Yes   |
-| Name  | The unique name and schema name for the publisher  | Yes    |
-| Description   | Outlines the purpose of the solution    | No     |
-| Prefix    | Publisher prefix which will be applied to newly created components   | Yes      |
-| Choice value prefix   | Generates a number based on the publisher prefix. This number is used when you add options to choices and provides an indicator of which solution was used to add the option.   | Yes      |
 
 ### 4.2 Create a Solution
 
