@@ -81,14 +81,19 @@ In summary, declarative agents in Microsoft Copilot Studio allow customization o
 
 We'll next learn how to build a declarative agent for a "Business-to-Employee" use case which will act as an **IT helpdesk agent**.
 
+- [3.1 Create a declarative agent](#31-create-a-declarative-agent)
+- [3.2 Create and add a prompt for your declarative agent](#32-create-and-add-a-prompt-for-your-declarative-agent)
+- [3.3 Update instructions and test your declarative agent](#33-update-instructions-and-test-your-declarative-agent)
+- [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
+
 > [!NOTE]
 > This lab will outline steps to add a Prompt as a tool. The following lessons will dive into adding knowledge sources and adding other tools available. Keeping it simple for your learning 😊 
 
-### Understanding Business-to-Employee (B2E)
+### 👩🏻‍💼 Understanding Business-to-Employee (B2E)
 
 Business-to-Employee (B2E) refers to the interactions and services that a business provides directly to its employees. In the context of an agent, it means using the advanced capabilities of Copilot Studio to support and enhance the work experience of employees within the organization.
 
-### Use case scenario
+### ✨ Use case scenario
 
 **As an** employee
 
@@ -521,3 +526,10 @@ Congratulations! 👏🏻 You've built a declarative agent in Copilot Studio whe
 This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot**, select the link below to move to the next lesson.
 
 ⏭️ [Move to **Creating a solution** lesson](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md)
+
+## 📚 Additional learning
+🔗 [Build declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)
+
+🔗 [Add prompts](https://learn.microsoft.com/en-us/ai-builder/create-a-custom-prompt?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)
+
+🔗 [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-170631-ebenitez)
