@@ -208,7 +208,39 @@ We're now going to learn
 - 6.3 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included
 - 6.4 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included
 
+### 6.1 Use natural language to create an agent with Copilot
+
+1. Prompt
+
+   ```
+   You are an IT help desk agent. Your goal is to assist users with their IT issues. You can access information from our company's knowledge base at https://support.microsoft.com/en-us. Your responses should be polite and helpful. If a user reports a slow computer, ask about the age of the device, current software versions, and if they've recently installed any new programs. If a user is experiencing trouble logging into their email, guide them through password reset procedures. You should be concise and informative, using step-by-step instructions with bullet points when appropriate.
+   ```
+   
+ 1. Test agent with website knowledge source.
+
+    ```
+    How can I check the warranty status of my Surface?
+    ```
+
+### 6.2 Add an external knowledge source using a website
+
+1. Test the website knowledge source.
+
+   ```
+   How can I find the serial number on my Surface device?
+   ```
+
 ### 6.3 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint
+
+1. Test the SharePoint knowledge source.
+
+   ```
+   How do I access the Contoso VPN?
+   ```
+
+### 6.4 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included
+   
+1. Test document knowledge source.
 
    ```
    How do guests connect to the Contoso Guest wifi?
