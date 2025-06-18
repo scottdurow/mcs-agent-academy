@@ -203,10 +203,10 @@ After your agent is provisoned from the conversational creation experience, you'
 ## 🧪 Lab 06: Create a custom agent in Copilot Studio
 
 We're now going to learn how to create a custom agent that can chat over your data
-- 6.1 Use natural language to create an agent with Copilot
-- 6.2 Add an external knowledge source using a website
-- 6.3 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included
-- 6.4 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included
+- [6.1 Use natural language to create an agent with Copilot](#61-use-natural-language-to-create-an-agent-with-copilot)
+- [6.2 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included](#62-add-an-internal-knolwedge-source-using-a-sharepoint-site---for-microsoft-365-licensed-users-with-sharepoint)
+- [6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included](#63-add-an-internal-knowledge-source-by-uploading-a-document---for-non-microsoft-365-licensed-users-who-dont-have-sharepoint-included)
+- [6.4 Test agent](#64-test-agent)
 
 ### ✨ Use case
 
@@ -278,41 +278,41 @@ Let's begin!
     No more modifications
     ```
 
-   ![Solutions](assets/6.1_08_NoMoreModifications.png)
+   ![No more modifications](assets/6.1_08_NoMoreModifications.png)
 
 1. Copilot confirms the agent is ready to be created. Before we create our agent, let's do a couple of things. 
     
     For websites, you need to confirm which website(s) your organization owns that Bing will search through Copilot Studio. For learning purposes, we'll tick the checkbox that confirms ownership of the knowledge source. In reality, this would be _your company website_.
 
-   ![Solutions](assets/6.1_09_ConfirmOwnershipOfKnowledgeSource.png)
+   ![Confirm website ownership](assets/6.1_09_ConfirmOwnershipOfKnowledgeSource.png)
 
 1. Next we'll double check the solution that our agent will be created in, is the solution we created and selected as the preferred solution in [Lesson 04 - Create a new solution](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md#42-create-a-new-solution).
 
     Select the **elipsis icon (...)** and select **Edit Advanced Settings**.
 
-   ![Solutions](assets/6.1_10_EditAdvancedSettings.png)
+   ![Edit Advanced Settings](assets/6.1_10_EditAdvancedSettings.png)
 
 1. The Advanced Settings modal will appear and we can see our solution created from earlier is selected by default. This is due to selecting our solution as the preferred solution in [Lesson 04 - Create a new solution](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md#42-create-a-new-solution).
 
     Select **Cancel.**
 
-   ![Solutions](assets/6.1_11_Solution.png)
+   ![View of Advanced Settings](assets/6.1_11_Solution.png)
 
 1. Let's now create our custom agent! Select **Create**.
 
-   ![Solutions](assets/6.1_12_CreateAgent.png)
+   ![Select Create](assets/6.1_12_CreateAgent.png)
 
 1. Copilot Studio will begin provisioning our agent.
 
-   ![Solutions](assets/6.1_13_SettingUpAgent.png)
+   ![Setting up agent](assets/6.1_13_SettingUpAgent.png)
 
 1. Once our agent has been provisioned, we can see the details of the agent reflect what we requested during our Copilot conversational creation experience.
 
-   ![Solutions](assets/6.1_14_AgentCreated.png)
+   ![Agent provisioned](assets/6.1_14_AgentCreated.png)
 
 1. Scroll down and we'll see our instructions and the public website as the knowledge source for the agent.
 
-   ![Solutions](assets/6.1_15_InstructionsAndKnowledgeSources.png)
+   ![Instructions and knowledge sources](assets/6.1_15_InstructionsAndKnowledgeSources.png)
 
 1. Let's now test our newly created agent. Enter the following question in the **Test** pane.
 
@@ -320,23 +320,80 @@ Let's begin!
     How can I check the warranty status of my Surface?
     ```
 
-   ![Solutions](assets/6.1_16_TestNewlyCreatedAgent.png
+   ![Test newly created agent](assets/6.1_16_TestNewlyCreatedAgent.png)
 
 1. The Activity map will then load which shows us in real-time what path the agent is processing. In this scenario, our agent has understood the question and searches the knowledge sources. Currently we have one source which is the public website we added earlier using Copilot, which is what the agent is reviewing.
 
-   ![Solutions](assets/6.1_17_ReviewingKnowledgeSources.png)
+   ![Reviewing knowledge sources](assets/6.1_17_ReviewingKnowledgeSources.png)
 
 1. Our agent then responds with answers that are outlined as bullet points, as defined in the instructions. The response has references to the web pages that the agent formed its response from. This enables users to verify the source of the answer. If you click on the reference, you'll be directed to the web page where you can review the source of the answer.
 
-   ![Solutions](assets/6.1_18_References.png)
+   ![References in response](assets/6.1_18_References.png)
 
 1. You can also review the response and its sources by scrolling down the Knowledge modal in the Activity map.
 
-   ![Solutions](assets/6.1_19_ReferencedSources.png)
+   ![Referenced sources](assets/6.1_19_ReferencedSources.png)
 
 Congratulations! You've built your first custom agent with Copilot in Copilot Studio 🙌🏻
 
-### 6.2 Add an external knowledge source using a website
+### 6.2 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint
+
+Previously with Copilot, we added a public website as an external knowledge source for our agent during the conversational creation experience. We're now going to add an internal knowledge source using a SharePoint site. This will be the SharePoint site you created during [Lesson 00 - Course Setup](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/00-course-setup/README.md).
+
+> [!NOTE]  
+> This exercise is valid for Microsoft 365 licensed users with SharePoint. If you don't have SharePoint in your Microsoft 365 license, skip to the [6.3 Add an internal knowledge source by uploading a document](#63-add-an-internal-knowledge-source-by-uploading-a-document---for-non-microsoft-365-licensed-users-who-dont-have-sharepoint-included) lab exercise.
+
+1. Select **+ Add knowledge**.
+
+   ![Select Add knowledge](assets/6.2_01_AddKnowledge.png)
+
+1. Select **SharePoint**.
+
+   ![Select SharePoint](assets/6.2_02_SelectSharePoint.png)
+
+1. Paste in the **address of the SharePoint site** created in [Lesson 00 - Course Setup](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/00-course-setup/README.md) in the SharePoint URL field and select **Add**.
+
+   ![Enter SharePoint site URL](assets/6.2_03_SharePointURL.png)
+
+1. Update the **name** of the SharePoint site to `Contoso IT` and select **Add**.
+
+   ![Update SharePoint site name](assets/6.2_04_UpdateSharePointSiteName.png)
+
+1. The SharePoint site has now been added as a knowledge source with a status of _Ready_. The Status column will show whether the knowledge source has been loaded/connected to successfully, or if there is an issue.
+
+   ![SharePoint site added](assets/6.2_05_SharePointSiteAdded.png)
+
+### 6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included
+
+We'll now add another internal knowledge source by uploading a document directly to our agent. 
+
+1. Select **Add knowledge**.
+
+   ![Select Add knowledge](assets/6.3_01_SelectAddKnowledge.png)
+
+1. Select **Upload file**.
+
+   ![Select upload files](assets/6.3_02_SelectUploadFile.png)
+
+1. Download this [sample file]https://github.com/microsoft/copilot-studio-for-beginners/blob/main/06-create-agent-from-conversation/assets/Contoso_Guest_WiFi_Connection_Guide.docx) and select it in your File Explorer. Select **Open**.
+
+   ![Select document](assets/6.3_03_SelectDocument.png)
+
+1. The file has been selected for upload. Select **Add** next.
+
+   ![Select Add](assets/6.3_04_AddDocument.png)
+
+1. The document will be in the process of being added to the agent. Wait until the upload has completed, do not close the browser window.
+
+   ![Select Add knowledge](assets/6.3_05_UploadingDocument.png)
+
+1. The status of the document will initially show as _In progress_, wait until the status has been updated to **Ready** before testing your agent.
+
+   ![Select Add knowledge](assets/6.3_06_DocumentStatusReady.png)
+
+### 6.4 Test agent
+
+_placeholder text_
 
 1. Test the website knowledge source.
 
@@ -344,20 +401,11 @@ Congratulations! You've built your first custom agent with Copilot in Copilot St
    How can I find the serial number on my Surface device?
    ```
 
-### 6.3 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint
-
-1. Test the SharePoint knowledge source.
+1. Test SharePoint knowledge source and document knowledge source.
 
    ```
-   How do I access the Contoso VPN?
-   ```
-
-### 6.4 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included
+   How do I access the Contoso VPN? How do guests connect to the Contoso Guest wifi?
    
-1. Test document knowledge source.
-
-   ```
-   How do guests connect to the Contoso Guest wifi?
    ```
 
 ## Next lesson
