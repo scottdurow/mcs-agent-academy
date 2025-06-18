@@ -375,7 +375,7 @@ We'll now add another internal knowledge source by uploading a document directly
 
    ![Select upload files](assets/6.3_02_SelectUploadFile.png)
 
-1. Download this [sample file]https://github.com/microsoft/copilot-studio-for-beginners/blob/main/06-create-agent-from-conversation/assets/Contoso_Guest_WiFi_Connection_Guide.docx) and select it in your File Explorer. Select **Open**.
+1. Download this [sample file](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/06-create-agent-from-conversation/assets/Contoso_Guest_WiFi_Connection_Guide.docx) and select it in your File Explorer. Select **Open**.
 
    ![Select document](assets/6.3_03_SelectDocument.png)
 
