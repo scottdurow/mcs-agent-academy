@@ -298,11 +298,43 @@ Let's begin!
 
    ![Solutions](assets/6.1_11_Solution.png)
 
-1. Test agent with website knowledge source.
+1. Let's now create our custom agent! Select **Create**.
+
+   ![Solutions](assets/6.1_12_CreateAgent.png)
+
+1. Copilot Studio will begin provisioning our agent.
+
+   ![Solutions](assets/6.1_13_SettingUpAgent.png)
+
+1. Once our agent has been provisioned, we can see the details of the agent reflect what we requested during our Copilot conversational creation experience.
+
+   ![Solutions](assets/6.1_14_AgentCreated.png)
+
+1. Scroll down and we'll see our instructions and the public website as the knowledge source for the agent.
+
+   ![Solutions](assets/6.1_15_InstructionsAndKnowledgeSources.png)
+
+1. Let's now test our newly created agent. Enter the following question in the **Test** pane.
 
     ```
     How can I check the warranty status of my Surface?
     ```
+
+   ![Solutions](assets/6.1_16_TestNewlyCreatedAgent.png
+
+1. The Activity map will then load which shows us in real-time what path the agent is processing. In this scenario, our agent has understood the question and searches the knowledge sources. Currently we have one source which is the public website we added earlier using Copilot, which is what the agent is reviewing.
+
+   ![Solutions](assets/6.1_17_ReviewingKnowledgeSources.png)
+
+1. Our agent then responds with answers that are outlined as bullet points, as defined in the instructions. The response has references to the web pages that the agent formed its response from. This enables users to verify the source of the answer. If you click on the reference, you'll be directed to the web page where you can review the source of the answer.
+
+   ![Solutions](assets/6.1_18_References.png)
+
+1. You can also review the response and its sources by scrolling down the Knowledge modal in the Activity map.
+
+   ![Solutions](assets/6.1_19_ReferencedSources.png)
+
+Congratulations! You've built your first custom agent with Copilot in Copilot Studio 🙌🏻
 
 ### 6.2 Add an external knowledge source using a website
 
