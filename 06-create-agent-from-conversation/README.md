@@ -202,7 +202,7 @@ After your agent is provisoned from the conversational creation experience, you'
 
 ## 🧪 Lab 06: Create a custom agent in Copilot Studio
 
-We're now going to learn 
+We're now going to learn how to create a custom agent that can chat over your data
 - 6.1 Use natural language to create an agent with Copilot
 - 6.2 Add an external knowledge source using a website
 - 6.3 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included
@@ -210,7 +210,7 @@ We're now going to learn
 
 ### 6.1 Use natural language to create an agent with Copilot
 
-1. Prompt
+1. Navigate to the Home page of Copilot Studio and in the field, enter the following prompt.
 
    ```
    You are an IT help desk agent. Your goal is to assist users with their IT issues. You can access information from our company's knowledge base at https://support.microsoft.com/en-us. Your responses should be polite and helpful. If a user reports a slow computer, ask about the age of the device, current software versions, and if they've recently installed any new programs. If a user is experiencing trouble logging into their email, guide them through password reset procedures. You should be concise and informative, using step-by-step instructions with bullet points when appropriate.
