@@ -9,7 +9,7 @@
 - [Lab 04: Create a new Solution](#-lab-04-create-a-new-solution)
     - [Prerequisites](#prerequisite)
     - [4.1 Create a Solution publisher](#41-create-a-solution-publisher)
-    - [4.2 Create a Solution](#42-create-a-solution)
+    - [4.2 Create a new Solution](#42-create-a-new-solution)
 
 ## 🕵🏻‍♀️ Solution? What's that?
 In Microsoft Power Platform, solutions are like containers or packages that hold all the parts of your apps or agents - these could be tables, forms, flows, and custom logic. Solutions are essential for Application Lifecycle Management (ALM), they enable you to manage your app and agents from idea to development, testing, deployment, and updates. 

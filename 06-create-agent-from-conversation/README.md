@@ -208,15 +208,97 @@ We're now going to learn how to create a custom agent that can chat over your da
 - 6.3 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included
 - 6.4 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included
 
+### ✨ Use case
+
+We'll use the same use case from [Lesson 03 - Create a declarative agent for Microsoft 365 Copilot](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/03-create-a-declarative-agent-for-M365Copilot/README.md#-use-case-scenario)
+
+**As an** employee
+
+**I want to** get quick and accurate help from the IT helpdesk agent for issues like device problems, network troubleshooting, printer setup
+
+**So that I can** stay productive and resolve technical issues without delays
+
+Let's begin!
+
 ### 6.1 Use natural language to create an agent with Copilot
 
-1. Navigate to the Home page of Copilot Studio and in the field, enter the following prompt.
+1. Navigate to the Home page of Copilot Studio and in the field, enter the following prompt which describes the IT help desk agent. The prompt includes the goal of the agent, the context, the expected tasks and format of the agent's response.
 
    ```
    You are an IT help desk agent. Your goal is to assist users with their IT issues. You can access information from our company's knowledge base at https://support.microsoft.com/en-us. Your responses should be polite and helpful. If a user reports a slow computer, ask about the age of the device, current software versions, and if they've recently installed any new programs. If a user is experiencing trouble logging into their email, guide them through password reset procedures. You should be concise and informative, using step-by-step instructions with bullet points when appropriate.
    ```
-   
- 1. Test agent with website knowledge source.
+
+   ![Enter prompt](assets/6.1_01_Prompt.png) 
+
+ 1. The conversational creation experience with Copilot will next load. You'll see Copilot is in progress of responding to you. The agent pane on the right will update shortly with details and instructions based on the prompt entered.
+
+    ![Copilot conversational creation experience](assets/6.1_02_CopilotConversationCreationExperience.png)
+
+1. Copilot will update the agent pane with a name, description and instructions based on the prompt entered. Cool right?!
+
+   ![Agent pane displays name, decription and instructions](assets/6.1_03_AgentInstructions.png)
+
+1. Next, we'll ask Copilot to name our agent as,
+
+    ```
+    Contoso Helpdesk Copilot
+    ```
+
+   ![Rename the agent](assets/6.1_04_NameAgent.png)
+
+1. Copilot performs the request and we'll see that the name of the agent has been updated in the agent pane. Copilot next asks us to refine the instructions. It's asking how we should respond to particular issues and we'll request that it acknolwedges the issue and format the response as bullet points. Copy and paste the following, and submit the request to Copilot.
+
+    ```
+    Acknowledge the issue with empathy and provide steps or troubleshooting as bullet points.
+    ```
+
+   ![Refine agent instructions](assets/6.1_05_RefineInstructions.png)
+
+1. The instructions of the agent will be updated after Copilot has received the request. Next, Copilot is asking for public websites to ground the agent's knowledge. Enter the following and submit,
+
+    ```
+    https://support.microsoft.com
+    ```
+
+   ![Add publicly accessible website](assets/6.1_06_PublicWebsite.png)
+
+1. The public website will be added as a knowledge source. If you don't see it in the agent pane, try scrolling down the pane and it'll appear as a knowledge source. 
+    
+    Lastly, we're going to request that our agent does not answer HR related questions. This lets our agent know that it should not answer HR related questions asked by users. Enter the following and submit,
+
+    ```
+    Do not provide assistance to questions related to HR, examples are: What is my vacation leave balance? How many sick days do I have? What's the URL to our payroll portal? 
+    ```
+
+   ![Do not answer HR related requestions](assets/6.1_07_DoNotTalkAbout.png)
+
+1. The instructions will be updated to not provide assistance with questions related to HR. Copilot is asking again if we'd like to request more modifications. We don't need to make further updates, enter the following and submit,
+
+    ```
+    No more modifications
+    ```
+
+   ![Solutions](assets/6.1_08_NoMoreModifications.png)
+
+1. Copilot confirms the agent is ready to be created. Before we create our agent, let's do a couple of things. 
+    
+    For websites, you need to confirm which website(s) your organization owns that Bing will search through Copilot Studio. For learning purposes, we'll tick the checkbox that confirms ownership of the knowledge source. In reality, this would be _your company website_.
+
+   ![Solutions](assets/6.1_09_ConfirmOwnershipOfKnowledgeSource.png)
+
+1. Next we'll double check the solution that our agent will be created in, is the solution we created and selected as the preferred solution in [Lesson 04 - Create a new solution](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md#42-create-a-new-solution).
+
+    Select the **elipsis icon (...)** and select **Edit Advanced Settings**.
+
+   ![Solutions](assets/6.1_10_EditAdvancedSettings.png)
+
+1. The Advanced Settings modal will appear and we can see our solution created from earlier is selected by default. This is due to selecting our solution as the preferred solution in [Lesson 04 - Create a new solution](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md#42-create-a-new-solution).
+
+    Select **Cancel.**
+
+   ![Solutions](assets/6.1_11_Solution.png)
+
+1. Test agent with website knowledge source.
 
     ```
     How can I check the warranty status of my Surface?
