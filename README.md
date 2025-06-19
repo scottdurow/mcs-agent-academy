@@ -37,11 +37,16 @@ Do you have suggestions or found spelling or code errors? [Raise an issue](https
 
 ## 🗃️ Lessons
 
-| **Lesson**                               | **Description**                                    | **Video**                                                  | **Extra Learning**                                                                     |
-|------------------------------------------|----------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| [Course Setup](./00-course-setup/README.md)   | **Learn:** How to setup your development environment         | Video Coming Soon | Coming Soon |
-| [What are Agents](./01-introduction-to-agents/README.md)         | **Learn:** Understanding what agents are  | Video Coming Soon  | Coming Soon |
-| [Copilot Studio Fundamentals](./02-copilot-studio-fundamentals/README.md) | **Learn:** What is Copilot Studio and when do you use it?      | Video Coming Soon  | Coming Soon |
+| #   | **Lesson Link**                                                                                                                              | **Description**                                                                                 | **Video**                                                                   | **Extra Learning**                                                             |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 00  | [Course Setup](./00-course-setup/README.md)                                                                 | **Learn:** How to setup your development environment                                            | Video Coming Soon                                                                 | Coming soon |
+| 01  | [What are Agents](./01-introduction-to-agents/README.md)                              | **Learn:** Understanding what agents are       | Video Coming Soon | Coming soon |
+| 02  | [Copilot Studio Fundamentals](./02-copilot-studio-fundamentals/README.md)             | **Learn:** What is Copilot Studio and when do you use it?                                      | Video Coming Soon  | Coming soon |
+| 03  | [Create a declarative agent for Microsoft 365 Copilot](./03-create-a-declarative-agent-for-M365Copilot/README.md)                           | **Learn:** Add a declarative agent for Microsoft 365 Copilot and ground it with an AI Prompt                                  | Video Coming Soon  | Coming soon |
+| 04  | [Creating a Solution for your agent](./04-creating-a-solution/README.md)             | **Learn:** Create a solution to manage agents across multiple environments                                           | Video Coming Soon  | Coming soon |
+| 05  | Get started with pre-built agents                                                | **Learn:** Start with a pre-built agent configured with Topics to have an agent built in minutes | Video Coming Soon  | Coming soon |
+| 06  | [Create a custom agent using natural language with Copilot](./06-create-agent-from-conversation/README.md)                                | **Learn:** Build an agent using natural language grounded in knowledge sources                                | Video Coming Soon  | Coming soon |
+| 07  | Add a new Topic with a trigger                                     | **Learn:** Add a new Topic to answer questions about available devices               | Video Coming Soon  | Coming soon |
 
 
 ## 🎒 Other Courses
