@@ -1,4 +1,4 @@
-# Create a custom agent using a conversational creation experience with Copilot and grounding it with your data
+# Create a custom agent using natural language with Copilot and grounding it with your data
 
 ## Introduction
 
@@ -384,7 +384,7 @@ We'll now add another internal knowledge source by uploading a document directly
 
    ![Select upload files](assets/6.3_02_SelectUploadFile.png)
 
-1. Download this [sample file](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/06-create-agent-from-conversation/assets/Contoso_Guest_WiFi_Connection_Guide.docx) and select it in your File Explorer. Select **Open**.
+1. Download this [sample file](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/06-create-agent-from-conversation/assets/Contoso_Guest_WiFi_Connection_Guide.docx "download") and select it in your File Explorer. Select **Open**.
 
    ![Select document](assets/6.3_03_SelectDocument.png)
 
@@ -460,7 +460,7 @@ Congratulations! 👏🏻 You've learnt how to use natural language to create yo
 
 This is the end of **Lab 06 - Create an agent with Copilot**, select the link below to move to the next lesson. Your solution created in this lab will be used in the next lesson's lab.
 
-⏭️ [Move to **Creating a solution** lesson](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/05-using-prebuilt-agents/README.md)
+⏭️ [Move to **Add a new Topic with trigger** lesson](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/07-add-new-topic-with-trigger/README.md)
 
 
 ## 📚 Additional learning

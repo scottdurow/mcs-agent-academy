@@ -56,4 +56,50 @@ Once you have your M365 Tenant, you need to get access to Copilot Studio. You ca
 > 1. If your tenant administrator disabled self-service sign-up, you’ll see an error—contact your Microsoft 365 admin to re-enable it.  
 ---
 
+## Step 3: Create new SharePoint site
+
+A new SharePoint site needs to be created  which will be used in [Lesson 06 - Create a custom agent using the conversational creation experience with Copilot and grounding it with your data](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/06-create-agent-from-conversation/README.md#62-add-an-internal-knolwedge-source-using-a-sharepoint-site---for-microsoft-365-licensed-users-with-sharepoint).
+
+1. Select the waffle icon on the top left hand side of Microsoft Copilot Studio to view the menu. Select SharePoint from the menu.
+
+   ![Select ShraePoint](images/00_03_01_SelectSharePoint.png)
+
+1. SharePoint will load. Select **+ Create  site** to create a new SharePoint site.
+
+   ![Create site](images/00_03_02_CreateSite.png)
+
+1. A dialog will appear to guide you in creating a new SharePoint site. Select **Team site** or **Communication site**.
+
+   ![Team site](images/00_03_03_SelectTeamOrCommunicationSite.png)
+
+1. In the next step, a list of Microsoft templates will load by default. Scroll down and select the **IT help desk** template.
+
+   ![IT help desk template](images/00_03_04_SelectITHelpDeskTemplate.png)
+
+1. Select **Use template** to create a new SharePoint site using the IT help desk template.
+
+   ![Use template](images/00_03_05_SelectUseTemplate.png)
+
+1. Enter information for your site. The following is an example:
+
+    | Field | Value |
+    | --- | --- |
+    | Site name | Contoso IT |
+    | Site description | Copilot Studio for Beginners |
+    | Site address | ContosoIT |
+
+   ![Site information](images/00_03_06_SiteDetails.png)
+
+1. In the final step, a language can be selected for the SharePoint site. By default it will be **English**. Leave the Language as **English** and select **Create site**,
+
+   ![Language and other options](images/00_03_07_LanguageOtherOptions.png)
+
+1. The SharePoint site will provision for the next few seconds. In the mean time, you can choose to add other users to your side by entering their email address in the **Add members** field. When completed, select **Finish**.
+
+   ![Select finish](images/00_04_08_SelectFinish.png)
+
+1. The SharePoint site home page will next load. **Copy** the SharePoint site URL.
+
+---
+
 Congratulations—you now have a working Microsoft 365 developer environment with Copilot Studio access. You’re ready to start building, testing, and publishing AI agents for Microsoft 365!  
