@@ -2,59 +2,65 @@
 
 ## Introduction
 
-- What is a custom agent?
-    - What can a custom agent do?
-    - Why use a custom agent?
-    - Example
-- Use natural language to create agents
-- But I'm new to "describing what I want" - what do I do?    
-    - Why Prompts matter
-    - Tips for writing a good prompt
-    - Example
-- OK, so I've created my agent... how do I ground it with knowledge?
-    - What is generative orchestration in the context of agents?
-    - Why are knowledge sources valuable?
-    - Example
-    - Note on security
-- Improving your agent's responses in Copilot Studio
-- Lab 06: Create an agent with Copilot
+- [What is a custom agent?](#-what-is-a-custom-agent)
+    - [What can a custom agent do?](#-what-can-a-custom-agent-do)
+    - [Why use a custom agent?](#--why-use-a-custom-agent)
+    - [Example](#-example)
+- [Use natural language to create agents](#️-use-natural-language-to-create-agents)
+- [But I'm new to "describing what I want" - what do I do?](#-but-im-new-to-describing-what-i-want---what-do-i-do)
+    - [Why Prompts matter](#-why-prompts-matter)
+    - [Tips for writing a good prompt](#-tips-for-writing-a-good-prompt)
+    - [Example](#-example-1)
+- [OK, I've created my agent... how do I ground it with knowledge?](#-ok-ive-created-my-agent-how-do-i-next-ground-it-with-knowledge)
+    - [What is generative orchestration in the context of agents?](#-what-is-generative-orchestration-in-the-context-of-agents)
+    - [Why knowledge sources matter?](#-why-knowledge-sources-matter)
+    - [Types of knowledge sources that can be added](#types-of-knowledge-sources-that-can-be-added)
+    - [Example](#-example-2)
+    - [Note on security](#-note-on-security)
+- [Improving your agent's responses in Copilot Studio](#improving-your-agents-responses-in-copilot-studio)
+- [Lab 06: Create a custom agent in with Copilot](#-lab-06-create-a-custom-agent-in-copilot-studio)
+   - [Use case](#-use-case)
+   - [6.1 Use natural language to create an agent with Copilot](#61-use-natural-language-to-create-an-agent-with-copilot)
+   - [6.2 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included](#62-add-an-internal-knolwedge-source-using-a-sharepoint-site---for-microsoft-365-licensed-users-with-sharepoint)
+   - [6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included](#63-add-an-internal-knowledge-source-by-uploading-a-document---for-non-microsoft-365-licensed-users-who-dont-have-sharepoint-included)
+   - [6.4 Test agent](#64-test-agent)
 
 ## 🤔 What is a _custom_ agent?
 
 A custom agent is a chatbot or virtual assistant that you create and design in Copilot Studio to help users with specific tasks or questions. It's called custom because:
 
-- You decide the purpose - help users request vacation time, check order status, provide assistance with IT related questions.
-- You define the converstaion - what the agent says and how it should respond.
-- You ground it with your own data  - connect to your enterprise data through the built-in supported knowledge resources.
-- You connect it to your own systems or applications -  choose from connectors, flows, REST APIs and model context protocol servers.
+- **You decide the purpose** - help users request vacation time, check order status, provide assistance with IT related questions.
+- **You define the conversation** - what the agent says and how it should respond.
+- **You ground it with your own data**  - connect to your enterprise data through the built-in supported knowledge resources.
+- **You connect it to your own systems or applications** -  choose from connectors, flows, REST APIs and model context protocol servers.
 
-Think of it like building your own digital helper that can talk to users and complete tasks for them such as answering questions, collecting information required by a process, or connecting to your enterprise data.
+> Think of it this way: you are building your own digital helper that can talk to users and complete tasks for them such as answering questions, collecting information required by a process, or connecting to your enterprise data.
 
 ### 🤖 What can a custom agent do?
 
-A custom agent can fulfil the following:
+A custom agent can fulfill the following:
 
-- Ask users for information such as names, dates, or preferences
-- Save that information to a database or table
-- Look up data based on the questions asked and give answers
-- Work autonomously without users directly interacting with the agent
-- Trigger actions either on-demand through direct user interaction or autonomously such as sending emails or creating records
+- Ask users for information such as names, dates, or preferences.
+- Save that information to a database or table.
+- Look up data based on the questions asked and answer them.
+- Work autonomously without users directly interacting with the agent.
+- Trigger actions either on-demand through direct user interaction or autonomously such as sending emails or creating records.
 
 ### 👩🏻‍💻  Why use a custom agent?
 - Saves time by automating repetitive tasks.
 - Gives users a friendly, guided experience.
-- You can tailor it to your business or project needs.
+- Tailor it to your business or project needs.
 
 ### ✨ Example
-You build a custom agent that helps employees request vacation.
+You build a custom agent that helps employees request vacation leave.
 
-It asks for their name, vacation dates, and manager’s name, then saves the information into the designated system that managed vacation requests, such as a SharePoint list.
+It asks for their name, vacation dates, andtheir manager’s name, then saves the information into the designated system that managed vacation requests, such as a SharePoint list.
 
 Now, instead of navigating to the SharePoint list and creating a new item, employees simply chat with the agent instead.
 
 ## 🗣️ Use natural language to create agents
 
-Previously you learnt how to quickly get started in building a custom agent with the prebuilt agent templates. In this lesson, wi'll dive into the conversational creation experience with Copilot. Copilot Studio makes it easy to build agents by chatting with Copilot, just like having a conversation. 
+Previously you learnt how to quickly build agents in Copilot Studio using prebuilt agent templates in [Lesson 05 - Get started quickly with pre-built agents](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/05-using-prebuilt-agents/README.md). In this lesson, we'll dive into the conversational creation experience with Copilot. Copilot Studio makes it easy to build agents by chatting with Copilot, just like having a conversation. 
 
 In Copilot Studio, you don’t need to write code to create an agent. Instead, you describe what you want your agent to do in plain language, and Copilot helps you build it step by step through a chat-like experience.
 
@@ -62,7 +68,7 @@ In Copilot Studio, you don’t need to write code to create an agent. Instead, y
 
 Describing in natural language to create a custom agent might be a new concept for you. Whenever you use Copilot across Microsoft products and services, you are using natural lanugage in the form of a _prompt_. 
 
-A prompt is the message or instruction you give to an AI agent to tell it what you want it to do. Think of it like giving directions to a helpful assistant. The clearer your instructions, the better the result.
+A prompt is the message or instruction you give to an AI agent to tell it what you want it to do. Think of it as giving directions to an assistant. The clearer your instructions are, the easier it is for your assistant to understand and act on them.
 
 ### 🪄 Why Prompts matter
 
@@ -72,9 +78,9 @@ A prompt is the message or instruction you give to an AI agent to tell it what y
 
 ### 📝 Tips for writing a good prompt
 
-- Be clear and specific – say exactly what you want the agent to do.
-- Think like the user – what will the user say? What should the agent reply?
-- Include examples – if possible, give a sample interaction.
+- Be clear and specific - say exactly what you want the agent to do.
+- Think like the user - what will the user say? What should the agent reply?
+- Include examples - if possible, give a sample interaction.
 
 ### ✨ Example
 
@@ -93,21 +99,22 @@ Why this prompt works:
 
 ## 🔮 OK, I've created my agent... how do I next ground it with knowledge?
 
-In Copilot Studio, knowledge sources are places where your agent can find information to give better answers. When you add these sources, your agent can pull in your enterprise data data from places like Power Platform, Dynamics 365, websites, and other systems your company uses.
+In Copilot Studio, knowledge sources are places where your agent can find information to give better answers. When you add these sources, your agent can pull in your enterprise data from places like Power Platform, Dynamics 365, websites, and other systems or services your company uses.
 
 These sources work together with AI to help your agent respond more accurately to user questions, this is acheived through what is known as **generative orchestration**.
 
 ### 🌿 What is generative orchestration in the context of agents?
 
-Generative orchestration means the agent uses AI to decide how to answer a question by combining its built-in language skills with information from your added knowledge sources.
+Generative orchestration means the agent uses AI to dynamically decide how to answer a question by combining its built-in language skills with information from your added knowledge sources.
 
 When a user asks a question, the agent:
-1. Understands the question using AI.
-1. Picks the move relevant knowledge sources.
-1. Searches those sources for answers.
-1. Generates a natural, helpful response using the information it found.
+- Understands the question using AI.
+- Can ask users for missing information by generating questions on the fly.
+- Selects the most relevant knowledge sources.
+- Searches those sources for answers.
+- Generates a natural, helpful response using the information it found.
 
-### 🏦 Why are knowledge sources valuable?
+### 🏦 Why knowledge sources matter?
 
 1. **Smarter answers** - when you add knowledge sources, your agent can give better, more accurate answers using real data from your organization.
 
@@ -144,7 +151,7 @@ When an employee asks, _“How many vacation days am I entitled to?”_, the age
 
 1. **Real-time knowledge with connectors**
     - **What it does:** Lets your agent access live data from other enterprise systems such as Salesforce, ServiceNow, Dynamics 365, AzureSQL, Databricks, and more during a conversation, using the user's own permissions.
-    - **Why it's useful:** It provided up to date, secure, and accurate responses without storing or duplicating data, making your agent smarter and safer.
+    - **Why it's useful:** It provides up to date, secure, and accurate responses without storing or duplicating data, making your agent smarter and safer.
 
 1. **Azure AI Search**
     - **What it does:** Allows your agent to search through large sets of documents stored in Azure using semantic and vector search to understand user questions.
@@ -168,7 +175,7 @@ After your agent is provisoned from the conversational creation experience, you'
     
     ❌ “Be helpful.” (Too vague)
 
-1. **Check the tone and launguage** - Make sure the agent’s tone matches your audience. 
+1. **Check the tone and launguage** - make sure the agent’s tone matches your audience. 
 
     You can set it to be:
 
@@ -282,7 +289,9 @@ Let's begin!
 
 1. Copilot confirms the agent is ready to be created. Before we create our agent, let's do a couple of things. 
     
-    For websites, you need to confirm which website(s) your organization owns that Bing will search through Copilot Studio. For learning purposes, we'll tick the checkbox that confirms ownership of the knowledge source. In reality, this would be _your company website_.
+    For websites, you need to confirm which website(s) your organization owns that Bing will search through Copilot Studio. 
+    
+    For learning purposes, we'll tick the checkbox that confirms ownership of the knowledge source. In reality, this would be _your company website_ that you have ownership of.
 
    ![Confirm website ownership](assets/6.1_09_ConfirmOwnershipOfKnowledgeSource.png)
 
@@ -292,7 +301,7 @@ Let's begin!
 
    ![Edit Advanced Settings](assets/6.1_10_EditAdvancedSettings.png)
 
-1. The Advanced Settings modal will appear and we can see our solution created from earlier is selected by default. This is due to selecting our solution as the preferred solution in [Lesson 04 - Create a new solution](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md#42-create-a-new-solution).
+1. The **Advanced Settings** modal will appear and we can see our solution created from earlier is selected by default. This is due to selecting our solution as the preferred solution in [Lesson 04 - Create a new solution](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md#42-create-a-new-solution).
 
     Select **Cancel.**
 
@@ -330,7 +339,7 @@ Let's begin!
 
    ![References in response](assets/6.1_18_References.png)
 
-1. You can also review the response and its sources by scrolling down the Knowledge modal in the Activity map.
+1. You can also review the response and its sources by scrolling down the **Knowledge modal** in the Activity map.
 
    ![Referenced sources](assets/6.1_19_ReferencedSources.png)
 
@@ -391,25 +400,63 @@ We'll now add another internal knowledge source by uploading a document directly
 
    ![Select Add knowledge](assets/6.3_06_DocumentStatusReady.png)
 
+Let's now test our agent!
+
 ### 6.4 Test agent
 
-_placeholder text_
+We'll test our three knowledge sources by asking questions to our Contoso Helpdesk Copilot.
 
-1. Test the website knowledge source.
+1. Select the **refresh** icon in the test pane.
 
-   ```
+   ![Refresh icon](assets/6.4_01_RefreshTestPane.png)
+
+1. Enter the following question to test our public website (external) knowledge source.
+
+    ```
    How can I find the serial number on my Surface device?
-   ```
+    ```
 
-1. Test SharePoint knowledge source and document knowledge source.
+   ![Enter prompt to test website knowledge source](assets/6.4_02_TestWebsiteKnowledgeSource.png)
+
+1. You'll next see the agent reviewing the knowledge sources and providing a response using the website knowledge source. There will be a reference to the web page it formed its answer from.
+
+   ![Web page referenced in response](assets/6.4_04_WebPageReferenced.png)
+
+1. If you scroll down the knowledge modal in the activity map, you'll see the other knowledge sources the agent searched, which is the SharePoint site and the uploaded file. However these were not used as in the **Referenced sources** section, the website knowledge source was referenced. The answer was grounded using the website knowledge source. If you select the reference, you'll be directed to the web page.
+
+   ![Knowledge sources referenced and searched](assets/6.4_05_KnowledgeSourcesSearched.png)
+
+1. Let's now test both our SharePoint site knowledge source and document knowledge source in a single message. Enter the following question.
 
    ```
    How do I access the Contoso VPN? How do guests connect to the Contoso Guest wifi?
    
    ```
+   ![Test SharePoint and document knowledge sources](assets/6.4_06_TestSharePointAndDocumentKnowledgeSources.png)
+
+> [!NOTE]  
+> If you don't have SharePoint in your Microsoft 365 license, only enter the second question to test the document knowledge source.
+
+6. Once again you'll see the agent reviewing the three knowledge sources to generate a response to the questions our single message.
+
+   ![Reviewing knowledge sources](assets/6.4_07_ReviewingKnowledgeSources.png)
+
+7. The agent responds to both questions in a single message, and separately references the SharePoint page and document of where it generated its response from. In the knowledge modal in the activity map, you'll see the SharePoint site and document used as the reference sources. You have full visibility of what knowledge sources were used to answer both questions.
+
+   ![Knowledge sources referenced](assets/6.4_08_KnowledgeSourcesReferenced.png)
+
+8. It's always good to verify the generated response is correct. Select the SharePoint site reference and the FAQs SharePoint page will load where you can scroll down to review the VPN instructions.
+
+   ![Review SharePoint page](assets/6.4_09_VerifySharePoint.png)
+
+9. Next, select the document reference and a modal will appear with the text from the document that reflects the answer.
+
+   ![Review document](assets/6.4_10_VerifyDocument.png)
+
+The agent can answer multiple questions in a single message, and search the knolwedge sources + reference the knowledge sources in its response. Make sure to always verify the response is correct by reviewing the references.
 
 ## Next lesson
-Congratulations! 👏🏻 You've _placeholder text_
+Congratulations! 👏🏻 You've learnt how to use natural language to create your own custom agent that can chat over your data from three different knowledge sources 🙌🏻
 
 This is the end of **Lab 06 - Create an agent with Copilot**, select the link below to move to the next lesson. Your solution created in this lab will be used in the next lesson's lab.
 
