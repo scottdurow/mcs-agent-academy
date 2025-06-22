@@ -176,7 +176,7 @@ Let's begin!
 > [!NOTE]
 > Reminder: The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously. So you may be seeing a different message from Copilot at the end of your configuration.
 
-   ![Create agent](assets/3.1_08_CreateDeclarativeAgent.png)
+![Create agent](assets/3.1_08_CreateDeclarativeAgent.png)
 
 9. Once the agent has been provisioned, you'll see the details of the agent which contains the description and the instructions defined during the Copilot conversational creation experience.
 
@@ -391,17 +391,17 @@ Let's now publish our declarative agent 😃
 
    ![Publish agent](assets/3.4_01_PublishAgent.png)
 
-1. A modal will appear which displays the Channels and publishing details that can be updated.
+2. A modal will appear which displays the Channels and publishing details that can be updated.
    
    - Channels: The agent will be published to Microsoft 365 Copilot and Microsoft Teams.
    - Agent app information: This is what will be displayed when the user adds the agent to Microsoft 365 Copilot or in Microsoft Teams. These are fields that can be updated as needed. For example, you can update the **Short description**, **Long description**, **Developer name** with your name.
 
-   > [!TIP]
-   > If you don't see all the fields displayed on your browser, try zooming out e.g. 75%
+> [!TIP]
+> If you don't see all the fields displayed on your browser, try zooming out e.g. 75%
 
    ![Agent app details](assets/3.4_02_ConfigurePublishingAgentDetails.png)
 
-1. Select **Publish**. Copilot Studio will then begin publishing the agent.
+3. Select **Publish**. Copilot Studio will then begin publishing the agent.
 
    ![Publishing agent](assets/3.4_03_PublishingAgent.png)
 
@@ -452,13 +452,13 @@ Let's now publish our declarative agent 😃
 > [!TIP]
 > You can test and debug agents in Microsoft 365 Copilot by enabling [developer mode](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/debugging-copilot-agent#use-developer-mode-in-copilot-chat/?WT.mc_id=power-170631-ebenitez).
 
-      Enter the following in the message Copilot field and submit.
+   Enter the following in the message Copilot field and submit.
 
       ```
       -developer on
       ```   
 
-      A confirmation message will appear to let you know developer mode is now enabled.
+   A confirmation message will appear to let you know developer mode is now enabled.
 
       ![Developer mode enabled](assets/3.4_10_DeveloperModeEnabled.png)
    
@@ -518,7 +518,7 @@ Let's now publish our declarative agent 😃
 
 20. A model response from our prompt will then be displayed.
 
-      ![Reponse in Teams](assets/3.4_20_AgentInTeams.png)
+      ![Reponse in Teams](./assets/3.4_20_AgentInTeams.png)
 
 In a few minutes, you've learnt how to publish your declarative agent and test it in Microsoft 365 Copilot and in Teams 😊
 
@@ -527,7 +527,7 @@ Congratulations! 👏🏻 You've built a declarative agent in Copilot Studio whe
 
 This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot**, select the link below to move to the next lesson.
 
-⏭️ [Move to **Add a new Topic with trigger** lesson](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md)
+⏭️ [Move to **Creating a new Solution** lesson](/04-creating-a-solution/README.md))
 
 ## 📚 Additional learning
 🔗 [Build declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)

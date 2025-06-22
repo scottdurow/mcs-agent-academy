@@ -460,7 +460,7 @@ Congratulations! 👏🏻 You've learnt how to use natural language to create yo
 
 This is the end of **Lab 06 - Create an agent with Copilot**, select the link below to move to the next lesson. Your solution created in this lab will be used in the next lesson's lab.
 
-⏭️ [Move to **Add a new Topic with trigger** lesson](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/07-add-new-topic-with-trigger/README.md)
+⏭️ [Move to **Add a new Topic with trigger** lesson](/07-add-new-topic-with-trigger/README.md)
 
 
 ## 📚 Additional learning

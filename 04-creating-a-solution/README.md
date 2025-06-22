@@ -263,7 +263,7 @@ Congratulations! 👏🏻 You've created a Publisher and used it in your newly c
 
 This is the end of **Lab 04 - Creating a Solution**, select the link below to move to the next lesson. Your solution created in this lab will be used in the next lesson's lab.
 
-⏭️ [Move to **Creating a solution** lesson](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/05-using-prebuilt-agents/README.md)
+⏭️ [Move to **Get started quickly with pre-built agents** lesson](/05-using-prebuilt-agents/README.md)
 
 
 ## 📚 Additional learning
