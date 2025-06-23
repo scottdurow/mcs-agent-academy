@@ -41,9 +41,9 @@ Topics help you
     - Escalating to a human agent
 
 1. **Custom topics** - you create these two handle specific tasks or questions such as:
-    - Submit vacation leave request
-    - I can't log in through our company VPN
-    - How do office visitors connect to our company guest WiFi?
+    - Submit a user's vacation leave request
+    - <samp>I can't log in through our company VPN</samp>
+    - <samp>How do office visitors connect to our company guest WiFi?</samp>
 
 ##  🧬Anatomy of a topic
 
@@ -88,7 +88,7 @@ The following are the main types of nodes you can add to an agent:
 
 1. **Question node**
     - **Purpose** - asks the user a question and waits for their answer.
-    - **Example** - <samp>"What date would you like to start your vacation?"</samp>
+    - **Example** - <samp>"What are your vacation dates?"</samp>
 
 1. **Adaptive Card node**
     - **Purpose** - send a rich, interactive card using JSON
