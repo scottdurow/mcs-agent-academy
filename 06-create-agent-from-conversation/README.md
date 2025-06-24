@@ -458,7 +458,7 @@ The agent can answer multiple questions in a single message, and search the knol
 ## Next lesson
 Congratulations! 👏🏻 You've learnt how to use natural language to create your own custom agent that can chat over your data from three different knowledge sources 🙌🏻
 
-This is the end of **Lab 06 - Create an agent with Copilot**, select the link below to move to the next lesson. Your solution created in this lab will be used in the next lesson's lab.
+This is the end of **Lab 06 - Create an agent with Copilot**, select the link below to move to the next lesson. Your custom agent created in this lab will be used in the next lesson's lab.
 
 ⏭️ [Move to **Add a new Topic with trigger** lesson](/07-add-new-topic-with-trigger/README.md)
 

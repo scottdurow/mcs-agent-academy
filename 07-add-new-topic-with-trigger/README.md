@@ -1,4 +1,6 @@
-# Introduction
+# Add new topic with trigger and nodes
+
+## Introduction
 
 ## 🤔 What is a Topic?
 
@@ -82,7 +84,7 @@ Think of these as instructions or actions such as the following:
 
 The following are the main types of nodes you can add to an agent:
 
-1. **Message node**
+1. **Send a message**
     - **Purpose** - sends a mesage to the user.
     - **Example** - <samp>"Thanks for your request! I'll help you with that."</samp>
 
@@ -92,7 +94,7 @@ The following are the main types of nodes you can add to an agent:
 
     > Think of it as a "say something" block that helps your agent communicate clearly and interactively with users.
 
-1. **Question node**
+1. **Ask a question**
     - **Purpose** - asks the user a question and waits for their answer.
     - **Example** - <samp>"What are your vacation dates?"</samp>
 
@@ -104,7 +106,7 @@ The following are the main types of nodes you can add to an agent:
 
     > Think of it as an "ask and listen" block that helps your agent interact with users in a structured way that you define.
 
-1. **Adaptive Card node**
+1. **Ask with adaptive card**
     - **Purpose** - send a rich, interactive card using JSON.
     - **Example** - a card that displays a calendar date picker for a user to select a date.
 
@@ -112,7 +114,7 @@ The following are the main types of nodes you can add to an agent:
 
     > Think of it as a customizable "form builder" block that makes your agent more engaging and capable of collecting detailed information from users.
 
-1. **Condition node**
+1. **Add a condition**
     - **Purpose** - add logic to the conversation. It checks something and decides what to do next.
     - **Example** - if the user says "<samp>Yes</samp>," go to the next step. If "<samp>No</samp>," end the conversation.
 
@@ -120,7 +122,7 @@ The following are the main types of nodes you can add to an agent:
 
     > Think of it as an "if-else" block that helps your agent make descisions depending on user input or stored data in variables.
 
-1. **Variable management node**
+1. **Variable management**
     - **Purpose** - stores or clears information (called variables) during the conversation.
     - **Example** - save the date the user selected in the Adaptive card node.
 
@@ -128,7 +130,7 @@ The following are the main types of nodes you can add to an agent:
 
     > Think of it as a "memory box" that helps your agent remember information and use them as conversation continues with the user.
 
-1. **Topic management node**
+1. **Topic management**
     - **Purpose** - moves the conversation to another topic or step within the topic, transfer the conversation, or end the topic or conversation.
     - **Example** - redirect to a "Leave Policy" topic.
 
@@ -136,7 +138,7 @@ The following are the main types of nodes you can add to an agent:
 
     > Think of it as a "go to another section/step" block that helps your agent be flexible in chatting with users.
 
-1. **Call a Tool node**
+1. **Add a tool**
     - **Purpose** - connects to external tools such as Power Automate, Excel, ServiceNow.
     - **Example** - Power Automate cloud flow executed after user submits their vacation leave request.
 
@@ -160,11 +162,11 @@ The following are the main types of nodes you can add to an agent:
 
     > Think of it as a "reach out and get information" block that helps your agent talk to other services such as retrieving user details or sending data to another system.
 
-1. **Event or activity node**
+1. **Send an event**
     - **Purpose** - lets your agent send non-message actions, such as system updates or tool triggers - to the client or channel, helping it perform tasks.
     - **Example** - reacting to a user joining a chat by displaying a welcome a message.
 
-    This node lets your agent send nonverbal signals or system updates - such as notifying when a user joins a chat or triggering a background action. You can name the event and attach data to it using simple values, variables, or Power Fx formulas, which are sent as JSON.
+    This node lets your agent send non-message actions to external systems or channels, which can then decide how to respond. You give each event a name and attach a value, which can be a simple number or text, a variable, or a Power Fx formula, and it gets sent as a JSON object.
 
     > Think of it as a "silent trigger" block that helps your agent do things behind the scenes or communicate with external tools without needing a user to say anything.
 
@@ -295,7 +297,7 @@ Agent responds with,
 
 <samp>Your vacation leave request from August 5 to August 10 has been submitted. Your manager will review and get back to you shortly.</samp>
 
-## 🧪 Lab 07 - Add a new topic
+## 🧪 Lab 07 - Add a new topic with conversation nodes
 
 We're now going to learn how to add a new topic with a trigger and tools
 
@@ -308,20 +310,22 @@ We're now going to learn how to add a new topic with a trigger and tools
 
 **I want to** know what devices are available
 
-**So that I** can request to be issued a device to replace my existing device
+**So that I** have a list of available devices
 
 Let's begin!
 
-### 7.1 Add a new topic
+### 7.1 Add a new topic from blank
 
-### 7.2 Add a new tool
+### 7.3 Add node - Ask a Question
+
+### 7.2 Add node - Add a tool using a connector
 
 ## Next lesson
 Congratulations! 👏🏻 You've learnt how to _placeholder text_ 🙌🏻
 
-This is the end of **Lab 07 - Placeholder text**, select the link below to move to the next lesson. Your solution created in this lab will be used in the next lesson's lab.
+This is the end of **Lab 07 - Add a new topic with conversation nodes**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
-⏭️ [Move to **placeholder text** lesson](/07-add-new-topic-with-trigger/README.md)
+⏭️ [Move to **Add rich responses to the Topic for user interactions** lesson](/07-add-new-topic-with-trigger/README.md)
 
 
 ## 📚 Additional learning
