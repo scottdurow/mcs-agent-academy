@@ -100,7 +100,7 @@ The following are the main types of nodes you can add to an agent:
 
     This node is used to ask users for specific information during a conversation and store their responses in variables for later use. 
 
-    You can customize the type of question like text input or use entities for a define list of values a user selects from, and define how the agent should behave if the user gives an invalid answer or skips the question. 
+    You can customize the type of question like text input or use entities for a defined list of values a user selects from, and define how the agent should behave if the user gives an invalid answer or skips the question. 
 
     It also supports rich content like images and quick replies, and lets you fine-tune validation, reprompting, and interruption settings to make the conversation flow smoothly.
 
@@ -169,6 +169,46 @@ The following are the main types of nodes you can add to an agent:
     This node lets your agent send non-message actions to external systems or channels, which can then decide how to respond. You give each event a name and attach a value, which can be a simple number or text, a variable, or a Power Fx formula, and it gets sent as a JSON object.
 
     > Think of it as a "silent trigger" block that helps your agent do things behind the scenes or communicate with external tools without needing a user to say anything.
+
+## 🏗️ How do I create and edit topics?
+
+There are two ways you can create and edit topics for your agents.
+
+### 1. Create from blank
+
+This allows you to build custom conversation flows from scratch, and you can add or remove nodes as needed when editing your topic.
+
+#### Why this is useful
+- It gives you full control over how your agent responds.
+- You can customize logic using variables, Power Fx, and conditions.
+- It’s perfect for building tailored experiences for specific business needs.
+
+
+### 2. Create with Copilot
+
+This allows you to describe what you want using natural language, and Copilot will build the conversation for you. Same applies when editing your topic, use natural language and Copilot will review and modify the topic for you.
+
+#### What Copilot supports
+- Can create and edit:
+    - Message nodes
+    - Question nodes
+    - Condition nodes
+- Doesn’t support advanced settings such as how to reprompt the user if they don’t respond or how to manage interruptions during a question. You can still adjust those settings manually if needed.
+
+#### Why this is useful
+- Speeds up development with AI assistance.
+- Lets you focus on logic and user experience instead of repetitive setup.
+- Makes it easier to iterate and improve bot flows with minimal effort.
+
+#### ✨ Example prompts
+
+ - **Create a topic**
+    - <samp>Accept a user's name, age and date of birth and then repeat their responses back to them</samp>
+    - <samp>Collect a user's street address, state and zip code. The user should be able to retry each question up to 4 times</samp>    
+
+- **Edit a topic**
+    - <samp>Add a question asking for the user’s date of birth</samp>
+    - <samp>Summarize collected info in an Adaptive Card.</samp>
 
 ## 👩🏻‍🎨 OK, how do I design topics for my agent?
 
@@ -299,10 +339,11 @@ Agent responds with,
 
 ## 🧪 Lab 07 - Add a new topic with conversation nodes
 
-We're now going to learn how to add a new topic with a trigger and tools
+We're now going to learn how to add a new topic with a trigger and tools. This lab will cover creating a topic from blank so that you understand how to customize topics to your needs.
 
-- Add a new topic
-- Add a tool
+- [7.1 Add a new topic from blank](/07-add-new-topic-with-trigger/README.md/#71-add-a-new-topic-from-blank)
+- [7.2 Add node - Ask a Question and create a custom entity](/07-add-new-topic-with-trigger/README.md/#72-add-node---ask-a-question-and-create-a-custom-entity)
+- [7.3 Add a tool using the SharePoint connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector)
 
 ### ✨ Use case
 
@@ -316,9 +357,9 @@ Let's begin!
 
 ### 7.1 Add a new topic from blank
 
-### 7.3 Add node - Ask a Question
+### 7.2 Add node - Ask a Question and create a custom entity
 
-### 7.2 Add node - Add a tool using a connector
+### 7.3 Add node - Add a tool using a connector
 
 ## Next lesson
 Congratulations! 👏🏻 You've learnt how to _placeholder text_ 🙌🏻
