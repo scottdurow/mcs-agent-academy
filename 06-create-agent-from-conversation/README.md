@@ -347,7 +347,7 @@ Congratulations! You've built your first custom agent with Copilot in Copilot St
 
 ### 6.2 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint
 
-Previously with Copilot, we added a public website as an external knowledge source for our agent during the conversational creation experience. We're now going to add an internal knowledge source using a SharePoint site. This will be the SharePoint site you created during [Lesson 00 - Course Setup](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/00-course-setup/README.md).
+Previously with Copilot, we added a public website as an external knowledge source for our agent during the conversational creation experience. We're now going to add an internal knowledge source using a SharePoint site. This will be the SharePoint site you created during [Lesson 00 - Course Setup](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
 
 > [!NOTE]  
 > This exercise is valid for Microsoft 365 licensed users with SharePoint. If you don't have SharePoint in your Microsoft 365 license, skip to the [6.3 Add an internal knowledge source by uploading a document](#63-add-an-internal-knowledge-source-by-uploading-a-document---for-non-microsoft-365-licensed-users-who-dont-have-sharepoint-included) lab exercise.
@@ -360,7 +360,7 @@ Previously with Copilot, we added a public website as an external knowledge sour
 
    ![Select SharePoint](assets/6.2_02_SelectSharePoint.png)
 
-1. Paste in the **address of the SharePoint site** created in [Lesson 00 - Course Setup](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/00-course-setup/README.md) in the SharePoint URL field and select **Add**.
+1. Paste in the **address of the SharePoint site** created in [Lesson 00 - Course Setup](/00-course-setup/README.md/#step-3-create-new-sharepoint-site) in the SharePoint URL field and select **Add**.
 
    ![Enter SharePoint site URL](assets/6.2_03_SharePointURL.png)
 

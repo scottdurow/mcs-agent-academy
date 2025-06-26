@@ -13,14 +13,18 @@ There are three common purposes for topics based on what users need:
 - <samp>"What is …?"</samp>
 - <samp>"When will …?"</samp>
 - <samp>"Why …?"</samp>
+- <samp>"Can you tell me …?"</samp>
 
 **Task completion** - helps users _do_ something:
 - <samp>"I want to …"</samp>
 - <samp>"How do I …?"</samp>
+- <samp>"I need …?"</samp>
 
 **Troubleshooting** - solves problems:
 - <samp>"Something isn’t working …"</samp>
 - <samp>"I'm encountering an error message …"</samp>
+- <samp>"I’m seeing something unexpected …?"</samp>
+
 
 You can also create topics for ambiguous questions like "<samp>I need help</samp>," which ask users for more details before continuing.
 
@@ -42,10 +46,9 @@ Topics help you
     - Asking users to sign in
     - Escalating to a human agent
 
-1. **Custom topics** - you create these two handle specific tasks or questions such as:
-    - Submit a user's vacation leave request
-    - <samp>I can't log in through our company VPN</samp>
-    - <samp>How do office visitors connect to our company guest WiFi?</samp>
+1. **Custom topics** - you create these to handle specific tasks or questions such as:
+    - Employee leave request
+    - Request new or replacement device
 
 ##  🧬Anatomy of a topic
 
@@ -64,10 +67,10 @@ For a vacation leave topic, trigger phrases could be
 - <samp>"Apply for time off"</samp>
 - <samp>"How do I submit a leave request?"</samp>
 
-For a business hours topic, trigger phrases could be
-- <samp>"What are your business hours?"</samp>
-- <samp>"What time do you open and close today?"</samp>
-- <samp>"When do you open?"</samp>
+For a request device topic, trigger phrases could be
+- <samp>"I need a new device"</samp>
+- <samp>"Can I request a device?"</samp>
+- <samp>"Can you help me with a device request"</samp>
 
 ### 💬 Conversation nodes
 
@@ -345,6 +348,10 @@ We're now going to learn how to add a new topic with a trigger and tools. This l
 - [7.2 Add node - Ask a Question and create a custom entity](/07-add-new-topic-with-trigger/README.md/#72-add-node---ask-a-question-and-create-a-custom-entity)
 - [7.3 Add a tool using the SharePoint connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector)
 
+### Prerequisite
+
+We'll be using the Devices SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site). If you have not setup the Devices SharePoint list, please head back to [Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
+
 ### ✨ Use case
 
 **As an** employee
@@ -357,7 +364,7 @@ Let's begin!
 
 ### Prerequisite
 
-We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md)
+We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md).
 
 ### 7.1 Add a new topic from blank
 
@@ -365,17 +372,103 @@ We're going to use the same agent created previously in [Lesson 06 - Create a cu
 
     ![See all topics](assets/7.1_01_SeeAllTopics.png)
 
-1. The Topics tab will load and by default the _Custom_ topics will be displayed. You can filter topics by All, Custom and System below where you create a topic. The custom and system topics you currently see are created automatically when the agent is provisioned.
+1. The Topics tab will load and by default the _Custom_ topics will be displayed. You can filter topics by All, Custom and System. The custom and system topics you currently see were created automatically when the agent was provisioned.
 
     ![View topics](assets/7.1_02_ViewTopics.png)
 
 1. Select **+ Add a topic** and select **From blank**.
 
-    ![Create topic from scratch](assets/7.1_01_SeeAllTopics.png)
+    ![Create topic from scratch](assets/7.1_03_FromBlank.png)
+
+1. Enter a name for the trigger and a trigger description that outlines what the topic does. Below are suggestions.
+
+    **Name**
+
+    ```
+    Available devices
+    ```
+
+    **Trigger description**
+
+    ```
+    This topic helps users find devices that are available from our SharePoint Devices list. User can ask to see available devices and it will return a list of devices that are available which can include laptops, smartphones, accessories and more.
+    ```
+
+    ![Enter a name and description for trigger](assets/7.1_04_NameAndTriggerDescription.png)
 
 ### 7.2 Add node - Ask a Question and create a custom entity
 
+1. Next, we're going to add a new node. Select the **+ icon** below the trigger and select the **Ask a question** node.
+
+    ![Select add icon](assets/7.2_01_01_AddNode.png)
+
+    ![Select Ask a question node](assets/7.2_01_02_AskAQuestion.png)
+
+1. Enter a question to ask the user to confirm the type of device. Copy and paste the following as the question.
+
+    ```
+    What type of device are you looking for?
+    ```
+
+    ![Enter question](assets/7.2_02_EnterQuestion.png)
+
+1. We're now going to create a new custom entity which teaches the agent to recognize specific types of information. 
+
+    In our use case, the custom entity will help the agent understand device types. We'll create a **_Closed List entity_** which is best for short, manageable lists such as product types or service categories.
+
+    Select the **> icon** by the _Multiple choice options_ and select **Create an Entity**.
+
+    ![Create an entity](assets/7.2_03_SelectCreateAnEntity.png)
+
+1. You'll see two custom entity options, **_Closed List_** which was explained in the previous step, and **_Regular Expression_** (Regex). Regex entities are great for matching patterns such as tracking numbers, license plates, debit/credit card numbers etc.
+
+    For this use case, select **Closed List**, as we're going to define the types of devices a user can select.
+
+    ![Select Closed List](assets/7.2_04_SelectClosedList.png)
+
+1. We can now define our Close List entity. A name, description and items need to be entered. 
+
+    To enter an item, enter the device and select **Add**.
+
+    | Field    | Value |
+    | ---------- | :--------- |
+    | Name | Device type |
+    | Description  | Device types at our company |
+    | Add item   | laptop   |
+    | Add item    | desktop   |
+    | Add item    | smartphone   |
+
+    ![Configure Closed List](assets/7.2_05_ConfigureClosedList.png)
+
+1. Enable **smart switching** to **on** and select **Save**.
+
+    ![Select Save](assets/7.2_06_SaveClosedList.png)
+
+1. We now need to display the options for the user to select. Click **Select options for user**.
+
+    ![Select options for user](assets/7.2_07_SelectOptionsForUser.png)
+
+1. Tick all three checkboxes for the list values.
+
+    ![Tick checkboxes for list values](assets/7.2_08_TickListValues.png)
+
+1. Next, we need to name the variable for the output of the question node. This variable will be used in the next node. Select the `Var1` variable.
+
+    ![Select Var1 variable](assets/7.2_09_SelectSaveUserResponseAs.png)
+
+1. Rname the variable to the following,
+
+    ```
+    VarDeviceType
+    ```
+
+    ![Rename variable](assets/7.2_10_RenameVariable.png)
+
 ### 7.3 Add node - Add a tool using a connector
+
+1. Let's next add a node that enables the agent to retrieve the list of devices from the Devices SharePoint list. Select the **+ icon** below the trigger and select the **Add a tool** node. Select the **Connector** tab.
+
+    ![Add a tool](assets/7.3_01_AddAToolNode.png)
 
 ## Next lesson
 Congratulations! 👏🏻 You've learnt how to _placeholder text_ 🙌🏻
