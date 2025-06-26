@@ -355,7 +355,23 @@ We're now going to learn how to add a new topic with a trigger and tools. This l
 
 Let's begin!
 
+### Prerequisite
+
+We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md)
+
 ### 7.1 Add a new topic from blank
+
+1. In the overview tab of the agent, scroll down to the Topics section. Select **See all**.
+
+    ![See all topics](assets/7.1_01_SeeAllTopics.png)
+
+1. The Topics tab will load and by default the _Custom_ topics will be displayed. You can filter topics by All, Custom and System below where you create a topic. The custom and system topics you currently see are created automatically when the agent is provisioned.
+
+    ![View topics](assets/7.1_02_ViewTopics.png)
+
+1. Select **+ Add a topic** and select **From blank**.
+
+    ![Create topic from scratch](assets/7.1_01_SeeAllTopics.png)
 
 ### 7.2 Add node - Ask a Question and create a custom entity
 
