@@ -100,6 +100,28 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
 1. The SharePoint site home page will next load. **Copy** the SharePoint site URL.
 
+1. This template provides pages with sample data about various IT policies and two sample lists (Tickets and Devices). 
+
+   We will use the **Devices** list for in [Lesson 07 - Add new topic with trigger and nodes](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector). 
+
+   You need to make sure you fill in this list with at least 4 sample data items and add one additional column to this list.
+   
+   Scroll to the far right in the list and select the **+ Add column** button.  Choose the **hyperlink** type, enter **Image** for the column name, and select add.  
+
+   When adding sample data, make sure that the following fields are filled out: 
+      - Device photo - use the images from the [device images folder](/00-course-setup/images/device-images/)
+      - Title
+      - Status
+      - Manufacturer
+      - Model
+      - Asset Type
+      - Color
+      - Serial Number
+      - Purchase Date
+      - Purchase Price, 
+      - Order # 
+      - Image
+
 ---
 
 Congratulations—you now have a working Microsoft 365 developer environment with Copilot Studio access. You’re ready to start building, testing, and publishing AI agents for Microsoft 365!  

@@ -173,6 +173,28 @@ The following are the main types of nodes you can add to an agent:
 
     > Think of it as a "silent trigger" block that helps your agent do things behind the scenes or communicate with external tools without needing a user to say anything.
 
+## 🏋🏻‍♀️ Using Power Fx in your nodes
+
+In Copilot Studio, Power Fx is a low-code programming lanugage used to add logic and dynamic behaviour to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
+
+### What Power Fx can do in topics
+
+- Set and manipulate variables
+    - Example: <samp>Set(userName, "Ethan"</samp>
+- Create conditions
+    - Example: <samp>If(score > 80, "Pass", "Fail")</samp>
+- Format and transform data
+    - Example: <samp>Text(DateValue, "dd/mm/yyyy")</samp>    
+
+### Why use Power Fx?
+
+- **Flexible:** you can build logic without writing full lines of code.
+
+- **Familiar:** if you’ve used Excel formulas, it feels very similar.
+
+- **Powerful:** it lets you personalize conversations, validate input, and control how 
+your agent behaves based on user data.
+
 ## 🏗️ How do I create and edit topics?
 
 There are two ways you can create and edit topics for your agents.
@@ -348,10 +370,6 @@ We're now going to learn how to add a new topic with a trigger and tools. This l
 - [7.2 Add node - Ask a Question and create a custom entity](/07-add-new-topic-with-trigger/README.md/#72-add-node---ask-a-question-and-create-a-custom-entity)
 - [7.3 Add a tool using the SharePoint connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector)
 
-### Prerequisite
-
-We'll be using the Devices SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site). If you have not setup the Devices SharePoint list, please head back to [Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
-
 ### ✨ Use case
 
 **As an** employee
@@ -362,9 +380,17 @@ We'll be using the Devices SharePoint list from [Lesson 00 - Course Setup - Step
 
 Let's begin!
 
-### Prerequisite
+### Prerequisites
 
-We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md).
+1. **SharePoint list**
+
+    We'll be using the Devices SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site). 
+    
+    If you have not setup the Devices SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
+
+1. **Contoso Helpdesk Copilot**
+
+    We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md).
 
 ### 7.1 Add a new topic from blank
 
@@ -470,12 +496,154 @@ We're going to use the same agent created previously in [Lesson 06 - Create a cu
 
     ![Add a tool](assets/7.3_01_AddAToolNode.png)
 
+1. Search for `Get items` and select the **Get items** SharePoint connector action
+
+    ![Select get items](assets/7.3_02_GetItems.png)
+
+1. A new connection needs to be created for the connector. Select the **chevron** icon and select **Create new connection**.
+
+    ![Add a tool](assets/7.3_03_CreateNewConnection.png)
+
+1. Two options will be displayed that allows you to connect directly to SharePoint Online or to an on-premises SharePoint. By default the **Connect directly (cloud-services)** option will be selected, which is what we'll use for our connection.
+
+    Select **Create**.
+
+    ![Select Create](assets/7.3_04_SelectCreate.png)
+
+1. Select your signed in user account.
+
+    ![Select signed in user account](assets/7.3_05_SelectSignedInUserAccount.png)
+
+1. Next, you need to confirm your user account can be used for the connection to the SharePoint connector. Select **Allow access**.
+
+    ![Select allow access](assets/7.3_06_AllowAccess.png)
+
+1. Select **Submit** for the **Get items** SharePoint connector action to be added as a node to the topic.
+
+    ![Submit](assets/7.3_07_ConnectedSelectSubmit.png)
+
+1. The **Get items** SharePoint connector action is now added to the topic. We can now begin configuring the inputs of the action. Select any of the input parameters, such as **List Name**.
+
+    ![Select input](assets/7.3_08_ConfigureInputs.png)
+
+1. The **Get items** configuration pane will appear and by default, you'll see the **Inputs** tab. Select the **Initiation** tab.
+
+    ![Inputs pane](assets/7.3_09_ToolInputsPane.png)
+
+1. Enter a description in the **Usage Description** field.
+
+    > This will come in handy when we view the _Manage Connections_ page of our agent. We'll get return to this shortly.
+
+    ![Usage description](assets/7.3_10_UsageDescription.png)
+
+1. Select the **Inputs** tab and select the site and the SharePoint list that you setup in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
+
+    ![Add a tool](assets/7.3_11_ConfigureInputs.png)
+
+1. Now, to only display devices from the SharePoint list based on the selected value, and only devices where the status equals _Available_, we need to apply a filter. This is achieved by entering a filter query with the help of [Power Fx](/07-add-new-topic-with-trigger/README.md/#️-using-power-fx-in-your-nodes). Select the **ellipsis ... icon**.
+
+    ![Select ellipsis icon](assets/7.3_12_ConfigureFilterQuery.png)
+
+1. By default, you'll be in the **Custom** tab. Select the **Formula** tab and copy and paste the following Power Fx expression. 
+
+    We are using the `Concatenate` function to create an expression that will filter 
+    - the SharePoint column of **Status equals _Available_**
+    - and the **Asset type SharePoint column equals _the selected device from the question node_**.
+
+    ```
+    Concatenate("Status eq 'Available' and AssetType eq '", Topic.VarDeviceType, "'")
+    ```
+
+    Select **Insert**.
+
+    ![Enter Power Fx expression and select insert](assets/7.3_13_FormulaPowerFx.png)
+
+1. The Power Fx expression will now be applied in the Filter Query input parameter of the **Get items** action.
+
+    ![Power Fx expression](assets/7.3_14_FilterQueryDefined.png)
+
+1. Next, we'll update the name of the variable for the output. Select the **Outputs** tab and select the `GetItems` variable.
+
+    ![Update variable](assets/7.3_15_UpdateOutput.png)
+
+1. Update the name to the following.
+
+    ```
+    VarDevices
+    ```
+
+    ![Update variable name](assets/7.3_16_UpdateVariableName.png)
+
+1. Scroll down and in the **Usage** section, select **Global**. This will make the variable accessible by any topic.
+
+    ![Update to Global variable](assets/7.3_17_UpdateToGlobalVariable.png)
+
+1. To verify that the Get items SharePoint connector action succeeded, add a **Send a message** node below the **Get items** tool node where we'll next insert the response in the body of the message. 
+
+    ![Add Send a message node](assets/7.3_18_AddSendAMessageNode.png)
+
+1. Select the **{x}** icon to insert a variable which will be the output of the Get items SharePoint connector action.
+
+    ![Select insert variable icon](assets/7.3_19_InsertVariable.png)
+
+1. Select the **VarDevices.value** variable. This is the `value` property in the JSON response of the Get items SharePoint connector action.
+
+    ![Select VarDevices.value variable](assets/7.3_20_SelectVarDevices.value.png)
+
+1. **Save** the topic.
+
+    ![Save topic](assets/7.3_21_SelectSave.png)
+
+1. Test the topic by entering the following.
+
+    ```
+    I need a device
+    ```
+
+    ![Test agent](assets/7.3_22_TestAgent.png)
+
+1. We'll now see our _Device types Closed List_ and its item values displayed. Select `laptop`.
+
+    ![Select laptop](assets/7.3_23_SelectLaptop.png)
+
+1. Before the agent can proceed, the user needs to verify their connection through the _Manage connections_ page of the agent. Select **Open connection manager**.
+
+    ![Open connection manager](assets/7.3_24_SelectOpenConnectionManager.png)
+
+1. Before we select **Connect** to verify the connection, select **1 tool** in the **Used By** column.
+
+    ![Used By](assets/7.3_25_ViewUsedBy.png)
+
+1. This is where we can see the details of the Get items action and remember the _usage description_ we entered earlier? This is where we'll see the usage description. Select **Close**.
+
+    > This lets us know what actions are used and the purpose of it. This keeps our connections organized 📁.
+
+    ![Use description](assets/7.3_26_UsageDescription.png)
+
+1. Select **Connect**.
+
+    ![Select ellipsis icon](assets/7.3_27_SelectConnect.png)
+
+1. A new modal will appear where you can create or select an existing connection. 
+
+    Since we created a connection earlier, by default it is using this connection so we'll leave it as-is. Select **Submit**.
+
+    ![Select ellipsis icon](assets/7.3_28_SelectSubmit.png)
+
+1. Go back to your browser tab with Copilot Studio and in the test pane, select **Retry**.
+
+    ![Select Retry](assets/7.3_29_SelectRetry.png)
+
+1. We'll now see the JSON response of the `value` property. This confirms that the SharePoint action succeeded in retrieving the devices where the status equals availabile and the device type equal laptop.
+
+    ![Test succeeded](assets/7.3_30_TestSucceeded.png)
+
 ## Next lesson
-Congratulations! 👏🏻 You've learnt how to _placeholder text_ 🙌🏻
+Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how to add a tool which calls the Get items SharePoint connector action and use Power Fx to filter the response to only return devices where the status equals availabile and the device type equal laptop. 🙌🏻
 
 This is the end of **Lab 07 - Add a new topic with conversation nodes**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
-⏭️ [Move to **Add rich responses to the Topic for user interactions** lesson](/07-add-new-topic-with-trigger/README.md)
+⏭️ [Move to **Enhance user interactions with Adaptive Cards** lesson](/07-add-new-topic-with-trigger/README.md)
 
 
 ## 📚 Additional learning
