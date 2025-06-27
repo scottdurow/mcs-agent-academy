@@ -48,17 +48,17 @@ There are three common purposes for topics based on what users need:
 You can also create topics for ambiguous questions like "<samp>I need help</samp>," which ask users for more details before continuing.
 
 ## 🐦 Why are topics useful?
-Topics help you
+Topics help you,
 
-- Organize your agent's knowledge
+- Organize your agent's knowledge.
 
-- Make conversations feel natural
+- Make conversations feel natural.
 
-- Solve user problems effeciently
+- Solve user problems effeciently.
 
 ## 🪺 Types of topics
 
-1. **System Topics** - these are built-in and handle common event such as:
+1. **System topics** - these are built-in and handle common events such as:
     - Starting a conversation
     - Ending a conversation
     - Handling errors
@@ -79,7 +79,7 @@ These are words or sentences users might say to start the topic.
 
 **Examples:**
 
-For a vacation leave topic, trigger phrases could be
+For a leave request topic, trigger phrases could be
 
 - <samp>"I want to take vacation leave"</samp>
 - <samp>"Request vacation"</samp>
@@ -93,7 +93,7 @@ For a request device topic, trigger phrases could be
 
 ### 💬 Conversation nodes
 
-A topic is made up of nodes which are steps the agent follows once the topic is triggered. You connect these steps to build a flow that your agent follows when interacting with users.
+A topic is made up of nodes which are steps the agent follows once the topic is triggered. You connect these steps to build a conversation flow that your agent follows when interacting with users.
 
 Think of these as instructions or actions such as the following:
 
@@ -110,7 +110,7 @@ The following are the main types of nodes you can add to an agent:
     - **Purpose** - sends a mesage to the user.
     - **Example** - <samp>"Thanks for your request! I'll help you with that."</samp>
 
-    This node lets your agent send messages to users, which can be simple text or rich content like images, videos, cards, and quick replies. 
+    This node lets your agent send messages to users, which can be simple text or rich content like images, videos, cards, quick replies and adaptive cards. 
     
     You can personalize messages using variables, add multiple message variations for variety, and even customize speech output for voice-enabled channels.
 
@@ -146,17 +146,17 @@ The following are the main types of nodes you can add to an agent:
 
 1. **Variable management**
     - **Purpose** - stores or clears information (called variables) during the conversation.
-    - **Example** - save the date the user selected in the Adaptive card node.
+    - **Example** - saves the date the user selected in the Ask a question node that displays an adaptive card.
 
-    This node lets you store and manage information during a conversation, it could be a user's name, answer, or preferences. You can use different types of variables such as text, numbers, or dates, and they can be scoped to a single topic, shared across topics, or even pulled from the system or environment.
+    This node lets you store and manage information during a conversation, it could be a user's name, answer, or preferences. You can use different types of variables such as text, numbers, or dates, and they can be scoped to a single topic, shared across topics (global), or even pulled from the system or environment.
 
-    > Think of it as a "memory box" that helps your agent remember information and use them as conversation continues with the user.
+    > Think of it as a "memory box" that helps your agent remember information and use them as the conversation continues with the user.
 
 1. **Topic management**
     - **Purpose** - moves the conversation to another topic or step within the topic, transfer the conversation, or end the topic or conversation.
     - **Example** - redirect to a "Leave Policy" topic.
 
-    This node allows directs your agent to jump from one topic to another without restarting the conversation, end the topic, transfer or end the conversation, go to a different step within the same topic. It helps guide users through different parts of the conversation flow by smoothly transitioning between topics, and you can pass variables between them to keep context.
+    This node allows your agent to jump from one topic to another without restarting the conversation, end the topic, transfer or end the conversation, or go to a different step within the same topic. It helps guide users through different parts of the conversation flow by smoothly transitioning between topics, and you can pass variables between them to keep context.
 
     > Think of it as a "go to another section/step" block that helps your agent be flexible in chatting with users.
 
@@ -194,12 +194,12 @@ The following are the main types of nodes you can add to an agent:
 
 ## 🏋🏻‍♀️ Using Power Fx in your nodes
 
-In Copilot Studio, Power Fx is a low-code programming lanugage used to add logic and dynamic behaviour to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
+In Copilot Studio, Power Fx is a low-code programming language used to add logic and dynamic behaviour to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
 
 ### What Power Fx can do in topics
 
 - Set and manipulate variables
-    - Example: <samp>Set(userName, "Ethan"</samp>
+    - Example: <samp>Set(userName, "Adele Vance")</samp>
 - Create conditions
     - Example: <samp>If(score > 80, "Pass", "Fail")</samp>
 - Format and transform data
@@ -242,7 +242,7 @@ This allows you to describe what you want using natural language, and Copilot wi
 #### Why this is useful
 - Speeds up development with AI assistance.
 - Lets you focus on logic and user experience instead of repetitive setup.
-- Makes it easier to iterate and improve bot flows with minimal effort.
+- Makes it easier to iterate and improve conversation flows with minimal effort.
 
 #### ✨ Example prompts
 
@@ -260,13 +260,13 @@ This allows you to describe what you want using natural language, and Copilot wi
 
 Start by identifying common questions or tasks users will ask your agent. These could be:
 
-- Questions that users ask often such as <samp>what's my entitlement for sick days?</samp>
+- Questions that users ask often such as, <samp>what's my entitlement for sick days?</samp>
 - Common tasks users want to complete such as submitting a form
 - Problems users often face such as login issues
 
 ### 📦 Step 2 - Group the scenarios
 
-Organise the user needs into three categories based on what we learnt earlier - the purposes of a topic
+Organise the user needs into three categories based on what we learnt earlier - the purpose of a topic:
 
 - Informational - the user wants to know something
 - Task completion - the user wants to do something
@@ -310,17 +310,17 @@ Example:
 
 ### 🤖 Step 5 - Use AI for unexpected questions
 
-Even if you've designed a topic for vacation leave requests, users might ask questions that aren't directly covered. This is where AI features like the Conversational boosting system topic come in handy. 
+Even if you've designed a topic for leave requests, users might ask questions that aren't directly covered. This is where AI features like the _Conversational boosting_ system topic come in handy. 
 
-This topic includes a generative answers node, which lets your agent start using connected knowledge sources right away. Any knowledge sources added at the agent level are automatically included in the generative answers node within the Conversational Boosting system topic.
+This topic includes a generative answers node, which lets your agent start using connected knowledge sources right away. Any knowledge sources added at the agent level are automatically included in the generative answers node within the _Conversational boosting_ system topic.
 
-Example:
+#### Example
 
 - User: <samp>"Can I carry over unused vacation days to next year?"</samp>
 
 This question might not be part of your predefined topic flow, especially if your topic only handles submitting leave requests.
 
-How AI helps:
+#### How AI helps
 
 If your agent is connected to your company's HR policy documents or internal website, AI can:
 
@@ -328,7 +328,8 @@ If your agent is connected to your company's HR policy documents or internal web
 - Understand and summarize the rules
 - Agent responds with: <samp>"According to the HR policy, you can carry over unused vacation days to the next calendar year. For more details, check the leave policy section on the HR portal."</samp>
 
-Why this is useful
+#### Why this is useful
+
 - You don't need to manually create a topic for every policy-related question.
 - AI can pull accurate answers from trusted knowledge sources.
 - It improves user experience by making the agent feel smarter and more responsive.
@@ -337,21 +338,21 @@ Why this is useful
 
 Before publishing your topic:
 
-- Test using real questions or real sample inputs
-- Make sure it sounds natural and helpful
+- Test using real questions or real sample inputs.
+- Make sure it sounds natural and helpful.
 
 > Tip: Apply improvements to your topic accordingly as you test, such as adding more nodes or removing nodes in-place of redirecting to another topic
 
 ### ⚠️ Step 7 - Avoid duplicating website content
 
-Don't copy what's already on your website
+Don't copy what's already on your website.
 
-- Focus on topics that users ask about often
-- Add new topic based on chat history or support requests
+- Focus on topics that users ask about often.
+- Add new topics based on chat history or support requests.
 
 ### ✨ Example of conversation flow
 
-Below is an example of a topic that handles vacation leave requests.
+Below is an example of a topic that handles leave requests.
 
 **Step 1: Trigger phrase**
 
