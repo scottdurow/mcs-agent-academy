@@ -69,6 +69,8 @@ Topics help you,
     - Employee leave request
     - Request new or replacement device
 
+![Types of topics](assets/7.0_01_Topics.png)
+
 ##  🧬 Anatomy of a topic
 
 Each topic usually contains the following.
@@ -103,6 +105,8 @@ Think of these as instructions or actions such as the following:
 - Setting or checking variables
 - Using conditions to branch the conversation
 - Directing to another topic
+
+![Conversation nodes](assets/7.0_03_ConversationNodes.png)
 
 The following are the main types of nodes you can add to an agent:
 
@@ -196,6 +200,8 @@ The following are the main types of nodes you can add to an agent:
 
 In Copilot Studio, Power Fx is a low-code programming language used to add logic and dynamic behaviour to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
 
+![Power Fx expression](assets/7.3_13_FormulaPowerFx.png)
+
 ### What Power Fx can do in topics
 
 - Set and manipulate variables
@@ -221,6 +227,8 @@ There are two ways you can create and edit topics for your agents.
 ### 1. Create from blank
 
 This allows you to build custom conversation flows from scratch, and you can add or remove nodes as needed when editing your topic.
+
+![Add a topic](assets/7.0_04_AddATopic.png)
 
 #### Why this is useful
 - It gives you full control over how your agent responds.
@@ -404,9 +412,9 @@ Let's begin!
 
 1. **SharePoint list**
 
-    We'll be using the Devices SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site). 
+    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site). 
     
-    If you have not setup the Devices SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
+    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
 
 1. **Contoso Helpdesk Copilot**
 
@@ -414,11 +422,11 @@ Let's begin!
 
 ### 7.1 Add a new topic from blank
 
-1. In the overview tab of the agent, scroll down to the Topics section. Select **See all**.
+1. In the overview tab of the agent, scroll down to the **Topics** section. Select **See all**.
 
     ![See all topics](assets/7.1_01_SeeAllTopics.png)
 
-1. The Topics tab will load and by default the _Custom_ topics will be displayed. You can filter topics by All, Custom and System. The custom and system topics you currently see were created automatically when the agent was provisioned.
+1. The **Topics** tab will load and by default the _Custom_ topics will be displayed. You can filter topics by All, Custom and System. The custom and system topics you currently see were created automatically when the agent was provisioned.
 
     ![View topics](assets/7.1_02_ViewTopics.png)
 
@@ -472,9 +480,7 @@ Let's begin!
 
     ![Select Closed List](assets/7.2_04_SelectClosedList.png)
 
-1. We can now define our Close List entity. A name, description and items need to be entered. 
-
-    To enter an item, enter the device and select **Add**.
+1. We can now define our Closed List entity. A name, description and items need to be entered. 
 
     | Field    | Value |
     | ---------- | :--------- |
@@ -484,9 +490,11 @@ Let's begin!
     | Add item    | desktop   |
     | Add item    | smartphone   |
 
+    To enter an item, enter the device type and select **Add**.
+
     ![Configure Closed List](assets/7.2_05_ConfigureClosedList.png)
 
-1. Enable **smart switching** to **on** and select **Save**.
+1. Enable **Smart switching** to **on** and select **Save**.
 
     ![Select Save](assets/7.2_06_SaveClosedList.png)
 
@@ -502,7 +510,7 @@ Let's begin!
 
     ![Select Var1 variable](assets/7.2_09_SelectSaveUserResponseAs.png)
 
-1. Rname the variable to the following,
+1. Rename the variable to the following,
 
     ```
     VarDeviceType
@@ -512,7 +520,7 @@ Let's begin!
 
 ### 7.3 Add node - Add a tool using a connector
 
-1. Let's next add a node that enables the agent to retrieve the list of devices from the Devices SharePoint list. Select the **+ icon** below the trigger and select the **Add a tool** node. Select the **Connector** tab.
+1. Let's next add a node that enables the agent to retrieve the list of devices from the **Devices** SharePoint list. Select the **+ icon** below the trigger and select the **Add a tool** node. Select the **Connector** tab.
 
     ![Add a tool](assets/7.3_01_AddAToolNode.png)
 
@@ -552,7 +560,7 @@ Let's begin!
 
 1. Enter a description in the **Usage Description** field.
 
-    > This will come in handy when we view the _Manage Connections_ page of our agent. We'll get return to this shortly.
+    > This will come in handy when we view the _Manage your connections_ page of our agent. We'll return to this shortly.
 
     ![Usage description](assets/7.3_10_UsageDescription.png)
 
@@ -560,15 +568,19 @@ Let's begin!
 
     ![Add a tool](assets/7.3_11_ConfigureInputs.png)
 
-1. Now, to only display devices from the SharePoint list based on the selected value, and only devices where the status equals _Available_, we need to apply a filter. This is achieved by entering a filter query with the help of [Power Fx](/07-add-new-topic-with-trigger/README.md/#️-using-power-fx-in-your-nodes). Select the **ellipsis ... icon**.
+1. Now, to only display devices from the SharePoint list based on 
+    - the selected value, 
+    - and only devices where the status equals _Available_, 
+    
+    we need to apply a filter. This is achieved by entering a filter query with the help of [Power Fx](/07-add-new-topic-with-trigger/README.md/#️-using-power-fx-in-your-nodes). Select the **ellipsis ... icon**.
 
     ![Select ellipsis icon](assets/7.3_12_ConfigureFilterQuery.png)
 
 1. By default, you'll be in the **Custom** tab. Select the **Formula** tab and copy and paste the following Power Fx expression. 
 
     We are using the `Concatenate` function to create an expression that will filter 
-    - the SharePoint column of **Status equals _Available_**
-    - and the **Asset type SharePoint column equals _the selected device from the question node_**.
+    - the SharePoint column of **Status** equals _Available_
+    - and the SharePoint column of **Asset type** equals _the selected device from the question node_.
 
     ```
     Concatenate("Status eq 'Available' and AssetType eq '", Topic.VarDeviceType, "'")
@@ -626,7 +638,7 @@ Let's begin!
 
     ![Select laptop](assets/7.3_23_SelectLaptop.png)
 
-1. Before the agent can proceed, the user needs to verify their connection through the _Manage connections_ page of the agent. Select **Open connection manager**.
+1. Before the agent can proceed, the user needs to verify their connection through the _Manage your connections_ page of the agent. Select **Open connection manager**.
 
     ![Open connection manager](assets/7.3_24_SelectOpenConnectionManager.png)
 
@@ -654,12 +666,12 @@ Let's begin!
 
     ![Select Retry](assets/7.3_29_SelectRetry.png)
 
-1. We'll now see the JSON response of the `value` property. This confirms that the SharePoint action succeeded in retrieving the devices where the status equals availabile and the device type equal laptop.
+1. We'll now see the JSON response of the `value` property. This confirms that the SharePoint action succeeded in retrieving the devices where the status equals availabile and the device type equals laptop.
 
     ![Test succeeded](assets/7.3_30_TestSucceeded.png)
 
 ## Next lesson
-Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how to add a tool which calls the Get items SharePoint connector action and use Power Fx to filter the response to only return devices where the status equals availabile and the device type equal laptop. 🙌🏻
+Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how to add a tool which calls the Get items SharePoint connector action and use Power Fx to filter the response to only return devices where the status equals availabile and the device type equals laptop. 🙌🏻
 
 This is the end of **Lab 07 - Add a new topic with conversation nodes**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
