@@ -670,6 +670,8 @@ Let's begin!
 
     ![Test succeeded](assets/7.3_30_TestSucceeded.png)
 
+1. Refresh the test pane to clear the test and close the activity map.
+
 ## Next lesson
 Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how to add a tool which calls the Get items SharePoint connector action and use Power Fx to filter the response to only return devices where the status equals availabile and the device type equals laptop. 🙌🏻
 
