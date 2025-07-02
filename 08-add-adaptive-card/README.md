@@ -2,7 +2,7 @@
 
 ## Introduction
 
-- Understanding the Adaptive Card Designer
+- What is an Adaptive Card?
 - [Lab 08 - Add apative cards and enhance topic capabilities](/08-add-adaptive-card/README.md#-lab-08---add-adaptive-cards-and-enhance-topic-capabilities)
     - [8.1 Add an adaptive card to display available devices](/08-add-adaptive-card/README.md/#81-add-an-adaptive-card-to-display-available-devices)
     - [8.2 Add a condition node to enable users to request a device](/08-add-adaptive-card/README.md/#82-add-a-condition-node-to-enable-users-to-request-a-device)
@@ -264,12 +264,11 @@ Let's begin!
 
     ![Undo](assets/8.1_08_Undo.png)
 
-1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of Ctrl + A or using the Mac keyboard shortcut of Command+A, followed by deleting the lines.
+1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines.
 
     ![Clear lines](assets/8.1_09_01_CTRLA.png)
 
-
-    Paste the JSON from the [Available devices .JSON file](assets/Available%20Devices.json).
+    Paste the JSON from the [Available devices .JSON file](assets/8.1_AvailableDevices.json).
 
     ![Paste JSON](assets/8.1_09_02_PasteJSON.png)
 
@@ -309,7 +308,7 @@ Let's begin!
 
     ![Select all and delete lines](assets/8.1_17_CTRLA.png)
 
-1. Paste the Formula from the [Available Devices formula file](assets/Available%20Devices%20formula.txt).
+1. Paste the Formula from the [Available Devices formula file](assets/8.1_AvailableDevicesFormula.txt).
 
     ![Select preview](assets/8.1_18_PasteFormula.png)
 
@@ -359,11 +358,117 @@ Awesome! 🙌🏻 You've designed and added your first Adaptive Card to your top
 
 ### 8.2 Add a condition node to enable users to request a device
 
-_placeholder text_
+We'll now add logic for the user to request a device from the list of devices where the status equals Available. To achieve this, we're going to add an **Ask a Question** node and a **Condition** node. 
+
+Let's start with the question node.
+
+1. In our **Available devices** topic, we'll add an **Ask a Question** node below the **Send a message** node with the adaptive card.
+
+    ![Select Ask a Question node](assets/8.2_01_AddAskAQuestionNode.png)
+
+1. We'll now define the node. For the question, enter the following.
+
+    ```
+    Would you like to request one of these available devices?
+    ```
+
+    Next, select **+ New option** as we'll add a value for the user to select.
+
+    ![Configure Question node](assets/8.2_02_DefineQuestionNode.png)
+
+1. Enter `Yes` as the first value for the user to select.
+
+    ![Yes option](assets/8.2_03_AddYesOption.png)
+
+1. Select **+ New option** to add another value. Enter `No` as the second value for the user to select.
+
+    ![No option](assets/8.2_04_AddNoOption.png)
+
+1. We'll now rename the output variable. Select the variable to load the **Variable properties** pane and name the variable as the following.
+
+    ```
+    VarRequestDevice
+    ```
+    ![Rename variable](assets/8.2_05_RenameVariable.png)
+
+1. Close the **Variable properties** pane.
+
+    ![Close variable properties pane](assets/8.2_06_CloseVariablePropertiesPane.png)
+
+1. We'll next add logic to our topic by selecting the **Add a condition** node.
+
+    ![Add a condition](assets/8.2_07_AddAConditionNode.png)
+
+1. In the Condition node, we need to configure the logic. First we select a variable by selecting the **greater-than symbol**.
+
+    ![Select variable](assets/8.2_08_SelectAVariable.png)
+
+1. Select the **VarRequestDevice** variable previously created. This is the variable that stores the Yes/No selected value from the **Ask a Question** node.
+
+    ![Select VarRequestDevice variable](assets/8.2_09_SelectVarRequestDeviceVariable.png)
+
+1. Leave the condition set to **is equal to** since our logic is based on the Yes/No value the user selects from the **Ask a Question** node. In the value dropdown field, select **Yes**. 
+
+    ![Define Yes condition node](assets/8.2_10_YesCondition.png)
+
+1. We've now defined this Condition node to execute only when the **VarRequestDevice variable value equals Yes**. Select **Save** to save the topic.
+
+    ![Save Topic](assets/8.2_11_SaveTopic.png)
 
 ### 8.3 Create a new topic with an adaptive card for user to submit their request
 
-_placeholder text_
+As a recap, we have completed the following:
+
+- Added an adaptive card that displays the available devices from the Devices SharePoint list.
+- Added logic for a user to confirm whether they want to request a device from the list of available devices.
+
+What we need to do next, is create a _new topic_ to direct the _Available devices_ topic to. This new topic will handle the device request by using an **Ask with adaptive card** node to enable user interaction with the agent.
+
+Let's begin!
+
+1. Select the **Topics** tab.
+
+    ![Select Topics tab](assets/8.3_01_SelectTopicsTab.png)
+
+1. Select **+ Add a topic from blank**.
+
+    ![Add new topic form blank](assets/8.3_02_AddATopicFromBlank.png)
+
+1. Name the topic as the following,
+
+    ```
+    Request device
+    ```
+
+    ![Request device](assets/8.3_03_RenameTopic.png)
+
+1. In the **Trigger** node, we're going to change the trigger type. Select the **opposite arrows icon** and select **It's redirected to** trigger type.
+
+    ![Change trigger](assets/8.3_04_ChangeTrigger.png)
+
+1. Next, add an **Ask with adaptive card** node. This node will display an interactive card for the user to select which device they would like to request.
+
+    ![Select Ask with adaptive card node](assets/8.3_05_AskWithAdaptiveCard.png)
+
+1. Select the node and the **Adaptive Card Node properties** pane will appear. Select **Edit adaptive card**.
+
+    ![Edit adaptive card](assets/8.3_06_EditAdaptiveCard.png)
+
+1. The **Adaptive card designer** will load. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines.
+
+    ![Clear card payload editor](assets/8.3_07_01_CTRLA.png)
+
+    Paste the JSON from the [Request devices .JSON file](assets/8.3_RequestDevice.json).
+
+    ![Paste JSON](assets/8.3_07_02_PasteJSON.png)
+
+1. Notice how the **Card Preview** now includes elements that display some text and a list of available devices. Select **Save**.
+
+    ![Select Save](assets/8.3_08_Save.png)
+
+1. 
+
+
 
 ### 8.4 Update _Available devices_ topic to redirect to the newly created topic
 
