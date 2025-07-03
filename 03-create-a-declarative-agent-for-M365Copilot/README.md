@@ -1,6 +1,6 @@
 # Create a declarative agent for Microsoft 365 Copilot
 
-## Introduction
+## Lesson chapters
 
 📖 This lesson will cover:
 - [What is a declarative agent for Microsoft 365 Copilot?](#️-what-is-a-declarative-agent-for-microsoft-365-copilot)
@@ -15,6 +15,7 @@
     - [3.2 Create and add a prompt for your declarative agent](#32-create-and-add-a-prompt-for-your-declarative-agent)
     - [3.3 Update instructions and test your declarative agent](#33-update-instructions-and-test-your-declarative-agent)
     - [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
+- [Additional learning](#-additional-learning)
 
 ## 🕵🏻‍♀️ What is a declarative agent for Microsoft 365 Copilot?
 
@@ -535,3 +536,5 @@ This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Stu
 🔗 [Add prompts](https://learn.microsoft.com/en-us/ai-builder/create-a-custom-prompt?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)
 
 🔗 [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-170631-ebenitez)
+
+📺 [Build prompts for your agent](aka.ms/ai-in-action/copilot-studio/ep3)

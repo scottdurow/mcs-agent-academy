@@ -1,6 +1,6 @@
 # Create a custom agent using natural language with Copilot and grounding it with your data
 
-## Introduction
+## Lesson chapters
 
 - [What is a custom agent?](#-what-is-a-custom-agent)
     - [What can a custom agent do?](#-what-can-a-custom-agent-do)
@@ -24,6 +24,7 @@
    - [6.2 Add an internal knolwedge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included](#62-add-an-internal-knolwedge-source-using-a-sharepoint-site---for-microsoft-365-licensed-users-with-sharepoint)
    - [6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included](#63-add-an-internal-knowledge-source-by-uploading-a-document---for-non-microsoft-365-licensed-users-who-dont-have-sharepoint-included)
    - [6.4 Test agent](#64-test-agent)
+- [Additional learning ](/06-create-agent-from-conversation/README.md/#-additional-learning)
 
 ## 🤔 What is a _custom_ agent?
 
@@ -469,3 +470,7 @@ This is the end of **Lab 06 - Create an agent with Copilot**, select the link be
 🔗 [Create and delete agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-170631-ebenitez)
 
 🔗 [Key concepts - Authoring agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-fundamentals/?WT.mc_id=power-170631-ebenitez)
+
+📺 [Create a custom agent using natural language](aka.ms/ai-in-action/copilot-studio/ep1)
+
+📺 [Add knowledge to your agents](aka.ms/ai-in-action/copilot-studio/ep2)
