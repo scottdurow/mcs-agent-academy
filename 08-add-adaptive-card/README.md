@@ -1,4 +1,4 @@
-# Enhance user interactions with Adaptive Cards
+# Enhance user interactions in Topics with Adaptive Cards
 
 ## Lesson chapters
 
