@@ -23,7 +23,7 @@
 
 ## 🤔 What is an Adaptive Card?
 
-An **Adaptive Card** is essentially a JSON field that describes:
+An **Adaptive Card** is way to create interactive, visually rich UI elements that can be embedded in apps like Microsoft Teams, Microsoft Outlook or agents. It is a structured JSON object that defines the layout and content of a card:
 
 - What elements appear on the card - text, images, buttons
 - How those elements are arranged
@@ -33,13 +33,19 @@ An **Adaptive Card** is essentially a JSON field that describes:
 
 ### Why Adaptive Cards matter in Copilot Studio
 
-When you use the **Send a message node** in Copilot Studio, you can paste this JSON into the card editor to create rich, interactive messages. The designer tool helps you build the card visually, but behind the scenes, it’s generating this JSON for you.
+Imagine you're building an agent that asks users for their name, email, or feedback. If you just use plain text, the conversation can feel boring or hard to follow. That’s where Adaptive Cards come in!
 
-This makes it easy to:
+1. **Makes conversations interactive** - instead of sending text as messages to the user, you can show buttons, forms, images and more.
+    - Example: a card can ask the user to fill in their name and email in a clean form.
 
-- Reuse cards across different agents.
-- Dynamically update content using variables.
-- Share or store card templates.
+1. **Look great everywhere** - Adaptive Cards automatically match the style of the app they're in, such as Microsoft 365 Copilot chat or Microsoft Teams. You don't need to worry about dark mode, font, or layouts - it adapts.
+
+1. **Easy to build with JSON** - you define the card using JSON code (think _recipie_ for the UI). Copilot Studio helps you preview your card before adding it to the topic.
+
+1. **Collect and use data** - you can use card to ask questions, collect answers, and use that ata in the conversation flow.
+    - Example: Ask for a user's phone number, then show a confirmation card with their phone number.
+
+1. **Boost user experience** - cards make your agent feel more interactive. It's a more clean, clickable, and user-friendly type of interface.
 
 ## 🐱 Is _JSON_ a person?
 
@@ -53,11 +59,11 @@ This is one of the options to use when adding an adaptive card to your topic.
 
 ## 👀 I see another option for building an adaptive card using _formula_
 
-Remember how we learn about Power Fx in [Lesson 07 - Add new topic with trigger and nodes](/07-add-new-topic-with-trigger/README.md/#️-using-power-fx-in-your-nodes)? The same can be applied in Adaptive Cards within Copilot Studio. 
+Remember how we learnt about Power Fx in [Lesson 07 - Add new topic with trigger and nodes](/07-add-new-topic-with-trigger/README.md/#️-using-power-fx-in-your-nodes)? The same can be applied in Adaptive Cards within Copilot Studio. 
 
 As a recap,
 
-    Power Fx is a low-code programming language used to add logic and dynamic behaviour to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
+> Power Fx is a low-code programming language used to add logic and dynamic behaviour to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
 
 ### How Power Fx works in Adaptive Cards
 
@@ -90,13 +96,13 @@ This formula combines the word "Hello" with the user's name dynamically.
 
 1. **Low-code friendly**
 
-    Power Fx is designed for people who aren't full-time developers. As mentioned earlier, it's readable, intuitive and similar to Excel formuals.
+    Power Fx is a low-code programming language. As mentioned earlier, it's readable, intuitive and similar to Excel formuals.
 
 ## 👷🏻‍♀️ Building with the Adaptive Card Designer
 
 The **Adaptive Card Designer** is a visual tool that lets you build interactive message cards using drag-and-drop elements like text, images, buttons, and inputs. Its purpose is to help you create rich, dynamic messages without writing complex code, making it easier to design user-friendly interfaces.
 
-When creating an agent in Copilot Studio, it's especially valuable for the **Send a message** node because it allows you to craft personalized, structured responses that look great and can include actions or data inputs directly within the conversation from variables and previous node outputs.
+The designer tool helps you build the card visually, but behind the scenes, it’s generating the JSON object for you. You can also switch to _formula_ which enables Power Fx expressions to be used in the card to display data from else where.
 
 ## 🎨 Understanding the Adaptive Card Designer
 
@@ -110,7 +116,7 @@ These are the building blocks of your adaptive card. You can drag and drop eleme
 - **Image** to show show pictures.
 - **FactSet** for key-value pairs.
 - **Input fields** to display text boxes, date pickers, toggles.
-- **Actions** to display buttons such as "Submit," "Open URL," or "Show Card."
+- **Actions** to display buttons such as _Submit_, _Open URL_, or _Show Card_.
 
 Each element has its own purpose and can be styled or configured.
 
@@ -140,29 +146,28 @@ This is where you fine-tune each element.
 
 **E) Card Payload Editor**
 
-This is the **raw JSON code** behind your card. Advanced user can edit this directly to:
+This is the **raw JSON code** behind your card. Advanced users can edit this directly to:
 
-- Add dynamic data bindings.
 - Use templating features.
 - Copy/paste card definitions.
 
-Even if you're new to the adaptive card designer, it's helpful to see how the visual design translates into codes.
+Even if you're new to the Adaptive Card designer, it's helpful to see how the visual design translates into codes.
 
 ## 🌵 Common use cases
 
-The following are common use cases for **Adaptive Cards** in Copilot Studio when used in the **Send a message** node.
+The following are common use cases for Adaptive Cards in Copilot Studio when used in the **Send a message** or **Ask a question** nodes.
 
 1. **Forms and data collection**
 
-    Use adaptive cards to collect structured inpur from users, such as:
+    Use adaptive cards to collect structured input from users, such as:
     - Leave requests
     - Feedback forms
     - Contact information
     - Appointment scheduling
 
-1. **Displaying dynamic information **
+1. **Displaying dynamic information**
 
-    Shows users persoalized or real-time data in a clean, readable format from enterprise sources such as ServiceNow, SAP, Dynamics 365, SharePoint etc.
+    Shows users personalized or real-time data in a clean, readable format from enterprise sources such as ServiceNow, SAP, Dynamics 365, SharePoint etc.
 
     - Order summaries
     - Account balances
@@ -186,7 +191,7 @@ The following are common use cases for **Adaptive Cards** in Copilot Studio when
 
 ## ⭐ Best practices
 
-Here are some best practices for creating Adaptive Cards for agents in Copilot Studio in the **Send a message** node.
+Here are some best practices for creating Adaptive Cards for agents in Copilot Studio.
 
 1. **Keep it simple and focused**
 
@@ -200,22 +205,22 @@ Here are some best practices for creating Adaptive Cards for agents in Copilot S
 
 1. **Structure for readability**
 
-    - Use **TextBlocks** for hreadings and instructions.
+    - Use **TextBlocks** for headings and instructions.
     - Group related elements using **Containers** or **ColumnSets** to improve visual flow.
 
 1. **Make Action elements clear**
 
-    - Use Action.Submit and or Action.OpenUrl with clear button titles like "Submit Request" or "View Details"
+    - Use **Action.Submit** and or **Action.OpenUrl** with clear button titles like "Submit Request" or "View Details"
     - Avoid vague labels like "Click here"
 
 1. **Design for adaptability**
 
     - Assume the card may be viewed on different screen sizes.
-    - Avoid fixed widths and use flexible layouts like ColumnSets for responsiveness.
+    - Avoid fixed widths and use flexible layouts like **ColumnSets** for responsiveness.
 
 1. **Use dynamic content when possible**
 
-    - Bind card elements to variables or outpus from nodes to personlize the user experience.
+    - Bind card elements to variables or outpus from nodes using Power Fx to personlize the user experience.
     - For example, show the user's name or current status dynamically.
 
 ## 🧪 Lab 08 - Add adaptive cards and enhance topic capabilities
@@ -263,11 +268,13 @@ Let's begin!
 
     ![Select adaptive card](assets/8.1_03_SelectAdaptiveCard.png)
 
-1. We're now goig to edit the JSON. Select **Edit adaptive card**.
+1. We're now going to edit the JSON. Select **Edit adaptive card**.
 
     ![Add Send a message node](assets/8.1_04_EditAdaptiveCard.png)
 
-1. This is the Adaptive card designer where you can design your card and see the card design in-real time. Try dragging and dropping the TextBlock and FactSet card elements to the authoring canvas - the card viewer area. Notice how the card structure and card payload editor updates as the two card elements were added. You can directly update the card payload editor and the element properties pane.
+1. This is the **Adaptive Card Designer** where you can design your card and see the card design in-real time. 
+
+    Try dragging and dropping the TextBlock and FactSet card elements to the authoring canvas - the card viewer area. Notice how the card structure and card payload editor updates as the two card elements were added. You can directly update the card payload editor and the element properties pane.
 
     ![Drag and drop card elements](assets/8.1_05_DragAndDropCardElements.png)
 
@@ -315,7 +322,7 @@ Let's begin!
 
     ![Select preview](assets/8.1_14_AdaptiveCardTestResult.png)
 
-1. Let's now update our card to use Power Fx formulas. **Refresh** the test pane and selec the **x icon** in the Activity map.
+1. Let's now update our card to use **Power Fx formulas**. **Refresh** the test pane and select the **X icon** in the Activity map.
 
     ![Refresh test pane adn close Activity map](assets/8.1_15_RefreshAndCloseActivityMap.png)
 
@@ -323,7 +330,7 @@ Let's begin!
 
     ![Select Formula](assets/8.1_16_SwitchToFormula.png)
 
-1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of Ctrl + A or using the Mac keyboard shortcut of Command+A, followed by deleting the lines. 
+1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. 
 
     ![Select all and delete lines](assets/8.1_17_CTRLA.png)
 
@@ -335,21 +342,23 @@ Let's begin!
 
     > Think of it like saying: _"For each item in this list, do something with it."_
 
-    In our use case for the items in our container in the adaptive card, we're going to loop through each of the SharePoint list items returned in the **Get items** SharePoint connection action stored in the global variable via the `value` property of the JSON response. We created this global variable in [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
+    In our use case, we're going to loop through each of the SharePoint list items returned in the **Get items** SharePoint connector action stored in the global variable, `Global.VarDevices`, via the `value` property of the JSON response. 
+    
+    > We created this global variable in [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
 
     ![Power Fx expression](assets/8.1_19_01_PowerFxExpression.png)
 
-    We'll loop through each SharePoint list item to display the device image, model, manufacturer and color. Since we binded the items property in the card to the `value` property of our SharePoint JSON response stored in the global variable, we can now simply reference the properties that we want. 
+    We'll loop through each SharePoint list item to display the device _image_, _model_, _manufacturer_ and _color_. Since we binded the items property in the card to the `value` property of our SharePoint JSON response stored in the global variable, we can now simply reference the properties that we want. 
     
-    Below is a screenshot of where the reference to the `Image` property is used in the image element of the adaptive card.
+    Below is a screenshot of where the reference to the `Image` property is used in the **image element** of the adaptive card.
 
     ![Image property](assets/8.1_19_02_PowerFxExpression.png)
 
-    Below is a screenshot of where the references to the `Model` and `Manufacturer.Value` preoperties is used in the TextBlock elements of the adaptive card.
+    Below is a screenshot of where the references to the `Model` and `Manufacturer.Value` preoperties is used in the **Input.ChoiceSet elements** of the adaptive card.
 
     ![Model and Manufacturer properties](assets/8.1_19_03_PowerFxExpression.png)
 
-1. Let's now save our topic and test our agent. Close the **Card Content** modal by selecting the **x icon** and select the **x icon** in the **Adaptive Card properties** pane.
+1. Let's now save our topic and test our agent. Close the **Card Content** modal by selecting the **X icon** and select the **X icon** in the **Adaptive Card properties** pane.
 
     ![Close Adaptive Card properties pane](assets/8.1_20_ExitFromAdaptiveCardPropertiesPane.png)
 
@@ -365,9 +374,9 @@ Let's begin!
 
     ![Test topic](assets/8.1_22_TestTopic.png)
 
-1. Select laptop from the list and you'll next see the available devices adaptive card. This this time, it's displaying the data from the Devices SharePoint list using the JSON response of the **Get items** SharePoint connector action stored in the global variable that we binded the adaptive card to using Power Fx. 
+1. Select laptop from the list and you'll next see the available devices adaptive card. This time, it's displaying the data from the Devices SharePoint list using the JSON response of the **Get items** SharePoint connector action stored in the global variable that we binded the adaptive card to using Power Fx. 
 
-    ![Formula adaptive card test result](assets/8.1_23_AdaptiveCardTestResult.png).
+    ![Formula adaptive card test result](assets/8.1_23_AdaptiveCardTestResult.png)
 
 1. **Refresh** the test pane and **close** the Activity map.
 
@@ -377,7 +386,7 @@ Awesome! 🙌🏻 You've designed and added your first Adaptive Card to your top
 
 ### 8.2 Add a condition node to enable users to request a device
 
-We'll now add logic for the user to request a device from the list of devices where the status equals Available. To achieve this, we're going to add an **Ask a Question** node and a **Condition** node. 
+We'll now add logic for the user to request a device from the list where the status equals _Available_. To achieve this, we're going to add an **Ask a Question** node and a **Condition** node. 
 
 Let's start with the question node.
 
@@ -461,7 +470,7 @@ Let's begin!
 
     ![Request device](assets/8.3_03_RenameTopic.png)
 
-1. In the **Trigger** node, we're going to change the trigger type. Select the **opposite arrows icon** and select **It's redirected to** trigger type.
+1. In the **Trigger** node, we're going to change the trigger type. Select the **opposite arrows icon** and select the trigger type, **It's redirected to**.
 
     ![Change trigger](assets/8.3_04_ChangeTrigger.png)
 
@@ -493,7 +502,7 @@ Let's begin!
 
     ![Adaptive card](assets/8.3_09_DeviceSelection.png)
 
-1. Scroll to the bottom of the node and you'll see output variables. The `commentsId` and the `deviceSelctionId` were defined in the element properties. These two variables will store values from the card elements the users interact with. These values will be used in the topic, which will learn more of in the next lesson's lab.
+1. Scroll to the bottom of the node and you'll see output variables. The `commentsId` and the `deviceSelctionId` were defined in the element properties. These two variables will store values from the card elements the users interact with. These values will be used downstream in the topic, which we'll learn about in the next lesson's lab.
 
     ![Node variable outputs](assets/8.3_10_Outputs.png)
 
@@ -505,7 +514,7 @@ Let's begin!
 
     ![Select Topics tab](assets/8.3_11_SelectFormula.png)
     
-1.  Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of Ctrl + A or using the Mac keyboard shortcut of Command+A, followed by deleting the lines. 
+1.  Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. 
 
     ![Select all and delete lines](assets/8.3_12_01_CTRLA.png)
 
@@ -513,7 +522,7 @@ Let's begin!
 
     ![Select preview](assets/8.3_12_02_PasteFormula.png)
 
-1. In the formula, we'll loop through each SharePoint list item using the the `For All` function to display the values of model in the title of the choice option, and the SharePoint item ID is referenced as the value.
+1. In the formula, we'll loop through each SharePoint list item using the `For All` function to display the values of model in the title of the choice option, and the SharePoint item ID is referenced as the value.
 
     ![Formula](assets/8.3_13_PowerFxFormula.png)
 
@@ -539,7 +548,7 @@ Now that we created the new topic to redirect to, we need to update our original
 
 1. Select the **Available devices** topic.
 
-    ![Select Available devices](assets/8.3_12_02_PasteFormula.png)
+    ![Select Available devices](assets/8.4_02_SelectAvailableDevicesTopic.png)
 
 1. Scroll down to the **Condition** node of the **Yes** path and select the **+ icon** to add a new topic.
 
@@ -549,7 +558,7 @@ Now that we created the new topic to redirect to, we need to update our original
 
     When **Condition** node of the **Yes** path has been processed, the agent will redirect from the **Available devices** topic to the **Request devices** topic. 
 
-    ![Redirect to Request device topic](assets/8.3_12_02_PasteFormula.png)
+    ![Redirect to Request device topic](assets/8.4_04_RedirectToRequestDevice.png)
 
 1. **Save** the topic.
 
@@ -559,7 +568,7 @@ Now that we created the new topic to redirect to, we need to update our original
 
     ![Refresh test pane](assets/8.4_06_RefreshTopic.png)
 
-1. Select the **Activity map** icon in the test pane, followed by enabling **Track between topics**. THis will allow us to see the _Available devices_ topic redirected to the _Request devices_ topic.
+1. Select the **Activity map** icon in the test pane, followed by enabling **Track between topics**. This will allow us to see the _Available devices_ topic redirected to the _Request devices_ topic.
 
     ![Enable track between topics setting](assets/8.4_07_TrackBetweenTopics.png)
 
@@ -579,7 +588,7 @@ Now that we created the new topic to redirect to, we need to update our original
 
     ![Question node](assets/8.4_10_RedirectedToRequestDeviceTopic.png)
 
-1. We've now succesfully tested our _Available devices_ topic redirecting to the _Request devices_ topic. Ignore the escalation message if you do see this appear in the test pane.
+1. We've now succesfully tested our _Available devices_ topic redirecting to the _Request devices_ topic. Ignore the escalation message if you do see this appear in the test pane. We'll be adding more enhancements to this topic in the next lesson's lab so this can be ignored.
 
     ![Test result](assets/8.4_11_TestResult.png)
 
