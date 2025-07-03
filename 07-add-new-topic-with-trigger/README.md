@@ -1,25 +1,27 @@
 # Add new topic with trigger and nodes
 
-## Introduction
+## Lesson chapters
 
-- [What is a Topic?](/07-add-new-topic-with-trigger/README.md/#-what-is-a-topic)
-    - [Purpose of a topic](/07-add-new-topic-with-trigger/README.md/#-purpose-of-a-topic)
-- [Why are topics useful?](/07-add-new-topic-with-trigger/README.md/#-why-are-topics-useful)
-- [Types of topics](/07-add-new-topic-with-trigger/README.md/#-types-of-topics)
-- [Anatomy of a topic](/07-add-new-topic-with-trigger/README.md/#-anatomy-of-a-topic)
-    - [Triger phrases](/07-add-new-topic-with-trigger/README.md/#️triger-phrases)
-    - [Conversation nodes](/07-add-new-topic-with-trigger/README.md/#-conversation-nodes)
-- [Using Power Fx in your nodes](/07-add-new-topic-with-trigger/README.md/#️-using-power-fx-in-your-nodes)
-    - [What Power Fx can do in topics](/07-add-new-topic-with-trigger/README.md/#what-power-fx-can-do-in-topics)
-    - [Why use Power Fx?](/07-add-new-topic-with-trigger/README.md/#why-use-power-fx)
-- [How do I create and edit topics?](/07-add-new-topic-with-trigger/README.md/#️-how-do-i-create-and-edit-topics)
-    - [Create from blank](/07-add-new-topic-with-trigger/README.md/#1-create-from-blank)
-    - [Create with Copilot](/07-add-new-topic-with-trigger/README.md/#2-create-with-copilot)
-- [OK, how do I design topics for my agent?](/07-add-new-topic-with-trigger/README.md/#-ok-how-do-i-design-topics-for-my-agent)
-- [Lab 07 - Add a new topic with conversation nodes](/07-add-new-topic-with-trigger/README.md/#-lab-07---add-a-new-topic-with-conversation-nodes)
-    - [7.1 Add a new topic from blank](/07-add-new-topic-with-trigger/README.md/#71-add-a-new-topic-from-blank)
-    - [7.2 Add node - Ask a Question and create a custom entity](/07-add-new-topic-with-trigger/README.md/#72-add-node---ask-a-question-and-create-a-custom-entity)
-    - [7.3 Add a tool using the SharePoint connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector)
+- [What is a Topic?](#-what-is-a-topic)
+    - [Purpose of a topic](#-purpose-of-a-topic)
+- [Why are topics useful?](#-why-are-topics-useful)
+- [Types of topics](#-anatomy-of-a-topic)
+    - [Triger phrases](#️triger-phrases)
+    - [Conversation nodes](#-conversation-nodes)
+- [Using Power Fx in your nodes](#️-using-power-fx-in-your-nodes)
+    - [What Power Fx can do in topics](#what-power-fx-can-do-in-topics)
+    - [Why use Power Fx?](#why-use-power-fx)
+- [How do I create and edit topics?](#️-how-do-i-create-and-edit-topics)
+    - [Create from blank](#1-create-from-blank)
+    - [Create with Copilot](#2-create-with-copilot)
+- [OK, how do I design topics for my agent?](#-ok-how-do-i-design-topics-for-my-agent)
+- [Lab 07 - Add a new topic with conversation nodes](#-lab-07---add-a-new-topic-with-conversation-nodes)
+    - [Use case](#-use-case)
+    - [Prerequisites](#prerequisites)
+    - [7.1 Add a new topic from blank](#71-add-a-new-topic-from-blank)
+    - [7.2 Add node - Ask a Question and create a custom entity](#72-add-node---ask-a-question-and-create-a-custom-entity)
+    - [7.3 Add node - Add a tool using the SharePoint connector](#73-add-node---add-a-tool-using-a-connector)
+- [Additional learning](#-additional-learning)
 
 ## 🤔 What is a Topic?
 
@@ -691,4 +693,8 @@ This is the end of **Lab 07 - Add a new topic with conversation nodes**, select 
 🔗 [Defining agent topics](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/defining-chatbot-topics?WT.mc_id=power-170631-ebenitez)
 
 🔗 [Create expressions using Power Fx](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-170631-ebenitez)
+
+📺 [Author topics using natural language](aka.ms/ai-in-action/copilot-studio/ep6)
+
+📺 [Add actions to agents using conenctors](aka.ms/ai-in-action/copilot-studio/ep4)
 
