@@ -473,4 +473,4 @@ This is the end of **Lab 06 - Create an agent with Copilot**, select the link be
 
 📺 [Create a custom agent using natural language](aka.ms/ai-in-action/copilot-studio/ep1)
 
-📺 [Add knowledge to your agents](aka.ms/ai-in-action/copilot-studio/ep2)
+📺 [Add knowledge to your agents](https://aka.ms/ai-in-action/copilot-studio/ep2)

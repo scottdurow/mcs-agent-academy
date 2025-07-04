@@ -694,7 +694,7 @@ This is the end of **Lab 07 - Add a new topic with conversation nodes**, select 
 
 🔗 [Create expressions using Power Fx](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-170631-ebenitez)
 
-📺 [Author topics using natural language](aka.ms/ai-in-action/copilot-studio/ep6)
+📺 [Author topics using natural language](https://aka.ms/ai-in-action/copilot-studio/ep6)
 
-📺 [Add actions to agents using conenctors](aka.ms/ai-in-action/copilot-studio/ep4)
+📺 [Add actions to agents using conenctors](https://aka.ms/ai-in-action/copilot-studio/ep4)
 

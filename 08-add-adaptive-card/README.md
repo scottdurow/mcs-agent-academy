@@ -607,6 +607,6 @@ This is the end of **Lab 08 - Enhance user interactions with Adaptive Cards**, s
 
 🔗 [Create expressions using Power Fx](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-170631-ebenitez)
 
-📺 [Building Adaptive Cards with Power FX](aka.ms/ai-in-action/copilot-studio/ep8)
+📺 [Building Adaptive Cards with Power FX](https://aka.ms/ai-in-action/copilot-studio/ep8)
 
 

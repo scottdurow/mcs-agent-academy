@@ -537,4 +537,4 @@ This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Stu
 
 🔗 [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-170631-ebenitez)
 
-📺 [Build prompts for your agent](aka.ms/ai-in-action/copilot-studio/ep3)
+📺 [Build prompts for your agent](https://aka.ms/ai-in-action/copilot-studio/ep3)
