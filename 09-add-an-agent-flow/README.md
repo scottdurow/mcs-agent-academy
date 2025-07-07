@@ -20,16 +20,16 @@ Agent flows always follow a fixed path - they do the same thing every time when 
 
 This makes them:
 
-- **Reliable**: you can trust that they'll behave the same way every time.
-- **Predictable**: you know what result to expect when the flow runs.
-- **Rule based**: they follow steps that you define.
+- **Reliable** - you can trust that they'll behave the same way every time.
+- **Predictable** - you know what result to expect when the flow runs.
+- **Rule based** - they follow steps that you define.
 
 Other benefits are:
-- **Automation**: handle repetitive tasks such as submitting forms or sending notifications.
-- **Integrated**: connect with 1400+ connectors like ServiceNow, SharePoint, Salesforce. Otherwise you can build your own custom connector.
-- **Scalability**: reuse flows across multiple agents or scenarios.
-- **No-code or low-code**: you can build flows using natural language or a visual designer.
-- **All-in-one-platform**: you can design, test and deploy flows in one place - Copilot Studio.
+- **Automation** - handle repetitive tasks such as submitting forms or sending notifications.
+- **Integrated** - connect with 1400+ connectors like ServiceNow, SharePoint, Salesforce. Otherwise you can build your own custom connector.
+- **Scalability** - reuse flows across multiple agents or scenarios.
+- **No-code or low-code** - you can build flows using natural language or a visual designer.
+- **All-in-one-platform** - you can design, test and deploy flows in one place - Copilot Studio.
 
 ## 🏄🏻‍♂️ How do agent flows enhance your agent?
 
@@ -69,7 +69,7 @@ Examples of enhanced capabilities:
     - The agent can plan and adjust steps based on changing information.
 
 1. **Integration actions**
-    - Connect your flow to other tools like Outlook, Microsoft Teams, ServiceNow, SharePoint and other applications and services.
+    - Connect your flow to other tools like Outlook, Microsoft Teams, ServiceNow, SharePoint and other applications and services, through from +1400 built-in connectors or from your own custom connector.
     - This helps your agent work with the apps your team already uses.
 
 1. **Human in the loop**
@@ -80,10 +80,11 @@ Examples of enhanced capabilities:
 
 1. **Trigger**
 
-An event starts the flow - such as a user asking a question, invoking the flow from a topic, a scheduled time, or an event happening in another system.
+    An event starts the flow - such as a user asking a question, invoking the flow from a topic, a scheduled time, or an event happening in another system.
 
 1. **Actions**
-These are steps that the agent follows next - send an email, call an API, update a ticket in ServiceNow.
+    
+    These are steps that the agent follows next - send an email, call an API, update a ticket in ServiceNow.
 
 ## 🧶 How to create an agent flow
 
@@ -97,35 +98,35 @@ It's a visual tool in Copilot Studio that helps you build, edit, and manage agen
 ### Key features of the agent flow designer
 
 1. **Visual canvas**
-- You can see your entire flow laid out like a diagram.
-- Easily zoom in/out, fit the view or use a minimap to navigate large flows.
+    - You can see your entire flow laid out like a diagram.
+    - Easily zoom in/out, fit the view or use a minimap to navigate large flows.
 
 1. **Add and remove actions**
-- Click the _plus (+)_ button to add a new action such as sending a message or updating an item in a SharePoint list.
-- You can search for actions and configure them through its settings.
-- To remove an action, click the _three dots (⋮)_ and select _Delete_.
+    - Click the _plus (+)_ button to add a new action such as sending a message or updating an item in a SharePoint list.
+    - You can search for actions from connectors, and configure them through its settings.
+    - To remove an action, click the _three dots (⋮)_ and select _Delete_.
 
 1. **Check parameters**
-- Click on any action to view or edit its settings called _parameters_.
-- You can enter values manually or use expressions to make them dynamic.
+    - Click on any action to view or edit its settings called _parameters_.
+    - You can enter values manually or use expressions to make them dynamic.
 
 1. **Version history**
-- Every time you save your flow, a version is recorded.
-- You can go back and view or restore previous version if needed.
+    - Every time you save your flow, a version is recorded.
+    - You can go back and view or restore previous version if needed.
 
 1. **Error checking**
-- The _Flow Checker_ highlights any errors.
-- All errors will need to be resolved prior to publishing your flow.
+    - The _Flow Checker_ highlights any errors.
+    - All errors will need to be resolved prior to publishing your flow.
 
 1. **Publish and test**
-- Once your flow is error-free, publish to make it live.
-- Use the _Test_ feature to run your flow manually or automatically, and check if it works as expected.
+    - Once your flow is error-free, publish to make it live.
+    - Use the _Test_ feature to run your flow manually or automatically, and check if it works as expected.
 
 ### Why use the agent flow designer?
 
-- **Visual and intuitive**: you can build flows by dragging and clicking.
-- **Safe to experiment**: version history lets you undo changes.
-- **Built-in testing**: helps you make sure everything works before going live.
+- **Visual and intuitive** - you can build flows by dragging and clicking.
+- **Safe to experiment** - version history lets you undo changes.
+- **Built-in testing** - helps you make sure everything works before going live.
 
 ## 🔤 You mentioned "expressions" - what are expressions?
 
@@ -141,7 +142,7 @@ Expressions let you:
 
 ### What do expressions look like?
 
-Expressions use functions. I'm going to borrow an explanation of what functions are from former Microsoft MVP, Jerry Weinstock.
+Expressions use functions. I'm going to borrow an explaination of what functions are from former Microsoft MVP, Jerry Weinstock.
 
 > "Functions are built-in logic to transform your data either through simple or complex operations in your expression."
 
@@ -149,7 +150,7 @@ Functions enable you to build expressions without you needing to write any code.
 
 The way I like to describe it, is that a function in agent flows is similar to Excel functions. You can perform an operation on data to transform it into a desired output. When building your formula in Excel you select your input value from the cells in a table or a range, and then apply functions to manipulate the data output. An example is using the <samp>COUNT</samp> function to work out the number of cells that contian number from a range. 
 
-In agent flows, instead of referencing data from cells in a table, you're referencing data outputs from the trigger or actions when building your expressions.
+In agent flows, instead of referencing data from cells in a table, you're referencing data outputs from the trigger or actions when building your expressions. Continuing with the previous example, use the function _length_ to retrieve the number of items returned from the _Get items_ SharePoint connector action.
 
 ### Why do functions matter?
 
@@ -161,7 +162,9 @@ Using functions makes your agent flows:
 
 ### Most useful functions
 
-#### 🔡 Text Functions
+The following are common functions used in agent flows. For the full list of functions, head to the [reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-170631-ebenitez).
+
+#### 🔡 Text
 - <samp>concat()</samp> - Joins two or more pieces of text together.
     - Example: `concat('Hello ', firstName)` → “Hello John”
 
@@ -171,10 +174,39 @@ Using functions makes your agent flows:
 - <samp>substring()</samp> - Extracts part of a string.
     - Example: Get the first 3 letters of a name.
 
-- <samp>trim()</samp> – Removes spaces from the beginning and end of text.
+- <samp>trim()</samp> - Removes spaces from the beginning and end of text.
 
-The followig are common functions used in agent flows. For the full list of functions, head to the [reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-170631-ebenitez).
+#### 🔢 Math and number
 
+- <samp>add()</samp>, <samp>sub()</samp>, <samp>mul()</samp>, <samp>div()</samp> - Basic math operations.
+    - Example: `add(5, 3)` - the output is 8
+
+#### 📅 Date and time
+- <samp>utcNow()</samp> - Gets the current date and time in UTC.
+    - Great for timestamps.
+
+- <samp>addDays()</samp>, <samp>addHours()</samp> - Adds time to a date.
+    - Example: `addDays(utcNow(), 7)` output is 7 days from now.
+
+- <samp>formatDateTime()</samp> - Formats a date into a readable string.
+    - Example: Monday, July 7, 2025
+
+#### ✅ Logical
+- <samp>if()</samp> - Runs one value if true, another if false.
+    - Example: `if(score > 50, 'Pass', 'Fail')`
+
+- <samp>equals()</samp> - Checks if two values are the same.
+
+- <samp>and()</samp>, <samp>or()</samp>, <samp>not()</samp> - Combine multiple conditions.
+
+#### 🪣 Other handy functions
+- <samp>coalesce()</samp> - Returns the first non-empty value.
+    - Useful for fallback/default values.
+
+- <samp>guid()</samp> - Generates a unique ID.
+    - Useful for tracking or logging.
+
+- <samp>length()</samp> - Counts how many characters or items are in a string or array.
 
 
 ## ⭐ Best practices
@@ -276,6 +308,8 @@ This is the end of **Lab 09 - Add an agent flow for automation and enhance topic
 🔗 [Agent flows overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview?WT.mc_id=power-170631-ebenitez)
 
 🔗 [Use agent flows with your agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow?WT.mc_id=power-170631-ebenitez)
+
+🔗 [List of functions in the reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-170631-ebenitez)
 
 📺 [Agent Flows in Copilot Studio](https://www.youtube.com/watch?v=VJTKyk3Pr7s)
 
