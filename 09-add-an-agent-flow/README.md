@@ -127,6 +127,56 @@ It's a visual tool in Copilot Studio that helps you build, edit, and manage agen
 - **Safe to experiment**: version history lets you undo changes.
 - **Built-in testing**: helps you make sure everything works before going live.
 
+## 🔤 You mentioned "expressions" - what are expressions?
+
+Expressions are small formulas or commands that help your agent flow work with data. You use them to calculate values, format text, make decisions, or pull specific information from inputs.
+
+### Why use expressions?
+
+Expressions let you:
+- **Customize how data is handled** - combine names, format dates.
+- **Make decisions** - if a value is greater than 10, do something.
+- **Transform data** - change text to lowercase, extract part of a string.
+- **Automate logic** - without writing full code
+
+### What do expressions look like?
+
+Expressions use functions. I'm going to borrow an explanation of what functions are from former Microsoft MVP, Jerry Weinstock.
+
+> "Functions are built-in logic to transform your data either through simple or complex operations in your expression."
+
+Functions enable you to build expressions without you needing to write any code. 
+
+The way I like to describe it, is that a function in agent flows is similar to Excel functions. You can perform an operation on data to transform it into a desired output. When building your formula in Excel you select your input value from the cells in a table or a range, and then apply functions to manipulate the data output. An example is using the <samp>COUNT</samp> function to work out the number of cells that contian number from a range. 
+
+In agent flows, instead of referencing data from cells in a table, you're referencing data outputs from the trigger or actions when building your expressions.
+
+### Why do functions matter?
+
+Using functions makes your agent flows:
+
+- **Smarter** - they can react to different inputs or conditions.
+- **Flexible** - you can customize how data is handled.
+- **Efficient** - you avoid manual steps by automating logic.
+
+### Most useful functions
+
+#### 🔡 Text Functions
+- <samp>concat()</samp> - Joins two or more pieces of text together.
+    - Example: `concat('Hello ', firstName)` → “Hello John”
+
+- <samp>toLower()</samp> / <samp>toUpper()</samp> - Changes text to lowercase or uppercase.
+    - Useful for standardizing input.
+
+- <samp>substring()</samp> - Extracts part of a string.
+    - Example: Get the first 3 letters of a name.
+
+- <samp>trim()</samp> – Removes spaces from the beginning and end of text.
+
+The followig are common functions used in agent flows. For the full list of functions, head to the [reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-170631-ebenitez).
+
+
+
 ## ⭐ Best practices
 
 Here are some best practices for building agent flows in Copilot Studio.

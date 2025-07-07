@@ -592,12 +592,16 @@ Now that we created the new topic to redirect to, we need to update our original
 
     ![Test result](assets/8.4_11_TestResult.png)
 
+1. Refresth the test pane.
+
+    ![Refresh test pane](assets/8.4_12_RefreshTestPane.png)
+
 ## Next lesson
 Congratulations! 👏🏻 You've learnt how to add adaptive cards using Power Fx formulas to display data from variables, and you also learnt how to redirect from one topic to another. Creating bite sized topics makes your agent more organized, but also helps guide users through different parts of the conversation flow with the agent.
 
 This is the end of **Lab 08 - Enhance user interactions with Adaptive Cards**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
-⏭️ [Move to **_placeholder text_** lesson](/07-add-new-topic-with-trigger/README.md)
+⏭️ [Move to **Add an agent flow to your Topic for automation** lesson](/09-add-an-agent-flow/README.md)
 
 
 ## 📚 Additional learning
