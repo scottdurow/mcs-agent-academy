@@ -14,7 +14,47 @@ In simple terms:
 - They help your agent _do things_, not just _say things_ to users.
 - They're resuable across topics and agents, and can be triggered by user messages, events, or other applications and serices.
 
-### Why use agent flows
+## 🙋🏽 Yes, but how is it different to Power Automate cloud flows?
+
+Both agent flows and Power Automate cloud flows help automate tasks. They're designed for different purposes and work in different ways.
+
+### 🤖 Agent flows in Copilot Studio
+
+**What they're for:**
+- Built specifically for conversational agents in Copilot Studio.
+- Focused on smart, AI-driven automation that interacts with business systems.
+
+**Why they're useful:**
+- Easy to build and manage directly in Copilot Studio.
+- Great for automating tasks that happen _during the conversation_ with users such as submitting a leave request.
+- You don't need a separate Power Automate license as billing is based on usage inside Copilot Studio. This can save time and cost for enterprise teams.
+
+**Limitations:**
+- You can't share them, copy them, or assign co-owners.
+- They're only visible and usuable within Copilot Studio.
+
+### ☁️ Power Automate cloud flows
+
+**What they're for:**
+- Design for general-purpose automation across many apps and services.
+- Can run independently or work alongside agent flows.
+
+**Why they're useful:**
+- Offers a wide range of connectors.
+- Ideal for automating processes outside of agents.
+- Can be shared, reused, and managed across teams.
+
+**Requirements:**
+- You need a Power Automate license to use them.
+
+### 📗 Summary
+
+| Use this | When you want to |
+| - | :- |
+| Agent flows | Automate tasks inside an agent, use AI, and keep everything in Copilot Studio |  
+| Power Automate cloud flows | Automate across apps and services, or build workflows outside of chatbots |
+
+## 👍🏻 Why use agent flows
 
 Agent flows always follow a fixed path - they do the same thing every time when given the same input.
 
@@ -25,19 +65,26 @@ This makes them:
 - **Rule based** - they follow steps that you define.
 
 Other benefits are:
-- **Automation** - handle repetitive tasks such as submitting forms or sending notifications.
-- **Integrated** - connect with 1400+ connectors like ServiceNow, SharePoint, Salesforce. Otherwise you can build your own custom connector.
+- **Automation** - enables your agent to handle repetitive tasks such as submitting forms or sending notifications.
+- **Connected** - connect with 1400+ connectors like ServiceNow, SharePoint, Salesforce. Otherwise you can build your own custom connector.
+- **Tightly integrated** - agent flows are part of the agent's logic, they're triggered directly by user messages or actions in the conversation.
 - **Scalability** - reuse flows across multiple agents or scenarios.
 - **No-code or low-code** - you can build flows using natural language or a visual designer.
-- **All-in-one-platform** - you can design, test and deploy flows in one place - Copilot Studio.
+- **All-in-one-platform** - you can design, test and deploy flows in one place - Copilot Studio. No need to switch between tools.
 
 ## 🏄🏻‍♂️ How do agent flows enhance your agent?
 
 Agent flows expand what your agent can do beyond "chatting" with users. They allow it to take action and interact with systems.
 
-Examples of enhanced capabilities:
-- Update a SharePoint list based on inputs provided in an adaptive card.
-- Sending a message to a Teams channel when a training request has been submitted .
+Let's say you're working in a finance deparment and you receive a lot of invoices from vendors. Normally, somone has to reach each invoice, pull out the important details - the amount, date, who it's from, and check if everything matches your records. Then send it to the right person for approval. This takes time and effort.
+
+With agent flows in Copilot Studio, you can automate this process. As soon as the invoice comes in, the agent:
+
+1. Read the document using intelligent document processing to find the key information.
+2. Check the details against your enterprise data to make sure everything looks correct
+3. Route it for approval to the right person(s).
+
+This saves time, reduces mistakes and makes the whole process much smoother.
 
 ### Think of it this way
 
@@ -47,7 +94,7 @@ Examples of enhanced capabilities:
 ### Why it matters
 
 - You get the best of both worlds: reliable automation and flexible AI.
-- It's easy to build and update flows as your business needs chage.
+- It's easy to build and update flows as your business needs change.
 - You can scale automation across teams.
 
 ## 🔌 Key features that make agent flows powerful
@@ -55,7 +102,7 @@ Examples of enhanced capabilities:
 1. **Natural language authoring**
     - You can describe what you want the flow to do in plain English.
     - Copilot understands your intent and builds the flow for you.
-    - No need to write code - just explain your idea.
+    - No need to write code - explain your idea.
 
 1. **AI actions**
 
@@ -74,7 +121,7 @@ Examples of enhanced capabilities:
 
 1. **Human in the loop**
     - Add approval steps where a person needs to review or confirm something.
-    - Supports reminders, delegation, and multi-stage approvals.
+    - [Advanced approvals](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-advanced-approvals?WT.mc_id=power-170631-ebenitez) supports reminders, delegation, and multi-stage approvals.
 
 ## ⚙️ How they work
 
@@ -108,7 +155,7 @@ It's a visual tool in Copilot Studio that helps you build, edit, and manage agen
 
 1. **Check parameters**
     - Click on any action to view or edit its settings called _parameters_.
-    - You can enter values manually or use expressions to make them dynamic.
+    - You can enter values manually or use _expressions_ to make them dynamic.
 
 1. **Version history**
     - Every time you save your flow, a version is recorded.
@@ -128,7 +175,7 @@ It's a visual tool in Copilot Studio that helps you build, edit, and manage agen
 - **Safe to experiment** - version history lets you undo changes.
 - **Built-in testing** - helps you make sure everything works before going live.
 
-## 🔤 You mentioned "expressions" - what are expressions?
+## 🔤 You mentioned _expressions_ - what are expressions?
 
 Expressions are small formulas or commands that help your agent flow work with data. You use them to calculate values, format text, make decisions, or pull specific information from inputs.
 
@@ -280,7 +327,133 @@ Let's begin!
 
 ### 9.1 Create an agent flow
 
-_placeholder text_
+In this exercise, we'll create an agent flow that retrieves the SharePoint item of the selected device and send an email to a manager with the device details.
+
+1. In the **Request device** topic, scroll down to the **Ask with adaptive card** node and add a new node. Select **Add a tool** and in the **Basic tools** tab of the fly out pane, select **New Agent flow**.
+
+    ![Add new Agent flow](assets/9.1_01_AddNewAgentFlow.png)
+
+1. The Agent flows **Designer** will load with a trigger and action.
+
+    - **Trigger** - When an agent calls the flow
+        - This will trigger a flow from a Copilot Studio agent.
+    
+    - **Action** - Respond to the agent
+        - This send a response that can contain output values back to the Copilot Studio agent.
+
+    Select the trigger.
+
+    ![Select the trigger](assets/9.1_02_SelectTrigger.png)
+
+1. Next, we're going to add several inputs for the agent flow.
+
+    - DeviceSharePointId - this will store the value, ID, of the SharePoint item. This ID value is an output from the Ask with adaptive card node where the user selected the device.
+
+    - User - this will be the name of the user which will be from a system variable of the agent.
+
+    - AdditionalComments - this will be the the comment entered by the user, which is an output from the Ask with adaptive card node.
+
+    We'll first add the `DeviceSharePointId` as an input for our trigger. Select **+ Add an input**.
+
+    ![Add an input](assets/9.1_03_AddInput.png)
+
+1. For the type of user input, select **Text**.
+
+    ![Select Text](assets/9.1_04_SelectText.png)
+
+1. For the name of the input, enter the following.
+
+    ```
+    DeviceSharePointId
+    ```
+
+    ![DeviceSharePointId input](assets/9.1_05_DeviceSharePointIdInput.png)
+
+1. We'll now add the second input, `User`. Repeat the same steps, select **+ Add an input** and select **Text**.
+
+    ![Add an input](assets/9.1_06_AddInput.png)
+
+1. For the name of the input, enter the following.
+
+    ```
+    User
+    ```
+
+    ![User input](assets/9.1_07_UserInput.png)
+
+1. We'll now add the third input, `AdditionalComments`. Repeat the same steps, select **+ Add an input** and select **Text**.
+
+    ![Add an input](assets/9.1_08_AddInput.png)
+
+1. For the name of the input, enter the following.
+
+    ```
+    AdditionalComments
+    ```
+
+    ![AdditionalComments input](assets/9.1_09_AdditionalComments.png)
+
+1. For this input, we'll update it to make it optional. Select the **ellipsis (...) icon** and select **Make the field optional**.
+
+    ![Make the field optional](assets/9.1_10_Optional.png)
+
+1. Great work! The trigger has now been configured, let's continue. Select the **Collapse icon** to collapse the trigger.
+
+    ![Collapse trigger](assets/9.1_11_CollapseTrigger.png)
+
+1. Select the **plus + icon** under the trigger to insert a new action.
+
+    ![Add action](assets/9.1_12_AddAction.png)
+
+1. The Actions pane will appear where you can view actions from 1400+ built-in connectors to Microsoft and third-party services.
+
+    ![Actions pane](assets/9.1_13_AddAnActionPane.png)
+
+1. In the search field enter the following,
+
+    ```
+    Get item
+    ```
+    
+    A list of actions will display in the search results. Select the **Get item** action from the **SharePoint connector**.
+
+    ![Get item action](assets/9.1_14_GetItemAction.png)
+
+1. We can now begin configuring the **Get item** action. Rename the action to,
+
+    ```
+    Get Device
+    ```
+    
+    ![Rename action](assets/9.1_15_RenameAction.png)
+
+1. In the **Site Address** field, select the **Site address** of the Contoso IT SharePoint site created in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
+
+    ![Select SharePoint site address](assets/9.1_16_SelectSharePointSiteAddress.png)
+
+1. In the **List Name** field, select the **Devices** SharePoint list.
+
+    ![Devices SharePoint list](assets/9.1_17_SelectDevicesList.png)
+
+1. In the **Id** field, select the **lightning bolt icon** or **fx icon** to the right.
+
+    ![Dynamic content picker](assets/9.1_18_InsertExpression.png)
+
+1. In the **Dynamic content** tab of the flyout pane, enter the following,
+
+    ```
+    sharepoint
+    ```
+
+    The search results will input parameters that match the value searched. Select the **DeviceSharePointId** parameter from the trigger.
+
+    ![Select DeviceSharePointId input](assets/9.1_19_DeviceSharePointId.png)
+
+1. Select **Add** to add the dynamic content input into the **Id** parameter of the action.
+
+    ![Select add](assets/9.1_20_AddDynamicContent.png)
+
+1.
 
 ### 9.2 Add agent flow to topic
 
