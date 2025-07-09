@@ -453,7 +453,90 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Select add](assets/9.1_20_AddDynamicContent.png)
 
-1.
+1. The dynamic content input from the trigger is now referenced in the **Id** parameter of the action. Select the **Collapse icon** to collapse the trigger.
+
+    ![Collapse Get item action](assets/9.1_21_CollapseGetItemAction.png)
+
+1. Select the **plus + icon** under the _Get Device_ action to insert a new action.
+
+    ![Add new action](assets/9.1_22_AddAnAction.png)
+
+1. In the search field enter the following,
+
+    ```
+    send
+    ```
+    
+    A list of actions will display in the search results. Select the **Send an email (V2)** action from the **Office 365 Outlook connector**.
+
+    ![Send an email action](assets/9.1_23_SendAnEmailAction.png)
+
+1. We next need to create a connection for the connector action. Select **Sign in**.
+
+    ![Create connection](assets/9.1_24_CreateConnection.png)
+
+1. Select your signed in user account.
+
+    ![Select user account](assets/9.1_25_SelectUserAccount.png)
+
+1. Select **Allow access**.
+
+    ![Select allow access](assets/9.1_26_AllowAccess.png)
+
+1. Rename the action to the following,
+
+    ```
+    Send an email to manager
+    ```
+
+    ![Add an input](assets/9.1_27_RenameAction.png)
+
+1. Let's now define our action. 
+
+    For the **To** input parameter, select yourself. Normally this would be your manager or we'd use another action that pulls through your manager based on your Entra ID profile but for the purpose of this lesson, select yourself.
+
+    For the **Subject** input parameter, enter the following,
+
+    ```
+    Request type: new device
+    ```
+
+    For the **Body** input parameter, enter the following,
+
+    ![Add an input](assets/9.1_28_ConfigureInputParameters.png)
+
+    ```
+    Hi,
+
+    New device requested from
+
+    Manufacturer:
+    Model:
+    Link to item in SharePoint
+    Additional comments from:
+
+    This is an automated email from Contoso Helpdesk Copilot
+    ```
+
+1. Next, we're going to update the **Body** input parameter with references to dynamic content input from the **trigger** or **Get item** action. Enter a space after the second line as we'll insert the name of the user from the trigger input, **User**.
+
+    Select the **lightning bolt icon** or **fx icon** to the right.
+
+    ![Add User input as dynamic content](assets/9.1_29_AddUserInput.png)
+
+1. In the **Dynamic content** tab of the flyout pane, enter the following, select the **User** input from the trigger.
+
+    ![Select User input](assets/9.1_30_SelectUserInput.png)
+
+1. Select **Add** to add the dynamic content **User** input into the **Body** parameter of the action.
+
+    ![Add User input](assets/9.1_31_AddUserInput.png)
+
+1. The dynamic content input from the trigger is now referenced in the **Body** parameter of the action. We'll repeat the same for the remaining lines in the email message body.
+
+    ![User input added](assets/9.1_32_UserInputAdded.png)
+
+1. 
 
 ### 9.2 Add agent flow to topic
 
