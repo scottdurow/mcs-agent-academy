@@ -524,7 +524,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Add User input as dynamic content](assets/9.1_29_AddUserInput.png)
 
-1. In the **Dynamic content** tab of the flyout pane, enter the following, select the **User** input from the trigger.
+1. In the **Dynamic content** tab of the flyout pane, select the **User** input from the trigger.
 
     ![Select User input](assets/9.1_30_SelectUserInput.png)
 
@@ -536,7 +536,211 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![User input added](assets/9.1_32_UserInputAdded.png)
 
-1. 
+1. Click into the space beside `Manufacturer:`. Select the **lightning bolt icon** or **fx icon** to the right. 
+
+    In the **Dynamic content** tab of the flyout pane, enter the following in the search field, 
+    
+    ```
+    manufacturer
+    ```
+
+    Select the **Manufacturer value** input from the trigger and select **Add**.
+
+    ![Add Manufacturer value input as dynamic content](assets/9.1_33_AddManufacturerValueInput.png)
+
+1.  Click into the space beside `Model:`. Select the **lightning bolt icon** or **fx icon** to the right. 
+
+    In the **Dynamic content** tab of the flyout pane, enter the following in the search field, 
+    
+    ```
+    model
+    ```
+
+    Select the **Model** input from the **Get item** action and select **Add**.
+
+    ![Add Model input as dynamic content](assets/9.1_34_AddModelInput.png)
+
+1. For the `Link to item in SharePoint` text, we'll update this to be a hyperlink in the email message body. We need to switch to the HTML editor by selecting the **</>** icon.
+
+    ![Add User input](assets/9.1_35_SwitchToHTMLEditor.png)
+
+1. The HTML editor is now enabled. Click before the `Link to item in SharePoint` text, copy and paste the following HTML tag,
+
+    ```
+    <a href="
+    ```
+
+    ![HTML tag](assets/9.1_36_HTMLTag.png)
+
+1. Click after the HTML tag `<a href="` and select the **lightning bolt icon** or **fx icon** to the right.
+
+    In the **Dynamic content** tab of the flyout pane, enter the following in the search field, 
+    
+    ```
+    link to item
+    ```
+
+    Select the **Link to item** input from the **Get item** action and select **Add**.
+
+    ![Add Model input as dynamic content](assets/9.1_37_AddLinkToItemInput.png)
+
+1. The dynamic content input of **Link to item** is now referenced in the **Body** parameter. Click after the **Link to item** input, copy and paste the following.
+
+    ```
+    ">
+    ```
+
+    ![HTML tag](assets/9.1_38_HTMLTag.png)
+
+1. Click after the `Link to item in SharePoint` text, copy and paste the following.
+
+    ```
+    </a>
+    ```
+
+    ![HTML tag](assets/9.1_39_HTMLTag.png)
+
+1. We're now done adding a hyperlink to our email message body 😎 Select the **</>** icon to disable the HTML editor.
+
+    ![Switch back to WYSIWYG editor](assets/9.1_40_SwitchBackToBasicEditor.png)
+
+1. Click after the `Additional comments from` text before the colon character.
+
+    In the **Dynamic content** tab of the flyout pane, enter the following in the search field, 
+    
+    ```
+    user
+    ```
+
+    Select the **User** input from the trigger and select **Add**.
+
+    ![Add Model input as dynamic content](assets/9.1_41_AddUserInput.png)
+
+1. We're now going to insert an expression that will display the value of Additional Comments if provided by the user in the **Ask an adaptive card** node, otherwise display "None" if the user does not provide any comments. Click after the colon and select the **lightning bolt icon** or **fx icon** to the right.
+
+    In the **Function** tab of the flyout pane an din the expression field above, enter the following, 
+    
+    ```
+    if(empty())
+    ```
+
+    This expression uses the `if` function for an if-else statement. 
+    
+    The next function used is `empty` which checks whether a value exists or not in a string parameter. The string paramater to be referenced in the AdditionalComments input from the trigger.
+
+    ![If empty](assets/9.1_42_IfExpression.png)
+
+1. Next, click **inside of the brackets** after the `empty` function. We're going to insert the AdditionalComments input parameter from the trigger.
+
+    Select the **Dynamic content** tab. Enter the following in the search field,
+
+    ```
+    comment
+    ```
+
+    Scroll down the pane and select **AdditionalComments** input from the trigger. The input will now be added as a string parameter in the expression.
+
+    ![Add Model input as dynamic content](assets/9.1_43_AdditionalCommentsInput.png)
+
+1. Next we'll define the **_true_** logic, where if the `AdditionalComments` string parameter is empty, then we want to display a string (text) of `None`.
+
+    After the bracket that encloses the string parameter, enter the following,
+
+    ```
+    , 'None',
+    ```
+
+    ![True logic](assets/9.1_44_None.png)
+
+1. Finally we'll define the **_false_** logic, where if the `AdditionalComments` string parameter is not empty, then we want to display the value of the **AdditionalComments** input from our trigger.
+
+    > A reminder this value will be from the Additional Comments field of the adaptive card in the **Ask with adaptive card** node in the **Request device** topic.
+
+    ![False logic](assets/9.1_45_AdditionalCommentsInput.png)
+
+1. Excellent - our expression is complete! Let's now add it our **Body** parameter by selecting **Add**.
+
+    ![Add expression](assets/9.1_46_AddExpression.png)
+
+1. The expression has now been added to the **Body** parameter. Lastly, format the last line in Italics.
+
+    ![Italics](assets/9.1_47_Italics.png)
+
+1. Select the **Collapse icon** to collapse the action.
+
+    ![Collapse action](assets/9.1_48_CollapseAction.png)
+
+1. We're now going to update the **Respond to the agent** action to send the value of the **Model value** parameter from the **Get item** action back to the agent.
+
+    Select the **Respond to the agent** action.
+
+    ![Select Respond to the agent action](assets/9.1_49_RespondToAgent.png)
+
+1. In the pane, select **+ Add an output**.
+
+    ![Add an output](assets/9.1_50_AddAnOutput.png)
+
+1. For the type of output, select **Text**.
+
+    ![Select Text output](assets/9.1_51_SelectText.png)
+
+1. Enter the following as the name of the output.
+
+    ```
+    ModelValue
+    ```
+
+    ![ModelValue output](assets/9.1_52_ModelValueOutput.png)
+
+1. Select the value field and select the **lightning bolt icon** or **fx icon** to the right.
+
+    ![Insert expression](assets/9.1_53_InsertExpression.png)
+
+1. In the **Dynamic content** tab of the flyout pane, enter the following in the search field, 
+    
+    ```
+    model
+    ```
+
+    Select the **Model** input from the **Get item** action and select **Add**.
+
+    ![Add Model input as dynamic content](assets/9.1_54_AddModelInput.png)
+
+1. We've now completed our agent flow 👏🏻 Let's make one more update to our agent flow before publishing.
+
+    Select the **Collapse icon** to collapse the action.
+
+    ![Collapse action](assets/9.1_55_CollapseAction.png)
+
+1. Select **Save draft** to save our agent flow.
+
+    ![Select save draft](assets/9.1_56_SaveDraft.png)
+
+1. Select the **Overview** tab and select **Edit**.
+
+    ![Select Edit](assets/9.1_57_Edit.png)
+
+1. For the **Flow name**, copy and paste the following.
+
+    ```
+    Send device request email
+    ```
+
+    For the **Description**, select the **refresh icon** to use AI to automatically generate a description for you based on the trigger and actions in the agent flow.
+
+    ![Details pane](assets/9.1_58_RenameAndDescription.png)
+
+1. Select **Save** to save the updated name and description of the agent flow.
+
+    ![Save details](assets/9.1_59_Save.png)
+
+1. Select the **Designer** tabe and select **Publish** to publish the agent flow so that it can be added as a node in the **Request devce** topic.
+
+    ![Publish](assets/9.1_60_Publish.png)
+
+1. A confirmation message will appear shortly to confirm the agent flow is published.
+
+    ![Confirmation message](assets/9.1_61_Confirmation.png)
 
 ### 9.2 Add agent flow to topic
 
