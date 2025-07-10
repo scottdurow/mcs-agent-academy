@@ -1,19 +1,19 @@
-# Course Setup
+# 🧰 Mission 00: Course Setup  
+**Codename: Operation Deployment Ready**
 
-We are very excited for you to start this course and learn how to build your first agent with Copilot Studio!
+Welcome to the first mission of your training as a Copilot Studio Agent.  
+Before you can start building your first AI agent, you need to establish your **field-ready development environment**.
 
-To help you get started, this page outlines the technical requirements and steps needed to get an environment up and running so you can start building. 
+This briefing outlines the systems, access credentials, and setup steps required to successfully operate in the Microsoft 365 ecosystem. Your mission includes:
 
-Copilot Studio is part of the Microsoft 365 ecosystem, so you’ll need a Microsoft 365 account (work or school) to get started. These instructions cover:
-
-1. Signing up for a Microsoft 365 account.  
-1. Configuring your Microsoft 365 tenant for Copilot Studio  
-1. (Optional) Obtaining a Microsoft 365 Copilot license (required to publish agents into Copilot chat)  
-1. Accessing Copilot Studio and verifying your environment
+1. Activating a Microsoft 365 developer tenant  
+2. Gaining access to Microsoft Copilot Studio  
+3. (Optional) Securing a Microsoft 365 Copilot license for production publishing  
+4. Creating a SharePoint site to serve as your data source in later missions
 
 ---
 
-## Prerequisites
+## 🔍 Prerequisites: Field Requirements
 
 Before you begin, ensure you have:
 
@@ -124,4 +124,13 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
 ---
 
-Congratulations—you now have a working Microsoft 365 developer environment with Copilot Studio access. You’re ready to start building, testing, and publishing AI agents for Microsoft 365!  
+## ✅ Mission Complete
+
+You’ve successfully:
+
+- Set up a Microsoft 365 dev environment  
+- Activated your Copilot Studio trial  
+- Created a SharePoint site for grounding agents  
+- Populated the Devices list for use in future missions
+
+You're officially cleared to begin your **Recruit-level agent training** in [Lesson 01](/01-introduction-to-agents/README.md).  

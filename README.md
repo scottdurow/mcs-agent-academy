@@ -1,54 +1,83 @@
-# Copilot Studio for Beginners - A Course
+# Copilot Studio Agent Academy
+![Copilot Studio Agent Academy Recruit](./images/mcs-agent-academy-recruit-banner.png)
+**Welcome, Recruit.**  
+Your mission—should you choose to accept it—is to master the art of building agents using **Microsoft Copilot Studio**.
 
-[![GitHub license](https://img.shields.io/github/license/microsoft/copilot-studio-for-beginners.svg)](https://github.com/microsoft/copilot-studio-for-beginners/blob/master/LICENSE)
-[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/copilot-studio-for-beginners.svg)](https://GitHub.com/microsoft/copilot-studio-for-beginners/graphs/contributors/)
-[![GitHub issues](https://img.shields.io/github/issues/microsoft/copilot-studio-for-beginners.svg)](https://GitHub.com/microsoft/copilot-studio-for-beginners/issues/)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/copilot-studio-for-beginners.svg)](https://GitHub.com/microsoft/copilot-studio-for-beginners/pulls/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+This hands-on training is your entry point into the **world of agents**: from grounded prompts to Adaptive Cards and agent flows, you'll learn how to build, scale, and deploy intelligent agents using real-world tools and use cases.
 
-### Language Support
-[![English](https://img.shields.io/badge/English-brightgreen.svg?style=flat-square)](README.md)
+---
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/copilot-studio-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/copilot-studio-for-beginners/watchers/)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/copilot-studio-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/copilot-studio-for-beginners/network/)
-[![GitHub stars](https://img.shields.io/github/stars/microsoft/copilot-studio-for-beginners.svg?style=social&label=Star)](https://GitHub.com/microsoft/copilot-studio-for-beginners/stargazers/)
+## 🎯 Mission Objective
 
-## 🌱 Getting Started
+By completing the Agent Academy, you'll be able to:
 
-This course has 12 lessons covering the fundamentals of building AI Agents with Copilot Studio. 
+- Understand what agents are in the context of Microsoft Copilot Studio
+- Explore how Large Language Models (LLMs), retrieval-augmented generation (RAG), and orchestration come together in an agent
+- Build both **declarative** and **custom agents**
+- Enhance agents with **Topics**, **Adaptive Cards**, and **Agent Flows**
+- Deploy agents to **Microsoft Teams** and **Microsoft 365 Copilot**
 
-Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars)
+---
 
-### What You Need 
+## 🧭 Curriculum Overview
 
-Each lesson includes step by step instructions for building agents in Copilot Studio and accompanying videos. You will need a Microsoft 365 Environment and Copilot Studio access to complete the course. 
+This academy is broken into progressive lessons—each one designed as a field mission to level up your agent-building skills.
 
-For more information on getting a developer environment for this course, go to the [Course Setup](./00-course-setup/README.md).
+| Lesson | Title | Mission Briefing |
+|--------|-------|------------------|
+| `00` | 🧰 [Course Setup](./00-course-setup/README.md) | Set up your dev environment, Copilot Studio trial, and SharePoint site |
+| `01` | 🧠 [Introduction to Agents](./01-introduction-to-agents/README.md) | Understand conversational AI concepts, LLMs, and autonomous vs. declarative agents |
+| `02` | 🛠️ [Copilot Studio Fundamentals](./02-copilot-studio-fundamentals/README.md) | Learn the building blocks: knowledge, skills, autonomy |
+| `03` | 👩‍💻 [Create a Declarative Agent](./03-create-a-declarative-agent-for-M365Copilot/README.md) | Add a Copilot for Microsoft 365 agent grounded in a prompt |
+| `04` | 🧩 [Creating a Solution](./04-creating-a-solution/README.md) | Package your agent into a reusable solution for environment management |
+| `05` | 🚀 [Get Started with Pre-Built Agents](./05-using-prebuilt-agents/README.md) | Use and customize a template agent to accelerate setup |
+| `06` | ✍️ [Build a Custom Agent](./06-create-agent-from-conversation/README.md) | Create a new Copilot grounded in knowledge sources |
+| `07` | 🧠 [Add a Topic with Triggers](./07-add-new-topic-with-trigger/README.md) | Use Topics to define custom question/answer paths |
+| `08` | 🪪 [Enhance with Adaptive Cards](./08-add-adaptive-card/README.md) | Build an Adaptive Card using Power Fx and SharePoint |
+| `09` | 🔁 Automate with Agent Flows | Use Adaptive Card input to trigger back-end flows |
+| `10` | 🧭 Add Event Triggers | Enable your agent to act autonomously using event-based logic |
+| `11` | 📢 Publish Your Agent | Deploy your agent to Microsoft Teams and Microsoft 365 Copilot |
 
-## 🙏 Want to help?
+---
 
-Do you have suggestions or found spelling or code errors? [Raise an issue](https://github.com/microsoft/copilot-studio-for-beginners/issues) or [Create a pull request](https://github.com/microsoft/copilot-studio-for-beginners/pulls)
+## 🧪 Prerequisites
 
-## 📂 Each lesson includes
+To complete all missions, you’ll need:
 
-- A written lesson located in the README and a short video
-- Links to extra resources to continue your learning
+- A Microsoft 365 Developer tenant (with SharePoint enabled)
+- Access to **Microsoft Copilot Studio** (trial or licensed)
+- Optional: Basic knowledge of SharePoint, Power Platform, or Power Fx
+
+---
+
+## 🧬 Who This Is For
+
+This course is ideal for:
+
+- Makers and developers exploring **Copilot Studio**
+- IT pros building **Microsoft 365 Copilot extensions**
+- Power Platform enthusiasts who want to **level up** with intelligent agents
+- Anyone who prefers to learn by **doing**
+
+---
+
+## 🏅 Rank Progression
+
+The **Copilot Studio Agent Academy** is a multi-phase training program designed to build your skills across three agent ranks. Each level includes a badge and increasing responsibilities:
+
+| Rank             | Level | Visual | Description                                                                 |
+|------------------|:-----:|--------|-----------------------------------------------------------------------------|
+| 🟢 **Recruit**     | •     | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png)     | Learn the fundamentals and get hands-on with Copilot Studio basics — that’s **this course**. |
+| 🔵 **Operative**   | ••    | ![Operative Badge](./images/mcs-agent-academy-operative-badge.png) | Deepen your skills with orchestration, adaptive UX, and connected systems — coming soon in **Volume 2**. |
+| 🟡 **Commander**   | •••   | ![Commander Badge](./images/mcs-agent-academy-commander-badge.png) | Master autonomy, exception handling, security and scalable deployment — taught in the **final volume** of the academy. |
+
+> ✅ Completing this curriculum earns you the **Recruit** badge.  
+> 🔓 **Operative** and **Commander** will be unlocked in future phases.
+
+Each level builds on the last. Finish your Recruit mission, and stay tuned to level up your agent credentials.
 
 
-## 🗃️ Lessons
-
-| #   | **Lesson Link**                                                                                                                              | **Description**                                                                                 | **Video**                                                                   | **Extra Learning**                                                             |
-| --- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| 00  | [Course Setup](./00-course-setup/README.md)                                                                 | **Learn:** How to setup your development environment                                            | Video Coming Soon                                                                 | Coming soon |
-| 01  | [What are Agents](./01-introduction-to-agents/README.md)                              | **Learn:** Understanding what agents are       | Video Coming Soon | Coming soon |
-| 02  | [Copilot Studio Fundamentals](./02-copilot-studio-fundamentals/README.md)             | **Learn:** What is Copilot Studio and when do you use it?                                      | Video Coming Soon  | Coming soon |
-| 03  | [Create a declarative agent for Microsoft 365 Copilot](./03-create-a-declarative-agent-for-M365Copilot/README.md)                           | **Learn:** Add a declarative agent for Microsoft 365 Copilot and ground it with an AI Prompt                                  | Video Coming Soon  | Coming soon |
-| 04  | [Creating a Solution for your agent](./04-creating-a-solution/README.md)             | **Learn:** Create a solution to manage agents across multiple environments                                           | Video Coming Soon  | Coming soon |
-| 05  | Get started with pre-built agents                                                | **Learn:** Start with a pre-built agent configured with Topics to have an agent built in minutes | Video Coming Soon  | Coming soon |
-| 06  | [Create a custom agent using natural language with Copilot and grounding it with your data](./06-create-agent-from-conversation/README.md)                                | **Learn:** Build an agent using natural language grounded in knowledge sources                                | Video Coming Soon  | Coming soon |
-| 07  | [Add new topic with trigger and nodes](./07-add-new-topic-with-trigger/README.md)                                    | **Learn:** Add a new Topic to answer questions about available devices               | Video Coming Soon  | Coming soon |
-| 08  | [Enhance user interactions in Topics with Adaptive Cards](./08-add-adaptive-card/README.md)                                    | **Learn:** Build an Adaptive card that uses Power Fx expressions to display data from SharePoint, and how to redirect from one topic to another               | Video Coming Soon  | Coming soon |
-
+---
 
 ## 🎒 Other Courses
 
