@@ -50,7 +50,7 @@ Both agent flows and Power Automate cloud flows help automate tasks. They're des
 ### 📗 Summary
 
 | Use this | When you want to |
-| - | :- |
+| :- | :- |
 | Agent flows | Automate tasks inside an agent, use AI, and keep everything in Copilot Studio |  
 | Power Automate cloud flows | Automate across apps and services, or build workflows outside of chatbots |
 
@@ -658,7 +658,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![False logic](assets/9.1_45_AdditionalCommentsInput.png)
 
-1. Excellent - our expression is complete! Let's now add it our **Body** parameter by selecting **Add**.
+1. Excellent, our expression is complete! Let's now add it our **Body** parameter by selecting **Add**.
 
     ![Add expression](assets/9.1_46_AddExpression.png)
 
@@ -744,7 +744,43 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 ### 9.2 Add agent flow to topic
 
-_placeholder text_
+1. Select **Agents** in the left handside menu and select the **Contoso Helpdesk Copilot**.
+
+    ![Select Agents](assets/9.2_01_01_SelectAgent.png)
+
+1. Select the **Topics** tab.
+
+    ![Select Topics tab](assets/9.2_01_02_SelectTopics.png)
+
+1. Select the **Request device** topic.
+
+    ![Select Request device topic](assets/9.2_01_03_SelectRequestDevice.png)
+
+1. Scroll down to the **Ask with adaptive card** node and add a new node. Select **Add a tool** and in the **Basic tools** tab of the fly out pane, select the agent flow we recently created and published, **Send device request email**.
+
+    ![Select agent flow](assets/9.2_02_SelectAgentFlow.png)
+
+1. For the trigger inputs of our agent flow, we need to select the variable outpus from the **Ask with adaptive card** node.
+
+    Select the **ellipsis (...) icon** for the DeviceSharePointId input.
+
+    ![Select variable](assets/9.2_03_SelectVariable.png)
+
+1.  Select the **deviceSelctionId** variable which is one of the outputs defined in **Ask with adaptive card** node.
+
+    ![Select deviceSelctionId](assets/9.2_04_SelectDeviceSelectionId.png)
+
+1. Next, select the **ellipsis (...) icon** for the User input.
+
+    ![Select Variable](assets/9.2_05_SelectVariable.png)
+
+1. Select the **System** tab in the flyout variable pane and select **User.DisplayName**. This variable stores the display name of the internal user interacting withthe agent.
+
+    ![Select User.DisplayName system variable](assets/9.2_06_SelectUser.DisplayName.png)
+
+1. Next, select the **greater than icon** by the Advanced inputs and select the **ellipsis (...) icon** for the AdditonalComments input.
+
+    ![Expand advanced inputs](assets/9.2_02_SelectAgentFlow.png)
 
 ### 9.3 Update Available device topic
 
