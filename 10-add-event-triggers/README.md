@@ -215,7 +215,7 @@ Before starting this lab, ensure you have:
    - Under the Orchestration section, Toggle **Generative orchestration** to **On** if it's not already enabled  
      ![Enable Generative AI](./assets/10_EnableGenerativeAI.png)
 
-3. Navigate to the **Overview** tab and location the **Triggers** section
+3. Navigate to the **Overview** tab and locate the **Triggers** section
 
 4. Click **+ Add trigger** to open the trigger library  
     ![Navigate to Triggers](./assets/10_NavigateToTrigger.png)
@@ -266,7 +266,7 @@ Before starting this lab, ensure you have:
 
 1. Enter the following expression to provide the agent with specific details about the ticket:
 
-   ```shell
+   ```
    concat('Submitted By Name: ', first(triggerOutputs()?['body/value'])?['Author/DisplayName'], '\nSubmitted By Email: ', first(triggerOutputs()?['body/value'])?['Author/Email'], '\nTitle: ', first(triggerOutputs()?['body/value'])?['Title'], '\nIssue Description: ', first(triggerOutputs()?['body/value'])?['Description'], '\nPriority: ', first(triggerOutputs()?['body/value'])?['Priority/Value'],'\nTicket ID : ', first(triggerOutputs()?['body/value'])?['ID'])
    ```
 
