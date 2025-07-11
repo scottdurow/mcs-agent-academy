@@ -616,9 +616,11 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Add Model input as dynamic content](assets/9.1_41_AddUserInput.png)
 
-1. We're now going to insert an expression that will display the value of Additional Comments if provided by the user in the **Ask an adaptive card** node, otherwise display "None" if the user does not provide any comments. Click after the colon and select the **lightning bolt icon** or **fx icon** to the right.
+1. We're now going to insert an expression that will display the value of Additional Comments if provided by the user in the **Ask an adaptive card** node, otherwise display "None" if the user does not provide any comments.
+    
+    Click after the colon and select the **lightning bolt icon** or **fx icon** to the right.
 
-    In the **Function** tab of the flyout pane an din the expression field above, enter the following, 
+    In the **Function** tab of the flyout pane and in the expression field above, enter the following, 
     
     ```
     if(empty())
@@ -626,11 +628,11 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     This expression uses the `if` function for an if-else statement. 
     
-    The next function used is `empty` which checks whether a value exists or not in a string parameter. The string paramater to be referenced in the AdditionalComments input from the trigger.
+    The next function used is `empty` which checks whether a value exists or not in a string parameter. The string paramater to be referenced is the `AdditionalComments` input from the trigger.
 
     ![If empty](assets/9.1_42_IfExpression.png)
 
-1. Next, click **inside of the brackets** after the `empty` function. We're going to insert the AdditionalComments input parameter from the trigger.
+1. Next, click **inside of the brackets** after the `empty` function. We're going to insert the `AdditionalComments` input parameter from the trigger.
 
     Select the **Dynamic content** tab. Enter the following in the search field,
 
@@ -778,9 +780,65 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Select User.DisplayName system variable](assets/9.2_06_SelectUser.DisplayName.png)
 
-1. Next, select the **greater than icon** by the Advanced inputs and select the **ellipsis (...) icon** for the AdditonalComments input.
+1. Next, select the **greater than icon** by the Advanced inputs to see the AdditionalComments input. 
 
-    ![Expand advanced inputs](assets/9.2_02_SelectAgentFlow.png)
+    ![Expand advanced inputs](assets/9.2_07_ExpandAdvancedInputs.png)
+
+1. Select the **ellipsis (...) icon** for the AdditonalComments input.
+
+    ![Expand advanced inputs](assets/9.2_08_SelectVariable.png)
+
+1. Select the **Formula** tab in the flyout variable pane as we'll use a Power Fx expression, similar to the expression in the agent flow that does a conditional check using the _if_ function, but this time 
+    - using Power Fx functions,
+    - and inserting either no value, or the value of the `commentsId` output variable from the **Ask with adaptive card** node.
+    
+    Enter the following functions in the Power Fx field,
+    
+    ```
+    if(empty())
+    ```
+
+    This expression uses the `if` function for an if-else statement. 
+    
+    The next function used is `IsBlank` which checks whether a value exists or not in a string parameter. The string paramater to be referenced is the `commentsId` output variable from the **Ask with adaptive card** node.
+
+    ![If empty](assets/9.2_10_IfIsBlank.png)
+
+1. Next, click **inside of the brackets** after the `IsBlank` function. We're going to insert the `commentsId` output variable from the **Ask with adaptive card** node.
+
+    Enter the following inside the brackets,
+
+    ```
+    Topic.commentsId
+    ```
+
+    And add a comma after the bracket.
+
+    ![Reference commentsId output](assets/9.2_11_Topic.commentsId.png)
+
+1. Next we'll define the logic
+
+    -  when **_true_** - if the `Topic.commentsId` string parameter is empty, then we want to insert no value. 
+    - when **_false_** - if the `Topic.commentsId` string parameter is empty, then insert the value of commentsId variable.
+    
+    After the bracket that encloses the string parameter, enter the following,
+
+    ```
+    "", Topic.commentsId)
+    ```
+
+    The Power Fx expression should be the following,
+    
+    ```
+    If(IsBlank(Topic.commentsId), "", Topic.commentsId)
+    ```
+
+    ![Power Fx expression](assets/9.2_12_PowerFxExpression.png)
+
+1. Great work, our expression is complete! Now select **Insert** to set the input parameter of the agent flow to the Power Fx expresison.
+
+    ![Insert Power Fx expression](assets/9.2_13_InsertPowerFxExpression.png)
+
 
 ### 9.3 Update Available device topic
 
