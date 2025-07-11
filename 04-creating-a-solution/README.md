@@ -63,10 +63,10 @@ It's good practice to create an agent in a dedicated solution in your source (de
 
 - Helps you roll out changes in a controlled way.
 
-🧩 **Dependency Management**
+🧩 **Dependency management**
 - Solutions track which parts depend on others. This prevents you from breaking things when you make changes.
 
-🧩 **Team Collaboration**
+🧩 **Team collaboration**
 - Developers and makers can work together using unmanaged solutions in development, then hand off a managed solution for deployment.
 
 ## 🪪 Understanding Solution Publishers
@@ -75,12 +75,12 @@ A Solution Publisher in Power Platform is like a label or brand that identifies 
 
 When you create a solution, you must choose a publisher. This publisher defines:
 
-- A prefix that gets added to all custom components (like tables, fields, and flows).
+- A prefix that gets added to all custom components (think tables, fields, and flows).
 
 - A name and contact info for the organization or person who owns the solution.
 
 ### 🤔 Why is it important? 
-1. **Easy identification** - the prefix (like `new_` or `abc_`) helps you quickly identify which components belong to which solution or team.
+1. **Easy identification** - the prefix (xample - `new_` or `abc_`) helps you quickly identify which components belong to which solution or team.
 
 2. **Avoids conflicts** - if two teams create a column called status, their prefixes (`teamA_status`, `teamB_status`) prevent naming collisions.
 
