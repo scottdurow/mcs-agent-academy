@@ -474,3 +474,5 @@ This is the end of **Lab 06 - Create an agent with Copilot**, select the link be
 📺 [Create a custom agent using natural language](aka.ms/ai-in-action/copilot-studio/ep1)
 
 📺 [Add knowledge to your agents](aka.ms/ai-in-action/copilot-studio/ep2)
+
+![mcs-agent-academy-recruit-06](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/06-create-agent-from-conversation)

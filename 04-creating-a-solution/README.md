@@ -282,3 +282,4 @@ This is the end of **Lab 04 - Creating a Solution**, select the link below to mo
 
 🔗 [Overview of Git integration in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/overview/?WT.mc_id=power-170631-ebenitez)
 
+![mcs-agent-academy-recruit-04](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/04-creating-a-solution)

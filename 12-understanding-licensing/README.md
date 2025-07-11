@@ -95,3 +95,5 @@ You now understand:
 - How to forecast and manage your message consumption
 
 🎓 With this knowledge, you're cleared to advance and deploy your agents **efficiently and smartly**.
+
+![mcs-agent-academy-recruit-12](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/12-understanding-licensing)

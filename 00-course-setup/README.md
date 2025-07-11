@@ -134,3 +134,5 @@ You’ve successfully:
 - Populated the Devices list for use in future missions
 
 You're officially cleared to begin your **Recruit-level agent training** in [Lesson 01](/01-introduction-to-agents/README.md).  
+
+![mcs-agent-academy-recruit-00](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/00-course-setup)

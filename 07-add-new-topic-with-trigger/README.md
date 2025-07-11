@@ -698,3 +698,4 @@ This is the end of **Lab 07 - Add a new topic with conversation nodes**, select 
 
 📺 [Add actions to agents using conenctors](aka.ms/ai-in-action/copilot-studio/ep4)
 
+![mcs-agent-academy-recruit-07](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/07-add-new-topic-with-trigger)

@@ -114,3 +114,5 @@ In the context of Copilot Studio, the term **agent** can refer to multiple flavo
 ---
 
 Congratulations! You now have a solid conceptual foundation on how conversational AI, LLMs, and RAG come together in Copilot Studio agents. In the next module, we’ll dive into step-by-step tutorials to start building and testing your own agents. Happy building!  
+
+![mcs-agent-academy-recruit-01](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/01-introduction-to-agents)
