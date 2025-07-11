@@ -192,7 +192,7 @@ You'll enhance your IT Help Desk agent to automatically respond to new support r
 
 1. Trigger autonomously when the SharePoint ticket is created
 2. Provide the ticket details and instructions on the steps that you want it to perform
-3. Automatically acknowledge the ticket to the submitted via an AI generated email
+3. Automatically acknowledge the ticket to the submitter via an AI generated email
 
 This lab demonstrates how event triggers enable truly autonomous agent behavior.
 
