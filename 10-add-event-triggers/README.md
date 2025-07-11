@@ -22,7 +22,7 @@
     - [10.1 Enable Generative AI and create a SharePoint item creation trigger](#101-enable-generative-ai-and-create-a-sharepoint-item-creation-trigger)
     - [10.2 Edit the Trigger](#102-edit-the-trigger)
     - [10.3 Create a tool for email acknowledgment](#103-create-a-tool-for-email-acknowledgment)
-    - [10.4 Test the complete workflow](#104-test-the-complete-workflow)
+    - [10.4 Test the trigger](#104-test-the-trigger)
 - [Additional learning](#-additional-learning)
 
 ## 🤔 What is an Event Trigger?
