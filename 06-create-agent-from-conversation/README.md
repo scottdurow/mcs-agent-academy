@@ -216,6 +216,21 @@ We're now going to learn how to create a custom agent that can chat over your da
 - [6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included](#63-add-an-internal-knowledge-source-by-uploading-a-document---for-non-microsoft-365-licensed-users-who-dont-have-sharepoint-included)
 - [6.4 Test agent](#64-test-agent)
 
+
+### ✨ Prerequisites
+
+1. **SharePoint site**
+
+    We'll be using the **Contoso IT** SharePoint site from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site). 
+    
+    If you have not set up the **Contoso IT** SharePoint site, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
+
+1. **Solution**
+
+   We'll be using the **Contoso Helpdesk Agent** solution from [Lesson 04 - Creating a Solution for your agent](/04-creating-a-solution/README.md/#41-create-a-solution-publisher). 
+    
+    If you have not set up the **Contoso Agent** solution, please head back to [Lesson 04 - Creating a Solution for your agent](/04-creating-a-solution/README.md/#41-create-a-solution-publisher).
+
 ### ✨ Use case
 
 We'll use the same use case from [Lesson 03 - Create a declarative agent for Microsoft 365 Copilot](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/03-create-a-declarative-agent-for-M365Copilot/README.md#-use-case-scenario)

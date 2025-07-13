@@ -418,7 +418,7 @@ Let's begin!
     
     If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
 
-1. **Contoso Helpdesk Copilot**
+1. **Contoso Helpdesk Agent**
 
     We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md).
 

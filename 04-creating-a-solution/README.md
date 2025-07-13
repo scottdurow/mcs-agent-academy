@@ -216,13 +216,13 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
     Copy and paste the following as the **Display name**,
 
    ```
-   Contoso Helpdesk Copilot
+   Contoso Helpdesk Agent
    ```
 
     Copy and paste the following as the **Name**,
 
    ```
-   ContosoHelpdeskCopilot
+   ContosoHelpdeskAgent
    ```    
 
    Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-170631-ebenitez) by default will be `1.0.0.0`.
@@ -249,13 +249,13 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
     ![Solutions](assets/4.2_03_Create.png)
 
-1. The solution for Contoso Helpdesk Copilot has now been created. There will be zero components until we create an agent in Copilot Studio.
+1. The solution for Contoso Helpdesk Agent has now been created. There will be zero components until we create an agent in Copilot Studio.
 
     Select the **back arrow** icon to return to the Solution Explorer.
 
    ![Solutions](assets/4.2_04_SolutionCreated.png)
 
-1. Notice how the Contoso Helpdesk Copilot now displays as as the **Current preferred solution** since we ticked the **Set as your preferred solution** checkbox earlier.
+1. Notice how the Contoso Helpdesk Agent now displays as as the **Current preferred solution** since we ticked the **Set as your preferred solution** checkbox earlier.
 
    ![Solutions](assets/4.2_05_CurrentPreferredSolutionSelected.png)
 
