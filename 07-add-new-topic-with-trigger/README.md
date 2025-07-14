@@ -424,101 +424,109 @@ Let's begin!
 
 ### 7.1 Add a new topic from blank
 
-1. In the overview tab of the agent, scroll down to the **Topics** section. Select **See all**.
+1. Select the **Topics tab** near the name of the agent. If you don't see it visible, select **+6** and you'll see **Topics** listed.
 
-    ![See all topics](assets/7.1_01_SeeAllTopics.png)
+    ![Select Topics](assets/7.1_01_Topics.png)
 
 1. The **Topics** tab will load and by default the _Custom_ topics will be displayed. You can filter topics by All, Custom and System. The custom and system topics you currently see were created automatically when the agent was provisioned.
 
-    ![View topics](assets/7.1_02_ViewTopics.png)
+    Select **+ Add a topic** and select **From blank**.
 
-1. Select **+ Add a topic** and select **From blank**.
+    ![Create topic from scratch](assets/7.1_02_FromBlank.png)
 
-    ![Create topic from scratch](assets/7.1_03_FromBlank.png)
+1. Enter a name for the topic. Copy and paste the following.
 
-1. Enter a name for the trigger and a trigger description that outlines what the topic does. Below are suggestions.
-
-    **Name**
+    **Topic name**
 
     ```
     Available devices
     ```
 
+    ![Name the topic](assets/7.1_03_TopicName.png)    
+
+1. Enter a trigger description that outlines what the topic does. Copy and paste the following.
+    
     **Trigger description**
 
     ```
     This topic helps users find devices that are available from our SharePoint Devices list. User can ask to see available devices and it will return a list of devices that are available which can include laptops, smartphones, accessories and more.
     ```
 
-    ![Enter a name and description for trigger](assets/7.1_04_NameAndTriggerDescription.png)
+    ![Enter a name and description for trigger](assets/7.1_04_TriggerDescription.png)
 
-### 7.2 Add node - Ask a Question and create a custom entity
+### 7.2 Define the trigger inputs and outputs
 
-1. Next, we're going to add a new node. Select the **+ icon** below the trigger and select the **Ask a question** node.
+1. Next, we're going to add a new input variable that generative AI will use in its orchestration to extract the value of the device type from a user's message. Select the **More ellipsis (...)** in the topic and select **Details** to view the topic details pane.
 
-    ![Select add icon](assets/7.2_01_01_AddNode.png)
+    ![Select Topic Details](assets/7.2_01_SelectTopicDetails.png)
 
-    ![Select Ask a question node](assets/7.2_01_02_AskAQuestion.png)
+1. The **Topic details** pane has now loaded. Select the **Input** tab.
 
-1. Enter a question to ask the user to confirm the type of device. Copy and paste the following as the question.
+    ![Input tab](assets/7.2_02_SelectInputTab.png)
 
-    ```
-    What type of device are you looking for?
-    ```
+1. Select **Create a new variable**.
 
-    ![Enter question](assets/7.2_02_EnterQuestion.png)
+    ![Create new input variable](assets/7.2_03_CreateANewVariable.png)
 
-1. We're now going to create a new custom entity which teaches the agent to recognize specific types of information. 
-
-    In our use case, the custom entity will help the agent understand device types. We'll create a **_Closed List entity_** which is best for short, manageable lists such as product types or service categories.
-
-    Select the **> icon** by the _Multiple choice options_ and select **Create an Entity**.
-
-    ![Create an entity](assets/7.2_03_SelectCreateAnEntity.png)
-
-1. You'll see two custom entity options, **_Closed List_** which was explained in the previous step, and **_Regular Expression_** (Regex). Regex entities are great for matching patterns such as tracking numbers, license plates, debit/credit card numbers etc.
-
-    For this use case, select **Closed List**, as we're going to define the types of devices a user can select.
-
-    ![Select Closed List](assets/7.2_04_SelectClosedList.png)
-
-1. We can now define our Closed List entity. A name, description and items need to be entered. 
-
-    | Field    | Value |
-    | ---------- | :--------- |
-    | Name | Device type |
-    | Description  | Device types at our company |
-    | Add item   | laptop   |
-    | Add item    | desktop   |
-    | Add item    | smartphone   |
-
-    To enter an item, enter the device type and select **Add**.
-
-    ![Configure Closed List](assets/7.2_05_ConfigureClosedList.png)
-
-1. Enable **Smart switching** to **on** and select **Save**.
-
-    ![Select Save](assets/7.2_06_SaveClosedList.png)
-
-1. We now need to display the options for the user to select. Click **Select options for user**.
-
-    ![Select options for user](assets/7.2_07_SelectOptionsForUser.png)
-
-1. Tick all three checkboxes for the list values.
-
-    ![Tick checkboxes for list values](assets/7.2_08_TickListValues.png)
-
-1. Next, we need to name the variable for the output of the question node. This variable will be used in the next node. Select the `Var1` variable.
-
-    ![Select Var1 variable](assets/7.2_09_SelectSaveUserResponseAs.png)
-
-1. Rename the variable to the following,
+1. Enter a name for the variable. Copy and paste the following.
 
     ```
     VarDeviceType
     ```
 
-    ![Rename variable](assets/7.2_10_RenameVariable.png)
+    ![Input variable name](assets/7.2_04_InputVariableName.png)
+
+1. We now need to define our input and output variables. The following are properties that can be defined for topic inputs and outputs.
+
+    | Field    | Value |
+    | ---------- | :--------- |
+    | How will the agent fill this input? | Determines how the agent fills this variable with a value before running the topic. By default it's set to _Dynamically fill with the best option_. Otherwise you can override an input with a value instead of asking the user|
+    | Variable data type  | The data type of the variable. Supported data types are `String`, `Boolean`, `Number`, `Date`, `DateTime`, `DateTimeNoTimeZone`, `Time`, `Record`, `Table`, `Unspecified`, `From sample data` |
+    | Display name   | Name of variable   |
+    | Identify as  | Entity type for the agent to capture the correct value type  |
+    | Description    | The description helps the agent automatically fill inputs before running the topic or generate questions to ask for the values   |
+
+    The _How will the agent fill this input?_, _variable data type_ and _Display name_ can remain as-is. Update the **Identify as** property to **User's entire response**.
+
+    ![Update Identify as](assets/7.2_05_IdentifyAs.png)
+
+1. Copy and paste the following as the description.
+
+    ```
+    List of possible values: Laptop, Desktop, Smartphone
+    ```
+
+    ![Description](assets/7.2_06_InputDescription.png)    
+
+1. Next, let's define our output for the topic. Select the **Output** tab.
+
+    ![Select Output tab](assets/7.2_07_SelectOutputTab.png)
+
+1. Select **Create a new variable**.
+
+    ![Create new output variable](assets/7.2_08_CreateANewVariable.png)
+
+1. Update the following properties.
+
+    **Variable name** - Copy and paste the following.
+
+    ```
+    VarAvailableDevices
+    ```
+
+    **Variable data type** - Select **Table** as the data type.
+
+    **Variable description** - Copy and paste the following.
+
+    ```
+    List of available devices by device type
+    ```
+
+    ![Output properties](assets/7.2_09_OutputVariable.png)
+
+1. We've now completed defining the inputs and outputs of the topic. Select the **X icon** to exit from the **Topic details** pane.
+
+    ![Exit from topic details pane.](assets/7.2_10_ExitTopicDetailsPane.png)
 
 ### 7.3 Add node - Add a tool using a connector
 
