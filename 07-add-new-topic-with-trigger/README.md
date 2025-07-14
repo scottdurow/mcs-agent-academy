@@ -18,7 +18,7 @@ With Topics and Triggers, your agent can:
 You’re not just building dialogue—you’re wiring up its decision-making cortex. Welcome to the Neural Nexus.
 
 
-## Lesson chapters
+## 🔎 Objectives
 
 - [What is a Topic?](#-what-is-a-topic)
     - [Purpose of a topic](#-purpose-of-a-topic)
@@ -701,7 +701,7 @@ This is the end of **Lab 07 - Add a new topic with conversation nodes**, select 
 ⏭️ [Move to **Enhance user interactions with Adaptive Cards** lesson](/08-add-adaptive-card/README.md)
 
 
-## 📚 Additional learning
+## 📚 Tactical Resources
 🔗 [Use system topics](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics?mc_id=power-170631-ebenitez)
 
 🔗 [Topics in Microsoft Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/topics-overview?WT.mc_id=power-170631-ebenitez)

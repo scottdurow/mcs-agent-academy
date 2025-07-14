@@ -1,6 +1,10 @@
 # 🚨 Mission 08: Enhance user interactions in Topics with Adaptive Cards
+**Codename: Operation Interface Uplift**
 
-## Lesson chapters
+## 🎯  Mission Brief:
+Agents, your mission is to infiltrate the static user experience and replace it with rich, dynamic, and actionable Adaptive Cards. You’ll deploy JSON payloads and Power Fx formulas to transform Copilot Studio conversations from basic Q&A into fully interactive engagements. Your goal is to gather user input, present data beautifully, and direct conversations with precision and style. Fail to adapt, and your users may defect to less intelligent interfaces.
+
+## 🔎 Objectives
 
 - [What is an Adaptive Card?](#-what-is-an-adaptive-card)
     - [Why Adaptive Cards matter in Copilot Studio](#why-adaptive-cards-matter-in-copilot-studio)
@@ -601,7 +605,7 @@ This is the end of **Lab 08 - Enhance user interactions with Adaptive Cards**, s
 ⏭️ [Move to **_placeholder text_** lesson](/07-add-new-topic-with-trigger/README.md)
 
 
-## 📚 Additional learning
+## 📚 Tactical Resources
 🔗 [Using Adaptive Cards in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/adaptive-cards-overview?WT.mc_id=power-170631-ebenitez)
 
 🔗 [Add an adaptive card in Send a message node](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-send-message#add-an-adaptive-card?WT.mc_id=power-170631-ebenitez)

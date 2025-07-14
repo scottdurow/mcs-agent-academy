@@ -1,6 +1,7 @@
 # 🧠 Mission 02: Copilot Studio Fundamentals
 **Codename: Operation AI Agent Decode**
 
+## 🎯 Mission Brief:
 Welcome, Recruit. This mission will equip you with foundational intel to understand how Copilot Studio works, and how to build intelligent agents that deliver real business value.
 
 Before building your first agent, you need to understand the four key components that make up every custom AI agent: Knowledge, Tools, Topics, and Instructions. You’ll also learn how these elements work together in the Copilot Studio orchestrator.

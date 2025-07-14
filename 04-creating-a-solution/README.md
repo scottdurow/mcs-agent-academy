@@ -9,7 +9,7 @@ Every agent needs a well-structured home. That’s what a Power Platform solutio
 
 Let’s pack up.
 
-## Lesson chapters
+## 🔎 Objectives
 
 - [Solution? What's that?](#️-solution-whats-that)
 - [Why should I use a Solution for my agent?](#-why-should-i-use-a-solution-for-my-agent)

@@ -9,7 +9,7 @@ Unlike traditional agents, declarative agents operate with a defined mission (in
 
 Let’s go.
 
-## Lesson chapters
+## 🔎 Objectives
 
 📖 This lesson will cover:
 - [What is a declarative agent for Microsoft 365 Copilot?](#️-what-is-a-declarative-agent-for-microsoft-365-copilot)

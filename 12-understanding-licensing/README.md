@@ -1,6 +1,7 @@
-# Mission 12: Understanding Licensing 
+# 🚨 Mission 12: Understanding Licensing 
 **Codename: Operation Know What You Owe**
 
+## 🎯 Mission Brief:
 Welcome, Recruit. Before you deploy your agents into the field, you need to know **how usage is measured, licensed, and billed**. This mission breaks down the message-based billing model, explains what Microsoft 365 Copilot licenses include, and shows you how to plan with your estimator.
 
 ---
@@ -78,15 +79,6 @@ It lets you:
 - Use message packs when scale becomes predictable
 - Use the **Copilot Studio Usage Estimator** to forecast usage
 ---
-
-## 📎 Further Reading
-
-- 📄 [Copilot Studio Licensing & Message Rates](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing)  
-- 📘 [Power Platform Licensing Guide (July 2025)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp//microsoft/bade/documents/products-and-services/en-us/bizapps/Power-Platform-Licensing-Guide-July-2025.pdf) 
-- 📊 [Message Management & Capacity Monitoring](https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-messages-capacity) 
-
----
-
 ## 🏁 Mission Complete
 
 You now understand:
@@ -95,5 +87,11 @@ You now understand:
 - How to forecast and manage your message consumption
 
 🎓 With this knowledge, you're cleared to advance and deploy your agents **efficiently and smartly**.
+---
+## 📚 Tactical Resources
+Learn more about licensing and billing in Copilot Studio 
+- 📄 [Copilot Studio Licensing & Message Rates](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing?WT.mc_id=power-170631-apdunnam)  
+- 📘 [Power Platform Licensing Guide (July 2025)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp//microsoft/bade/documents/products-and-services/en-us/bizapps/Power-Platform-Licensing-Guide-July-2025.pdf?WT.mc_id=power-170631-apdunnam) 
+- 📊 [Message Management & Capacity Monitoring](https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-messages-capacity?WT.mc_id=power-170631-apdunnam) 
 
 ![mcs-agent-academy-recruit-12](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/12-understanding-licensing)

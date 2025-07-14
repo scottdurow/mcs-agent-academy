@@ -1,6 +1,14 @@
-# Add Event Triggers - Enable autonomous agent capabilities
+# 🚨 Mission 10:Add Event Triggers - Enable autonomous agent capabilities
+**Codename: Operation Shadow Signal**
 
-## Lesson chapters
+## 🎯 Mission Brief:
+It's time to elevate your agent from conversational assistant to autonomous operative. Your mission is to enable your agent to act without being summoned — responding to signals from across your digital domain with precision and speed.
+
+With Event Triggers, you'll train your agent to monitor external systems like SharePoint, Teams, and Outlook, and execute intelligent actions the moment a signal is received. This operation transforms your agent into a fully operational field asset — silent, swift, and always watching.
+
+Success means building agents that initiate value — not just respond to it.
+
+## 🔎 Objectives
 
 📖 This lesson will cover:
 - [What is an Event Trigger?](#-what-is-an-event-trigger)
@@ -331,17 +339,21 @@ Before starting this lab, ensure you have:
     ![Test email sent](./assets/10_TestEmailSent.png)
 11. Review the **Activity** tab in Copilot Studio to see the complete trigger and tool execution
 
+✅ Mission Complete
+
 🎉 **Congratulations!** You've successfully implemented event triggers with connector tools that enable your agent to operate autonomously, automatically sending email acknowledgments and processing support tickets without user intervention. Once your agent is published, it will act autonomously on your behalf.
 
-## 🔗 Additional learning
+🚀 **Next up**: In our next lesson, you'll learn how to [publish your autonomous agent](/README.md) to Microsoft Teams and Microsoft 365 Copilot, making it available to your entire organization!
+
+## 📚 Tactical Resources
 
 Ready to dive deeper into event triggers and autonomous agents? Check out these resources:
 
-- **Microsoft Learn**: [Make your agent autonomous in Copilot Studio](https://learn.microsoft.com/en-us/training/modules/autonomous-agents-online-workshop/)
-- **Documentation**: [Add an event trigger](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-trigger-event)
-- **Best Practices**: [Power Automate triggers introduction](https://learn.microsoft.com/en-us/power-automate/triggers-introduction)
-- **Advanced Scenarios**: [Using Power Automate flows with agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow-create)
-- **Security**: [Data loss prevention for Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention)
+- **Microsoft Learn**: [Make your agent autonomous in Copilot Studio](https://learn.microsoft.com/en-us/training/modules/autonomous-agents-online-workshop/?WT.mc_id=power-170631-apdunnam)
+- **Documentation**: [Add an event trigger](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-trigger-event?WT.mc_id=power-170631-apdunnam)
+- **Best Practices**: [Power Automate triggers introduction](https://learn.microsoft.com/en-us/power-automate/triggers-introduction?WT.mc_id=power-170631-apdunnam)
+- **Advanced Scenarios**: [Using Power Automate flows with agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow-create?WT.mc_id=power-170631-apdunnam)
+- **Security**: [Data loss prevention for Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention?WT.mc_id=power-170631-apdunnam)
 
 ---
 
