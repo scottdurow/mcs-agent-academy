@@ -216,6 +216,17 @@ We're now going to learn how to create a custom agent that can chat over your da
 - [6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included](#63-add-an-internal-knowledge-source-by-uploading-a-document---for-non-microsoft-365-licensed-users-who-dont-have-sharepoint-included)
 - [6.4 Test agent](#64-test-agent)
 
+### ✨ Use case
+
+We'll use the same use case from [Lesson 03 - Create a declarative agent for Microsoft 365 Copilot](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/03-create-a-declarative-agent-for-M365Copilot/README.md#-use-case-scenario)
+
+**As an** employee
+
+**I want to** get quick and accurate help from the IT helpdesk agent for issues like device problems, network troubleshooting, printer setup
+
+**So that I can** stay productive and resolve technical issues without delays
+
+Let's begin!
 
 ### ✨ Prerequisites
 
@@ -230,18 +241,6 @@ We're now going to learn how to create a custom agent that can chat over your da
    We'll be using the **Contoso Helpdesk Agent** solution from [Lesson 04 - Creating a Solution for your agent](/04-creating-a-solution/README.md/#41-create-a-solution-publisher). 
     
     If you have not set up the **Contoso Agent** solution, please head back to [Lesson 04 - Creating a Solution for your agent](/04-creating-a-solution/README.md/#41-create-a-solution-publisher).
-
-### ✨ Use case
-
-We'll use the same use case from [Lesson 03 - Create a declarative agent for Microsoft 365 Copilot](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/03-create-a-declarative-agent-for-M365Copilot/README.md#-use-case-scenario)
-
-**As an** employee
-
-**I want to** get quick and accurate help from the IT helpdesk agent for issues like device problems, network troubleshooting, printer setup
-
-**So that I can** stay productive and resolve technical issues without delays
-
-Let's begin!
 
 ### 6.1 Use natural language to create an agent with Copilot
 
