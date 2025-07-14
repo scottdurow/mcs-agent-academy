@@ -34,10 +34,10 @@ This academy is broken into progressive lessons—each one designed as a field m
 | `06` | ✍️ [Build a Custom Agent](./06-create-agent-from-conversation/README.md) | Create a new Copilot grounded in knowledge sources |
 | `07` | 🧠 [Add a Topic with Triggers](./07-add-new-topic-with-trigger/README.md) | Use Topics to define custom question/answer paths |
 | `08` | 🪪 [Enhance with Adaptive Cards](./08-add-adaptive-card/README.md) | Build an Adaptive Card using Power Fx and SharePoint |
-| `09` | 🔁 Automate with Agent Flows | Use Adaptive Card input to trigger back-end flows |
-| `10` | 🧭 Add Event Triggers | Enable your agent to act autonomously using event-based logic |
-| `11` | 📢 Publish Your Agent | Deploy your agent to Microsoft Teams and Microsoft 365 Copilot |
-
+| `09` | 🔁 [Automate with Agent Flows](/README.md) | Use Adaptive Card input to trigger back-end flows |
+| `10` | 🧭 [Add Event Triggers](/README.md) | Enable your agent to act autonomously using event-based logic |
+| `11` | 📢 [Publish Your Agent](/README.md) | Deploy your agent to Microsoft Teams and Microsoft 365 Copilot |
+`12` | 🪪  [Understanding Licensing](/12-understanding-licensing/README.md) | Learn how licensing and billing works with Copilot Studio |
 ---
 
 ## 🧪 Prerequisites

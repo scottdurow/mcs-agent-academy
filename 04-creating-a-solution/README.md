@@ -1,4 +1,13 @@
-# Creating a Solution for your agent
+# 🚨 Mission 04: Build a Solution for Your Agent
+**🛠️ Codename: Control-Alt-Package**
+
+## 🎯 Mission Brief:
+
+Agent Maker, welcome to your next tactical operation. In this mission, you’ll learn to assemble a Solution —the official deployment vehicle for your IT Helpdesk Agent built with Microsoft Copilot Studio. Think of this as creating a digital briefcase that holds your agent and it's artifacts.
+
+Every agent needs a well-structured home. That’s what a Power Platform solution provides—order, portability, and readiness for production.
+
+Let’s pack up.
 
 ## Lesson chapters
 
@@ -259,13 +268,15 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
    ![Solutions](assets/4.2_05_CurrentPreferredSolutionSelected.png)
 
-## Next lesson
+## ✅ Mission Complete
+
 Congratulations! 👏🏻 You've created a Publisher and used it in your newly created Solution to build your agent in!
 
 This is the end of **Lab 04 - Creating a Solution**, select the link below to move to the next lesson. Your solution created in this lab will be used in the next lesson's lab.
 
 ⏭️ [Move to **Get started quickly with pre-built agents** lesson](/05-using-prebuilt-agents/README.md)
 
+Well done, Agent Maker. A tidy digital footprint is the first step toward operability at scale. Now you’ve got the tools—and the mindset—for sustainable, enterprise-ready agent development.
 
 ## 📚 Additional learning
 🔗 [Create a solution](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/create-solution/?WT.mc_id=power-170631-ebenitez)

@@ -1,6 +1,10 @@
-# Introduction to Agents
+# 🧠 Mission 01: Introduction to Agents
+**Codename: Operation Conversational Intelligence**
 
-Welcome to the **Introduction to Agents** module. In this section, we’ll explore the fundamentals of conversational AI and agents. You’ll learn:
+Welcome, Recruit. Before we dive into building agents, you need a firm grasp of the AI concepts that power them. This mission will equip you with foundational knowledge of conversational AI, large language models (LLMs), retrieval-augmented generation (RAG), and the types of agents you can create in Copilot Studio.
+
+## 🔎 Objectives
+In this mission, you’ll learn:
 
 1. What conversational AI is and why it matters  
 1. How Large Language Models (LLMs) power chat experiences  
@@ -91,7 +95,9 @@ In the context of Copilot Studio, the term **agent** can refer to multiple flavo
 
 ---
 
-## Core Concepts Recap
+## 🎉 Mission Complete
+
+You’ve now completed your introduction to agents and foundational AI concepts. You understand:
 
 1. **LLMs = The “Brain” of Your Agent**  
    - Responsible for language understanding and generation.  
@@ -105,6 +111,9 @@ In the context of Copilot Studio, the term **agent** can refer to multiple flavo
    - **Conversational:** Focus on dialogue flow and preserving context (e.g., “Session Memory”).  
    - **Autonomous:** Add “Action Blocks” that let the agent call out to external tools or services.
 ---
+Next up, you'll explore the [fundamentals of Copilot Studio](/02-copilot-studio-fundamentals/README.md)!
+
+Stay sharp, Recruit - your AI journey is just beginning!
 
 ## Additional Resources
 
@@ -113,6 +122,5 @@ In the context of Copilot Studio, the term **agent** can refer to multiple flavo
 
 ---
 
-Congratulations! You now have a solid conceptual foundation on how conversational AI, LLMs, and RAG come together in Copilot Studio agents. In the next module, we’ll dive into step-by-step tutorials to start building and testing your own agents. Happy building!  
 
 ![mcs-agent-academy-recruit-01](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/01-introduction-to-agents)

@@ -1,4 +1,15 @@
-# Create a custom agent using natural language with Copilot and grounding it with your data
+# 🚨 Mission 06: Create a custom agent using natural language with Copilot and grounding it with your data
+**🤖 Codename: Agent Forge**
+
+## 🎯 Mission Brief:
+
+Welcome back, Agent Maker. This mission puts you in the command seat of the most powerful capability in Copilot Studio—creating a custom agent from scratch using only natural language… and supercharging it with your own data.
+
+This isn’t just another chatbot. You’re building a knowledge-empowered digital coworker—one that can reason, respond, and reference real enterprise info.
+
+Your weapon of choice? Natural language. Your mission? Design, train, and test a fully customized helpdesk agent that answers IT questions using SharePoint, uploaded files, or company URLs.
+
+Let’s build your agent from the ground up.
 
 ## Lesson chapters
 
@@ -456,13 +467,15 @@ We'll test our three knowledge sources by asking questions to our Contoso Helpde
 
 The agent can answer multiple questions in a single message, and search the knolwedge sources + reference the knowledge sources in its response. Make sure to always verify the response is correct by reviewing the references.
 
-## Next lesson
+## ✅ Mission Complete
+
 Congratulations! 👏🏻 You've learnt how to use natural language to create your own custom agent that can chat over your data from three different knowledge sources 🙌🏻
 
 This is the end of **Lab 06 - Create an agent with Copilot**, select the link below to move to the next lesson. Your custom agent created in this lab will be used in the next lesson's lab.
 
 ⏭️ [Move to **Add a new Topic with trigger** lesson](/07-add-new-topic-with-trigger/README.md)
 
+Welcome to the elite. You now know how to forge digital agents that speak your language, reference your data, and support your team. Keep going—your mission’s just getting started.
 
 ## 📚 Additional learning
 🔗 [Quickstart: Create and deploy an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-get-started?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)

@@ -1,18 +1,21 @@
-# Copilot Studio Fundamentals
+# 🧠 Mission 02: Copilot Studio Fundamentals
+**Codename: Operation AI Agent Decode**
 
-Microsoft Copilot Studio is a low-code tool for creating **custom AI agents** that extend your organization’s knowledge and workflows. Instead of building a generic assistant, you can tailor your agent to a specific domain—whether that’s HR support, customer service, finance automation, or any other business need. Agents built in Copilot Studio understand natural language, connect to your data, and can perform actions (like sending emails or updating records) without writing a lot of code. In this lesson, we’ll introduce the basic concepts you need to get started.
+Welcome, Recruit. This mission will equip you with foundational intel to understand how Copilot Studio works, and how to build intelligent agents that deliver real business value.
 
-## Introduction
+Before building your first agent, you need to understand the four key components that make up every custom AI agent: Knowledge, Tools, Topics, and Instructions. You’ll also learn how these elements work together in the Copilot Studio orchestrator.
 
-This lesson will cover:
-- **What Copilot Studio is**  
-- **When and why to use agents**  
-- **The four building blocks of agents**  
+## 🔎 Objectives
+
+In this mission, you will:
+- **Learn what Copilot Studio is**  
+- **Learn when and why to use agents**  
+- **Explore the four building blocks of agents**  
   - **Knowledge**  
-  - **Tools (Actions)**  
+  - **Tools**  
   - **Topics**  
   - **Instructions**  
-- **How these components work together** to create an intelligent, automated agent  
+- **Understand how these components work together** to create an intelligent, automated agent  
 
 ---
 
@@ -170,17 +173,17 @@ Under the hood, the orchestrator uses a **generative planning** approach: it dec
 
 ---
 
-## Recap & Next Steps
+## 🎉 Mission Complete
 
-You’ve now learned the four essential building blocks of any agent in Copilot Studio:
+You’ve successfully completed your fundamentals briefing. You’ve now learned the four essential building blocks of any agent in Copilot Studio:
 
 1. **Knowledge** – Where the agent looks up factual information and maintains conversation memory.  
-2. **Tools (Actions)** – The tasks the agent can perform to make things happen automatically.  
+2. **Tools** – The tasks the agent can perform to make things happen automatically.  
 3. **Topics** – How the agent recognizes user intent and decides which workflow to run.  
 4. **Instructions** – The rules, tone, and boundaries that guide every response.
 
 With these components in place, you can build a basic agent that answers questions and executes simple workflows. In the next lesson, we’ll walk through a step-by-step tutorial to create a "Service Desk" agent—from connecting your first knowledge source to defining a topic and wiring up an action.
 
-Happy agent building!  
+Up next: You'll build your [first declarative agent for M365 Copilot](/03-create-a-declarative-agent-for-M365Copilot/README.md).
 
 ![mcs-agent-academy-recruit-02](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/02-copilot-studio-fundamentals)
