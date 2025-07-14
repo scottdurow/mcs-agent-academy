@@ -19,7 +19,7 @@
     - [Use case](#-use-case)
     - [Prerequisites](#prerequisites)
     - [7.1 Add a new topic from blank](#71-add-a-new-topic-from-blank)
-    - [7.2 Add node - Ask a Question and create a custom entity](#72-add-node---ask-a-question-and-create-a-custom-entity)
+    - [7.2 Define the trigger inputs and outputs](#72-define-the-trigger-inputs-and-outputs)
     - [7.3 Add node - Add a tool using the SharePoint connector](#73-add-node---add-a-tool-using-a-connector)
 - [Additional learning](#-additional-learning)
 
@@ -397,8 +397,8 @@ Agent responds with,
 We're now going to learn how to add a new topic with a trigger and tools. This lab will cover creating a topic from blank so that you understand how to customize topics to your needs.
 
 - [7.1 Add a new topic from blank](/07-add-new-topic-with-trigger/README.md/#71-add-a-new-topic-from-blank)
-- [7.2 Add node - Ask a Question and create a custom entity](/07-add-new-topic-with-trigger/README.md/#72-add-node---ask-a-question-and-create-a-custom-entity)
-- [7.3 Add a tool using the SharePoint connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector)
+- [7.2 Define the trigger inputs and outputs](/07-add-new-topic-with-trigger/README.md/#72-define-the-trigger-inputs-and-outputs)
+- [7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector)
 
 ### ✨ Use case
 
