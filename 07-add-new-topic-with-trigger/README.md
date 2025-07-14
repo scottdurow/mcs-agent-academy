@@ -1,4 +1,22 @@
-# Add new topic with trigger and nodes
+# 🚨 Mission 07: Add new topic with trigger and nodes
+**Codename: Neural Nexus**
+
+## 🎯  Mission Brief:
+
+You’ve built an agent. It listens, learns, and answers questions—but now it’s time to get more tactical. In this mission, you’ll go deep under the hood and teach your agent how to respond to specific prompts with precision.
+
+With Topics and Triggers, your agent can:
+
+- Recognize intent
+
+- Route conversations with logic
+
+- Gather and store variables
+
+- Trigger flows and take action
+
+You’re not just building dialogue—you’re wiring up its decision-making cortex. Welcome to the Neural Nexus.
+
 
 ## Lesson chapters
 
@@ -674,7 +692,8 @@ Let's begin!
 
 1. Refresh the test pane to clear the test and close the activity map.
 
-## Next lesson
+## ✅ Mission Complete
+
 Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how to add a tool which calls the Get items SharePoint connector action and use Power Fx to filter the response to only return devices where the status equals availabile and the device type equals laptop. 🙌🏻
 
 This is the end of **Lab 07 - Add a new topic with conversation nodes**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.

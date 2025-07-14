@@ -1,4 +1,13 @@
-# Create a declarative agent for Microsoft 365 Copilot
+# 🚨 Mission 03: Deploy a Declarative Agent for Microsoft 365 Copilot
+**Codename: Agent Uptime**
+
+## 🎯 Mission Brief:
+
+Welcome to your first field assignment, Agent Maker. You’ve been selected to design, equip, and deploy a Declarative Agent—a specialized operative embedded directly into Microsoft 365 Copilot and Teams.
+
+Unlike traditional agents, declarative agents operate with a defined mission (instructions), tools (prompts/connectors), and strategic access to internal intelligence (knowledge sources like SharePoint, Dataverse, and more). Your job is to build this agent using Microsoft Copilot Studio—a no-code command center where your agent’s skills and purpose come to life.
+
+Let’s go.
 
 ## Lesson chapters
 
@@ -523,12 +532,16 @@ Let's now publish our declarative agent 😃
 
 In a few minutes, you've learnt how to publish your declarative agent and test it in Microsoft 365 Copilot and in Teams 😊
 
-## Next lesson
+## ✅ Mission Complete
 Congratulations! 👏🏻 You've built a declarative agent in Copilot Studio where you added a Prompt, instructed the agent to use the Prompt and how to test + publish your agent to Microsoft 365 Copilot and Teams.
+
+Your agent is now active duty—ready to assist, troubleshoot, and serve internal users on-demand.
 
 This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot**, select the link below to move to the next lesson.
 
 ⏭️ [Move to **Creating a new Solution** lesson](/04-creating-a-solution/README.md))
+
+Until next time, stay sharp. The future of enterprise work runs through agents—and now you know how to build one.
 
 ## 📚 Additional learning
 🔗 [Build declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)
