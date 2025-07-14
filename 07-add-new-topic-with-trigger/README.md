@@ -744,4 +744,3 @@ This is the end of **Lab 07 - Add a new topic with conversation nodes**, select 
 📺 [Author topics using natural language](https://aka.ms/ai-in-action/copilot-studio/ep6)
 
 📺 [Add actions to agents using conenctors](https://aka.ms/ai-in-action/copilot-studio/ep4)
-
