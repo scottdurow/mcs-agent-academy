@@ -1,5 +1,8 @@
 # 🚨 Mission 06: Create a custom agent using natural language with Copilot and grounding it with your data
-**🤖 Codename: Agent Forge**
+
+### 🕵️‍♂️ CODENAME: `OPERATION AGENT FORGE`
+
+> **⏱️ Operation Time Window:** `~75 minutes` 
 
 ## 🎯 Mission Brief:
 
@@ -11,7 +14,7 @@ Your weapon of choice? Natural language. Your mission? Design, train, and test a
 
 Let’s build your agent from the ground up.
 
-## Lesson chapters
+## 🔎 Objectives
 
 - [What is a custom agent?](#-what-is-a-custom-agent)
     - [What can a custom agent do?](#-what-can-a-custom-agent-do)
@@ -477,7 +480,7 @@ This is the end of **Lab 06 - Create an agent with Copilot**, select the link be
 
 Welcome to the elite. You now know how to forge digital agents that speak your language, reference your data, and support your team. Keep going—your mission’s just getting started.
 
-## 📚 Additional learning
+## 📚 Tactical Resources
 🔗 [Quickstart: Create and deploy an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-get-started?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)
 
 🔗 [Create and delete agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-170631-ebenitez)

@@ -1,5 +1,8 @@
 # 🚨 Mission 04: Build a Solution for Your Agent
-**🛠️ Codename: Control-Alt-Package**
+
+### 🕵️‍♂️ CODENAME: `OPERATION CTRL-ALT-PACKAGE`
+
+> **⏱️ Operation Time Window:** `~45 minutes` 
 
 ## 🎯 Mission Brief:
 
@@ -9,7 +12,7 @@ Every agent needs a well-structured home. That’s what a Power Platform solutio
 
 Let’s pack up.
 
-## Lesson chapters
+## 🔎 Objectives
 
 - [Solution? What's that?](#️-solution-whats-that)
 - [Why should I use a Solution for my agent?](#-why-should-i-use-a-solution-for-my-agent)
