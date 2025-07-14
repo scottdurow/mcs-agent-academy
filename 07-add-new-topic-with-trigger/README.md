@@ -1,5 +1,8 @@
 # 🚨 Mission 07: Add new topic with trigger and nodes
-**Codename: Neural Nexus**
+
+### 🕵️‍♂️ CODENAME: `OPERATION STAY ON TOPIC`
+
+> **⏱️ Operation Time Window:** `~60 minutes` 
 
 ## 🎯  Mission Brief:
 

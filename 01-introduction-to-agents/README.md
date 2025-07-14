@@ -1,5 +1,8 @@
-# 🧠 Mission 01: Introduction to Agents
-**Codename: Operation Conversational Intelligence**
+# 🚨 Mission 01: Introduction to Agents
+
+### 🕵️‍♂️ CODENAME: `OPERATION AI AGENT DECODE`
+
+> **⏱️ Operation Time Window:** `~30 minutes – intel only, no fieldwork required`  
 
 ## 🎯 Mission Brief:
 Welcome, Recruit. Before we dive into building agents, you need a firm grasp of the AI concepts that power them. This mission will equip you with foundational knowledge of conversational AI, large language models (LLMs), retrieval-augmented generation (RAG), and the types of agents you can create in Copilot Studio.

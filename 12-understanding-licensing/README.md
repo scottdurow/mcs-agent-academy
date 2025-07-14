@@ -1,5 +1,8 @@
 # 🚨 Mission 12: Understanding Licensing 
-**Codename: Operation Know What You Owe**
+
+### 🕵️‍♂️ CODENAME: `OPERATION KNOW WHAT YOU OWE`
+
+> **⏱️ Operation Time Window:** `~15 minutes` 
 
 ## 🎯 Mission Brief:
 Welcome, Recruit. Before you deploy your agents into the field, you need to know **how usage is measured, licensed, and billed**. This mission breaks down the message-based billing model, explains what Microsoft 365 Copilot licenses include, and shows you how to plan with your estimator.

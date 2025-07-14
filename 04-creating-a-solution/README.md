@@ -1,5 +1,8 @@
 # 🚨 Mission 04: Build a Solution for Your Agent
-**🛠️ Codename: Control-Alt-Package**
+
+### 🕵️‍♂️ CODENAME: `OPERATION CTRL-ALT-PACKAGE`
+
+> **⏱️ Operation Time Window:** `~45 minutes` 
 
 ## 🎯 Mission Brief:
 

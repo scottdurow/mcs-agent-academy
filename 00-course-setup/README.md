@@ -1,5 +1,8 @@
-# 🧰 Mission 00: Course Setup  
-**Codename: Operation Deployment Ready**
+# 🚨 Mission 00: Course Setup  
+
+### 🕵️‍♂️ CODENAME: `OPERATION DEPLOYMENT READY`
+
+> **⏱️ Operation Time Window:** `~30 minutes`  
 
 ## 🎯 Mission Brief:
 Welcome to the first mission of your training as a Copilot Studio Agent.  
@@ -17,7 +20,7 @@ Your mission includes:
 
 ---
 
-## 🔍 Prerequisites: Field Requirements
+## 🔍 Prerequisites
 
 Before you begin, ensure you have:
 

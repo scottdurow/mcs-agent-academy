@@ -1,5 +1,8 @@
 # 🚨 Mission 10:Add Event Triggers - Enable autonomous agent capabilities
-**Codename: Operation Shadow Signal**
+
+### 🕵️‍♂️ CODENAME: `OPERATION GHOST ROUTINE`
+
+> **⏱️ Operation Time Window:** `~45 minutes` 
 
 ## 🎯 Mission Brief:
 It's time to elevate your agent from conversational assistant to autonomous operative. Your mission is to enable your agent to act without being summoned — responding to signals from across your digital domain with precision and speed.

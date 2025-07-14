@@ -1,5 +1,8 @@
 ## 🧰 Mission 05: Using a Pre-Built Agent  
-**Codename: Operation Safe Travels**
+
+### 🕵️‍♂️ CODENAME: `OPERATION SAFE TRAVELS`
+
+> **⏱️ Operation Time Window:** `~30 minutes` 
 
 ## 🎯 Mission Brief:
 Welcome to your next mission in the Copilot Studio Agent Academy. You're about to explore the world of **pre-built agents**—intelligent, purpose-driven agents created by Microsoft to accelerate your deployment and reduce time to value.

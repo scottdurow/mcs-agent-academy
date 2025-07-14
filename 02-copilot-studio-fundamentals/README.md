@@ -1,5 +1,8 @@
-# 🧠 Mission 02: Copilot Studio Fundamentals
-**Codename: Operation AI Agent Decode**
+# 🚨 Mission 02: Copilot Studio Fundamentals
+
+### 🕵️‍♂️ CODENAME: `OPERATION CORE PROTOCOL`
+
+> **⏱️ Operation Time Window:** `~30 minutes – intel only, no fieldwork required`  
 
 ## 🎯 Mission Brief:
 Welcome, Recruit. This mission will equip you with foundational intel to understand how Copilot Studio works, and how to build intelligent agents that deliver real business value.

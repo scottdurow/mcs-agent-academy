@@ -1,5 +1,8 @@
 # 🚨 Mission 06: Create a custom agent using natural language with Copilot and grounding it with your data
-**🤖 Codename: Agent Forge**
+
+### 🕵️‍♂️ CODENAME: `OPERATION AGENT FORGE`
+
+> **⏱️ Operation Time Window:** `~75 minutes` 
 
 ## 🎯 Mission Brief:
 

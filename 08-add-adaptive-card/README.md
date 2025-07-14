@@ -1,5 +1,8 @@
 # 🚨 Mission 08: Enhance user interactions in Topics with Adaptive Cards
-**Codename: Operation Interface Uplift**
+
+### 🕵️‍♂️ CODENAME: `OPERATION INTERFACE UPLIFT`
+
+> **⏱️ Operation Time Window:** `~45 minutes` 
 
 ## 🎯  Mission Brief:
 Agents, your mission is to infiltrate the static user experience and replace it with rich, dynamic, and actionable Adaptive Cards. You’ll deploy JSON payloads and Power Fx formulas to transform Copilot Studio conversations from basic Q&A into fully interactive engagements. Your goal is to gather user input, present data beautifully, and direct conversations with precision and style. Fail to adapt, and your users may defect to less intelligent interfaces.

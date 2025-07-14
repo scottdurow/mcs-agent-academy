@@ -1,5 +1,8 @@
 # 🚨 Mission 03: Deploy a Declarative Agent for Microsoft 365 Copilot
-**Codename: Agent Uptime**
+
+### 🕵️‍♂️ CODENAME: `OPERATION COPILOT EXTENSION`
+
+> **⏱️ Operation Time Window:** `~60 minutes` 
 
 ## 🎯 Mission Brief:
 
