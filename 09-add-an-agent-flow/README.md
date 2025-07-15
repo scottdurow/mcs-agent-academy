@@ -166,7 +166,7 @@ This saves time, reduces mistakes and makes the whole process much smoother.
 
 1. **Human in the loop**
     - Add approval steps where a person needs to review or confirm something.
-    - [Advanced approvals](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-advanced-approvals?WT.mc_id=power-172621-ebenitez) supports reminders, delegation, and multi-stage approvals.
+    - [Advanced approvals](https://learn.microsoft.com/microsoft-copilot-studio/flows-advanced-approvals?WT.mc_id=power-172621-ebenitez) supports reminders, delegation, and multi-stage approvals.
 
 ## ⚙️ How they work
 
@@ -255,7 +255,7 @@ Using functions makes your agent flows:
 
 ### Most useful functions
 
-The following are common functions used in agent flows. For the full list of functions, head to the [reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez).
+The following are common functions used in agent flows. For the full list of functions, head to the [reference guide](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez).
 
 #### 🔡 Text
 
