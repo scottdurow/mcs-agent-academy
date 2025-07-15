@@ -443,14 +443,9 @@ Let's start with the question node.
 
     ![Save Topic](assets/8.2_11_SaveTopic.png)
 
-### 8.3 Create a new topic with an adaptive card for user to submit their request
+### 8.1 Create a new topic with an adaptive card for user to submit their request
 
-As a recap, we have completed the following:
-
-- Added an adaptive card that displays the available devices from the Devices SharePoint list.
-- Added logic for a user to confirm whether they want to request a device from the list of available devices.
-
-What we need to do next, is create a _new topic_ to direct the _Available devices_ topic to. This new topic will handle the device request by using an **Ask with adaptive card** node to enable user interaction with the agent.
+We'll create a new topic that will handle a user's device request. This new topic will contain an **Ask with adaptive card** node to enable user interaction with the agent.
 
 Let's begin!
 
