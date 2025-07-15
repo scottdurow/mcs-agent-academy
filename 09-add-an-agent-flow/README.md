@@ -1003,22 +1003,21 @@ Let's test the final scenario which is to not request a device, and the **Goodby
     ![Goodbye topic invoked](assets/9.4_13_Goodbye.png)
 
 ## ✅ Misson complete
+
 Congratulations! 👏🏻 You've learnt how to build your agent flow and add it to our existing **Request device** topic, and how to redirect the agent to another topic.
 
 This is the end of **Lab 09 - Add an agent flow for automation and enhance topic capabilities**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
 ⏭️ [Move to **Add Event Triggers - Enable autonomous agent capabilities** lesson](/07-add-new-topic-with-trigger/README.md)
 
-
 ## 📚 Tactical Resources
-🔗 [Introducing agent flows: Transforming automation with AI-first workflows](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/introducing-agent-flows-transforming-automation-with-ai-first-workflows/)
 
-🔗 [Agent flows overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview?WT.mc_id=power-172621-ebenitez)
+🔗 [Introducing agent flows: Transforming automation with AI-first workflows](https://www.microsoft.com/microsoft-copilot/blog/copilot-studio/introducing-agent-flows-transforming-automation-with-ai-first-workflows/)
 
-🔗 [Use agent flows with your agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow?WT.mc_id=power-172621-ebenitez)
+🔗 [Agent flows overview](https://learn.microsoft.com/microsoft-copilot-studio/flows-overview?WT.mc_id=power-172621-ebenitez)
 
-🔗 [List of functions in the reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
+🔗 [Use agent flows with your agent](https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow?WT.mc_id=power-172621-ebenitez)
+
+🔗 [List of functions in the reference guide](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
 
 📺 [Agent Flows in Copilot Studio](https://www.youtube.com/watch?v=VJTKyk3Pr7s)
-
-
