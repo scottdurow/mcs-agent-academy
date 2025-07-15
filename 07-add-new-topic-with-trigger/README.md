@@ -26,6 +26,7 @@ You’re not just building dialogue—you’re wiring up its decision-making cor
   - [Purpose of a topic](#-purpose-of-a-topic)
 - [Why are topics useful?](#-why-are-topics-useful)
 - [Types of topics](#-anatomy-of-a-topic)
+- [Anatomy of a topic](#-anatomy-of-a-topic)
   - [Trigger phrases](#️-trigger-phrases)
   - [Conversation nodes](#-conversation-nodes)
 - [Using Power Fx in your nodes](#️-using-power-fx-in-your-nodes)
@@ -53,10 +54,10 @@ There are three common purposes for topics based on what users need:
 
 **Informational** - answers questions such as the following:
 
-- `"What is …?"`
-- `"When will …?"`
-- `"Why …?"`
-- `"Can you tell me …?"`
+- `What is …?`
+- `When will …?`
+- `Why …?`
+- `Can you tell me …?`
 
 **Task completion** - helps users _do_ something:
 
@@ -66,11 +67,11 @@ There are three common purposes for topics based on what users need:
 
 **Troubleshooting** - solves problems:
 
-- `"Something isn’t working …"`
-- `"I'm encountering an error message …"`
-- `"I’m seeing something unexpected …?"`
+- `Something isn’t working …`
+- `I'm encountering an error message …`
+- `I’m seeing something unexpected …?`
 
-You can also create topics for ambiguous questions like "`I need help`," which ask users for more details before continuing.
+You can also create topics for ambiguous questions like `I need help`, which ask users for more details before continuing.
 
 ## 🐦 Why are topics useful?
 
@@ -109,16 +110,16 @@ These are words or sentences users might say to start the topic.
 
 For a leave request topic, trigger phrases could be
 
-- `"I want to take vacation leave"`
-- `"Request vacation"`
-- `"Apply for time off"`
-- `"How do I submit a leave request?"`
+- `I want to take vacation leave`
+- `Request vacation`
+- `Apply for time off`
+- `How do I submit a leave request?`
 
 For a request device topic, trigger phrases could be
 
-- `"I need a new device"`
-- `"Can I request a device?"`
-- `"Can you help me with a device request"`
+- `I need a new device`
+- `Can I request a device?`
+- `Can you help me with a device request`
 
 ### 💬 Conversation nodes
 
@@ -139,21 +140,21 @@ The following are the main types of nodes you can add to an agent:
 
 1. **Send a message**
     - **Purpose** - sends a mesage to the user.
-    - **Example** - <samp>"Thanks for your request! I'll help you with that."</samp>
+    - **Example** - `Thanks for your request! I'll help you with that.`
 
-    This node lets your agent send messages to users, which can be simple text or rich content like images, videos, cards, quick replies and adaptive cards. 
-    
+    This node lets your agent send messages to users, which can be simple text or rich content like images, videos, cards, quick replies and adaptive cards.
+
     You can personalize messages using variables, add multiple message variations for variety, and even customize speech output for voice-enabled channels.
 
     > Think of it as a "say something" block that helps your agent communicate clearly and interactively with users.
 
 1. **Ask a question**
     - **Purpose** - asks the user a question and waits for their answer.
-    - **Example** - <samp>"What are your vacation dates?"</samp>
+    - **Example** - `What are your vacation dates?`
 
-    This node is used to ask users for specific information during a conversation and store their responses in variables for later use. 
+    This node is used to ask users for specific information during a conversation and store their responses in variables for later use.
 
-    You can customize the type of question like text input or use entities for a defined list of values a user selects from, and define how the agent should behave if the user gives an invalid answer or skips the question. 
+    You can customize the type of question like text input or use entities for a defined list of values a user selects from, and define how the agent should behave if the user gives an invalid answer or skips the question.
 
     It also supports rich content like images and quick replies, and lets you fine-tune validation, reprompting, and interruption settings to make the conversation flow smoothly.
 
@@ -169,7 +170,7 @@ The following are the main types of nodes you can add to an agent:
 
 1. **Add a condition**
     - **Purpose** - add logic to the conversation. It checks something and decides what to do next.
-    - **Example** - if the user says "<samp>Yes</samp>," go to the next step. If "<samp>No</samp>," end the conversation.
+    - **Example** - if the user says `Yes`, go to the next step. If `No`, end the conversation.
 
     This node creates decision points in your agent's conversation flow by checking if a variable meets certain criteria. Based on whether the condition is true or false, the agent follows different paths.
 
@@ -753,7 +754,6 @@ Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how
 This is the end of **Lab 07 - Add a new topic with conversation nodes**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
 ⏭️ [Move to **Enhance user interactions with Adaptive Cards** lesson](/08-add-adaptive-card/README.md)
-
 
 ## 📚 Tactical Resources
 
