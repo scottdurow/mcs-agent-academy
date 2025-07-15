@@ -225,7 +225,7 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
    ContosoHelpdeskAgent
    ```    
 
-   Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-170631-ebenitez) by default will be `1.0.0.0`.
+   Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-172615-ebenitez) by default will be `1.0.0.0`.
 
    Tick the **Set as your preferred solution** checkbox.
 
@@ -268,17 +268,17 @@ This is the end of **Lab 04 - Creating a Solution**, select the link below to mo
 
 
 ## 📚 Additional learning
-🔗 [Create a solution](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/create-solution/?WT.mc_id=power-170631-ebenitez)
+🔗 [Create a solution](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/create-solution/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Create and manage solutions in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-solutions-overview/?WT.mc_id=power-170631-ebenitez)
+🔗 [Create and manage solutions in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-solutions-overview/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-170631-ebenitez)
+🔗 [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Summary of resources available to predefined security roles](https://learn.microsoft.com/en-us/power-platform/admin/database-security#summary-of-resources-available-to-predefined-security-roles/?WT.mc_id=power-170631-ebenitez)
+🔗 [Summary of resources available to predefined security roles](https://learn.microsoft.com/en-us/power-platform/admin/database-security#summary-of-resources-available-to-predefined-security-roles/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Upgrade or update a solution](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions/?WT.mc_id=power-170631-ebenitez)
+🔗 [Upgrade or update a solution](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Overview of pipelines in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/pipelines/?WT.mc_id=power-170631-ebenitez)
+🔗 [Overview of pipelines in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/pipelines/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Overview of Git integration in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/overview/?WT.mc_id=power-170631-ebenitez)
+🔗 [Overview of Git integration in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/overview/?WT.mc_id=power-172615-ebenitez)
 

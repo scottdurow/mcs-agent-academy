@@ -23,7 +23,7 @@ Declarative agents are tailored versions of Microsoft 365 Copilot. You can custo
 
 ## 🤔 Why would I use Microsoft Copilot Studio to build a declarative agent?
 
-As a maker, there's a chance you've already explored [Copilot Studio agent builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder?WT.mc_id=power-170631-ebenitez) in Microsoft 365 Copilot and so you're probably wondering _why build a declarative agent in Microsoft Copilot Studio?_
+As a maker, there's a chance you've already explored [Copilot Studio agent builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/copilot-studio-agent-builder?WT.mc_id=power-172614-ebenitez) in Microsoft 365 Copilot and so you're probably wondering _why build a declarative agent in Microsoft Copilot Studio?_
 
 Microsoft Copilot Studio offers a comprehensive set of tools and features for declarative agents that go beyond the limitations of Copilot Studio agent builder. Similar to Copilot Studio agent builder, you don't need to know programming or software development to build in Microsoft Copilot Studio. Let's break this down further to understand the differences between Copilot Studio Agent Builder and Copilot Studio for building declarative agents.
 
@@ -63,7 +63,7 @@ Let's expand what we've learnt from the feature comparison table.
 #### Advanced Capabilities
 
 - **Integration with External Services**: Allows you to choose from 1400+ Power Platform connectors that integrate with external services, providing more complex and powerful functionalities.
-  - Examples include [docusign](https://learn.microsoft.com/en-us/connectors/docusign/?WT.mc_id=power-170631-ebenitez), [ServiceNow](https://learn.microsoft.com/en-us/connectors/service-now/?WT.mc_id=power-170631-ebenitez), [Salesforce](https://learn.microsoft.com/en-us/connectors/salesforce/?WT.mc_id=power-170631-ebenitez), [SAP](https://learn.microsoft.com/en-us/connectors/sap/?WT.mc_id=power-170631-ebenitez) and more
+  - Examples include [docusign](https://learn.microsoft.com/en-us/connectors/docusign/?WT.mc_id=power-172614-ebenitez), [ServiceNow](https://learn.microsoft.com/en-us/connectors/service-now/?WT.mc_id=power-172614-ebenitez), [Salesforce](https://learn.microsoft.com/en-us/connectors/salesforce/?WT.mc_id=power-172614-ebenitez), [SAP](https://learn.microsoft.com/en-us/connectors/sap/?WT.mc_id=power-172614-ebenitez) and more
   - Alternatively, you can also leverage Model Context Protocol servers and REST APIs directly within your declarative agent
 
 - **AI prompts**: Use a prompt to analyze and transform text, documents, images and data with natural language and AI reasoning.
@@ -221,7 +221,7 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
 
    ![New tool](assets/3.2_02_NewTool.png)
 
-1. A list of other tools is displayed - Prompt, Custom connector, REST API and Model Context Protocol. If your organization meets the [requirements for Computer Use](https://learn.microsoft.com/en-us/microsoft-copilot-studio/computer-use?tabs=new#requirements/?WT.mc_id=power-170631-ebenitez), this will also appear in the list. Select **Prompt**.
+1. A list of other tools is displayed - Prompt, Custom connector, REST API and Model Context Protocol. If your organization meets the [requirements for Computer Use](https://learn.microsoft.com/en-us/microsoft-copilot-studio/computer-use?tabs=new#requirements/?WT.mc_id=power-172614-ebenitez), this will also appear in the list. Select **Prompt**.
 
    ![Select prompt](assets/3.2_03_SelectPrompt.png)
 
@@ -409,7 +409,7 @@ Let's now publish our declarative agent 😃
 
    ![Publishing agent](assets/3.4_03_PublishingAgent.png)
 
-1. When publishing is completed, we'll see the [Availability options](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions#set-availability-options/?WT.mc_id=power-170631-ebenitez) of the agent.
+1. When publishing is completed, we'll see the [Availability options](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions#set-availability-options/?WT.mc_id=power-172614-ebenitez) of the agent.
 
    | Availability option    | Description | 
    | ---------- | ---------- | 
@@ -426,7 +426,7 @@ Let's now publish our declarative agent 😃
    - _Send an email invitation to news users_ - new users will receive an email invitation.
    - _Visible Built with Power Platform_ - agent becomes available in the Built with Power Platform section of the Teams app store.
 
-   For more details, refer to [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams/?WT.mc_id=power-170631-ebenitez).
+   For more details, refer to [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams/?WT.mc_id=power-172614-ebenitez).
 
    Select **Cancel** or the **X** icon to exit from the pane.
 
@@ -456,7 +456,7 @@ Let's now publish our declarative agent 😃
 1. But _how do we know_ the declarative agent invoked the prompt? 👀 Well, here's a tip!
 
 > [!TIP]
-> You can test and debug agents in Microsoft 365 Copilot by enabling [developer mode](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/debugging-copilot-agent#use-developer-mode-in-copilot-chat/?WT.mc_id=power-170631-ebenitez).
+> You can test and debug agents in Microsoft 365 Copilot by enabling [developer mode](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/debugging-copilot-agent#use-developer-mode-in-copilot-chat/?WT.mc_id=power-172614-ebenitez).
 
    Enter the following in the message Copilot field and submit.
 
@@ -538,10 +538,10 @@ This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Stu
 ⏭️ [Move to **Creating a new Solution** lesson](/04-creating-a-solution/README.md))
 
 ## 📚 Additional learning
-🔗 [Build declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)
+🔗 [Build declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-172614-ebenitez)
 
-🔗 [Add prompts](https://learn.microsoft.com/en-us/ai-builder/create-a-custom-prompt?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)
+🔗 [Add prompts](https://learn.microsoft.com/en-us/ai-builder/create-a-custom-prompt?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-172614-ebenitez)
 
-🔗 [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-170631-ebenitez)
+🔗 [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-172614-ebenitez)
 
 📺 [Build prompts for your agent](https://aka.ms/ai-in-action/copilot-studio/ep3)

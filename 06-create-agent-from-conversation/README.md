@@ -263,7 +263,7 @@ Let's begin!
 1. Next, we'll ask Copilot to name our agent as,
 
     ```
-    Contoso Helpdesk Copilot
+    Contoso Helpdesk Agent
     ```
 
    ![Rename the agent](assets/6.1_04_NameAgent.png)
@@ -419,7 +419,7 @@ Let's now test our agent!
 
 ### 6.4 Test agent
 
-We'll test our three knowledge sources by asking questions to our Contoso Helpdesk Copilot.
+We'll test our three knowledge sources by asking questions to our Contoso Helpdesk Agent.
 
 1. Select the **refresh** icon in the test pane.
 
@@ -479,11 +479,11 @@ This is the end of **Lab 06 - Create an agent with Copilot**, select the link be
 
 
 ## 📚 Additional learning
-🔗 [Quickstart: Create and deploy an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-get-started?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)
+🔗 [Quickstart: Create and deploy an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-get-started?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-172617-ebenitez)
 
-🔗 [Create and delete agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-170631-ebenitez)
+🔗 [Create and delete agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-172617-ebenitez)
 
-🔗 [Key concepts - Authoring agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-fundamentals/?WT.mc_id=power-170631-ebenitez)
+🔗 [Key concepts - Authoring agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-fundamentals/?WT.mc_id=power-172617-ebenitez)
 
 📺 [Create a custom agent using natural language](aka.ms/ai-in-action/copilot-studio/ep1)
 
