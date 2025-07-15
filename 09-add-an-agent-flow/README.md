@@ -1,8 +1,33 @@
-# Add an agent flow to your Topic for automation
+# 🚨 Mission 09: Add an agent flow to your Topic for automation
 
-## Lesson chapters
+## 🔎 Objectives
 
-- placeholder
+- [What is an agent flow](#-what-is-an-agent-flow)
+- [Yes, but how is it different to Power Automate cloud flows?](#-yes-but-how-is-it-different-to-power-automate-cloud-flows)
+    - [Agent flows in Copilot Studio](#-agent-flows-in-copilot-studio)
+    - [Power Automate cloud flows](#️-power-automate-cloud-flows)
+    - [Summary](#-summary)
+- [Why use agent flows](#-why-use-agent-flows)
+- [How do agent flows enhance your agent?](#️-how-do-agent-flows-enhance-your-agent)
+    - [Think of it this way](#think-of-it-this-way)
+    - [Why it matters](#why-it-matters)
+- [Key features that make agent flows powerful](#-key-features-that-make-agent-flows-powerful)
+- [How they work](#️-how-they-work)
+- [How to create an agent flow](#-how-to-create-an-agent-flow)
+- [What is the agent flow designer?](#-what-is-the-agent-flow-designer)
+    - [Key features of the agent flow designer](#key-features-of-the-agent-flow-designer)
+    - [Why use the agent flow designer?](#why-use-the-agent-flow-designer)
+- [You mentioned _expressions_ - what are expressions?](#-you-mentioned-expressions---what-are-expressions)
+    - [Why use expressions?](#why-use-expressions)
+    - [What do expressions look like?](#what-do-expressions-look-like)
+    - [Why do functions matter?](#why-do-functions-matter)
+    - [Most useful functions](#most-useful-functions)
+    - [Best practices](#-best-practices)
+- [Lab 09 - Add an agent flow for automation and enhance topic capabilities](#-lab-09---add-an-agent-flow-for-automation-and-enhance-topic-capabilities)
+    - [9.1 Create an agent flow](#91-create-an-agent-flow)
+    - [9.2 Add agent flow to topic](#92-add-agent-flow-to-topic)
+    - [9.3 Update Request device topic with several nodes for a better user experience](#93-update-request-device-topic-with-several-nodes-for-a-better-user-experience)
+    - [9.4 Test agent using several scenarios](#94-test-agent-using-several-scenarios)
 
 ## 🤔 What is an agent flow?
 
@@ -121,7 +146,7 @@ This saves time, reduces mistakes and makes the whole process much smoother.
 
 1. **Human in the loop**
     - Add approval steps where a person needs to review or confirm something.
-    - [Advanced approvals](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-advanced-approvals?WT.mc_id=power-170631-ebenitez) supports reminders, delegation, and multi-stage approvals.
+    - [Advanced approvals](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-advanced-approvals?WT.mc_id=power-172621-ebenitez) supports reminders, delegation, and multi-stage approvals.
 
 ## ⚙️ How they work
 
@@ -209,7 +234,7 @@ Using functions makes your agent flows:
 
 ### Most useful functions
 
-The following are common functions used in agent flows. For the full list of functions, head to the [reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-170631-ebenitez).
+The following are common functions used in agent flows. For the full list of functions, head to the [reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez).
 
 #### 🔡 Text
 - <samp>concat()</samp> - Joins two or more pieces of text together.
@@ -298,10 +323,10 @@ Here are some best practices for building agent flows in Copilot Studio.
 
 We're now going to learn how to enhance our topic with adaptive cards and using advanced functionality of topics and nodes. 
 
-- [9.1 Create an agent flow](/08-add-adaptive-card/README.md/#81-add-an-adaptive-card-to-display-available-devices)
-- [9.2 Add agent flow to topic](/08-add-adaptive-card/README.md/#82-add-a-condition-node-to-enable-users-to-request-a-device)
-- [9.3 Update Available device topic](/08-add-adaptive-card/README.md/#83-create-a-new-topic-with-an-adaptive-card-for-user-to-submit-their-request)
-- [9.4 Test agent using several scenarios](/08-add-adaptive-card/README.md/#84-update-available-devices-topic-to-redirect-to-the-newly-created-topic)
+- [9.1 Create an agent flow](#91-create-an-agent-flow)
+- [9.2 Add agent flow to topic](#92-add-agent-flow-to-topic)
+- [9.3 Update Request device topic with several nodes for a better user experience](#93-update-request-device-topic-with-several-nodes-for-a-better-user-experience)
+- [9.4 Test agent using several scenarios](#94-test-agent-using-several-scenarios)
 
 ### ✨ Use case
 
@@ -843,30 +868,156 @@ Let's now add the agent flow to the **Request device** topic.
 
     ![Save](assets/9.2_14_SaveTopic.png)
 
-### 9.3 Update Available device topic
+### 9.3 Update Request device topic with several nodes for a better user experience
 
-_placehoder text_
+We'll next add two more nodes:
+    
+- **Send a message** - this will act as a confirmation message that references the selected device and that their request has been submitted.
+    
+- **Topic management** - to close the conversation, we'll redirect to the **End of conversation** node.
+
+Let's begin!
+
+1. Select the **plus + icon** below the agent flow node and select **Send a message** node.
+
+    ![Add send a message node](assets/9.3_01_AddSendAMessageNode.png)
+
+1. Enter the following below in the message field,
+
+    ```
+    Thanks
+    ```
+
+    Then select the **Insert variable** as we'll reference the user's name.
+
+    ![Insert variable](assets/9.3_02_InsertVariable.png)
+
+1. Select the **System** tab and search for `User` in the search field. Select the **User.DisplayName** variable.
+
+    ![Select system variable](assets/9.3_03_SelectSystemVariable.png)
+
+1. Enter the following below in the message field,
+
+    ```
+    . Your selected device,
+    ```
+
+    Then select **Insert variable** and this time in the **Custom** tab, select the **ModelValue** variable.
+
+    Then enter the following below to complete the message.
+
+    ```
+    , has been submitted and will be reviewed by your manager.
+    ```
+
+    The message should look like the following.
+
+    ![Send message](assets/9.3_04_SendAMessage.png)
+
+1. Lastly, select the **plus + icon** below the **Send a message** node and select **Topic management**, followed by **Go to another topic** and select **End of Conversation**.
+
+    ![Topic management](assets/9.3_05_EndOfConversationNode.png)
+
+1. **Save** the topic.
+
+    ![Save](assets/9.3_06_SaveTopic.png)
 
 ### 9.4 Test agent using several scenarios
 
-_placehoder text_
+Great work!!! We can now test our agent.
 
-## Next lesson
-Congratulations! 👏🏻 _placehoder text_
+#### 9.4.1 Request a device and enter a comment in adaptive card
+
+1. **Refresh** the test pane, select the **activity map** icon and enter the following as a message to the agent.
+
+    ```
+    I need a laptop
+    ```
+
+    ![Test agent](assets/9.4_01_TestAgent_RequestDevice_Yes.png)
+
+1. The agent triggers the **Available devices** and responds with the list of available devices. We'll enter the following as the answer to the question of whether we'd like to request a device.
+
+    ```
+    yes please
+    ```
+
+    ![Yes](assets/9.4_02_RequestDevice_Yes.png)
+
+1. Notice how the agent invoked the **Request device** as per the agent instructions and that the adaptive card is now being displayed in the agent message.
+
+    Select the **Surface Laptop 15** device and add the following as a comment.
+
+    ```
+    I need 16GB of RAM please
+    ```
+    
+    ![Select device and enter comment](assets/9.4_03_SelectDeviceAndEnterComment.png)
+
+1. Scroll down until you see the **Submit Request** button and select it to submit the adaptive card to the agent.
+
+    ![Submit request](assets/9.4_04_SubmitRequest.png)
+
+1. The agent will then display the confirmation message, followed by redirecting to the **End of Conversation** topic 🙌🏻
+
+    ![End of Conversation topic](assets/9.4_05_RequestSubmitted.png)
+
+1. Check your Inbox of your email account to review the email sent to the manager by the agent flow.
+
+    ![Email sent](assets/9.4_06_EmailWithAdditionalComments.png)
+
+#### 9.4.2 Request a device and do not enter a comment in adaptive card
+
+Let's now test the scenario when a comment is not entered.
+
+1. Repeat the same steps of
+
+    - **Refresh** the test pane and select the **activity map** icon
+    - Enter the message, `I need a laptop`
+    - Respond with `Yes please` to the question of requesting a device
+
+    ![Request device](assets/9.4_08_RequestDevice_Yes.png)
+
+1. This time select **Surface Laptop 13** as the device and do not enter a comment. **Submit** the request by selecting the **Submit Request** button.
+
+    ![Select device](assets/9.4_09_SelectDevice.png)
+
+1. This time the email received in your Inbox will display **None** as the comment.
+
+    ![Email sent](assets/9.4_11_EmailMessage.png)
+
+#### 9.4.3 Do not request for a device
+
+Let's test the final scenario which is to not request a device, and the **Goodbye** topic should be invoked as per the agent instructions.
+
+1. Repeat the same steps of
+
+    - **Refresh** the test pane and select the **activity map** icon
+    - Enter the message, `I need a laptop`
+    - This time respond with `no` to the question of requesting a device
+
+    ![Test agent](assets/9.4_12_TestAgent_RequestDevice_No.png)
+
+1. The agent invoked the **Goodbye** topic and the question as defined in the topic is asked.
+
+    ![Goodbye topic invoked](assets/9.4_13_Goodbye.png)
+
+## ✅ Misson complete
+Congratulations! 👏🏻 You've learnt how to build your agent flow and add it to our existing **Request device** topic, and how to redirect the agent to another topic.
 
 This is the end of **Lab 09 - Add an agent flow for automation and enhance topic capabilities**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
-⏭️ [Move to **_placeholder text_** lesson](/07-add-new-topic-with-trigger/README.md)
+⏭️ [Move to **Add Event Triggers - Enable autonomous agent capabilities** lesson](/07-add-new-topic-with-trigger/README.md)
 
 
-## 📚 Additional learning
+## 📚 Tactical Resources
 🔗 [Introducing agent flows: Transforming automation with AI-first workflows](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/introducing-agent-flows-transforming-automation-with-ai-first-workflows/)
 
-🔗 [Agent flows overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview?WT.mc_id=power-170631-ebenitez)
+🔗 [Agent flows overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview?WT.mc_id=power-172621-ebenitez)
 
-🔗 [Use agent flows with your agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow?WT.mc_id=power-170631-ebenitez)
+🔗 [Use agent flows with your agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow?WT.mc_id=power-172621-ebenitez)
 
-🔗 [List of functions in the reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-170631-ebenitez)
+🔗 [List of functions in the reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
 
 📺 [Agent Flows in Copilot Studio](https://www.youtube.com/watch?v=VJTKyk3Pr7s)
 
