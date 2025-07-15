@@ -660,7 +660,7 @@ Let's begin!
     - Help find available devices and give full details using [Available devices]. Always extract the VarDeviceType from the inputs. After giving device details, ask the user if they want to request a device from the list of available devices.
     ```
 
-    This instruction will guide generative AI to invoke the **Available devices** trigger to display the list of available devices from the **Devices** Sharepoint list. Highlight the topic placeholder in square brackets.
+    This instruction will guide generative AI to invoke the **Available devices** trigger to display the list of available devices from the **Devices** Sharepoint list. Select the entire topic placeholder in square brackets.
 
     ![Add instructions](assets/7.3_25_AddInstructions.png)
 
