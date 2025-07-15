@@ -31,13 +31,13 @@
 
 ## 🤔 What is an agent flow?
 
-Agent flows are a powerful way to automate repetitive tasks and integrate your apps and services. Think of them as structured, step-by-step workflows that your agent can execute to automate tasks or connect with other applications and services. You can think of them as mini workflows that help your agent do things like send notificaitons, update records, or respond to events.
+Agent flows are a powerful way to automate repetitive tasks and integrate your apps and services. Think of them as structured, step-by-step workflows that your agent can execute to automate tasks or connect with other applications and services. You can think of them as mini workflows that help your agent do things like send notifications, update records, or respond to events.
 
 Unlike autonomous agents that use AI to make decisions on the fly, agent flows are **deterministic workflows** - meaning they follow the same path every time, ensuring consistent and reliable results.
 
 In simple terms:
 - They help your agent _do things_, not just _say things_ to users.
-- They're resuable across topics and agents, and can be triggered by user messages, events, or other applications and serices.
+- They're reusable across topics and agents, and can be triggered by user messages, events, or other applications and services.
 
 ## 🙋🏽 Yes, but how is it different to Power Automate cloud flows?
 
@@ -56,7 +56,7 @@ Both agent flows and Power Automate cloud flows help automate tasks. They're des
 
 **Limitations:**
 - You can't share them, copy them, or assign co-owners.
-- They're only visible and usuable within Copilot Studio.
+- They're only visible and usable within Copilot Studio.
 
 ### ☁️ Power Automate cloud flows
 
@@ -101,7 +101,7 @@ Other benefits are:
 
 Agent flows expand what your agent can do beyond "chatting" with users. They allow it to take action and interact with systems.
 
-Let's say you're working in a finance deparment and you receive a lot of invoices from vendors. Normally, somone has to reach each invoice, pull out the important details - the amount, date, who it's from, and check if everything matches your records. Then send it to the right person for approval. This takes time and effort.
+Let's say you're working in a finance department and you receive a lot of invoices from vendors. Normally, someone has to reach each invoice, pull out the important details - the amount, date, who it's from, and check if everything matches your records. Then send it to the right person for approval. This takes time and effort.
 
 With agent flows in Copilot Studio, you can automate this process. As soon as the invoice comes in, the agent:
 
@@ -214,7 +214,7 @@ Expressions let you:
 
 ### What do expressions look like?
 
-Expressions use functions. I'm going to borrow an explaination of what functions are from former Microsoft MVP, Jerry Weinstock.
+Expressions use functions. I'm going to borrow an explanation of what functions are from former Microsoft MVP, Jerry Weinstock.
 
 > "Functions are built-in logic to transform your data either through simple or complex operations in your expression."
 
@@ -313,7 +313,7 @@ Here are some best practices for building agent flows in Copilot Studio.
 1. **Use parameters and expressions wisely**
 
     - When configuring actions, use parameters to make your flow dynamic.
-    - You can enter values manually or use expressions to calcuate them, or combine it with values from actions upstream by using the _dynamic content_ picker.
+    - You can enter values manually or use expressions to calculate them, or combine it with values from actions upstream by using the _dynamic content_ picker.
 
 1. **Delete unused actions**
 
@@ -653,7 +653,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     This expression uses the `if` function for an if-else statement. 
     
-    The next function used is `empty` which checks whether a value exists or not in a string parameter. The string paramater to be referenced is the `AdditionalComments` input from the trigger.
+    The next function used is `empty` which checks whether a value exists or not in a string parameter. The string parameter to be referenced is the `AdditionalComments` input from the trigger.
 
     ![If empty](assets/9.1_42_IfExpression.png)
 
@@ -773,7 +773,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 Let's now add the agent flow to the **Request device** topic.
 
-1. Select **Agents** in the left handside menu and select the **Contoso Helpdesk Agent**.
+1. Select **Agents** in the left-hand side menu and select the **Contoso Helpdesk Agent**.
 
     ![Select Agents](assets/9.2_01_01_SelectAgent.png)
 
@@ -825,7 +825,7 @@ Let's now add the agent flow to the **Request device** topic.
 
     This expression uses the `if` function for an if-else statement. 
     
-    The next function used is `IsBlank` which checks whether a value exists or not in a string parameter. The string paramater to be referenced is the `commentsId` output variable from the **Ask with adaptive card** node.
+    The next function used is `IsBlank` which checks whether a value exists or not in a string parameter. The string parameter to be referenced is the `commentsId` output variable from the **Ask with adaptive card** node.
 
     ![If empty](assets/9.2_10_IfIsBlank.png)
 
@@ -1004,7 +1004,7 @@ Let's test the final scenario which is to not request a device, and the **Goodby
 
 ## ✅ Misson complete
 
-Congratulations! 👏🏻 You've learnt how to build your agent flow and add it to our existing **Request device** topic, and how to redirect the agent to another topic.
+Congratulations! 👏🏻 You've learned how to build your agent flow and add it to our existing **Request device** topic, and how to redirect the agent to another topic.
 
 This is the end of **Lab 09 - Add an agent flow for automation and enhance topic capabilities**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
