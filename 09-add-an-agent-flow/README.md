@@ -746,25 +746,25 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 ### 9.2 Add agent flow to topic
 
-1. Select **Agents** in the left handside menu and select the **Contoso Helpdesk Copilot**.
+Let's now add the agent flow to the **Request device** topic.
+
+1. Select **Agents** in the left handside menu and select the **Contoso Helpdesk Agent**.
 
     ![Select Agents](assets/9.2_01_01_SelectAgent.png)
 
-1. Select the **Topics** tab.
+    Select the **Topics** tab and select the **Request device** topic.
 
-    ![Select Topics tab](assets/9.2_01_02_SelectTopics.png)
+    ![Select Request device topic](assets/9.2_01_02_SelectTopics.png)    
 
-1. Select the **Request device** topic.
+1. Scroll down to the **Ask with adaptive card** node and add a new node. 
 
-    ![Select Request device topic](assets/9.2_01_03_SelectRequestDevice.png)
-
-1. Scroll down to the **Ask with adaptive card** node and add a new node. Select **Add a tool** and in the **Basic tools** tab of the fly out pane, select the agent flow we recently created and published, **Send device request email**.
+    Select **Add a tool** and in the **Basic tools** tab of the fly out pane, select the **Send device request email** agent flow we recently created and published.
 
     ![Select agent flow](assets/9.2_02_SelectAgentFlow.png)
 
 1. For the trigger inputs of our agent flow, we need to select the variable outpus from the **Ask with adaptive card** node.
 
-    Select the **ellipsis (...) icon** for the DeviceSharePointId input.
+    Select the **ellipsis (...) icon** for the **DeviceSharePointId** input.
 
     ![Select variable](assets/9.2_03_SelectVariable.png)
 
@@ -772,7 +772,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Select deviceSelctionId](assets/9.2_04_SelectDeviceSelectionId.png)
 
-1. Next, select the **ellipsis (...) icon** for the User input.
+1. Next, select the **ellipsis (...) icon** for the **User** input.
 
     ![Select Variable](assets/9.2_05_SelectVariable.png)
 
@@ -780,7 +780,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Select User.DisplayName system variable](assets/9.2_06_SelectUser.DisplayName.png)
 
-1. Next, select the **greater than icon** by the Advanced inputs to see the AdditionalComments input. 
+1. Next, select the **greater than icon** for **Advanced inputs** to see the **AdditionalComments** input. 
 
     ![Expand advanced inputs](assets/9.2_07_ExpandAdvancedInputs.png)
 
@@ -839,6 +839,9 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Insert Power Fx expression](assets/9.2_13_InsertPowerFxExpression.png)
 
+1. **Save** the topic.
+
+    ![Save](assets/9.2_14_SaveTopic.png)
 
 ### 9.3 Update Available device topic
 
