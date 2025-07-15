@@ -1,10 +1,17 @@
-# 🧰 Mission 00: Course Setup  
-**Codename: Operation Deployment Ready**
+# 🚨 Mission 00: Course Setup  
 
+### 🕵️‍♂️ CODENAME: `OPERATION DEPLOYMENT READY`
+
+> **⏱️ Operation Time Window:** `~30 minutes`  
+
+## 🎯 Mission Brief:
 Welcome to the first mission of your training as a Copilot Studio Agent.  
 Before you can start building your first AI agent, you need to establish your **field-ready development environment**.
 
-This briefing outlines the systems, access credentials, and setup steps required to successfully operate in the Microsoft 365 ecosystem. Your mission includes:
+This briefing outlines the systems, access credentials, and setup steps required to successfully operate in the Microsoft 365 ecosystem. 
+
+## 🔎 Objectives
+Your mission includes:
 
 1. Activating a Microsoft 365 developer tenant  
 2. Gaining access to Microsoft Copilot Studio  
@@ -13,7 +20,7 @@ This briefing outlines the systems, access credentials, and setup steps required
 
 ---
 
-## 🔍 Prerequisites: Field Requirements
+## 🔍 Prerequisites
 
 Before you begin, ensure you have:
 
@@ -134,3 +141,5 @@ You’ve successfully:
 - Populated the Devices list for use in future missions
 
 You're officially cleared to begin your **Recruit-level agent training** in [Lesson 01](/01-introduction-to-agents/README.md).  
+
+![mcs-agent-academy-recruit-00](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/00-course-setup)

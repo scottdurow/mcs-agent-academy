@@ -1,6 +1,18 @@
-# Creating a Solution for your agent
+# 🚨 Mission 04: Build a Solution for Your Agent
 
-## Lesson chapters
+### 🕵️‍♂️ CODENAME: `OPERATION CTRL-ALT-PACKAGE`
+
+> **⏱️ Operation Time Window:** `~45 minutes` 
+
+## 🎯 Mission Brief:
+
+Agent Maker, welcome to your next tactical operation. In this mission, you’ll learn to assemble a Solution —the official deployment vehicle for your IT Helpdesk Agent built with Microsoft Copilot Studio. Think of this as creating a digital briefcase that holds your agent and it's artifacts.
+
+Every agent needs a well-structured home. That’s what a Power Platform solution provides—order, portability, and readiness for production.
+
+Let’s pack up.
+
+## 🔎 Objectives
 
 - [Solution? What's that?](#️-solution-whats-that)
 - [Why should I use a Solution for my agent?](#-why-should-i-use-a-solution-for-my-agent)
@@ -259,13 +271,15 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
    ![Solutions](assets/4.2_05_CurrentPreferredSolutionSelected.png)
 
-## Next lesson
+## ✅ Mission Complete
+
 Congratulations! 👏🏻 You've created a Publisher and used it in your newly created Solution to build your agent in!
 
 This is the end of **Lab 04 - Creating a Solution**, select the link below to move to the next lesson. Your solution created in this lab will be used in the next lesson's lab.
 
 ⏭️ [Move to **Get started quickly with pre-built agents** lesson](/05-using-prebuilt-agents/README.md)
 
+Well done, Agent Maker. A tidy digital footprint is the first step toward operability at scale. Now you’ve got the tools—and the mindset—for sustainable, enterprise-ready agent development.
 
 ## 📚 Additional learning
 🔗 [Create a solution](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/create-solution/?WT.mc_id=power-172615-ebenitez)
@@ -282,3 +296,4 @@ This is the end of **Lab 04 - Creating a Solution**, select the link below to mo
 
 🔗 [Overview of Git integration in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/overview/?WT.mc_id=power-172615-ebenitez)
 
+![mcs-agent-academy-recruit-04](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/04-creating-a-solution)

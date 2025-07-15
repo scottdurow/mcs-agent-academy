@@ -1,6 +1,18 @@
-# Create a declarative agent for Microsoft 365 Copilot
+# 🚨 Mission 03: Deploy a Declarative Agent for Microsoft 365 Copilot
 
-## Lesson chapters
+### 🕵️‍♂️ CODENAME: `OPERATION COPILOT EXTENSION`
+
+> **⏱️ Operation Time Window:** `~60 minutes` 
+
+## 🎯 Mission Brief:
+
+Welcome to your first field assignment, Agent Maker. You’ve been selected to design, equip, and deploy a Declarative Agent—a specialized operative embedded directly into Microsoft 365 Copilot and Teams.
+
+Unlike traditional agents, declarative agents operate with a defined mission (instructions), tools (prompts/connectors), and strategic access to internal intelligence (knowledge sources like SharePoint, Dataverse, and more). Your job is to build this agent using Microsoft Copilot Studio—a no-code command center where your agent’s skills and purpose come to life.
+
+Let’s go.
+
+## 🔎 Objectives
 
 📖 This lesson will cover:
 - [What is a declarative agent for Microsoft 365 Copilot?](#️-what-is-a-declarative-agent-for-microsoft-365-copilot)
@@ -530,12 +542,16 @@ Let's now publish our declarative agent 😃
 
 In a few minutes, you've learnt how to publish your declarative agent and test it in Microsoft 365 Copilot and in Teams 😊
 
-## Next lesson
+## ✅ Mission Complete
 Congratulations! 👏🏻 You've built a declarative agent in Copilot Studio where you added a Prompt, instructed the agent to use the Prompt and how to test + publish your agent to Microsoft 365 Copilot and Teams.
+
+Your agent is now active duty—ready to assist, troubleshoot, and serve internal users on-demand.
 
 This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot**, select the link below to move to the next lesson.
 
 ⏭️ [Move to **Creating a new Solution** lesson](/04-creating-a-solution/README.md))
+
+Until next time, stay sharp. The future of enterprise work runs through agents—and now you know how to build one.
 
 ## 📚 Additional learning
 🔗 [Build declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-172614-ebenitez)
@@ -545,3 +561,5 @@ This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Stu
 🔗 [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-172614-ebenitez)
 
 📺 [Build prompts for your agent](https://aka.ms/ai-in-action/copilot-studio/ep3)
+
+![mcs-agent-academy-recruit-03](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/03-create-a-declarative-agent-for-M365Copilot)

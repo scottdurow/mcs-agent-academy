@@ -1,6 +1,27 @@
-# Add new topic with trigger and nodes
+# 🚨 Mission 07: Add new topic with trigger and nodes
 
-## Lesson chapters
+### 🕵️‍♂️ CODENAME: `OPERATION STAY ON TOPIC`
+
+> **⏱️ Operation Time Window:** `~60 minutes` 
+
+## 🎯  Mission Brief:
+
+You’ve built an agent. It listens, learns, and answers questions—but now it’s time to get more tactical. In this mission, you’ll go deep under the hood and teach your agent how to respond to specific prompts with precision.
+
+With Topics and Triggers, your agent can:
+
+- Recognize intent
+
+- Route conversations with logic
+
+- Gather and store variables
+
+- Trigger flows and take action
+
+You’re not just building dialogue—you’re wiring up its decision-making cortex. Welcome to the Neural Nexus.
+
+
+## 🔎 Objectives
 
 - [What is a Topic?](#-what-is-a-topic)
     - [Purpose of a topic](#-purpose-of-a-topic)
@@ -720,22 +741,21 @@ Let's begin!
 
     ![Refresh test pane](assets/7.3_37_RefreshTestPane.png)
 
+## ✅ Mission Complete
 
-## Next lesson
-Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how to add a tool which calls the Get items SharePoint connector action and use Power Fx to create a define the scope of a variable as global. 🙌🏻
+Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how to add a tool which calls the Get items SharePoint connector action and use Power Fx to filter the response to only return devices where the status equals availabile and the device type equals laptop. 🙌🏻
 
 This is the end of **Lab 07 - Add a new topic with conversation nodes**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
 ⏭️ [Move to **Enhance user interactions with Adaptive Cards** lesson](/08-add-adaptive-card/README.md)
 
 
-## 📚 Additional learning
-🔗 [Use system topics](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics?mc_id=power-172621-ebenitez)
+## 📚 Tactical Resources
+🔗 [Use system topics](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics?mc_id=power-170631-ebenitez)
 
 🔗 [Topics in Microsoft Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/topics-overview?WT.mc_id=power-172621-ebenitez)
 
 🔗 [Set topic triggers](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers?WT.mc_id=power-172621-ebenitez)
-
 
 🔗 [Defining agent topics](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/defining-chatbot-topics?WT.mc_id=power-172621-ebenitez)
 
@@ -744,3 +764,5 @@ This is the end of **Lab 07 - Add a new topic with conversation nodes**, select 
 📺 [Author topics using natural language](https://aka.ms/ai-in-action/copilot-studio/ep6)
 
 📺 [Add actions to agents using conenctors](https://aka.ms/ai-in-action/copilot-studio/ep4)
+
+![mcs-agent-academy-recruit-07](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/07-add-new-topic-with-trigger)

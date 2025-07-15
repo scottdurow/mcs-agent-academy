@@ -1,6 +1,13 @@
-# Enhance user interactions in Topics with Adaptive Cards
+# 🚨 Mission 08: Enhance user interactions in Topics with Adaptive Cards
 
-## Lesson chapters
+### 🕵️‍♂️ CODENAME: `OPERATION INTERFACE UPLIFT`
+
+> **⏱️ Operation Time Window:** `~45 minutes` 
+
+## 🎯  Mission Brief:
+Agents, your mission is to infiltrate the static user experience and replace it with rich, dynamic, and actionable Adaptive Cards. You’ll deploy JSON payloads and Power Fx formulas to transform Copilot Studio conversations from basic Q&A into fully interactive engagements. Your goal is to gather user input, present data beautifully, and direct conversations with precision and style. Fail to adapt, and your users may defect to less intelligent interfaces.
+
+## 🔎 Objectives
 
 - [What is an Adaptive Card?](#-what-is-an-adaptive-card)
     - [Why Adaptive Cards matter in Copilot Studio](#why-adaptive-cards-matter-in-copilot-studio)
@@ -415,16 +422,16 @@ Now that we created the new topic that handles the device requests, we need to u
 
     ![Refresh test pane](assets/8.2_08_RefreshTestPane.png)
 
-## Next lesson
+## ✅ Mission Complete
+
 Congratulations! 👏🏻 You've learnt how to add adaptive cards using Power Fx formulas to display data from variables, and you also learnt how to redirect from one topic to another. Creating bite sized topics makes your agent more organized, but also helps guide users through different parts of the conversation flow with the agent.
 
 This is the end of **Lab 08 - Enhance user interactions with Adaptive Cards**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
 ⏭️ [Move to **Add an agent flow to your Topic for automation** lesson](/09-add-an-agent-flow/README.md)
 
-
-## 📚 Additional learning
-🔗 [Using Adaptive Cards in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/adaptive-cards-overview?WT.mc_id=power-172619-ebenitez)
+## 📚 Tactical Resources
+🔗 [Using Adaptive Cards in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/adaptive-cards-overview?WT.mc_id=power-170631-ebenitez)
 
 🔗 [Add an adaptive card in Send a message node](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-send-message#add-an-adaptive-card?WT.mc_id=power-172619-ebenitez)
 
@@ -432,4 +439,4 @@ This is the end of **Lab 08 - Enhance user interactions with Adaptive Cards**, s
 
 📺 [Building Adaptive Cards with Power FX](https://aka.ms/ai-in-action/copilot-studio/ep8)
 
-
+![mcs-agent-academy-recruit-08](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/08-add-adaptive-card)
