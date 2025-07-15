@@ -75,10 +75,10 @@ It's good practice to create an agent in a dedicated solution in your source (de
 
 - Helps you roll out changes in a controlled way.
 
-🧩 **Dependency Management**
+🧩 **Dependency management**
 - Solutions track which parts depend on others. This prevents you from breaking things when you make changes.
 
-🧩 **Team Collaboration**
+🧩 **Team collaboration**
 - Developers and makers can work together using unmanaged solutions in development, then hand off a managed solution for deployment.
 
 ## 🪪 Understanding Solution Publishers
@@ -87,12 +87,12 @@ A Solution Publisher in Power Platform is like a label or brand that identifies 
 
 When you create a solution, you must choose a publisher. This publisher defines:
 
-- A prefix that gets added to all custom components (like tables, fields, and flows).
+- A prefix that gets added to all custom components (think tables, fields, and flows).
 
 - A name and contact info for the organization or person who owns the solution.
 
 ### 🤔 Why is it important? 
-1. **Easy identification** - the prefix (like `new_` or `abc_`) helps you quickly identify which components belong to which solution or team.
+1. **Easy identification** - the prefix (xample - `new_` or `abc_`) helps you quickly identify which components belong to which solution or team.
 
 2. **Avoids conflicts** - if two teams create a column called status, their prefixes (`teamA_status`, `teamB_status`) prevent naming collisions.
 
@@ -228,16 +228,16 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
     Copy and paste the following as the **Display name**,
 
    ```
-   Contoso Helpdesk Copilot
+   Contoso Helpdesk Agent
    ```
 
     Copy and paste the following as the **Name**,
 
    ```
-   ContosoHelpdeskCopilot
+   ContosoHelpdeskAgent
    ```    
 
-   Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-170631-ebenitez) by default will be `1.0.0.0`.
+   Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-172615-ebenitez) by default will be `1.0.0.0`.
 
    Tick the **Set as your preferred solution** checkbox.
 
@@ -261,13 +261,13 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
     ![Solutions](assets/4.2_03_Create.png)
 
-1. The solution for Contoso Helpdesk Copilot has now been created. There will be zero components until we create an agent in Copilot Studio.
+1. The solution for Contoso Helpdesk Agent has now been created. There will be zero components until we create an agent in Copilot Studio.
 
     Select the **back arrow** icon to return to the Solution Explorer.
 
    ![Solutions](assets/4.2_04_SolutionCreated.png)
 
-1. Notice how the Contoso Helpdesk Copilot now displays as as the **Current preferred solution** since we ticked the **Set as your preferred solution** checkbox earlier.
+1. Notice how the Contoso Helpdesk Agent now displays as as the **Current preferred solution** since we ticked the **Set as your preferred solution** checkbox earlier.
 
    ![Solutions](assets/4.2_05_CurrentPreferredSolutionSelected.png)
 
@@ -282,18 +282,18 @@ This is the end of **Lab 04 - Creating a Solution**, select the link below to mo
 Well done, Agent Maker. A tidy digital footprint is the first step toward operability at scale. Now you’ve got the tools—and the mindset—for sustainable, enterprise-ready agent development.
 
 ## 📚 Additional learning
-🔗 [Create a solution](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/create-solution/?WT.mc_id=power-170631-ebenitez)
+🔗 [Create a solution](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/create-solution/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Create and manage solutions in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-solutions-overview/?WT.mc_id=power-170631-ebenitez)
+🔗 [Create and manage solutions in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-solutions-overview/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-170631-ebenitez)
+🔗 [Share agents with other users](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Summary of resources available to predefined security roles](https://learn.microsoft.com/en-us/power-platform/admin/database-security#summary-of-resources-available-to-predefined-security-roles/?WT.mc_id=power-170631-ebenitez)
+🔗 [Summary of resources available to predefined security roles](https://learn.microsoft.com/en-us/power-platform/admin/database-security#summary-of-resources-available-to-predefined-security-roles/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Upgrade or update a solution](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions/?WT.mc_id=power-170631-ebenitez)
+🔗 [Upgrade or update a solution](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Overview of pipelines in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/pipelines/?WT.mc_id=power-170631-ebenitez)
+🔗 [Overview of pipelines in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/pipelines/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Overview of Git integration in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/overview/?WT.mc_id=power-170631-ebenitez)
+🔗 [Overview of Git integration in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/git-integration/overview/?WT.mc_id=power-172615-ebenitez)
 
 ![mcs-agent-academy-recruit-04](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/04-creating-a-solution)

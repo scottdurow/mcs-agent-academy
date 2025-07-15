@@ -40,7 +40,7 @@ You’re not just building dialogue—you’re wiring up its decision-making cor
     - [Use case](#-use-case)
     - [Prerequisites](#prerequisites)
     - [7.1 Add a new topic from blank](#71-add-a-new-topic-from-blank)
-    - [7.2 Add node - Ask a Question and create a custom entity](#72-add-node---ask-a-question-and-create-a-custom-entity)
+    - [7.2 Define the trigger inputs and outputs](#72-define-the-trigger-inputs-and-outputs)
     - [7.3 Add node - Add a tool using the SharePoint connector](#73-add-node---add-a-tool-using-a-connector)
 - [Additional learning](#-additional-learning)
 
@@ -418,8 +418,8 @@ Agent responds with,
 We're now going to learn how to add a new topic with a trigger and tools. This lab will cover creating a topic from blank so that you understand how to customize topics to your needs.
 
 - [7.1 Add a new topic from blank](/07-add-new-topic-with-trigger/README.md/#71-add-a-new-topic-from-blank)
-- [7.2 Add node - Ask a Question and create a custom entity](/07-add-new-topic-with-trigger/README.md/#72-add-node---ask-a-question-and-create-a-custom-entity)
-- [7.3 Add a tool using the SharePoint connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector)
+- [7.2 Define the trigger inputs and outputs](/07-add-new-topic-with-trigger/README.md/#72-define-the-trigger-inputs-and-outputs)
+- [7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector)
 
 ### ✨ Use case
 
@@ -439,113 +439,121 @@ Let's begin!
     
     If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
 
-1. **Contoso Helpdesk Copilot**
+1. **Contoso Helpdesk Agent**
 
     We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md).
 
 ### 7.1 Add a new topic from blank
 
-1. In the overview tab of the agent, scroll down to the **Topics** section. Select **See all**.
+1. Select the **Topics tab** near the name of the agent. If you don't see it visible, select **+6** and you'll see **Topics** listed.
 
-    ![See all topics](assets/7.1_01_SeeAllTopics.png)
+    ![Select Topics](assets/7.1_01_Topics.png)
 
 1. The **Topics** tab will load and by default the _Custom_ topics will be displayed. You can filter topics by All, Custom and System. The custom and system topics you currently see were created automatically when the agent was provisioned.
 
-    ![View topics](assets/7.1_02_ViewTopics.png)
+    Select **+ Add a topic** and select **From blank**.
 
-1. Select **+ Add a topic** and select **From blank**.
+    ![Create topic from scratch](assets/7.1_02_FromBlank.png)
 
-    ![Create topic from scratch](assets/7.1_03_FromBlank.png)
+1. Enter a name for the topic. Copy and paste the following.
 
-1. Enter a name for the trigger and a trigger description that outlines what the topic does. Below are suggestions.
-
-    **Name**
+    **Topic name**
 
     ```
     Available devices
     ```
 
+    ![Name the topic](assets/7.1_03_TopicName.png)    
+
+1. Enter a trigger description that outlines what the topic does. Copy and paste the following.
+    
     **Trigger description**
 
     ```
     This topic helps users find devices that are available from our SharePoint Devices list. User can ask to see available devices and it will return a list of devices that are available which can include laptops, smartphones, accessories and more.
     ```
 
-    ![Enter a name and description for trigger](assets/7.1_04_NameAndTriggerDescription.png)
+    ![Enter a name and description for trigger](assets/7.1_04_TriggerDescription.png)
 
-### 7.2 Add node - Ask a Question and create a custom entity
+### 7.2 Define the trigger inputs and outputs
 
-1. Next, we're going to add a new node. Select the **+ icon** below the trigger and select the **Ask a question** node.
+1. Next, we're going to add a new input variable that generative AI will use in its orchestration to extract the value of the device type from a user's message. Select the **More ellipsis (...)** in the topic and select **Details** to view the topic details pane.
 
-    ![Select add icon](assets/7.2_01_01_AddNode.png)
+    ![Select Topic Details](assets/7.2_01_SelectTopicDetails.png)
 
-    ![Select Ask a question node](assets/7.2_01_02_AskAQuestion.png)
+1. The **Topic details** pane has now loaded. Select the **Input** tab.
 
-1. Enter a question to ask the user to confirm the type of device. Copy and paste the following as the question.
+    ![Input tab](assets/7.2_02_SelectInputTab.png)
 
-    ```
-    What type of device are you looking for?
-    ```
+1. Select **Create a new variable**.
 
-    ![Enter question](assets/7.2_02_EnterQuestion.png)
+    ![Create new input variable](assets/7.2_03_CreateANewVariable.png)
 
-1. We're now going to create a new custom entity which teaches the agent to recognize specific types of information. 
-
-    In our use case, the custom entity will help the agent understand device types. We'll create a **_Closed List entity_** which is best for short, manageable lists such as product types or service categories.
-
-    Select the **> icon** by the _Multiple choice options_ and select **Create an Entity**.
-
-    ![Create an entity](assets/7.2_03_SelectCreateAnEntity.png)
-
-1. You'll see two custom entity options, **_Closed List_** which was explained in the previous step, and **_Regular Expression_** (Regex). Regex entities are great for matching patterns such as tracking numbers, license plates, debit/credit card numbers etc.
-
-    For this use case, select **Closed List**, as we're going to define the types of devices a user can select.
-
-    ![Select Closed List](assets/7.2_04_SelectClosedList.png)
-
-1. We can now define our Closed List entity. A name, description and items need to be entered. 
-
-    | Field    | Value |
-    | ---------- | :--------- |
-    | Name | Device type |
-    | Description  | Device types at our company |
-    | Add item   | laptop   |
-    | Add item    | desktop   |
-    | Add item    | smartphone   |
-
-    To enter an item, enter the device type and select **Add**.
-
-    ![Configure Closed List](assets/7.2_05_ConfigureClosedList.png)
-
-1. Enable **Smart switching** to **on** and select **Save**.
-
-    ![Select Save](assets/7.2_06_SaveClosedList.png)
-
-1. We now need to display the options for the user to select. Click **Select options for user**.
-
-    ![Select options for user](assets/7.2_07_SelectOptionsForUser.png)
-
-1. Tick all three checkboxes for the list values.
-
-    ![Tick checkboxes for list values](assets/7.2_08_TickListValues.png)
-
-1. Next, we need to name the variable for the output of the question node. This variable will be used in the next node. Select the `Var1` variable.
-
-    ![Select Var1 variable](assets/7.2_09_SelectSaveUserResponseAs.png)
-
-1. Rename the variable to the following,
+1. Enter a name for the variable. Copy and paste the following.
 
     ```
     VarDeviceType
     ```
 
-    ![Rename variable](assets/7.2_10_RenameVariable.png)
+    ![Input variable name](assets/7.2_04_InputVariableName.png)
+
+1. We now need to define our input and output variables. The following are properties that can be defined for topic inputs and outputs.
+
+    | Field    | Value |
+    | ---------- | :--------- |
+    | How will the agent fill this input? | Determines how the agent fills this variable with a value before running the topic. By default it's set to _Dynamically fill with the best option_. Otherwise you can override an input with a value instead of asking the user|
+    | Variable data type  | The data type of the variable. Supported data types are `String`, `Boolean`, `Number`, `Date`, `DateTime`, `DateTimeNoTimeZone`, `Time`, `Record`, `Table`, `Unspecified`, `From sample data` |
+    | Display name   | Name of variable   |
+    | Identify as  | Entity type for the agent to capture the correct value type  |
+    | Description    | The description helps the agent automatically fill inputs before running the topic or generate questions to ask for the values   |
+
+    The _How will the agent fill this input?_, _variable data type_ and _Display name_ can remain as-is. Update the **Identify as** property to **User's entire response**.
+
+    ![Update Identify as](assets/7.2_05_IdentifyAs.png)
+
+1. Copy and paste the following as the description.
+
+    ```
+    List of possible values: Laptop, Desktop, Smartphone
+    ```
+
+    ![Description](assets/7.2_06_InputDescription.png)    
+
+1. Next, let's define our output for the topic. Select the **Output** tab.
+
+    ![Select Output tab](assets/7.2_07_SelectOutputTab.png)
+
+1. Select **Create a new variable**.
+
+    ![Create new output variable](assets/7.2_08_CreateANewVariable.png)
+
+1. Update the following properties.
+
+    **Variable name** - Copy and paste the following.
+
+    ```
+    VarAvailableDevices
+    ```
+
+    **Variable data type** - Select **Table** as the data type.
+
+    **Variable description** - Copy and paste the following.
+
+    ```
+    List of available devices by device type
+    ```
+
+    ![Output properties](assets/7.2_09_OutputVariable.png)
+
+1. We've now completed defining the inputs and outputs of the topic. Select the **X icon** to exit from the **Topic details** pane.
+
+    ![Exit from topic details pane.](assets/7.2_10_ExitTopicDetailsPane.png)
 
 ### 7.3 Add node - Add a tool using a connector
 
 1. Let's next add a node that enables the agent to retrieve the list of devices from the **Devices** SharePoint list. Select the **+ icon** below the trigger and select the **Add a tool** node. Select the **Connector** tab.
 
-    ![Add a tool](assets/7.3_01_AddAToolNode.png)
+    ![Add a tool](assets/7.3_01_AddNode.png)
 
 1. Search for `Get items` and select the **Get items** SharePoint connector action
 
@@ -573,33 +581,37 @@ Let's begin!
 
     ![Submit](assets/7.3_07_ConnectedSelectSubmit.png)
 
-1. The **Get items** SharePoint connector action is now added to the topic. We can now begin configuring the inputs of the action. Select any of the input parameters, such as **List Name**.
+1. The **Get items** SharePoint connector action is now added to the topic. We can now begin configuring the inputs of the action. Select the **ellipsis (...) icon** and select **Properties**.
 
-    ![Select input](assets/7.3_08_ConfigureInputs.png)
+    ![Select Properties](assets/7.3_08_GetItemsProperties.png)
 
-1. The **Get items** configuration pane will appear and by default, you'll see the **Inputs** tab. Select the **Initiation** tab.
+1. The **Get items** configuration pane will appear and by default, you'll see the **Inputs** tab. Select the **Initiation** tab and enter a description in the **Usage Description** field. Copy and paste the following.
 
-    ![Inputs pane](assets/7.3_09_ToolInputsPane.png)
-
-1. Enter a description in the **Usage Description** field.
+    ```
+    Retrieves devices from SharePoint list
+    ```
 
     > This will come in handy when we view the _Manage your connections_ page of our agent. We'll return to this shortly.
 
-    ![Usage description](assets/7.3_10_UsageDescription.png)
+    ![Get items description](assets/7.3_09_UpdateDescription.png)
 
-1. Select the **Inputs** tab and select the site and the SharePoint list that you setup in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
+1. Select the **Inputs** tab and select the **Contoso IT** site and the **Devices** list that you setup in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
 
-    ![Add a tool](assets/7.3_11_ConfigureInputs.png)
+    ![Configure Get items inputs](assets/7.3_10_GetItemsInputs.png)
 
 1. Now, to only display devices from the SharePoint list based on 
     - the selected value, 
     - and only devices where the status equals _Available_, 
     
-    we need to apply a filter. This is achieved by entering a filter query with the help of [Power Fx](/07-add-new-topic-with-trigger/README.md/#️-using-power-fx-in-your-nodes). Select the **ellipsis ... icon**.
+    we need to apply a filter. This is achieved by entering a filter query with the help of [Power Fx](/07-add-new-topic-with-trigger/README.md/#️-using-power-fx-in-your-nodes). Select the **ellipsis (...) icon**.
 
-    ![Select ellipsis icon](assets/7.3_12_ConfigureFilterQuery.png)
+    ![Select ellipsis icon](assets/7.3_11_SelectVariable.png)
 
-1. By default, you'll be in the **Custom** tab. Select the **Formula** tab and copy and paste the following Power Fx expression. 
+1. By default, you'll be in the **Custom** tab. Select the **Formula** tab.
+
+    ![Select Formula tab](assets/7.3_12_SelectFormula.png)
+
+1. Select the **expand** icond to enlarge the **Formula** field. Copy and paste the following Power Fx expression. 
 
     We are using the `Concatenate` function to create an expression that will filter 
     - the SharePoint column of **Status** equals _Available_
@@ -611,15 +623,15 @@ Let's begin!
 
     Select **Insert**.
 
-    ![Enter Power Fx expression and select insert](assets/7.3_13_FormulaPowerFx.png)
+    ![Enter Power Fx expression and select insert](assets/7.3_13_EnterFormula.png)
 
-1. The Power Fx expression will now be applied in the Filter Query input parameter of the **Get items** action.
+1. The Power Fx expression will now be applied in the Filter Query input parameter of the **Get items** action. Next, select the **All items** view in the **Limit Columns by View**. This will only retrieve the columns in the list based on the selected view.
 
-    ![Power Fx expression](assets/7.3_14_FilterQueryDefined.png)
+    ![List Columns by View](assets/7.3_14_LimitColumnsByView.png)
 
 1. Next, we'll update the name of the variable for the output. Select the **Outputs** tab and select the `GetItems` variable.
 
-    ![Update variable](assets/7.3_15_UpdateOutput.png)
+    ![Update variable](assets/7.3_15_ConfigureOutputs.png)
 
 1. Update the name to the following.
 
@@ -627,73 +639,107 @@ Let's begin!
     VarDevices
     ```
 
-    ![Update variable name](assets/7.3_16_UpdateVariableName.png)
+    ![Update variable name](assets/7.3_16_RenameVariable.png)
 
 1. Scroll down and in the **Usage** section, select **Global**. This will make the variable accessible by any topic.
 
     ![Update to Global variable](assets/7.3_17_UpdateToGlobalVariable.png)
 
-1. To verify that the Get items SharePoint connector action succeeded, add a **Send a message** node below the **Get items** tool node where we'll next insert the response in the body of the message. 
-
-    ![Add Send a message node](assets/7.3_18_AddSendAMessageNode.png)
-
-1. Select the **{x}** icon to insert a variable which will be the output of the Get items SharePoint connector action.
-
-    ![Select insert variable icon](assets/7.3_19_InsertVariable.png)
-
-1. Select the **VarDevices.value** variable. This is the `value` property in the JSON response of the Get items SharePoint connector action.
-
-    ![Select VarDevices.value variable](assets/7.3_20_SelectVarDevices.value.png)
-
 1. **Save** the topic.
 
-    ![Save topic](assets/7.3_21_SelectSave.png)
+    ![Save the topic](assets/7.3_18_SaveTopic.png)
 
-1. Test the topic by entering the following.
+1. Select the **plus +** icon to insert a new node, select **Variable management** followed by selecting **Set a variable value**.
+
+    ![Add Set a variable value node](assets/7.3_19_AddSetAVariableValueNode.png)
+
+1. Select the **greater than** icon for the **Set variable** input parameter.
+
+    ![Set variable](assets/7.3_20_SelectAVariable.png)
+
+1. Select the Topic output created earlier as the variable, **VarAvailableDevices**. 
+
+    ![Save topic](assets/7.3_21_SelectVarAvailableDevicesOutput.png)
+
+1. Next, select the **ellipsis (...) icon** to define the value of the variable.
+
+    ![Select variable value](assets/7.3_22_SelectVariable.png)
+
+1. We'll now use a PowerFx expression to set the variable value as the `value` property retured in the **Get items** response, and make the [scope of the variable](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172621-ebenitez) global by adding the prefix of `Global`.
+
+    **Save** the topic.
+
+    ![Power Fx formula for variable value](assets/7.3_23_PowerFxFormula.png)
+
+1. Next we need to update the agent instructions. Select the **Overview** tab and select **Edit**.
+
+    ![Edid instructions](assets/7.3_24_EditInstructions.png)
+
+1. Add the a new line in the instructions, copy and paste the following.
 
     ```
-    I need a device
+    - Help find available devices and give full details using [Available devices]. Always extract the VarDeviceType from the inputs. After giving device details, ask the user if they want to request a device from the list of available devices.
     ```
 
-    ![Test agent](assets/7.3_22_TestAgent.png)
+    This instruction will guide generative AI to invoke the **Available devices** trigger to display the list of available devices from the **Devices** Sharepoint list. Select the entire topic placeholder in square brackets.
 
-1. We'll now see our _Device types Closed List_ and its item values displayed. Select `laptop`.
+    ![Add instructions](assets/7.3_25_AddInstructions.png)
 
-    ![Select laptop](assets/7.3_23_SelectLaptop.png)
+1. Type in the forward slash character `/` and the list of topics will appear. Select the **Available devices** topic.
+
+    ![Reference trigger](assets/7.3_26_SelectAvailableDevicesTopic.png)
+
+1. **Save** the updated instructions.
+
+    ![Save instructions](assets/7.3_27_SaveUpdatedInstructions.png)
+
+1. We're now going to test our updated agent. Select **Test** on the upper right to display the test pane and **refresh** the test pane. Enter the following message to the agent.
+
+    ```
+    I need a laptop
+    ```
+
+    ![Test](assets/7.3_28_Test.png)
 
 1. Before the agent can proceed, the user needs to verify their connection through the _Manage your connections_ page of the agent. Select **Open connection manager**.
 
-    ![Open connection manager](assets/7.3_24_SelectOpenConnectionManager.png)
+    ![Open connection manager](assets/7.3_29_SelectOpenConnectionManager.png)
 
 1. Before we select **Connect** to verify the connection, select **1 tool** in the **Used By** column.
 
-    ![Used By](assets/7.3_25_ViewUsedBy.png)
+    ![Used By](assets/7.3_30_ViewUsedBy.png)
 
 1. This is where we can see the details of the Get items action and remember the _usage description_ we entered earlier? This is where we'll see the usage description. Select **Close**.
 
     > This lets us know what actions are used and the purpose of it. This keeps our connections organized 📁.
 
-    ![Use description](assets/7.3_26_UsageDescription.png)
+    ![Usage description](assets/7.3_31_UsageDescription.png)
 
 1. Select **Connect**.
 
-    ![Select ellipsis icon](assets/7.3_27_SelectConnect.png)
+    ![Select Connect](assets/7.3_32_SelectConnect.png)
 
-1. A new modal will appear where you can create or select an existing connection. 
+1. A new modal will appear where you can create or select an existing connection.
 
     Since we created a connection earlier, by default it is using this connection so we'll leave it as-is. Select **Submit**.
 
-    ![Select ellipsis icon](assets/7.3_28_SelectSubmit.png)
+    ![Select Submit](assets/7.3_33_SelectSubmit.png)
 
 1. Go back to your browser tab with Copilot Studio and in the test pane, select **Retry**.
 
-    ![Select Retry](assets/7.3_29_SelectRetry.png)
+    ![Select Retry](assets/7.3_34_SelectRetry.png)
 
-1. We'll now see the JSON response of the `value` property. This confirms that the SharePoint action succeeded in retrieving the devices where the status equals availabile and the device type equals laptop.
+1. We'll see that the **Available devices** topic has been executed as we see a message returned with a list of available devices. If you see a hyperlink called **More details** or something similar, click it.
 
-    ![Test succeeded](assets/7.3_30_TestSucceeded.png)
+    ![Nessage returned](assets/7.3_35_MoreDetails.png)
 
-1. Refresh the test pane to clear the test and close the activity map.
+1. A new browser tab will load the SharePoint item in the SharePoint site. Generative AI was able to retrieve the link to the item and display it as a hyperlink in the message.
+
+    ![View SharePoint item](assets/7.3_36_SharePointItem.png)
+
+1. Go back to your browser tab with Copilot Studio and **refresh** the test pane to clear the test.
+
+    ![Refresh test pane](assets/7.3_37_RefreshTestPane.png)
 
 ## ✅ Mission Complete
 
@@ -707,17 +753,16 @@ This is the end of **Lab 07 - Add a new topic with conversation nodes**, select 
 ## 📚 Tactical Resources
 🔗 [Use system topics](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-system-topics?mc_id=power-170631-ebenitez)
 
-🔗 [Topics in Microsoft Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/topics-overview?WT.mc_id=power-170631-ebenitez)
+🔗 [Topics in Microsoft Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/topics-overview?WT.mc_id=power-172621-ebenitez)
 
-🔗 [Set topic triggers](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers?WT.mc_id=power-170631-ebenitez)
+🔗 [Set topic triggers](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers?WT.mc_id=power-172621-ebenitez)
 
+🔗 [Defining agent topics](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/defining-chatbot-topics?WT.mc_id=power-172621-ebenitez)
 
-🔗 [Defining agent topics](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/defining-chatbot-topics?WT.mc_id=power-170631-ebenitez)
+🔗 [Create expressions using Power Fx](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172621-ebenitez)
 
-🔗 [Create expressions using Power Fx](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-170631-ebenitez)
+📺 [Author topics using natural language](https://aka.ms/ai-in-action/copilot-studio/ep6)
 
-📺 [Author topics using natural language](aka.ms/ai-in-action/copilot-studio/ep6)
-
-📺 [Add actions to agents using conenctors](aka.ms/ai-in-action/copilot-studio/ep4)
+📺 [Add actions to agents using conenctors](https://aka.ms/ai-in-action/copilot-studio/ep4)
 
 ![mcs-agent-academy-recruit-07](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/07-add-new-topic-with-trigger)

@@ -242,6 +242,20 @@ We'll use the same use case from [Lesson 03 - Create a declarative agent for Mic
 
 Let's begin!
 
+### ✨ Prerequisites
+
+1. **SharePoint site**
+
+    We'll be using the **Contoso IT** SharePoint site from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site). 
+    
+    If you have not set up the **Contoso IT** SharePoint site, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
+
+1. **Solution**
+
+   We'll be using the **Contoso Helpdesk Agent** solution from [Lesson 04 - Creating a Solution for your agent](/04-creating-a-solution/README.md/#41-create-a-solution-publisher). 
+    
+    If you have not set up the **Contoso Agent** solution, please head back to [Lesson 04 - Creating a Solution for your agent](/04-creating-a-solution/README.md/#41-create-a-solution-publisher).
+
 ### 6.1 Use natural language to create an agent with Copilot
 
 1. Navigate to the Home page of Copilot Studio and in the field, enter the following prompt which describes the IT help desk agent. The prompt includes the goal of the agent, the context, the expected tasks and format of the agent's response.
@@ -263,7 +277,7 @@ Let's begin!
 1. Next, we'll ask Copilot to name our agent as,
 
     ```
-    Contoso Helpdesk Copilot
+    Contoso Helpdesk Agent
     ```
 
    ![Rename the agent](assets/6.1_04_NameAgent.png)
@@ -419,7 +433,7 @@ Let's now test our agent!
 
 ### 6.4 Test agent
 
-We'll test our three knowledge sources by asking questions to our Contoso Helpdesk Copilot.
+We'll test our three knowledge sources by asking questions to our Contoso Helpdesk Agent.
 
 1. Select the **refresh** icon in the test pane.
 
@@ -483,12 +497,12 @@ Welcome to the elite. You now know how to forge digital agents that speak your l
 ## 📚 Tactical Resources
 🔗 [Quickstart: Create and deploy an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-get-started?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-170631-ebenitez)
 
-🔗 [Create and delete agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-170631-ebenitez)
+🔗 [Create and delete agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-172617-ebenitez)
 
-🔗 [Key concepts - Authoring agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-fundamentals/?WT.mc_id=power-170631-ebenitez)
+🔗 [Key concepts - Authoring agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-fundamentals/?WT.mc_id=power-172617-ebenitez)
 
 📺 [Create a custom agent using natural language](aka.ms/ai-in-action/copilot-studio/ep1)
 
-📺 [Add knowledge to your agents](aka.ms/ai-in-action/copilot-studio/ep2)
+📺 [Add knowledge to your agents](https://aka.ms/ai-in-action/copilot-studio/ep2)
 
 ![mcs-agent-academy-recruit-06](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/06-create-agent-from-conversation)

@@ -22,10 +22,8 @@ Agents, your mission is to infiltrate the static user experience and replace it 
 - [Lab 08 - Add apative cards and enhance topic capabilities](#-lab-08---add-adaptive-cards-and-enhance-topic-capabilities)
     - [Use case](#-use-case)
     - [Prerequisites](#prerequisites)
-    - [8.1 Add an adaptive card to display available devices](#81-add-an-adaptive-card-to-display-available-devices)
-    - [8.2 Add a condition node to enable users to request a device](#82-add-a-condition-node-to-enable-users-to-request-a-device)
-    - [8.3 Create a new topic with an adaptive card for user to submit their request](#83-create-a-new-topic-with-an-adaptive-card-for-user-to-submit-their-request)
-    - [8.4 Update _Available devices_ topic to redirect to the newly created topic](#84-update-available-devices-topic-to-redirect-to-the-newly-created-topic)
+    - [8.1 Create a new topic with an adaptive card for user to submit their request](#81-create-a-new-topic-with-an-adaptive-card-for-user-to-submit-their-request)
+    - [8.2 Update agent instructions to invoke Request device topic](#82-update-agent-instructions-to-invoke-request-device-topic)
 - [Additional learning](#-additional-learning)
 
 ## 🤔 What is an Adaptive Card?
@@ -261,27 +259,42 @@ Let's begin!
 
     We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md).
 
-### 8.1 Add an adaptive card to display available devices
+### 8.1 Create a new topic with an adaptive card for user to submit their request
 
-1. In the **Available devices** topic delete the **Send a message** node that contains the JSON response of the _Get items_ SharePoint connector action in the body of the message.
+We'll create a new topic that will handle a user's device request. This new topic will contain an **Ask with adaptive card** node to enable user interaction with the agent.
 
-    ![Delete Send a message node](assets/8.1_01_DeleteSendMessageNode.png)
+Let's begin!
 
-1. Select the **+ icon** and select **Send a message** node.
+1. Select the **Topics** tab, then select **+ Add a topic from blank**.
 
-    ![Add Send a message node](assets/8.1_02_AddSendAMessageNode.png)
+    ![Select Topics tab](assets/8.1_01_NewTopic.png)
 
-1. Select *+ Add* and select **Adaptive card**.
+1. Name the topic as the following,
 
-    ![Select adaptive card](assets/8.1_03_SelectAdaptiveCard.png)
+    ```
+    Request device
+    ```
 
-1. We're now going to edit the JSON. Select **Edit adaptive card**.
+    Enter the following as the decription for the trigger.
 
-    ![Add Send a message node](assets/8.1_04_EditAdaptiveCard.png)
+    ```
+    This topic helps users request a device when they answer yes to the question that asks the user if they would like to request one of these devices.
+    ```    
+
+    ![Topic Name and trigger Description](assets/8.1_02_TopicNameAndTriggerDescription.png)
+
+1. Next, add an **Ask with adaptive card** node. This node will display an interactive card for the user to select which device they would like to request.
+
+    ![Select Ask with adaptive card node](assets/8.1_03_AddAskWithAdaptiveCard.png)
+
+1. Select the node and the **Adaptive Card Node properties** pane will appear. We're now going to edit the JSON. Select **Edit adaptive card**. Select **Edit adaptive card**.
+
+    ![Edit adaptive card](assets/8.1_04_EditAdaptiveCard.png)
+
 
 1. This is the **Adaptive Card Designer** where you can design your card and see the card design in-real time. 
 
-    Try dragging and dropping the TextBlock and FactSet card elements to the authoring canvas - the card viewer area. Notice how the card structure and card payload editor updates as the two card elements were added. You can directly update the card payload editor and the element properties pane.
+    Try dragging and dropping the **TextBlock** and **FactSet** card elements to the authoring canvas - the card viewer area. Notice how the card structure and card payload editor updates as the two card elements were added. You can directly update the card payload editor and the element properties pane.
 
     ![Drag and drop card elements](assets/8.1_05_DragAndDropCardElements.png)
 
@@ -297,245 +310,49 @@ Let's begin!
 
     ![Undo](assets/8.1_08_Undo.png)
 
-1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines.
+1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. **Paste** the JSON from the [Request devices .JSON file](assets/8.1_RequestDevice.json).
 
-    ![Clear lines](assets/8.1_09_01_CTRLA.png)
-
-    Paste the JSON from the [Available devices .JSON file](assets/8.1_AvailableDevices.json).
-
-    ![Paste JSON](assets/8.1_09_02_PasteJSON.png)
-
-1. Notice how the **Card Preview** now includes elements that display an image, the model, the manufacturer and the color of the device. Select **Save**. 
-
-    ![Select Save](assets/8.1_10_SaveJSONAdaptiveCard.png)
-
-1. Close the Adaptive Card properties pane by selecting the **X icon**.
-
-    ![Close pane](assets/8.1_11_ExitAdaptiveCardProperties.png)
-
-1. The **Send a message** node will now display the adaptive card in the authoring canvas. Select **Save** to save the topic.
-
-    ![Save topic](assets/8.1_12_ViewAndSave.png)
-
-1. Let's next test our initial adaptive card design. **Refresh** the test pane and enter the following,
-
-    ```
-    I need a laptop
-    ```
-
-    ![Test adaptive card](assets/8.1_13_TestAdaptiveCard.png)
-
-1. Select laptop from the list and you'll next see the available devices adaptive card. This is the JSON structure we'll use for our adaptive card which we now need to bind to the output of the **Get items** SharePoint connector action from the previous node we configured in [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
-
-    ![Select preview](assets/8.1_14_AdaptiveCardTestResult.png)
-
-1. Let's now update our card to use **Power Fx formulas**. **Refresh** the test pane and select the **X icon** in the Activity map.
-
-    ![Refresh test pane adn close Activity map](assets/8.1_15_RefreshAndCloseActivityMap.png)
-
-1. Select the adaptive card in the authoring canvas and select the **chevron** icon to switch from **JSON** to **Formula**. Select **Formula**.
-
-    ![Select Formula](assets/8.1_16_SwitchToFormula.png)
-
-1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. 
-
-    ![Select all and delete lines](assets/8.1_17_CTRLA.png)
-
-1. Paste the Formula from the [Available Devices formula file](assets/8.1_AvailableDevicesFormula.txt).
-
-    ![Select preview](assets/8.1_18_PasteFormula.png)
-
-1. Let's take a closer look at the Power Fx functions used. To loop through the items returned in the **Get items** SharePoint connector action, we're using the `For All` function that lets you perform an action on each item in a list or table. 
-
-    > Think of it like saying: _"For each item in this list, do something with it."_
-
-    In our use case, we're going to loop through each of the SharePoint list items returned in the **Get items** SharePoint connector action stored in the global variable, `Global.VarDevices`, via the `value` property of the JSON response. 
-    
-    > We created this global variable in [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
-
-    ![Power Fx expression](assets/8.1_19_01_PowerFxExpression.png)
-
-    We'll loop through each SharePoint list item to display the device _image_, _model_, _manufacturer_ and _color_. Since we binded the items property in the card to the `value` property of our SharePoint JSON response stored in the global variable, we can now simply reference the properties that we want. 
-    
-    Below is a screenshot of where the reference to the `Image` property is used in the **image element** of the adaptive card.
-
-    ![Image property](assets/8.1_19_02_PowerFxExpression.png)
-
-    Below is a screenshot of where the references to the `Model` and `Manufacturer.Value` preoperties is used in the **Input.ChoiceSet elements** of the adaptive card.
-
-    ![Model and Manufacturer properties](assets/8.1_19_03_PowerFxExpression.png)
-
-1. Let's now save our topic and test our agent. Close the **Card Content** modal by selecting the **X icon** and select the **X icon** in the **Adaptive Card properties** pane.
-
-    ![Close Adaptive Card properties pane](assets/8.1_20_ExitFromAdaptiveCardPropertiesPane.png)
-
-1. Select **Save** to save the topic.
-
-    ![Save topic](assets/8.1_21_SaveTopic.png)
-
-1. **Refresh** the test pane and enter the following,
-
-    ```
-    I need a device
-    ```
-
-    ![Test topic](assets/8.1_22_TestTopic.png)
-
-1. Select laptop from the list and you'll next see the available devices adaptive card. This time, it's displaying the data from the Devices SharePoint list using the JSON response of the **Get items** SharePoint connector action stored in the global variable that we binded the adaptive card to using Power Fx. 
-
-    ![Formula adaptive card test result](assets/8.1_23_AdaptiveCardTestResult.png)
-
-1. **Refresh** the test pane and **close** the Activity map.
-
-    ![Refresh and close Activity map](assets/8.1_24_RefreshAndCloseActivityMap.png)
-
-Awesome! 🙌🏻 You've designed and added your first Adaptive Card to your topic for your agent in Copilot Studio.
-
-### 8.2 Add a condition node to enable users to request a device
-
-We'll now add logic for the user to request a device from the list where the status equals _Available_. To achieve this, we're going to add an **Ask a Question** node and a **Condition** node. 
-
-Let's start with the question node.
-
-1. In our **Available devices** topic, we'll add an **Ask a Question** node below the **Send a message** node with the adaptive card.
-
-    ![Select Ask a Question node](assets/8.2_01_AddAskAQuestionNode.png)
-
-1. We'll now define the node. For the question, enter the following.
-
-    ```
-    Would you like to request one of these available devices?
-    ```
-
-    Next, select **+ New option** as we'll add a value for the user to select.
-
-    ![Configure Question node](assets/8.2_02_DefineQuestionNode.png)
-
-1. Enter `Yes` as the first value for the user to select.
-
-    ![Yes option](assets/8.2_03_AddYesOption.png)
-
-1. Select **+ New option** to add another value. Enter `No` as the second value for the user to select.
-
-    ![No option](assets/8.2_04_AddNoOption.png)
-
-1. We'll now rename the output variable. Select the variable to load the **Variable properties** pane and name the variable as the following.
-
-    ```
-    VarRequestDevice
-    ```
-    ![Rename variable](assets/8.2_05_RenameVariable.png)
-
-1. Close the **Variable properties** pane.
-
-    ![Close variable properties pane](assets/8.2_06_CloseVariablePropertiesPane.png)
-
-1. We'll next add logic to our topic by selecting the **Add a condition** node.
-
-    ![Add a condition](assets/8.2_07_AddAConditionNode.png)
-
-1. In the Condition node, we need to configure the logic. First we select a variable by selecting the **greater-than symbol**.
-
-    ![Select variable](assets/8.2_08_SelectAVariable.png)
-
-1. Select the **VarRequestDevice** variable previously created. This is the variable that stores the Yes/No selected value from the **Ask a Question** node.
-
-    ![Select VarRequestDevice variable](assets/8.2_09_SelectVarRequestDeviceVariable.png)
-
-1. Leave the condition set to **is equal to** since our logic is based on the Yes/No value the user selects from the **Ask a Question** node. In the value dropdown field, select **Yes**. 
-
-    ![Define Yes condition node](assets/8.2_10_YesCondition.png)
-
-1. We've now defined this Condition node to execute only when the **VarRequestDevice variable value equals Yes**. Select **Save** to save the topic.
-
-    ![Save Topic](assets/8.2_11_SaveTopic.png)
-
-### 8.3 Create a new topic with an adaptive card for user to submit their request
-
-As a recap, we have completed the following:
-
-- Added an adaptive card that displays the available devices from the Devices SharePoint list.
-- Added logic for a user to confirm whether they want to request a device from the list of available devices.
-
-What we need to do next, is create a _new topic_ to direct the _Available devices_ topic to. This new topic will handle the device request by using an **Ask with adaptive card** node to enable user interaction with the agent.
-
-Let's begin!
-
-1. Select the **Topics** tab.
-
-    ![Select Topics tab](assets/8.3_01_SelectTopicsTab.png)
-
-1. Select **+ Add a topic from blank**.
-
-    ![Add new topic form blank](assets/8.3_02_AddATopicFromBlank.png)
-
-1. Name the topic as the following,
-
-    ```
-    Request device
-    ```
-
-    ![Request device](assets/8.3_03_RenameTopic.png)
-
-1. In the **Trigger** node, we're going to change the trigger type. Select the **opposite arrows icon** and select the trigger type, **It's redirected to**.
-
-    ![Change trigger](assets/8.3_04_ChangeTrigger.png)
-
-1. Next, add an **Ask with adaptive card** node. This node will display an interactive card for the user to select which device they would like to request.
-
-    ![Select Ask with adaptive card node](assets/8.3_05_AskWithAdaptiveCard.png)
-
-1. Select the node and the **Adaptive Card Node properties** pane will appear. Select **Edit adaptive card**.
-
-    ![Edit adaptive card](assets/8.3_06_EditAdaptiveCard.png)
-
-1. The **Adaptive card designer** will load. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines.
-
-    ![Clear card payload editor](assets/8.3_07_01_CTRLA.png)
-
-    Paste the JSON from the [Request devices .JSON file](assets/8.3_RequestDevice.json).
-
-    ![Paste JSON](assets/8.3_07_02_PasteJSON.png)
+    ![Clear card payload editor](assets/8.1_09_SelectAll.png)
 
 1. Notice how the **Card Preview** now includes elements that display some text and a list of available devices.
 
-    This JSON is currently a placeholder and preview to what we'll use as the base for our card but in the form of a formula rather than JSON since we're going to reference the **global variable**, `Global.VarDevices`, that stores the response of the **Get items** SharePoint connector action.
+    This JSON is currently a placeholder and preview to what we'll use as the base for our card but in the form of a formula rather than JSON since we're going to reference the **global variable**, `Global.VarDevices.value`, that stores the response of the **Get items** SharePoint connector action.
 
     Select **Save** and select **Close** to exit from the Adaptive card designer modal.
 
-    ![Select Save](assets/8.3_08_Save.png)
+    ![Select Save](assets/8.1_10_DeviceRequestCard.png)
+
+1. Close the **Adaptive Card Node properties** panel by selecting the **X** icon.
+
+    ![Close Adaptive Card Node properties panel](assets/8.1_11_ExitAdaptiveCardNodeProperties.png)
 
 1. In the authoring canvas of the topic, you'll see the adaptive card.
 
-    ![Adaptive card](assets/8.3_09_DeviceSelection.png)
+    ![Device request adaptive card](assets/8.1_12_DeviceRequestCard.png)
 
 1. Scroll to the bottom of the node and you'll see output variables. The `commentsId` and the `deviceSelctionId` were defined in the element properties. These two variables will store values from the card elements the users interact with. These values will be used downstream in the topic, which we'll learn about in the next lesson's lab.
 
-    ![Node variable outputs](assets/8.3_10_Outputs.png)
+    ![Node variable outputs](assets/8.1_13_DeviceRequestCardOutputs.png)
 
-1. Let's next update the card from JSON to formula as we'll use Power Fx again to loop through the items returned in the **Get items** SharePoint connector action, stored in the **global variable**, `Global.VarDevices`, via the `value` property of the JSON response.
+1. Let's next update the card from JSON to formula as we'll use Power Fx again to loop through the items returned in the **Get items** SharePoint connector action, stored in the **global variable**, `Global.VarDevices.value`, via the `value` property of the JSON response.
 
     > We created this global variable in [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
 
     Select the card in the **Ask with Adaptive Card** node, followed by selecting the **chevron** icon and select **Formula**.
 
-    ![Select Topics tab](assets/8.3_11_SelectFormula.png)
+    ![Change to formula](assets/8.1_14_ChangeToFormula.png)
     
-1.  Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. 
+1.  Click on the **expand** icon to enlarge the Formula field and click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. 
 
-    ![Select all and delete lines](assets/8.3_12_01_CTRLA.png)
+    ![Select all and delete lines](assets/8.1_15_SelectAll.png)
 
-    Paste the Formula from the [Requst Devices formula file](assets/8.3_RequestDeviceFormula.txt).
+    Paste the Formula from the [Requst Devices formula file](assets/8.1_RequestDeviceFormula.txt).
 
-    ![Select preview](assets/8.3_12_02_PasteFormula.png)
+1. In the formula, we'll loop through each SharePoint list item using the `For All` function to display the values of `Model` in the title of the choice option, and the SharePoint item `ID` is referenced as the value.
 
-1. In the formula, we'll loop through each SharePoint list item using the `For All` function to display the values of model in the title of the choice option, and the SharePoint item ID is referenced as the value.
+    **Close** the card modal.
 
-    ![Formula](assets/8.3_13_PowerFxFormula.png)
-
-1. **Close** the card modal.
-
-    ![Close](assets/8.3_14_Exit.png)
+    ![Power Fx Formula](assets/8.1_16_PowerFxFormula.png)
 
 1. **Close** the **Adaptive Card Node properties** pane.
 
@@ -543,61 +360,67 @@ Let's begin!
 
 1. **Save** the topic.
 
-    ![Save topic](assets/8.3_16_SaveTopic.png)
+    ![Save topic](assets/8.1_17_SaveTopic.png)
 
-### 8.4 Update _Available devices_ topic to redirect to the newly created topic
+### 8.2 Update agent instructions to invoke Request device topic
 
-Now that we created the new topic to redirect to, we need to update our original topic, _Available devices_ to point to it.
+Now that we created the new topic that handles the device requests, we need to update the **agent instructions** to invoke the topic.
 
-1. Select the *back arrow** icon to view the list of topics.
+1. Select the **Overview** tab and in the **agent instructions** select **Edit**.
 
-    ![Back to view topics](assets/8.4_01_Back.png)
+    ![Edit instructions](assets/8.2_01_EditInstructions.png)
 
-1. Select the **Available devices** topic.
+1. Add a new line below the previous instruction from [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
 
-    ![Select Available devices](assets/8.4_02_SelectAvailableDevicesTopic.png)
+    Select the entire topic placeholder in square brackets and delete the placeholder.
 
-1. Scroll down to the **Condition** node of the **Yes** path and select the **+ icon** to add a new topic.
+    ![Request device placeholder](assets/8.2_02_ReplaceRequestDevicePlaceholder.png)
 
-    ![Add new node](assets/8.4_03_AddTopic.png)
+1. Type in `/Req` and select the **Request devices** topic.
 
-1. Select **Topic management**, followed by selecting **Go to another topic** and then select **Request device**.
+    ![Request devices topic](assets/8.2_03_ReferenceRequestDeviceTopic.png)
 
-    When **Condition** node of the **Yes** path has been processed, the agent will redirect from the **Available devices** topic to the **Request devices** topic. 
+1. Repeat the same steps for the next topic placeholder, **[Goodbye]**. Select the entire topic placeholder in square brackets and delete the placeholder. Type in `/Goodbye` and select the **Goodbye** topic.
 
-    ![Redirect to Request device topic](assets/8.4_04_RedirectToRequestDevice.png)
+    - When the user answers **Yes** to the agent asking if they would like request a device, the agent will redirect from the **Available devices** topic to the **Request devices** topic.
+    
+    - Otherwise if the user answers **No**, the agent redirect from the **Available devices** topic to the **Goodbye** topic.
 
-1. **Save** the topic.
+    **Save** the updated instructions.
 
-    ![Save topic](assets/8.4_05_SaveTopic.png)
+    ![Redirect to Request device topic](assets/8.2_04_ReferenceGoodbyeTopic.png)
 
-1. Let's now test our the redirection from the _Available devices_ topic to the _Request devices_ topic. **Refresh** the test pane.
+1. Let's now test our the redirection from the _Available devices_ topic to the _Request devices_ topic. Select the **Test** to load the testing pane select **Refresh**. 
+    
+    Then select the **Activity map** icon in the test pane, followed by enabling **Track between topics**. This will allow us to see the _Available devices_ topic has redirected to the _Request devices_ topic.
 
-    ![Refresh test pane](assets/8.4_06_RefreshTopic.png)
-
-1. Select the **Activity map** icon in the test pane, followed by enabling **Track between topics**. This will allow us to see the _Available devices_ topic redirected to the _Request devices_ topic.
-
-    ![Enable track between topics setting](assets/8.4_07_TrackBetweenTopics.png)
-
-1. OK, we're good to test! Enter the following in the test pane.
+    OK, we're good to test! Enter the following in the test pane.
 
     ```
-    I need a new device
+    I need a laptop
     ```
 
-    ![Test topic](assets/8.4_08_TestRedirectTopic.png)
+    ![Test agent](assets/8.2_05_TestAgent.png)
 
-1. Select **laptop** and we'll see our adaptive card display next. Below the adaptive card, we'll see a question that displays the two values of **Yes** and **No**. Select **Yes** to process the **Yes** path of the **Condition** node.
+1. The agent will respond with the list of available devices followed by the question of asking the user if they would like to request a device. Copy and paste the following,
 
-    ![Question node](assets/8.4_09_ConditionSelectYes.png)
+    ```
+    yes please
+    ```
 
-1. We'll see the activity map update where it'll display the **Request device** topic. Select one of the devices from the **choices** card input and add a comment in the **text** input field (Additional Information) of the card. Then select **Submit Request** button.
+    ![Test Request device](assets/8.2_06_TestRequestDeviceTopic.png)
 
-    ![Question node](assets/8.4_10_RedirectedToRequestDeviceTopic.png)
+1. We'll next wee that the agent has redirected to the **Request device** topic. The agent invoked this topic as per the instructions we added.
 
-1. We've now succesfully tested our _Available devices_ topic redirecting to the _Request devices_ topic. Ignore the escalation message if you do see this appear in the test pane. We'll be adding more enhancements to this topic in the next lesson's lab so this can be ignored.
+    The adaptive card with the interactive elements will now be displayed as message to the user.
 
-    ![Test result](assets/8.4_11_TestResult.png)
+    ![Question node](assets/8.2_07_AdaptiveCardQuestion.png)
+
+1. We've now succesfully tested 😄 our _Available devices_ topic redirecting to the _Request devices_ topic. We'll be adding more enhancements to this topic in the next lesson's lab.
+
+    Refresth the test pane.
+
+    ![Refresh test pane](assets/8.2_08_RefreshTestPane.png)
 
 ## ✅ Mission Complete
 
@@ -605,16 +428,15 @@ Congratulations! 👏🏻 You've learnt how to add adaptive cards using Power Fx
 
 This is the end of **Lab 08 - Enhance user interactions with Adaptive Cards**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
-⏭️ [Move to **_placeholder text_** lesson](/07-add-new-topic-with-trigger/README.md)
-
+⏭️ [Move to **Add an agent flow to your Topic for automation** lesson](/09-add-an-agent-flow/README.md)
 
 ## 📚 Tactical Resources
 🔗 [Using Adaptive Cards in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/adaptive-cards-overview?WT.mc_id=power-170631-ebenitez)
 
-🔗 [Add an adaptive card in Send a message node](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-send-message#add-an-adaptive-card?WT.mc_id=power-170631-ebenitez)
+🔗 [Add an adaptive card in Send a message node](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-send-message#add-an-adaptive-card?WT.mc_id=power-172619-ebenitez)
 
-🔗 [Create expressions using Power Fx](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-170631-ebenitez)
+🔗 [Create expressions using Power Fx](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172619-ebenitez)
 
-📺 [Building Adaptive Cards with Power FX](aka.ms/ai-in-action/copilot-studio/ep8)
+📺 [Building Adaptive Cards with Power FX](https://aka.ms/ai-in-action/copilot-studio/ep8)
 
 ![mcs-agent-academy-recruit-08](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/08-add-adaptive-card)
