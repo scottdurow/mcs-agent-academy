@@ -1,5 +1,9 @@
 # 🚨 Mission 09: Add an agent flow to your Topic for automation
 
+### 🕵️‍♂️ CODENAME: `FLOW COMMANDER`
+
+> **⏱️ Operation Time Window:** `~30 minutes`  
+
 ## 🎯 Mission Brief:
 
 Your agent can now converse with users and provide information, but true operational excellence requires your agent to take action. This mission will transform your conversational agent into an automation powerhouse by equipping it with agent flows.
