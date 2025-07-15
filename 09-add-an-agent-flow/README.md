@@ -38,6 +38,8 @@ By mission's end, you'll have created an end-to-end device request automation th
   - [9.2 Add agent flow to topic](#92-add-agent-flow-to-topic)
   - [9.3 Update Request device topic with several nodes for a better user experience](#93-update-request-device-topic-with-several-nodes-for-a-better-user-experience)
   - [9.4 Test agent using several scenarios](#94-test-agent-using-several-scenarios)
+- [Mission Complete](#-misson-complete)
+- [Tactical Resources](#-tactical-resources)
 
 ## 🤔 What is an agent flow?
 
@@ -76,7 +78,7 @@ Both agent flows and Power Automate cloud flows help automate tasks. They're des
 
 **What they're for:**
 
-- Design for general-purpose automation across many apps and services.
+- Designed for general-purpose automation across many apps and services.
 - Can run independently or work alongside agent flows.
 
 **Why they're useful:**
@@ -119,7 +121,7 @@ Other benefits are:
 
 Agent flows expand what your agent can do beyond "chatting" with users. They allow it to take action and interact with systems.
 
-Let's say you're working in a finance department and you receive a lot of invoices from vendors. Normally, someone has to reach each invoice, pull out the important details - the amount, date, who it's from, and check if everything matches your records. Then send it to the right person for approval. This takes time and effort.
+Let's say you're working in a finance department and you receive a lot of invoices from vendors. Normally, someone has to read each invoice, pull out the important details - the amount, date, who it's from, and check if everything matches your records. Then send it to the right person for approval. This takes time and effort.
 
 With agent flows in Copilot Studio, you can automate this process. As soon as the invoice comes in, the agent:
 
@@ -183,7 +185,7 @@ This saves time, reduces mistakes and makes the whole process much smoother.
 
 ## 🎨 What is the agent flow designer?
 
-It's a visual tool in Copilot Studio that helps you build, edit, and manage agent flows that provide step-by-step instructions your agent follows to complete tasks. It's designed to be straight forward to use, even if you're new to agent flows.
+It's a visual tool in Copilot Studio that helps you build, edit, and manage agent flows that provide step-by-step instructions your agent follows to complete tasks. It's designed to be straightforward to use, even if you're new to agent flows.
 
 ### Key features of the agent flow designer
 
@@ -330,7 +332,7 @@ Here are some best practices for building agent flows in Copilot Studio.
 1. **Use Version History**
 
     - Save your flow often so you can go back to earlier versions if needed.
-    - You can view and restore previous versions using the _Version History_ pannel.
+    - You can view and restore previous versions using the _Version History_ panel.
 
 1. **Use parameters and expressions wisely**
 
@@ -492,7 +494,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     sharepoint
     ```
 
-    The search results will input parameters that match the value searched. Select the **DeviceSharePointId** parameter from the trigger.
+    The search results will show input parameters that match the value searched. Select the **DeviceSharePointId** parameter from the trigger.
 
     ![Select DeviceSharePointId input](assets/9.1_19_DeviceSharePointId.png)
 
@@ -783,7 +785,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Save details](assets/9.1_59_Save.png)
 
-1. Select the **Designer** tabe and select **Publish** to publish the agent flow so that it can be added as a node in the **Request devce** topic.
+1. Select the **Designer** tabe and select **Publish** to publish the agent flow so that it can be added as a node in the **Request device** topic.
 
     ![Publish](assets/9.1_60_Publish.png)
 
@@ -831,7 +833,7 @@ Let's now add the agent flow to the **Request device** topic.
 
     ![Expand advanced inputs](assets/9.2_07_ExpandAdvancedInputs.png)
 
-1. Select the **ellipsis (...) icon** for the AdditonalComments input.
+1. Select the **ellipsis (...) icon** for the AdditionalComments input.
 
     ![Expand advanced inputs](assets/9.2_08_SelectVariable.png)
 
@@ -866,7 +868,7 @@ Let's now add the agent flow to the **Request device** topic.
 1. Next we'll define the logic
 
     - when **_true_** - if the `Topic.commentsId` string parameter is empty, then we want to insert no value.
-    - when **_false_** - if the `Topic.commentsId` string parameter is empty, then insert the value of commentsId variable.
+    - when **_false_** - if the `Topic.commentsId` string parameter is not empty, then insert the value of commentsId variable.
 
     After the bracket that encloses the string parameter, enter the following,
 
@@ -1024,9 +1026,9 @@ Let's test the final scenario which is to not request a device, and the **Goodby
 
     ![Goodbye topic invoked](assets/9.4_13_Goodbye.png)
 
-## ✅ Misson complete
+## ✅ Misson Complete
 
-Congratulations! 👏🏻 You've learned how to build your agent flow and add it to our existing **Request device** topic, and how to redirect the agent to another topic.
+Congratulations! 👏🏻 You've learnt how to build your agent flow and add it to our existing **Request device** topic, and how to redirect the agent to another topic.
 
 This is the end of **Lab 09 - Add an agent flow for automation and enhance topic capabilities**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
