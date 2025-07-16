@@ -156,6 +156,8 @@ Let's begin!
 
 ### Prerequisites
 
+#### Security role
+
 In Copilot Studio, what you _can do_ in the solution explorer depends on your user security role.
 If you don’t have permission to manage solutions in the Power Apps admin center, you won’t be able to do those tasks in Copilot Studio either.
 
@@ -168,6 +170,10 @@ The following are the security roles that enables users to create a solution in 
 | Environment Maker | Provides the necessary permissions to create, customize, and manage resources within a specific environment, including solutions  |
 | System Customizer  | Wider permissions than Environment Maker, including the ability to customize the environment and manage security roles |
 | System Administrator   | Highest level of permissions and can manage all aspects of the environment, including creating and assigning security roles     |
+
+#### Developer environment
+
+Make sure you switch to your dedicated developer environment, refer to [Lesson 00 - Course Setup - Step 3: Create new developer](/00-course-setup/README.md/#step-3-create-new-developer-environment)
 
 ### 4.1 Create a Solution publisher
 
