@@ -70,6 +70,7 @@ A custom agent can fulfill the following:
 - Tailor it to your business or project needs.
 
 ### ✨ Example
+
 You build a custom agent that helps employees request vacation leave.
 
 It asks for their name, vacation dates, and their manager’s name, then saves the information into the designated system that managed vacation requests, such as a SharePoint list.
@@ -146,6 +147,7 @@ When a user asks a question, the agent:
 1. **Flexible and expandable** - you can add knowledge sources anytime during set up or at later point in time, your agent grows smarter as your needs change.
 
 ### ✨ Example
+
 Imagine you build an agent to help employees with HR questions. You add your company’s HR policy document and SharePoint site as knowledge sources.
 
 When an employee asks, _“How many vacation days am I entitled to?”_, the agent uses generative orchestration to search those sources and reply with the correct policy without you having to write that answer manually. This saves you time in having to account for every possible question an employee may ask regarding their entitlements.
