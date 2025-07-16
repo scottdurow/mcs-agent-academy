@@ -15,8 +15,9 @@ Your mission includes:
 
 1. Activating a Microsoft 365 developer tenant  
 2. Gaining access to Microsoft Copilot Studio  
-3. (Optional) Securing a Microsoft 365 Copilot license for production publishing  
-4. Creating a SharePoint site to serve as your data source in later missions
+3. (Optional) Securing a Microsoft 365 Copilot license for production publishing
+1. Creating a developer environment as your Copilot Studio environment to build in  
+1. Creating a SharePoint site to serve as your data source in later missions
 
 ---
 
