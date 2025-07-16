@@ -173,7 +173,11 @@ The following are the security roles that enables users to create a solution in 
 
 #### Developer environment
 
-Make sure you switch to your dedicated developer environment, refer to [Lesson 00 - Course Setup - Step 3: Create new developer](/00-course-setup/README.md/#step-3-create-new-developer-environment)
+Make sure you switch to your dedicated developer environment, refer to [Lesson 00 - Course Setup - Step 3: Create new developer](/00-course-setup/README.md/#step-3-create-new-developer-environment).
+
+1. On the upper right, selec the **Cog wheel** icon and switch from the default environment to your environment, for example **Adele Vance's environment**.
+
+   ![Developer environment](assets/4.0_03_DeveloperEnvironment.png)
 
 ### 4.1 Create a Solution publisher
 
