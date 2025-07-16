@@ -15,8 +15,9 @@ Your mission includes:
 
 1. Activating a Microsoft 365 developer tenant  
 2. Gaining access to Microsoft Copilot Studio  
-3. (Optional) Securing a Microsoft 365 Copilot license for production publishing  
-4. Creating a SharePoint site to serve as your data source in later missions
+3. (Optional) Securing a Microsoft 365 Copilot license for production publishing
+1. Creating a developer environment as your Copilot Studio environment to build in  
+1. Creating a SharePoint site to serve as your data source in later missions
 
 ---
 
@@ -76,7 +77,7 @@ Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Develope
 
    ![Sign up for Power Apps Developer Plan](images/0.3_01_SignUp.png)
 
-1. After signing up for the Developer Plan, you'll be redirected to [Power Apps](https://make.powerapps.com/). The environment uses your name, for example **Adele Vances's environment**. If there's already an environment with that name, the developer new environment is named Adele Vance's (1) environment.
+1. After signing up for the Developer Plan, you'll be redirected to [Power Apps](https://make.powerapps.com/). The environment uses your name, for example **Adele Vances's environment**. If there's already an environment with that name, the developer new environment is named **Adele Vance's (1)** environment.
 
     Use this developer environment in Copilot Studio when completing the labs.
 

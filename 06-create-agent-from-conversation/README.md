@@ -36,8 +36,8 @@ Let’s build your agent from the ground up.
   - [Use case](#-use-case)
   - [Prerequisites](#-prerequisites)
   - [6.1 Use natural language to create an agent with Copilot](#61-use-natural-language-to-create-an-agent-with-copilot)
-  - [6.2 Add an internal knowledge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included](#62-add-an-internal-knowledge-source-using-a-sharepoint-site---for-microsoft-365-licensed-users-with-sharepoint)
-  - [6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included](#63-add-an-internal-knowledge-source-by-uploading-a-document---for-non-microsoft-365-licensed-users-who-dont-have-sharepoint-included)
+  - [6.2 Add an internal knowledge source using a SharePoint site](#62-add-an-internal-knowledge-source-using-a-sharepoint-site)
+  - [6.3 Add an internal knowledge source by uploading a document](#63-add-an-internal-knowledge-source-by-uploading-a-document)
   - [6.4 Test agent](#64-test-agent)
 - [Mission Complete](#-mission-complete)
 - [Tactical Resources](#-tactical-resources)
@@ -253,9 +253,9 @@ Let's begin!
 
 1. **SharePoint site**
 
-    We'll be using the **Contoso IT** SharePoint site from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
+    We'll be using the **Contoso IT** SharePoint site from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
 
-    If you have not set up the **Contoso IT** SharePoint site, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
+    If you have not set up the **Contoso IT** SharePoint site, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
 
 1. **Solution**
 
@@ -381,12 +381,9 @@ Let's begin!
 
 Congratulations! You've built your first custom agent with Copilot in Copilot Studio 🙌🏻
 
-### 6.2 Add an internal knowledge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint
+### 6.2 Add an internal knowledge source using a SharePoint site
 
-Previously with Copilot, we added a public website as an external knowledge source for our agent during the conversational creation experience. We're now going to add an internal knowledge source using a SharePoint site. This will be the SharePoint site you created during [Lesson 00 - Course Setup](/00-course-setup/README.md/#step-3-create-new-sharepoint-site).
-
-> [!NOTE]  
-> This exercise is valid for Microsoft 365 licensed users with SharePoint. If you don't have SharePoint in your Microsoft 365 license, skip to the [6.3 Add an internal knowledge source by uploading a document](#63-add-an-internal-knowledge-source-by-uploading-a-document---for-non-microsoft-365-licensed-users-who-dont-have-sharepoint-included) lab exercise.
+Previously with Copilot, we added a public website as an external knowledge source for our agent during the conversational creation experience. We're now going to add an internal knowledge source using a SharePoint site. This will be the SharePoint site you created during [Lesson 00 - Course Setup](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
 
 1. Select **+ Add knowledge**.
 
@@ -396,7 +393,7 @@ Previously with Copilot, we added a public website as an external knowledge sour
 
    ![Select SharePoint](assets/6.2_02_SelectSharePoint.png)
 
-1. Paste in the **address of the SharePoint site** created in [Lesson 00 - Course Setup](/00-course-setup/README.md/#step-3-create-new-sharepoint-site) in the SharePoint URL field and select **Add**.
+1. Paste in the **address of the SharePoint site** created in [Lesson 00 - Course Setup](/00-course-setup/README.md/#step-4-create-new-sharepoint-site) in the SharePoint URL field and select **Add**.
 
    ![Enter SharePoint site URL](assets/6.2_03_SharePointURL.png)
 
@@ -408,7 +405,7 @@ Previously with Copilot, we added a public website as an external knowledge sour
 
    ![SharePoint site added](assets/6.2_05_SharePointSiteAdded.png)
 
-### 6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included
+### 6.3 Add an internal knowledge source by uploading a document
 
 We'll now add another internal knowledge source by uploading a document directly to our agent. 
 
