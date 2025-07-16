@@ -465,7 +465,7 @@ Let's begin!
 
     **Topic name**
 
-    ```plaintext
+    ```
     Available devices
     ```
 
@@ -475,7 +475,7 @@ Let's begin!
 
     **Trigger description**
 
-    ```plaintext
+    ```
     This topic helps users find devices that are available from our SharePoint Devices list. User can ask to see available devices and it will return a list of devices that are available which can include laptops, smartphones, accessories and more.
     ```
 
@@ -497,7 +497,7 @@ Let's begin!
 
 1. Enter a name for the variable. Copy and paste the following.
 
-    ```plaintext
+    ```
     VarDeviceType
     ```
 
@@ -519,7 +519,7 @@ Let's begin!
 
 1. Copy and paste the following as the description.
 
-    ```plaintext
+    ```
     List of possible values: Laptop, Desktop, Smartphone
     ```
 
@@ -537,7 +537,7 @@ Let's begin!
 
     **Variable name** - Copy and paste the following.
 
-    ```plaintext
+    ```
     VarAvailableDevices
     ```
 
@@ -545,7 +545,7 @@ Let's begin!
 
     **Variable description** - Copy and paste the following.
 
-    ```plaintext
+    ```
     List of available devices by device type
     ```
 
@@ -593,7 +593,7 @@ Let's begin!
 
 1. The **Get items** configuration pane will appear and by default, you'll see the **Inputs** tab. Select the **Initiation** tab and enter a description in the **Usage Description** field. Copy and paste the following.
 
-    ```plaintext
+    ```
     Retrieves devices from SharePoint list
     ```
 
@@ -623,7 +623,7 @@ Let's begin!
     - the SharePoint column of **Status** equals _Available_
     - and the SharePoint column of **Asset type** equals _the selected device from the question node_.
 
-    ```plaintext
+    ```
     Concatenate("Status eq 'Available' and AssetType eq '", Topic.VarDeviceType, "'")
     ```
 
@@ -641,7 +641,7 @@ Let's begin!
 
 1. Update the name to the following.
 
-    ```plaintext
+    ```
     VarDevices
     ```
 
@@ -683,7 +683,7 @@ Let's begin!
 
 1. Add the a new line in the instructions, copy and paste the following.
 
-    ```plaintext
+    ```
     - Help find available devices and give full details using [Available devices]. Always extract the VarDeviceType from the inputs. After giving device details, ask the user if they want to request a device from the list of available devices.
     ```
 
@@ -701,7 +701,7 @@ Let's begin!
 
 1. We're now going to test our updated agent. Select **Test** on the upper right to display the test pane and **refresh** the test pane. Enter the following message to the agent.
 
-    ```plaintext
+    ```
     I need a laptop
     ```
 

@@ -412,7 +412,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. For the name of the input, enter the following.
 
-    ```plaintext
+    ```
     DeviceSharePointId
     ```
 
@@ -424,7 +424,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. For the name of the input, enter the following.
 
-    ```plaintext
+    ```
     User
     ```
 
@@ -436,7 +436,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. For the name of the input, enter the following.
 
-    ```plaintext
+    ```
     AdditionalComments
     ```
 
@@ -460,7 +460,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. In the search field enter the following,
 
-    ```plaintext
+    ```
     Get item
     ```
 
@@ -470,7 +470,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. We can now begin configuring the **Get item** action. Rename the action to,
 
-    ```plaintext
+    ```
     Get Device
     ```
 
@@ -490,7 +490,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. In the **Dynamic content** tab of the flyout pane, enter the following,
 
-    ```plaintext
+    ```
     sharepoint
     ```
 
@@ -512,7 +512,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. In the search field enter the following,
 
-    ```plaintext
+    ```
     send
     ```
 
@@ -534,7 +534,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. Rename the action to the following,
 
-    ```plaintext
+    ```
     Send an email to manager
     ```
 
@@ -546,7 +546,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     For the **Subject** input parameter, enter the following,
 
-    ```plaintext
+    ```
     Request type: new device
     ```
 
@@ -554,7 +554,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Add an input](assets/9.1_28_ConfigureInputParameters.png)
 
-    ```plaintext
+    ```
     Hi,
 
     New device requested from
@@ -589,7 +589,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     In the **Dynamic content** tab of the flyout pane, enter the following in the search field,
 
-    ```plaintext
+    ```
     manufacturer
     ```
 
@@ -601,7 +601,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     In the **Dynamic content** tab of the flyout pane, enter the following in the search field,
 
-    ```plaintext
+    ```
     model
     ```
 
@@ -615,7 +615,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. The HTML editor is now enabled. Click before the `Link to item in SharePoint` text, copy and paste the following HTML tag,
 
-    ```plaintext
+    ```
     <a href="
     ```
 
@@ -625,7 +625,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     In the **Dynamic content** tab of the flyout pane, enter the following in the search field,
 
-    ```plaintext
+    ```
     link to item
     ```
 
@@ -635,7 +635,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. The dynamic content input of **Link to item** is now referenced in the **Body** parameter. Click after the **Link to item** input, copy and paste the following.
 
-    ```plaintext
+    ```
     ">
     ```
 
@@ -643,7 +643,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. Click after the `Link to item in SharePoint` text, copy and paste the following.
 
-    ```plaintext
+    ```
     </a>
     ```
 
@@ -657,7 +657,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     In the **Dynamic content** tab of the flyout pane, enter the following in the search field,
 
-    ```plaintext
+    ```
     user
     ```
 
@@ -671,7 +671,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     In the **Function** tab of the flyout pane and in the expression field above, enter the following,
 
-    ```plaintext
+    ```
     if(empty())
     ```
 
@@ -685,7 +685,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     Select the **Dynamic content** tab. Enter the following in the search field,
 
-    ```plaintext
+    ```
     comment
     ```
 
@@ -697,7 +697,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     After the bracket that encloses the string parameter, enter the following,
 
-    ```plaintext
+    ```
     , 'None',
     ```
 
@@ -737,7 +737,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. Enter the following as the name of the output.
 
-    ```plaintext
+    ```
     ModelValue
     ```
 
@@ -749,7 +749,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. In the **Dynamic content** tab of the flyout pane, enter the following in the search field,
 
-    ```plaintext
+    ```
     model
     ```
 
@@ -773,7 +773,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. For the **Flow name**, copy and paste the following.
 
-    ```plaintext
+    ```
     Send device request email
     ```
 
@@ -843,7 +843,7 @@ Let's now add the agent flow to the **Request device** topic.
 
     Enter the following functions in the Power Fx field,
 
-    ```plaintext
+    ```
     if(empty())
     ```
 
@@ -857,7 +857,7 @@ Let's now add the agent flow to the **Request device** topic.
 
     Enter the following inside the brackets,
 
-    ```plaintext
+    ```
     Topic.commentsId
     ```
 
@@ -872,13 +872,13 @@ Let's now add the agent flow to the **Request device** topic.
 
     After the bracket that encloses the string parameter, enter the following,
 
-    ```plaintext
+    ```
     "", Topic.commentsId)
     ```
 
     The Power Fx expression should be the following,
 
-    ```plaintext
+    ```
     If(IsBlank(Topic.commentsId), "", Topic.commentsId)
     ```
 
@@ -908,7 +908,7 @@ Let's begin!
 
 1. Enter the following below in the message field,
 
-    ```plaintext
+    ```
     Thanks
     ```
 
@@ -922,7 +922,7 @@ Let's begin!
 
 1. Enter the following below in the message field,
 
-    ```plaintext
+    ```
     . Your selected device,
     ```
 
@@ -930,7 +930,7 @@ Let's begin!
 
     Then enter the following below to complete the message.
 
-    ```plaintext
+    ```
     , has been submitted and will be reviewed by your manager.
     ```
 
@@ -954,7 +954,7 @@ Great work!!! We can now test our agent.
 
 1. **Refresh** the test pane, select the **activity map** icon and enter the following as a message to the agent.
 
-    ```plaintext
+    ```
     I need a laptop
     ```
 
@@ -962,7 +962,7 @@ Great work!!! We can now test our agent.
 
 1. The agent triggers the **Available devices** and responds with the list of available devices. We'll enter the following as the answer to the question of whether we'd like to request a device.
 
-    ```plaintext
+    ```
     yes please
     ```
 
@@ -972,7 +972,7 @@ Great work!!! We can now test our agent.
 
     Select the **Surface Laptop 15** device and add the following as a comment.
 
-    ```plaintext
+    ```
     I need 16GB of RAM please
     ```
 

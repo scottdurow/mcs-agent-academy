@@ -278,13 +278,13 @@ Let's begin!
 
 1. Name the topic as the following,
 
-    ```plaintext
+    ```
     Request device
     ```
 
     Enter the following as the description for the trigger.
 
-    ```plaintext
+    ```
     This topic helps users request a device when they answer yes to the question that asks the user if they would like to request one of these devices.
     ```
 
@@ -402,7 +402,7 @@ Now that we created the new topic that handles the device requests, we need to u
 
     OK, we're good to test! Enter the following in the test pane.
 
-    ```plaintext
+    ```
     I need a laptop
     ```
 
@@ -410,7 +410,7 @@ Now that we created the new topic that handles the device requests, we need to u
 
 1. The agent will respond with the list of available devices followed by the question of asking the user if they would like to request a device. Copy and paste the following,
 
-    ```plaintext
+    ```
     yes please
     ```
 
