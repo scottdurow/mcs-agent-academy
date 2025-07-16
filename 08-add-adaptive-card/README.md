@@ -362,8 +362,6 @@ Let's begin!
 
 1. **Close** the **Adaptive Card Node properties** pane.
 
-    ![Close Adaptive Card Node properties pane](assets/8.3_15_ExitFromAdaptiveCardPropertiesPane.png)
-
 1. **Save** the topic.
 
     ![Save topic](assets/8.1_17_SaveTopic.png)
