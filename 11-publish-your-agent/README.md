@@ -16,11 +16,16 @@ Let’s launch your agent into action.
 
 📖 This lesson will cover:
 
-- ![📺 What are channels?](#-what-are-channels)
+- ![🚀 Publish an agent](#-publish-an-agent)
+- ![⚙️ Configure channels](#️-configure-channels)
 
-## 📺 What are channels?
+## 🚀 Publish an agent
 
-...
+With Copilot Studio, you can publish agents to engage with your customers on multiple platforms or channels, such as live websites, mobile apps, Microsoft 365 Copilot or messaging platforms like Teams and Facebook.
+
+Each time you update your agent, you can publish it again from within Copilot Studio. Publishing your agent applies to all the channels associated with your agent.
+
+## ⚙️ Configure channels
 
 The following channels are available for Copilot Studio:
 
