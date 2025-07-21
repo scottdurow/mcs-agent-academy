@@ -52,7 +52,7 @@ Different channels have different user experiences. The following table shows a 
 
 [1]: https://learn.microsoft.com/microsoft-copilot-studio/authoring-create-edit-topics
 [2]: https://daringfireball.net/projects/markdown/
-[3]: https://learn.microsoft.com/microsoft-copilot-studio/advanced-ai-features.md
+[3]: https://learn.microsoft.com/microsoft-copilot-studio/advanced-ai-features
 [4]: https://learn.microsoft.com/microsoftteams/platform/concepts/cards/cards-reference#hero-card
 [5]: https://learn.microsoft.com/microsoftteams/platform/bots/how-to/format-your-bot-messages#text-only-messages
 [6]: https://developers.facebook.com/docs/messenger-platform/send-messages/quick-replies/
