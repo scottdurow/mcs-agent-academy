@@ -21,13 +21,13 @@ Let’s launch your agent into action.
 
 ## 🚀 Publish an agent
 
-With Copilot Studio, you can publish agents to engage with your customers on multiple platforms or channels, such as live websites, mobile apps, Microsoft 365 Copilot or messaging platforms like Teams and Facebook.
+Every time you work on an agent in Copilot Studio you might update it by adding knowledge or tools. When you are ready with all the changes, and you have tested thoroughly, you are ready to publish it. Publishing ensures that the latest updates will be live. So, this means that when you update your agent with new tools, and you don't hit the publish button, it's not available yet for end users.
 
-Each time you update your agent, you can publish it again from within Copilot Studio. Publishing your agent applies to all the channels associated with your agent.
+Make sure to always hit the publish button when you want to push the updates to the users of your agent. You agent might have channels added to it and when you hit publish the updates will be available for all the channels you added to the agent.
 
 ## ⚙️ Configure channels
 
-The following channels are available for Copilot Studio:
+Channels are places where your agent appears. There are a lot of channels available for Copilot Studio:
 
 - Teams and Microsoft 365 Copilot
 - SharePoint
@@ -46,3 +46,11 @@ The following channels are available for Copilot Studio:
   - GroupMe
   - Direct Line Speech
   - Email
+
+All these channels have different ways to configure. In this module, we will focus on the Teams and Microsoft 365 Copilot. But if you want to learn more about the other channels - check out the [resources](#️-configure-channels).
+
+⏭️ This is the end of the course! [Move back to the **course overview**](./../README.md).
+
+## 📚 Tactical Resources
+
+🔗 [List of articles for different channels](https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels?tabs=web#configure-channels)
