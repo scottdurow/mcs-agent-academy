@@ -16,8 +16,8 @@ Let’s launch your agent into action.
 
 📖 This lesson will cover:
 
-- ![🚀 Publish an agent](#-publish-an-agent)
-- ![⚙️ Configure channels](#️-configure-channels)
+- [🚀 Publish an agent](#-publish-an-agent)
+- [⚙️ Configure channels](#️-configure-channels)
 
 ## 🚀 Publish an agent
 
