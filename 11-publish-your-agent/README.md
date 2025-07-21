@@ -27,15 +27,16 @@ Make sure to always hit the publish button when you want to push the updates to 
 
 ## ⚙️ Configure channels
 
-Channels are places where your agent appears. There are a lot of channels available for Copilot Studio:
+Channels are places where your agent appears. The connection steps are different for each channel. For more information, see the article for the desired channels, in the following list:
 
-- Teams and Microsoft 365 Copilot
-- SharePoint
-- Demo Website
-- Custom Website
-- Mobile App
-- Facebook
-- Azure Bot Service channels, including:
+- Teams and Microsoft 365 Copilot ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams))
+- SharePoint ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-sharepoint))
+- Demo Website ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-web-channels))
+- Custom Website ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-web-channels))
+- Mobile App ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-custom-application))
+- Facebook ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-facebook))
+- Power Pages ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-power-pages))
+- Azure Bot Service channels ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels)), including:
   - Skype
   - Cortana
   - Slack
@@ -53,4 +54,4 @@ All these channels have different ways to configure. In this module, we will foc
 
 ## 📚 Tactical Resources
 
-🔗 [List of articles for different channels](https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels?tabs=web#configure-channels)
+🔗 [Publish channels documentation](https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels)
