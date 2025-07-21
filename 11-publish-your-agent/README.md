@@ -36,17 +36,7 @@ Channels are places where your agent appears. The connection steps are different
 - Mobile App ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-custom-application))
 - Facebook ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-facebook))
 - Power Pages ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-power-pages))
-- Azure Bot Service channels ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels)), including:
-  - Skype
-  - Cortana
-  - Slack
-  - Telegram
-  - Twilio
-  - Line
-  - Kik
-  - GroupMe
-  - Direct Line Speech
-  - Email
+- Azure Bot Service channels ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels)), these include Skype, Cortana, Slack, Telegram, Twilio, Line, Kik, GroupMe, Direct Line Speech & Email.
 
 ## 📺 Channel experiences
 
