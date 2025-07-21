@@ -48,7 +48,34 @@ Channels are places where your agent appears. The connection steps are different
   - Direct Line Speech
   - Email
 
-All these channels have different ways to configure. In this module, we will focus on the Teams and Microsoft 365 Copilot. But if you want to learn more about the other channels - check out the [resources](#️-configure-channels).
+## 📺 Channel experiences
+
+Different channels have different user experiences. The following table shows a high-level overview of the experiences for each channel. Take the channel experiences into account when optimizing your agent content for specific channels.
+
+| Experience                        | Website       | Teams and Microsoft 365 Copilot         | Facebook                 | Dynamics Omnichannel for Customer Service                   |
+| --------------------------------- | ------------- | --------------------------------------- | ------------------------ | ----------------------------------------------------------- |
+| [Customer satisfaction survey][1] | Adaptive card | Text-only                               | Text-only                | Text-only                                                   |
+| [Multiple-choice options][1]      | Supported     | [Supported up to six (as hero card)][4] | [Supported up to 13][6]  | [Partially Supported][8]                                    |
+| [Markdown][2]                     | Supported     | [Partially Supported][5]                | [Partially supported][7] | [Partially Supported][9]                                    |
+| [Welcome message][1]              | Supported     | Supported                               | Not supported            | Supported for [Chat][10]. Not supported for other channels. |
+| [Did-You-Mean][3]                 | Supported     | Supported                               | Supported                | Supported for [Microsoft Teams][11], [Chat][10], Facebook, and text-only channels (short message service (SMS) via [TeleSign][12] and [Twilio][13], [WhatsApp][14], [WeChat][15], and [Twitter][16]). Suggested actions are presented as a text-only list; users must retype an option to respond. |
+
+[1]: https://learn.microsoft.com/microsoft-copilot-studio/authoring-create-edit-topics
+[2]: https://daringfireball.net/projects/markdown/
+[3]: https://learn.microsoft.com/microsoft-copilot-studio/advanced-ai-features.md
+[4]: https://learn.microsoft.com/microsoftteams/platform/concepts/cards/cards-reference#hero-card
+[5]: https://learn.microsoft.com/microsoftteams/platform/bots/how-to/format-your-bot-messages#text-only-messages
+[6]: https://developers.facebook.com/docs/messenger-platform/send-messages/quick-replies/
+[7]: https://www.facebook.com/help/147348452522644?helpref=related
+[8]: https://learn.microsoft.com/dynamics365/customer-service/asynchronous-channels#suggested-actions-support
+[9]: https://learn.microsoft.com/dynamics365/customer-service/asynchronous-channels#preview-support-for-formatted-messages
+[10]: https://learn.microsoft.com/dynamics365/customer-service/set-up-chat-widget
+[11]: https://learn.microsoft.com/dynamics365/customer-service/configure-microsoft-teams
+[12]: https://learn.microsoft.com/dynamics365/customer-service/configure-sms-channel
+[13]: https://learn.microsoft.com/dynamics365/customer-service/configure-sms-channel-twilio
+[14]: https://learn.microsoft.com/dynamics365/customer-service/configure-whatsapp-channel
+[15]: https://learn.microsoft.com/dynamics365/customer-service/configure-wechat-channel
+[16]: https://learn.microsoft.com/dynamics365/customer-service/configure-twitter-channel
 
 ⏭️ This is the end of the course! [Move back to the **course overview**](./../README.md).
 
