@@ -18,6 +18,8 @@ Let’s launch your agent into action.
 
 - [🚀 Publish an agent](#-publish-an-agent)
 - [⚙️ Configure channels](#️-configure-channels)
+- [📺 Channel experiences](#-channel-experiences)
+- [📚 Tactical Resources](#-tactical-resources)
 
 ## 🚀 Publish an agent
 
@@ -40,7 +42,7 @@ Channels are places where your agent appears. The connection steps are different
 
 ## 📺 Channel experiences
 
-Different channels have different user experiences. The following table shows a high-level overview of the experiences for each channel. Take the channel experiences into account when optimizing your agent content for specific channels.
+Different channels have different user experiences. When building an agent for multiple channels, make sure to be aware of the differences per channel. In the table below, you can find experiences that can be different per channel. Of course - it's always a good strategy to test your agent in multiple channels to see if it really does what you intended.
 
 | Experience                        | Website       | Teams and Microsoft 365 Copilot         | Facebook                 | Dynamics Omnichannel for Customer Service                   |
 | --------------------------------- | ------------- | --------------------------------------- | ------------------------ | ----------------------------------------------------------- |
