@@ -117,6 +117,10 @@ But - we only published the agent, we didn't add it to a channel yet, so lets fi
 
 ### 11.2 Add the Teams and Microsoft 365 Copilot channel
 
+1. To add the Teams and Microsoft 365 Copilot channel to our agent, we need to select **Channel** in the top navigation of the agent.
+
+    ![Channels tab](./assets/channels-tab.png)
+
 ...
 
 ## ✅ Mission Complete
