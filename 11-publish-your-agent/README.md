@@ -40,6 +40,8 @@ Channels are places where your agent appears. The connection steps are different
 - Power Pages ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-power-pages))
 - Azure Bot Service channels ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels)), these include Skype, Cortana, Slack, Telegram, Twilio, Line, Kik, GroupMe, Direct Line Speech & Email.
 
+![Channels tab in agent](./assets/channels.png)
+
 ## 📺 Channel experiences
 
 Different channels have different user experiences. When building an agent for multiple channels, make sure to be aware of the differences per channel. In the table below, you can find experiences that can be different per channel. Of course - it's always a good strategy to test your agent in multiple channels to see if it really does what you intended.
