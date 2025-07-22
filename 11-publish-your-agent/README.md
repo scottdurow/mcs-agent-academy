@@ -6,15 +6,15 @@
 
 ## 🎯 Mission Brief
 
-After completing a series of challenging modules, Agent Maker, you are now ready for your most critical step yet: publishing your agent. It’s time to make your creation available to users across Microsoft Teams and Microsoft 365 Copilot.
+After completing a series of challenging modules, Agent Maker, you're now ready for your most critical step yet: publishing your agent. It’s time to make your creation available to users across Microsoft Teams and Microsoft 365 Copilot.
 
-Your agent—equipped with a clear mission, powerful tools, and access to key knowledge sources—is ready to serve. Using Microsoft Copilot Studio, you’ll deploy your agent so it can start assisting real users, right where they work.
+Your agent—equipped with a clear mission, powerful tools, and access to key knowledge sources—is ready to serve. Using Microsoft Copilot Studio, you deploy your agent so it can start assisting real users, right where they work.
 
 Let’s launch your agent into action.
 
 ## 🔎 Objectives
 
-📖 This lesson will cover:
+📖 This lesson covers:
 
 - [🚀 Publish an agent](#-publish-an-agent)
 - [⚙️ Configure channels](#️-configure-channels)
@@ -23,9 +23,9 @@ Let’s launch your agent into action.
 
 ## 🚀 Publish an agent
 
-Every time you work on an agent in Copilot Studio you might update it by adding knowledge or tools. When you are ready with all the changes, and you have tested thoroughly, you are ready to publish it. Publishing ensures that the latest updates will be live. So, this means that when you update your agent with new tools, and you don't hit the publish button, it's not available yet for end users.
+Every time you work on an agent in Copilot Studio you might update it by adding knowledge or tools. When you're ready with all the changes, and you tested thoroughly, you're ready to publish it. Publishing ensures that the latest updates are live. When you update your agent with new tools, and you don't hit the publish button, it's not available yet for end users.
 
-Make sure to always hit the publish button when you want to push the updates to the users of your agent. You agent might have channels added to it and when you hit publish the updates will be available for all the channels you added to the agent.
+Make sure to always hit the publish button when you want to push the updates to the users of your agent. Your agent might have channels added to it and when you hit publish the updates are available for all the channels you added to the agent.
 
 ## ⚙️ Configure channels
 
@@ -38,13 +38,13 @@ Channels are places where your agent appears. The connection steps are different
 - Mobile App ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-custom-application))
 - Facebook ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-facebook))
 - Power Pages ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-power-pages))
-- Azure Bot Service channels ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels)), these include Skype, Cortana, Slack, Telegram, Twilio, Line, Kik, GroupMe, Direct Line Speech & Email.
+- Azure Bot Service channels ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels)), which include Skype, Cortana, Slack, Telegram, Twilio, Line, Kik, GroupMe, Direct Line Speech & Email.
 
 ![Channels tab in agent](./assets/channels.png)
 
 ## 📺 Channel experiences
 
-Different channels have different user experiences. When building an agent for multiple channels, make sure to be aware of the differences per channel. In the table below, you can find experiences that can be different per channel. Of course - it's always a good strategy to test your agent in multiple channels to see if it really does what you intended.
+Different channels have different user experiences. When building an agent for multiple channels, make sure to be aware of the differences per channel. It's always a good strategy to test your agent in multiple channels to see if it really does what you intended.
 
 | Experience                        | Website       | Teams and Microsoft 365 Copilot         | Facebook                 | Dynamics Omnichannel for Customer Service                   |
 | --------------------------------- | ------------- | --------------------------------------- | ------------------------ | ----------------------------------------------------------- |
@@ -83,37 +83,37 @@ We're now going to learn
 - [How to publish your agent](#111-publish-your-agent)
 - [Add the Teams and Microsoft 365 Copilot channel](#112-add-the-teams-and-microsoft-365-copilot-channel)
 
-We're going to continue on with the agent from earlier, and we're going to publish this agent. After this - we will add the Teams and Microsoft 365 Copilot channel to the agent!
+We're going to continue on with the agent from earlier, and we're going to publish the agent. After publishing, we add the Teams and Microsoft 365 Copilot channel to the agent!
 
 Let's begin!
 
 ### 11.1 Publish your agent
 
-Now that all our work on the agent is done, we have to make sure all our work is available for the end users that are going to use our agent. To do this, we need to publish our agent. Publishing our agent ensures the latest updates we did to our agent is available for the people consuming the agent.
+Now that all our work on the agent is done, we have to make sure all our work is available for the end users that are going to use our agent. To make sure the content is available for all users, we need to publish our agent.
 
 1. Go to the Contoso Helpdesk Agent in Copilot Studio (via the [Copilot Studio maker portal](https://copilotstudio.microsoft.com))
 
-    In Copilot Studio, it is very easy to publish your agent. You can just select the publish button at the top of the agent overview.
+    In Copilot Studio, it's easy to publish your agent. You can just select the publish button at the top of the agent overview.
 
     ![Publish Agent overview](./assets/publish.png)
 
 1. Select the **Publish** button in your agent.
 
-    This will open the publish pop-up - to confirm you really want to publish your agent.
+    It opens the publish pop-up - to confirm you really want to publish your agent.
 
     ![Publish confirmation](./assets/publish-popup.png)
 
 1. Select **Publish** to confirm publishing your agent.
 
-    Now a message will show that your agent is publishing. You don't have to keep that popup open, you can also leave and you will get notified when the agent is published.
+    Now a message shows that your agent is publishing. You don't have to keep that popup open. You get notified when the agent is published.
 
     ![Agent is publishing](./assets/publishing.png)
 
-    When the agent is done publishing, you will see the notification at the top of the agent page.
+    When the agent is done publishing, you see the notification at the top of the agent page.
 
     ![Notification publish done](./assets/publish-notification.png)
 
-But - we only published the agent, we haven't added it to a channel yet, so lets fix that now!
+But - we only published the agent, we didn't add it to a channel yet, so lets fix that now!
 
 ### 11.2 Add the Teams and Microsoft 365 Copilot channel
 
@@ -121,7 +121,7 @@ But - we only published the agent, we haven't added it to a channel yet, so lets
 
 ## ✅ Mission Complete
 
-🎉 **Congratulations!** You've successfully published your agent and added it to Teams and Microsoft 365 Copilot! This also marks the end of the course! Congratulations on finishing this course! You are now a certified Agent Academy Recruit!
+🎉 **Congratulations!** You successfully published your agent and added it to Teams and Microsoft 365 Copilot! It also marks the end of the course! Congratulations on finishing this course! You're now a certified Agent Academy Recruit!
 
 ⏭️ [Move back to the **course overview**](./../README.md).
 
