@@ -91,7 +91,9 @@ Let's begin!
 
 Now that all our work on the agent is done, we have to make sure all our work is available for the end users that are going to use our agent. To do this, we need to publish our agent. Publishing our agent ensures the latest updates we did to our agent is available for the people consuming the agent.
 
-In Copilot Studio, it is very easy to publish your agent.
+In Copilot Studio, it is very easy to publish your agent. You can just select the publish button at the top of the agent overview.
+
+![Publish Agent overview](./assets/publish.png)
 
 ### 11.2 Add the Teams and Microsoft 365 Copilot channel
 
