@@ -98,7 +98,9 @@ Now that all our work on the agent is done, we have to make sure all our work is
     ![Publish Agent overview](./assets/publish.png)
 
 1. Select the **Publish** button in your agent.
+
     This will open the publish pop-up - to confirm you really want to publish your agent.
+
 1. Select **Publish** to confirm publishing your agent.
 
     ![Publish confirmation](./assets/publish-popup.png)
