@@ -79,7 +79,7 @@ Now, instead of navigating to the SharePoint list and creating a new item, emplo
 
 ## 🗣️ Use natural language to create agents
 
-Previously you learnt how to quickly build agents in Copilot Studio using prebuilt agent templates in [Lesson 05 - Get started quickly with pre-built agents](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/05-using-prebuilt-agents/README.md). In this lesson, we'll dive into the conversational creation experience with Copilot. Copilot Studio makes it easy to build agents by chatting with Copilot, just like having a conversation.
+Previously you learnt how to quickly build agents in Copilot Studio using prebuilt agent templates in [Lesson 05 - Get started quickly with pre-built agents](../05-using-prebuilt-agents/README.md). In this lesson, we'll dive into the conversational creation experience with Copilot. Copilot Studio makes it easy to build agents by chatting with Copilot, just like having a conversation.
 
 In Copilot Studio, you don’t need to write code to create an agent. Instead, you describe what you want your agent to do in plain language, and Copilot helps you build it step by step through a chat-like experience.
 
@@ -239,7 +239,7 @@ We're now going to learn how to create a custom agent that can chat over your da
 
 ### ✨ Use case
 
-We'll use the same use case from [Lesson 03 - Create a declarative agent for Microsoft 365 Copilot](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/03-create-a-declarative-agent-for-M365Copilot/README.md#-use-case-scenario)
+We'll use the same use case from [Lesson 03 - Create a declarative agent for Microsoft 365 Copilot](../03-create-a-declarative-agent-for-M365Copilot/README.md#-use-case-scenario)
 
 **As an** employee
 
@@ -331,13 +331,13 @@ Let's begin!
 
    ![Confirm website ownership](assets/6.1_09_ConfirmOwnershipOfKnowledgeSource.png)
 
-1. Next we'll double check the solution that our agent will be created in, is the solution we created and selected as the preferred solution in [Lesson 04 - Create a new solution](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md#42-create-a-new-solution).
+1. Next we'll double check the solution that our agent will be created in, is the solution we created and selected as the preferred solution in [Lesson 04 - Create a new solution](../04-creating-a-solution/README.md#42-create-a-new-solution).
 
     Select the **ellipsis icon (...)** and select **Edit Advanced Settings**.
 
    ![Edit Advanced Settings](assets/6.1_10_EditAdvancedSettings.png)
 
-1. The **Advanced Settings** modal will appear and we can see our solution created from earlier is selected by default. This is due to selecting our solution as the preferred solution in [Lesson 04 - Create a new solution](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/04-creating-a-solution/README.md#42-create-a-new-solution).
+1. The **Advanced Settings** modal will appear and we can see our solution created from earlier is selected by default. This is due to selecting our solution as the preferred solution in [Lesson 04 - Create a new solution](../04-creating-a-solution/README.md#42-create-a-new-solution).
 
     Select **Cancel.**
 
@@ -417,7 +417,7 @@ We'll now add another internal knowledge source by uploading a document directly
 
    ![Select upload files](assets/6.3_02_SelectUploadFile.png)
 
-1. Download this [sample file](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/06-create-agent-from-conversation/assets/Contoso_Guest_WiFi_Connection_Guide.docx "download") and select it in your File Explorer. Select **Open**.
+1. Download this [sample file](./assets/Contoso_Guest_WiFi_Connection_Guide.docx "download") and select it in your File Explorer. Select **Open**.
 
    ![Select document](assets/6.3_03_SelectDocument.png)
 
