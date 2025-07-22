@@ -91,11 +91,31 @@ Let's begin!
 
 Now that all our work on the agent is done, we have to make sure all our work is available for the end users that are going to use our agent. To do this, we need to publish our agent. Publishing our agent ensures the latest updates we did to our agent is available for the people consuming the agent.
 
-In Copilot Studio, it is very easy to publish your agent. You can just select the publish button at the top of the agent overview.
+1. Go to the Contoso Helpdesk Agent in Copilot Studio (via the [Copilot Studio maker portal](https://copilotstudio.microsoft.com))
 
-![Publish Agent overview](./assets/publish.png)
+    In Copilot Studio, it is very easy to publish your agent. You can just select the publish button at the top of the agent overview.
+
+    ![Publish Agent overview](./assets/publish.png)
+
+1. Select the **Publish** button in your agent.
+    This will open the publish pop-up - to confirm you really want to publish your agent.
+1. Select **Publish** to confirm publishing your agent.
+
+    ![Publish confirmation](./assets/publish-popup.png)
+
+    Now a message will show that your agent is publishing. You don't have to keep that popup open, you can also leave and you will get notified when the agent is published.
+
+    ![Agent is publishing](./assets/publishing.png)
+
+    When the agent is done publishing, you will see the notification at the top of the agent page.
+
+    ![Notification publish done](./assets/publish-notification.png)
+
+But - we only published the agent, we haven't added it to a channel yet, so lets fix that now!
 
 ### 11.2 Add the Teams and Microsoft 365 Copilot channel
+
+...
 
 ## ✅ Mission Complete
 
