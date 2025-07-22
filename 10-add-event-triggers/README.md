@@ -2,9 +2,10 @@
 
 ### 🕵️‍♂️ CODENAME: `OPERATION GHOST ROUTINE`
 
-> **⏱️ Operation Time Window:** `~45 minutes` 
+> **⏱️ Operation Time Window:** `~45 minutes`
 
-## 🎯 Mission Brief:
+## 🎯 Mission Brief
+
 It's time to elevate your agent from conversational assistant to autonomous operative. Your mission is to enable your agent to act without being summoned - responding to signals from across your digital domain with precision and speed.
 
 With Event Triggers, you'll train your agent to monitor external systems like SharePoint, Teams, and Outlook, and execute intelligent actions the moment a signal is received. This operation transforms your agent into a fully operational field asset - silent, swift, and always watching.
@@ -14,26 +15,27 @@ Success means building agents that initiate value - not just respond to it.
 ## 🔎 Objectives
 
 📖 This lesson will cover:
+
 - [What is an Event Trigger?](#-what-is-an-event-trigger)
-    - [Why Event Triggers matter in autonomous agents](#why-event-triggers-matter-in-autonomous-agents)
+  - [Why Event Triggers matter in autonomous agents](#why-event-triggers-matter-in-autonomous-agents)
 - [How do Event Triggers work?](#️-how-do-event-triggers-work)
-    - [The trigger workflow](#the-trigger-workflow)
-    - [Event vs Topic triggers](#event-vs-topic-triggers)
+  - [The trigger workflow](#the-trigger-workflow)
+  - [Event vs Topic triggers](#event-vs-topic-triggers)
 - [Understanding trigger payloads](#-understanding-trigger-payloads)
-    - [Default vs custom payloads](#default-vs-custom-payloads)
-    - [Agent instructions vs custom payload instructions](#agent-instructions-vs-custom-payload-instructions)
+  - [Default vs custom payloads](#default-vs-custom-payloads)
+  - [Agent instructions vs custom payload instructions](#agent-instructions-vs-custom-payload-instructions)
 - [Common Event Trigger scenarios](#-common-event-trigger-scenarios)
 - [Publishing and authentication considerations](#️-publishing-and-authentication-considerations)
-    - [Maker authentication](#maker-authentication)
-    - [Data protection best practices](#data-protection-best-practices)
+  - [Maker authentication](#maker-authentication)
+  - [Data protection best practices](#data-protection-best-practices)
 - [Troubleshooting and limitations](#️-troubleshooting-and-limitations)
 - [Lab 10 - Add Event Triggers for autonomous agent behavior](#-lab-10---add-event-triggers-for-autonomous-agent-behavior)
-    - [Use case](#-use-case)
-    - [Prerequisites](#prerequisites)
-    - [10.1 Enable Generative AI and create a SharePoint item creation trigger](#101-enable-generative-ai-and-create-a-sharepoint-item-creation-trigger)
-    - [10.2 Edit the Trigger](#102-edit-the-trigger)
-    - [10.3 Create a tool for email acknowledgment](#103-create-a-tool-for-email-acknowledgment)
-    - [10.4 Test the trigger](#104-test-the-trigger)
+  - [Use case](#-use-case)
+  - [Prerequisites](#prerequisites)
+  - [10.1 Enable Generative AI and create a SharePoint item creation trigger](#101-enable-generative-ai-and-create-a-sharepoint-item-creation-trigger)
+  - [10.2 Edit the Trigger](#102-edit-the-trigger)
+  - [10.3 Create a tool for email acknowledgment](#103-create-a-tool-for-email-acknowledgment)
+  - [10.4 Test the trigger](#104-test-the-trigger)
 - [Tactical Resources](#-tactical-resources)
 
 ## 🤔 What is an Event Trigger?
@@ -106,10 +108,10 @@ Every trigger type comes with a default payload structure, but you can customize
 - Good for simple scenarios
 
 **Custom payload** - Add specific instructions and data formatting
+
 - Include detailed directions for your agent
 - Specify exactly what data to use and how
 - Better for complex workflows
-
 
 ### Agent instructions vs custom payload instructions
 
@@ -122,6 +124,7 @@ You have two places to guide your agent's behavior with event triggers:
 - Best for general behavior patterns
 
 **Payload Instructions** (Trigger-specific)
+
 - Specific directions for individual trigger types  
 - Example: "For this SharePoint update, send a summary to the project channel"
 - Best for complex agents with multiple triggers
@@ -133,10 +136,12 @@ You have two places to guide your agent's behavior with event triggers:
 Here are practical examples of how event triggers can enhance your agent:
 
 **IT Help Desk Agent**
+
 - **Trigger**: New SharePoint list item (support ticket)
 - **Action**: Automatically categorize, assign priority, and notify appropriate team members
 
 **Employee Onboarding Agent**  
+
 - **Trigger**: New user added to Dataverse
 - **Action**: Send welcome message, create onboarding tasks, and provision access
 
@@ -162,6 +167,7 @@ Before your agent can use event triggers in production, you need to understand a
 ### Maker authentication
 
 Event triggers use the **agent creator's credentials** for all authentication:
+
 - Your agent accesses systems using your permissions
 - Users can potentially access data through your credentials
 - All actions are performed "as you" even when users interact with the agent
@@ -181,6 +187,7 @@ To maintain security when publishing agents with event triggers:
 Keep these important considerations in mind when working with event triggers:
 
 **Quota and billing impacts**
+
 - Each trigger activation counts toward your message consumption
 - Frequent triggers (like every-minute recurrence) can quickly consume quota
 - Monitor usage to avoid throttling
@@ -191,6 +198,7 @@ Keep these important considerations in mind when working with event triggers:
 - Requires solution-aware cloud flow sharing to be enabled in your environment
 
 **Data Loss Prevention (DLP)**
+
 - Your organization's DLP policies determine which triggers are available
 - Administrators can block event triggers entirely
 - Contact your admin if expected triggers aren't available
