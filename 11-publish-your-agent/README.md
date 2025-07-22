@@ -67,6 +67,11 @@ Different channels have different user experiences. The following table shows a 
 [15]: https://learn.microsoft.com/dynamics365/customer-service/configure-wechat-channel
 [16]: https://learn.microsoft.com/dynamics365/customer-service/configure-twitter-channel
 
+> [!NOTE]
+> There are some examples of where you can use different logic for different channels. An example of it can be found in the Power Platform Snippets repository:
+>
+> Henry Jammes shared an example of how to show a different adaptive card when the channel is Microsoft Teams. ([Link to example](https://github.com/pnp/powerplatform-snippets/blob/main/copilot-studio/multiple-topics-matched-topic/source/multiple-topics-matched.yaml#L40))
+
 ⏭️ This is the end of the course! [Move back to the **course overview**](./../README.md).
 
 ## 📚 Tactical Resources
