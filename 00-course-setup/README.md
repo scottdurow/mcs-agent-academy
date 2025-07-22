@@ -67,9 +67,9 @@ Once you have your Microsoft 365 Tenant, you need to get access to Copilot Studi
 ## Step 3: Create new developer environment
 
 ### Sign up for a Power Apps Developer Plan
-Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Developer Plan to create a free development environment to built and test with Copilot Studio.
+Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Developer Plan to create a free development environment to build and test with Copilot Studio.
 
-1. Sign up on the [Power Apps Developer Plan wesbite](https://aka.ms/PowerAppsDevPlan).
+1. Sign up on the [Power Apps Developer Plan website](https://aka.ms/PowerAppsDevPlan).
 
     - Enter your email address
     - Tick the checkbox
@@ -77,7 +77,7 @@ Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Develope
 
    ![Sign up for Power Apps Developer Plan](images/0.3_01_SignUp.png)
 
-1. After signing up for the Developer Plan, you'll be redirected to [Power Apps](https://make.powerapps.com/). The environment uses your name, for example **Adele Vances's environment**. If there's already an environment with that name, the developer new environment is named **Adele Vance's (1)** environment.
+1. After signing up for the Developer Plan, you'll be redirected to [Power Apps](https://make.powerapps.com/). The environment uses your name, for example **Adele Vance's environment**. If there's already an environment with that name, the developer new environment is named **Adele Vance's (1)** environment.
 
     Use this developer environment in Copilot Studio when completing the labs.
 
@@ -88,11 +88,11 @@ Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Develope
 
 ## Step 4: Create new SharePoint site
 
-A new SharePoint site needs to be created  which will be used in [Lesson 06 - Create a custom agent using the conversational creation experience with Copilot and grounding it with your data](https://github.com/microsoft/copilot-studio-for-beginners/blob/main/06-create-agent-from-conversation/README.md#62-add-an-internal-knolwedge-source-using-a-sharepoint-site---for-microsoft-365-licensed-users-with-sharepoint).
+A new SharePoint site needs to be created  which will be used in [Lesson 06 - Create a custom agent using the conversational creation experience with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md/#62-add-an-internal-knowledge-source-using-a-sharepoint-site).
 
 1. Select the waffle icon on the top left hand side of Microsoft Copilot Studio to view the menu. Select SharePoint from the menu.
 
-   ![Select ShraePoint](images/0.4_01_SelectSharePoint.png)
+   ![Select SharePoint](images/0.4_01_SelectSharePoint.png)
 
 1. SharePoint will load. Select **+ Create  site** to create a new SharePoint site.
 
@@ -124,7 +124,7 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
    ![Language and other options](images/0.4_07_LanguageOtherOptions.png)
 
-1. The SharePoint site will provision for the next few seconds. In the mean time, you can choose to add other users to your side by entering their email address in the **Add members** field. When completed, select **Finish**.
+1. The SharePoint site will provision for the next few seconds. In the mean time, you can choose to add other users to your site by entering their email address in the **Add members** field. When completed, select **Finish**.
 
    ![Select finish](images/0.4_08_SelectFinish.png)
 
@@ -136,7 +136,7 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
    We will use the **Devices** list for in [Lesson 07 - Add new topic with trigger and nodes](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
 
-   **Add new colum**
+   **Add new column**
 
    Scroll to the far right in the list and select the **+ Add column** button.  Choose the **hyperlink** type, enter **Image** for the column name, and select add.
 
