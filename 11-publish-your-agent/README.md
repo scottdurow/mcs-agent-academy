@@ -101,9 +101,9 @@ Now that all our work on the agent is done, we have to make sure all our work is
 
     This will open the publish pop-up - to confirm you really want to publish your agent.
 
-1. Select **Publish** to confirm publishing your agent.
-
     ![Publish confirmation](./assets/publish-popup.png)
+
+1. Select **Publish** to confirm publishing your agent.
 
     Now a message will show that your agent is publishing. You don't have to keep that popup open, you can also leave and you will get notified when the agent is published.
 
