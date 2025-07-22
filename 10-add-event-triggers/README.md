@@ -34,13 +34,13 @@ Success means building agents that initiate value - not just respond to it.
     - [10.2 Edit the Trigger](#102-edit-the-trigger)
     - [10.3 Create a tool for email acknowledgment](#103-create-a-tool-for-email-acknowledgment)
     - [10.4 Test the trigger](#104-test-the-trigger)
-- [Additional learning](#-additional-learning)
+- [Tactical Resources](#-tactical-resources)
 
 ## 🤔 What is an Event Trigger?
 
 An **Event Trigger** is a mechanism that allows your agent to act autonomously in response to external events, without requiring direct user input. Think of it as making your agent "watch" for specific events and automatically take action when those events occur.
 
-Unlike topic triggers which require users to type something to activate a conversation, event triggers activate based on things happening in your connected systems. E.g.:
+Unlike topic triggers, which require users to type something to activate a conversation, event triggers activate based on things happening in your connected systems. E.g.:
 
 - When a new file is created in SharePoint or OneDrive for Business
 - When a record is created in Dataverse
@@ -272,7 +272,7 @@ Before starting this lab, ensure you have:
 
 1. Select the **Sends a prompt to the specified copilot for processing** node
 
-1. In the **Body/message** field remove the Body content, **Press the forward slash key** (/) and select **Insert Expression**  
+1. In the **Body/message** field, remove the Body content, **Press the forward slash key** (/) and select **Insert Expression**  
    ![Insert expression for trigger](./assets/10_InsertExpressionForTrigger.png)
 
 1. Enter the following expression to provide the agent with specific details about the ticket:
@@ -304,7 +304,7 @@ Before starting this lab, ensure you have:
    - **Name**: Acknowledge SharePoint ticket
    - **Description**: This tool sends an email acknowledgement that a ticket has been received.
 
-7. Select **Customize** next to the the input parameters and configure as follows:
+7. Select **Customize** next to the input parameters and configure as follows:
 
    **To**:
 
@@ -346,9 +346,9 @@ Before starting this lab, ensure you have:
 
 🎉 **Congratulations!** You've successfully implemented event triggers with connector tools that enable your agent to operate autonomously, automatically sending email acknowledgments and processing support tickets without user intervention. Once your agent is published, it will act autonomously on your behalf.
 
-🚀 **Next up**: In our next lesson, you'll learn how to [publish your agent](/11-publish-your-agent/README.md) to Microsoft Teams and Microsoft 365 Copilot, making it available to your entire organization!
+🚀 **Next up**: In our next lesson, you'll learn how to [publish your agent](../11-publish-your-agent/README.md) to Microsoft Teams and Microsoft 365 Copilot, making it available to your entire organization!
 
-⏭️ [Move to **Publish your agent** lesson](/11-publish-your-agent/README.md)
+⏭️ [Move to **Publish your agent** lesson](../11-publish-your-agent/README.md)
 
 ## 📚 Tactical Resources
 
@@ -359,4 +359,3 @@ Ready to dive deeper into event triggers and autonomous agents? Check out these 
 - **Best Practices**: [Power Automate triggers introduction](https://learn.microsoft.com/en-us/power-automate/triggers-introduction?WT.mc_id=power-177340-scottdurow)
 - **Advanced Scenarios**: [Using Power Automate flows with agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow-create?WT.mc_id=power-177340-scottdurow)
 - **Security**: [Data loss prevention for Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention?WT.mc_id=power-177340-scottdurow)
-
