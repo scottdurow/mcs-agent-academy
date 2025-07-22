@@ -76,7 +76,26 @@ Different channels have different user experiences. When building an agent for m
 >
 > Henry Jammes shared an example of how to show a different adaptive card when the channel is Microsoft Teams. ([Link to example](https://github.com/pnp/powerplatform-snippets/blob/main/copilot-studio/multiple-topics-matched-topic/source/multiple-topics-matched.yaml#L40))
 
-⏭️ This is the end of the course! [Move back to the **course overview**](./../README.md).
+## 🧪 Lab 11: Publish your agent to Teams and Microsoft 365 Copilot
+
+We're now going to learn
+
+- [How to publish your agent](#111-publish-your-agent)
+- [Add the Teams and Microsoft 365 Copilot channel](#112-add-the-teams-and-microsoft-365-copilot-channel)
+
+We're going to continue on with the agent from earlier, and we're going to publish this agent.
+
+Let's begin!
+
+### 11.1 Publish your agent
+
+### 11.2 Add the Teams and Microsoft 365 Copilot channel
+
+✅ Mission Complete
+
+🎉 **Congratulations!** You've successfully published your agent and added it to Teams and Microsoft 365 Copilot! This also marks the end of the course! Congratulations on finishing this course! You are now a certified Agent Academy Recruit!
+
+⏭️ [Move back to the **course overview**](./../README.md).
 
 ## 📚 Tactical Resources
 
