@@ -83,15 +83,19 @@ We're now going to learn
 - [How to publish your agent](#111-publish-your-agent)
 - [Add the Teams and Microsoft 365 Copilot channel](#112-add-the-teams-and-microsoft-365-copilot-channel)
 
-We're going to continue on with the agent from earlier, and we're going to publish this agent.
+We're going to continue on with the agent from earlier, and we're going to publish this agent. After this - we will add the Teams and Microsoft 365 Copilot channel to the agent!
 
 Let's begin!
 
 ### 11.1 Publish your agent
 
+Now that all our work on the agent is done, we have to make sure all our work is available for the end users that are going to use our agent. To do this, we need to publish our agent. Publishing our agent ensures the latest updates we did to our agent is available for the people consuming the agent.
+
+In Copilot Studio, it is very easy to publish your agent.
+
 ### 11.2 Add the Teams and Microsoft 365 Copilot channel
 
-✅ Mission Complete
+## ✅ Mission Complete
 
 🎉 **Congratulations!** You've successfully published your agent and added it to Teams and Microsoft 365 Copilot! This also marks the end of the course! Congratulations on finishing this course! You are now a certified Agent Academy Recruit!
 
