@@ -272,7 +272,7 @@ Before starting this lab, ensure you have:
 
 1. Select the **Sends a prompt to the specified copilot for processing** node
 
-1. In the **Body/message** field, remove the Body content, **Press the forward slash key** (/) and select **Insert Expression**  
+1. In the **Body/message** field, remove the Body content, **press the forward slash key** (/) and select **Insert Expression**  
    ![Insert expression for trigger](./assets/10_InsertExpressionForTrigger.png)
 
 1. Enter the following expression to provide the agent with specific details about the ticket:
