@@ -366,13 +366,13 @@ Let's begin!
 
 1. **SharePoint list**
 
-    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md/#step-4-create-new-sharepoint-site).
 
-    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md/#step-4-create-new-sharepoint-site).
 
 1. **Contoso Helpdesk Copilot**
 
-    We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md).
+    We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](../06-create-agent-from-conversation/README.md).
 
 ### 9.1 Create an agent flow
 
@@ -476,7 +476,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Rename action](assets/9.1_15_RenameAction.png)
 
-1. In the **Site Address** field, select the **Site address** of the Contoso IT SharePoint site created in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+1. In the **Site Address** field, select the **Site address** of the Contoso IT SharePoint site created in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md/#step-4-create-new-sharepoint-site).
 
     ![Select SharePoint site address](assets/9.1_16_SelectSharePointSiteAddress.png)
 
@@ -1032,7 +1032,7 @@ Congratulations! 👏🏻 You've learnt how to build your agent flow and add it 
 
 This is the end of **Lab 09 - Add an agent flow for automation and enhance topic capabilities**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
-⏭️ [Move to **Add Event Triggers - Enable autonomous agent capabilities** lesson](/07-add-new-topic-with-trigger/README.md)
+⏭️ [Move to **Add Event Triggers - Enable autonomous agent capabilities** lesson](../10-add-event-triggers/README.md)
 
 ## 📚 Tactical Resources
 
