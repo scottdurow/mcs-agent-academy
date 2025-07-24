@@ -135,9 +135,27 @@ But - we only published the agent, we didn't add it to a channel yet, so lets fi
 
     ![Select add channel](./assets/add-channel.png)
 
-    It will take a little while until it's added.
+    It will take a little while until it's added. After it's added a green notification will appear on the top of the sidebar.
 
-1.
+    ![Channel added](./assets/channel-added.png)
+
+1. Select **See agent in Teams** to open a new tab
+
+    ![See agent in Teams](./assets/open-agent.png)
+
+1. Select **Add** to add the Contoso Helpdesk Agent to Teams.
+
+    ![Add agent to Teams](./assets/add-teams.png)
+
+    This should take a little while. After it should show the following screen:
+
+    ![Agent added successfully](./assets/teams-added.png)
+
+1. Select **Open** to open the agent in Teams.
+
+    This will open the agent in Teams as a Teams app
+
+    ![Agent open in Microsoft Teams](./assets/agent-teams-open.png)
 
 ## ✅ Mission Complete
 
