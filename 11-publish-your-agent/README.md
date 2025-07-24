@@ -82,14 +82,32 @@ Different channels have different user experiences. When building an agent for m
 
 ## 🧪 Lab 11: Publish your agent to Teams and Microsoft 365 Copilot
 
-We're now going to learn
+### 🎯 Use case
 
-- [How to publish your agent](#111-publish-your-agent)
-- [Add the Teams and Microsoft 365 Copilot channel](#112-add-the-teams-and-microsoft-365-copilot-channel)
+Your Contoso IT Help Desk agent is now fully configured with powerful capabilities—it can access SharePoint knowledge sources, create support tickets, send proactive notifications, and respond intelligently to user queries. However, all these features are currently only available in the development environment where you built them.
 
-We're going to continue on with the agent from earlier, and we're going to publish the agent. After publishing, we add the Teams and Microsoft 365 Copilot channel to the agent!
+**The Challenge:** End users can't benefit from your agent's capabilities until it's properly published and made accessible through the channels where they actually work.
 
-Let's begin!
+**The Solution:** Publishing your agent ensures that the latest version—with all your recent updates, new topics, enhanced knowledge sources, and configured flows—is available to real users. Without publishing, users would still interact with an older version of your agent that might be missing critical functionality.
+
+Adding the Teams and Microsoft 365 Copilot channel is equally crucial because:
+
+- **Teams Integration**: Your organization's employees spend most of their day in Microsoft Teams for collaboration, meetings, and communication. By adding your agent to Teams, users can get IT support without leaving their primary work environment.
+
+- **Microsoft 365 Copilot**: Users can access your specialized IT help desk agent directly within their Microsoft 365 Copilot experience, making it seamlessly integrated into their daily workflow across Office applications.
+
+- **Centralized Access**: Instead of remembering separate websites or applications, users can access IT support through the platforms they're already using, reducing friction and increasing adoption.
+
+This mission transforms your development work into a production-ready solution that delivers real value to your organization's end users.
+
+### Prerequisites
+
+Before starting this lab, ensure you have:
+
+- ✅ Completed previous labs and have a fully configured Contoso Helpdesk Agent
+- ✅ Your agent has been tested and is ready for production use
+- ✅ Permissions in your Copilot Studio environment to publish agents
+- ✅ Access to Microsoft Teams in your organization
 
 ### 11.1 Publish your agent
 
@@ -101,13 +119,13 @@ Now that all our work on the agent is done, we have to make sure all our work is
 
     ![Publish Agent overview](./assets/publish.png)
 
-1. Select the **Publish** button in your agent.
+1. Select the **Publish** button in your agent
 
     It opens the publish pop-up - to confirm you really want to publish your agent.
 
     ![Publish confirmation](./assets/publish-popup.png)
 
-1. Select **Publish** to confirm publishing your agent.
+1. Select **Publish** to confirm publishing your agent
 
     Now a message shows that your agent is publishing. You don't have to keep that popup open. You get notified when the agent is published.
 
@@ -121,17 +139,17 @@ But - we only published the agent, we didn't add it to a channel yet, so lets fi
 
 ### 11.2 Add the Teams and Microsoft 365 Copilot channel
 
-1. To add the Teams and Microsoft 365 Copilot channel to our agent, we need to select **Channel** in the top navigation of the agent.
+1. To add the Teams and Microsoft 365 Copilot channel to our agent, we need to select **Channel** in the top navigation of the agent
 
     ![Channels tab](./assets/channels-tab.png)
 
     Here we can see all the channels we can add to this agent.
 
-1. Select **Teams and Microsoft 365**.
+1. Select **Teams and Microsoft 365**
 
     ![Select Teams and Microsoft 365](./assets/teams-m365-copilot.png)
 
-1. Select **Add channel** to complete the wizard and add the channel to the agent.
+1. Select **Add channel** to complete the wizard and add the channel to the agent
 
     ![Select add channel](./assets/add-channel.png)
 
@@ -143,7 +161,7 @@ But - we only published the agent, we didn't add it to a channel yet, so lets fi
 
     ![See agent in Teams](./assets/open-agent.png)
 
-1. Select **Add** to add the Contoso Helpdesk Agent to Teams.
+1. Select **Add** to add the Contoso Helpdesk Agent to Teams
 
     ![Add agent to Teams](./assets/add-teams.png)
 
@@ -151,11 +169,51 @@ But - we only published the agent, we didn't add it to a channel yet, so lets fi
 
     ![Agent added successfully](./assets/teams-added.png)
 
-1. Select **Open** to open the agent in Teams.
+1. Select **Open** to open the agent in Teams
 
     This will open the agent in Teams as a Teams app
 
     ![Agent open in Microsoft Teams](./assets/agent-teams-open.png)
+
+Now we have published the agent to work for you in Microsoft Teams, but you might want to make this available for more people.
+
+### 11.3 Make the agent available for all users in the tenant
+
+1. Close the browser tab where the Contoso Helpdesk Agent is opened
+
+    This should bring you back to Copilot Studio where the Teams and Microsoft 365 Copilot side panel is still open. We only opened the agent in Teams now, but we can do a lot more here. We can edit the details of the agent, we can deploy the agent to more users and more.
+
+1. Select **Edit details**
+
+    ![Edit details](./assets/m365-teams-edit-details.png)
+
+    This will open a pane where we can change a bunch of details and settings of the agent. We can change basic details like the icon, the background color of the icon and the descriptions. We can also change Teams settings (for instance allowing a user to add the agent to a team, or allowing to use this agent in group and meeting chats) here. When you select *more*, you can also change developer details like the developer name, the website, the privacy statement and the terms of use.
+
+    ![Edit details pane](./assets/edit-details.png)
+
+1. Select **Cancel** to close the Edit details pane
+
+1. Select **Availability options**
+
+    ![Availability options](./assets/m365-teams-availability-options.png)
+
+    This will open the availability options pane, where you can copy a link to send to users to use this agent (be aware, you need to share the agent with the user too) and you can download a file to add your agent to the Microsoft Teams or Microsoft 365 store. To show the agent in the store, you have other options too: you can show it to your teammates and shared users (to show in the *Built with Power Platform* section) or you can show it to everyone in your org (this needs administrator approval).
+
+1. Select **Show to everyone in my org**
+
+    ![Availability options](./assets/availability-options.png)
+
+1. Select **Submit for admin approval**
+
+    ![Submit for approval](./assets/submit-for-approval.png)
+
+    Now, your administrator has to approve your agent submission. They can do that by going to the Teams Admin Center and look up the Contoso Helpdesk Agent in Apps. In the screenshot you can see what the administrator would see in Teams Admin Center.
+
+    ![Teams app publish](./assets/teams-apps-publish.png)
+
+    When the administrator has published the agent submission, you will be able to refresh Copilot Studio and you should see the *available in app store* banner in the availability options.
+
+    ![Available in App Store](./assets/available-in-app-store.png)
 
 ## ✅ Mission Complete
 
