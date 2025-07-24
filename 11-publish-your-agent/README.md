@@ -29,16 +29,20 @@ Make sure to always hit the publish button when you want to push the updates to 
 
 ## ⚙️ Configure channels
 
-Channels are places where your agent appears. The connection steps are different for each channel. For more information, see the article for the desired channels, in the following list:
+Channels determine where your users can access and interact with your agent. After you publish your agent, you can make it available in multiple channels. Each channel may display your agent's content differently.
 
-- Teams and Microsoft 365 Copilot ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams))
-- SharePoint ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-sharepoint))
-- Demo Website ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-web-channels))
-- Custom Website ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-web-channels))
-- Mobile App ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-custom-application))
-- Facebook ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-facebook))
-- Power Pages ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-power-pages))
-- Azure Bot Service channels ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels)), which include Skype, Cortana, Slack, Telegram, Twilio, Line, Kik, GroupMe, Direct Line Speech & Email.
+You can add your agent to the following channels:
+
+- **Microsoft Teams and Microsoft 365 Copilot** - Make your agent available in Teams chats and meetings, and within Microsoft 365 Copilot experiences ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams))
+- **Demo website** - Test your agent on a demo website provided by Copilot Studio ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-web-channels))
+- **Custom website** - Embed your agent directly into your own website ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-web-channels))
+- **Mobile app** - Integrate your agent into a custom mobile application ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-custom-application))
+- **SharePoint** - Add your agent to SharePoint sites for document and site assistance ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-sharepoint))
+- **Facebook Messenger** - Connect with users through Facebook's messaging platform ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-facebook))
+- **Power Pages** - Integrate your agent into Power Pages websites ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-power-pages))
+- **Azure Bot Service channels** - Access additional channels including Slack, Telegram, Twilio SMS, and more ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels))
+
+To add a channel, navigate to the **Channels** tab in your agent and select the channel you want to configure. Each channel has specific setup requirements and may require additional authentication or configuration steps.
 
 ![Channels tab in agent](./assets/channels.png)
 
@@ -121,7 +125,19 @@ But - we only published the agent, we didn't add it to a channel yet, so lets fi
 
     ![Channels tab](./assets/channels-tab.png)
 
-...
+    Here we can see all the channels we can add to this agent.
+
+1. Select **Teams and Microsoft 365**.
+
+    ![Select Teams and Microsoft 365](./assets/teams-m365-copilot.png)
+
+1. Select **Add channel** to complete the wizard and add the channel to the agent.
+
+    ![Select add channel](./assets/add-channel.png)
+
+    It will take a little while until it's added.
+
+1.
 
 ## ✅ Mission Complete
 
