@@ -1,0 +1,22 @@
+site_name: MCS Agent Academy (Recruit)
+site_url: https://aprildunnam.github.io/mcs-agent-academy-recruit/
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: indigo
+
+nav:
+  - Course Setup: 00-course-setup/README.md
+  - Introduction to Agents: 01-introduction-to-agents/README.md
+  - Copilot Studio Fundamentals: 02-copilot-studio-fundamentals/README.md
+  - Create Declarative Agent: 03-create-a-declarative-agent-for-M365Copilot/README.md
+  - Create a Solution: 04-creating-a-solution/README.md
+  - Use Prebuilt Agents: 05-using-prebuilt-agents/README.md
+  - Create Agent from Conversation: 06-create-agent-from-conversation/README.md
+  - Add New Topic with Trigger: 07-add-new-topic-with-trigger/README.md
+  - Add Adaptive Card: 08-add-adaptive-card/README.md
+  - Add Agent Flow: 09-add-an-agent-flow/README.md
+  - Add Event Triggers: 10-add-event-triggers/README.md
+  - Publish Your Agent: 11-publish-your-agent/README.md
+  - Understanding Licensing: 12-understanding-licensing/README.md
