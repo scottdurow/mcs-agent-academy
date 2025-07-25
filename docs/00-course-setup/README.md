@@ -165,10 +165,10 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
         |Device  |URL  |
         |---------|---------|
-        |Surface Laptop 13     | <https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1>        |
-        |Surface Laptop 15     | <https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1>        |
-        |Surface Pro    | <https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1>        |
-        |Surface Studio    | <https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1>        |
+        |Surface Laptop 13     | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1)        |
+        |Surface Laptop 15     | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1)        |
+        |Surface Pro    | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1)        |
+        |Surface Studio    | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1)        |
 
 ---
 
