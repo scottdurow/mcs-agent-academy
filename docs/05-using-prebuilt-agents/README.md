@@ -74,7 +74,7 @@ Now that the agent is created, let’s tailor it to your organization:
 ![Add Knowledge](./images/knowledge.png)
 1. Select **Public websites**
 ![Add a public website](./images/public-website.png)
-1. In the text input, paste **https://european-union.europa.eu/** and select **Add**
+1. In the text input, paste **<https://european-union.europa.eu/>** and select **Add**
 ![Add the website](./images/paste-add.png)
 1. Select **Add to agent**
 ![Add to Agent](./images/add-to-agent.png)
@@ -109,6 +109,6 @@ You've now successfully:
 > **🧳 Bonus Objective**: Try grounding the Safe Travels agent with a SharePoint site or FAQ file to make it more relevant to your company’s travel policies.
 
 Your next mission will focus on
-[creating a custom agent from scratch](/06-create-agent-from-conversation/README.md).
+[creating a custom agent from scratch](../06-create-agent-from-conversation/README.md).
 
 ![mcs-agent-academy-recruit-05](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/05-using-prebuilt-agents)

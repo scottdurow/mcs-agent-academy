@@ -47,6 +47,7 @@ While Microsoft 365 Copilot provides general AI assistance across Office apps, y
   - For example: "When someone submits an expense, send it for approval, update the finance tracker, and notify the manager." A custom agent can handle every step, triggered by a single command or event.  
 - **You need a contextual, in-tool experience**  
   - Imagine a New Hire Onboarding agent in Teams that guides HR staff through every policy, sends necessary forms, and schedules orientation meetings—right inside your existing collaboration platform.  
+
 ---
 
 ## Four Building Blocks of an Agent
@@ -107,6 +108,7 @@ Below, we’ll define each building block and show how they work together to mak
    - Copilot Studio can integrate with the Power Platform or any HTTP-based endpoint.
 
 > **Example:** A "Expense Helper" agent could:  
+>
 > 1. Listen for a "Submit Expense" request.  
 > 2. Grab the user’s expense details from a form.  
 > 3. Use an "Add to SharePoint List" action to store the data.  
@@ -170,6 +172,7 @@ When you assemble **Knowledge**, **Tools**, **Topics**, and **Instructions**, Co
 Under the hood, the orchestrator uses a **generative planning** approach: it decides which steps to take, in what order, to fulfill a user request. If an action fails (for example, an email can’t be sent), the agent follows your exception-handling guidelines (ask a clarifying question or report the error). Because the LLM adapts to conversation context, the agent can maintain memory over multiple turns and incorporate new information as the conversation unfolds.
 
 > **Visual Flow Example:**  
+>
 > 1. **User:** "Show me my PTO balance."
 > 2. **AI (Topics):** Matches "Check PTO Balance" topic.  
 > 3. **AI (Instructions):** Uses a friendly, concise tone.  
@@ -190,6 +193,6 @@ You’ve successfully completed your fundamentals briefing. You’ve now learned
 
 With these components in place, you can build a basic agent that answers questions and executes simple workflows. In the next lesson, we’ll walk through a step-by-step tutorial to create a "Service Desk" agent—from connecting your first knowledge source to defining a topic and wiring up an action.
 
-Up next: You'll build your [first declarative agent for M365 Copilot](/03-create-a-declarative-agent-for-M365Copilot/README.md).
+Up next: You'll build your [first declarative agent for M365 Copilot](../03-create-a-declarative-agent-for-M365Copilot/README.md).
 
 ![mcs-agent-academy-recruit-02](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/02-copilot-studio-fundamentals)

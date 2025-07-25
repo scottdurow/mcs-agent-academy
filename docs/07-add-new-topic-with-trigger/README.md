@@ -753,7 +753,7 @@ Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how
 
 This is the end of **Lab 07 - Add a new topic with conversation nodes**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
-⏭️ [Move to **Enhance user interactions with Adaptive Cards** lesson](/08-add-adaptive-card/README.md)
+⏭️ [Move to **Enhance user interactions with Adaptive Cards** lesson](../08-add-adaptive-card/README.md)
 
 ## 📚 Tactical Resources
 

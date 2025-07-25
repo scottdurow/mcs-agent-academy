@@ -116,8 +116,9 @@ You’ve now completed your introduction to agents and foundational AI concepts.
 1. **Conversational vs. Autonomous**  
    - **Conversational:** Focus on dialogue flow and preserving context (e.g., “Session Memory”).  
    - **Autonomous:** Add “Action Blocks” that let the agent call out to external tools or services.
+
 ---
-Next up, you'll explore the [fundamentals of Copilot Studio](/02-copilot-studio-fundamentals/README.md)!
+Next up, you'll explore the [fundamentals of Copilot Studio](../02-copilot-studio-fundamentals/README.md)!
 
 Stay sharp, Recruit - your AI journey is just beginning!
 

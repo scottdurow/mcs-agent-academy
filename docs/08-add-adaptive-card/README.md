@@ -432,7 +432,7 @@ Congratulations! 👏🏻 You've learnt how to add adaptive cards using Power Fx
 
 This is the end of **Lab 08 - Enhance user interactions with Adaptive Cards**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
-⏭️ [Move to **Add an agent flow to your Topic for automation** lesson](/09-add-an-agent-flow/README.md)
+⏭️ [Move to **Add an agent flow to your Topic for automation** lesson](../09-add-an-agent-flow/README.md)
 
 ## 📚 Tactical Resources
 
