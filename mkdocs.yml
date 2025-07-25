@@ -9,9 +9,9 @@ theme:
     accent: indigo
   features:
     - navigation.expand
-    - navigation.indexes
     - navigation.instant
     - navigation.path
+    - navigation.prune
     - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
@@ -19,23 +19,22 @@ theme:
     - navigation.tracking
     - content.tabs.link
     - toc.follow
-    - toc.integrate
 nav:
   - Home: index.md
   - Recruit:
       - Welcome: recruit.md
-      - Course Setup: 00-course-setup/README.md
-      - Introduction to Agents: 01-introduction-to-agents/README.md
-      - Copilot Studio Fundamentals: 02-copilot-studio-fundamentals/README.md
-      - Create Declarative Agent: 03-create-a-declarative-agent-for-M365Copilot/README.md
-      - Create a Solution: 04-creating-a-solution/README.md
-      - Use Prebuilt Agents: 05-using-prebuilt-agents/README.md
-      - Create Agent from Conversation: 06-create-agent-from-conversation/README.md
-      - Add New Topic with Trigger: 07-add-new-topic-with-trigger/README.md
-      - Add Adaptive Card: 08-add-adaptive-card/README.md
-      - Add Agent Flow: 09-add-an-agent-flow/README.md
-      - Add Event Triggers: 10-add-event-triggers/README.md
-      - Publish Your Agent: 11-publish-your-agent/README.md
-      - Understanding Licensing: 12-understanding-licensing/README.md
+      - 00-Course Setup: 00-course-setup/README.md
+      - 01-Introduction to Agents: 01-introduction-to-agents/README.md
+      - 02-Copilot Studio Fundamentals: 02-copilot-studio-fundamentals/README.md
+      - 03-Create Declarative Agent: 03-create-a-declarative-agent-for-M365Copilot/README.md
+      - 04-Create a Solution: 04-creating-a-solution/README.md
+      - 05-Use Prebuilt Agents: 05-using-prebuilt-agents/README.md
+      - 06-Create Agent from Conversation: 06-create-agent-from-conversation/README.md
+      - 07-Add New Topic with Trigger: 07-add-new-topic-with-trigger/README.md
+      - 08-Add Adaptive Card: 08-add-adaptive-card/README.md
+      - 09-Add Agent Flow: 09-add-an-agent-flow/README.md
+      - 10-Add Event Triggers: 10-add-event-triggers/README.md
+      - 11-Publish Your Agent: 11-publish-your-agent/README.md
+      - 12-Understanding Licensing: 12-understanding-licensing/README.md
   - Operative (Coming Soon): operative.md
   - Commander (Coming Soon): commander.md
