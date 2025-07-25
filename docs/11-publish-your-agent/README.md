@@ -16,14 +16,11 @@ Let’s launch your agent into action.
 
 📖 This lesson covers:
 
-- [🚀 Publish an agent](#-publish-an-agent)
-- [⚙️ Configure channels](#️-configure-channels)
-- [📺 Channel experiences](#-channel-experiences)
-- [🧪 Lab 11: Publish your agent to Teams and Microsoft 365 Copilot](#-lab-11-publish-your-agent-to-teams-and-microsoft-365-copilot)
-  - [11.1 Publish your agent](#111-publish-your-agent)
-  - [11.2 Add the Teams and Microsoft 365 Copilot channel](#112-add-the-teams-and-microsoft-365-copilot-channel)
-  - [11.3 Make the agent available for all users in the tenant](#113-make-the-agent-available-for-all-users-in-the-tenant)
-- [📚 Tactical Resources](#-tactical-resources)
+1. Why it's important to publish your agent
+1. What happens when you publish your agent
+1. How to add a channel (Microsoft Teams & Microsoft 365 Copilot)
+1. How to add the agent in Microsoft Teams
+1. How to make the agent available in Microsoft Teams for your whole organization
 
 ## 🚀 Publish an agent
 
