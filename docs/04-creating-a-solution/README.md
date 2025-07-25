@@ -14,19 +14,19 @@ Let’s pack up.
 
 ## 🔎 Objectives
 
-- [Solution? What's that?](#️-solution-whats-that)
-- [Why should I use a Solution for my agent?](#-why-should-i-use-a-solution-for-my-agent)
-- [Understanding Solution Publishers](#-understanding-solution-publishers)
-  - [Why is it important?](#-why-is-it-important)
-  - [Example](#-example)
-- [Power Platform Solution lifecycle](#-power-platform-solution-lifecycle)
-  - [Example](#-example-1)
-- [Lab 04: Create a new Solution](#-lab-04-create-a-new-solution)
-  - [Prerequisites](#prerequisites)
-  - [4.1 Create a Solution publisher](#41-create-a-solution-publisher)
-  - [4.2 Create a new Solution](#42-create-a-new-solution)
-- [Mission Complete](#-mission-complete)
-- [Tactical Resources](#-tactical-resources)
+- [Solution? What's that?](./#solution-whats-that)
+- [Why should I use a Solution for my agent?](./#why-should-i-use-a-solution-for-my-agent)
+- [Understanding Solution Publishers](./#understanding-solution-publishers)
+  - [Why is it important?](./#why-is-it-important)
+  - [Example](./#example)
+- [Power Platform Solution lifecycle](./#power-platform-solution-lifecycle)
+  - [Example](./#example_1)
+- [Lab 04: Create a new Solution](./#lab-04-create-a-new-solution)
+  - [Prerequisites](./#prerequisites)
+  - [4.1 Create a Solution publisher](./#41-create-a-solution-publisher)
+  - [4.2 Create a new Solution](./#42-create-a-new-solution)
+- [Mission Complete](./#mission-complete)
+- [Tactical Resources](./#tactical-resources)
 
 ## 🕵🏻‍♀️ Solution? What's that?
 
@@ -147,8 +147,8 @@ Imagine you're building an IT helpdesk agent to help employees with issues such 
 
 We're now going to learn
 
-- [How to create a Solution publisher](#41-create-a-solution-publisher)
-- [How to create a Solution](#42-create-a-new-solution)
+- [How to create a Solution publisher](./#41-create-a-solution-publisher)
+- [How to create a Solution](./#42-create-a-new-solution)
 
 We're going to stick with the example from earlier, where we're going to create a solution in the dedicated Copilot Studio environment to build our IT helpdesk agent in.
 

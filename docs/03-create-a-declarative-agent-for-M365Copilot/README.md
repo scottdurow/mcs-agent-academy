@@ -14,20 +14,20 @@ Let’s go.
 
 ## 🔎 Objectives
 
-- [What is a declarative agent for Microsoft 365 Copilot?](#️-what-is-a-declarative-agent-for-microsoft-365-copilot)
-- [Why would I use Microsoft Copilot Studio to build a declarative agent?](#-why-would-i-use-microsoft-copilot-studio-to-build-a-declarative-agent)
-  - [Feature comparison](#feature-comparison)
-  - [Extending Microsoft 365 Copilot with declarative agents built in Copilot Studio](#extending-microsoft-365-copilot-with-declarative-agents-built-in-copilot-studio)
-- [Lab 03: Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](#-lab-03-build-a-declarative-agent-in-microsoft-copilot-studio-for-microsoft-365-copilot)
-  - [Understanding Business-to-Employee (B2E)](#-understanding-business-to-employee-b2e)
-  - [Use case scenario](#-use-case-scenario)
-  - [Prerequisites](#prerequisites)
-  - [3.1 Create a declarative agent](#31-create-a-declarative-agent)
-  - [3.2 Create and add a prompt for your declarative agent](#32-create-and-add-a-prompt-for-your-declarative-agent)
-  - [3.3 Update instructions and test your declarative agent](#33-update-instructions-and-test-your-declarative-agent)
-  - [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
-- [Mission Complete](#-mission-complete)
-- [Tactical Resources](#-tactical-resources)
+- [What is a declarative agent for Microsoft 365 Copilot?](./#what-is-a-declarative-agent-for-microsoft-365-copilot)
+- [Why would I use Microsoft Copilot Studio to build a declarative agent?](./#why-would-i-use-microsoft-copilot-studio-to-build-a-declarative-agent)
+  - [Feature comparison](./#feature-comparison)
+  - [Extending Microsoft 365 Copilot with declarative agents built in Copilot Studio](./#extending-microsoft-365-copilot-with-declarative-agents-built-in-copilot-studio)
+- [Lab 03: Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](./#lab-03-build-a-declarative-agent-in-microsoft-copilot-studio-for-microsoft-365-copilot)
+  - [Understanding Business-to-Employee (B2E)](./#understanding-business-to-employee-b2e)
+  - [Use case scenario](./#use-case-scenario)
+  - [Prerequisites](./#prerequisites)
+  - [3.1 Create a declarative agent](./#31-create-a-declarative-agent)
+  - [3.2 Create and add a prompt for your declarative agent](./#32-create-and-add-a-prompt-for-your-declarative-agent)
+  - [3.3 Update instructions and test your declarative agent](./#33-update-instructions-and-test-your-declarative-agent)
+  - [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](./#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
+- [Mission Complete](./#mission-complete)
+- [Tactical Resources](./#tactical-resources)
 
 ## 🕵🏻‍♀️ What is a declarative agent for Microsoft 365 Copilot?
 
@@ -95,10 +95,10 @@ In summary, declarative agents in Microsoft Copilot Studio allow customization o
 
 We'll next learn how to build a declarative agent for a "Business-to-Employee" use case which will act as an **IT helpdesk agent**.
 
-- [3.1 Create a declarative agent](#31-create-a-declarative-agent)
-- [3.2 Create and add a prompt for your declarative agent](#32-create-and-add-a-prompt-for-your-declarative-agent)
-- [3.3 Update instructions and test your declarative agent](#33-update-instructions-and-test-your-declarative-agent)
-- [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
+- [3.1 Create a declarative agent](./#31-create-a-declarative-agent)
+- [3.2 Create and add a prompt for your declarative agent](./#32-create-and-add-a-prompt-for-your-declarative-agent)
+- [3.3 Update instructions and test your declarative agent](./#33-update-instructions-and-test-your-declarative-agent)
+- [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](./#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
 
 > This lab will outline steps to add a Prompt as a tool. The following lessons will dive into adding knowledge sources and adding other tools available. Keeping it simple for your learning 😊
 > You do need a Microsoft 365 Copilot user license to publish your declarative agent built in Copilot Studio to Microsoft 365 Copilot.

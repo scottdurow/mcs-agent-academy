@@ -19,6 +19,7 @@ theme:
     - navigation.tracking
     - content.tabs.link
     - toc.follow
+    - content.code.copy
 nav:
   - Home: index.md
   - Recruit:
@@ -40,3 +41,11 @@ nav:
   - Commander (Coming Soon): commander.md
 repo_url: https://github.com/microsoft/mcs-agent-academy-recruit
 repo_name: microsoft/mcs-agent-academy-recruit
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
