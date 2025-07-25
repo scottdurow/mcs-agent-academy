@@ -163,7 +163,7 @@ But - we only published the agent, we didn't add it to a channel yet, so lets fi
 
 1. Select **See agent in Teams** to open a new tab
 
-    ![See agent in Teams](./assets/open-agent.png)
+    ![See agent in Teams](./assets/see-agent-teams.png)
 
 1. Select **Add** to add the Contoso Helpdesk Agent to Teams
 
@@ -213,11 +213,17 @@ Now we have published the agent to work for you in Microsoft Teams, but you migh
 
     Now, your administrator has to approve your agent submission. They can do that by going to the Teams Admin Center and look up the Contoso Helpdesk Agent in Apps. In the screenshot you can see what the administrator would see in Teams Admin Center.
 
+    ![Teams app pending approval](./assets/pending-approval.png)
+
+    The administrator has to select the Contoso Helpdesk Agent and select *Publish* to publish the Contoso Helpdesk Agent to everyone.
+
     ![Teams app publish](./assets/teams-apps-publish.png)
 
     When the administrator has published the agent submission, you will be able to refresh Copilot Studio and you should see the *available in app store* banner in the availability options.
 
     ![Available in App Store](./assets/available-in-app-store.png)
+
+There are even more possibilities here. Your admin can change the global setup policy and auto install the Contoso Helpdesk Agent for everyone in the tenant. On top of that - you are able to pin the Contoso Helpdesk Agent to the left rail so that everyone has easy access to it.
 
 ## ✅ Mission Complete
 
