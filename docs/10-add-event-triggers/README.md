@@ -16,27 +16,11 @@ Success means building agents that initiate value - not just respond to it.
 
 📖 This lesson will cover:
 
-- [What is an Event Trigger?](#-what-is-an-event-trigger)
-  - [Why Event Triggers matter in autonomous agents](#why-event-triggers-matter-in-autonomous-agents)
-- [How do Event Triggers work?](#️-how-do-event-triggers-work)
-  - [The trigger workflow](#the-trigger-workflow)
-  - [Event vs Topic triggers](#event-vs-topic-triggers)
-- [Understanding trigger payloads](#-understanding-trigger-payloads)
-  - [Default vs custom payloads](#default-vs-custom-payloads)
-  - [Agent instructions vs custom payload instructions](#agent-instructions-vs-custom-payload-instructions)
-- [Common Event Trigger scenarios](#-common-event-trigger-scenarios)
-- [Publishing and authentication considerations](#️-publishing-and-authentication-considerations)
-  - [Maker authentication](#maker-authentication)
-  - [Data protection best practices](#data-protection-best-practices)
-- [Troubleshooting and limitations](#️-troubleshooting-and-limitations)
-- [Lab 10 - Add Event Triggers for autonomous agent behavior](#-lab-10---add-event-triggers-for-autonomous-agent-behavior)
-  - [Use case](#-use-case)
-  - [Prerequisites](#prerequisites)
-  - [10.1 Enable Generative AI and create a SharePoint item creation trigger](#101-enable-generative-ai-and-create-a-sharepoint-item-creation-trigger)
-  - [10.2 Edit the Trigger](#102-edit-the-trigger)
-  - [10.3 Create a tool for email acknowledgment](#103-create-a-tool-for-email-acknowledgment)
-  - [10.4 Test the trigger](#104-test-the-trigger)
-- [Tactical Resources](#-tactical-resources)
+- Understanding Event Triggers and how they enable autonomous agent behavior
+- Learning the difference between event triggers and topic triggers, including trigger workflows and payloads
+- Exploring common Event Trigger scenarios
+- Understanding authentication, security, and publishing considerations for event-driven agents
+- Building an autonomous IT Help Desk agent that responds to SharePoint events and sends email acknowledgments
 
 ## 🤔 What is an Event Trigger?
 
