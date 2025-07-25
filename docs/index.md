@@ -1,3 +1,8 @@
+---
+hide:
+- navigation
+---
+
 # Copilot Studio Agent Academy
 
 ![Copilot Studio Agent Academy Recruit](./images/mcs-agent-academy-recruit-banner.png)
