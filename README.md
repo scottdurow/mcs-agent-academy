@@ -69,9 +69,9 @@ The **Copilot Studio Agent Academy** is a multi-phase training program designed 
 
 | Rank             | Level | Visual | Description                                                                 |
 |------------------|:-----:|--------|-----------------------------------------------------------------------------|
-| 🟢 **Recruit**     | •     | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png)     | Learn the fundamentals and get hands-on with Copilot Studio basics — that’s **this course**. |
-| 🔵 **Operative**   | ••    | ![Operative Badge](./images/mcs-agent-academy-operative-badge.png) | Deepen your skills with orchestration, adaptive UX, and connected systems — coming soon in **Volume 2**. |
-| 🟡 **Commander**   | •••   | ![Commander Badge](./images/mcs-agent-academy-commander-badge.png) | Master autonomy, exception handling, security and scalable deployment — taught in the **final volume** of the academy. |
+| 🟢 **Recruit**     | •     | ![Recruit Badge](./docs/images/mcs-agent-academy-recruit-badge.png)     | Learn the fundamentals and get hands-on with Copilot Studio basics — that’s **this course**. |
+| 🔵 **Operative**   | ••    | ![Operative Badge](./docs/images/mcs-agent-academy-operative-badge.png) | Deepen your skills with orchestration, adaptive UX, and connected systems — coming soon in **Volume 2**. |
+| 🟡 **Commander**   | •••   | ![Commander Badge](./docs/images/mcs-agent-academy-commander-badge.png) | Master autonomy, exception handling, security and scalable deployment — taught in the **final volume** of the academy. |
 
 > ✅ Completing this curriculum earns you the **Recruit** badge.  
 > 🔓 **Operative** and **Commander** will be unlocked in future phases.
