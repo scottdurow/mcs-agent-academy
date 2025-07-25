@@ -1,4 +1,4 @@
-# 🚨 Mission 00: Course Setup  
+# 🚨 Mission 00: Course Setup
 
 ## 🕵️‍♂️ CODENAME: `OPERATION DEPLOYMENT READY`
 

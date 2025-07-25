@@ -23,6 +23,7 @@ theme:
 nav:
   - Home: index.md
   - Recruit:
+      - Welcome: recruit.md
       - Course Setup: 00-course-setup/README.md
       - Introduction to Agents: 01-introduction-to-agents/README.md
       - Copilot Studio Fundamentals: 02-copilot-studio-fundamentals/README.md
@@ -36,3 +37,5 @@ nav:
       - Add Event Triggers: 10-add-event-triggers/README.md
       - Publish Your Agent: 11-publish-your-agent/README.md
       - Understanding Licensing: 12-understanding-licensing/README.md
+  - Operative (Coming Soon): operative.md
+  - Commander (Coming Soon): commander.md
