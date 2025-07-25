@@ -139,7 +139,7 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
 ### Use Devices SharePoint list
 
-We will use the **Devices** list for in [Lesson 07 - Add new topic with trigger and nodes](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
+We will use the **Devices** list for in [Lesson 07 - Add new topic with trigger and nodes](../07-add-new-topic-with-trigger/README.md#73-add-node-add-a-tool-using-a-connector).
 
 ### Add new column
 
