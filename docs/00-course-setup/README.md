@@ -137,15 +137,15 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
 1. This template provides pages with sample data about various IT policies and two sample lists (Tickets and Devices).
 
-**Use Devices SharePoint list**
+### Use Devices SharePoint list
 
 We will use the **Devices** list for in [Lesson 07 - Add new topic with trigger and nodes](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
 
-**Add new column**
+### Add new column
 
 Scroll to the far right in the list and select the **+ Add column** button.  Choose the **hyperlink** type, enter **Image** for the column name, and select add.
 
-**Create sample data in Devices SharePoint list**
+### Create sample data in Devices SharePoint list
 
 You need to make sure you fill in this list with at least 4 sample data items and add one additional column to this list.  
 
