@@ -545,7 +545,7 @@ Your agent is now active duty—ready to assist, troubleshoot, and serve interna
 
 This is the end of **Lab 03 - Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot**, select the link below to move to the next lesson.
 
-⏭️ [Move to **Creating a new Solution** lesson](/04-creating-a-solution/README.md)
+⏭️ [Move to **Creating a new Solution** lesson](../04-creating-a-solution/README.md)
 
 Until next time, stay sharp. The future of enterprise work runs through agents—and now you know how to build one.
 

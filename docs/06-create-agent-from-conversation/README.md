@@ -493,7 +493,7 @@ Congratulations! 👏🏻 You've learnt how to use natural language to create yo
 
 This is the end of **Lab 06 - Create an agent with Copilot**, select the link below to move to the next lesson. Your custom agent created in this lab will be used in the next lesson's lab.
 
-⏭️ [Move to **Add a new Topic with trigger** lesson](/07-add-new-topic-with-trigger/README.md)
+⏭️ [Move to **Add a new Topic with trigger** lesson](../07-add-new-topic-with-trigger/README.md)
 
 Welcome to the elite. You now know how to forge digital agents that speak your language, reference your data, and support your team. Keep going—your mission’s just getting started.
 

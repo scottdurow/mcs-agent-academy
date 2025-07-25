@@ -61,9 +61,11 @@ Once you have your Microsoft 365 Tenant, you need to get access to Copilot Studi
 ![Microsoft 365 Signup](./images/mcs-start-trial.png)
 
 > **Trial Notes:**  
+>
 > 1. The free trial provides **full Copilot Studio capabilities**.
 > 1. You will receive email notifications about your trial expiration. You can extend the trial in 30-day increments (up to 90 days of agent runtime).  
 > 1. If your tenant administrator disabled self-service sign-up, you’ll see an error—contact your Microsoft 365 admin to re-enable it.
+>
 ---
 
 ## Step 3: Create new developer environment
@@ -163,10 +165,10 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
         |Device  |URL  |
         |---------|---------|
-        |Surface Laptop 13     | https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1        |
-        |Surface Laptop 15     | https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1        |
-        |Surface Pro    | https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1        |
-        |Surface Studio    | https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1        |
+        |Surface Laptop 13     | <https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1>        |
+        |Surface Laptop 15     | <https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1>        |
+        |Surface Pro    | <https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1>        |
+        |Surface Studio    | <https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1>        |
 
 ---
 
@@ -179,6 +181,6 @@ You’ve successfully:
 - Created a SharePoint site for grounding agents  
 - Populated the Devices list for use in future missions
 
-You're officially cleared to begin your **Recruit-level agent training** in [Lesson 01](/01-introduction-to-agents/README.md).  
+You're officially cleared to begin your **Recruit-level agent training** in [Lesson 01](../01-introduction-to-agents/README.md).  
 
 ![mcs-agent-academy-recruit-00](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/00-course-setup)
