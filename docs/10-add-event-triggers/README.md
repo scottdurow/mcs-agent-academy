@@ -119,27 +119,27 @@ You have two places to guide your agent's behavior with event triggers:
 
 Here are practical examples of how event triggers can enhance your agent:
 
-**IT Help Desk Agent**
+### IT Help Desk Agent
 
 - **Trigger**: New SharePoint list item (support ticket)
 - **Action**: Automatically categorize, assign priority, and notify appropriate team members
 
-**Employee Onboarding Agent**  
+### Employee Onboarding Agent
 
 - **Trigger**: New user added to Dataverse
 - **Action**: Send welcome message, create onboarding tasks, and provision access
 
-**Project Management Agent**
+### Project Management Agent
 
 - **Trigger**: Task completed in Planner
 - **Action**: Update project dashboard, notify stakeholders, and check for blockers
 
-**Document Management Agent**
+### Document Management Agent
 
 - **Trigger**: File uploaded to specific SharePoint folder
 - **Action**: Extract metadata, apply tags, and notify document owners
 
-**Meeting Assistant Agent**
+### Meeting Assistant Agent
 
 - **Trigger**: Calendar event created
 - **Action**: Send pre-meeting reminders and agenda, book resources
@@ -170,18 +170,18 @@ To maintain security when publishing agents with event triggers:
 
 Keep these important considerations in mind when working with event triggers:
 
-**Quota and billing impacts**
+### Quota and billing impacts
 
 - Each trigger activation counts toward your message consumption
 - Frequent triggers (like every-minute recurrence) can quickly consume quota
 - Monitor usage to avoid throttling
 
-**Technical requirements**
+### Technical requirements
 
 - Only available for agents with generative orchestration enabled
 - Requires solution-aware cloud flow sharing to be enabled in your environment
 
-**Data Loss Prevention (DLP)**
+### Data Loss Prevention (DLP)
 
 - Your organization's DLP policies determine which triggers are available
 - Administrators can block event triggers entirely
@@ -312,7 +312,7 @@ Before starting this lab, ensure you have:
 
 ### 10.4 Test the trigger
 
-1. Inside your **Helpdesk Agent**, select the **Overview** tab
+1. Inside your **Help Desk Agent**, select the **Overview** tab
 2. Click **Test Trigger** icon next to the **New Support Ticket Created in SharePoint** trigger. This will load the **Test your trigger** window.
 3. Open a new browser tab and navigate to your **SharePoint IT Support Tickets list**
 4. Click **+ Add new item** to create a test ticket:
