@@ -137,38 +137,39 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
 1. This template provides pages with sample data about various IT policies and two sample lists (Tickets and Devices).
 
-   **Use Devices SharePoint list**
+**Use Devices SharePoint list**
 
-   We will use the **Devices** list for in [Lesson 07 - Add new topic with trigger and nodes](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
+We will use the **Devices** list for in [Lesson 07 - Add new topic with trigger and nodes](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
 
-   **Add new column**
+**Add new column**
 
-   Scroll to the far right in the list and select the **+ Add column** button.  Choose the **hyperlink** type, enter **Image** for the column name, and select add.
+Scroll to the far right in the list and select the **+ Add column** button.  Choose the **hyperlink** type, enter **Image** for the column name, and select add.
 
-   **Create sample data in Devices SharePoint list**
+**Create sample data in Devices SharePoint list**
 
-   You need to make sure you fill in this list with at least 4 sample data items and add one additional column to this list.  
+You need to make sure you fill in this list with at least 4 sample data items and add one additional column to this list.  
 
-   When adding sample data, make sure that the following fields are filled out:
-      - Device photo - use the images from the [device images folder](/00-course-setup/images/device-images/)
-      - Title
-      - Status
-      - Manufacturer
-      - Model
-      - Asset Type
-      - Color
-      - Serial Number
-      - Purchase Date
-      - Purchase Price,
-      - Order #
-      - Image - use the following links
+When adding sample data, make sure that the following fields are filled out:
 
-        |Device  |URL  |
-        |---------|---------|
-        |Surface Laptop 13     | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1)        |
-        |Surface Laptop 15     | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1)        |
-        |Surface Pro    | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1)        |
-        |Surface Studio    | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1)        |
+- Device photo - use the images from the [device images folder](https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/docs/00-course-setup/images/device-images/)
+- Title
+- Status
+- Manufacturer
+- Model
+- Asset Type
+- Color
+- Serial Number
+- Purchase Date
+- Purchase Price,
+- Order #
+- Image - use the following links
+
+|Device  |URL  |
+|---------|---------|
+|Surface Laptop 13     | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1)        |
+|Surface Laptop 15     | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1)        |
+|Surface Pro    | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1)        |
+|Surface Studio    | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1)        |
 
 ---
 
