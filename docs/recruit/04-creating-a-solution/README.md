@@ -199,27 +199,27 @@ Make sure you switch to your dedicated developer environment, refer to [Lesson 0
 
     Copy and paste the following as the **Display name**,
 
-   ```text
-   Contoso Solutions
-   ```
+    ```text
+    Contoso Solutions
+    ```
 
     Copy and paste the following as the **Name**,
 
-   ```text
-   ContosoSolutions
-   ```
+    ```text
+    ContosoSolutions
+    ```
 
     Copy and paste the following as the **Description**,
 
-   ```text
-   Copilot Studio for Beginners
-   ```
+    ```text
+    Copilot Studio for Beginners
+    ```
 
     Copy and paste the following for the **Prefix**,
 
-   ```text
-   cts
-   ```
+    ```text
+    cts
+    ```
 
     By default, the **Choice value** prefix will display an integer value. Update this integer value to the nearest thousand. For example, in my screenshot below, it was initially `77074`. Update this from `77074` to `77000`.
 
@@ -245,15 +245,15 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
     Copy and paste the following as the **Display name**,
 
-   ```text
-   Contoso Helpdesk Agent
-   ```
+    ```text
+    Contoso Helpdesk Agent
+    ```
 
     Copy and paste the following as the **Name**,
 
-   ```text
-   ContosoHelpdeskAgent
-   ```
+    ```text
+    ContosoHelpdeskAgent
+    ```
 
     Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-172615-ebenitez) by default will be `1.0.0.0`.
 
