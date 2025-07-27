@@ -14,20 +14,13 @@ Let’s go.
 
 ## 🔎 Objectives
 
-- [What is a declarative agent for Microsoft 365 Copilot?](./#what-is-a-declarative-agent-for-microsoft-365-copilot)
-- [Why would I use Microsoft Copilot Studio to build a declarative agent?](./#why-would-i-use-microsoft-copilot-studio-to-build-a-declarative-agent)
-  - [Feature comparison](./#feature-comparison)
-  - [Extending Microsoft 365 Copilot with declarative agents built in Copilot Studio](./#extending-microsoft-365-copilot-with-declarative-agents-built-in-copilot-studio)
-- [Lab 03: Build a declarative agent in Microsoft Copilot Studio for Microsoft 365 Copilot](./#lab-03-build-a-declarative-agent-in-microsoft-copilot-studio-for-microsoft-365-copilot)
-  - [Understanding Business-to-Employee (B2E)](./#understanding-business-to-employee-b2e)
-  - [Use case scenario](./#use-case-scenario)
-  - [Prerequisites](./#prerequisites)
-  - [3.1 Create a declarative agent](./#31-create-a-declarative-agent)
-  - [3.2 Create and add a prompt for your declarative agent](./#32-create-and-add-a-prompt-for-your-declarative-agent)
-  - [3.3 Update instructions and test your declarative agent](./#33-update-instructions-and-test-your-declarative-agent)
-  - [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](./#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
-- [Mission Complete](./#mission-complete)
-- [Tactical Resources](./#tactical-resources)
+In this mission, you’ll learn:
+
+1. Understanding what declarative agents are and how they extend Microsoft 365 Copilot with custom capabilities
+1. Comparing Microsoft Copilot Studio vs. Copilot Studio agent builder for building declarative agents
+1. Creating a declarative agent using natural language through the conversational creation experience
+1. Adding AI prompts as tools to enhance your agent's specialized knowledge and problem-solving abilities
+1. Publishing and testing your declarative agent in Microsoft 365 Copilot and Microsoft Teams
 
 ## 🕵🏻‍♀️ What is a declarative agent for Microsoft 365 Copilot?
 

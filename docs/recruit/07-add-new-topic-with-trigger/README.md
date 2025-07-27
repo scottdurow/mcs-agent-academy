@@ -22,27 +22,13 @@ You’re not just building dialogue—you’re wiring up its decision-making cor
 
 ## 🔎 Objectives
 
-- [What is a Topic?](#-what-is-a-topic)
-  - [Purpose of a topic](#-purpose-of-a-topic)
-- [Why are topics useful?](#-why-are-topics-useful)
-- [Types of topics](#-anatomy-of-a-topic)
-- [Anatomy of a topic](#-anatomy-of-a-topic)
-  - [Trigger phrases](#️-trigger-phrases)
-  - [Conversation nodes](#-conversation-nodes)
-- [Using Power Fx in your nodes](#️-using-power-fx-in-your-nodes)
-  - [What Power Fx can do in topics](#what-power-fx-can-do-in-topics)
-  - [Why use Power Fx?](#why-use-power-fx)
-- [How do I create and edit topics?](#️-how-do-i-create-and-edit-topics)
-  - [Create from blank](#1-create-from-blank)
-  - [Create with Copilot](#2-create-with-copilot)
-- [OK, how do I design topics for my agent?](#-ok-how-do-i-design-topics-for-my-agent)
-- [Lab 07 - Add a new topic with conversation nodes](#-lab-07---add-a-new-topic-with-conversation-nodes)
-  - [Use case](#-use-case)
-  - [Prerequisites](#prerequisites)
-  - [7.1 Add a new topic from blank](#71-add-a-new-topic-from-blank)
-  - [7.2 Define the trigger inputs and outputs](#72-define-the-trigger-inputs-and-outputs)
-  - [7.3 Add node - Add a tool using the SharePoint connector](#73-add-node---add-a-tool-using-a-connector)
-- [Tactical Resources](#-tactical-resources)
+In this mission, you’ll learn:
+
+1. Understanding what topics are and their role in creating structured conversations for your agent
+1. Learning the anatomy of topics including trigger phrases and conversation nodes
+1. Exploring different types of conversation nodes and how to use Power Fx for dynamic logic
+1. Creating custom topics from scratch to handle specific user requests and tasks
+1. Building a functional topic that connects to SharePoint data using connectors and tools
 
 ## 🤔 What is a Topic?
 

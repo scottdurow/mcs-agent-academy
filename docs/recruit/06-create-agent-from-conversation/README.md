@@ -14,33 +14,15 @@ Your weapon of choice? Natural language. Your mission? Design, train, and test a
 
 Let’s build your agent from the ground up.
 
-## 🔎 Objectives
+## 🔎 OBjectives
 
-- [What is a custom agent?](./#what-is-a-custom-agent)
-  - [What can a custom agent do?](./#what-can-a-custom-agent-do)
-  - [Why use a custom agent?](./#why-use-a-custom-agent)
-  - [Example](./#example)
-- [Use natural language to create agents](./#use-natural-language-to-create-agents)
-- [But I'm new to "describing what I want" - what do I do?](./#but-im-new-to-describing-what-i-want-what-do-i-do)
-  - [Why Prompts matter](./#why-prompts-matter)
-  - [Tips for writing a good prompt](./#tips-for-writing-a-good-prompt)
-  - [Example](./#example_1)
-- [OK, I've created my agent... how do I ground it with knowledge?](./#ok-ive-created-my-agent-how-do-i-next-ground-it-with-knowledge)
-  - [What is generative orchestration in the context of agents?](./#what-is-generative-orchestration-in-the-context-of-agents)
-  - [Why knowledge sources matter?](./#why-knowledge-sources-matter)
-  - [Example](./#example_2)
-- [Types of knowledge sources that can be added](./#types-of-knowledge-sources-that-can-be-added)
-- [Note on security](./#note-on-security)
-- [Improving your agent's responses in Copilot Studio](./#improving-your-agents-responses-in-copilot-studio)
-- [Lab 06: Create a custom agent in with Copilot](./#lab-06-create-a-custom-agent-in-copilot-studio)
-  - [Use case](./#use-case)
-  - [Prerequisites](./#prerequisites)
-  - [6.1 Use natural language to create an agent with Copilot](./#61-use-natural-language-to-create-an-agent-with-copilot)
-  - [6.2 Add an internal knowledge source using a SharePoint site](./#62-add-an-internal-knowledge-source-using-a-sharepoint-site)
-  - [6.3 Add an internal knowledge source by uploading a document](./#63-add-an-internal-knowledge-source-by-uploading-a-document)
-  - [6.4 Test agent](./#64-test-agent)
-- [Mission Complete](./#mission-complete)
-- [Tactical Resources](./#tactical-resources)
+In this mission, you’ll learn:
+
+1. Understanding what custom agents are and how they differ from pre-built templates
+1. Creating agents using natural language prompts and conversational design with Copilot
+1. Grounding agents with enterprise knowledge sources including SharePoint, documents, and websites
+1. Learning about generative orchestration and how agents dynamically search and respond using multiple data sources
+1. Building and testing a fully functional IT helpdesk agent that can answer questions from your own data
 
 ## 🤔 What is a _custom_ agent?
 
