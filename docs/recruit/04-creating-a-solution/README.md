@@ -171,21 +171,21 @@ Make sure you switch to your dedicated developer environment, refer to [Lesson 0
 
 1. On the upper right, selec the **Cog wheel** icon and switch from the default environment to your environment, for example **Adele Vance's environment**.
 
-   ![Developer environment](assets/4.0_03_DeveloperEnvironment.png)
+    ![Developer environment](assets/4.0_03_DeveloperEnvironment.png)
 
 ### 4.1 Create a Solution publisher
 
 1. Using the same Copilot Studio environment used in the previous lesson, select the **ellipsis icon (. . .)** on the left handside menu in Copilot Studio. Select **Solutions** under the **Explore** header.
 
-   ![Solutions](assets/4.1_01_Solutions.png)
+    ![Solutions](assets/4.1_01_Solutions.png)
 
 1. The **Solution Explorer** in Copilot Studio will load. Select **+ New solution**
 
-   ![Solutions](assets/4.1_02_NewSolution.png)
+    ![Solutions](assets/4.1_02_NewSolution.png)
 
 1. The **New solution** pane will appear where we can define the details of our solution. First, we need to create a new publisher. Select **+ New publisher**.
 
-   ![Solutions](assets/4.1_03_NewPublisher.png)  
+    ![Solutions](assets/4.1_03_NewPublisher.png)  
 
 1. The **Properties** tab of the **New publisher** pane will appear with required and non-required fields to be populated in the **Properties** tab. This is where we can outline the details of the publisher which will be used as the label or brand that identifies who created or owns the solution.
 
@@ -203,7 +203,7 @@ Make sure you switch to your dedicated developer environment, refer to [Lesson 0
    Contoso Solutions
    ```
 
-   Copy and paste the following as the **Name**,
+    Copy and paste the following as the **Name**,
 
    ```text
    ContosoSolutions
@@ -223,11 +223,11 @@ Make sure you switch to your dedicated developer environment, refer to [Lesson 0
 
     By default, the **Choice value** prefix will display an integer value. Update this integer value to the nearest thousand. For example, in my screenshot below, it was initially `77074`. Update this from `77074` to `77000`.
 
-   ![Solutions](assets/4.1_04_PublisherProperties.png)  
+    ![Solutions](assets/4.1_04_PublisherProperties.png)  
 
 1. If you want to provide the contact details for the Solution, select the **Contact** tab and populate the following columns displayed.
 
-   ![Solutions](assets/4.1_05_Contact.png)
+    ![Solutions](assets/4.1_05_Contact.png)
 
 1. Select the **Properties** tab and select **Save** to create the Publisher.
 
@@ -235,7 +235,7 @@ Make sure you switch to your dedicated developer environment, refer to [Lesson 0
 
 1. The New publisher pane will close and you'll be brought back to the **New solution** pane with the newly created Publisher selected.
 
-   ![Solutions](assets/4.1_07_PublisherSelected.png)  
+    ![Solutions](assets/4.1_07_PublisherSelected.png)  
 
 High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn how to create a new custom solution.
 
@@ -255,15 +255,15 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
    ContosoHelpdeskAgent
    ```
 
-   Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-172615-ebenitez) by default will be `1.0.0.0`.
+    Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-172615-ebenitez) by default will be `1.0.0.0`.
 
-   Tick the **Set as your preferred solution** checkbox.
+    Tick the **Set as your preferred solution** checkbox.
 
     ![Solutions](assets/4.2_01_SolutionDetails_.png)  
 
 1. Expand the **More options** to see additional details that can be provided in a solution.
 
-   ![Solutions](assets/4.2_02_MoreOptions.png)
+    ![Solutions](assets/4.2_02_MoreOptions.png)
 
 1. You'll see the following,
 
@@ -283,11 +283,11 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
     Select the **back arrow** icon to return to the Solution Explorer.
 
-   ![Solutions](assets/4.2_04_SolutionCreated.png)
+    ![Solutions](assets/4.2_04_SolutionCreated.png)
 
 1. Notice how the Contoso Helpdesk Agent now displays as the **Current preferred solution** since we ticked the **Set as your preferred solution** checkbox earlier.
 
-   ![Solutions](assets/4.2_05_CurrentPreferredSolutionSelected.png)
+    ![Solutions](assets/4.2_05_CurrentPreferredSolutionSelected.png)
 
 ## ✅ Mission Complete
 
