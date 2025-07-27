@@ -139,7 +139,7 @@ Let's begin!
    You are a highly skilled and experienced IT professional specializing in a wide range of computer systems, networking, and cybersecurity. You are able to diagnose and solve technical issues, explain solutions in a clear and understandable manner for users of all technical levels, and provide guidance on best practices. You should be concise and informative, using step-by-step instructions with bullet points when appropriate. Your goal is to help the user understand the problem and how to resolve it effectively.
    ```
 
-    ![Create Prompt](assets/3.1_04_CreatePrompt.png)
+   ![Create Prompt](assets/3.1_04_CreatePrompt.png)
 
 1. After submitting the prompt, a noticeable update will appear on the right hand side pane with the details and instructions of the agent as defined by the prompt. Next you'll be asked to confirm the name of your agent and Copilot will have suggested a name.
 
@@ -151,7 +151,7 @@ Let's begin!
 
    ![Instructions updated](assets/3.1_05_InstructionsUpdated.png)
 
-     > The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously.
+   > The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously.
 
 1. The name of the agent has now been updated as seen on the right hand side pane. We're now asked to refine the instructions for the agent. The instructions on the right hand side pane is already suitable as it covers the topics we want - refer to yellow highlighted text in screenshot below. Instead, we'll expand on how it should format its response and the tone. We'll enter the following,
 
@@ -190,23 +190,23 @@ Let's begin!
 
 1. In the Details section of the agent, you have the ability to change the agent icon as well. Select **Edit**.
 
-   ![Edit details](assets/3.1_10_01_EditDetails.png)
+    ![Edit details](assets/3.1_10_01_EditDetails.png)
 
-   Here you can change the icon and the background color. Select **Save** and then select **Save** again to update the details of the agent.
+    Here you can change the icon and the background color. Select **Save** and then select **Save** again to update the details of the agent.
 
-   ![Change icon](assets/3.1_10_02_ChangeIcon.png)
+    ![Change icon](assets/3.1_10_02_ChangeIcon.png)
 
 1. Let's do a quick test of the agent we've created. Select one of the **Starter Prompts** in the test pane on the left hand side.
 
-   ![Change icon](assets/3.1_11_TestUsingStarterPrompt.png)
+    ![Change icon](assets/3.1_11_TestUsingStarterPrompt.png)
 
 1. Our agent will then respond. Notice how it adhered to the instructions by providing bullet points into digestible parts, and used empathy in its response.
 
-   ![Change icon](assets/3.1_12_TestResponse.png)
+    ![Change icon](assets/3.1_12_TestResponse.png)
 
-   If you scroll to the bottom of the message, notice how it also asked for feedback after providing a solution as instructed.
+    If you scroll to the bottom of the message, notice how it also asked for feedback after providing a solution as instructed.
 
-   ![Change icon](assets/3.1_13_TestResponse.png)
+    ![Change icon](assets/3.1_13_TestResponse.png)
 
 In a few minutes you've added a declarative agent for Microsoft 365 Copilot in Copilot Studio 🙌🏻
 
@@ -257,100 +257,100 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
    ![Copilot generated draft instructions](assets/3.2_09_CopilotGeneratedInstructions.png)
 
 1. Scroll down to the bottom of the instructions and you'll see the user input parameter already defined by Copilot. You then have the option to
-   - Keep the draft instructions generated.
-   - Refresh the draft instructions using Copilot.
-   - Clear the draft instructions.
+    - Keep the draft instructions generated.
+    - Refresh the draft instructions using Copilot.
+    - Clear the draft instructions.
 
-   Clear the draft instructions by selecting the **trash bin** icon and we'll next try the prompt library.
+    Clear the draft instructions by selecting the **trash bin** icon and we'll next try the prompt library.
 
-   ![Prompt instructions](assets/3.2_10_Options.png)
+    ![Prompt instructions](assets/3.2_10_Options.png)
 
 1. Select the **prompt library** link.
 
-   ![Select prompt library](assets/3.2_11_SelectPromptLibrary.png)
+    ![Select prompt library](assets/3.2_11_SelectPromptLibrary.png)
 
 1. You'll see a list of prompt templates to choose from. These are from the [Power Platform Prompt library](https://aka.ms/power-prompts).
 
-   ![Prompt library](assets/3.2_12_PromptLibrary.png)
+    ![Prompt library](assets/3.2_12_PromptLibrary.png)
 
 1. Search for the `IT expert` prompt and select it.
 
-   ![Select IT expert prompt](assets/3.2_13_ITExpertPrompt.png)
+    ![Select IT expert prompt](assets/3.2_13_ITExpertPrompt.png)
 
 1. The prompt will then be added as the instructions with the input parameter as defined by the prompt template. Similar to the approach we took when providing instructions for our agent during the conversational creation experience with Copilot, this prompt template outlines
-   - a task,
-   - what type of inquiries it can handle,
-   - and the format of its response and the goal of the prompt.
+    - a task,
+    - what type of inquiries it can handle,
+    - and the format of its response and the goal of the prompt.
 
-   ![Prompt instructions](assets/3.2_14_ITExpertPromptInstructions.png)
+    ![Prompt instructions](assets/3.2_14_ITExpertPromptInstructions.png)
 
 1. Clear the instructions and we'll next try manually entering the instructions. We'll use the [IT Expert prompt](https://adoption.microsoft.com/sample-solution-gallery/sample/pnp-powerplatform-prompts-it-expert/) from the [Power Platform Prompt library](https://aka.ms/power-prompts). Copy and paste the prompt.
 
-   ```text
-   I want you to act as an IT Expert. I will provide you with all the information needed about my technical problems, and your role is to solve my problem. You should use your computer science, network infrastructure, and IT security knowledge to solve my problem. Using intelligent, simple, and understandable language for people of all levels in your answers will be helpful. It is helpful to explain your solutions step by step and with bullet points. Try to avoid too many technical details, but use them when necessary. I want you to reply with the solution, not write any explanations. My problem is [Problem]
-   ```
+    ```text
+    I want you to act as an IT Expert. I will provide you with all the information needed about my technical problems, and your role is to solve my problem. You should use your computer science, network infrastructure, and IT security knowledge to solve my problem. Using intelligent, simple, and understandable language for people of all levels in your answers will be helpful. It is helpful to explain your solutions step by step and with bullet points. Try to avoid too many technical details, but use them when necessary. I want you to reply with the solution, not write any explanations. My problem is [Problem]
+    ```
 
-   ![Prompt instructions](assets/3.2_15_PromptInstructions.png)
+    ![Prompt instructions](assets/3.2_15_PromptInstructions.png)
 
 1. Next, we can define the user input parameters of our prompt. These can be text and images, and sample data to test with. There's also the capability to ground the prompt with knowledge from Dataverse tables. For this exercise, we only have one user input to define which is the problem input. This is currently a placeholder in our prompt as `[Problem]`. We'll now configure this input either by entering the `/` character or selecting **+Add content** and then select **Text**.
 
-   ![Text input](assets/3.2_16_AddContent.png)
+    ![Text input](assets/3.2_16_AddContent.png)
 
 1. We can now enter a name for our input parameter and sample data.
 
-   Enter the following as the name
+    Enter the following as the name
 
-   ```text
-   problem input
-   ```
+    ```text
+    problem input
+    ```
 
-   Enter the following as the sample data
+    Enter the following as the sample data
 
-   ```text
-   My laptop gets an error with a blue screen
-   ```
+    ```text
+    My laptop gets an error with a blue screen
+    ```
 
-   Then select **Close**.
+    Then select **Close**.
 
-   ![Configure problem input](assets/3.2_17_NameSampleData.png)
+    ![Configure problem input](assets/3.2_17_NameSampleData.png)
 
 1. The problem input parameter will now be added to the instructions with the configured sample data. We can now test our prompt!
 
-   ![Problem input added](assets/3.2_18_InputAdded.png)
+    ![Problem input added](assets/3.2_18_InputAdded.png)
 
 1. Select **Test** to the test the prompt.
 
-   ![Test instructions](assets/3.2_19_Test.png)
+    ![Test instructions](assets/3.2_19_Test.png)
 
 1. The response will then display. Notice how the response provides headings with bullet points as per the instructions. Scroll down and review the remainder of the model response.
 
-   ![Model response](assets/3.2_20_ModelResponse.png)
+    ![Model response](assets/3.2_20_ModelResponse.png)
 
 1. Before we save our prompt, let's learn about the settings that can be configured for this prompt. Select the **ellipsis (...) icon**.
 
-   ![Prompt settings](assets/3.2_21_Settings.png)
+    ![Prompt settings](assets/3.2_21_Settings.png)
 
 1. Here we'll see three settings that can be configured.
 
-   - **Temperature**: Lower temperatures lead to predictable results, while higher temperatures allow more diverse or creative responses.
-   - **Record retrieval**: Specify the number of records retrieved for your knowledge sources.
-   - **Include links in the response**: When selected, the response includes link citations for the retrieved records.
+    - **Temperature**: Lower temperatures lead to predictable results, while higher temperatures allow more diverse or creative responses.
+    - **Record retrieval**: Specify the number of records retrieved for your knowledge sources.
+    - **Include links in the response**: When selected, the response includes link citations for the retrieved records.
 
-   Select the **X** icon to exit from Settings.
+    Select the **X** icon to exit from Settings.
 
-   ![Configure settings](assets/3.2_22_ConfigureSettings.png)
+    ![Configure settings](assets/3.2_22_ConfigureSettings.png)
 
 1. Select **Save** to save the prompt.
 
-   ![Save prompt](assets/3.2_23_SavePrompt.png)
+    ![Save prompt](assets/3.2_23_SavePrompt.png)
 
 1. Next, select **Add to agent** to add the prompt to our declarative agent.
 
-   ![Prompt instructions](assets/3.2_24_AddToAgent.png)
+    ![Prompt instructions](assets/3.2_24_AddToAgent.png)
 
 1. The prompt will now appear under Tools 🙌🏻
 
-   ![Prompt added](assets/3.2_25_PromptAdded.png)
+    ![Prompt added](assets/3.2_25_PromptAdded.png)
 
 We'll next update our instructions to invoke the prompt and test our declarative agent.
 
@@ -455,78 +455,78 @@ Let's now publish our declarative agent 😃
 
 1. But _how do we know_ the declarative agent invoked the prompt? 👀 Well, here's a tip!
 
-   > You can test and debug agents in Microsoft 365 Copilot by enabling [developer mode](https://learn.microsoft.com/microsoft-365-copilot/extensibility/debugging-copilot-agent#use-developer-mode-in-copilot-chat/?WT.mc_id=power-172614-ebenitez).
+    > You can test and debug agents in Microsoft 365 Copilot by enabling [developer mode](https://learn.microsoft.com/microsoft-365-copilot/extensibility/debugging-copilot-agent#use-developer-mode-in-copilot-chat/?WT.mc_id=power-172614-ebenitez).
 
-   Enter the following in the message Copilot field and submit.
+    Enter the following in the message Copilot field and submit.
 
-   ```text
-   -developer on
-   ```
+    ```text
+    -developer on
+    ```
 
-   A confirmation message will appear to let you know developer mode is now enabled.
+    A confirmation message will appear to let you know developer mode is now enabled.
 
-   ![Developer mode enabled](assets/3.4_10_DeveloperModeEnabled.png)
+    ![Developer mode enabled](assets/3.4_10_DeveloperModeEnabled.png)
 
 1. Submit the following question to invoke the prompt.
 
-      ```text
-      Can you help me, my laptop is encountering a blue screen
-      ```
+    ```text
+    Can you help me, my laptop is encountering a blue screen
+    ```
 
-      ![Enter question](assets/3.4_11_EnterQuestion.png)
+    ![Enter question](assets/3.4_11_EnterQuestion.png)
 
 1. We'll see a model response from our **IT Expert** prompt again returned as a message. Scroll down to the bottom of the message and a card with debug information is displayed.
 
-      Expand **Agent Debug Info** by selecting it.
+    Expand **Agent Debug Info** by selecting it.
 
-      ![Agent debug info](assets/3.4_12_AgentDebugInfo.png)
+    ![Agent debug info](assets/3.4_12_AgentDebugInfo.png)
 
 1. Here you'll find information on the agent metadata that occured at runtime. In our use case, we'll be focusing on the _Actions_ section
 
-   - **Matched actions** highlight the current status of functions found during the app's search.
-   - **Selected actions** highlight the current status of functions chosen to run based on the app's decision-making process.
+    - **Matched actions** highlight the current status of functions found during the app's search.
+    - **Selected actions** highlight the current status of functions chosen to run based on the app's decision-making process.
 
-      So here we can see the agent orchestrator chose to invoke the IT Expert prompt as per the instructions of our declarative agent. This is further outlined in the _Executed Actions_ section which also tells us that it successfully invoked the prompt.
+    So here we can see the agent orchestrator chose to invoke the IT Expert prompt as per the instructions of our declarative agent. This is further outlined in the _Executed Actions_ section which also tells us that it successfully invoked the prompt.
 
-      ![Review agent debug info](assets/3.4_13_ReviewAgentDebugInfo.png)
+    ![Review agent debug info](assets/3.4_13_ReviewAgentDebugInfo.png)
 
 1. To turn off developer mode, enter the following in the message Copilot field and submit.
 
-      ```text
-      -developer off
-      ```
+    ```text
+    -developer off
+    ```
 
-      A confirmation message will appear to let you know developer mode is disabled. Cool, now you know how to verify whether your declarative agent in Microsoft 365 Copilot invoked your prompt 🌞
+    A confirmation message will appear to let you know developer mode is disabled. Cool, now you know how to verify whether your declarative agent in Microsoft 365 Copilot invoked your prompt 🌞
 
-      ![Developer mode disabled](assets/3.4_14_DeveloperModeDisabled.png)
+    ![Developer mode disabled](assets/3.4_14_DeveloperModeDisabled.png)
 
 1. We'll now test our agent in Microsoft Teams. Navigate to **Apps** using the left hand side menu and select **Teams** under the _Apps_ section.
 
-      ![Select Teams in Apps](assets/3.4_15_NavigateToApps.png)
+    ![Select Teams in Apps](assets/3.4_15_NavigateToApps.png)
 
 1. Teams will then load in a new browser tab and you'll see Microsoft 365 Copilot load by default, with the right hand side pane listing all of your available agents, including the **Contoso Tech Support Pro** declarative agent.
 
-      ![Microsoft 365 Copilot in Teams](assets/3.4_16_CopilotAgentsInTeams.png)
+    ![Microsoft 365 Copilot in Teams](assets/3.4_16_CopilotAgentsInTeams.png)
 
 1. Select **Apps** on the left hand side menu. Either search for **Contoso Tech Support Pro** or scroll down and select the agent.
 
-      ![Select agent from Apps](assets/3.4_17_SelectAgentFromApps.png)
+    ![Select agent from Apps](assets/3.4_17_SelectAgentFromApps.png)
 
 1. We'll then see our agent load. The agent can be pinned to the menu by right clicking on the app and select **Pin**.
 
-      ![Pin agent](assets/3.4_18_PinAgent.png)
+    ![Pin agent](assets/3.4_18_PinAgent.png)
 
 1. Let's next test our agent. Enter the following prompt and submit.
 
-      ```text
-      Can you help me, my laptop is encountering a blue screen
-      ```
+    ```text
+    Can you help me, my laptop is encountering a blue screen
+    ```
 
-      ![Pin agent](assets/3.4_19_EnterPrompt.png)
+    ![Pin agent](assets/3.4_19_EnterPrompt.png)
 
 1. A model response from our prompt will then be displayed.
 
-      ![Response in Teams](./assets/3.4_20_AgentInTeams.png)
+    ![Response in Teams](./assets/3.4_20_AgentInTeams.png)
 
 In a few minutes, you've learnt how to publish your declarative agent and test it in Microsoft 365 Copilot and in Teams 😊
 
