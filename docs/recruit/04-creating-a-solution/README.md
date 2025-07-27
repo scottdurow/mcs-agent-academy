@@ -171,13 +171,13 @@ Make sure you switch to your dedicated developer environment, refer to [Lesson 0
 
 1. On the upper right, selec the **Cog wheel** icon and switch from the default environment to your environment, for example **Adele Vance's environment**.
 
-   ![Developer environment](assets/4.0_03_DeveloperEnvironment.png)
+    ![Developer environment](assets/4.0_03_DeveloperEnvironment.png)
 
 ### 4.1 Create a Solution publisher
 
 1. Using the same Copilot Studio environment used in the previous lesson, select the **ellipsis icon (. . .)** on the left handside menu in Copilot Studio. Select **Solutions** under the **Explore** header.
 
-   ![Solutions](assets/4.1_01_Solutions.png)
+    ![Solutions](assets/4.1_01_Solutions.png)
 
 1. The **Solution Explorer** in Copilot Studio will load. Select **+ New solution**
 
