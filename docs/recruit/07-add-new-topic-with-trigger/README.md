@@ -6,7 +6,7 @@
 
 ## 🎯  Mission Brief
 
-You’ve built an agent. It listens, learns, and answers questions—but now it’s time to get more tactical. In this mission, you’ll go deep under the hood and teach your agent how to respond to specific prompts with precision.
+You’ve built an agent. It listens, learns, and answers questions - but now it’s time to get more tactical. In this mission, you’ll go deep under the hood and teach your agent how to respond to specific prompts with precision.
 
 With Topics and Triggers, your agent can:
 
@@ -18,7 +18,7 @@ With Topics and Triggers, your agent can:
 
 - Trigger flows and take action
 
-You’re not just building dialogue—you’re wiring up its decision-making cortex. Welcome to the Neural Nexus.
+You’re not just building dialogue, you’re wiring up its decision making cortex. Welcome to the Neural Nexus.
 
 ## 🔎 Objectives
 
@@ -214,7 +214,7 @@ The following are the main types of nodes you can add to an agent:
 
 In Copilot Studio, Power Fx is a low-code programming language used to add logic and dynamic behaviour to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
 
-![Power Fx expression](assets/7.3_13_FormulaPowerFx.png)
+![Power Fx expression](assets/7.3_13_EnterFormula.png)
 
 ### What Power Fx can do in topics
 
@@ -270,12 +270,12 @@ This allows you to describe what you want using natural language, and Copilot wi
 #### ✨ Example prompts
 
 - **Create a topic**
-  - `Accept a user's name, age and date of birth and then repeat their responses back to them`
-  - `Collect a user's street address, state and zip code. The user should be able to retry each question up to 4 times`
+      - `Accept a user's name, age and date of birth and then repeat their responses back to them`
+      - `Collect a user's street address, state and zip code. The user should be able to retry each question up to 4 times`
 
 - **Edit a topic**
-  - `Add a question asking for the user’s date of birth`
-  - `Summarize collected info in an Adaptive Card.`
+      - `Add a question asking for the user’s date of birth`
+      - `Summarize collected info in an Adaptive Card.`
 
 ## 👩🏻‍🎨 OK, how do I design topics for my agent?
 
@@ -449,8 +449,6 @@ Let's begin!
 
 1. Enter a name for the topic. Copy and paste the following.
 
-    **Topic name**
-
     ```text
     Available devices
     ```
@@ -458,8 +456,6 @@ Let's begin!
     ![Name the topic](assets/7.1_03_TopicName.png)
 
 1. Enter a trigger description that outlines what the topic does. Copy and paste the following.
-
-    **Trigger description**
 
     ```text
     This topic helps users find devices that are available from our SharePoint Devices list. User can ask to see available devices and it will return a list of devices that are available which can include laptops, smartphones, accessories and more.
@@ -547,7 +543,7 @@ Let's begin!
 
     ![Add a tool](assets/7.3_01_AddNode.png)
 
-1. Search for `Get items` and select the **Get items** SharePoint connector action
+1. Search for `Get items` and select the **Get items** SharePoint connector action.
 
     ![Select get items](assets/7.3_02_GetItems.png)
 
