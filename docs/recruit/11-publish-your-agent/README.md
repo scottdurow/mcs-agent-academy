@@ -224,9 +224,9 @@ There are even more possibilities here. Your admin can change the global setup p
 
 ## ✅ Mission Complete
 
-🎉 **Congratulations!** You successfully published your agent and added it to Teams and Microsoft 365 Copilot! It also marks the end of the course! Congratulations on finishing this course! You're now a certified Agent Academy Recruit!
+🎉 **Congratulations!** You successfully published your agent and added it to Teams and Microsoft 365 Copilot! Next up is the last mission of the course: Understanding licensing.
 
-⏭️ [Move back to the **course overview**](../index.md).
+⏭️ [Move to **Understanding licensing** lesson](../12-understanding-licensing/README.md)
 
 ## 📚 Tactical Resources
 

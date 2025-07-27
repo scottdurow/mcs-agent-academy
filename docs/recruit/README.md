@@ -1,6 +1,6 @@
 # Welcome Recruit
 
-![Copilot Studio Agent Academy Recruit](./images/mcs-agent-academy-recruit-banner.png)
+![Copilot Studio Agent Academy Recruit](../images/mcs-agent-academy-recruit-banner.png)
 
 **Welcome, Recruit.**  
 Your mission—should you choose to accept it—is to master the art of building agents using **Microsoft Copilot Studio**.
