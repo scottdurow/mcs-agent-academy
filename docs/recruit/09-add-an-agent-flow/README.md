@@ -38,7 +38,7 @@ Both agent flows and Power Automate cloud flows help automate tasks. They're des
 
 **What they're for:**
 
-- Built specifically for conversational agents in Copilot Studio.
+- Built for conversational and autonomous agents (via agent instructions) in Copilot Studio.
 - Focused on smart, AI-driven automation that interacts with business systems.
 
 **Why they're useful:**
@@ -104,7 +104,7 @@ Let's say you're working in a finance department and you receive a lot of invoic
 With agent flows in Copilot Studio, you can automate this process. As soon as the invoice comes in, the agent:
 
 1. Read the document using intelligent document processing to find the key information.
-2. Check the details against your enterprise data to make sure everything looks correct
+2. Check the details against your enterprise data to make sure everything looks correct.
 3. Route it for approval to the right person(s).
 
 This saves time, reduces mistakes and makes the whole process much smoother.
@@ -130,6 +130,7 @@ This saves time, reduces mistakes and makes the whole process much smoother.
 1. **AI actions**
 
     Use AI to:
+
     - Read and understand documents or images.
     - Summarize long content into short, useful answers.
     - Make smart recommendations or decisions.
@@ -238,36 +239,36 @@ The following are common functions used in agent flows. For the full list of fun
 #### 🔡 Text
 
 - `concat()` - Joins two or more pieces of text together.
-  - Example: `concat('Hello ', firstName)` → “Hello John”
+    - Example: `concat('Hello ', firstName)` → “Hello John”
 
 - `toLower()` / `toUpper()` - Changes text to lowercase or uppercase.
-  - Useful for standardizing input.
+    - Useful for standardizing input.
 
 - `substring()` - Extracts part of a string.
-  - Example: Get the first 3 letters of a name.
+    - Example: Get the first 3 letters of a name.
 
 - `trim()` - Removes spaces from the beginning and end of text.
 
 #### 🔢 Math and number
 
 - `add()`, `sub()`, `mul()`, `div()` - Basic math operations.
-  - Example: `add(5, 3)` - the output is 8
+    - Example: `add(5, 3)` - the output is 8
 
 #### 📅 Date and time
 
 - `utcNow()` - Gets the current date and time in UTC.
-  - Great for timestamps.
+    - Great for timestamps.
 
 - `addDays()`, `addHours()` - Adds time to a date.
-  - Example: `addDays(utcNow(), 7)` output is 7 days from now.
+    - Example: `addDays(utcNow(), 7)` output is 7 days from now.
 
 - `formatDateTime()` - Formats a date into a readable string.
-  - Example: Monday, July 7, 2025
+    - Example: Monday, July 7, 2025
 
 #### ✅ Logical
 
 - `if()` - Runs one value if true, another if false.
-  - Example: `if(score > 50, 'Pass', 'Fail')`
+    - Example: `if(score > 50, 'Pass', 'Fail')`
 
 - `equals()` - Checks if two values are the same.
 
@@ -276,10 +277,10 @@ The following are common functions used in agent flows. For the full list of fun
 #### 🪣 Other handy functions
 
 - `coalesce()` - Returns the first non-empty value.
-  - Useful for fallback/default values.
+    - Useful for fallback/default values.
 
 - `guid()` - Generates a unique ID.
-  - Useful for tracking or logging.
+    - Useful for tracking or logging.
 
 - `length()` - Counts how many characters or items are in a string or array.
 
@@ -374,11 +375,11 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. Next, we're going to add several inputs for the agent flow.
 
-    - DeviceSharePointId - this will store the value, ID, of the SharePoint item. This ID value is an output from the Ask with adaptive card node where the user selected the device.
+    - `DeviceSharePointId` - this will store the value, ID, of the SharePoint item. This ID value is an output from the Ask with adaptive card node where the user selected the device.
 
-    - User - this will be the name of the user which will be from a system variable of the agent.
+    - `User` - this will be the name of the user which will be from a system variable of the agent.
 
-    - AdditionalComments - this will be the the comment entered by the user, which is an output from the Ask with adaptive card node.
+    - `AdditionalComments` - this will be the the comment entered by the user, which is an output from the Ask with adaptive card node.
 
     We'll first add the `DeviceSharePointId` as an input for our trigger. Select **+ Add an input**.
 
@@ -420,7 +421,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![AdditionalComments input](./assets/9.1_09_AdditionalComments.png)
 
-1. For this input, we'll update it to make it optional. Select the **ellipsis (...) icon** and select **Make the field optional**.
+1. For the `AdditionalComments` input, we'll update it to make it optional. Select the **ellipsis (...) icon** and select **Make the field optional**.
 
     ![Make the field optional](./assets/9.1_10_Optional.png)
 
@@ -432,11 +433,11 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Add action](./assets/9.1_12_AddAction.png)
 
-1. The Actions pane will appear where you can view actions from 1400+ built-in connectors to Microsoft and third-party services.
+1. The **Actions pane** will appear where you can view actions from 1400+ built-in connectors to Microsoft and third-party services.
 
     ![Actions pane](./assets/9.1_13_AddAnActionPane.png)
 
-1. In the search field enter the following,
+1. In the **search field** enter the following,
 
     ```text
     Get item
@@ -773,7 +774,7 @@ Let's now add the agent flow to the **Request device** topic.
 
     ![Select Agents](./assets/9.2_01_01_SelectAgent.png)
 
-    Select the **Topics** tab and select the **Request device** topic.
+1. Select the **Topics** tab and select the **Request device** topic.
 
     ![Select Request device topic](./assets/9.2_01_02_SelectTopics.png)
 

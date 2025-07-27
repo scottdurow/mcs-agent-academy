@@ -6,15 +6,15 @@
 
 ## 🎯 Mission Brief
 
-Welcome back, Agent Maker. This mission puts you in the command seat of the most powerful capability in Copilot Studio—creating a custom agent from scratch using only natural language… and supercharging it with your own data.
+Welcome back, Agent Maker. This mission puts you in the command seat of the most powerful capability in Copilot Studio - creating a custom agent from scratch using only natural language… and supercharging it with your own data.
 
-This isn’t just another chatbot. You’re building a knowledge-empowered digital coworker—one that can reason, respond, and reference real enterprise info.
+This isn’t just another chatbot. You’re building a knowledge empowered digital coworker - one that can reason, respond, and reference real enterprise info.
 
 Your weapon of choice? Natural language. Your mission? Design, train, and test a fully customized helpdesk agent that answers IT questions using SharePoint, uploaded files, or company URLs.
 
 Let’s build your agent from the ground up.
 
-## 🔎 OBjectives
+## 🔎 Objectives
 
 In this mission, you’ll learn:
 
@@ -451,7 +451,7 @@ We'll test our three knowledge sources by asking questions to our Contoso Helpde
 
    > If you don't have SharePoint in your Microsoft 365 license, only enter the second question to test the document knowledge source.
 
-1. Once again you'll see the agent reviewing the three knowledge sources to generate a response to the questions our single message.
+6. Once again you'll see the agent reviewing the three knowledge sources to generate a response to the questions our single message.
 
       ![Reviewing knowledge sources](./assets/6.4_07_ReviewingKnowledgeSources.png)
 

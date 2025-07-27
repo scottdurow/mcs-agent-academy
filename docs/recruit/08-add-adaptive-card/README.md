@@ -157,6 +157,7 @@ The following are common use cases for Adaptive Cards in Copilot Studio when use
 1. **Forms and data collection**
 
     Use adaptive cards to collect structured input from users, such as:
+
     - Leave requests
     - Feedback forms
     - Contact information
@@ -285,7 +286,7 @@ Let's begin!
 
 1. This is the **Adaptive Card Designer** where you can design your card and see the card design in-real time.
 
-    Try dragging and dropping the **TextBlock** and **FactSet** card elements to the authoring canvas - the card viewer area. Notice how the card structure and card payload editor updates as the two card elements were added. You can directly update the card payload editor and the element properties pane.
+    Try dragging and dropping the **TextBlock** and **FactSet** card elements to the authoring canvas, the card viewer area. Notice how the card structure and card payload editor updates as the two card elements were added. You can directly update the card payload editor and the element properties pane.
 
     ![Drag and drop card elements](assets/8.1_05_DragAndDropCardElements.png)
 
@@ -293,7 +294,7 @@ Let's begin!
 
     ![Select preview](assets/8.1_06_PreviewAdaptiveCard.png)
 
-1. The preview will load where you'll see different card output by widths.
+1. The preview will load where you'll see different card outputs by width.
 
     ![Preview card at different widths](assets/8.1_07_PreviewCardWidths.png)
 
