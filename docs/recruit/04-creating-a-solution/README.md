@@ -14,19 +14,13 @@ Let’s pack up.
 
 ## 🔎 Objectives
 
-- [Solution? What's that?](./#solution-whats-that)
-- [Why should I use a Solution for my agent?](./#why-should-i-use-a-solution-for-my-agent)
-- [Understanding Solution Publishers](./#understanding-solution-publishers)
-  - [Why is it important?](./#why-is-it-important)
-  - [Example](./#example)
-- [Power Platform Solution lifecycle](./#power-platform-solution-lifecycle)
-  - [Example](./#example_1)
-- [Lab 04: Create a new Solution](./#lab-04-create-a-new-solution)
-  - [Prerequisites](./#prerequisites)
-  - [4.1 Create a Solution publisher](./#41-create-a-solution-publisher)
-  - [4.2 Create a new Solution](./#42-create-a-new-solution)
-- [Mission Complete](./#mission-complete)
-- [Tactical Resources](./#tactical-resources)
+In this mission, you’ll learn:
+
+1. Understanding what Power Platform solutions are and their role in agent development
+1. Learning the benefits of using solutions for organizing and deploying agents
+1. Exploring solution publishers and their importance in component management
+1. Understanding the Power Platform solution lifecycle from development to production
+1. Creating your own solution publisher and custom solution for your IT Helpdesk Agent
 
 ## 🕵🏻‍♀️ Solution? What's that?
 

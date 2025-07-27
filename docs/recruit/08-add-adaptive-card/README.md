@@ -10,28 +10,13 @@ Agents, your mission is to infiltrate the static user experience and replace it 
 
 ## 🔎 Objectives
 
-- [What is an Adaptive Card?](#-what-is-an-adaptive-card)
-  - [Why Adaptive Cards matter in Copilot Studio](#why-adaptive-cards-matter-in-copilot-studio)
-- [Is _JSON_ a person?](#-is-json-a-person)
-- [I see another option for building an adaptive card using _formula_](#-i-see-another-option-for-building-an-adaptive-card-using-formula)
-  - [How Power Fx works in Adaptive Cards](#how-power-fx-works-in-adaptive-cards)
-  - [Why it's useful](#why-its-useful)
-- [Building with the Adaptive Card Designer](#️-building-with-the-adaptive-card-designer)
-- [Understanding the Adaptive Card Designer](#-understanding-the-adaptive-card-designer)
-  - [A) Card Elements](#a-card-elements)
-  - [B) Card Viewer](#b-card-viewer)
-  - [C) Card Structure](#c-card-structure)
-  - [D) Element Properties](#d-element-properties)
-  - [E) Card Payload Editor](#e-card-payload-editor)
-- [Common use cases](#-common-use-cases)
-- [Best practices](#-best-practices)
-- [Lab 08 - Add adpative cards and enhance topic capabilities](#-lab-08---add-adaptive-cards-and-enhance-topic-capabilities)
-  - [Use case](#-use-case)
-  - [Prerequisites](#prerequisites)
-  - [8.1 Create a new topic with an adaptive card for user to submit their request](#81-create-a-new-topic-with-an-adaptive-card-for-user-to-submit-their-request)
-  - [8.2 Update agent instructions to invoke Request device topic](#82-update-agent-instructions-to-invoke-request-device-topic)
-- [Misson Complete](#-mission-complete)
-- [Tactical Resources](#-tactical-resources)
+In this mission, you’ll learn:
+
+1. Understanding what Adaptive Cards are and how they enhance user interactions in Copilot Studio
+1. Learning to build interactive cards using JSON and Power Fx formulas for dynamic content
+1. Exploring the Adaptive Card Designer and its key components for visual card creation
+1. Creating rich, interactive forms and data collection experiences within agent topics
+1. Implementing best practices for designing responsive and user-friendly adaptive cards
 
 ## 🤔 What is an Adaptive Card?
 

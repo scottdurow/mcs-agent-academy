@@ -12,34 +12,12 @@ By mission's end, you'll have created an end-to-end device request automation th
 
 ## 🔎 Objectives
 
-- [What is an agent flow](#-what-is-an-agent-flow)
-- [Yes, but how is it different to Power Automate cloud flows?](#-yes-but-how-is-it-different-to-power-automate-cloud-flows)
-  - [Agent flows in Copilot Studio](#-agent-flows-in-copilot-studio)
-  - [Power Automate cloud flows](#️-power-automate-cloud-flows)
-  - [Summary](#-summary)
-- [Why use agent flows](#-why-use-agent-flows)
-- [How do agent flows enhance your agent?](#️-how-do-agent-flows-enhance-your-agent)
-  - [Think of it this way](#think-of-it-this-way)
-  - [Why it matters](#why-it-matters)
-- [Key features that make agent flows powerful](#-key-features-that-make-agent-flows-powerful)
-- [How they work](#️-how-they-work)
-- [How to create an agent flow](#-how-to-create-an-agent-flow)
-- [What is the agent flow designer?](#-what-is-the-agent-flow-designer)
-  - [Key features of the agent flow designer](#key-features-of-the-agent-flow-designer)
-  - [Why use the agent flow designer?](#why-use-the-agent-flow-designer)
-- [You mentioned _expressions_ - what are expressions?](#-you-mentioned-expressions---what-are-expressions)
-  - [Why use expressions?](#why-use-expressions)
-  - [What do expressions look like?](#what-do-expressions-look-like)
-  - [Why do functions matter?](#why-do-functions-matter)
-  - [Most useful functions](#most-useful-functions)
-  - [Best practices](#-best-practices)
-- [Lab 09 - Add an agent flow for automation and enhance topic capabilities](#-lab-09---add-an-agent-flow-for-automation-and-enhance-topic-capabilities)
-  - [9.1 Create an agent flow](#91-create-an-agent-flow)
-  - [9.2 Add agent flow to topic](#92-add-agent-flow-to-topic)
-  - [9.3 Update Request device topic with several nodes for a better user experience](#93-update-request-device-topic-with-several-nodes-for-a-better-user-experience)
-  - [9.4 Test agent using several scenarios](#94-test-agent-using-several-scenarios)
-- [Mission Complete](#-misson-complete)
-- [Tactical Resources](#-tactical-resources)
+In this mission, you’ll learn:
+
+1. Understanding what agent flows are and how they differ from Power Automate cloud flows for automation
+1. Learning the key features that make agent flows powerful including AI actions and natural language authoring
+1. Exploring the agent flow designer and how to use expressions for dynamic data handling
+1. Creating a complete device request automation that integrates SharePoint data and email notifications
 
 ## 🤔 What is an agent flow?
 
