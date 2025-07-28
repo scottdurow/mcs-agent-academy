@@ -29,7 +29,9 @@
   // MD046/code-block-style : Code block style : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md046.md
   // Justification: Code blocks are used for text
   "MD046": false,
-
+  "globs": [
+    "docs/**/*.md"
+  ],
   "ignores": [
     "SECURITY.md",
     "SUPPORT.md", 
