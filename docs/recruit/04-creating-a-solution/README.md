@@ -6,21 +6,9 @@
 
 ## 🎯 Mission Brief
 
-Agent Maker, welcome to your next tactical operation. In this mission, you’ll learn to asse3. You'll see the following,
+Agent Maker, welcome to your next tactical operation. In this mission, you’ll learn to assemble a Solution - the official deployment vehicle for your IT Helpdesk Agent built with Microsoft Copilot Studio. Think of this as creating a digital briefcase that holds your agent and it's artifacts.
 
-- **Installed on** - the date of when the Solution was installed.
-
-- **Configuration page** - developers set up an HTML web resource to help users interact with their app, agent or tool where it'll appear as a web page in the Information section with instructions or buttons. It's mostly used by companies or developers who build and share solutions with others.
-
-- **Description** - describes the solution or a high level description of the configuration page.
-
-   We'll leave these blank for this lab.
-
-   Select **Create**.
-
-   ![Solutions](assets/4.2_03_Create.png)on —the official deployment vehicle for your IT Helpdesk Agent built with Microsoft Copilot Studio. Think of this as creating a digital briefcase that holds your agent and it's artifacts.
-
-Every agent needs a well-structured home. That’s what a Power Platform solution provides—order, portability, and readiness for production.
+Every agent needs a well-structured home. That’s what a Power Platform solution provides - order, portability, and readiness for production.
 
 Let’s pack up.
 
