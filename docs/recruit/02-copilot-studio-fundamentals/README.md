@@ -41,12 +41,17 @@ Because Copilot Studio is low-code, you can drag and drop prebuilt components—
 
 While Microsoft 365 Copilot provides general AI assistance across Office apps, you’ll want a custom agent when:
 
-- **You need domain-specific knowledge**  
-  - Out-of-the-box Copilot might not know your company’s internal procedures or data. An agent can query your SharePoint sites, databases, or custom sources to give accurate, up-to-date answers.  
-- **You want to automate multi-step workflows**  
-  - For example: "When someone submits an expense, send it for approval, update the finance tracker, and notify the manager." A custom agent can handle every step, triggered by a single command or event.  
-- **You need a contextual, in-tool experience**  
-  - Imagine a New Hire Onboarding agent in Teams that guides HR staff through every policy, sends necessary forms, and schedules orientation meetings—right inside your existing collaboration platform.  
+### You need domain-specific knowledge
+
+- Out-of-the-box Copilot might not know your company’s internal procedures or data. An agent can query your SharePoint sites, databases, or custom sources to give accurate, up-to-date answers.  
+
+### You want to automate multi-step workflows
+
+- For example: "When someone submits an expense, send it for approval, update the finance tracker, and notify the manager." A custom agent can handle every step, triggered by a single command or event.  
+
+### You need a contextual, in-tool experience  
+
+- Imagine a New Hire Onboarding agent in Teams that guides HR staff through every policy, sends necessary forms, and schedules orientation meetings—right inside your existing collaboration platform.  
 
 ---
 
@@ -65,17 +70,24 @@ Below, we’ll define each building block and show how they work together to mak
 
 **Knowledge** is the data and context your agent uses to answer questions accurately. It has two parts:
 
-- **Custom Instructions & Context**  
-  - You write a brief description of the agent’s purpose and tone. For example:  
-    > "You are an IT support agent. You help employees troubleshoot common software issues, provide troubleshooting steps, and escalate urgent tickets."  
-  - During a conversation, the agent remembers previous turns so it can refer back to what was already discussed (for instance, if the user first says, "My printer is offline," then later asks, "Did you check the ink level?" the agent recalls the printer context).
+#### Custom Instructions & Context
 
-- **Knowledge Sources (Grounding Data)**  
-  - You connect your agent to up to multiple data sources—SharePoint libraries, documentation sites, wikis, or other databases.  
-  - When a user asks a question, the agent pulls relevant excerpts from those sources so answers are **grounded** in your organization’s actual policies, product manuals, or any proprietary information.  
-  - You can even force the agent to only respond with information from those sources, preventing it from guessing or "hallucinating" answers.
+- You write a brief description of the agent’s purpose and tone. For example:  
 
-> **Example:** A "Policy Assistant" agent might connect to your HR SharePoint site. If a user asks, "What is our PTO accrual rate?" the agent retrieves the exact text from the HR policy document rather than relying on a generic AI response.
+    ```text
+    You are an IT support agent. You help employees troubleshoot common software issues, provide troubleshooting steps, and escalate urgent tickets.
+    ```
+
+- During a conversation, the agent remembers previous turns so it can refer back to what was already discussed (for instance, if the user first says, "My printer is offline," then later asks, "Did you check the ink level?" the agent recalls the printer context).
+
+#### Knowledge Sources (Grounding Data)
+
+- You connect your agent to up to multiple data sources—SharePoint libraries, documentation sites, wikis, or other databases.  
+- When a user asks a question, the agent pulls relevant excerpts from those sources so answers are **grounded** in your organization’s actual policies, product manuals, or any proprietary information.  
+- You can even force the agent to only respond with information from those sources, preventing it from guessing or "hallucinating" answers.
+
+!!! example
+    A "Policy Assistant" agent might connect to your HR SharePoint site. If a user asks, "What is our PTO accrual rate?" the agent retrieves the exact text from the HR policy document rather than relying on a generic AI response.
 
 ---
 
@@ -90,29 +102,28 @@ Below, we’ll define each building block and show how they work together to mak
 
 #### How Actions Work
 
-1. **Define Inputs & Outputs**  
-   - For example, a Send Email action might require:  
-     - `RecipientEmailAddress`  
-     - `SubjectLine`  
-     - `EmailBody`  
+- **Define Inputs & Outputs**  
+      - For example, a Send Email action might require:  
+        - `RecipientEmailAddress`  
+        - `SubjectLine`  
+        - `EmailBody`  
 
-2. **Combine Actions into Workflows**  
-   - Often, fulfilling a user request involves multiple steps.  
-   - You can sequence actions so that:  
-     1. The agent retrieves data from a SharePoint list.  
-     2. It generates a summary using the LLM.  
-     3. It sends a Teams message with that summary.  
+- **Combine Actions into Workflows**  
+      - Often, fulfilling a user request involves multiple steps.  
+      - You can sequence actions so that:  
+             1. The agent retrieves data from a SharePoint list.  
+             2. It generates a summary using the LLM.  
+             3. It sends a Teams message with that summary.  
 
-3. **Connect to External Systems**  
-   - If you need to update a CRM or call an internal API, create a custom action to handle that.  
-   - Copilot Studio can integrate with the Power Platform or any HTTP-based endpoint.
+- **Connect to External Systems**  
+      - If you need to update a CRM or call an internal API, create a custom action to handle that.  
+      - Copilot Studio can integrate with the Power Platform or any HTTP-based endpoint.
 
-> **Example:** A "Expense Helper" agent could:  
->
-> 1. Listen for a "Submit Expense" request.  
-> 2. Grab the user’s expense details from a form.  
-> 3. Use an "Add to SharePoint List" action to store the data.  
-> 4. Trigger a "Send Email" action to notify the approver.  
+!!! example "An "Expense Helper" agent could:"  
+    1. Listen for a "Submit Expense" request.  
+    2. Grab the user’s expense details from a form.  
+    3. Use an "Add to SharePoint List" action to store the data.  
+    4. Trigger a "Send Email" action to notify the approver.  
 
 ---
 
@@ -120,20 +131,26 @@ Below, we’ll define each building block and show how they work together to mak
 
 **Topics** define the conversational triggers or entry points for your agent. Each topic corresponds to a piece of functionality or a question category.
 
-- **Conversational Triggers**  
-  - A topic might be "Submit IT Ticket," "Check Vacation Balance," or "Create Sales Report."  
-  - Under the hood, Copilot Studio uses **generative orchestration**: rather than relying on exact keywords, the AI interprets user intent and picks the right topic based on a short description you provide.  
+#### Conversational Triggers  
 
-- **Topic Descriptions**  
-  - In each topic, you write a clear, concise description of what that topic covers. For example:  
-    > *"This topic helps users submit an IT support ticket by collecting the issue details, priority, and contact information."*  
-  - The AI uses that description to decide when to activate this topic, even if the user’s phrasing doesn’t exactly match.
+- A topic might be "Submit IT Ticket," "Check Vacation Balance," or "Create Sales Report."  
+- Under the hood, Copilot Studio uses **generative orchestration**: rather than relying on exact keywords, the AI interprets user intent and picks the right topic based on a short description you provide.  
 
-- **Mapping Topics to Actions**  
-  - Each topic is connected to one or more actions or data retrieval steps.  
-  - When the AI chooses a topic, it guides the conversation through the sequence you defined (ask follow-up questions, call actions, return results).
+#### Topic Descriptions  
 
-> **Example:** If a user says, "I need help setting up my new laptop," the AI might match that intent to the "Submit IT Ticket" topic. The agent then asks for laptop model, user details, and pushes a ticket into the helpdesk system automatically.
+- In each topic, you write a clear, concise description of what that topic covers. For example:
+
+> *"This topic helps users submit an IT support ticket by collecting the issue details, priority, and contact information."*
+
+- The AI uses that description to decide when to activate this topic, even if the user’s phrasing doesn’t exactly match.
+
+#### Mapping Topics to Actions  
+
+- Each topic is connected to one or more actions or data retrieval steps.  
+- When the AI chooses a topic, it guides the conversation through the sequence you defined (ask follow-up questions, call actions, return results).
+
+!!! example
+    If a user says, "I need help setting up my new laptop," the AI might match that intent to the "Submit IT Ticket" topic. The agent then asks for laptop model, user details, and pushes a ticket into the helpdesk system automatically
 
 ---
 
@@ -141,22 +158,25 @@ Below, we’ll define each building block and show how they work together to mak
 
 **Instructions** (sometimes called "Prompts" or "System Messages") guide the LLM’s tone, style, and boundaries. They shape how the agent responds in any situation.
 
-- **Role & Persona**  
-  - You tell the AI who it is (e.g., "You are a customer service agent for Contoso Retail").  
-  - This sets the tone—friendly, concise, formal, or casual—depending on your use case.
+#### Role & Persona  
 
-- **Response Guidelines**  
-  - Specify any rules the agent must follow, such as:  
-    - "Always summarize policy information in bullet points."  
-    - "If you don’t know the answer, say ‘I’m sorry, I don’t have that information.’"  
-    - "Never include confidential data outside of context."
+- You tell the AI who it is (e.g., "You are a customer service agent for Contoso Retail").  
+- This sets the tone—friendly, concise, formal, or casual—depending on your use case.
 
-- **Memory & Context Rules**  
-  - You can instruct the agent how many turns of conversation to remember.  
-  - For example: "Remember details from this user’s requests for up to three follow-up questions."
+#### Response Guidelines  
 
-> **Example:** In a "Benefits Advisor" agent, you might include:  
-> > "Always reference the latest HR handbook when answering questions. If asked about enrollment deadlines, provide the specific dates from the policy. Keep answers under 150 words."
+- Specify any rules the agent must follow, such as:  
+      - "Always summarize policy information in bullet points."  
+      - "If you don’t know the answer, say ‘I’m sorry, I don’t have that information.’"  
+      - "Never include confidential data outside of context."
+
+#### Memory & Context Rules
+
+- You can instruct the agent how many turns of conversation to remember.  
+- For example: "Remember details from this user’s requests for up to three follow-up questions."
+
+!!! example "In a "Benefits Advisor" agent, you might include:"
+    "Always reference the latest HR handbook when answering questions. If asked about enrollment deadlines, provide the specific dates from the policy. Keep answers under 150 words."
 
 ---
 
