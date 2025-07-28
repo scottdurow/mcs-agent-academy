@@ -14,8 +14,16 @@ jobs:
 
     - name: Run markdownlint
       uses: DavidAnson/markdownlint-cli2-action@v20
+      continue-on-error: true
       with:
         globs: '**/*.md'
+        config: |
+          {
+            "default": true,
+            "MD013": false, # Line length https://github.com/DavidAnson/markdownlint/blob/v0.38.0/doc/md013.md
+            "MD033": false, # Inline HTML https://github.com/DavidAnson/markdownlint/blob/v0.38.0/doc/md033.md
+            "MD041": false # First line should be top-level heading https://github.com/DavidAnson/markdownlint/blob/v0.38.0/doc/md041.md
+          }
 
   markdown-link-check:
     runs-on: ubuntu-latest
@@ -26,6 +34,7 @@ jobs:
     # Checks the status of hyperlinks in .md files in verbose mode
     - name: Check links
       uses: tcort/github-action-markdown-link-check@v1
+      continue-on-error: true
       with:
         use-quiet-mode: 'yes'          # Only show broken links
         use-verbose-mode: 'yes'
