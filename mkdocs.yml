@@ -9,6 +9,7 @@ theme:
     accent: indigo
   features:
     - navigation.expand
+    - navigation.footer
     - navigation.instant
     - navigation.path
     - navigation.prune
