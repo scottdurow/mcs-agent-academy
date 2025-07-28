@@ -67,9 +67,8 @@ There are two types of solutions:
 
 Think of Solutions as a _toolbox_. When you need to fix or build something (an agent) in a different location (environment), you gather all the necessary tools (components) and put them in your toolbox (Solution). You can then carry this toolbox to the new location (environment) and use the tools (components) to complete your work, or add new tools (components) to customize your agent or project you're building.
 
-💬 Elaiza, your friendly cloud advocate popping in here 🙋🏻‍♀️ to share some words:
-
-> We have a saying in New Zealand, "Be a tidy Kiwi!" which is a call to action for New Zealanders 🥝 to take responsibility for their environment by disposing of litter properly and keeping public spaces clean. We can use the same context for agents by keeping everything related to your agent organized and portable, and it'll help you maintain a tidy environment.
+!!! quote "Elaiza, your friendly cloud advocate popping in here 🙋🏻‍♀️ to share some words:"
+    We have a saying in New Zealand, "Be a tidy Kiwi!" which is a call to action for New Zealanders 🥝 to take responsibility for their environment by disposing of litter properly and keeping public spaces clean. We can use the same context for agents by keeping everything related to your agent organized and portable, and it'll help you maintain a tidy environment.
 
 It's good practice to create an agent in a dedicated solution in your source (developer) environment. Here's why solutions are valuable:
 
