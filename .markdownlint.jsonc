@@ -30,7 +30,7 @@
   // Justification: Code blocks are used for text
   "MD046": false,
 
-  "ignores": [
+  "ignore": [
     "SECURITY.md",
     "SUPPORT.md", 
     "CODE_OF_CONDUCT.md"
