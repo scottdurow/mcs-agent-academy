@@ -18,13 +18,7 @@ jobs:
       id: markdown-lint
       with:
         globs: '**/*.md'
-        config: |
-          {
-            "default": true,
-            "MD013": false,
-            "MD033": false,
-            "MD041": false
-          }
+        config: '.markdownlint.jsonc'
     
     - name: Report markdown lint results
       if: steps.markdown-lint.outcome == 'failure'
