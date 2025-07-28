@@ -122,10 +122,9 @@ Next up, you'll explore the [fundamentals of Copilot Studio](../02-copilot-studi
 
 Stay sharp, Recruit - your AI journey is just beginning!
 
-## Additional Resources
+## 📚 Tactical Resources
 
-- **Copilot Studio Documentation Home**  
-  [https://learn.microsoft.com/microsoft-copilot-studio/](https://learn.microsoft.com/microsoft-copilot-studio/)
+🔗 [Copilot Studio Documentation Home](https://learn.microsoft.com/microsoft-copilot-studio/)
 
 ---
 
