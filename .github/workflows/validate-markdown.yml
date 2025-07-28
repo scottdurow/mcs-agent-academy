@@ -2,6 +2,8 @@ name: Validate markdown
 
 on:
   workflow_dispatch:  # Manual trigger only
+  push:              # Run on push to any branch
+    branches: ['**']
 
 jobs:
   markdown-link-check:
