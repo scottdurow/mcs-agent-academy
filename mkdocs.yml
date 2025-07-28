@@ -1,5 +1,5 @@
 site_name: Copilot Studio Agent Academy
-site_url: https://microsoft.github.io/mcs-agent-academy/
+site_url: https://microsoft.github.io/agent-academy/
 theme:
   name: material
   logo: images/logo.png
@@ -40,8 +40,8 @@ nav:
       - Understanding Licensing: recruit/12-understanding-licensing/README.md
   - Operative (Coming Soon): operative/README.md
   - Commander (Coming Soon): commander/README.md
-repo_url: https://github.com/microsoft/mcs-agent-academy
-repo_name: microsoft/mcs-agent-academy
+repo_url: https://github.com/microsoft/agent-academy
+repo_name: microsoft/agent-academy
 markdown_extensions:
   - admonition
   - pymdownx.details
