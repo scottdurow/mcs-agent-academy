@@ -17,7 +17,6 @@ jobs:
       continue-on-error: true
       id: markdown-lint
       with:
-        globs: '**/*.md'
         config: '.markdownlint.jsonc'
     
     - name: Report markdown lint results
