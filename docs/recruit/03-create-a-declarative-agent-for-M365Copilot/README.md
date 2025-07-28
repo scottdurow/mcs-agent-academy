@@ -121,92 +121,92 @@ Let's begin!
 
 1. Select **Agents** from the menu and select **Copilot for Microsoft 365**.
 
-   ![Copilot for Microsoft 365](assets/3.1_02_CopilotForM365.png)
+       ![Copilot for Microsoft 365](assets/3.1_02_CopilotForM365.png)
 
 1. Next, we're going to create a declarative agent by selecting **+ Add** agent.
 
-   ![Add Agent](assets/3.1_03_AddAgent.png)
+       ![Add Agent](assets/3.1_03_AddAgent.png)
 
 1. We'll then see the conversational creation experience load where we can chat in natural language with Copilot to describe the declarative agent we want to build, and use the provided questions for guidance.
 
-   Let's enter a detailed description that outlines the following,
-   - the task of the agent
-   - what type of inquiries it can handle
-   - the format of its response
-   - the goal of the agent
-
-   ```text
-   You are a highly skilled and experienced IT professional specializing in a wide range of computer systems, networking, and cybersecurity. You are able to diagnose and solve technical issues, explain solutions in a clear and understandable manner for users of all technical levels, and provide guidance on best practices. You should be concise and informative, using step-by-step instructions with bullet points when appropriate. Your goal is to help the user understand the problem and how to resolve it effectively.
-   ```
-
-   ![Create Prompt](assets/3.1_04_CreatePrompt.png)
+       Let's enter a detailed description that outlines the following,  
+       - the task of the agent  
+       - what type of inquiries it can handle  
+       - the format of its response  
+       - the goal of the agent  
+    
+       ```text
+       You are a highly skilled and experienced IT professional specializing in a wide range of computer systems, networking, and cybersecurity. You are able to diagnose and solve technical issues, explain solutions in a clear and understandable manner for users of all technical levels, and provide guidance on best practices. You should be concise and informative, using step-by-step instructions with bullet points when appropriate. Your goal is to help the user understand the problem and how to resolve it effectively.
+       ```
+    
+       ![Create Prompt](assets/3.1_04_CreatePrompt.png)
 
 1. After submitting the prompt, a noticeable update will appear on the right hand side pane with the details and instructions of the agent as defined by the prompt. Next you'll be asked to confirm the name of your agent and Copilot will have suggested a name.
 
-   Either enter `yes` to accept the suggested name or enter a different name such as the following,
+       Either enter `yes` to accept the suggested name or enter a different name such as the following,
+    
+       ```text
+       Contoso Tech Support Pro
+       ```
+    
+       ![Instructions updated](assets/3.1_05_InstructionsUpdated.png)
 
-   ```text
-   Contoso Tech Support Pro
-   ```
-
-   ![Instructions updated](assets/3.1_05_InstructionsUpdated.png)
-
-   > The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously.
+      > The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously.
 
 1. The name of the agent has now been updated as seen on the right hand side pane. We're now asked to refine the instructions for the agent. The instructions on the right hand side pane is already suitable as it covers the topics we want - refer to yellow highlighted text in screenshot below. Instead, we'll expand on how it should format its response and the tone. We'll enter the following,
 
-   ```text
-   Concise and Informative:
-   - Bullet Points: Use bullet points for clarity and to break down information into digestible parts.
-   - Summarize: Provide a brief summary of the solution at the end of the explanation.
+      ```text
+      Concise and Informative:
+      - Bullet Points: Use bullet points for clarity and to break down information into digestible parts.
+      - Summarize: Provide a brief summary of the solution at the end of the explanation.
+   
+      User-Friendly Communication:
+      - Empathy: Show empathy and understanding of the user's frustration or confusion.
+      - Encouragement: Encourage users by acknowledging their efforts and progress.
+   
+      Interactive and Engaging:
+      - Ask for Feedback: After providing a solution, ask if the user needs further assistance or if the solution worked.
+      ```
 
-   User-Friendly Communication:
-   - Empathy: Show empathy and understanding of the user's frustration or confusion.
-   - Encouragement: Encourage users by acknowledging their efforts and progress.
-
-   Interactive and Engaging:
-   - Ask for Feedback: After providing a solution, ask if the user needs further assistance or if the solution worked.
-   ```
-
-   ![Name updated](assets/3.1_06_NameUpdated.png)
+      ![Name updated](assets/3.1_06_NameUpdated.png)
 
 1. Next we'll be asked if we want to add any publicly accessible websites or knowledge. I'll respond with `No` as we will only be adding a prompt for our declarative agent in this lab. Subsequent labs in future lessons will cover knowledge sources.
 
-   ![No websites or knowledge sources added](assets/3.1_07_KnowledgeSources.png)
+      ![No websites or knowledge sources added](assets/3.1_07_KnowledgeSources.png)
 
 1. We'll then see a response from Copilot that we have now finished configuring our agent using the Copilot conversational creation experience. Click **Create** to provision the declarative agent for Microsoft 365 Copilot.
 
-   > **Reminder:** The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously. So you may be seeing a different message from Copilot at the end of your configuration.
+       > **Reminder:** The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously. So you may be seeing a different message from Copilot at the end of your configuration.
 
-   ![Create agent](assets/3.1_08_CreateDeclarativeAgent.png)
+      ![Create agent](assets/3.1_08_CreateDeclarativeAgent.png)
 
 1. Once the agent has been provisioned, you'll see the details of the agent which contains the description and the instructions defined during the Copilot conversational creation experience.
 
-   ![Agent details](assets/3.1_09_01_AgentDetails.png)
+      ![Agent details](assets/3.1_09_01_AgentDetails.png)
 
-   Scroll down the pane and you'll also see the capabilities of adding knowledge, enabling web search (via Bing), starter prompts and the publish details of the declarative agent for Microsoft 365 Copilot. The starter prompts will also be displayed in the test pane on the right hand side. Users can select these starter prompts to begin interacting with the agent.
+      Scroll down the pane and you'll also see the capabilities of adding knowledge, enabling web search (via Bing), starter prompts and the publish details of the declarative agent for Microsoft 365 Copilot. The starter prompts will also be displayed in the test pane on the right hand side. Users can select these starter prompts to begin interacting with the agent.
 
-   ![Additional capabilities](assets/3.1_09_02_SuggestedPrompts.png)
+      ![Additional capabilities](assets/3.1_09_02_SuggestedPrompts.png)
 
 1. In the Details section of the agent, you have the ability to change the agent icon as well. Select **Edit**.
 
-    ![Edit details](assets/3.1_10_01_EditDetails.png)
+      ![Edit details](assets/3.1_10_01_EditDetails.png)
 
-    Here you can change the icon and the background color. Select **Save** and then select **Save** again to update the details of the agent.
+      Here you can change the icon and the background color. Select **Save** and then select **Save** again to update the details of the agent.
 
-    ![Change icon](assets/3.1_10_02_ChangeIcon.png)
+      ![Change icon](assets/3.1_10_02_ChangeIcon.png)
 
 1. Let's do a quick test of the agent we've created. Select one of the **Starter Prompts** in the test pane on the left hand side.
 
-    ![Change icon](assets/3.1_11_TestUsingStarterPrompt.png)
+      ![Change icon](assets/3.1_11_TestUsingStarterPrompt.png)
 
 1. Our agent will then respond. Notice how it adhered to the instructions by providing bullet points into digestible parts, and used empathy in its response.
 
-    ![Change icon](assets/3.1_12_TestResponse.png)
+      ![Change icon](assets/3.1_12_TestResponse.png)
 
     If you scroll to the bottom of the message, notice how it also asked for feedback after providing a solution as instructed.
 
-    ![Change icon](assets/3.1_13_TestResponse.png)
+      ![Change icon](assets/3.1_13_TestResponse.png)
 
 In a few minutes you've added a declarative agent for Microsoft 365 Copilot in Copilot Studio 🙌🏻
 
@@ -216,54 +216,54 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
 
 1. Scroll down to the **Tools** section and select **+ Add tool**
 
-   ![Add tool](assets/3.2_01_AddTool.png)
+      ![Add tool](assets/3.2_01_AddTool.png)
 
 1. The Tools modal will appear and a list of Power Platform connectors is displayed. To add a Prompt, select **+ New tool**.
 
-   ![New tool](assets/3.2_02_NewTool.png)
+      ![New tool](assets/3.2_02_NewTool.png)
 
 1. A list of other tools is displayed - Prompt, Custom connector, REST API and Model Context Protocol. If your organization meets the [requirements for Computer Use](https://learn.microsoft.com/microsoft-copilot-studio/computer-use?tabs=new#requirements/?WT.mc_id=power-172614-ebenitez), this will also appear in the list. Select **Prompt**.
 
-   ![Select prompt](assets/3.2_03_SelectPrompt.png)
+      ![Select prompt](assets/3.2_03_SelectPrompt.png)
 
 1. Enter a name for the prompt. Let's name our prompt `IT Expert`.
 
-   ![Enter name](assets/3.2_04_NamePrompt.png)
+      ![Enter name](assets/3.2_04_NamePrompt.png)
 
 1. Select the **chevron icon** next to the **Model** to see the different chat models you can choose from. By default, the **Basic GPT-4o mini** model is selected and you also have the option to bring-your-own-model using Azure AI Foundry Models. We'll stick with the selected default model.
 
-   ![Change model](assets/3.2_05_ChangeModel.png)
+      ![Change model](assets/3.2_05_ChangeModel.png)
 
 1. Next, we'll provide our prompt with instructions. There's 3 methods that you can choose from
 
-   - Use Copilot to generate instructions for you based on your description of what you want the prompt to do.
-   - Use a preset template from the prompt library to create a prompt.
-   - Manually enter your own instructions.
+      - Use Copilot to generate instructions for you based on your description of what you want the prompt to do.
+      - Use a preset template from the prompt library to create a prompt.
+      - Manually enter your own instructions.
 
 1. Let's first try using Copilot to generate instructions based on a description entered. Enter the following into the Copilot field and submit.
 
-   ```text
-   I need an IT expert that can help answer questions related to networking, computer systems, user devices and anything else IT related
-   ```
+      ```text
+      I need an IT expert that can help answer questions related to networking, computer systems, user devices and anything else IT related
+      ```
 
-   ![Get started with Copilot](assets/3.2_07_UseCopilot_EnterPrompt.png)
+      ![Get started with Copilot](assets/3.2_07_UseCopilot_EnterPrompt.png)
 
 1. Copilot will then begin to generate a prompt for us.
 
-   ![Copilot drafts prompts](assets/3.2_08_CopilotDraftingPrompt.png)
+      ![Copilot drafts prompts](assets/3.2_08_CopilotDraftingPrompt.png)
 
 1. The Copilot generated draft instructions will then appear.
 
-   ![Copilot generated draft instructions](assets/3.2_09_CopilotGeneratedInstructions.png)
+      ![Copilot generated draft instructions](assets/3.2_09_CopilotGeneratedInstructions.png)
 
 1. Scroll down to the bottom of the instructions and you'll see the user input parameter already defined by Copilot. You then have the option to
     - Keep the draft instructions generated.
     - Refresh the draft instructions using Copilot.
     - Clear the draft instructions.
 
-    Clear the draft instructions by selecting the **trash bin** icon and we'll next try the prompt library.
+        Clear the draft instructions by selecting the **trash bin** icon and we'll next try the prompt library.
 
-    ![Prompt instructions](assets/3.2_10_Options.png)
+        ![Prompt instructions](assets/3.2_10_Options.png)
 
 1. Select the **prompt library** link.
 
@@ -358,33 +358,33 @@ We'll next update our instructions to invoke the prompt and test our declarative
 
 1. Scroll up to the **Details** section and select **Edit**. This will enable the fields to be editable.
 
-   ![Select Edit](assets/3.3_01_EditInstructions.png)
+      ![Select Edit](assets/3.3_01_EditInstructions.png)
 
 1. We can now update our instructions to invoke our prompt by referencing the name of the prompt. Clear the instructions, then copy and paste the following.
 
-   ```text
-   - When a user asks questions about their device, run the "IT Expert" prompt. Use their question as the problem input of the "IT Expert" prompt.
-   ```
+      ```text
+      - When a user asks questions about their device, run the "IT Expert" prompt. Use their question as the problem input of the "IT Expert" prompt.
+      ```
 
-   Notice how the final sentence is instructing the agent to use the question asked by the user as the value for the problem input parameter. The agent will use the question as the problem input for the prompt. Next, select **Save**.
+      Notice how the final sentence is instructing the agent to use the question asked by the user as the value for the problem input parameter. The agent will use the question as the problem input for the prompt. Next, select **Save**.
 
-   ![Update instructions to invoke prompt](assets/3.3_02_UpdateInstructionsWithPrompt.png)
+      ![Update instructions to invoke prompt](assets/3.3_02_UpdateInstructionsWithPrompt.png)
 
 1. We're now ready to test our updated instructions of our declarative agent. Select the **refresh icon** in the test pane.
 
-   ![Select refresh icon](assets/3.3_03_RefreshTestPane.png)
+      ![Select refresh icon](assets/3.3_03_RefreshTestPane.png)
 
 1. Next, enter the following prompt below and submit.
 
-   ```text
-   Can you help me, my laptop is encountering a blue screen
-   ```
+       ```text
+       Can you help me, my laptop is encountering a blue screen
+       ```
 
-   ![Perform test](assets/3.3_04_PerformTest.png)
+      ![Perform test](assets/3.3_04_PerformTest.png)
 
 1. The agent invokes the prompt and responds, with a citation to the agent.
 
-   ![Prompt instructions](assets/3.3_05_ModelResponse.png)
+      ![Prompt instructions](assets/3.3_05_ModelResponse.png)
 
 Let's now publish our declarative agent 😃
 
@@ -392,70 +392,70 @@ Let's now publish our declarative agent 😃
 
 1. Select **Publish**.
 
-   > **Reminder**: To publish a declarative agent built in Copilot Studio to Microsoft 365 Copilot and Teams, you need a Microsoft 365 Copilot user license.
+      > **Reminder**: To publish a declarative agent built in Copilot Studio to Microsoft 365 Copilot and Teams, you need a Microsoft 365 Copilot user license.
 
-   ![Publish agent](assets/3.4_01_PublishAgent.png)
+      ![Publish agent](assets/3.4_01_PublishAgent.png)
 
 1. A modal will appear which displays the Channels and publishing details that can be updated.
 
    - Channels: The agent will be published to Microsoft 365 Copilot and Microsoft Teams.
    - Agent app information: This is what will be displayed when the user adds the agent to Microsoft 365 Copilot or in Microsoft Teams. These are fields that can be updated as needed. For example, you can update the **Short description**, **Long description**, **Developer name** with your name.
 
-   > If you don't see all the fields displayed on your browser, try zooming out e.g. 75%
+      > If you don't see all the fields displayed on your browser, try zooming out e.g. 75%
 
-   ![Agent app details](assets/3.4_02_ConfigurePublishingAgentDetails.png)
+      ![Agent app details](assets/3.4_02_ConfigurePublishingAgentDetails.png)
 
 1. Select **Publish**. Copilot Studio will then begin publishing the agent.
 
-   ![Publishing agent](assets/3.4_03_PublishingAgent.png)
+      ![Publishing agent](assets/3.4_03_PublishingAgent.png)
 
 1. When publishing is completed, we'll see the [Availability options](https://learn.microsoft.com/microsoft-copilot-studio/microsoft-copilot-extend-copilot-extensions#set-availability-options/?WT.mc_id=power-172614-ebenitez) of the agent.
 
-   | Availability option    | Description |
-   | ---------- | ---------- |
-   | Share Link | Copy the link to distribute it with shared users to open the agent in Microsoft 365 Copilot |
-   | Show to my teammates and shared users  | Lets you grant access to others to participate in authoring the agent, or to security groups to grant them access to use the agent in Microsoft 365 Chat or Teams.  |
-   | Show to everyone in my org   | Submit to the tenant admin to add to the organizational catalog for all tenant users to add the agent. The agent will show under Built by your org in Microsoft 365 Copilot and in Teams    |
-   | Download as a .zip    | Download as a zip file to upload as a custom app in Teams    |
+      | Availability option    | Description |
+      | ---------- | ---------- |
+      | Share Link | Copy the link to distribute it with shared users to open the agent in Microsoft 365 Copilot |
+      | Show to my teammates and shared users  | Lets you grant access to others to participate in authoring the agent, or to security groups to grant them access to use the agent in Microsoft 365 Chat or Teams.  |
+      | Show to everyone in my org   | Submit to the tenant admin to add to the organizational catalog for all tenant users to add the agent. The agent will show under Built by your org in Microsoft 365 Copilot and in Teams    |
+      | Download as a .zip    | Download as a zip file to upload as a custom app in Teams    |
 
-   ![Availability options](assets/3.4_04_AvailabilityOptions.png)
+      ![Availability options](assets/3.4_04_AvailabilityOptions.png)
 
 1. Let's take a look at sharing the agent. Select **Show to my teammates and shared users**. A pane will appear where you can search for users you want to to share the agent with either by entering their name, an email or a security group. You can review this list anytime to edit who has access to the agent.
 
-   There's also two checkboxes:
-   - _Send an email invitation to new users_ - new users will receive an email invitation.
-   - _Visible Built with Power Platform_ - agent becomes available in the Built with Power Platform section of the Teams app store.
+      There's also two checkboxes:
+      - _Send an email invitation to new users_ - new users will receive an email invitation.
+      - _Visible Built with Power Platform_ - agent becomes available in the Built with Power Platform section of the Teams app store.
 
-   For more details, refer to [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams/?WT.mc_id=power-172614-ebenitez).
+      For more details, refer to [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams/?WT.mc_id=power-172614-ebenitez).
 
-   Select **Cancel** or the **X** icon to exit from the pane.
+      Select **Cancel** or the **X** icon to exit from the pane.
 
-   ![Share agent](assets/3.4_05_ShareAgent.png)
+      ![Share agent](assets/3.4_05_ShareAgent.png)
 
 1. Select **Copy** and in a new browser tab, paste the link.
 
-   ![Copy link](assets/3.4_06_CopyLink.png)
+      ![Copy link](assets/3.4_06_CopyLink.png)
 
 1. Microsoft 365 Copilot will load and a modal will appear with the agent app details.
    Notice how the developer name, the short description and long description is displayed. These are from the publishing details updated in an earlier step.
 
-   Select **Add**.
+      Select **Add**.
 
-   ![Availability options](assets/3.4_07_AgentAppDetails.png)
+      ![Availability options](assets/3.4_07_AgentAppDetails.png)
 
 1. Our declarative agent will load next. We can see the starter prompts to select from which quickly enables users to seek immediate help.
 
-   Let's select the **Hardware Problem** prompt which will automatically prepopulate the message Copilot field. Submit the question to Copilot.
+      Let's select the **Hardware Problem** prompt which will automatically prepopulate the message Copilot field. Submit the question to Copilot.
 
-   ![Select starter prompt](assets/3.4_08_SelectStarterPrompt.png)
+      ![Select starter prompt](assets/3.4_08_SelectStarterPrompt.png)
 
 1. The agent will then invoke our **IT Expert** prompt and we'll see the model response returned as a message in our declarative agent.
 
-   ![Response](assets/3.4_09_Response.png)
+      ![Response](assets/3.4_09_Response.png)
 
 1. But _how do we know_ the declarative agent invoked the prompt? 👀 Well, here's a tip!
 
-    > You can test and debug agents in Microsoft 365 Copilot by enabling [developer mode](https://learn.microsoft.com/microsoft-365-copilot/extensibility/debugging-copilot-agent#use-developer-mode-in-copilot-chat/?WT.mc_id=power-172614-ebenitez).
+      > You can test and debug agents in Microsoft 365 Copilot by enabling [developer mode](https://learn.microsoft.com/microsoft-365-copilot/extensibility/debugging-copilot-agent#use-developer-mode-in-copilot-chat/?WT.mc_id=power-172614-ebenitez).
 
     Enter the following in the message Copilot field and submit.
 

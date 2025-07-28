@@ -42,6 +42,8 @@ nav:
 repo_url: https://github.com/microsoft/mcs-agent-academy
 repo_name: microsoft/mcs-agent-academy
 markdown_extensions:
+  - admonition
+  - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
