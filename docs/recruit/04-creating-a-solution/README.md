@@ -8,11 +8,11 @@
 
 Agent Maker, welcome to your next tactical operation. In this mission, you’ll learn to asse3. You'll see the following,
 
-   - **Installed on** - the date of when the Solution was installed.
+- **Installed on** - the date of when the Solution was installed.
 
-   - **Configuration page** - developers set up an HTML web resource to help users interact with their app, agent or tool where it'll appear as a web page in the Information section with instructions or buttons. It's mostly used by companies or developers who build and share solutions with others.
+- **Configuration page** - developers set up an HTML web resource to help users interact with their app, agent or tool where it'll appear as a web page in the Information section with instructions or buttons. It's mostly used by companies or developers who build and share solutions with others.
 
-   - **Description** - describes the solution or a high level description of the configuration page.
+- **Description** - describes the solution or a high level description of the configuration page.
 
    We'll leave these blank for this lab.
 
@@ -189,65 +189,65 @@ Make sure you switch to your dedicated developer environment, refer to [Lesson 0
 
 1. Using the same Copilot Studio environment used in the previous lesson, select the **ellipsis icon (. . .)** on the left handside menu in Copilot Studio. Select **Solutions** under the **Explore** header.
 
-   ![Solutions](assets/4.1_01_Solutions.png)
+    ![Solutions](assets/4.1_01_Solutions.png)
 
 1. The **Solution Explorer** in Copilot Studio will load. Select **+ New solution**
 
-   ![Solutions](assets/4.1_02_NewSolution.png)
+    ![Solutions](assets/4.1_02_NewSolution.png)
 
 1. The **New solution** pane will appear where we can define the details of our solution. First, we need to create a new publisher. Select **+ New publisher**.
 
-   ![Solutions](assets/4.1_03_NewPublisher.png)  
+    ![Solutions](assets/4.1_03_NewPublisher.png)  
 
 1. The **Properties** tab of the **New publisher** pane will appear with required and non-required fields to be populated in the **Properties** tab. This is where we can outline the details of the publisher which will be used as the label or brand that identifies who created or owns the solution.
 
-   | Property    | Description | Required |
-   | ---------- | ---------- | :----------: |
-   | Display name | Display name for the publisher | Yes   |
-   | Name  | The unique name and schema name for the publisher  | Yes    |
-   | Description   | Outlines the purpose of the solution    | No     |
-   | Prefix    | Publisher prefix which will be applied to newly created components   | Yes      |
-   | Choice value prefix   | Generates a number based on the publisher prefix. This number is used when you add options to choices and provides an indicator of which solution was used to add the option.   | Yes      |
+    | Property    | Description | Required |
+    | ---------- | ---------- | :----------: |
+    | Display name | Display name for the publisher | Yes   |
+    | Name  | The unique name and schema name for the publisher  | Yes    |
+    | Description   | Outlines the purpose of the solution    | No     |
+    | Prefix    | Publisher prefix which will be applied to newly created components   | Yes      |
+    | Choice value prefix   | Generates a number based on the publisher prefix. This number is used when you add options to choices and provides an indicator of which solution was used to add the option.   | Yes      |
 
-   Copy and paste the following as the **Display name**,
+    Copy and paste the following as the **Display name**,
 
-   ```text
-   Contoso Solutions
-   ```
+    ```text
+    Contoso Solutions
+    ```
 
-   Copy and paste the following as the **Name**,
+    Copy and paste the following as the **Name**,
 
-   ```text
-   ContosoSolutions
-   ```
+    ```text
+    ContosoSolutions
+    ```
 
-   Copy and paste the following as the **Description**,
+    Copy and paste the following as the **Description**,
 
-   ```text
-   Copilot Studio for Beginners
-   ```
+    ```text
+    Copilot Studio for Beginners
+    ```
 
-   Copy and paste the following for the **Prefix**,
+    Copy and paste the following for the **Prefix**,
 
-   ```text
-   cts
-   ```
+    ```text
+    cts
+    ```
 
-   By default, the **Choice value** prefix will display an integer value. Update this integer value to the nearest thousand. For example, in my screenshot below, it was initially `77074`. Update this from `77074` to `77000`.
+    By default, the **Choice value** prefix will display an integer value. Update this integer value to the nearest thousand. For example, in my screenshot below, it was initially `77074`. Update this from `77074` to `77000`.
 
-   ![Solutions](assets/4.1_04_PublisherProperties.png)  
+    ![Solutions](assets/4.1_04_PublisherProperties.png)  
 
 1. If you want to provide the contact details for the Solution, select the **Contact** tab and populate the following columns displayed.
 
-   ![Solutions](assets/4.1_05_Contact.png)
+    ![Solutions](assets/4.1_05_Contact.png)
 
 1. Select the **Properties** tab and select **Save** to create the Publisher.
 
-   ![Solutions](assets/4.1_06_SavePublisher.png)
+    ![Solutions](assets/4.1_06_SavePublisher.png)
 
 1. The New publisher pane will close and you'll be brought back to the **New solution** pane with the newly created Publisher selected.
 
-   ![Solutions](assets/4.1_07_PublisherSelected.png)  
+    ![Solutions](assets/4.1_07_PublisherSelected.png)  
 
 High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn how to create a new custom solution.
 
@@ -255,27 +255,27 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
 1. Now that we've created our solutions, we can now complete the rest of the form in the **New solution** pane.
 
-   Copy and paste the following as the **Display name**,
+    Copy and paste the following as the **Display name**,
 
-   ```text
-   Contoso Helpdesk Agent
-   ```
+    ```text
+    Contoso Helpdesk Agent
+    ```
 
-   Copy and paste the following as the **Name**,
+    Copy and paste the following as the **Name**,
 
-   ```text
-   ContosoHelpdeskAgent
-   ```
+    ```text
+    ContosoHelpdeskAgent
+    ```
 
-   Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/en-us/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-172615-ebenitez) by default will be `1.0.0.0`.
+    Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-172615-ebenitez) by default will be `1.0.0.0`.
 
-   Tick the **Set as your preferred solution** checkbox.
+    Tick the **Set as your preferred solution** checkbox.
 
-   ![Solutions](assets/4.2_01_SolutionDetails_.png)  
+    ![Solutions](assets/4.2_01_SolutionDetails_.png)  
 
 1. Expand the **More options** to see additional details that can be provided in a solution.
 
-   ![Solutions](assets/4.2_02_MoreOptions.png)
+    ![Solutions](assets/4.2_02_MoreOptions.png)
 
 1. You'll see the following,
 
@@ -293,13 +293,13 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
 1. The solution for Contoso Helpdesk Agent has now been created. There will be zero components until we create an agent in Copilot Studio.
 
-   Select the **back arrow** icon to return to the Solution Explorer.
+    Select the **back arrow** icon to return to the Solution Explorer.
 
-   ![Solutions](assets/4.2_04_SolutionCreated.png)
+    ![Solutions](assets/4.2_04_SolutionCreated.png)
 
 1. Notice how the Contoso Helpdesk Agent now displays as the **Current preferred solution** since we ticked the **Set as your preferred solution** checkbox earlier.
 
-   ![Solutions](assets/4.2_05_CurrentPreferredSolutionSelected.png)
+    ![Solutions](assets/4.2_05_CurrentPreferredSolutionSelected.png)
 
 ## ✅ Mission Complete
 
