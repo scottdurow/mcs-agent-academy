@@ -10,7 +10,7 @@
   "MD013": false,
 
   // MD024/no-duplicate-heading : Multiple headings with the same content : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md024.md
-  // Justification: Some sections have a common template sub-heading format. 
+  // Justification: Some sections have a common template sub-heading format.
   "MD024": {
     // Only check sibling headings
     "siblings_only": true
