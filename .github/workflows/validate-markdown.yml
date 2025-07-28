@@ -1,9 +1,7 @@
 name: Validate markdown
 
 on:
-  workflow_dispatch:  # Manual trigger only
-  push:              # Run on push to any branch
-    branches: ['**']
+  pull_request:
 
 jobs:
   markdown-lint:
