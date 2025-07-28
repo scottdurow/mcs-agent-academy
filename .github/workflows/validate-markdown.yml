@@ -1,0 +1,19 @@
+name: Validate markdown
+
+on:
+  workflow_dispatch:  # Manual trigger only
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    # check out the latest version of the code
+    steps:
+    - uses: actions/checkout@v4
+
+    # Checks the status of hyperlinks in .md files in verbose mode
+    - name: Check links
+      uses: tcort/github-action-markdown-link-check@v1
+      with:
+        use-quiet-mode: 'yes'          # Only show broken links
+        use-verbose-mode: 'yes'
+        check-modified-files-only: 'no' # Check all files
