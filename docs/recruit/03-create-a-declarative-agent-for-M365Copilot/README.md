@@ -481,7 +481,7 @@ Let's now publish our declarative agent 😃
 
     ![Agent debug info](assets/3.4_12_AgentDebugInfo.png)
 
-1. Here you'll find information on the agent metadata that occured at runtime. In our use case, we'll be focusing on the _Actions_ section
+1. Here you'll find information on the agent metadata that occurred at runtime. In our use case, we'll be focusing on the _Actions_ section
 
     - **Matched actions** highlight the current status of functions found during the app's search.
     - **Selected actions** highlight the current status of functions chosen to run based on the app's decision-making process.
