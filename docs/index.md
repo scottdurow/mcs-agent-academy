@@ -5,44 +5,11 @@ hide:
 
 # Copilot Studio Agent Academy
 
-![Copilot Studio Agent Academy Recruit](./images/mcs-agent-academy-recruit-banner.png)
-**Welcome, Recruit.**  
+**Welcome to Copilot Studio Agent Academy.**  
+
 Your mission—should you choose to accept it—is to master the art of building agents using **Microsoft Copilot Studio**.
 
 This hands-on training is your entry point into the **world of agents**: from grounded prompts to Adaptive Cards and agent flows, you'll learn how to build, scale, and deploy intelligent agents using real-world tools and use cases.
-
----
-
-## 🎯 Mission Objective
-
-By completing the Agent Academy, you'll be able to:
-
-- Understand what agents are in the context of Microsoft Copilot Studio
-- Explore how Large Language Models (LLMs), retrieval-augmented generation (RAG), and orchestration come together in an agent
-- Build both **declarative** and **custom agents**
-- Enhance agents with **Topics**, **Adaptive Cards**, and **Agent Flows**
-- Deploy agents to **Microsoft Teams** and **Microsoft 365 Copilot**
-
----
-
-## 🧪 Prerequisites
-
-To complete all missions, you’ll need:
-
-- A Microsoft 365 Developer tenant (with SharePoint enabled)
-- Access to **Microsoft Copilot Studio** (trial or licensed)
-- Optional: Basic knowledge of SharePoint, Power Platform, or Power Fx
-
----
-
-## 🧬 Who This Is For
-
-This course is ideal for:
-
-- Makers and developers exploring **Copilot Studio**
-- IT pros building **Microsoft 365 Copilot extensions**
-- Power Platform enthusiasts who want to **level up** with intelligent agents
-- Anyone who prefers to learn by **doing**
 
 ---
 
@@ -50,11 +17,11 @@ This course is ideal for:
 
 The **Copilot Studio Agent Academy** is a multi-phase training program designed to build your skills across three agent ranks. Each level includes a badge and increasing responsibilities:
 
-| Rank             | Level | Visual | Description                                                                 |
-|------------------|:-----:|--------|-----------------------------------------------------------------------------|
-| 🟢 **Recruit**     | •     | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png)     | Learn the fundamentals and get hands-on with Copilot Studio basics — that’s **this course**. |
-| 🔵 **Operative**   | ••    | ![Operative Badge](./images/mcs-agent-academy-operative-badge.png) | Deepen your skills with orchestration, adaptive UX, and connected systems — coming soon in **Volume 2**. |
-| 🟡 **Commander**   | •••   | ![Commander Badge](./images/mcs-agent-academy-commander-badge.png) | Master autonomy, exception handling, security and scalable deployment — taught in the **final volume** of the academy. |
+| Rank             | Level | Visual |
+|------------------|:-----:|--------|
+| 🟢 **Recruit**     | •     | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png)     |
+| 🔵 **Operative**</br>(Coming Soon)   | ••    | ![Operative Badge](./images/mcs-agent-academy-operative-badge.png) |
+| 🟡 **Commander**</br>(Coming Soon)    | •••   | ![Commander Badge](./images/mcs-agent-academy-commander-badge.png) |
 
 > ✅ Completing this curriculum earns you the **Recruit** badge.  
 > 🔓 **Operative** and **Commander** will be unlocked in future phases.
