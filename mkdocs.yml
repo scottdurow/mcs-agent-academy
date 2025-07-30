@@ -44,6 +44,7 @@ repo_url: https://github.com/microsoft/agent-academy
 repo_name: microsoft/agent-academy
 markdown_extensions:
   - admonition
+  - attr_list
   - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
