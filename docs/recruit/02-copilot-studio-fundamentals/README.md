@@ -62,7 +62,7 @@ Every Copilot Studio agent is built from four core components:
 1. **Knowledge**  
 1. **Tools (Actions)**  
 1. **Topics**  
-1 **Instructions**
+1. **Instructions**
 
 Below, we’ll define each building block and show how they work together to make an effective agent.
 
