@@ -43,16 +43,16 @@ Event triggers transform your agent from a reactive assistant into a proactive, 
 1. **Autonomous operation** - your agent can work 24/7 without human intervention, responding to events as they happen.
     - *Example:* Automatically welcome new team members when they're added to a team.
 
-2. **Real-time responsiveness** - instead of waiting for users to ask questions, your agent responds immediately to relevant events.
+1. **Real-time responsiveness** - instead of waiting for users to ask questions, your agent responds immediately to relevant events.
     - *Example*: Alert the IT team when a SharePoint document is modified.
 
-3. **Workflow automation** - chain together multiple actions based on a single trigger event.
+1. **Workflow automation** - chain together multiple actions based on a single trigger event.
     - *Example:* When a new support ticket is created, create a task, notify the manager, and update the tracking dashboard.
 
-4. **Consistent processes** - ensure important steps never get missed by automating responses to key events.
+1. **Consistent processes** - ensure important steps never get missed by automating responses to key events.
     - *Example:* Every new employee automatically gets onboarding materials and access requests.
 
-5. **Data-driven actions** - use information from the triggering event to make smart decisions and take appropriate actions.
+1. **Data-driven actions** - use information from the triggering event to make smart decisions and take appropriate actions.
     - *Example:* Route urgent tickets to senior staff based on priority level in the trigger payload.
 
 ## ⚙️ How do Event Triggers work?
@@ -62,8 +62,8 @@ Event triggers operate through a three-step workflow that enables your agent to 
 ### The trigger workflow
 
 1. **Event Detection** - A specific event occurs in a connected system (SharePoint, Teams, Outlook, etc.)
-2. **Trigger Activation** - The event trigger detects this event and sends a payload to your agent via a Power Automate Cloud Flow.
-3. **Agent Response** - Your agent receives the payload and executes the instructions you've defined
+1. **Trigger Activation** - The event trigger detects this event and sends a payload to your agent via a Power Automate Cloud Flow.
+1. **Agent Response** - Your agent receives the payload and executes the instructions you've defined
 
 ### Event vs Topic triggers
 
@@ -161,10 +161,10 @@ Event triggers use the **agent creator's credentials** for all authentication:
 To maintain security when publishing agents with event triggers:
 
 1. **Evaluate data access** - Review what systems and data your triggers can access
-2. **Test thoroughly** - Understand what information triggers include in payloads
-3. **Narrow trigger scope** - Use specific parameters to limit what events activate triggers
-4. **Review payload data** - Ensure triggers don't expose sensitive information
-5. **Monitor usage** - Track trigger activity and resource consumption
+1. **Test thoroughly** - Understand what information triggers include in payloads
+1. **Narrow trigger scope** - Use specific parameters to limit what events activate triggers
+1. **Review payload data** - Ensure triggers don't expose sensitive information
+1. **Monitor usage** - Track trigger activity and resource consumption
 
 ## ⚠️ Troubleshooting and limitations
 
@@ -194,8 +194,8 @@ Keep these important considerations in mind when working with event triggers:
 You'll enhance your IT Help Desk agent to automatically respond to new support requests. When someone creates a new item in your SharePoint support tickets list, your agent will:
 
 1. Trigger autonomously when the SharePoint ticket is created
-2. Provide the ticket details and instructions on the steps that you want it to perform
-3. Automatically acknowledge the ticket to the submitter via an AI generated email
+1. Provide the ticket details and instructions on the steps that you want it to perform
+1. Automatically acknowledge the ticket to the submitter via an AI generated email
 
 This lab demonstrates how event triggers enable truly autonomous agent behavior.
 
@@ -213,27 +213,27 @@ Before starting this lab, ensure you have:
 
 1. Open your **IT Help Desk agent** in **Copilot Studio**
 
-2. First, ensure **Generative AI** is enabled for your agent:
+1. First, ensure **Generative AI** is enabled for your agent:
    - Navigate to the **Overview** tab
    - Under the Orchestration section, Toggle **Generative orchestration** to **On** if it's not already enabled  
      ![Enable Generative AI](./assets/10_EnableGenerativeAI.png)
 
-3. Navigate to the **Overview** tab and locate the **Triggers** section
+1. Navigate to the **Overview** tab and locate the **Triggers** section
 
-4. Click **+ Add trigger** to open the trigger library  
+1. Click **+ Add trigger** to open the trigger library  
     ![Navigate to Triggers](./assets/10_NavigateToTrigger.png)
 
-5. Search for and select **When an item is created** (SharePoint)  
+1. Search for and select **When an item is created** (SharePoint)  
     ![Select SharePoint Trigger](./assets/10_SelectSharePointTrigger.png)
 
-6. Configure the trigger name and connections:
+1. Configure the trigger name and connections:
 
    - **Trigger name:** New Support Ticket Created in SharePoint
 
-7. Wait for the connections to configure, and select **Next** to proceed.  
+1. Wait for the connections to configure, and select **Next** to proceed.  
    ![Configure trigger name and connections](./assets/10_ConfigureTriggerNameAndConnections.png)
 
-8. Configure the trigger parameters:
+1. Configure the trigger parameters:
 
    - **Site Address**: Select your "Contoso IT" SharePoint site
 
@@ -251,9 +251,9 @@ Before starting this lab, ensure you have:
 
      ![Configure trigger parameters](./assets/10_ConfigureTriggerParams.png)
 
-9. Select **Create trigger** to complete the trigger creation. A Power Automate Cloud Flow is automatically created to trigger the agent autonomously.
+1. Select **Create trigger** to complete the trigger creation. A Power Automate Cloud Flow is automatically created to trigger the agent autonomously.
 
-10. Select **Close**.
+1. Select **Close**.
 
 ### 10.2 Edit the Trigger
 
@@ -269,9 +269,9 @@ Before starting this lab, ensure you have:
 
 1. Enter the following expression to provide the agent with specific details about the ticket:
 
-   ```text
-   concat('Submitted By Name: ', first(triggerOutputs()?['body/value'])?['Author/DisplayName'], '\nSubmitted By Email: ', first(triggerOutputs()?['body/value'])?['Author/Email'], '\nTitle: ', first(triggerOutputs()?['body/value'])?['Title'], '\nIssue Description: ', first(triggerOutputs()?['body/value'])?['Description'], '\nPriority: ', first(triggerOutputs()?['body/value'])?['Priority/Value'],'\nTicket ID : ', first(triggerOutputs()?['body/value'])?['ID'])
-   ```
+    ```text
+    concat('Submitted By Name: ', first(triggerOutputs()?['body/value'])?['Author/DisplayName'], '\nSubmitted By Email: ', first(triggerOutputs()?['body/value'])?['Author/Email'], '\nTitle: ', first(triggerOutputs()?['body/value'])?['Title'], '\nIssue Description: ', first(triggerOutputs()?['body/value'])?['Description'], '\nPriority: ', first(triggerOutputs()?['body/value'])?['Priority/Value'],'\nTicket ID : ', first(triggerOutputs()?['body/value'])?['ID'])
+    ```
 
 1. Select **Add**  
    ![Trigger output expression](./assets/10_TriggerOutputExpression.png)
@@ -282,57 +282,58 @@ Before starting this lab, ensure you have:
 
 1. **Return** to your Agent in Copilot Studio
 
-2. Navigate to the **Tools** tab in your agent
+1. Navigate to the **Tools** tab in your agent
 
-3. Click **+ Add a tool** and select **Connector**
+1. Click **+ Add a tool** and select **Connector**
 
-4. Search for and select **Send an email (V2)** connector  
+1. Search for and select **Send an email (V2)** connector  
     ![Select Outlook Connector](./assets/10_SelectOutlookConnector.png)
 
-5. Wait for the connection to configure, and then select **Add and configure**
+1. Wait for the connection to configure, and then select **Add and configure**
 
-6. Configure the tool settings:
+1. Configure the tool settings:
 
    - **Name**: Acknowledge SharePoint ticket
    - **Description**: This tool sends an email acknowledgement that a ticket has been received.
 
-7. Select **Customize** next to the input parameters and configure as follows:
+1. Select **Customize** next to the input parameters and configure as follows:
 
-   **To**:
+    **To**:
 
-   - **Description**: The email address of the person submitting the SharePoint Ticket
-   - **Identify as**: Email
+    - **Description**: The email address of the person submitting the SharePoint Ticket
+    - **Identify as**: Email
 
-   **Body**:
-   - **Description**: An acknowledgement that the Ticket was received, and we aim to respond within 3 working days.
+    **Body**:
 
-   ![Configure Input Parameters](./assets/10_ConfigureInputParameters.png)
+    - **Description**: An acknowledgement that the Ticket was received, and we aim to respond within 3 working days.
 
-8. Select **Save**
+    ![Configure Input Parameters](./assets/10_ConfigureInputParameters.png)
+
+1. Select **Save**
 
 ### 10.4 Test the trigger
 
 1. Inside your **Help Desk Agent**, select the **Overview** tab
-2. Click **Test Trigger** icon next to the **New Support Ticket Created in SharePoint** trigger. This will load the **Test your trigger** window.
-3. Open a new browser tab and navigate to your **SharePoint IT Support Tickets list**
-4. Click **+ Add new item** to create a test ticket:
+1. Click **Test Trigger** icon next to the **New Support Ticket Created in SharePoint** trigger. This will load the **Test your trigger** window.
+1. Open a new browser tab and navigate to your **SharePoint IT Support Tickets list**
+1. Click **+ Add new item** to create a test ticket:
    - **Title**: "Unable to connect to VPN"
    - **Description**: "Unable to connect to corporate WIFI network after recent update"
    - **Priority**: "Normal"
 
-5. **Save** the SharePoint item  
+1. **Save** the SharePoint item  
     ![Create Test Ticket](./assets/10_CreateTestTicket.png)
-6. Return to **Copilot Studio** and monitor the **Test your trigger** panel for the trigger activation. Use the **Refresh** icon to load the trigger event, this may take a few minutes.  
+1. Return to **Copilot Studio** and monitor the **Test your trigger** panel for the trigger activation. Use the **Refresh** icon to load the trigger event, this may take a few minutes.  
     ![Monitor Trigger Test](./assets/10_MonitorTriggerTest.png)
-7. Once the trigger appears, select **Start testing**
-8. Select the **Activity Map icon** at the top of the **Test your agent** panel
-9. Verify that your agent:
+1. Once the trigger appears, select **Start testing**
+1. Select the **Activity Map icon** at the top of the **Test your agent** panel
+1. Verify that your agent:
    - Received the trigger payload
    - Called the "Acknowledge SharePoint ticket" tool  
      ![Test trigger](./assets/10_TestTrigger.png)
-10. Check the email inbox of the submitter to confirm the acknowledgment email was sent  
+1. Check the email inbox of the submitter to confirm the acknowledgment email was sent  
     ![Test email sent](./assets/10_TestEmailSent.png)
-11. Review the **Activity** tab in Copilot Studio to see the complete trigger and tool execution
+1. Review the **Activity** tab in Copilot Studio to see the complete trigger and tool execution
 
 ## ✅ Mission Complete
 

@@ -7,16 +7,16 @@
 - **Not sure?** Fill out an intake as though the answer were "Yes". CSS will help you decide.
 
 *Then remove this first heading from this SUPPORT.MD file before publishing your repo.*
-
+<!-- markdownlint-disable-next-line MD025 - Justification: Standard Microsoft Template -->
 # Support
 
 ## How to file issues and get help  
 
-This project uses GitHub Issues to track bugs and feature requests. Please search the existing 
-issues before filing new issues to avoid duplicates.  For new issues, file your bug or 
+This project uses GitHub Issues to track bugs and feature requests. Please search the existing
+issues before filing new issues to avoid duplicates.  For new issues, file your bug or
 feature request as a new Issue.
 
-For help and questions about using this project, please **REPO MAINTAINER: INSERT INSTRUCTIONS HERE 
+For help and questions about using this project, please **REPO MAINTAINER: INSERT INSTRUCTIONS HERE
 FOR HOW TO ENGAGE REPO OWNERS OR COMMUNITY FOR HELP. COULD BE A STACK OVERFLOW TAG OR OTHER
 CHANNEL. WHERE WILL YOU HELP PEOPLE?**.
 

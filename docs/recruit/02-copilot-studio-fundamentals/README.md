@@ -60,9 +60,9 @@ While Microsoft 365 Copilot provides general AI assistance across Office apps, y
 Every Copilot Studio agent is built from four core components:
 
 1. **Knowledge**  
-2. **Tools (Actions)**  
-3. **Topics**  
-4. **Instructions**
+1. **Tools (Actions)**  
+1. **Topics**  
+1 **Instructions**
 
 Below, we’ll define each building block and show how they work together to make an effective agent.
 
@@ -185,20 +185,20 @@ Below, we’ll define each building block and show how they work together to mak
 When you assemble **Knowledge**, **Tools**, **Topics**, and **Instructions**, Copilot Studio’s AI orchestrator creates an agent that:
 
 1. **Listens for a relevant Topic** (guided by your topic descriptions).  
-2. **Applies Instructions** to set its tone, decide when to ask follow-up questions, and enforce rules.  
-3. **Leverages Knowledge Sources** to ground its answers in your organization’s data.  
-4. **Calls Tools (Actions)** as needed to perform tasks—sending messages, updating records, or invoking APIs.  
+1. **Applies Instructions** to set its tone, decide when to ask follow-up questions, and enforce rules.  
+1. **Leverages Knowledge Sources** to ground its answers in your organization’s data.  
+1. **Calls Tools (Actions)** as needed to perform tasks—sending messages, updating records, or invoking APIs.  
 
 Under the hood, the orchestrator uses a **generative planning** approach: it decides which steps to take, in what order, to fulfill a user request. If an action fails (for example, an email can’t be sent), the agent follows your exception-handling guidelines (ask a clarifying question or report the error). Because the LLM adapts to conversation context, the agent can maintain memory over multiple turns and incorporate new information as the conversation unfolds.
 
-> **Visual Flow Example:**  
->
-> 1. **User:** "Show me my PTO balance."
-> 2. **AI (Topics):** Matches "Check PTO Balance" topic.  
-> 3. **AI (Instructions):** Uses a friendly, concise tone.  
-> 4. **Agent (Knowledge):** Queries the HR SharePoint list for the user’s balance.  
-> 5. **Agent (Actions):** Retrieves the value and sends a Teams message:  
->    > "Your current PTO balance is 12 days."  
+**Visual Flow Example:**  
+
+1. **User:** "Show me my PTO balance."
+1. **AI (Topics):** Matches "Check PTO Balance" topic.  
+1. **AI (Instructions):** Uses a friendly, concise tone.  
+1. **Agent (Knowledge):** Queries the HR SharePoint list for the user’s balance.  
+1. **Agent (Actions):** Retrieves the value and sends a Teams message:  
+   > "Your current PTO balance is 12 days."  
 
 ---
 
@@ -207,9 +207,9 @@ Under the hood, the orchestrator uses a **generative planning** approach: it dec
 You’ve successfully completed your fundamentals briefing. You’ve now learned the four essential building blocks of any agent in Copilot Studio:
 
 1. **Knowledge** – Where the agent looks up factual information and maintains conversation memory.  
-2. **Tools** – The tasks the agent can perform to make things happen automatically.  
-3. **Topics** – How the agent recognizes user intent and decides which workflow to run.  
-4. **Instructions** – The rules, tone, and boundaries that guide every response.
+1. **Tools** – The tasks the agent can perform to make things happen automatically.  
+1. **Topics** – How the agent recognizes user intent and decides which workflow to run.  
+1. **Instructions** – The rules, tone, and boundaries that guide every response.
 
 With these components in place, you can build a basic agent that answers questions and executes simple workflows. In the next lesson, we’ll walk through a step-by-step tutorial to create a "Service Desk" agent—from connecting your first knowledge source to defining a topic and wiring up an action.
 

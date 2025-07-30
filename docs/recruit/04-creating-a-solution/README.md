@@ -96,11 +96,11 @@ When you create a solution, you must choose a publisher. This publisher defines:
 
 ### 🤔 Why is it important?
 
-1. **Easy identification** - the prefix (xample - `new_` or `abc_`) helps you quickly identify which components belong to which solution or team.
+1. **Easy identification** - the prefix (Example - `new_` or `abc_`) helps you quickly identify which components belong to which solution or team.
 
-2. **Avoids conflicts** - if two teams create a column called status, their prefixes (`teamA_status`, `teamB_status`) prevent naming collisions.
+1. **Avoids conflicts** - if two teams create a column called status, their prefixes (`teamA_status`, `teamB_status`) prevent naming collisions.
 
-3. **Supports ALM** - when moving solutions between environments (Dev → Test → Prod), the publisher helps track ownership and maintain consistency.
+1. **Supports ALM** - when moving solutions between environments (Dev → Test → Prod), the publisher helps track ownership and maintain consistency.
 
 ### ✨ Example
 
@@ -134,7 +134,7 @@ Imagine you're building an IT helpdesk agent to help employees with issues such 
 
 - Once it's ready, you export it as a managed solution and import it into a target environment such as a System Test or User Acceptance Testing (UAT) environment.
 
-- After testing, you move it to the Production envirionment - all without touching the original development version.
+- After testing, you move it to the Production environment - all without touching the original development version.
 
 ## 🧪 Lab 04: Create a new Solution
 
@@ -154,7 +154,7 @@ Let's begin!
 In Copilot Studio, what you _can do_ in the solution explorer depends on your user security role.
 If you don’t have permission to manage solutions in the Power Apps admin center, you won’t be able to do those tasks in Copilot Studio either.
 
-To make sure everything works smoothly, check that you have the right security roles and permissions. Or if you don't manage environments in your organisation, ask your IT administrator (or the equivalent) team who manages your tenant/environments.
+To make sure everything works smoothly, check that you have the right security roles and permissions. Or if you don't manage environments in your organization, ask your IT administrator (or the equivalent) team who manages your tenant/environments.
 
 The following are the security roles that enables users to create a solution in their environment.
 
@@ -168,13 +168,13 @@ The following are the security roles that enables users to create a solution in 
 
 Make sure you switch to your dedicated developer environment, refer to [Lesson 00 - Course Setup - Step 3: Create new developer](/00-course-setup/README.md/#step-3-create-new-developer-environment).
 
-1. On the upper right, selec the **Cog wheel** icon and switch from the default environment to your environment, for example **Adele Vance's environment**.
+1. On the upper right, select the **Cog wheel** icon and switch from the default environment to your environment, for example **Adele Vance's environment**.
 
     ![Developer environment](assets/4.0_03_DeveloperEnvironment.png)
 
 ### 4.1 Create a Solution publisher
 
-1. Using the same Copilot Studio environment used in the previous lesson, select the **ellipsis icon (. . .)** on the left handside menu in Copilot Studio. Select **Solutions** under the **Explore** header.
+1. Using the same Copilot Studio environment used in the previous lesson, select the **ellipsis icon (. . .)** on the left hand side menu in Copilot Studio. Select **Solutions** under the **Explore** header.
 
     ![Solutions](assets/4.1_01_Solutions.png)
 

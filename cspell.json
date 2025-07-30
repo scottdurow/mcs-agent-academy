@@ -1,0 +1,36 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "chatbots",
+    "Contoso",
+    "Customizer",
+    "Dataverse",
+    "docusign",
+    "Elaiza",
+    "Entra",
+    "Helpdesk",
+    "Jammes",
+    "mkdocs",
+    "MSRC",
+    "Omnichannel",
+    "onboardsupport",
+    "PAYGO",
+    "prepopulate",
+    "reprompt",
+    "reprompting",
+    "Signup",
+    "subwords",
+    "Tele",
+    "Weinstock"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    ".git/**",
+    "*.js",
+    "*.css",
+    "*.min.js",
+    "*.map",
+    "*.html"
+  ]
+}
