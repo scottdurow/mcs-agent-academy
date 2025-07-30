@@ -409,10 +409,6 @@ Agent responds with,
 
 We're now going to learn how to add a new topic with a trigger and tools. This lab will cover creating a topic from blank so that you understand how to customize topics to your needs.
 
-- [7.1 Add a new topic from blank](/07-add-new-topic-with-trigger/README.md/#71-add-a-new-topic-from-blank)
-- [7.2 Define the trigger inputs and outputs](/07-add-new-topic-with-trigger/README.md/#72-define-the-trigger-inputs-and-outputs)
-- [7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector)
-
 ### ✨ Use case
 
 **As an** employee
@@ -427,13 +423,13 @@ Let's begin!
 
 1. **SharePoint list**
 
-    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
-    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
 1. **Contoso Helpdesk Agent**
 
-    We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md).
+    We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](../06-create-agent-from-conversation/README.md).
 
 ### 7.1 Add a new topic from blank
 
@@ -583,7 +579,7 @@ Let's begin!
 
     ![Get items description](assets/7.3_09_UpdateDescription.png)
 
-1. Select the **Inputs** tab and select the **Contoso IT** site and the **Devices** list that you setup in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+1. Select the **Inputs** tab and select the **Contoso IT** site and the **Devices** list that you setup in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
     ![Configure Get items inputs](assets/7.3_10_GetItemsInputs.png)
 
@@ -591,7 +587,7 @@ Let's begin!
     - the selected value,
     - and only devices where the status equals _Available_,
 
-    we need to apply a filter. This is achieved by entering a filter query with the help of [Power Fx](/07-add-new-topic-with-trigger/README.md/#️-using-power-fx-in-your-nodes). Select the **ellipsis (...) icon**.
+    we need to apply a filter. This is achieved by entering a filter query with the help of Power Fx. Select the **ellipsis (...) icon**.
 
     ![Select ellipsis icon](assets/7.3_11_SelectVariable.png)
 

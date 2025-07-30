@@ -214,10 +214,10 @@ After your agent is provisioned from the conversational creation experience, you
 
 We're now going to learn how to create a custom agent that can chat over your data
 
-- [6.1 Use natural language to create an agent with Copilot](./#61-use-natural-language-to-create-an-agent-with-copilot)
-- [6.2 Add an internal knowledge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included](./#62-add-an-internal-knowledge-source-using-a-sharepoint-site)
-- [6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included](./#63-add-an-internal-knowledge-source-by-uploading-a-document)
-- [6.4 Test agent](./#64-test-agent)
+- [6.1 Use natural language to create an agent with Copilot](#61-use-natural-language-to-create-an-agent-with-copilot)
+- [6.2 Add an internal knowledge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included](#62-add-an-internal-knowledge-source-using-a-sharepoint-site)
+- [6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included](#63-add-an-internal-knowledge-source-by-uploading-a-document)
+- [6.4 Test agent](#64-test-agent)
 
 ### ✨ Use case
 
@@ -235,15 +235,15 @@ Let's begin!
 
 - **SharePoint site**
 
-We'll be using the **Contoso IT** SharePoint site from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+We'll be using the **Contoso IT** SharePoint site from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
-If you have not set up the **Contoso IT** SharePoint site, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+If you have not set up the **Contoso IT** SharePoint site, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
 - **Solution**
 
-We'll be using the **Contoso Helpdesk Agent** solution from [Lesson 04 - Creating a Solution for your agent](../04-creating-a-solution/README.md/#41-create-a-solution-publisher).
+We'll be using the **Contoso Helpdesk Agent** solution from [Lesson 04 - Creating a Solution for your agent](../04-creating-a-solution/README.md#41-create-a-solution-publisher).
 
-If you have not set up the **Contoso Agent** solution, please head back to [Lesson 04 - Creating a Solution for your agent](../04-creating-a-solution/README.md/#41-create-a-solution-publisher).
+If you have not set up the **Contoso Agent** solution, please head back to [Lesson 04 - Creating a Solution for your agent](../04-creating-a-solution/README.md#41-create-a-solution-publisher).
 
 ### 6.1 Use natural language to create an agent with Copilot
 
@@ -365,7 +365,7 @@ Congratulations! You've built your first custom agent with Copilot in Copilot St
 
 ### 6.2 Add an internal knowledge source using a SharePoint site
 
-Previously with Copilot, we added a public website as an external knowledge source for our agent during the conversational creation experience. We're now going to add an internal knowledge source using a SharePoint site. This will be the SharePoint site you created during [Lesson 00 - Course Setup](../00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+Previously with Copilot, we added a public website as an external knowledge source for our agent during the conversational creation experience. We're now going to add an internal knowledge source using a SharePoint site. This will be the SharePoint site you created during [Lesson 00 - Course Setup](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
 1. Select **+ Add knowledge**.
 
@@ -375,7 +375,7 @@ Previously with Copilot, we added a public website as an external knowledge sour
 
       ![Select SharePoint](./assets/6.2_02_SelectSharePoint.png)
 
-1. Paste in the **address of the SharePoint site** created in [Lesson 00 - Course Setup](../00-course-setup/README.md/#step-4-create-new-sharepoint-site) in the SharePoint URL field and select **Add**.
+1. Paste in the **address of the SharePoint site** created in [Lesson 00 - Course Setup](../00-course-setup/README.md#step-4-create-new-sharepoint-site) in the SharePoint URL field and select **Add**.
 
       ![Enter SharePoint site URL](./assets/6.2_03_SharePointURL.png)
 
@@ -487,7 +487,7 @@ Welcome to the elite. You now know how to forge digital agents that speak your l
 
 🔗 [Key concepts - Authoring agents](https://learn.microsoft.com/microsoft-copilot-studio/authoring-fundamentals/?WT.mc_id=power-172617-ebenitez)
 
-📺 [Create a custom agent using natural language](aka.ms/ai-in-action/copilot-studio/ep1)
+📺 [Create a custom agent using natural language](https://aka.ms/ai-in-action/copilot-studio/ep1)
 
 📺 [Add knowledge to your agents](https://aka.ms/ai-in-action/copilot-studio/ep2)
 

@@ -56,7 +56,7 @@ This is one of the options to use when adding an adaptive card to your topic.
 
 ## 👀 I see another option for building an adaptive card using _formula_
 
-Remember how we learnt about Power Fx in [Lesson 07 - Add new topic with trigger and nodes](/07-add-new-topic-with-trigger/README.md/#️-using-power-fx-in-your-nodes)? The same can be applied in Adaptive Cards within Copilot Studio.
+Remember how we learnt about Power Fx in [Lesson 07 - Add new topic with trigger and nodes](../07-add-new-topic-with-trigger/README.md#️using-power-fx-in-your-nodes)? The same can be applied in Adaptive Cards within Copilot Studio.
 
 As a recap,
 
@@ -225,10 +225,8 @@ Here are some best practices for creating Adaptive Cards for agents in Copilot S
 
 We're now going to learn how to enhance our topic with adaptive cards and using advanced functionality of topics and nodes.
 
-- [8.1 Add an adaptive card to display available devices](/08-add-adaptive-card/README.md/#81-add-an-adaptive-card-to-display-available-devices)
-- [8.2 Add a condition node to enable users to request a device](/08-add-adaptive-card/README.md/#82-add-a-condition-node-to-enable-users-to-request-a-device)
-- [8.3 Create a new topic with an adaptive card for user to submit their request](/08-add-adaptive-card/README.md/#83-create-a-new-topic-with-an-adaptive-card-for-user-to-submit-their-request)
-- [8.4 Update _Available devices_ topic to redirect to the newly created topic](/08-add-adaptive-card/README.md/#84-update-available-devices-topic-to-redirect-to-the-newly-created-topic)
+- [8.1 Create a new topic with an adaptive card for user to submit their request](#81-create-a-new-topic-with-an-adaptive-card-for-user-to-submit-their-request)
+- [8.2 Update agent instructions to invoke Request device topic](#82-update-agent-instructions-to-invoke-request-device-topic)
 
 ### ✨ Use case
 
@@ -244,13 +242,13 @@ Let's begin!
 
 1. **SharePoint list**
 
-    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
-    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](/00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
 1. **Contoso Helpdesk Copilot**
 
-    We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md).
+    We're going to use the same agent created previously in [Lesson 06 - Create a custom agent using natural language with Copilot and grounding it with your data](../06-create-agent-from-conversation/README.md).
 
 ### 8.1 Create a new topic with an adaptive card for user to submit their request
 
@@ -328,7 +326,7 @@ Let's begin!
 
 1. Let's next update the card from JSON to formula as we'll use Power Fx again to loop through the items returned in the **Get items** SharePoint connector action, stored in the **global variable**, `Global.VarDevices.value`, via the `value` property of the JSON response.
 
-    > We created this global variable in [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
+    > We created this global variable in [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](../07-add-new-topic-with-trigger/README.md#73-add-node---add-a-tool-using-a-connector).
 
     Select the card in the **Ask with Adaptive Card** node, followed by selecting the **chevron** icon and select **Formula**.
 
@@ -360,7 +358,7 @@ Now that we created the new topic that handles the device requests, we need to u
 
     ![Edit instructions](assets/8.2_01_EditInstructions.png)
 
-1. Add a new line below the previous instruction from [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](/07-add-new-topic-with-trigger/README.md/#73-add-node---add-a-tool-using-a-connector).
+1. Add a new line below the previous instruction from [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](../07-add-new-topic-with-trigger/README.md#73-add-node---add-a-tool-using-a-connector).
 
     Select the entire topic placeholder in square brackets and delete the placeholder.
 

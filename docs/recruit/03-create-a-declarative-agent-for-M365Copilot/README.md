@@ -88,10 +88,10 @@ In summary, declarative agents in Microsoft Copilot Studio allow customization o
 
 We'll next learn how to build a declarative agent for a "Business-to-Employee" use case which will act as an **IT helpdesk agent**.
 
-- [3.1 Create a declarative agent](./#31-create-a-declarative-agent)
-- [3.2 Create and add a prompt for your declarative agent](./#32-create-and-add-a-prompt-for-your-declarative-agent)
-- [3.3 Update instructions and test your declarative agent](./#33-update-instructions-and-test-your-declarative-agent)
-- [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](./#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
+- [3.1 Create a declarative agent](#31-create-a-declarative-agent)
+- [3.2 Create and add a prompt for your declarative agent](#32-create-and-add-a-prompt-for-your-declarative-agent)
+- [3.3 Update instructions and test your declarative agent](#33-update-instructions-and-test-your-declarative-agent)
+- [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
 
 > This lab will outline steps to add a Prompt as a tool. The following lessons will dive into adding knowledge sources and adding other tools available. Keeping it simple for your learning 😊
 > You do need a Microsoft 365 Copilot user license to publish your declarative agent built in Copilot Studio to Microsoft 365 Copilot.

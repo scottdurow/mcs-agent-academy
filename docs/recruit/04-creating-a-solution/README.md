@@ -140,8 +140,8 @@ Imagine you're building an IT helpdesk agent to help employees with issues such 
 
 We're now going to learn
 
-- [How to create a Solution publisher](./#41-create-a-solution-publisher)
-- [How to create a Solution](./#42-create-a-new-solution)
+- [How to create a Solution publisher](#41-create-a-solution-publisher)
+- [How to create a Solution](#42-create-a-new-solution)
 
 We're going to stick with the example from earlier, where we're going to create a solution in the dedicated Copilot Studio environment to build our IT helpdesk agent in.
 
@@ -166,7 +166,7 @@ The following are the security roles that enables users to create a solution in 
 
 #### Developer environment
 
-Make sure you switch to your dedicated developer environment, refer to [Lesson 00 - Course Setup - Step 3: Create new developer](/00-course-setup/README.md/#step-3-create-new-developer-environment).
+Make sure you switch to your dedicated developer environment, refer to [Lesson 00 - Course Setup - Step 3: Create new developer](../00-course-setup/README.md#step-3-create-new-developer-environment).
 
 1. On the upper right, select the **Cog wheel** icon and switch from the default environment to your environment, for example **Adele Vance's environment**.
 

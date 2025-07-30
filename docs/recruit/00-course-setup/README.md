@@ -93,7 +93,7 @@ Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Develope
 
 ## Step 4: Create new SharePoint site
 
-A new SharePoint site needs to be created  which will be used in [Lesson 06 - Create a custom agent using the conversational creation experience with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md/#62-add-an-internal-knowledge-source-using-a-sharepoint-site).
+A new SharePoint site needs to be created  which will be used in [Lesson 06 - Create a custom agent using the conversational creation experience with Copilot and grounding it with your data](../06-create-agent-from-conversation/README.md#62-add-an-internal-knowledge-source-using-a-sharepoint-site).
 
 1. Select the waffle icon on the top left hand side of Microsoft Copilot Studio to view the menu. Select SharePoint from the menu.
 
