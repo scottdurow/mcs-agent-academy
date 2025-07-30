@@ -56,7 +56,7 @@ This is one of the options to use when adding an adaptive card to your topic.
 
 ## 👀 I see another option for building an adaptive card using _formula_
 
-Remember how we learnt about Power Fx in [Lesson 07 - Add new topic with trigger and nodes](../07-add-new-topic-with-trigger/README.md#️using-power-fx-in-your-nodes)? The same can be applied in Adaptive Cards within Copilot Studio.
+Remember how we learnt about Power Fx in [Mission 07 - Using Power Fx in your nodes](../07-add-new-topic-with-trigger/README.md#what-power-fx-can-do-in-topics) The same can be applied in Adaptive Cards within Copilot Studio.
 
 As a recap,
 
@@ -326,7 +326,7 @@ Let's begin!
 
 1. Let's next update the card from JSON to formula as we'll use Power Fx again to loop through the items returned in the **Get items** SharePoint connector action, stored in the **global variable**, `Global.VarDevices.value`, via the `value` property of the JSON response.
 
-    > We created this global variable in [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](../07-add-new-topic-with-trigger/README.md#73-add-node---add-a-tool-using-a-connector).
+    > We created this global variable in [Lab 07 - Add a new topic with conversation nodes, 7.3 Add a tool using a connector](../07-add-new-topic-with-trigger/README.md#73-add-a-tool-using-a-connector).
 
     Select the card in the **Ask with Adaptive Card** node, followed by selecting the **chevron** icon and select **Formula**.
 
@@ -358,7 +358,7 @@ Now that we created the new topic that handles the device requests, we need to u
 
     ![Edit instructions](assets/8.2_01_EditInstructions.png)
 
-1. Add a new line below the previous instruction from [Lab 07 - Add a new topic with conversation nodes, 7.3 Add node - Add a tool using a connector](../07-add-new-topic-with-trigger/README.md#73-add-node---add-a-tool-using-a-connector).
+1. Add a new line below the previous instruction from [Lab 07 - Add a new topic with conversation nodes, 7.3 Add a tool using a connector](../07-add-new-topic-with-trigger/README.md#73-add-a-tool-using-a-connector).
 
     Select the entire topic placeholder in square brackets and delete the placeholder.
 

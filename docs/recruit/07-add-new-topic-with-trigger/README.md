@@ -533,7 +533,7 @@ Let's begin!
 
     ![Exit from topic details pane.](assets/7.2_10_ExitTopicDetailsPane.png)
 
-### 7.3 Add node - Add a tool using a connector
+### 7.3 Add a tool using a connector
 
 1. Let's next add a node that enables the agent to retrieve the list of devices from the **Devices** SharePoint list. Select the **+ icon** below the trigger and select the **Add a tool** node. Select the **Connector** tab.
 
