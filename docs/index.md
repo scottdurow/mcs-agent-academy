@@ -57,8 +57,6 @@ Resources:
 - [Microsoft Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
 - Contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with questions or concerns
 
-![mcs-agent-academy-recruit](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit)
-
 ---
 
 [⭐️ Star our repo](https://github.com/microsoft/agent-academy){ .md-button .md-button--primary }
