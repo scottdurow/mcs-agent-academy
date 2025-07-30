@@ -14,7 +14,7 @@ jobs:
 
     - name: Run markdownlint
       uses: DavidAnson/markdownlint-cli2-action@v20
-      continue-on-error: true
+      continue-on-error: false
       id: markdown-lint
       with:
         globs: '**/*.md'
@@ -61,7 +61,7 @@ jobs:
       run: npm install -g cspell
 
     - name: Run cSpell
-      continue-on-error: true
+      continue-on-error: false
       id: spell-check
       run: cspell "docs/**/*.md"
 
