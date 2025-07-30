@@ -85,7 +85,7 @@ A prompt is the message or instruction you give to an AI agent to tell it what y
 
 ### ✨ Example
 
-Let's say the HR team needs an agent to help with vacaction requests.
+Let's say the HR team needs an agent to help with vacation requests.
 
 The prompt could be,
 
@@ -162,13 +162,13 @@ When an employee asks, _“How many vacation days am I entitled to?”_, the age
 
 ## 🔒 Note on security
 
-**Knowledge source authentication**
+### Knowledge source authentication
 
 Some sources such as SharePoint and Dataverse require user authentication. This means the agent will only reference data in its response that the user is allowed to see. Whereas other sources may have additional configuration required for the agent to connect to it such as Azure AI Search which requires an Azure account and specifying an authentication type.
 
 ## Improving your agent's responses in Copilot Studio
 
-After your agent is provisoned from the conversational creation experience, you'll want to test your agent against the instructions Copilot generated from your prompt. Improving your agent’s responses in Copilot Studio is all about making sure it understands your goals clearly and has the right information to work with.
+After your agent is provisioned from the conversational creation experience, you'll want to test your agent against the instructions Copilot generated from your prompt. Improving your agent’s responses in Copilot Studio is all about making sure it understands your goals clearly and has the right information to work with.
 
 1. **Refine the agent instructions** - this is where you tell your agent how it should behave. Use clear, specific language.
 
@@ -295,7 +295,7 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
        Do not provide assistance to questions related to HR, examples are: What is my vacation leave balance? How many sick days do I have? What's the URL to our payroll portal? 
        ```
 
-       ![Do not answer HR related requestions](./assets/6.1_07_DoNotTalkAbout.png)
+       ![Do not answer HR related questions](./assets/6.1_07_DoNotTalkAbout.png)
 
 1. The instructions will be updated to not provide assistance with questions related to HR. Copilot is asking again if we'd like to request more modifications. We don't need to make further updates, enter the following and submit,
 
@@ -443,15 +443,15 @@ We'll test our three knowledge sources by asking questions to our Contoso Helpde
 
 1. Let's now test both our SharePoint site knowledge source and document knowledge source in a single message. Enter the following question.
 
-       ```text
-       How do I access the Contoso VPN? How do guests connect to the Contoso Guest wifi?
-       ```
+      ```text
+      How do I access the Contoso VPN? How do guests connect to the Contoso Guest wifi?
+      ```
 
       ![Test SharePoint and document knowledge sources](./assets/6.4_06_TestSharePointAndDocumentKnowledgeSources.png)
 
-   > If you don't have SharePoint in your Microsoft 365 license, only enter the second question to test the document knowledge source.
+    > If you don't have SharePoint in your Microsoft 365 license, only enter the second question to test the document knowledge source.
 
-6. Once again you'll see the agent reviewing the three knowledge sources to generate a response to the questions our single message.
+1. Once again you'll see the agent reviewing the three knowledge sources to generate a response to the questions our single message.
 
       ![Reviewing knowledge sources](./assets/6.4_07_ReviewingKnowledgeSources.png)
 

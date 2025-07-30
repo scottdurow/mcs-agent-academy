@@ -125,7 +125,7 @@ Think of these as instructions or actions such as the following:
 The following are the main types of nodes you can add to an agent:
 
 1. **Send a message**
-    - **Purpose** - sends a mesage to the user.
+    - **Purpose** - sends a message to the user.
     - **Example** - `Thanks for your request! I'll help you with that.`
 
     This node lets your agent send messages to users, which can be simple text or rich content like images, videos, cards, quick replies and adaptive cards.
@@ -160,7 +160,7 @@ The following are the main types of nodes you can add to an agent:
 
     This node creates decision points in your agent's conversation flow by checking if a variable meets certain criteria. Based on whether the condition is true or false, the agent follows different paths.
 
-    > Think of it as an "if-else" block that helps your agent make descisions depending on user input or stored data in variables.
+    > Think of it as an "if-else" block that helps your agent make decisions depending on user input or stored data in variables.
 
 1. **Variable management**
     - **Purpose** - stores or clears information (called variables) during the conversation.
@@ -196,7 +196,7 @@ The following are the main types of nodes you can add to an agent:
 
 1. **HTTP request node**
     - **Purpose** - connect your agent to external systems by sending API calls (for example `GET` or `POST`) to fetch or update data.
-    - **Example** - when a user asks for their vacaction days balance, the agent performs a `GET` request to the leave management system and extracts the `remainingLeaveDays` from the API response and replies to the user with the value.
+    - **Example** - when a user asks for their vacation days balance, the agent performs a `GET` request to the leave management system and extracts the `remainingLeaveDays` from the API response and replies to the user with the value.
 
     This node lets your agent connect to external systems by sending REST API calls, like `GET` or `POST` requests. You can customize the request with headers, body content, and even use Power Fx to include dynamic data, then store the response in variables for use later in the conversation.
 
@@ -212,7 +212,7 @@ The following are the main types of nodes you can add to an agent:
 
 ## 🏋🏻‍♀️ Using Power Fx in your nodes
 
-In Copilot Studio, Power Fx is a low-code programming language used to add logic and dynamic behaviour to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
+In Copilot Studio, Power Fx is a low-code programming language used to add logic and dynamic behavior to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
 
 ![Power Fx expression](assets/7.3_13_EnterFormula.png)
 
@@ -289,7 +289,7 @@ Start by identifying common questions or tasks users will ask your agent. These 
 
 ### 📦 Step 2 - Group the scenarios
 
-Organise the user needs into three categories based on what we learnt earlier - the purpose of a topic:
+Organize the user needs into three categories based on what we learnt earlier - the purpose of a topic:
 
 - Informational - the user wants to know something
 - Task completion - the user wants to do something
@@ -377,13 +377,13 @@ Don't copy what's already on your website.
 
 Below is an example of a topic that handles leave requests.
 
-**Step 1: Trigger phrase**
+#### Step 1: Trigger phrase
 
 User types,
 
 `I want to request vacation leave`
 
-**Step 2: Agent asks for details using an Adaptive card**
+#### Step 2: Agent asks for details using an Adaptive card
 
 Agent asks,
 
@@ -391,15 +391,15 @@ Agent asks,
 
 Adaptive card has a start date and end date calendar picker control.
 
-**Step 3: User provides dates**
+#### Step 3: User provides dates
 
 User selects start date as August 5 2025 and end date August 10 2025, and submits card. Date values are stored in the output of the adaptive card as variables.
 
-**Step 4: Cloud flow executed**
+#### Step 4: Cloud flow executed
 
 A Power Automate cloud flow has been executed which creates a new request in leave management system and sends an email to notify manager of leave request.
 
-**Step 5: Send a confirmation message to the user**
+#### Step 5: Send a confirmation message to the user
 
 Agent responds with,
 
@@ -599,7 +599,7 @@ Let's begin!
 
     ![Select Formula tab](assets/7.3_12_SelectFormula.png)
 
-1. Select the **expand** icond to enlarge the **Formula** field. Copy and paste the following Power Fx expression.
+1. Select the **expand** icon to enlarge the **Formula** field. Copy and paste the following Power Fx expression.
 
     We are using the `Concatenate` function to create an expression that will filter
     - the SharePoint column of **Status** equals _Available_
@@ -653,7 +653,7 @@ Let's begin!
 
     ![Select variable value](assets/7.3_22_SelectVariable.png)
 
-1. We'll now use a PowerFx expression to set the variable value as the `value` property retured in the **Get items** response, and make the [scope of the variable](https://learn.microsoft.com/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172618-ebenitez) global by adding the prefix of `Global`.
+1. We'll now use a PowerFx expression to set the variable value as the `value` property returned in the **Get items** response, and make the [scope of the variable](https://learn.microsoft.com/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172618-ebenitez) global by adding the prefix of `Global`.
 
     **Save** the topic.
 
@@ -661,7 +661,7 @@ Let's begin!
 
 1. Next we need to update the agent instructions. Select the **Overview** tab and select **Edit**.
 
-    ![Edid instructions](assets/7.3_24_EditInstructions.png)
+    ![Edit instructions](assets/7.3_24_EditInstructions.png)
 
 1. Add the a new line in the instructions, copy and paste the following.
 
@@ -719,7 +719,7 @@ Let's begin!
 
 1. We'll see that the **Available devices** topic has been executed as we see a message returned with a list of available devices. If you see a hyperlink called **More details** or something similar, click it.
 
-    ![Nessage returned](assets/7.3_35_MoreDetails.png)
+    ![Message returned](assets/7.3_35_MoreDetails.png)
 
 1. A new browser tab will load the SharePoint item in the SharePoint site. Generative AI was able to retrieve the link to the item and display it as a hyperlink in the message.
 
@@ -731,7 +731,7 @@ Let's begin!
 
 ## ✅ Mission Complete
 
-Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how to add a tool which calls the Get items SharePoint connector action and use Power Fx to filter the response to only return devices where the status equals availabile and the device type equals laptop. 🙌🏻
+Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how to add a tool which calls the Get items SharePoint connector action and use Power Fx to filter the response to only return devices where the status equals available and the device type equals laptop. 🙌🏻
 
 This is the end of **Lab 07 - Add a new topic with conversation nodes**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
 
@@ -751,6 +751,6 @@ This is the end of **Lab 07 - Add a new topic with conversation nodes**, select 
 
 📺 [Author topics using natural language](https://aka.ms/ai-in-action/copilot-studio/ep6)
 
-📺 [Add actions to agents using conenctors](https://aka.ms/ai-in-action/copilot-studio/ep4)
+📺 [Add actions to agents using connectors](https://aka.ms/ai-in-action/copilot-studio/ep4)
 
 ![mcs-agent-academy-recruit-07](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/07-add-new-topic-with-trigger)

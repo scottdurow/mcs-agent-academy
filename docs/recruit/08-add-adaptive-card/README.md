@@ -60,7 +60,7 @@ Remember how we learnt about Power Fx in [Lesson 07 - Add new topic with trigger
 
 As a recap,
 
-> Power Fx is a low-code programming language used to add logic and dynamic behaviour to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
+> Power Fx is a low-code programming language used to add logic and dynamic behavior to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
 
 ### How Power Fx works in Adaptive Cards
 
@@ -338,7 +338,7 @@ Let's begin!
 
     ![Select all and delete lines](assets/8.1_15_SelectAll.png)
 
-    Paste the Formula from the [Requst Devices formula file](assets/8.1_RequestDeviceFormula.txt).
+    Paste the Formula from the [Request Devices formula file](assets/8.1_RequestDeviceFormula.txt).
 
 1. In the formula, we'll loop through each SharePoint list item using the `For All` function to display the values of `Model` in the title of the choice option, and the SharePoint item `ID` is referenced as the value.
 
