@@ -43,7 +43,7 @@ Check out these other courses to continue learning about AI and Agents:
 
 ## 🚑 Issues
 
-We really appreciate your feedback! Please use the [issues list](https://github.com/microsoft/copilot-camp/issues) to share your comments and issues, or if you're in Microsoft let us know in the "Copilot Developer Camp Early Testers" chat in Microsoft Teams. Thanks!
+We really appreciate your feedback! Please use the [issues list](https://github.com/microsoft/agent-academy/issues) to share your comments and issues. Thanks!
 
 ---
 
