@@ -2,6 +2,8 @@ name: Validate markdown
 
 on:
   pull_request:
+    branches-ignore:
+      - gh-pages
 
 jobs:
   markdown-lint:
@@ -15,11 +17,7 @@ jobs:
       continue-on-error: true
       id: markdown-lint
       with:
-        globs: |
-          **/*.md
-          !SUPPORT.md
-          !SECURITY.md
-          !CODE_OF_CONDUCT.md
+        globs: **/*.md
         config: '.markdownlint.jsonc'
     
     - name: Report markdown lint results
@@ -47,3 +45,27 @@ jobs:
       if: steps.link-check.outcome == 'failure'
       run: |
         echo "::warning::Some markdown links are broken. Please review the link check results above."
+
+  spell-check:
+    runs-on: ubuntu-latest
+    # Checks spelling in markdown files
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install cSpell
+      run: npm install -g cspell
+
+    - name: Run cSpell
+      continue-on-error: true
+      id: spell-check
+      run: cspell "docs/**/*.md"
+
+    - name: Report spell check results
+      if: steps.spell-check.outcome == 'failure'
+      run: |
+        echo "::warning::Spelling issues found. Please review the spell check results above and consider fixing typos or adding legitimate words to cspell.json."
