@@ -107,6 +107,14 @@ You might need exceptions for various markdownlint rules when:
 3. **Prefer `markdownlint-disable-next-line`**: This is more precise than disabling for entire sections
 4. **Run linter before committing**: Always run `markdownlint-cli2 "**/*.md"` before submitting changes
 
+> **Tip:** You can quickly run both markdownlint and cSpell checks on your markdown files using the provided `scripts/validate-markdown.ps1` PowerShell script. This script helps automate common formatting and spelling checks to ensure your contributions meet our guidelines.
+
+You can run it from the root of the repository using PowerShell:
+
+```powershell
+./scripts/validate-markdown.ps1
+```
+
 ### Common markdownlint errors and fixes
 
 - **MD036**: Use proper headings (`## Heading`) instead of emphasis (`**Bold text**`)
@@ -319,6 +327,8 @@ mkdocs serve --strict
 # Show version
 mkdocs --version
 ```
+
+> **Tip:** To preview the documentation locally with all dependencies checked, use the `scripts/serve-docs.ps1` PowerShell script.
 
 ### Benefits of local preview
 
