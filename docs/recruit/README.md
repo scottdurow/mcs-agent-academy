@@ -9,6 +9,39 @@ This hands-on training is your entry point into the **world of agents**: from gr
 
 ---
 
+## 🎯 Mission Objective
+
+By completing the Agent Academy, you'll be able to:
+
+- Understand what agents are in the context of Microsoft Copilot Studio
+- Explore how Large Language Models (LLMs), retrieval-augmented generation (RAG), and orchestration come together in an agent
+- Build both **declarative** and **custom agents**
+- Enhance agents with **Topics**, **Adaptive Cards**, and **Agent Flows**
+- Deploy agents to **Microsoft Teams** and **Microsoft 365 Copilot**
+
+---
+
+## 🧪 Prerequisites
+
+To complete all missions, you’ll need:
+
+- A Microsoft 365 Developer tenant (with SharePoint enabled)
+- Access to **Microsoft Copilot Studio** (trial or licensed)
+- Optional: Basic knowledge of SharePoint, Power Platform, or Power Fx
+
+---
+
+## 🧬 Who This Is For
+
+This course is ideal for:
+
+- Makers and developers exploring **Copilot Studio**
+- IT pros building **Microsoft 365 Copilot extensions**
+- Power Platform enthusiasts who want to **level up** with intelligent agents
+- Anyone who prefers to learn by **doing**
+
+---
+
 ## 🧭 Curriculum Overview
 
 This academy is broken into progressive lessons—each one designed as a field mission to level up your agent-building skills.
