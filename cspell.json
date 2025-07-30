@@ -2,6 +2,7 @@
   "version": "0.2",
   "language": "en",
   "words": [
+    "Anson",
     "chatbots",
     "Contoso",
     "Customizer",
@@ -22,6 +23,7 @@
     "Signup",
     "subwords",
     "Tele",
+    "Venv",
     "Weinstock"
   ],
   "ignorePaths": [
