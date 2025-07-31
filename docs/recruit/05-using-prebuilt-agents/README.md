@@ -111,4 +111,5 @@ You've now successfully:
 Your next mission will focus on
 [creating a custom agent from scratch](../06-create-agent-from-conversation/README.md).
 
-![mcs-agent-academy-recruit-05](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/05-using-prebuilt-agents)
+<!-- markdownlint-disable-next-line MD033 -->
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/recruit/05-using-prebuilt-agents" alt="Analytics" />

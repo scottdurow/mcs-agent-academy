@@ -552,4 +552,5 @@ Until next time, stay sharp. The future of enterprise work runs through agentsâ€
 
 ðŸ“º [Build prompts for your agent](https://aka.ms/ai-in-action/copilot-studio/ep3)
 
-![mcs-agent-academy-recruit-03](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/03-create-a-declarative-agent-for-M365Copilot)
+<!-- markdownlint-disable-next-line MD033 -->
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/recruit/03-create-a-declarative-agent-for-M365Copilot" alt="Analytics" />
