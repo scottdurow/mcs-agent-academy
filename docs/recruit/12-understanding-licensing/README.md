@@ -23,10 +23,12 @@ Copilot Studio doesn’t charge per user or per feature—it bills you based on 
 ## Licensing Options
 
 ### 1. **Copilot Studio Message Packs**
+
 - Prepaid tick-box: **25,000 messages/month for $200**
 - Best for predictable usage — capacity is pooled across the tenant
 
 ### 2. **Pay-As-You-Go (PAYGO)**
+
 - Post-paid:  **$0.01 per message**
 - No upfront commitment; usage is billed at month-end via Azure
 
@@ -54,6 +56,7 @@ Before launching your agent, use our **Copilot Studio Usage Estimator** to forec
 👉 [**Use the Copilot Studio Usage Estimator**](https://aka.ms/mcs-estimator)
 
 It lets you:
+
 - 🔢 Specify your **user count**
 - ⚙️ Select **agent features** (grounding, actions, flows, memory)
 - 📈 Estimate **total messages per agent per month**
@@ -65,7 +68,7 @@ It lets you:
 
 ## 💼 Sample Scenario
 
-**Environment**: IT Helpdesk agent with grounding + one Power Automate flow  
+**Environment**: IT Help Desk agent with grounding + one Power Automate flow  
 **Sessions**: 5 user turns per session  
 **Assumptions**: grounding (10 msgs) + action (5 msgs) + 5 generative responses (10 msgs)  
 **Total**: ~25 messages per session  
@@ -81,20 +84,25 @@ It lets you:
 - Use **Microsoft 365 Copilot licenses** when possible for internal use
 - Use message packs when scale becomes predictable
 - Use the **Copilot Studio Usage Estimator** to forecast usage
+
 ---
+
 ## 🏁 Mission Complete
 
 You now understand:
+
 - How usage is calculated and billed
 - When M365 Copilot covers usage — and when it doesn’t
 - How to forecast and manage your message consumption
 
-🎓 With this knowledge, you're cleared to advance and deploy your agents **efficiently and smartly**.
+🎓 With this knowledge, you're cleared to advance and deploy your agents **efficiently and smartly**
+
 ---
 
 ## 📚 Tactical Resources
 
 Learn more about licensing and billing in Copilot Studio
+
 - 📄 [Copilot Studio Licensing & Message Rates](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing?WT.mc_id=power-170631-apdunnam)
 - 📘 [Power Platform Licensing Guide (July 2025)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp//microsoft/bade/documents/products-and-services/en-us/bizapps/Power-Platform-Licensing-Guide-July-2025.pdf?WT.mc_id=power-170631-apdunnam)
 - 📊 [Message Management & Capacity Monitoring](https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-messages-capacity?WT.mc_id=power-170631-apdunnam)

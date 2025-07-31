@@ -80,7 +80,7 @@ Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Develope
     - Tick the checkbox
     - Select **Start free**
 
-   ![Sign up for Power Apps Developer Plan](images/0.3_01_SignUp.png)
+    ![Sign up for Power Apps Developer Plan](images/0.3_01_SignUp.png)
 
 1. After signing up for the Developer Plan, you'll be redirected to [Power Apps](https://make.powerapps.com/). The environment uses your name, for example **Adele Vance's environment**. If there's already an environment with that name, the developer new environment is named **Adele Vance's (1)** environment.
 
@@ -93,27 +93,27 @@ Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Develope
 
 ## Step 4: Create new SharePoint site
 
-A new SharePoint site needs to be created  which will be used in [Lesson 06 - Create a custom agent using the conversational creation experience with Copilot and grounding it with your data](/06-create-agent-from-conversation/README.md/#62-add-an-internal-knowledge-source-using-a-sharepoint-site).
+A new SharePoint site needs to be created  which will be used in [Lesson 06 - Create a custom agent using the conversational creation experience with Copilot and grounding it with your data](../06-create-agent-from-conversation/README.md#62-add-an-internal-knowledge-source-using-a-sharepoint-site).
 
 1. Select the waffle icon on the top left hand side of Microsoft Copilot Studio to view the menu. Select SharePoint from the menu.
 
-   ![Select SharePoint](images/0.4_01_SelectSharePoint.png)
+    ![Select SharePoint](images/0.4_01_SelectSharePoint.png)
 
 1. SharePoint will load. Select **+ Create  site** to create a new SharePoint site.
 
-   ![Create site](images/0.4_02_CreateSite.png)
+    ![Create site](images/0.4_02_CreateSite.png)
 
 1. A dialog will appear to guide you in creating a new SharePoint site. Select **Team site** or **Communication site**.
 
-   ![Team site](images/0.4_03_SelectTeamOrCommunicationSite.png)
+    ![Team site](images/0.4_03_SelectTeamOrCommunicationSite.png)
 
 1. In the next step, a list of Microsoft templates will load by default. Scroll down and select the **IT help desk** template.
 
-   ![IT help desk template](images/0.4_04_SelectITHelpDeskTemplate.png)
+    ![IT help desk template](images/0.4_04_SelectITHelpDeskTemplate.png)
 
 1. Select **Use template** to create a new SharePoint site using the IT help desk template.
 
-   ![Use template](images/0.4_05_SelectUseTemplate.png)
+    ![Use template](images/0.4_05_SelectUseTemplate.png)
 
 1. Enter information for your site. The following is an example:
 
@@ -123,15 +123,15 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
     | Site description | Copilot Studio for Beginners |
     | Site address | ContosoIT |
 
-   ![Site information](images/0.4_06_SiteDetails.png)
+    ![Site information](images/0.4_06_SiteDetails.png)
 
 1. In the final step, a language can be selected for the SharePoint site. By default it will be **English**. Leave the Language as **English** and select **Create site**,
 
-   ![Language and other options](images/0.4_07_LanguageOtherOptions.png)
+    ![Language and other options](images/0.4_07_LanguageOtherOptions.png)
 
 1. The SharePoint site will provision for the next few seconds. In the mean time, you can choose to add other users to your site by entering their email address in the **Add members** field. When completed, select **Finish**.
 
-   ![Select finish](images/0.4_08_SelectFinish.png)
+    ![Select finish](images/0.4_08_SelectFinish.png)
 
 1. The SharePoint site home page will next load. **Copy** the SharePoint site URL.
 
@@ -139,7 +139,7 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
 ### Use Devices SharePoint list
 
-We will use the **Devices** list for in [Lesson 07 - Add new topic with trigger and nodes](../07-add-new-topic-with-trigger/README.md#73-add-node-add-a-tool-using-a-connector).
+We will use the **Devices** list for in [Mission 07 - Add new topic with trigger and nodes](../07-add-new-topic-with-trigger/README.md#73-add-a-tool-using-a-connector).
 
 ### Add new column
 

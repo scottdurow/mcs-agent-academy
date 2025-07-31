@@ -104,8 +104,8 @@ Let's say you're working in a finance department and you receive a lot of invoic
 With agent flows in Copilot Studio, you can automate this process. As soon as the invoice comes in, the agent:
 
 1. Read the document using intelligent document processing to find the key information.
-2. Check the details against your enterprise data to make sure everything looks correct.
-3. Route it for approval to the right person(s).
+1. Check the details against your enterprise data to make sure everything looks correct.
+1. Route it for approval to the right person(s).
 
 This saves time, reduces mistakes and makes the whole process much smoother.
 
@@ -239,36 +239,36 @@ The following are common functions used in agent flows. For the full list of fun
 #### 🔡 Text
 
 - `concat()` - Joins two or more pieces of text together.
-    - Example: `concat('Hello ', firstName)` → “Hello John”
+  - Example: `concat('Hello ', firstName)` → “Hello John”
 
 - `toLower()` / `toUpper()` - Changes text to lowercase or uppercase.
-    - Useful for standardizing input.
+  - Useful for standardizing input.
 
 - `substring()` - Extracts part of a string.
-    - Example: Get the first 3 letters of a name.
+  - Example: Get the first 3 letters of a name.
 
 - `trim()` - Removes spaces from the beginning and end of text.
 
 #### 🔢 Math and number
 
 - `add()`, `sub()`, `mul()`, `div()` - Basic math operations.
-    - Example: `add(5, 3)` - the output is 8
+  - Example: `add(5, 3)` - the output is 8
 
 #### 📅 Date and time
 
 - `utcNow()` - Gets the current date and time in UTC.
-    - Great for timestamps.
+  - Great for timestamps.
 
 - `addDays()`, `addHours()` - Adds time to a date.
-    - Example: `addDays(utcNow(), 7)` output is 7 days from now.
+  - Example: `addDays(utcNow(), 7)` output is 7 days from now.
 
 - `formatDateTime()` - Formats a date into a readable string.
-    - Example: Monday, July 7, 2025
+  - Example: Monday, July 7, 2025
 
 #### ✅ Logical
 
 - `if()` - Runs one value if true, another if false.
-    - Example: `if(score > 50, 'Pass', 'Fail')`
+  - Example: `if(score > 50, 'Pass', 'Fail')`
 
 - `equals()` - Checks if two values are the same.
 
@@ -277,10 +277,10 @@ The following are common functions used in agent flows. For the full list of fun
 #### 🪣 Other handy functions
 
 - `coalesce()` - Returns the first non-empty value.
-    - Useful for fallback/default values.
+  - Useful for fallback/default values.
 
 - `guid()` - Generates a unique ID.
-    - Useful for tracking or logging.
+  - Useful for tracking or logging.
 
 - `length()` - Counts how many characters or items are in a string or array.
 
@@ -345,9 +345,9 @@ Let's begin!
 
 1. **SharePoint list**
 
-    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
-    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
 1. **Contoso Helpdesk Copilot**
 
@@ -455,7 +455,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Rename action](./assets/9.1_15_RenameAction.png)
 
-1. In the **Site Address** field, select the **Site address** of the Contoso IT SharePoint site created in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md/#step-4-create-new-sharepoint-site).
+1. In the **Site Address** field, select the **Site address** of the Contoso IT SharePoint site created in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
     ![Select SharePoint site address](./assets/9.1_16_SelectSharePointSiteAddress.png)
 
@@ -758,7 +758,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Save details](./assets/9.1_59_Save.png)
 
-1. Select the **Designer** tabe and select **Publish** to publish the agent flow so that it can be added as a node in the **Request device** topic.
+1. Select the **Designer** tab and select **Publish** to publish the agent flow so that it can be added as a node in the **Request device** topic.
 
     ![Publish](./assets/9.1_60_Publish.png)
 
@@ -784,21 +784,21 @@ Let's now add the agent flow to the **Request device** topic.
 
     ![Select agent flow](./assets/9.2_02_SelectAgentFlow.png)
 
-1. For the trigger inputs of our agent flow, we need to select the variable outpus from the **Ask with adaptive card** node.
+1. For the trigger inputs of our agent flow, we need to select the variable outputs from the **Ask with adaptive card** node.
 
     Select the **ellipsis (...) icon** for the **DeviceSharePointId** input.
 
     ![Select variable](./assets/9.2_03_SelectVariable.png)
 
-1. Select the **deviceSelctionId** variable which is one of the outputs defined in **Ask with adaptive card** node.
+1. Select the **deviceSelectionId** variable which is one of the outputs defined in **Ask with adaptive card** node.
 
-    ![Select deviceSelctionId](./assets/9.2_04_SelectDeviceSelectionId.png)
+    ![Select deviceSelectionId](./assets/9.2_04_SelectDeviceSelectionId.png)
 
 1. Next, select the **ellipsis (...) icon** for the **User** input.
 
     ![Select Variable](./assets/9.2_05_SelectVariable.png)
 
-1. Select the **System** tab in the flyout variable pane and select **User.DisplayName**. This variable stores the display name of the internal user interacting withthe agent.
+1. Select the **System** tab in the flyout variable pane and select **User.DisplayName**. This variable stores the display name of the internal user interacting with the agent.
 
     ![Select User.DisplayName system variable](./assets/9.2_06_SelectUser.DisplayName.png)
 
@@ -857,7 +857,7 @@ Let's now add the agent flow to the **Request device** topic.
 
     ![Power Fx expression](./assets/9.2_12_PowerFxExpression.png)
 
-1. Great work, our expression is complete! Now select **Insert** to set the input parameter of the agent flow to the Power Fx expresison.
+1. Great work, our expression is complete! Now select **Insert** to set the input parameter of the agent flow to the Power Fx expression.
 
     ![Insert Power Fx expression](./assets/9.2_13_InsertPowerFxExpression.png)
 
@@ -999,7 +999,7 @@ Let's test the final scenario which is to not request a device, and the **Goodby
 
     ![Goodbye topic invoked](./assets/9.4_13_Goodbye.png)
 
-## ✅ Misson Complete
+## ✅ Mission Complete
 
 Congratulations! 👏🏻 You've learnt how to build your agent flow and add it to our existing **Request device** topic, and how to redirect the agent to another topic.
 
