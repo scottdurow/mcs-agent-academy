@@ -62,4 +62,5 @@ This academy is broken into progressive lessons—each one designed as a field m
 | `11` | 📢 [Publish Your Agent](./11-publish-your-agent/README.md) | Deploy your agent to Microsoft Teams and Microsoft 365 Copilot |
 | `12` | 🪪  [Understanding Licensing](./12-understanding-licensing/README.md) | Learn how licensing and billing works with Copilot Studio |
 
-![mcs-agent-academy-recruit](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit)
+<!-- markdownlint-disable-next-line MD033 -->
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/recruit" alt="Analytics" />

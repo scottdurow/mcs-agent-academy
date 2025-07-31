@@ -352,3 +352,6 @@ Ready to dive deeper into event triggers and autonomous agents? Check out these 
 - **Best Practices**: [Power Automate triggers introduction](https://learn.microsoft.com/en-us/power-automate/triggers-introduction?WT.mc_id=power-177340-scottdurow)
 - **Advanced Scenarios**: [Using Power Automate flows with agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-flow-create?WT.mc_id=power-177340-scottdurow)
 - **Security**: [Data loss prevention for Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention?WT.mc_id=power-177340-scottdurow)
+
+<!-- markdownlint-disable-next-line MD033 -->
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/recruit/10-add-event-triggers" alt="Analytics" />

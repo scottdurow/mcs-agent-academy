@@ -61,4 +61,5 @@ Resources:
 
 [⭐️ Star our repo](https://github.com/microsoft/agent-academy){ .md-button .md-button--primary }
 
-![mcs-agent-academy-recruit](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit)
+<!-- markdownlint-disable-next-line MD033 -->
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/index" alt="Analytics" />

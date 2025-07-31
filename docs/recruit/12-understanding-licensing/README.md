@@ -103,8 +103,9 @@ You now understand:
 
 Learn more about licensing and billing in Copilot Studio
 
-- 📄 [Copilot Studio Licensing & Message Rates](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing?WT.mc_id=power-170631-apdunnam)
+- 📄 [Copilot Studio Licensing & Message Rates](https://learn.microsoft.com/microsoft-copilot-studio/billing-licensing?WT.mc_id=power-170631-apdunnam)
 - 📘 [Power Platform Licensing Guide (July 2025)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp//microsoft/bade/documents/products-and-services/en-us/bizapps/Power-Platform-Licensing-Guide-July-2025.pdf?WT.mc_id=power-170631-apdunnam)
-- 📊 [Message Management & Capacity Monitoring](https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-messages-capacity?WT.mc_id=power-170631-apdunnam)
+- 📊 [Message Management & Capacity Monitoring](https://learn.microsoft.com/power-platform/admin/manage-copilot-studio-messages-capacity?WT.mc_id=power-170631-apdunnam)
 
-![mcs-agent-academy-recruit-12](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/12-understanding-licensing)
+<!-- markdownlint-disable-next-line MD033 -->
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/recruit/12-understanding-licensing" alt="Analytics" />

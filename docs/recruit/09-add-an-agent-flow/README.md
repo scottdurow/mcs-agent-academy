@@ -1018,3 +1018,6 @@ This is the end of **Lab 09 - Add an agent flow for automation and enhance topic
 🔗 [List of functions in the reference guide](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
 
 📺 [Agent Flows in Copilot Studio](https://www.youtube.com/watch?v=VJTKyk3Pr7s)
+
+<!-- markdownlint-disable-next-line MD033 -->
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/recruit/09-add-an-agent-flow" alt="Analytics" />

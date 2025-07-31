@@ -128,4 +128,5 @@ Stay sharp, Recruit - your AI journey is just beginning!
 
 ---
 
-![mcs-agent-academy-recruit-01](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/01-introduction-to-agents)
+<!-- markdownlint-disable-next-line MD033 -->
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/recruit/01-introduction-to-agents" alt="Analytics" />

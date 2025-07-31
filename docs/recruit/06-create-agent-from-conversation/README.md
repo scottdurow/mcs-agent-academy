@@ -491,4 +491,5 @@ Welcome to the elite. You now know how to forge digital agents that speak your l
 
 📺 [Add knowledge to your agents](https://aka.ms/ai-in-action/copilot-studio/ep2)
 
-![mcs-agent-academy-recruit-06](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/06-create-agent-from-conversation)
+<!-- markdownlint-disable-next-line MD033 -->
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/recruit/06-create-agent-from-conversation" alt="Analytics" />

@@ -184,4 +184,5 @@ You’ve successfully:
 
 You're officially cleared to begin your **Recruit-level agent training** in [Lesson 01](../01-introduction-to-agents/README.md).  
 
-![mcs-agent-academy-recruit-00](https://m365-visitor-stats.azurewebsites.net/?resource=https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/00-course-setup)
+<!-- markdownlint-disable-next-line MD033 -->
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/recruit/00-course-setup" alt="Analytics" />
