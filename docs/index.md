@@ -19,12 +19,9 @@ The **Copilot Studio Agent Academy** is a multi-phase training program designed 
 
 | Rank             | Level | Visual |
 |------------------|:-----:|--------|
-| 🟢 **Recruit**     | •     | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png)     |
-| 🔵 **Operative**</br>(Coming Soon)   | ••    | ![Operative Badge](./images/mcs-agent-academy-operative-badge.png) |
-| 🟡 **Commander**</br>(Coming Soon)    | •••   | ![Commander Badge](./images/mcs-agent-academy-commander-badge.png) |
-
-> ✅ Completing this curriculum earns you the **Recruit** badge.  
-> 🔓 **Operative** and **Commander** will be unlocked in future phases.
+| 🟢 **Recruit**     | •     | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png){ width="300" }     |
+| 🔵 **Operative**</br>(Coming Soon)   | ••    | ![Operative Badge](./images/mcs-agent-academy-operative-badge.png){ width="300" } |
+| 🟡 **Commander**</br>(Coming Soon)    | •••   | ![Commander Badge](./images/mcs-agent-academy-commander-badge.png){ width="300" } |
 
 Each level builds on the last. Finish your Recruit mission, and stay tuned to level up your agent credentials.
 
@@ -34,10 +31,10 @@ Each level builds on the last. Finish your Recruit mission, and stay tuned to le
 
 Check out these other courses to continue learning about AI and Agents:
 
+- [Microsoft Copilot Studio <3 MCP Lab](https://aka.ms/mcsmcplab)
 - [Copilot Developer Camp](https://microsoft.github.io/copilot-camp/)
 - [AI Agents for Beginners](https://microsoft.github.io/ai-agents-for-beginners/)
 - [Model Context Protocol (MCP) For Beginners](https://github.com/microsoft/mcp-for-beginners)
-- [Microsoft Copilot Studio <3 MCP Lab](https://aka.ms/mcsmcplab)
 
 ---
 
@@ -51,11 +48,11 @@ We really appreciate your feedback! Please use the [issues list](https://github.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 
-Resources:
+!!! info "Resources:"
 
-- [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)
-- [Microsoft Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
-- Contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with questions or concerns
+    - [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)
+    - [Microsoft Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
+    - Contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with questions or concerns
 
 ---
 
