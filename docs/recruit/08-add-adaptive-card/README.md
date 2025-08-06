@@ -360,6 +360,10 @@ Now that we created the new topic that handles the device requests, we need to u
 
 1. Add a new line below the previous instruction from [Lab 07 - Add a new topic with conversation nodes, 7.3 Add a tool using a connector](../07-add-new-topic-with-trigger/README.md#73-add-a-tool-using-a-connector).
 
+    ```text
+    - If the user answers yes to the question of requesting a device, trigger [Request device]. Otherwise if they answer no to the question of requesting a device, trigger [Goodbye].
+    ```
+
     Select the entire topic placeholder in square brackets and delete the placeholder.
 
     ![Request device placeholder](assets/8.2_02_ReplaceRequestDevicePlaceholder.png)

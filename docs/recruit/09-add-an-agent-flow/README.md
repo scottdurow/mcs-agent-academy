@@ -817,7 +817,7 @@ Let's now add the agent flow to the **Request device** topic.
     Enter the following functions in the Power Fx field,
 
     ```text
-    if(empty())
+    If(IsBlank())
     ```
 
     This expression uses the `if` function for an if-else statement.
