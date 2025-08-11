@@ -230,7 +230,7 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
 
       ![Enter name](assets/3.2_04_NamePrompt.png)
 
-1. Select the **chevron icon** next to the **Model** to see the different chat models you can choose from. By default, the **Basic GPT-4o mini** model is selected and you also have the option to bring-your-own-model using Azure AI Foundry Models. We'll stick with the selected default model.
+1. Select the **chevron icon** next to the **Model** to see the different chat models you can choose from. By default, the **Basic GPT-4.1 mini** model is selected and you also have the option to bring-your-own-model using Azure AI Foundry Models. We'll stick with the selected default model.
 
       ![Change model](assets/3.2_05_ChangeModel.png)
 
