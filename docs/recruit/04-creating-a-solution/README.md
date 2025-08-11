@@ -1,4 +1,4 @@
-# 🚨 Mission 04: Build a Solution for Your Agent
+# 🚨 Mission 04: Creating a Solution for Your Agent
 
 ## 🕵️‍♂️ CODENAME: `OPERATION CTRL-ALT-PACKAGE`
 
