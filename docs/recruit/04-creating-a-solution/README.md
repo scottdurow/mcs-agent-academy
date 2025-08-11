@@ -211,7 +211,7 @@ Make sure you switch to your dedicated developer environment, refer to [Lesson 0
     Copy and paste the following as the **Description**,
 
     ```text
-    Copilot Studio for Beginners
+    Copilot Studio Agent Academy
     ```
 
     Copy and paste the following for the **Prefix**,
