@@ -255,57 +255,57 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
       ![Enter prompt](./assets/6.1_01_Prompt.png)
 
-1. The conversational creation experience with Copilot will next load. You'll see Copilot is in progress of responding to you. The agent pane on the right will update shortly with details and instructions based on the prompt entered.
+1. The conversational creation experience with Copilot will next load. You'll see Copilot is in progress of responding to you.
 
-       ![Copilot conversational creation experience](./assets/6.1_02_CopilotConversationCreationExperience.png)
+      ![Copilot conversational creation experience](./assets/6.1_02_ConversationalCreationExperienceLoads.png)
 
-1. Copilot will update the agent pane with a name, description and instructions based on the prompt entered. Cool right?!
-
-       ![Agent pane displays name, description and instructions](./assets/6.1_03_AgentInstructions.png)
-
-1. Next, we'll ask Copilot to name our agent as,
+1. Copilot confirms the agent has been set up with the instructions provided, and is asking for confirmation on the name of the agent. We'll ask Copilot to name our agent as,
 
        ```text
        Contoso Helpdesk Agent
        ```
 
-      ![Rename the agent](./assets/6.1_04_NameAgent.png)
+      ![Rename the agent](./assets/6.1_03_AgentName.png)
 
-1. Copilot performs the request and we'll see that the name of the agent has been updated in the agent pane. Copilot next asks us to refine the instructions. It's asking how we should respond to particular issues and we'll request that it acknowledges the issue and format the response as bullet points. Copy and paste the following, and submit the request to Copilot.
+1. Copilot performs the request and we'll see that the name of the agent has been updated in the agent pane. Copilot next asks us to refine the instructions. It's asking how we should respond to particular issues and we'll request that it acknowledges the issue, provide examples of topics to answer, and format the response as bullet points. Copy and paste the following, and submit the request to Copilot.
 
        ```text
-       Acknowledge the issue with empathy and provide steps or troubleshooting as bullet points.
+       Prioritize urgent requests. Examples of IT issues or scenarios to help with: device problems, network connectivity, log in issues. When troubleshooting, first acknowledge their issue and respond with empathy, then provide step by step guidance using bullet points and ask if they require further assistance.
        ```
 
-      ![Refine agent instructions](./assets/6.1_05_RefineInstructions.png)
+      ![Refine agent instructions](./assets/6.1_04_RefineInstructions.png)
 
-1. The instructions of the agent will be updated after Copilot has received the request. Next, Copilot is asking for public websites to ground the agent's knowledge. Enter the following and submit,
+1. The instructions of the agent will be updated after Copilot has received the request. Notice how on the right hand side pane, that starter prompts have now appeared. These were formed based on our instructions.
+
+    Next, Copilot is asking for public websites to ground the agent's knowledge. Enter the following and submit,
 
       ```text
       https://support.microsoft.com
       ```
 
-      ![Add publicly accessible website](./assets/6.1_06_PublicWebsite.png)
+      ![Add publicly accessible website](./assets/6.1_05_KnowledgeSource.png)
 
-1. The public website will be added as a knowledge source. If you don't see it in the agent pane, try scrolling down the pane and it'll appear as a knowledge source.
+1. The public website will be added as a knowledge source. Copilot is asking if additional knowledge sources are to be added. We don't need to add additional public websites. Enter the following and submit.
 
-    Lastly, we're going to request that our agent does not answer HR related questions. This lets our agent know that it should not answer HR related questions asked by users. Enter the following and submit,
+      ```text
+      Proceed with setup
+      ```
+
+      ![Proceed with setup](./assets/6.1_06_ProceedWithSetup.png)
+
+1. Copilot confirms the setup of our Contoso Helpdesk Agent is complete but we'll add one more modification, we're going to request that our agent does not answer HR related questions. This lets our agent know that it should not answer HR related questions asked by users. Enter the following and submit,
 
        ```text
        Do not provide assistance to questions related to HR, examples are: What is my vacation leave balance? How many sick days do I have? What's the URL to our payroll portal? 
        ```
 
-       ![Do not answer HR related questions](./assets/6.1_07_DoNotTalkAbout.png)
+      ![Do not answer HR related questions](./assets/6.1_07_DoNotTalkAbout.png)
 
-1. The instructions will be updated to not provide assistance with questions related to HR. Copilot is asking again if we'd like to request more modifications. We don't need to make further updates, enter the following and submit,
+1. The instructions will be updated to not provide assistance with questions related to HR. We don't need to make further updates. Our agent is ready to be created
 
-      ```text
-      No more modifications
-      ```
+      ![Agent instructions updated](./assets/6.1_08_AgentInstructionsUpdated.png)
 
-       ![No more modifications](./assets/6.1_08_NoMoreModifications.png)
-
-1. Copilot confirms the agent is ready to be created. Before we create our agent, let's do a couple of things.
+1. Before we create our agent, let's do a couple of things.
 
     For websites, you need to confirm which website(s) your organization owns that Bing will search through Copilot Studio.
 
