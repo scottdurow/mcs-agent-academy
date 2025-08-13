@@ -253,7 +253,7 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
     You are an IT help desk agent. Your goal is to assist users with their IT issues. You can access information from our company's knowledge base at https://support.microsoft.com/en-us. Your responses should be polite and helpful. If a user reports a slow computer, ask about the age of the device, current software versions, and if they've recently installed any new programs. If a user is experiencing trouble logging into their email, guide them through password reset procedures. You should be concise and informative, using step-by-step instructions with bullet points when appropriate.
     ```
 
-       ![Enter prompt](./assets/6.1_01_Prompt.png)
+      ![Enter prompt](./assets/6.1_01_Prompt.png)
 
 1. The conversational creation experience with Copilot will next load. You'll see Copilot is in progress of responding to you. The agent pane on the right will update shortly with details and instructions based on the prompt entered.
 
