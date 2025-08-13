@@ -267,7 +267,9 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
       ![Rename the agent](./assets/6.1_03_AgentName.png)
 
-1. Copilot performs the request and we'll see that the name of the agent has been updated in the agent pane. Copilot next asks us to refine the instructions. It's asking how we should respond to particular issues and we'll request that it acknowledges the issue, provide examples of topics to answer, and format the response as bullet points. Copy and paste the following, and submit the request to Copilot.
+1. Copilot performs the request and we'll see that the name of the agent has been updated in the agent pane. Copilot next asks us to refine the instructions. It's asking how we should respond to particular issues and we'll request that it acknowledges the issue, provide examples of topics to answer, and format the response as bullet points.
+
+    Copy and paste the following, and submit the request to Copilot.
 
        ```text
        Prioritize urgent requests. Examples of IT issues or scenarios to help with: device problems, network connectivity, log in issues. When troubleshooting, first acknowledge their issue and respond with empathy, then provide step by step guidance using bullet points and ask if they require further assistance.
@@ -277,7 +279,9 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
 1. The instructions of the agent will be updated after Copilot has received the request. Notice how on the right hand side pane, that starter prompts have now appeared. These were formed based on our instructions.
 
-    Next, Copilot is asking for public websites to ground the agent's knowledge. Enter the following and submit,
+    Next, Copilot is asking for public websites to ground the agent's knowledge.
+
+    Copy and paste the following, and submit the request to Copilot.
 
       ```text
       https://support.microsoft.com
@@ -285,7 +289,9 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
       ![Add publicly accessible website](./assets/6.1_05_KnowledgeSource.png)
 
-1. The public website will be added as a knowledge source. Copilot is asking if additional knowledge sources are to be added. We don't need to add additional public websites. Enter the following and submit.
+1. The public website will be added as a knowledge source. Copilot is asking if additional knowledge sources are to be added. We don't need to add additional public websites.
+
+    Copy and paste the following, and submit the request to Copilot.
 
       ```text
       Proceed with setup
@@ -293,7 +299,9 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
       ![Proceed with setup](./assets/6.1_06_ProceedWithSetup.png)
 
-1. Copilot confirms the setup of our Contoso Helpdesk Agent is complete but we'll add one more modification, we're going to request that our agent does not answer HR related questions. This lets our agent know that it should not answer HR related questions asked by users. Enter the following and submit,
+1. Copilot confirms the setup of our Contoso Helpdesk Agent is complete but we'll add one more modification, we're going to request that our agent does not answer HR related questions. This lets our agent know that it should not answer HR related questions asked by users.
+
+    Copy and paste the following, and submit the request to Copilot.
 
        ```text
        Do not provide assistance to questions related to HR, examples are: What is my vacation leave balance? How many sick days do I have? What's the URL to our payroll portal? 
