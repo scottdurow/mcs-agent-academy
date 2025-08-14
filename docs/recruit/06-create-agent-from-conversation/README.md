@@ -309,41 +309,64 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
       ![Do not answer HR related questions](./assets/6.1_07_DoNotTalkAbout.png)
 
-1. The instructions will be updated to not provide assistance with questions related to HR. We don't need to make further updates. Our agent is ready to be created
+1. The instructions will be updated to not provide assistance with questions related to HR. We don't need to make further updates, our agent is ready to be created.
 
       ![Agent instructions updated](./assets/6.1_08_AgentInstructionsUpdated.png)
 
 1. Before we create our agent, let's do a couple of things.
 
-    For websites, you need to confirm which website(s) your organization owns that Bing will search through Copilot Studio.
+    First, select the **Configure** tab to view the agent details defined from our conversation with Copilot. This is where you'll see the Name, Description, Instructions, Knolwedge and Suggested/Starter prompts.
 
-    For learning purposes, we'll tick the checkbox that confirms ownership of the knowledge source. In reality, this would be _your company website_ that you have ownership of.
+      ![View agent details](./assets/6.1_09_ViewAgentDetails.png)
 
-      ![Confirm website ownership](./assets/6.1_09_ConfirmOwnershipOfKnowledgeSource.png)
+1. Secondly, let's test our agent. Copy and paste the following, and submit the question to our agent.
 
-1. Next we'll double check the solution that our agent will be created in, is the solution we created and selected as the preferred solution in [Lesson 04 - Create a new solution](../04-creating-a-solution/README.md#42-create-a-new-solution).
+       ```text
+       How can I check the warranty status of my Surface?
+       ```
 
-    Select the **ellipsis icon (...)** and select **Edit Advanced Settings**.
+      ![Test agent](./assets/6.1_10_TestAgent.png)
 
-      ![Edit Advanced Settings](./assets/6.1_10_EditAdvancedSettings.png)
+1. The response to the question will then display where the answers are in the format of a step-by-step guide using bullet points. Great, our agent works! 🙌🏻
+
+      ![Agent Response](./assets/6.1_11_AgentResponse.png)
+
+1. Lastly, we'll double check the solution that our agent will be created in, is the solution we created and selected as the preferred solution in [Lesson 04 - Create a new solution](../04-creating-a-solution/README.md#42-create-a-new-solution).
+
+    Select the **ellipsis icon (...)** and select **Update Advanced Settings**.
+
+      ![Update Advanced Settings](./assets/6.1_12_UpdateAdvancedSettings.png)
 
 1. The **Advanced Settings** modal will appear and we can see our solution created from earlier is selected by default. This is due to selecting our solution as the preferred solution in [Lesson 04 - Create a new solution](../04-creating-a-solution/README.md#42-create-a-new-solution).
 
     Select **Cancel.**
 
-      ![View of Advanced Settings](./assets/6.1_11_Solution.png)
+      ![View of Advanced Settings](./assets/6.1_13_AdvancedSettings.png)
 
 1. Let's now create our custom agent! Select **Create**.
 
-      ![Select Create](./assets/6.1_12_CreateAgent.png)
+      ![Select Create](./assets/6.1_14_CreateAgent.png)
 
 1. Copilot Studio will begin provisioning our agent.
 
-      ![Setting up agent](./assets/6.1_13_SettingUpAgent.png)
+      ![Setting up agent](./assets/6.1_15_SettingUpAgent.png)
 
-1. Once our agent has been provisioned, we can see the details of the agent reflect what we requested during our Copilot conversational creation experience.
+1. Once our agent has been provisioned, we can see the details of the agent reflect what we requested during our Copilot conversational creation experience. Scroll down to review the agent.
 
-      ![Agent provisioned](./assets/6.1_14_AgentCreated.png)
+      ![Agent created](./assets/6.1_16_AgentCreated.png)
+
+      ![Knowledge sources](./assets/6.1_17_KnowledgeSources.png)
+
+      ![Suggested prompts](./assets/6.1_18_SuggestedPrompts.png)
+
+    Legend:
+    1. Name of the agent
+    1. Description of the agent
+    1. Orchestration mode enabled by default
+    1. The response model of the agent, set to the default model
+    1. Instructions of the agent
+    1. The knowledge sources our agent is grounded in
+    1. The suggested prompts
 
 1. Scroll down and we'll see our instructions and the public website as the knowledge source for the agent.
 
