@@ -351,7 +351,7 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
       ![Setting up agent](./assets/6.1_15_SettingUpAgent.png)
 
-1. Once our agent has been provisioned, we can see the details of the agent reflect what we requested during our Copilot conversational creation experience. Scroll down to review the agent.
+1. Once our agent has been provisioned, we can see the details of the agent reflect what we requested during our Copilot conversational creation experience. Scroll down to review the agent where you'll see the name, description, instructions, the knowledge sources and the suggested prompts. The orchestration mode is enabled by default and the default model is used for the response model of the agent.
 
       ![Agent created](./assets/6.1_16_AgentCreated.png)
 
@@ -359,38 +359,29 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
       ![Suggested prompts](./assets/6.1_18_SuggestedPrompts.png)
 
-    Legend:
-    1. Name of the agent
-    1. Description of the agent
-    1. Orchestration mode enabled by default
-    1. The response model of the agent, set to the default model
-    1. Instructions of the agent
-    1. The knowledge sources our agent is grounded in
-    1. The suggested prompts
+1. Let's now test our newly created agent. In the **Test** pane on the right hand side, select the **Activity Map** icon.
 
-1. Scroll down and we'll see our instructions and the public website as the knowledge source for the agent.
+      ![Select Activity Map](./assets/6.1_19_ActivityMap.png)
 
-      ![Instructions and knowledge sources](./assets/6.1_15_InstructionsAndKnowledgeSources.png)
-
-1. Let's now test our newly created agent. Enter the following question in the **Test** pane.
+1. Enter the following question in the **Test** pane.
 
        ```text
-       How can I check the warranty status of my Surface?
+       How do I find my Windows 11 product key?
        ```
 
-      ![Test newly created agent](./assets/6.1_16_TestNewlyCreatedAgent.png)
+      ![Test newly created agent](./assets/6.1_20_TestAgent.png)
 
 1. The Activity map will then load which shows us in real-time what path the agent is processing. In this scenario, our agent has understood the question and searches the knowledge sources. Currently we have one source which is the public website we added earlier using Copilot, which is what the agent is reviewing.
 
-      ![Reviewing knowledge sources](./assets/6.1_17_ReviewingKnowledgeSources.png)
+      ![Reviewing knowledge sources](./assets/6.1_21_ReviewingSources.png)
 
-1. Our agent then responds with answers that are outlined as bullet points, as defined in the instructions. The response has references to the web pages that the agent formed its response from. This enables users to verify the source of the answer. If you click on the reference, you'll be directed to the web page where you can review the source of the answer.
+1. Our agent then responds with answers that are outlined as bullet points, as defined in the instructions. The response has references to the web pages that the agent formed its response from. This enables users to verify the source of the answer.
 
-      ![References in response](./assets/6.1_18_References.png)
+      ![References in response](./assets/6.1_22_Response.png)
 
 1. You can also review the response and its sources by scrolling down the **Knowledge modal** in the Activity map.
 
-      ![Referenced sources](./assets/6.1_19_ReferencedSources.png)
+      ![Referenced sources](./assets/6.1_23_ReferencedSources.png)
 
 Congratulations! You've built your first custom agent with Copilot in Copilot Studio 🙌🏻
 
