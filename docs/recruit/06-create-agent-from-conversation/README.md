@@ -215,8 +215,8 @@ After your agent is provisioned from the conversational creation experience, you
 We're now going to learn how to create a custom agent that can chat over your data
 
 - [6.1 Use natural language to create an agent with Copilot](#61-use-natural-language-to-create-an-agent-with-copilot)
-- [6.2 Add an internal knowledge source using a SharePoint site - for Microsoft 365 licensed users with SharePoint included](#62-add-an-internal-knowledge-source-using-a-sharepoint-site)
-- [6.3 Add an internal knowledge source by uploading a document - for non-Microsoft 365 licensed users who don't have SharePoint included](#63-add-an-internal-knowledge-source-by-uploading-a-document)
+- [6.2 Add an internal knowledge source using a SharePoint site](#62-add-an-internal-knowledge-source-using-a-sharepoint-site)
+- [6.3 Add an internal knowledge source by uploading a document](#63-add-an-internal-knowledge-source-by-uploading-a-document)
 - [6.4 Test agent](#64-test-agent)
 
 ### ✨ Use case
@@ -399,15 +399,15 @@ Previously with Copilot, we added a public website as an external knowledge sour
 
 1. Paste in the **address of the SharePoint site** created in [Lesson 00 - Course Setup](../00-course-setup/README.md#step-4-create-new-sharepoint-site) in the SharePoint URL field and select **Add**.
 
-      ![Enter SharePoint site URL](./assets/6.2_03_SharePointURL.png)
+      ![Enter SharePoint site URL](./assets/6.2_03_AddSharePointURL.png)
 
 1. Update the **name** of the SharePoint site to `Contoso IT` and select **Add**.
 
-      ![Update SharePoint site name](./assets/6.2_04_UpdateSharePointSiteName.png)
+      ![Update SharePoint site name](./assets/6.2_04_UpdateNameAddToAgent.png)
 
 1. The SharePoint site has now been added as a knowledge source with a status of _Ready_. The Status column will show whether the knowledge source has been loaded/connected to successfully, or if there is an issue.
 
-      ![SharePoint site added](./assets/6.2_05_SharePointSiteAdded.png)
+      ![SharePoint site status](./assets/6.2_05_SharePointStatus.png)
 
 ### 6.3 Add an internal knowledge source by uploading a document
 
@@ -415,27 +415,23 @@ We'll now add another internal knowledge source by uploading a document directly
 
 1. Select **Add knowledge**.
 
-      ![Select Add knowledge](./assets/6.3_01_SelectAddKnowledge.png)
+      ![Select Add knowledge](./assets/6.3_01_AddKnolwedge.png)
 
-1. Select **Upload file**.
+1. Select **Upload file** or **Select to browse**.
 
-      ![Select upload files](./assets/6.3_02_SelectUploadFile.png)
+      ![Select upload files](./assets/6.3_02_UploadFile.png)
 
 1. Download this [sample file](./assets/Contoso_Guest_WiFi_Connection_Guide.docx "download") and select it in your File Explorer. Select **Open**.
 
-      ![Select document](./assets/6.3_03_SelectDocument.png)
+      ![Select document](./assets/6.3_03_SelectFile.png)
 
-1. The file has been selected for upload. Select **Add** next.
+1. The file has been selected for upload. Select **Add to agent** next.
 
-      ![Select Add](./assets/6.3_04_AddDocument.png)
+      ![Select Add to Agent](./assets/6.3_04_AddToAgent.png)
 
-1. The document will be in the process of being added to the agent. Wait until the upload has completed, do not close the browser window.
+1. The document will be in the process of being added to the agent. Wait until the upload has completed, do not close the browser window. The status of the document will initially show as _In progress_, wait until the status has been updated to **Ready** before testing your agent.
 
-      ![Select Add knowledge](./assets/6.3_05_UploadingDocument.png)
-
-1. The status of the document will initially show as _In progress_, wait until the status has been updated to **Ready** before testing your agent.
-
-      ![Select Add knowledge](./assets/6.3_06_DocumentStatusReady.png)
+      ![File status](./assets/6.3_05_FileStatus.png)
 
 Let's now test our agent!
 
@@ -443,9 +439,9 @@ Let's now test our agent!
 
 We'll test our three knowledge sources by asking questions to our Contoso Helpdesk Agent.
 
-1. Select the **refresh** icon in the test pane.
+1. Select the **refresh** icon in the test pane, followed by selecting the **activity map** icon.
 
-      ![Refresh icon](./assets/6.4_01_RefreshTestPane.png)
+      ![Refresh icon](./assets/6.4_01_RefreshAndActivityMap.png)
 
 1. Enter the following question to test our public website (external) knowledge source.
 
@@ -453,33 +449,31 @@ We'll test our three knowledge sources by asking questions to our Contoso Helpde
       How can I find the serial number on my Surface device?
       ```
 
-      ![Enter prompt to test website knowledge source](./assets/6.4_02_TestWebsiteKnowledgeSource.png)
+      ![Enter prompt to test website knowledge source](./assets/6.4_02_TestQuestion1.png)
 
-1. You'll next see the agent reviewing the knowledge sources and providing a response using the website knowledge source. There will be a reference to the web page it formed its answer from.
+1. You'll next see the agent reviewing the knowledge sources and providing a response using the website knowledge source.
 
-      ![Web page referenced in response](./assets/6.4_04_WebPageReferenced.png)
+      ![Web page referenced in response](./assets/6.4_03_ReviewingSources.png)
 
-1. If you scroll down the knowledge modal in the activity map, you'll see the other knowledge sources the agent searched, which is the SharePoint site and the uploaded file. However these were not used as in the **Referenced sources** section, the website knowledge source was referenced. The answer was grounded using the website knowledge source. If you select the reference, you'll be directed to the web page.
+1. A response will be returned an notice how there are references to the web page it formed its answer from. If you scroll down the knowledge modal in the activity map, you'll see the other knowledge sources the agent searched, which is the SharePoint site and the uploaded file.
 
-      ![Knowledge sources referenced and searched](./assets/6.4_05_KnowledgeSourcesSearched.png)
+    However these were not used as in the **Referenced sources** section, the website knowledge source was only referenced. The answer was grounded using the website knowledge source. If you select the references, you'll be directed to the web page.
+
+      ![Knowledge sources referenced and searched](./assets/6.4_04_ReferencedSources.png)
 
 1. Let's now test both our SharePoint site knowledge source and document knowledge source in a single message. Enter the following question.
 
       ```text
-      How do I access the Contoso VPN? How do guests connect to the Contoso Guest wifi?
+      How can I access our company Contoso VPN? How do guests connect to the Contoso Guest wifi?
       ```
 
-      ![Test SharePoint and document knowledge sources](./assets/6.4_06_TestSharePointAndDocumentKnowledgeSources.png)
+      ![Test SharePoint and document knowledge sources](./assets/6.4_05_TestQuestion2.png)
 
-    > If you don't have SharePoint in your Microsoft 365 license, only enter the second question to test the document knowledge source.
+1. Once again you'll see the agent reviewing the three knowledge sources to generate a response to the questions our single message. The agent responds to both questions in a single message, and separately references the SharePoint page and document of where it generated its response from.
 
-1. Once again you'll see the agent reviewing the three knowledge sources to generate a response to the questions our single message.
+    In the knowledge modal in the activity map, you'll see the SharePoint site and document used as the reference sources. You have full visibility of what knowledge sources were used to answer both questions.
 
-      ![Reviewing knowledge sources](./assets/6.4_07_ReviewingKnowledgeSources.png)
-
-1. The agent responds to both questions in a single message, and separately references the SharePoint page and document of where it generated its response from. In the knowledge modal in the activity map, you'll see the SharePoint site and document used as the reference sources. You have full visibility of what knowledge sources were used to answer both questions.
-
-      ![Knowledge sources referenced](./assets/6.4_08_KnowledgeSourcesReferenced.png)
+      ![Knowledge sources referenced](./assets/6.4_06_ReferencedSources.png)
 
 1. It's always good to verify the generated response is correct. Select the SharePoint site reference and the FAQs SharePoint page will load where you can scroll down to review the VPN instructions.
 
