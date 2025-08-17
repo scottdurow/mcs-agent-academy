@@ -315,7 +315,7 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
 1. Before we create our agent, let's do a couple of things.
 
-    First, select the **Configure** tab to view the agent details defined from our conversation with Copilot. This is where you'll see the Name, Description, Instructions, Knolwedge and Suggested/Starter prompts.
+    First, select the **Configure** tab to view the agent details defined from our conversation with Copilot. This is where you'll see the Name, Description, Instructions, Knowledge and Suggested/Starter prompts.
 
       ![View agent details](./assets/6.1_09_ViewAgentDetails.png)
 
