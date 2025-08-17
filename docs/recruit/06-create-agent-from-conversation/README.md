@@ -477,11 +477,11 @@ We'll test our three knowledge sources by asking questions to our Contoso Helpde
 
 1. It's always good to verify the generated response is correct. Select the SharePoint site reference and the FAQs SharePoint page will load where you can scroll down to review the VPN instructions.
 
-      ![Review SharePoint page](./assets/6.4_09_VerifySharePoint.png)
+      ![Review SharePoint page](./assets/6.4_07_VerifySharePoint.png)
 
 1. Next, select the document reference and a modal will appear with the text from the document that reflects the answer.
 
-      ![Review document](./assets/6.4_10_VerifyDocument.png)
+      ![Review document](./assets/6.4_08_VerifyDocument.png)
 
 The agent can answer multiple questions in a single message, and search the knowledge sources + reference the knowledge sources in its response. Make sure to always verify the response is correct by reviewing the references.
 
