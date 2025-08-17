@@ -415,7 +415,7 @@ We'll now add another internal knowledge source by uploading a document directly
 
 1. Select **Add knowledge**.
 
-      ![Select Add knowledge](./assets/6.3_01_AddKnolwedge.png)
+      ![Select Add knowledge](./assets/6.3_01_AddKnowledge.png)
 
 1. Select **Upload file** or **Select to browse**.
 
