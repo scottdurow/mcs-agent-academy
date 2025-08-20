@@ -28,16 +28,18 @@ body:
   - type: checkboxes
     attributes:
       label: Solution Verification
-      description: Please upload 2 screenshots of your final solution into the field below to confirm that you’ve completed the solution.
+      description: Please upload the following two screenshots of your final solution into the field below to confirm that you’ve completed the solution. The screenshots required are listed below.
       options:
-        - label: I verify that I have uploaded my screenshots of my final solution into the field below.
+        - label: I verify that I have uploaded a screenshot of the Agent configuration with my environment name shown into the field below.
+          required: true
+        - label: I verify that I have uploaded a screenshot of the final solution file with my environment name shown into the field below.
           required: true
 
   - type: textarea
     id: Final_solution
     attributes:
-      label: Final Solution Screenshot
-      description: Please upload the following 2 screenshot of your final solution here. The screenshots required should include the agent configuration with your environment name shown, and of the final solution file with your environment name shown.
+      label: Final Solution Screenshots
+      description: Please upload both screenshots of your final solution here. The two screenshots required are of your agent configuration with your environment name shown and of the final solution file with your environment name shown.
     validations:
       required: true
 
@@ -53,7 +55,7 @@ body:
     id: challenges
     attributes:
       label: Challenges Faced
-      description: Any difficulties you encountered in this path?
+      description: Did you encounter any difficulties in the Recruit path?
     validations:
       required: true
 
