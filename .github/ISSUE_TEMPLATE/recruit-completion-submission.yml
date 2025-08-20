@@ -28,16 +28,24 @@ body:
   - type: checkboxes
     attributes:
       label: Solution Verification
-      description: Please upload a screenshot of your final solution into the field below to confirm that you’ve completed the solution.
+      description: Please upload screenshots of your final solution into the fields below to confirm that you’ve completed the solution.
       options:
-        - label: I verify that I have uploaded my screenshot of my final solution into the field below.
+        - label: I verify that I have uploaded the 2 required screenshots of my final solution into the fields below.
           required: true
 
   - type: textarea
     id: Final_solution
     attributes:
-      label: Final Solution Screenshot
-      description: Please upload a screenshot of your final solution here.
+      label: Final Solution Screenshot 1
+      description: Please upload a screenshot of your Agent configuration with your environment name shown.    
+    validations:
+      required: true
+
+- type: textarea
+    id: Final_solution
+    attributes:
+      label: Final Solution Screenshot 2
+      description: Please upload a screenshot of the final solution file with your environment name shown.
     validations:
       required: true
 
