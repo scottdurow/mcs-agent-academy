@@ -151,7 +151,7 @@ You need to make sure you fill in this list with at least 4 sample data items an
 
 When adding sample data, make sure that the following fields are filled out:
 
-- Device photo - use the images from the [device images folder](https://github.com/microsoft/mcs-agent-academy-recruit/tree/main/docs/00-course-setup/images/device-images/)
+- Device photo - use the images from the [device images folder](https://github.com/microsoft/agent-academy/tree/main/docs/recruit/00-course-setup/images/device-images)
 - Title
 - Status
 - Manufacturer
