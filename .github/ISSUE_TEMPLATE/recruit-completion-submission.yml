@@ -28,8 +28,7 @@ body:
   - type: checkboxes
     attributes:
       label: Solution Verification
-      description: Please upload 2 screenshots of your final solution into the fields below to confirm that you’ve completed the solution. The following 2 screenshots are required to validate completion: 1. Screenshot of the Agent configuration with your environment name shown.
-2. Screenshot of the final solution file with your environment name shown.
+      description: Please upload 2 screenshots of your final solution into the fields below to confirm that you’ve completed the solution. The following 2 screenshots are required to validate completion: 1. Screenshot of the Agent configuration with your environment name shown. 2. Screenshot of the final solution file with your environment name shown.
       options:
         - label: I verify that I have uploaded my screenshot of my final solution into the field below.
           required: true
