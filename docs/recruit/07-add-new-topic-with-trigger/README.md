@@ -179,8 +179,8 @@ The following are the main types of nodes you can add to an agent:
     > Think of it as a "go to another section/step" block that helps your agent be flexible in chatting with users.
 
 1. **Add a tool**
-    - **Purpose** - connects to external tools such as Power Automate, Excel, ServiceNow.
-    - **Example** - Power Automate cloud flow executed after user submits their vacation leave request.
+    - **Purpose** - connects to tools such as connectors, agent flows, prompts, custom search, search query, skills, model context protocol.
+    - **Example** - Agent flow executed after user submits their vacation leave request.
 
     This node gives your agent capabilities to interact with external systems or perform specific tasks, such as sending emails, checking weather, or accessing databases. You can add tools using built-in connectors, custom APIs, agent flows, prompts, or connect to Model Context Protocol (MCP) servers, and even _graphical user interface_ automation for desktop apps through the computer use tool.
 
@@ -479,7 +479,7 @@ Let's begin!
     VarDeviceType
     ```
 
-    ![Input variable name](assets/7.2_04_InputVariableName.png)
+    ![Input variable name](assets/7.2_04_VariableName.png)
 
 1. We now need to define our input and output variables. The following are properties that can be defined for topic inputs and outputs.
 
@@ -491,14 +491,14 @@ Let's begin!
     | Identify as  | Entity type for the agent to capture the correct value type  |
     | Description    | The description helps the agent automatically fill inputs before running the topic or generate questions to ask for the values   |
 
-    The _How will the agent fill this input?_, _variable data type_ and _Display name_ can remain as-is. Update the **Identify as** property to **User's entire response**.
+    The _How will the agent fill this input?_, _Variable data type_ and _Display name_ can remain as-is. Update the **Identify as** property to **User's entire response**.
 
     ![Update Identify as](assets/7.2_05_IdentifyAs.png)
 
 1. Copy and paste the following as the description.
 
     ```text
-    List of possible values: Laptop, Desktop, Smartphone
+    List of possible values: laptop, desktop, smartphone
     ```
 
     ![Description](assets/7.2_06_InputDescription.png)
@@ -535,11 +535,11 @@ Let's begin!
 
 ### 7.3 Add a tool using a connector
 
-1. Let's next add a node that enables the agent to retrieve the list of devices from the **Devices** SharePoint list. Select the **+ icon** below the trigger and select the **Add a tool** node. Select the **Connector** tab.
+1. Let's next add a node that enables the agent to retrieve the list of devices from the **Devices** SharePoint list. Select the **+ icon** below the trigger.
 
     ![Add a tool](assets/7.3_01_AddNode.png)
 
-1. Search for `Get items` and select the **Get items** SharePoint connector action.
+1. Select the **Add a tool** node, then select the **Connector** tab. Search for `Get items` and select the **Get items** SharePoint connector action.
 
     ![Select get items](assets/7.3_02_GetItems.png)
 
@@ -651,7 +651,7 @@ Let's begin!
 
 1. We'll now use a PowerFx expression to set the variable value as the `value` property returned in the **Get items** response, and make the [scope of the variable](https://learn.microsoft.com/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172618-ebenitez) global by adding the prefix of `Global`.
 
-    **Save** the topic.
+    Select **Insert** and **save** the topic.
 
     ![Power Fx formula for variable value](assets/7.3_23_PowerFxFormula.png)
 
@@ -685,45 +685,29 @@ Let's begin!
 
     ![Test](assets/7.3_28_Test.png)
 
-1. Before the agent can proceed, the user needs to verify their connection through the _Manage your connections_ page of the agent. Select **Open connection manager**.
+1. Before the agent can proceed, the user needs to verify their connection can be used. Select **Allow**.
 
-    ![Open connection manager](assets/7.3_29_SelectOpenConnectionManager.png)
+    ![Select allow](assets/7.3_29_SelectAllow.png)
 
-1. Before we select **Connect** to verify the connection, select **1 tool** in the **Used By** column.
+1. The agent will execute the SharePoint tool that retrieves a filtered list of devices where the device type equals "laptop" and the status equals "available," from the Power Fx expression used. A response formatted in the form of bullet points will be returned for the user to read.
 
-    ![Used By](assets/7.3_30_ViewUsedBy.png)
+    ![Response of test](assets/7.3_30_TestResponse.png)
+
+1. One last thing to learn about is viewing the connections used by viewing the _Manage your connections_ page of the agent. Select the **ellipsis (...)** and select **Manage Connection**.
+
+    ![Manage connection](assets/7.3_31_ManageConnections.png)
+
+1. This page is where we can see all the connections used by the agent. Currently, only one connection is listed which is associated to the SharePoint tool that was added to the Topic. Select **1 tool** in the **Used By** column.
+
+    ![Used By](assets/7.3_32_UsedBy.png)
 
 1. This is where we can see the details of the Get items action and remember the _usage description_ we entered earlier? This is where we'll see the usage description. Select **Close**.
 
     > This lets us know what actions are used and the purpose of it. This keeps our connections organized 📁.
 
-    ![Usage description](assets/7.3_31_UsageDescription.png)
-
-1. Select **Connect**.
-
-    ![Select Connect](assets/7.3_32_SelectConnect.png)
-
-1. A new modal will appear where you can create or select an existing connection.
-
-    Since we created a connection earlier, by default it is using this connection so we'll leave it as-is. Select **Submit**.
-
-    ![Select Submit](assets/7.3_33_SelectSubmit.png)
-
-1. Go back to your browser tab with Copilot Studio and in the test pane, select **Retry**.
-
-    ![Select Retry](assets/7.3_34_SelectRetry.png)
-
-1. We'll see that the **Available devices** topic has been executed as we see a message returned with a list of available devices. If you see a hyperlink called **More details** or something similar, click it.
-
-    ![Message returned](assets/7.3_35_MoreDetails.png)
-
-1. A new browser tab will load the SharePoint item in the SharePoint site. Generative AI was able to retrieve the link to the item and display it as a hyperlink in the message.
-
-    ![View SharePoint item](assets/7.3_36_SharePointItem.png)
+    ![Usage description](assets/7.3_33_UsedByInformation.png)
 
 1. Go back to your browser tab with Copilot Studio and **refresh** the test pane to clear the test.
-
-    ![Refresh test pane](assets/7.3_37_RefreshTestPane.png)
 
 ## ✅ Mission Complete
 
