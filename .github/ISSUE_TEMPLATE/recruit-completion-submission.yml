@@ -33,6 +33,13 @@ body:
         - label: I verify that I have uploaded the 2 required screenshots of my final solution into the fields below.
           required: true
 
+ - type: textarea
+    id: Final_solution
+    attributes:
+      label: Final Solution Screenshot
+      description: Please upload a screenshot of the Agent configuration with your environment name shown here.
+    validations:
+      required: true
 
   - type: textarea
     id: learnings
