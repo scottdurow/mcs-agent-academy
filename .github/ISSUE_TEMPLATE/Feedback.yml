@@ -1,0 +1,62 @@
+name: 'Feedback'
+description: "Submit this issue to provide feedback on Copilot Studio Agent Academy"
+title: "<Name> Feedback Submission"
+labels:
+  - product-feedback
+  - course-feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thank you for helping us improve our course! Please provide as much detail as possible.
+
+
+  - type: input
+    id: used_before
+    attributes:
+      label: Have you used Copilot Studio before this course?
+      description: Please answer Yes or No.
+      placeholder: Yes/No
+    validations:
+      required: true
+
+  - type: input
+    id: experience_rating
+    attributes:
+      label: How was your experience with Copilot Studio? (Out of 5)
+      description: Rate your experience from 1 (poor) to 5 (excellent).
+      placeholder: 1-5
+    validations:
+      required: true
+
+  - type: textarea
+    id: liked_most
+    attributes:
+      label: What did you like most about Copilot Studio?
+      description: Share what you found most valuable about Copilot Studio.
+    validations:
+      required: false
+
+  - type: textarea
+    id: improvements
+    attributes:
+      label: What could be improved?
+      description: Suggest any changes or additions to improve Copilot Studio.
+    validations:
+      required: false
+
+  - type: textarea
+    id: general_course_feedback
+    attributes:
+      label: Any other general feedback for the course?
+      description: Share any other thoughts or suggestions about the course.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_comments
+    attributes:
+      label: Additional Comments
+      description: Any other comments or context?
+    validations:
+      required: false
