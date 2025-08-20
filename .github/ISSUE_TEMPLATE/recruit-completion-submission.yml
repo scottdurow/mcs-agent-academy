@@ -34,7 +34,7 @@ body:
           required: true
 
   - type: textarea
-    id: Final_solution
+    id: Final_solution_2
     attributes:
       label: Final Solution Screenshot 1
       description: Please upload a screenshot of your Agent configuration with your environment name shown.    
