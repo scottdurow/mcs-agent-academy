@@ -10,14 +10,16 @@ body:
         ### IMPORTANT: Only the first 100 people to submit an issue acknowledging completion of the course will be eligible for a badge.
 
   - type: checkboxes
+    id: badge_validation
     attributes:
       label: Badge validation form
-      description: In order to receive your badge, please fill out the following form - [Badge validation form](https://aka.us11.list-manage.com/subscribe?u=b3df03dd2b64a3bc8a2a200e8&id=4a558f9e2b). If you have not filled out this form, you will not be eligible for a badge.
+      description:  In order to receive your badge, please fill out the following form - [Badge validation form](https://aka.us11.list-manage.com/subscribe?u=b3df03dd2b64a3bc8a2a200e8&id=4a558f9e2b). If you have not filled out this form, you will not be eligible for a badge.
       options:
         - label: I verify that I have completed the badge validation form.
           required: true
 
   - type: checkboxes
+    id: curriculum_completion
     attributes:
       label: Curriculum Completion Validation
       description: Please check this to confirm that you have completed the Agent Academy - Recruit curriculum.
@@ -26,11 +28,12 @@ body:
           required: true
 
   - type: checkboxes
+    id: solution_verification
     attributes:
       label: Solution Verification
-      description: Please upload 2 screenshots of your final solution into the fields below to confirm that you’ve completed the solution. The following 2 screenshots are required to validate completion:
+      description: Please upload 2 screenshots of your final solution into the fields below to confirm that you’ve completed the solution. The following 2 screenshots are required to validate completion.
       options:
-        - label: I verify that I have uploaded my screenshot of my final solution into the field below.
+        - label: I verify that I have uploaded the 2 required screenshots of my final solution into the fields below.
           required: true
 
   - type: textarea
