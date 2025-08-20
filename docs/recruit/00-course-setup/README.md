@@ -15,7 +15,7 @@ This briefing outlines the systems, access credentials, and setup steps required
 
 Your mission includes:
 
-1. Activating a Microsoft 365 developer tenant  
+1. Getting a Microsoft 365 account  
 1. Gaining access to Microsoft Copilot Studio  
 1. (Optional) Securing a Microsoft 365 Copilot license for production publishing
 1. Creating a developer environment as your Copilot Studio environment to build in  
