@@ -74,7 +74,7 @@ Both agent flows and Power Automate cloud flows help automate tasks. They're des
 | Use this | When you want to |
 | :- | :- |
 | Agent flows | Automate tasks inside an agent, use AI, and keep everything in Copilot Studio |  
-| Power Automate cloud flows | Automate across apps and services, or build workflows outside of chatbots |
+| Power Automate cloud flows | Automate across apps and services, or build workflows outside of agents |
 
 ## 👍🏻 Why use agent flows
 
@@ -93,7 +93,7 @@ Other benefits are:
 - **Tightly integrated** - agent flows are part of the agent's logic, they're triggered directly by user messages or actions in the conversation.
 - **Scalability** - reuse flows across multiple agents or scenarios.
 - **No-code or low-code** - you can build flows using natural language or a visual designer.
-- **All-in-one-platform** - you can design, test and deploy flows in one place - Copilot Studio. No need to switch between tools.
+- **All-in-one-platform** - you can design, test and deploy agent flows in one place - Copilot Studio. No need to switch between platforms.
 
 ## 🏄🏻‍♂️ How do agent flows enhance your agent?
 
@@ -103,9 +103,9 @@ Let's say you're working in a finance department and you receive a lot of invoic
 
 With agent flows in Copilot Studio, you can automate this process. As soon as the invoice comes in, the agent:
 
-1. Read the document using intelligent document processing to find the key information.
-1. Check the details against your enterprise data to make sure everything looks correct.
-1. Route it for approval to the right person(s).
+1. Reads the document using intelligent document processing to find the key information.
+1. Checks the details against your enterprise data to make sure everything looks correct.
+1. Routes it for approval to the right person(s).
 
 This saves time, reduces mistakes and makes the whole process much smoother.
 
