@@ -133,7 +133,7 @@ This node lets your agent send messages to users, which can be simple text or ri
 
 You can personalize messages using variables, add multiple message variations for variety, and even customize speech output for voice-enabled channels.
 
-!!! tip 
+!!! tip
     Think of it as a "say something" block that helps your agent communicate clearly and interactively with users.
 
 #### Ask a question
@@ -167,7 +167,7 @@ This node shows rich, interactive cards that users can fill out and submit such 
 
 This node creates decision points in your agent's conversation flow by checking if a variable meets certain criteria. Based on whether the condition is true or false, the agent follows different paths.
 
-!!! tip 
+!!! tip
     Think of it as an "if-else" block that helps your agent make decisions depending on user input or stored data in variables.
 
 #### Variable management
