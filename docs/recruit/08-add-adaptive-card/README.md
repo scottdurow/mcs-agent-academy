@@ -334,7 +334,7 @@ Let's begin!
 
 1. Click on the **expand** icon to enlarge the Formula field.
 
-    ![Click on expand icon](assets/8.1_15_SelectExpand.png.png)
+    ![Click on expand icon](assets/8.1_15_SelectExpand.png)
 
 1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines.
 
