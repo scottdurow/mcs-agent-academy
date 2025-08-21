@@ -62,7 +62,7 @@ It lets you:
 - 📈 Estimate **total messages per agent per month**
 - 🧠 Optimize design and avoid billing surprises
 
-!!! tip 
+!!! tip
     ✅ Run it early — and again after building — to compare expected vs. actual usage.
 
 ---

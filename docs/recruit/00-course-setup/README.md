@@ -44,7 +44,7 @@ Copilot Studio resides within Microsoft 365, so you need a Microsoft 365 account
    ![Microsoft 365 Signup](./images/m365-freetrial.png)
    1. Once you have your new account, login.
 
-    !!! Tip 
+    !!! Tip
         If you plan to publish agents into Microsoft 365 Copilot Chat or connect to organizational data (SharePoint, OneDrive, Dataverse), a Microsoft 365 Copilot license is required. This is an add-on license which you can learn more about [on the licensing site](https://www.microsoft.com/microsoft-365/copilot#plans)
 
 ---

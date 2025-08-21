@@ -125,6 +125,7 @@ Think of these as instructions or actions such as the following:
 The following are the main types of nodes you can add to an agent:
 
 #### Send a message
+
 - **Purpose** - sends a message to the user.
 - **Example** - `Thanks for your request! I'll help you with that.`
 
@@ -136,6 +137,7 @@ You can personalize messages using variables, add multiple message variations fo
     Think of it as a "say something" block that helps your agent communicate clearly and interactively with users.
 
 #### Ask a question
+
 - **Purpose** - asks the user a question and waits for their answer.
 - **Example** - `What are your vacation dates?`
 
@@ -149,6 +151,7 @@ It also supports rich content like images and quick replies, and lets you fine-t
     Think of it as an "ask and listen" block that helps your agent interact with users in a structured way that you define.
 
 #### Ask with adaptive card
+
 - **Purpose** - send a rich, interactive card using JSON.
 - **Example** - a card that displays a calendar date picker for a user to select a date.
 
@@ -178,6 +181,7 @@ This node lets you store and manage information during a conversation, it could 
     Think of it as a "memory box" that helps your agent remember information and use them as the conversation continues with the user.
 
 #### Topic management
+
 - **Purpose** - moves the conversation to another topic or step within the topic, transfer the conversation, or end the topic or conversation.
 - **Example** - redirect to a "Leave Policy" topic.
 
@@ -197,6 +201,7 @@ This node gives your agent capabilities to interact with external systems or per
     Think of tools as "action blocks" that give your agent superpowers to do things beyond _chatting_, such as calling an API, running a process, or collecting user input automatically.
 
 #### Generative answers node
+
 - **Purpose** - uses a large language model to generate natural, human-like responses based on the user's question and any connected data.
 - **Example** - uses the connected knowledge source that contains information on vacation leave entitlements to answer user questions regarding vacation requests.
 
@@ -216,6 +221,7 @@ This node lets your agent connect to external systems by sending REST API calls,
     Think of it as a "reach out and get information" block that helps your agent talk to other services such as retrieving user details or sending data to another system.
 
 #### Send an event
+
 - **Purpose** - lets your agent send non-message actions, such as system updates or tool triggers - to the client or channel, helping it perform tasks.
 - **Example** - reacting to a user joining a chat by displaying a welcome a message.
 
