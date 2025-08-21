@@ -439,7 +439,17 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Get item action](./assets/9.1_12_AddGetItemAction.png)
 
-1. We can now begin configuring the **Get item** action. Rename the action to,
+1. We can now begin configuring the **Get item** action.
+
+    Select the **Ellipsis (...)** icon in the **Get item** action.
+
+    ![Select ellipsis](./assets/9.1_13_SelectEllipsis.png)
+
+1. Select **Rename**.
+
+    ![Select Rename](./assets/9.1_14_SelectRename.png)
+
+1. Rename the action to,
 
     ```text
     Get Device
