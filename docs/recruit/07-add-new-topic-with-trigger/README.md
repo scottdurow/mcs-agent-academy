@@ -629,9 +629,9 @@ Let's begin!
 
     ![Update to Global variable](assets/7.3_17_UpdateToGlobalVariable.png)
 
-1. **Save** the topic.
+1. **Close** the **Variable properties** pane.
 
-    ![Save the topic](assets/7.3_18_SaveTopic.png)
+    ![Close Variable properties pane](assets/7.3_18_ExitVariablePropertiesPane.png)
 
 1. Select the **plus +** icon to insert a new node, select **Variable management** followed by selecting **Set a variable value**.
 
