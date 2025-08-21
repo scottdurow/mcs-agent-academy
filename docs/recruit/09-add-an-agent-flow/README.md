@@ -425,19 +425,11 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Make the field optional](./assets/9.1_10_Optional.png)
 
-1. Great work! The trigger has now been configured, let's continue. Select the **Collapse icon** to collapse the trigger.
+1. Great work! The trigger has now been configured, let's continue. Select the **plus + icon** under the trigger to insert a new action.
 
-    ![Collapse trigger](./assets/9.1_11_CollapseTrigger.png)
+    ![Add action](./assets/9.1_11_AddAction.png)
 
-1. Select the **plus + icon** under the trigger to insert a new action.
-
-    ![Add action](./assets/9.1_12_AddAction.png)
-
-1. The **Actions pane** will appear where you can view actions from 1400+ built-in connectors to Microsoft and third-party services.
-
-    ![Actions pane](./assets/9.1_13_AddAnActionPane.png)
-
-1. In the **search field** enter the following,
+1. The **Actions pane** will appear where you can view actions from 1400+ built-in connectors to Microsoft and third-party services. In the **search field** enter the following,
 
     ```text
     Get item
@@ -445,7 +437,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     A list of actions will display in the search results. Select the **Get item** action from the **SharePoint connector**.
 
-    ![Get item action](./assets/9.1_14_GetItemAction.png)
+    ![Get item action](./assets/9.1_12_AddGetItemAction.png)
 
 1. We can now begin configuring the **Get item** action. Rename the action to,
 
