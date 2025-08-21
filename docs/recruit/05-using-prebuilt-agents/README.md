@@ -44,7 +44,8 @@ These agents are perfect for getting started quickly or learning how agents are 
 1. Navigate to [https://copilotstudio.microsoft.com](https://copilotstudio.microsoft.com)
 1. Sign in with your Microsoft 365 work or school account
 
-> ⚠️ You must be in a tenant where Copilot Studio is enabled. If you don’t see Copilot Studio, revisit [Mission 00](../00-course-setup/README.md) to complete your setup.
+!!! warning
+    You must be in a tenant where Copilot Studio is enabled. If you don’t see Copilot Studio, revisit [Mission 00](../00-course-setup/README.md) to complete your setup.
 
 ---
 
@@ -106,7 +107,8 @@ You've now successfully:
 - Customized the agent
 - Tested and published your own version of the **Safe Travels** agent template
 
-> **🧳 Bonus Objective**: Try grounding the Safe Travels agent with a SharePoint site or FAQ file to make it more relevant to your company’s travel policies.
+!!! note "🧳 Bonus Objective"
+    Try grounding the Safe Travels agent with a SharePoint site or FAQ file to make it more relevant to your company’s travel policies.
 
 Your next mission will focus on
 [creating a custom agent from scratch](../06-create-agent-from-conversation/README.md).

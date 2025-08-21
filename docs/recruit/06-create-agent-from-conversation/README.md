@@ -33,7 +33,8 @@ A custom agent is a chatbot or virtual assistant that you create and design in C
 - **You ground it with your own data**  - connect to your enterprise data through the built-in supported knowledge resources.
 - **You connect it to your own systems or applications** -  choose from connectors, flows, REST APIs and model context protocol servers.
 
-> Think of it this way: you are building your own digital helper that can talk to users and complete tasks for them such as answering questions, collecting information required by a process, or connecting to your enterprise data.
+!!! note
+    Think of it this way: you are building your own digital helper that can talk to users and complete tasks for them such as answering questions, collecting information required by a process, or connecting to your enterprise data.
 
 ### 🤖 What can a custom agent do?
 
