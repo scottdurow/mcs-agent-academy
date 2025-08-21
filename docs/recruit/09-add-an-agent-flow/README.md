@@ -649,11 +649,13 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. We're now done adding a hyperlink to our email message body 😎 Select the **&lt;/&gt;** icon to toggle the code view.
 
-    ![Toggle code view](./assets/9.1_42_HTMLTagTidiedUp.png)
+    ![HTML Tag Tidied Up](./assets/9.1_42_HTMLTagTidiedUp.png)
 
-1. Click after the `Additional comments from` text before the colon character.
+1. Click after the `Additional comments from` text before the colon character and select the **lightning bolt icon** or **fx icon** to the right.
 
-    In the **Dynamic content** tab of the flyout pane, enter the following in the search field,
+    ![Add User dynamic content](./assets/9.1_43_AddUserInput.png)
+
+1. In the **Dynamic content** tab of the flyout pane, enter the following in the search field,
 
     ```text
     user
@@ -661,13 +663,15 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     Select the **User** input from the trigger and select **Add**.
 
-    ![Add Model input as dynamic content](./assets/9.1_41_AddUserInput.png)
+    ![Add Model input as dynamic content](./assets/9.1_44_AddUserDynamicContent.png)
 
 1. We're now going to insert an expression that will display the value of Additional Comments if provided by the user in the **Ask an adaptive card** node, otherwise display "None" if the user does not provide any comments.
 
     Click after the colon and select the **lightning bolt icon** or **fx icon** to the right.
 
-    In the **Function** tab of the flyout pane and in the expression field above, enter the following,
+    ![Add expression](./assets/9.1_45_AddExpression.png)
+
+1. In the **Function** tab of the flyout pane and in the expression field above, enter the following,
 
     ```text
     if(empty())
@@ -677,19 +681,19 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     The next function used is `empty` which checks whether a value exists or not in a string parameter. The string parameter to be referenced is the `AdditionalComments` input from the trigger.
 
-    ![If empty](./assets/9.1_42_IfExpression.png)
+    ![If empty](./assets/9.1_46_IfEmptyFunctions.png)
 
 1. Next, click **inside of the brackets** after the `empty` function. We're going to insert the `AdditionalComments` input parameter from the trigger.
 
     Select the **Dynamic content** tab. Enter the following in the search field,
 
     ```text
-    comment
+    Additional
     ```
 
     Scroll down the pane and select **AdditionalComments** input from the trigger. The input will now be added as a string parameter in the expression.
 
-    ![Add Model input as dynamic content](./assets/9.1_43_AdditionalCommentsInput.png)
+    ![Add AdditionalComments as dynamic content](./assets/9.1_47_AdditionalCommentsDynamicContent.png)
 
 1. Next we'll define the **_true_** logic, where if the `AdditionalComments` string parameter is empty, then we want to display a string (text) of `None`.
 
@@ -699,39 +703,35 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     , 'None',
     ```
 
-    ![True logic](./assets/9.1_44_None.png)
+    ![True logic](./assets/9.1_48_None.png)
 
 1. Finally we'll define the **_false_** logic, where if the `AdditionalComments` string parameter is not empty, then we want to display the value of the **AdditionalComments** input from our trigger.
 
     > A reminder this value will be from the Additional Comments field of the adaptive card in the **Ask with adaptive card** node in the **Request device** topic.
 
-    ![False logic](./assets/9.1_45_AdditionalCommentsInput.png)
+    After the comma after our **_ture_** logic, select the **Dynamic content** tab. Enter the following in the search field,
 
-1. Excellent, our expression is complete! Let's now add it our **Body** parameter by selecting **Add**.
+    ```text
+    Additional
+    ```
 
-    ![Add expression](./assets/9.1_46_AddExpression.png)
+    Scroll down the pane and select **AdditionalComments** input from the trigger. The input will now be added as a string parameter in the expression.
 
-1. The expression has now been added to the **Body** parameter. Lastly, format the last line in Italics.
+    Now add it our **Body** parameter by selecting **Add**.
 
-    ![Italics](./assets/9.1_47_Italics.png)
+    ![False logic](./assets/9.1_49_AdditionalCommentsDynamicContent.png)
 
-1. Select the **Collapse icon** to collapse the action.
+1. Excellent, our expression is complete! The expression has now been added to the **Body** parameter. Lastly, format the last line in Italics.
 
-    ![Collapse action](./assets/9.1_48_CollapseAction.png)
+    ![Italics](./assets/9.1_50_Italics.png)
 
 1. We're now going to update the **Respond to the agent** action to send the value of the **Model value** parameter from the **Get item** action back to the agent.
 
-    Select the **Respond to the agent** action.
+    Hold down the left key of your mouse and move in an upward motions within the designer to view the **Respond to the agent** action. 
 
-    ![Select Respond to the agent action](./assets/9.1_49_RespondToAgent.png)
+    Select the **Respond to the agent** action and select the **Text** output as the type.
 
-1. In the pane, select **+ Add an output**.
-
-    ![Add an output](./assets/9.1_50_AddAnOutput.png)
-
-1. For the type of output, select **Text**.
-
-    ![Select Text output](./assets/9.1_51_SelectText.png)
+    ![Select Text output](./assets/9.1_51_RespondToTheAgentAction.png)
 
 1. Enter the following as the name of the output.
 
