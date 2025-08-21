@@ -459,15 +459,13 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. In the **Site Address** field, select the **Site address** of the Contoso IT SharePoint site created in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
-    ![Select SharePoint site address](./assets/9.1_16_SelectSharePointSiteAddress.png)
+    In the **List Name** field, select the **Devices** SharePoint list.
 
-1. In the **List Name** field, select the **Devices** SharePoint list.
-
-    ![Devices SharePoint list](./assets/9.1_17_SelectDevicesList.png)
+    ![Input parameters](./assets/9.1_16_SharePointSiteAndListParameters.png)
 
 1. In the **Id** field, select the **lightning bolt icon** or **fx icon** to the right.
 
-    ![Dynamic content picker](./assets/9.1_18_InsertExpression.png)
+    ![Dynamic content picker](./assets/9.1_17_InsertExpressionIcon.png)
 
 1. In the **Dynamic content** tab of the flyout pane, enter the following,
 
@@ -477,15 +475,21 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     The search results will show input parameters that match the value searched. Select the **DeviceSharePointId** parameter from the trigger.
 
-    ![Select DeviceSharePointId input](./assets/9.1_19_DeviceSharePointId.png)
+    Next, select **Add** to add the dynamic content input into the **Id** parameter of the action.
 
-1. Select **Add** to add the dynamic content input into the **Id** parameter of the action.
+    ![Select DeviceSharePointId input](./assets/9.1_18_DeviceSharePointId.png)
 
-    ![Select add](./assets/9.1_20_AddDynamicContent.png)
+1. The dynamic content input from the trigger is now referenced in the **Id** parameter of the action. We're going to update one of the advanced parameters next. Select **Show all** to view the advanced parameters.
 
-1. The dynamic content input from the trigger is now referenced in the **Id** parameter of the action. Select the **Collapse icon** to collapse the trigger.
+    ![View advanced parameters](./assets/9.1_19_AdvancedParameters.png)
 
-    ![Collapse Get item action](./assets/9.1_21_CollapseGetItemAction.png)
+1. The **Limit Columns by View** parameter will be displayed and by default it's set to **Use all columns (Do not limit)**. We'll update this value to a view to limit the columns returned in the response of the action. Select the **Limit Columns by View** parameter to view the list of views.
+
+    ![Select parameter](./assets/9.1_20_LimitColumnsByView.png)
+
+1. Select the **All Items** view.
+
+    ![Select All Items view](./assets/9.1_21_SelectView.png)
 
 1. Select the **plus + icon** under the _Get Device_ action to insert a new action.
 
@@ -494,12 +498,12 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 1. In the search field enter the following,
 
     ```text
-    send
+    send an email
     ```
 
     A list of actions will display in the search results. Select the **Send an email (V2)** action from the **Office 365 Outlook connector**.
 
-    ![Send an email action](./assets/9.1_23_SendAnEmailAction.png)
+    ![Send an email action](./assets/9.1_23_SendAnEmail.png)
 
 1. We next need to create a connection for the connector action. Select **Sign in**.
 
@@ -509,7 +513,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Select user account](./assets/9.1_25_SelectUserAccount.png)
 
-1. Select **Allow access**.
+1. Select **Allow access**. A connection has now been created.
 
     ![Select allow access](./assets/9.1_26_AllowAccess.png)
 
@@ -519,9 +523,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     Send an email to manager
     ```
 
-    ![Add an input](./assets/9.1_27_RenameAction.png)
-
-1. Let's now define our action.
+    Let's next define the input parameters of our action.
 
     For the **To** input parameter, select yourself. Normally this would be your manager or we'd use another action that pulls through your manager based on your Entra ID profile but for the purpose of this lesson, select yourself.
 
@@ -532,8 +534,6 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     ```
 
     For the **Body** input parameter, enter the following,
-
-    ![Add an input](./assets/9.1_28_ConfigureInputParameters.png)
 
     ```text
     Hi,
@@ -548,23 +548,23 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     This is an automated email from Contoso Helpdesk Copilot
     ```
 
+    ![Rename action and configure inputs](./assets/9.1_27_RenameAndConfigureParameters.png)
+
 1. Next, we're going to update the **Body** input parameter with references to dynamic content input from the **trigger** or **Get item** action. Enter a space after the second line as we'll insert the name of the user from the trigger input, **User**.
 
     Select the **lightning bolt icon** or **fx icon** to the right.
 
-    ![Add User input as dynamic content](./assets/9.1_29_AddUserInput.png)
+    ![Add User input as dynamic content](./assets/9.1_28_AddUserInput.png)
 
 1. In the **Dynamic content** tab of the flyout pane, select the **User** input from the trigger.
 
-    ![Select User input](./assets/9.1_30_SelectUserInput.png)
+    Select **Add** to add the dynamic content **User** input into the **Body** parameter of the action.
 
-1. Select **Add** to add the dynamic content **User** input into the **Body** parameter of the action.
-
-    ![Add User input](./assets/9.1_31_AddUserInput.png)
+    ![Select User input](./assets/9.1_29_SelectUserInput.png)
 
 1. The dynamic content input from the trigger is now referenced in the **Body** parameter of the action. We'll repeat the same for the remaining lines in the email message body.
 
-    ![User input added](./assets/9.1_32_UserInputAdded.png)
+    ![User input added](./assets/9.1_30_UserInputAdded.png)
 
 1. Click into the space beside `Manufacturer:`. Select the **lightning bolt icon** or **fx icon** to the right.
 
@@ -576,7 +576,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     Select the **Manufacturer value** input from the trigger and select **Add**.
 
-    ![Add Manufacturer value input as dynamic content](./assets/9.1_33_AddManufacturerValueInput.png)
+    ![Add Manufacturer value input as dynamic content](./assets/9.1_31_ManufacturerValueAdded.png)
 
 1. Click into the space beside `Model:`. Select the **lightning bolt icon** or **fx icon** to the right.
 
@@ -588,16 +588,11 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     Select the **Model** input from the **Get item** action and select **Add**.
 
-    ![Add Model input as dynamic content](./assets/9.1_34_AddModelInput.png)
+    ![Add Model input as dynamic content](./assets/9.1_32_ModelAdded.png)
 
-1. For the `Link to item in SharePoint` text, we'll update this to be a hyperlink in the email message body. We need to switch to the HTML editor by selecting the **&lt;/&gt;**
- icon.
+1. For the `Link to item in SharePoint` text, we'll update this to be a hyperlink in the email message body. Click at the beginning of the line and select the **lightning bolt icon** or **fx icon** to the right.
 
-    ![Add User input](./assets/9.1_35_SwitchToHTMLEditor.png)
-
-1. The HTML editor is now enabled. Click before the `Link to item in SharePoint` text, add an HTML anchor tag to create a hyperlink
-
-    ![HTML tag](./assets/9.1_36_HTMLTag.png)
+    ![Add dynamic content](./assets/9.1_33_AddDynamicContent.png)
 
 1. Click after the HTML anchor tag and select the **lightning bolt icon** or **fx icon** to the right.
 
@@ -609,7 +604,20 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     Select the **Link to item** input from the **Get item** action and select **Add**.
 
-    ![Add Model input as dynamic content](./assets/9.1_37_AddLinkToItemInput.png)
+    ![Add Link to item as dynamic content](./assets/9.1_34_AddLinkToItem.png)
+
+1. We need to switch to the HTML editor by selecting the **&lt;/&gt;**
+ icon.
+
+    ![Add User input](./assets/9.1_35_ToggleCodeView.png)
+
+1. The HTML editor is now enabled. Click before the `Link to item in SharePoint` text, add an HTML anchor tag to create a hyperlink. Copy and paste the following.
+
+    ```text
+    <a href="
+    ```
+
+    ![HTML tag](./assets/9.1_36_AddHTMLTag.png)
 
 1. The dynamic content input of **Link to item** is now referenced in the **Body** parameter. Click after the **Link to item** input, copy and paste the following.
 
@@ -617,16 +625,31 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     ">
     ```
 
-    ![HTML tag](./assets/9.1_38_HTMLTag.png)
+    ![HTML tag](./assets/9.1_37_AddHTMLTag.png)
 
-1. Click after the `Link to item in SharePoint` text, close the html anchor tag
+1. Click after the `Link to item in SharePoint` text, close the html anchor tag. Copy and paste the following.
 
-    ![HTML tag](./assets/9.1_39_HTMLTag.png)
+    ```text
+    </a>>
+    ```
 
-1. We're now done adding a hyperlink to our email message body 😎 Select the **&lt;/&gt;**
- icon to disable the HTML editor.
+    ![HTML tag](./assets/9.1_38_AddHTMLTag.png)
 
-    ![Switch back to WYSIWYG editor](./assets/9.1_40_SwitchBackToBasicEditor.png)
+1. Select the **&lt;/&gt;** icon to toggle the code view.
+
+    ![Disable code view](./assets/9.1_39_ToggleCodeView)
+
+1. Then reselect the **&lt;/&gt;** icon to toggle the code view again.
+
+    ![Switch back to code view](./assets/9.1_40_ToggleCodeViewAgain.png)
+
+1. Notice how there are several extra characters `&lt;br&gt;`. Delete these characters
+
+    ![Delete characters](./assets/9.1_41_DeleteCharacters.png)
+
+1. We're now done adding a hyperlink to our email message body 😎 Select the **&lt;/&gt;** icon to toggle the code view.
+
+    ![Toggle code view](./assets/9.1_42_HTMLTagTidiedUp.png)
 
 1. Click after the `Additional comments from` text before the colon character.
 
