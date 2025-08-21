@@ -332,23 +332,27 @@ Let's begin!
 
     ![Change to formula](assets/8.1_14_ChangeToFormula.png)
 
-1. Click on the **expand** icon to enlarge the Formula field and click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines.
+1. Click on the **expand** icon to enlarge the Formula field.
 
-    ![Select all and delete lines](assets/8.1_15_SelectAll.png)
+    ![Click on expand icon](assets/8.1_15_SelectExpand.png.png)
+
+1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines.
+
+    ![Click into payload card editor](assets/8.1_16_SelectAll.png)
 
     Paste the Formula from the [Request Devices formula file](assets/8.1_RequestDeviceFormula.txt).
 
-1. In the formula, we'll loop through each SharePoint list item using the `For All` function to display the values of `Model` in the title of the choice option, and the SharePoint item `ID` is referenced as the value.
+1. In the formula, we'll loop through each SharePoint list item using the `For All` function to display the values of `Model` in the title of the choice option, and the SharePoint item `ID` is referenced as the value. We're also wrapping the values with the `If(IsBlank()` functions as the formula expects a value in order to render the adaptive card in the authoring canvas of the topic. Otherwise you'll see a message appear, "Property cannot be null"
 
     **Close** the card modal.
 
-    ![Power Fx Formula](assets/8.1_16_PowerFxFormula.png)
+    ![Power Fx Formula](assets/8.1_17_PowerFxFormula.png)
 
 1. **Close** the **Adaptive Card Node properties** pane.
 
 1. **Save** the topic.
 
-    ![Save topic](assets/8.1_17_SaveTopic.png)
+    ![Save topic](assets/8.1_18_SaveTopic.png)
 
 ### 8.2 Update agent instructions to invoke Request device topic
 
