@@ -216,7 +216,8 @@ Expressions let you:
 
 Expressions use functions. I'm going to borrow an explanation of what functions are from former Microsoft MVP, Jerry Weinstock.
 
-> "Functions are built-in logic to transform your data either through simple or complex operations in your expression."
+!!! quote
+    Functions are built-in logic to transform your data either through simple or complex operations in your expression.
 
 Functions enable you to build expressions without you needing to write any code.
 

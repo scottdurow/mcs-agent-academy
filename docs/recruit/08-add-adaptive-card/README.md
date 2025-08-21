@@ -60,7 +60,8 @@ Remember how we learnt about Power Fx in [Mission 07 - Using Power Fx in your no
 
 As a recap,
 
-> Power Fx is a low-code programming language used to add logic and dynamic behavior to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
+!!! note
+    Power Fx is a low-code programming language used to add logic and dynamic behavior to your agent. It's the same language used in Microsoft Power Apps, and it's designed to be simple and Excel-like, making it easy for developers and non-developers.
 
 ### How Power Fx works in Adaptive Cards
 

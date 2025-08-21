@@ -46,8 +46,9 @@ The following table highlights the differences when building a declarative agent
 
 There are more capabilities offered for declarative agents built in Microsoft Copilot Studio which we'll learn about next.
 
-> - To learn more about Copilot Studio agent builder, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/make/agent-builder/01-first-agent/)
-> - For pro-development of extending a declarative agent beyond Copilot Studio agent builder for Microsoft 365 Copilot, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/)
+!!! tip 
+    - To learn more about Copilot Studio agent builder, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/make/agent-builder/01-first-agent/)
+    - For pro-development of extending a declarative agent beyond Copilot Studio agent builder for Microsoft 365 Copilot, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/)
 
 ### Extending Microsoft 365 Copilot with declarative agents built in Copilot Studio
 
@@ -93,8 +94,10 @@ We'll next learn how to build a declarative agent for a "Business-to-Employee" u
 - [3.3 Update instructions and test your declarative agent](#33-update-instructions-and-test-your-declarative-agent)
 - [3.4 Publish your declarative agent to Microsoft 365 Copilot and Teams](#34-publish-your-declarative-agent-to-microsoft-365-copilot-and-teams)
 
-> This lab will outline steps to add a Prompt as a tool. The following lessons will dive into adding knowledge sources and adding other tools available. Keeping it simple for your learning 😊
-> You do need a Microsoft 365 Copilot user license to publish your declarative agent built in Copilot Studio to Microsoft 365 Copilot.
+!!! note 
+    This lab will outline steps to add a Prompt as a tool. The following lessons will dive into adding knowledge sources and adding other tools available. Keeping it simple for your learning 😊
+    
+    You do need a Microsoft 365 Copilot user license to publish your declarative agent built in Copilot Studio to Microsoft 365 Copilot.
 
 ### 👩🏻‍💼 Understanding Business-to-Employee (B2E)
 

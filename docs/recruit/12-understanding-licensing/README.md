@@ -53,7 +53,7 @@ If your team has **Microsoft 365 Copilot licenses**, your agents **can run witho
 
 Before launching your agent, use our **Copilot Studio Usage Estimator** to forecast message consumption under realistic scenarios:
 
-👉 [**Use the Copilot Studio Usage Estimator**](https://aka.ms/mcs-estimator)
+[👉 Use the Copilot Studio Usage Estimator](https://aka.ms/mcs-estimator){ .md-button .md-button--primary }
 
 It lets you:
 
@@ -62,7 +62,8 @@ It lets you:
 - 📈 Estimate **total messages per agent per month**
 - 🧠 Optimize design and avoid billing surprises
 
-> ✅ Run it early — and again after building — to compare expected vs. actual usage.
+!!! tip 
+    ✅ Run it early — and again after building — to compare expected vs. actual usage.
 
 ---
 
