@@ -105,7 +105,9 @@ With agent flows in Copilot Studio, you can automate this process. As soon as th
 
 1. Reads the document using intelligent document processing to find the key information.
 1. Checks the details against your enterprise data to make sure everything looks correct.
-1. Routes it for approval to the right person(s).
+1. Read the document using intelligent document processing to find the key information.
+1. Check the details against your enterprise data to make sure everything looks correct.
+1. Route it for approval to the right person(s).
 
 This saves time, reduces mistakes and makes the whole process much smoother.
 
