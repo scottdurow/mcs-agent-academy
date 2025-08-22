@@ -105,7 +105,9 @@ With agent flows in Copilot Studio, you can automate this process. As soon as th
 
 1. Reads the document using intelligent document processing to find the key information.
 1. Checks the details against your enterprise data to make sure everything looks correct.
-1. Routes it for approval to the right person(s).
+1. Read the document using intelligent document processing to find the key information.
+1. Check the details against your enterprise data to make sure everything looks correct.
+1. Route it for approval to the right person(s).
 
 This saves time, reduces mistakes and makes the whole process much smoother.
 
@@ -216,7 +218,8 @@ Expressions let you:
 
 Expressions use functions. I'm going to borrow an explanation of what functions are from former Microsoft MVP, Jerry Weinstock.
 
-> "Functions are built-in logic to transform your data either through simple or complex operations in your expression."
+!!! quote
+    Functions are built-in logic to transform your data either through simple or complex operations in your expression.
 
 Functions enable you to build expressions without you needing to write any code.
 

@@ -124,91 +124,111 @@ Think of these as instructions or actions such as the following:
 
 The following are the main types of nodes you can add to an agent:
 
-1. **Send a message**
-    - **Purpose** - sends a message to the user.
-    - **Example** - `Thanks for your request! I'll help you with that.`
+#### Send a message
 
-    This node lets your agent send messages to users, which can be simple text or rich content like images, videos, cards, quick replies and adaptive cards.
+- **Purpose** - sends a message to the user.
+- **Example** - `Thanks for your request! I'll help you with that.`
 
-    You can personalize messages using variables, add multiple message variations for variety, and even customize speech output for voice-enabled channels.
+This node lets your agent send messages to users, which can be simple text or rich content like images, videos, cards, quick replies and adaptive cards.
 
-    > Think of it as a "say something" block that helps your agent communicate clearly and interactively with users.
+You can personalize messages using variables, add multiple message variations for variety, and even customize speech output for voice-enabled channels.
 
-1. **Ask a question**
-    - **Purpose** - asks the user a question and waits for their answer.
-    - **Example** - `What are your vacation dates?`
+!!! tip
+    Think of it as a "say something" block that helps your agent communicate clearly and interactively with users.
 
-    This node is used to ask users for specific information during a conversation and store their responses in variables for later use.
+#### Ask a question
 
-    You can customize the type of question like text input or use entities for a defined list of values a user selects from, and define how the agent should behave if the user gives an invalid answer or skips the question.
+- **Purpose** - asks the user a question and waits for their answer.
+- **Example** - `What are your vacation dates?`
 
-    It also supports rich content like images and quick replies, and lets you fine-tune validation, reprompting, and interruption settings to make the conversation flow smoothly.
+This node is used to ask users for specific information during a conversation and store their responses in variables for later use.
 
-    > Think of it as an "ask and listen" block that helps your agent interact with users in a structured way that you define.
+You can customize the type of question like text input or use entities for a defined list of values a user selects from, and define how the agent should behave if the user gives an invalid answer or skips the question.
 
-1. **Ask with adaptive card**
-    - **Purpose** - send a rich, interactive card using JSON.
-    - **Example** - a card that displays a calendar date picker for a user to select a date.
+It also supports rich content like images and quick replies, and lets you fine-tune validation, reprompting, and interruption settings to make the conversation flow smoothly.
 
-    This node shows rich, interactive cards that users can fill out and submit such as forms with text boxes, buttons, and images. It captures the user's input and stores it in variables, which your agent can use later in the conversation.
+!!! tip
+    Think of it as an "ask and listen" block that helps your agent interact with users in a structured way that you define.
 
-    > Think of it as a customizable "form builder" block that makes your agent more engaging and capable of collecting detailed information from users.
+#### Ask with adaptive card
 
-1. **Add a condition**
-    - **Purpose** - add logic to the conversation. It checks something and decides what to do next.
-    - **Example** - if the user says `Yes`, go to the next step. If `No`, end the conversation.
+- **Purpose** - send a rich, interactive card using JSON.
+- **Example** - a card that displays a calendar date picker for a user to select a date.
 
-    This node creates decision points in your agent's conversation flow by checking if a variable meets certain criteria. Based on whether the condition is true or false, the agent follows different paths.
+This node shows rich, interactive cards that users can fill out and submit such as forms with text boxes, buttons, and images. It captures the user's input and stores it in variables, which your agent can use later in the conversation.
 
-    > Think of it as an "if-else" block that helps your agent make decisions depending on user input or stored data in variables.
+!!! tip
+    Think of it as a customizable "form builder" block that makes your agent more engaging and capable of collecting detailed information from users.
 
-1. **Variable management**
-    - **Purpose** - stores or clears information (called variables) during the conversation.
-    - **Example** - saves the date the user selected in the Ask a question node that displays an adaptive card.
+#### Add a condition
 
-    This node lets you store and manage information during a conversation, it could be a user's name, answer, or preferences. You can use different types of variables such as text, numbers, or dates, and they can be scoped to a single topic, shared across topics (global), or even pulled from the system or environment.
+- **Purpose** - add logic to the conversation. It checks something and decides what to do next.
+- **Example** - if the user says `Yes`, go to the next step. If `No`, end the conversation.
 
-    > Think of it as a "memory box" that helps your agent remember information and use them as the conversation continues with the user.
+This node creates decision points in your agent's conversation flow by checking if a variable meets certain criteria. Based on whether the condition is true or false, the agent follows different paths.
 
-1. **Topic management**
-    - **Purpose** - moves the conversation to another topic or step within the topic, transfer the conversation, or end the topic or conversation.
-    - **Example** - redirect to a "Leave Policy" topic.
+!!! tip
+    Think of it as an "if-else" block that helps your agent make decisions depending on user input or stored data in variables.
 
-    This node allows your agent to jump from one topic to another without restarting the conversation, end the topic, transfer or end the conversation, or go to a different step within the same topic. It helps guide users through different parts of the conversation flow by smoothly transitioning between topics, and you can pass variables between them to keep context.
+#### Variable management
 
-    > Think of it as a "go to another section/step" block that helps your agent be flexible in chatting with users.
+- **Purpose** - stores or clears information (called variables) during the conversation.
+- **Example** - saves the date the user selected in the Ask a question node that displays an adaptive card.
 
-1. **Add a tool**
-    - **Purpose** - connects to tools such as connectors, agent flows, prompts, custom search, search query, skills, model context protocol.
-    - **Example** - Agent flow executed after user submits their vacation leave request.
+This node lets you store and manage information during a conversation, it could be a user's name, answer, or preferences. You can use different types of variables such as text, numbers, or dates, and they can be scoped to a single topic, shared across topics (global), or even pulled from the system or environment.
 
-    This node gives your agent capabilities to interact with external systems or perform specific tasks, such as sending emails, checking weather, or accessing databases. You can add tools using built-in connectors, custom APIs, agent flows, prompts, or connect to Model Context Protocol (MCP) servers, and even _graphical user interface_ automation for desktop apps through the computer use tool.
+!!! tip
+    Think of it as a "memory box" that helps your agent remember information and use them as the conversation continues with the user.
 
-    > Think of tools as "action blocks" that give your agent superpowers to do things beyond _chatting_, such as calling an API, running a process, or collecting user input automatically.
+#### Topic management
 
-1. **Generative answers node**
-    - **Purpose** - uses a large language model to generate natural, human-like responses based on the user's question and any connected data.
-    - **Example** - uses the connected knowledge source that contains information on vacation leave entitlements to answer user questions regarding vacation requests.
+- **Purpose** - moves the conversation to another topic or step within the topic, transfer the conversation, or end the topic or conversation.
+- **Example** - redirect to a "Leave Policy" topic.
 
-    This node enables your agent to respond to user questions using information from various knowledge sources, like websites, documents, SharePoint, or custom data. It can be used as a fallback when no matching topic is found, or within a topic to provide more detailed, dynamic answers based on specific sources you've configured your agent to use.
+This node allows your agent to jump from one topic to another without restarting the conversation, end the topic, transfer or end the conversation, or go to a different step within the same topic. It helps guide users through different parts of the conversation flow by smoothly transitioning between topics, and you can pass variables between them to keep context.
 
-    > Think of it as a "smart answer block" that helps your agent give helpful, accurate responses by searching trusted content you define.
+!!! tip
+    Think of it as a "go to another section/step" block that helps your agent be flexible in chatting with users.
 
-1. **HTTP request node**
-    - **Purpose** - connect your agent to external systems by sending API calls (for example `GET` or `POST`) to fetch or update data.
-    - **Example** - when a user asks for their vacation days balance, the agent performs a `GET` request to the leave management system and extracts the `remainingLeaveDays` from the API response and replies to the user with the value.
+#### Add a tool
 
-    This node lets your agent connect to external systems by sending REST API calls, like `GET` or `POST` requests. You can customize the request with headers, body content, and even use Power Fx to include dynamic data, then store the response in variables for use later in the conversation.
+- **Purpose** - connects to tools such as connectors, agent flows, prompts, custom search, search query, skills, model context protocol.
+- **Example** - Agent flow executed after user submits their vacation leave request.
 
-    > Think of it as a "reach out and get information" block that helps your agent talk to other services such as retrieving user details or sending data to another system.
+This node gives your agent capabilities to interact with external systems or perform specific tasks, such as sending emails, checking weather, or accessing databases. You can add tools using built-in connectors, custom APIs, agent flows, prompts, or connect to Model Context Protocol (MCP) servers, and even _graphical user interface_ automation for desktop apps through the computer use tool.
 
-1. **Send an event**
-    - **Purpose** - lets your agent send non-message actions, such as system updates or tool triggers - to the client or channel, helping it perform tasks.
-    - **Example** - reacting to a user joining a chat by displaying a welcome a message.
+!!! tip
+    Think of tools as "action blocks" that give your agent superpowers to do things beyond _chatting_, such as calling an API, running a process, or collecting user input automatically.
 
-    This node lets your agent send non-message actions to external systems or channels, which can then decide how to respond. You give each event a name and attach a value, which can be a simple number or text, a variable, or a Power Fx formula, and it gets sent as a JSON object.
+#### Generative answers node
 
-    > Think of it as a "silent trigger" block that helps your agent do things behind the scenes or communicate with external tools without needing a user to say anything.
+- **Purpose** - uses a large language model to generate natural, human-like responses based on the user's question and any connected data.
+- **Example** - uses the connected knowledge source that contains information on vacation leave entitlements to answer user questions regarding vacation requests.
+
+This node enables your agent to respond to user questions using information from various knowledge sources, like websites, documents, SharePoint, or custom data. It can be used as a fallback when no matching topic is found, or within a topic to provide more detailed, dynamic answers based on specific sources you've configured your agent to use.
+
+!!! tip
+    Think of it as a "smart answer block" that helps your agent give helpful, accurate responses by searching trusted content you define.
+
+#### HTTP request node
+
+- **Purpose** - connect your agent to external systems by sending API calls (for example `GET` or `POST`) to fetch or update data.
+- **Example** - when a user asks for their vacation days balance, the agent performs a `GET` request to the leave management system and extracts the `remainingLeaveDays` from the API response and replies to the user with the value.
+
+This node lets your agent connect to external systems by sending REST API calls, like `GET` or `POST` requests. You can customize the request with headers, body content, and even use Power Fx to include dynamic data, then store the response in variables for use later in the conversation.
+
+!!! tip
+    Think of it as a "reach out and get information" block that helps your agent talk to other services such as retrieving user details or sending data to another system.
+
+#### Send an event
+
+- **Purpose** - lets your agent send non-message actions, such as system updates or tool triggers - to the client or channel, helping it perform tasks.
+- **Example** - reacting to a user joining a chat by displaying a welcome a message.
+
+This node lets your agent send non-message actions to external systems or channels, which can then decide how to respond. You give each event a name and attach a value, which can be a simple number or text, a variable, or a Power Fx formula, and it gets sent as a JSON object.
+
+!!! tip
+    Think of it as a "silent trigger" block that helps your agent do things behind the scenes or communicate with external tools without needing a user to say anything.
 
 ## 🏋🏻‍♀️ Using Power Fx in your nodes
 
@@ -303,7 +323,8 @@ Sketch a simple conversation flow of how the agent should respond
 - Ask follow-up questions to get details
 - Provide answers or perform actions
 
-> Tip: keep the conversation short and focused. Only ask what's necessary.
+!!! tip
+    Keep the conversation short and focused. Only ask what's necessary.
 
 ### 🔀 Step 4 - Handle different conversation types
 
@@ -364,7 +385,8 @@ Before publishing your topic:
 - Test using real questions or real sample inputs.
 - Make sure it sounds natural and helpful.
 
-> Tip: Apply improvements to your topic accordingly as you test, such as adding more nodes or removing nodes in-place of redirecting to another topic
+!!! tip
+    Apply improvements to your topic accordingly as you test, such as adding more nodes or removing nodes in-place of redirecting to another topic
 
 ### ⚠️ Step 7 - Avoid duplicating website content
 

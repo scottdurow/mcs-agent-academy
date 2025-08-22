@@ -138,9 +138,10 @@ Below, we’ll define each building block and show how they work together to mak
 
 #### Topic Descriptions  
 
-- In each topic, you write a clear, concise description of what that topic covers. For example:
+- In each topic, you write a clear, concise description of what that topic covers.
 
-> *"This topic helps users submit an IT support ticket by collecting the issue details, priority, and contact information."*
+!!! example "Example of topic description"
+    This topic helps users submit an IT support ticket by collecting the issue details, priority, and contact information.
 
 - The AI uses that description to decide when to activate this topic, even if the user’s phrasing doesn’t exactly match.
 
@@ -192,13 +193,31 @@ When you assemble **Knowledge**, **Tools**, **Topics**, and **Instructions**, Co
 Under the hood, the orchestrator uses a **generative planning** approach: it decides which steps to take, in what order, to fulfill a user request. If an action fails (for example, an email can’t be sent), the agent follows your exception-handling guidelines (ask a clarifying question or report the error). Because the LLM adapts to conversation context, the agent can maintain memory over multiple turns and incorporate new information as the conversation unfolds.
 
 **Visual Flow Example:**  
-
+<!--
 1. **User:** "Show me my PTO balance."
 1. **AI (Topics):** Matches "Check PTO Balance" topic.  
 1. **AI (Instructions):** Uses a friendly, concise tone.  
 1. **Agent (Knowledge):** Queries the HR SharePoint list for the user’s balance.  
 1. **Agent (Actions):** Retrieves the value and sends a Teams message:  
    > "Your current PTO balance is 12 days."  
+-->
+
+``` mermaid
+sequenceDiagram
+    participant User
+    participant AI
+    participant Agent
+
+    User->>AI: "Show me my PTO balance."
+    AI->>AI: Match topic: "Check PTO Balance"
+    Note over AI: Instructions: Apply friendly, concise tone
+    AI->>Agent: Request user's PTO balance
+    Note right of Agent: Knowledge: Query HR SharePoint list
+    Agent-->>AI: PTO balance = 12 days
+    AI->>Agent: Send message to user (Teams)
+    Note right of Agent: Action: Deliver notification
+    Agent-->>User: "Your current PTO balance is 12 days."
+```
 
 ---
 

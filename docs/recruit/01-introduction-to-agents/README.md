@@ -45,7 +45,8 @@ At the core of most conversational AI systems are **Large Language Models** – 
 1. **Prompting:** You interact with an LLM by sending it a prompt. The better your prompt, the more focused and relevant the response.  
 1. **Zero-shot vs. Fine-tuning:** Zero-shot means using an LLM as-is (just raw weights). Fine-tuning means adjusting the model on domain-specific data so it answers more accurately for your needs.
 
-> **Pro Tip:** A common analogy is that an LLM is like a “super-smart autocomplete.” It doesn’t truly understand meaning like a human brain, but it’s extremely good at predicting the next best word (or phrase) in a sequence.
+!!! Tip "Pro Tip"
+    A common analogy is that an LLM is like a “super-smart autocomplete.” It doesn’t truly understand meaning like a human brain, but it’s extremely good at predicting the next best word (or phrase) in a sequence.
 
 ---
 
@@ -84,7 +85,8 @@ In the context of Copilot Studio, the term **agent** can refer to multiple flavo
       - An agent that generates a travel itinerary, books flights, and emails confirmations.  
       - A “Meeting Summarizer” agent that joins a Teams call, transcribes it in real time, and writes an executive summary to OneNote.  
 
-> **Key Difference:** Conversational agents wait for user input and stick to dialogue. Autonomous agents proactively plan and execute a sequence of steps using broader tool access.
+!!! Info "Key Difference"
+    Conversational agents wait for user input and stick to dialogue. Autonomous agents proactively plan and execute a sequence of steps using broader tool access.
 
 ---
 

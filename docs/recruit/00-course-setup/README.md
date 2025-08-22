@@ -39,12 +39,13 @@ Before you begin, ensure you have:
 Copilot Studio resides within Microsoft 365, so you need a Microsoft 365 account to access it. You can either use an existing account if you have one or follow these steps to get an appropriate license:
 
 1. **Acquire a Paid Microsoft 365 Business Subscription**  
-   1. Go to the [Microsoft 365 Business Plans and Pricing Page](https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-plans-and-pricing)
+   1. Go to the [Microsoft 365 Business Plans and Pricing Page](https://www.microsoft.com/microsoft-365/business/microsoft-365-plans-and-pricing)
    1. The cheapest option to get you started is the Microsoft 365 Business Basic plan. Select `Try for free` and walk through the guided form to fill in your subscription and account details and payment information.
    ![Microsoft 365 Signup](./images/m365-freetrial.png)
    1. Once you have your new account, login.
 
-> **Tip:** If you plan to publish agents into Microsoft 365 Copilot Chat or connect to organizational data (SharePoint, OneDrive, Dataverse), a Microsoft 365 Copilot license is required. This is an add-on license which you can learn more about [on the licensing site](https://www.microsoft.com/en-us/microsoft-365/copilot#plans)
+    !!! Tip
+        If you plan to publish agents into Microsoft 365 Copilot Chat or connect to organizational data (SharePoint, OneDrive, Dataverse), a Microsoft 365 Copilot license is required. This is an add-on license which you can learn more about [on the licensing site](https://www.microsoft.com/microsoft-365/copilot#plans)
 
 ---
 
@@ -60,12 +61,11 @@ Once you have your Microsoft 365 Tenant, you need to get access to Copilot Studi
 1. Select `Start Free Trial`.
 ![Microsoft 365 Signup](./images/mcs-start-trial.png)
 
-> **Trial Notes:**  
->
-> 1. The free trial provides **full Copilot Studio capabilities**.
-> 1. You will receive email notifications about your trial expiration. You can extend the trial in 30-day increments (up to 90 days of agent runtime).  
-> 1. If your tenant administrator disabled self-service sign-up, you’ll see an error—contact your Microsoft 365 admin to re-enable it.
->
+!!! info "Trial Notes"  
+     1. The free trial provides **full Copilot Studio capabilities**.
+     1. You will receive email notifications about your trial expiration. You can extend the trial in 30-day increments (up to 90 days of agent runtime).  
+     1. If your tenant administrator disabled self-service sign-up, you’ll see an error—contact your Microsoft 365 admin to re-enable it.
+
 ---
 
 ## Step 3: Create new developer environment
@@ -86,8 +86,8 @@ Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Develope
 
     Use this developer environment in Copilot Studio when completing the labs.
 
-> [!NOTE]
-> If you are using an existing Microsoft 365 account and did not create one in Step 1, for example - using your own account in your work organization, your IT administrator (or the equivalent) team who manages your tenant/environments might have turned off the sign up process. In this case, please contact your administrator, or create a test tenant as per Step 1.
+!!! Note
+    If you are using an existing Microsoft 365 account and did not create one in Step 1, for example - using your own account in your work organization, your IT administrator (or the equivalent) team who manages your tenant/environments might have turned off the sign up process. In this case, please contact your administrator, or create a test tenant as per Step 1.
 
 ---
 
