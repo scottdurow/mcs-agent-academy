@@ -630,7 +630,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 1. Click after the `Link to item in SharePoint` text, close the html anchor tag. Copy and paste the following.
 
     ```text
-    </a>>
+    </a>
     ```
 
     ![HTML tag](./assets/9.1_38_AddHTMLTag.png)
