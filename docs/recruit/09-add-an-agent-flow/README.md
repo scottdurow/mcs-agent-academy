@@ -74,7 +74,7 @@ Both agent flows and Power Automate cloud flows help automate tasks. They're des
 | Use this | When you want to |
 | :- | :- |
 | Agent flows | Automate tasks inside an agent, use AI, and keep everything in Copilot Studio |  
-| Power Automate cloud flows | Automate across apps and services, or build workflows outside of chatbots |
+| Power Automate cloud flows | Automate across apps and services, or build workflows outside of agents |
 
 ## 👍🏻 Why use agent flows
 
@@ -93,7 +93,7 @@ Other benefits are:
 - **Tightly integrated** - agent flows are part of the agent's logic, they're triggered directly by user messages or actions in the conversation.
 - **Scalability** - reuse flows across multiple agents or scenarios.
 - **No-code or low-code** - you can build flows using natural language or a visual designer.
-- **All-in-one-platform** - you can design, test and deploy flows in one place - Copilot Studio. No need to switch between tools.
+- **All-in-one-platform** - you can design, test and deploy agent flows in one place - Copilot Studio. No need to switch between platforms.
 
 ## 🏄🏻‍♂️ How do agent flows enhance your agent?
 
@@ -103,6 +103,8 @@ Let's say you're working in a finance department and you receive a lot of invoic
 
 With agent flows in Copilot Studio, you can automate this process. As soon as the invoice comes in, the agent:
 
+1. Reads the document using intelligent document processing to find the key information.
+1. Checks the details against your enterprise data to make sure everything looks correct.
 1. Read the document using intelligent document processing to find the key information.
 1. Check the details against your enterprise data to make sure everything looks correct.
 1. Route it for approval to the right person(s).
@@ -426,19 +428,11 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Make the field optional](./assets/9.1_10_Optional.png)
 
-1. Great work! The trigger has now been configured, let's continue. Select the **Collapse icon** to collapse the trigger.
+1. Great work! The trigger has now been configured, let's continue. Select the **plus + icon** under the trigger to insert a new action.
 
-    ![Collapse trigger](./assets/9.1_11_CollapseTrigger.png)
+    ![Add action](./assets/9.1_11_AddAction.png)
 
-1. Select the **plus + icon** under the trigger to insert a new action.
-
-    ![Add action](./assets/9.1_12_AddAction.png)
-
-1. The **Actions pane** will appear where you can view actions from 1400+ built-in connectors to Microsoft and third-party services.
-
-    ![Actions pane](./assets/9.1_13_AddAnActionPane.png)
-
-1. In the **search field** enter the following,
+1. The **Actions pane** will appear where you can view actions from 1400+ built-in connectors to Microsoft and third-party services. In the **search field** enter the following,
 
     ```text
     Get item
@@ -446,9 +440,19 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     A list of actions will display in the search results. Select the **Get item** action from the **SharePoint connector**.
 
-    ![Get item action](./assets/9.1_14_GetItemAction.png)
+    ![Get item action](./assets/9.1_12_AddGetItemAction.png)
 
-1. We can now begin configuring the **Get item** action. Rename the action to,
+1. We can now begin configuring the **Get item** action.
+
+    Select the **Ellipsis (...)** icon in the **Get item** action.
+
+    ![Select ellipsis](./assets/9.1_13_SelectEllipsis.png)
+
+1. Select **Rename**.
+
+    ![Select Rename](./assets/9.1_14_SelectRename.png)
+
+1. Rename the action to,
 
     ```text
     Get Device
@@ -458,15 +462,13 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
 1. In the **Site Address** field, select the **Site address** of the Contoso IT SharePoint site created in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/README.md#step-4-create-new-sharepoint-site).
 
-    ![Select SharePoint site address](./assets/9.1_16_SelectSharePointSiteAddress.png)
+    In the **List Name** field, select the **Devices** SharePoint list.
 
-1. In the **List Name** field, select the **Devices** SharePoint list.
-
-    ![Devices SharePoint list](./assets/9.1_17_SelectDevicesList.png)
+    ![Input parameters](./assets/9.1_16_SharePointSiteAndListParameters.png)
 
 1. In the **Id** field, select the **lightning bolt icon** or **fx icon** to the right.
 
-    ![Dynamic content picker](./assets/9.1_18_InsertExpression.png)
+    ![Dynamic content picker](./assets/9.1_17_InsertExpressionIcon.png)
 
 1. In the **Dynamic content** tab of the flyout pane, enter the following,
 
@@ -476,15 +478,21 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     The search results will show input parameters that match the value searched. Select the **DeviceSharePointId** parameter from the trigger.
 
-    ![Select DeviceSharePointId input](./assets/9.1_19_DeviceSharePointId.png)
+    Next, select **Add** to add the dynamic content input into the **Id** parameter of the action.
 
-1. Select **Add** to add the dynamic content input into the **Id** parameter of the action.
+    ![Select DeviceSharePointId input](./assets/9.1_18_DeviceSharePointId.png)
 
-    ![Select add](./assets/9.1_20_AddDynamicContent.png)
+1. The dynamic content input from the trigger is now referenced in the **Id** parameter of the action. We're going to update one of the advanced parameters next. Select **Show all** to view the advanced parameters.
 
-1. The dynamic content input from the trigger is now referenced in the **Id** parameter of the action. Select the **Collapse icon** to collapse the trigger.
+    ![View advanced parameters](./assets/9.1_19_AdvancedParameters.png)
 
-    ![Collapse Get item action](./assets/9.1_21_CollapseGetItemAction.png)
+1. The **Limit Columns by View** parameter will be displayed and by default it's set to **Use all columns (Do not limit)**. We'll update this value to a view to limit the columns returned in the response of the action. Select the **Limit Columns by View** parameter to view the list of views.
+
+    ![Select parameter](./assets/9.1_20_LimitColumnsByView.png)
+
+1. Select the **All Items** view.
+
+    ![Select All Items view](./assets/9.1_21_SelectView.png)
 
 1. Select the **plus + icon** under the _Get Device_ action to insert a new action.
 
@@ -493,12 +501,12 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 1. In the search field enter the following,
 
     ```text
-    send
+    send an email
     ```
 
     A list of actions will display in the search results. Select the **Send an email (V2)** action from the **Office 365 Outlook connector**.
 
-    ![Send an email action](./assets/9.1_23_SendAnEmailAction.png)
+    ![Send an email action](./assets/9.1_23_SendAnEmail.png)
 
 1. We next need to create a connection for the connector action. Select **Sign in**.
 
@@ -508,7 +516,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     ![Select user account](./assets/9.1_25_SelectUserAccount.png)
 
-1. Select **Allow access**.
+1. Select **Allow access**. A connection has now been created.
 
     ![Select allow access](./assets/9.1_26_AllowAccess.png)
 
@@ -518,9 +526,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     Send an email to manager
     ```
 
-    ![Add an input](./assets/9.1_27_RenameAction.png)
-
-1. Let's now define our action.
+    Let's next define the input parameters of our action.
 
     For the **To** input parameter, select yourself. Normally this would be your manager or we'd use another action that pulls through your manager based on your Entra ID profile but for the purpose of this lesson, select yourself.
 
@@ -531,8 +537,6 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     ```
 
     For the **Body** input parameter, enter the following,
-
-    ![Add an input](./assets/9.1_28_ConfigureInputParameters.png)
 
     ```text
     Hi,
@@ -547,23 +551,23 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     This is an automated email from Contoso Helpdesk Copilot
     ```
 
+    ![Rename action and configure inputs](./assets/9.1_27_RenameAndConfigureParameters.png)
+
 1. Next, we're going to update the **Body** input parameter with references to dynamic content input from the **trigger** or **Get item** action. Enter a space after the second line as we'll insert the name of the user from the trigger input, **User**.
 
     Select the **lightning bolt icon** or **fx icon** to the right.
 
-    ![Add User input as dynamic content](./assets/9.1_29_AddUserInput.png)
+    ![Add User input as dynamic content](./assets/9.1_28_AddUserInput.png)
 
 1. In the **Dynamic content** tab of the flyout pane, select the **User** input from the trigger.
 
-    ![Select User input](./assets/9.1_30_SelectUserInput.png)
+    Select **Add** to add the dynamic content **User** input into the **Body** parameter of the action.
 
-1. Select **Add** to add the dynamic content **User** input into the **Body** parameter of the action.
-
-    ![Add User input](./assets/9.1_31_AddUserInput.png)
+    ![Select User input](./assets/9.1_29_SelectUserInput.png)
 
 1. The dynamic content input from the trigger is now referenced in the **Body** parameter of the action. We'll repeat the same for the remaining lines in the email message body.
 
-    ![User input added](./assets/9.1_32_UserInputAdded.png)
+    ![User input added](./assets/9.1_30_UserInputAdded.png)
 
 1. Click into the space beside `Manufacturer:`. Select the **lightning bolt icon** or **fx icon** to the right.
 
@@ -575,7 +579,7 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     Select the **Manufacturer value** input from the trigger and select **Add**.
 
-    ![Add Manufacturer value input as dynamic content](./assets/9.1_33_AddManufacturerValueInput.png)
+    ![Add Manufacturer value input as dynamic content](./assets/9.1_31_ManufacturerValueAdded.png)
 
 1. Click into the space beside `Model:`. Select the **lightning bolt icon** or **fx icon** to the right.
 
@@ -587,16 +591,11 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     Select the **Model** input from the **Get item** action and select **Add**.
 
-    ![Add Model input as dynamic content](./assets/9.1_34_AddModelInput.png)
+    ![Add Model input as dynamic content](./assets/9.1_32_ModelAdded.png)
 
-1. For the `Link to item in SharePoint` text, we'll update this to be a hyperlink in the email message body. We need to switch to the HTML editor by selecting the **&lt;/&gt;**
- icon.
+1. For the `Link to item in SharePoint` text, we'll update this to be a hyperlink in the email message body. Click at the beginning of the line and select the **lightning bolt icon** or **fx icon** to the right.
 
-    ![Add User input](./assets/9.1_35_SwitchToHTMLEditor.png)
-
-1. The HTML editor is now enabled. Click before the `Link to item in SharePoint` text, add an HTML anchor tag to create a hyperlink
-
-    ![HTML tag](./assets/9.1_36_HTMLTag.png)
+    ![Add dynamic content](./assets/9.1_33_AddDynamicContent.png)
 
 1. Click after the HTML anchor tag and select the **lightning bolt icon** or **fx icon** to the right.
 
@@ -608,7 +607,20 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     Select the **Link to item** input from the **Get item** action and select **Add**.
 
-    ![Add Model input as dynamic content](./assets/9.1_37_AddLinkToItemInput.png)
+    ![Add Link to item as dynamic content](./assets/9.1_34_AddLinkToItem.png)
+
+1. We need to switch to the HTML editor by selecting the **&lt;/&gt;**
+ icon.
+
+    ![Add User input](./assets/9.1_35_ToggleCodeView.png)
+
+1. The HTML editor is now enabled. Click before the `Link to item in SharePoint` text, add an HTML anchor tag to create a hyperlink. Copy and paste the following.
+
+    ```text
+    <a href="
+    ```
+
+    ![HTML tag](./assets/9.1_36_AddHTMLTag.png)
 
 1. The dynamic content input of **Link to item** is now referenced in the **Body** parameter. Click after the **Link to item** input, copy and paste the following.
 
@@ -616,34 +628,53 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     ">
     ```
 
-    ![HTML tag](./assets/9.1_38_HTMLTag.png)
+    ![HTML tag](./assets/9.1_37_AddHTMLTag.png)
 
-1. Click after the `Link to item in SharePoint` text, close the html anchor tag
+1. Click after the `Link to item in SharePoint` text, close the html anchor tag. Copy and paste the following.
 
-    ![HTML tag](./assets/9.1_39_HTMLTag.png)
+    ```text
+    </a>
+    ```
 
-1. We're now done adding a hyperlink to our email message body 😎 Select the **&lt;/&gt;**
- icon to disable the HTML editor.
+    ![HTML tag](./assets/9.1_38_AddHTMLTag.png)
 
-    ![Switch back to WYSIWYG editor](./assets/9.1_40_SwitchBackToBasicEditor.png)
+1. Select the **&lt;/&gt;** icon to toggle the code view.
 
-1. Click after the `Additional comments from` text before the colon character.
+    ![Disable code view](./assets/9.1_39_ToggleCodeView.png)
 
-    In the **Dynamic content** tab of the flyout pane, enter the following in the search field,
+1. Then reselect the **&lt;/&gt;** icon to toggle the code view again.
+
+    ![Switch back to code view](./assets/9.1_40_ToggleCodeViewAgain.png)
+
+1. Notice how there are several extra characters `&lt;br&gt;`. Delete these characters
+
+    ![Delete characters](./assets/9.1_41_DeleteCharacters.png)
+
+1. We're now done adding a hyperlink to our email message body 😎 Select the **&lt;/&gt;** icon to toggle the code view.
+
+    ![HTML Tag Tidied Up](./assets/9.1_42_HTMLTagTidiedUp.png)
+
+1. Click after the `Additional comments from` text before the colon character and select the **lightning bolt icon** or **fx icon** to the right.
+
+    ![Add User parameter](./assets/9.1_43_AddUserInput.png)
+
+1. In the **Dynamic content** tab of the flyout pane, enter the following in the search field,
 
     ```text
     user
     ```
 
-    Select the **User** input from the trigger and select **Add**.
+    Select the **User** parameter from the trigger and select **Add**.
 
-    ![Add Model input as dynamic content](./assets/9.1_41_AddUserInput.png)
+    ![Add User parameter as dynamic content](./assets/9.1_44_AddUserDynamicContent.png)
 
 1. We're now going to insert an expression that will display the value of Additional Comments if provided by the user in the **Ask an adaptive card** node, otherwise display "None" if the user does not provide any comments.
 
     Click after the colon and select the **lightning bolt icon** or **fx icon** to the right.
 
-    In the **Function** tab of the flyout pane and in the expression field above, enter the following,
+    ![Add expression](./assets/9.1_45_AddExpression.png)
+
+1. In the **Function** tab of the flyout pane and in the expression field above, enter the following,
 
     ```text
     if(empty())
@@ -651,21 +682,21 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     This expression uses the `if` function for an if-else statement.
 
-    The next function used is `empty` which checks whether a value exists or not in a string parameter. The string parameter to be referenced is the `AdditionalComments` input from the trigger.
+    The next function used is `empty` which checks whether a value exists or not in a string parameter. The string parameter to be referenced is the `AdditionalComments` input parameter value from the trigger.
 
-    ![If empty](./assets/9.1_42_IfExpression.png)
+    ![If empty](./assets/9.1_46_IfEmptyFunctions.png)
 
 1. Next, click **inside of the brackets** after the `empty` function. We're going to insert the `AdditionalComments` input parameter from the trigger.
 
     Select the **Dynamic content** tab. Enter the following in the search field,
 
     ```text
-    comment
+    Additional
     ```
 
-    Scroll down the pane and select **AdditionalComments** input from the trigger. The input will now be added as a string parameter in the expression.
+    Scroll down the pane and select **AdditionalComments** input from the trigger. The parameter will now be added as a string parameter in the expression.
 
-    ![Add Model input as dynamic content](./assets/9.1_43_AdditionalCommentsInput.png)
+    ![Add AdditionalComments as dynamic content](./assets/9.1_47_AdditionalCommentsDynamicContent.png)
 
 1. Next we'll define the **_true_** logic, where if the `AdditionalComments` string parameter is empty, then we want to display a string (text) of `None`.
 
@@ -675,39 +706,35 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     , 'None',
     ```
 
-    ![True logic](./assets/9.1_44_None.png)
+    ![True logic](./assets/9.1_48_None.png)
 
-1. Finally we'll define the **_false_** logic, where if the `AdditionalComments` string parameter is not empty, then we want to display the value of the **AdditionalComments** input from our trigger.
+1. Finally we'll define the **_false_** logic, where if the `AdditionalComments` string parameter is not empty, then we want to display the value of the **AdditionalComments** input parameter from our trigger.
 
     > A reminder this value will be from the Additional Comments field of the adaptive card in the **Ask with adaptive card** node in the **Request device** topic.
 
-    ![False logic](./assets/9.1_45_AdditionalCommentsInput.png)
+    After the comma after our **_true_** logic, select the **Dynamic content** tab. Enter the following in the search field,
 
-1. Excellent, our expression is complete! Let's now add it our **Body** parameter by selecting **Add**.
+    ```text
+    Additional
+    ```
 
-    ![Add expression](./assets/9.1_46_AddExpression.png)
+    Scroll down the pane and select **AdditionalComments** input from the trigger. The parameter will now be added as a string parameter in the expression.
 
-1. The expression has now been added to the **Body** parameter. Lastly, format the last line in Italics.
+    Now add it our **Body** parameter by selecting **Add**.
 
-    ![Italics](./assets/9.1_47_Italics.png)
+    ![False logic](./assets/9.1_49_AdditionalCommentsDynamicContent.png)
 
-1. Select the **Collapse icon** to collapse the action.
+1. Excellent, our expression is complete! The expression has now been added to the **Body** parameter. Lastly, format the last line in Italics.
 
-    ![Collapse action](./assets/9.1_48_CollapseAction.png)
+    ![Italics](./assets/9.1_50_Italics.png)
 
 1. We're now going to update the **Respond to the agent** action to send the value of the **Model value** parameter from the **Get item** action back to the agent.
 
-    Select the **Respond to the agent** action.
+    Hold down the left key of your mouse and move in an upward motions within the designer to view the **Respond to the agent** action.
 
-    ![Select Respond to the agent action](./assets/9.1_49_RespondToAgent.png)
+    Select the **Respond to the agent** action and select the **Text** output as the type.
 
-1. In the pane, select **+ Add an output**.
-
-    ![Add an output](./assets/9.1_50_AddAnOutput.png)
-
-1. For the type of output, select **Text**.
-
-    ![Select Text output](./assets/9.1_51_SelectText.png)
+    ![Select Text output](./assets/9.1_51_RespondToTheAgentAction.png)
 
 1. Enter the following as the name of the output.
 
@@ -715,11 +742,11 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     ModelValue
     ```
 
-    ![ModelValue output](./assets/9.1_52_ModelValueOutput.png)
+    ![ModelValue output](./assets/9.1_52_ModelValueInput.png)
 
 1. Select the value field and select the **lightning bolt icon** or **fx icon** to the right.
 
-    ![Insert expression](./assets/9.1_53_InsertExpression.png)
+    ![Insert expression](./assets/9.1_53_InsertDynamicContent.png)
 
 1. In the **Dynamic content** tab of the flyout pane, enter the following in the search field,
 
@@ -727,23 +754,19 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
     model
     ```
 
-    Select the **Model** input from the **Get item** action and select **Add**.
+    Select the **Model** parameter from the **Get item** action and select **Add**.
 
-    ![Add Model input as dynamic content](./assets/9.1_54_AddModelInput.png)
+    ![Add Model parameter as dynamic content](./assets/9.1_54_ModelParameter.png)
 
-1. We've now completed our agent flow 👏🏻 Let's make one more update to our agent flow before publishing.
+1. The **Model** parameter is now the value of the text output. Select **Save draft** to save our agent flow.
 
-    Select the **Collapse icon** to collapse the action.
+    We've now completed our agent flow 👏🏻
 
-    ![Collapse action](./assets/9.1_55_CollapseAction.png)
+    ![Select save draft](./assets/9.1_55_SaveDraftAgentFlow.png)
 
-1. Select **Save draft** to save our agent flow.
+1. Let's make one more update to our agent flow before publishing. Select the **Overview** tab and select **Edit**.
 
-    ![Select save draft](./assets/9.1_56_SaveDraft.png)
-
-1. Select the **Overview** tab and select **Edit**.
-
-    ![Select Edit](./assets/9.1_57_Edit.png)
+    ![Select Edit](./assets/9.1_56_EditAgentFlowDetails.png)
 
 1. For the **Flow name**, copy and paste the following.
 
@@ -753,19 +776,17 @@ In this exercise, we'll create an agent flow that retrieves the SharePoint item 
 
     For the **Description**, select the **refresh icon** to use AI to automatically generate a description for you based on the trigger and actions in the agent flow.
 
-    ![Details pane](./assets/9.1_58_RenameAndDescription.png)
+    Select **Save** to save the updated name and description of the agent flow.
 
-1. Select **Save** to save the updated name and description of the agent flow.
-
-    ![Save details](./assets/9.1_59_Save.png)
+    ![Rename, add description, and save details](./assets/9.1_57_RenameAndDescription.png)
 
 1. Select the **Designer** tab and select **Publish** to publish the agent flow so that it can be added as a node in the **Request device** topic.
 
-    ![Publish](./assets/9.1_60_Publish.png)
+    ![Publish](./assets/9.1_58_Publish.png)
 
 1. A confirmation message will appear shortly to confirm the agent flow is published.
 
-    ![Confirmation message](./assets/9.1_61_Confirmation.png)
+    ![Confirmation message](./assets/9.1_59_Confirmation.png)
 
 ### 9.2 Add agent flow to topic
 
@@ -773,45 +794,53 @@ Let's now add the agent flow to the **Request device** topic.
 
 1. Select **Agents** in the left-hand side menu and select the **Contoso Helpdesk Agent**.
 
-    ![Select Agents](./assets/9.2_01_01_SelectAgent.png)
+    ![Select Agents](./assets/9.2_01_SelectAgent.png)
 
-1. Select the **Topics** tab and select the **Request device** topic.
+1. Select the **Topics** tab.
 
-    ![Select Request device topic](./assets/9.2_01_02_SelectTopics.png)
+    ![Select Topics tab](./assets/9.2_02_SelectTopics.png)
+
+1. Select the **Request device** topic.
+
+    ![Select Request device topic](./assets/9.2_03_SelectRequestDevice.png)
 
 1. Scroll down to the **Ask with adaptive card** node and add a new node.
 
     Select **Add a tool** and in the **Basic tools** tab of the fly out pane, select the **Send device request email** agent flow we recently created and published.
 
-    ![Select agent flow](./assets/9.2_02_SelectAgentFlow.png)
+    ![Select agent flow](./assets/9.2_04_SelectAgentFlow.png)
 
 1. For the trigger inputs of our agent flow, we need to select the variable outputs from the **Ask with adaptive card** node.
 
     Select the **ellipsis (...) icon** for the **DeviceSharePointId** input.
 
-    ![Select variable](./assets/9.2_03_SelectVariable.png)
+    ![Select variable](./assets/9.2_05_SelectVariable.png)
 
 1. Select the **deviceSelectionId** variable which is one of the outputs defined in **Ask with adaptive card** node.
 
-    ![Select deviceSelectionId](./assets/9.2_04_SelectDeviceSelectionId.png)
+    ![Select deviceSelectionId](./assets/9.2_06_SelectdeviceSelectionIdVariable.png)
 
 1. Next, select the **ellipsis (...) icon** for the **User** input.
 
-    ![Select Variable](./assets/9.2_05_SelectVariable.png)
+    ![Select Variable](./assets/9.2_07_SelectVariable.png)
 
 1. Select the **System** tab in the flyout variable pane and select **User.DisplayName**. This variable stores the display name of the internal user interacting with the agent.
 
-    ![Select User.DisplayName system variable](./assets/9.2_06_SelectUser.DisplayName.png)
+    ![Select User.DisplayName system variable](./assets/9.2_08_SelectUser.DisplayNameVariable.png)
 
-1. Next, select the **greater than icon** for **Advanced inputs** to see the **AdditionalComments** input.
+1. Next, select the **greater than icon** for **Advanced inputs** to expand and see the **AdditionalComments** input.
 
-    ![Expand advanced inputs](./assets/9.2_07_ExpandAdvancedInputs.png)
+    ![Expand advanced inputs](./assets/9.2_09_ExpandAdvancedInputs.png)
 
 1. Select the **ellipsis (...) icon** for the AdditionalComments input.
 
-    ![Expand advanced inputs](./assets/9.2_08_SelectVariable.png)
+    ![Select Variable](./assets/9.2_10_SelectVariable.png)
 
-1. Select the **Formula** tab in the flyout variable pane as we'll use a Power Fx expression, similar to the expression in the agent flow that does a conditional check using the _if_ function, but this time
+1. Select the **Formula** tab and the expand icon in the flyout variable pane as we'll use a Power Fx expression.
+
+    ![Formula tab](./assets/9.2_11_SelectFormulaAndExpandIcon.png)
+
+1. similar to the expression in the agent flow that does a conditional check using the _if_ function, but this time
     - using Power Fx functions,
     - and inserting either no value, or the value of the `commentsId` output variable from the **Ask with adaptive card** node.
 
@@ -821,11 +850,11 @@ Let's now add the agent flow to the **Request device** topic.
     If(IsBlank())
     ```
 
-    This expression uses the `if` function for an if-else statement.
+    This expression uses the `If` function for an if-else statement.
 
-    The next function used is `IsBlank` which checks whether a value exists or not in a string parameter. The string parameter to be referenced is the `commentsId` output variable from the **Ask with adaptive card** node.
+    The next function used is `IsBlank` which checks whether a value exists or does not exist in a string parameter. The string parameter to be referenced is the `commentsId` output variable from the **Ask with adaptive card** node.
 
-    ![If empty](./assets/9.2_10_IfIsBlank.png)
+    ![If and IsBlank functions](./assets/9.2_12_IfIsBlank.png)
 
 1. Next, click **inside of the brackets** after the `IsBlank` function. We're going to insert the `commentsId` output variable from the **Ask with adaptive card** node.
 
@@ -837,7 +866,7 @@ Let's now add the agent flow to the **Request device** topic.
 
     And add a comma after the bracket.
 
-    ![Reference commentsId output](./assets/9.2_11_Topic.commentsId.png)
+    ![Reference commentsId output](./assets/9.2_13_Topic.commentsId.png)
 
 1. Next we'll define the logic
 
@@ -856,15 +885,11 @@ Let's now add the agent flow to the **Request device** topic.
     If(IsBlank(Topic.commentsId), "", Topic.commentsId)
     ```
 
-    ![Power Fx expression](./assets/9.2_12_PowerFxExpression.png)
+    Great work, our expression is complete! 🙌🏻 Now select **Insert** to set the input parameter of the agent flow to the Power Fx expression.
 
-1. Great work, our expression is complete! Now select **Insert** to set the input parameter of the agent flow to the Power Fx expression.
-
-    ![Insert Power Fx expression](./assets/9.2_13_InsertPowerFxExpression.png)
+    ![Power Fx expression](./assets/9.2_14_PowerFxExpression.png)
 
 1. **Save** the topic.
-
-    ![Save](./assets/9.2_14_SaveTopic.png)
 
 ### 9.3 Update Request device topic with several nodes for a better user experience
 
@@ -914,7 +939,7 @@ Let's begin!
 
 1. Lastly, select the **plus + icon** below the **Send a message** node and select **Topic management**, followed by **Go to another topic** and select **End of Conversation**.
 
-    ![Topic management](./assets/9.3_05_EndOfConversationNode.png)
+    ![Topic management](./assets/9.3_05_EndOfConversation.png)
 
 1. **Save** the topic.
 
@@ -922,7 +947,7 @@ Let's begin!
 
 ### 9.4 Test agent using several scenarios
 
-Great work!!! We can now test our agent.
+Great work!!! 😁 We can now test our agent.
 
 #### 9.4.1 Request a device and enter a comment in adaptive card
 
@@ -937,7 +962,7 @@ Great work!!! We can now test our agent.
 1. The agent triggers the **Available devices** and responds with the list of available devices. We'll enter the following as the answer to the question of whether we'd like to request a device.
 
     ```text
-    yes please
+    Yes
     ```
 
     ![Yes](./assets/9.4_02_RequestDevice_Yes.png)
@@ -956,13 +981,35 @@ Great work!!! We can now test our agent.
 
     ![Submit request](./assets/9.4_04_SubmitRequest.png)
 
-1. The agent will then display the confirmation message, followed by redirecting to the **End of Conversation** topic 🙌🏻
+1. Select **Allow** for the agent to use your credentials for the connection authentication of the two connector actions.
 
-    ![End of Conversation topic](./assets/9.4_05_RequestSubmitted.png)
+    ![Allow](./assets/9.4_05_SelectAllow.png)
 
-1. Check your Inbox of your email account to review the email sent to the manager by the agent flow.
+1. The agent will then display the confirmation message which includes the model selected, followed by redirecting to the **End of Conversation** topic. Cool!
 
-    ![Email sent](./assets/9.4_06_EmailWithAdditionalComments.png)
+    ![Request submitted](./assets/9.4_06_RequestSubmitted.png)
+
+1. Select **Yes** to verify the rest of the **End of Conversation** topic.
+
+    ![Select Yes](./assets/9.4_07_RedirectNode.png)
+
+1. Next, rate the experience by selecting any of the stars in the rating scale card.
+
+    The agent will then proceed to the final **Question** node in the **End of Conversation** topic. Select **No**.
+
+    ![End of conversation topic](./assets/9.4_08_EndOfConversation.png)
+
+1. The topic will then complete as a final message will be displayed in the test pane.
+
+    ![End of conversation topic](./assets/9.4_09_EndOfConversation.png)
+
+1. Check your Inbox of your email account to review the email sent to the manager by the agent flow. You can see the details of the device selected, and the note entered in the adaptive card.
+
+    ![Email received](./assets/9.4_10_ReviewEmailMessageWithComment.png)
+
+1. Click the hyperlink and the browser should load the SharePoint item of the device. Super!
+
+    ![Click hyperlink in email](./assets/9.4_11_SelectLinkInEmail.png)
 
 #### 9.4.2 Request a device and do not enter a comment in adaptive card
 
@@ -972,17 +1019,21 @@ Let's now test the scenario when a comment is not entered.
 
     - **Refresh** the test pane and select the **activity map** icon
     - Enter the message, `I need a laptop`
-    - Respond with `Yes please` to the question of requesting a device
+    - Respond with `Yes` to the question of requesting a device
 
-    ![Request device](./assets/9.4_08_RequestDevice_Yes.png)
+    ![Request device](./assets/9.4_12_RequestDevice_Yes.png)
 
-1. This time select **Surface Laptop 13** as the device and do not enter a comment. **Submit** the request by selecting the **Submit Request** button.
+1. This time select **Surface Laptop 13** as the device and do not enter a comment.
 
-    ![Select device](./assets/9.4_09_SelectDevice.png)
+    ![Select device](./assets/9.4_13_SelectDevice.png)
+
+1. **Submit** the request by selecting the **Submit Request** button.
+
+    ![Submit Request](./assets/9.4_14_SubmitRequest.png)
 
 1. This time the email received in your Inbox will display **None** as the comment.
 
-    ![Email sent](./assets/9.4_11_EmailMessage.png)
+    ![Email received](./assets/9.4_15_ReviewEmailMessage.png)
 
 #### 9.4.3 Do not request for a device
 
@@ -992,13 +1043,13 @@ Let's test the final scenario which is to not request a device, and the **Goodby
 
     - **Refresh** the test pane and select the **activity map** icon
     - Enter the message, `I need a laptop`
-    - This time respond with `no` to the question of requesting a device
+    - This time respond with `No` to the question of requesting a device
 
-    ![Test agent](./assets/9.4_12_TestAgent_RequestDevice_No.png)
+    ![Test agent](./assets/9.4_16_TestAgent_RequestDevice_No.png)
 
 1. The agent invoked the **Goodbye** topic and the question as defined in the topic is asked.
 
-    ![Goodbye topic invoked](./assets/9.4_13_Goodbye.png)
+    ![Goodbye topic invoked](./assets/9.4_17_Goodbye.png)
 
 ## ✅ Mission Complete
 
