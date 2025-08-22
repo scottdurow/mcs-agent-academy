@@ -837,7 +837,7 @@ Let's now add the agent flow to the **Request device** topic.
 
     ![Formula tab](./assets/9.2_11_SelectFormulaAndExpandIcon.png)
 
-1. similar to the expression in the agent flow that does a conditional check using the _if_ function, but this time
+1. Similar to the expression in the agent flow that does a conditional check using the _if_ function, but this time
     - using Power Fx functions,
     - and inserting either no value, or the value of the `commentsId` output variable from the **Ask with adaptive card** node.
 
