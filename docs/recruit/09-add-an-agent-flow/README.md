@@ -1016,9 +1016,9 @@ Let's now test the scenario when a comment is not entered.
 
     - **Refresh** the test pane and select the **activity map** icon
     - Enter the message, `I need a laptop`
-    - Respond with `Yes please` to the question of requesting a device
+    - Respond with `Yes` to the question of requesting a device
 
-    ![Request device](./assets/9.4_12_RequestDevice_Yes.pngg)
+    ![Request device](./assets/9.4_12_RequestDevice_Yes.png)
 
 1. This time select **Surface Laptop 13** as the device and do not enter a comment.
 
@@ -1040,7 +1040,7 @@ Let's test the final scenario which is to not request a device, and the **Goodby
 
     - **Refresh** the test pane and select the **activity map** icon
     - Enter the message, `I need a laptop`
-    - This time respond with `no` to the question of requesting a device
+    - This time respond with `No` to the question of requesting a device
 
     ![Test agent](./assets/9.4_16_TestAgent_RequestDevice_No.png)
 
