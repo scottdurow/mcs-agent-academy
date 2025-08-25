@@ -105,8 +105,6 @@ With agent flows in Copilot Studio, you can automate this process. As soon as th
 
 1. Reads the document using intelligent document processing to find the key information.
 1. Checks the details against your enterprise data to make sure everything looks correct.
-1. Read the document using intelligent document processing to find the key information.
-1. Check the details against your enterprise data to make sure everything looks correct.
 1. Route it for approval to the right person(s).
 
 This saves time, reduces mistakes and makes the whole process much smoother.
@@ -225,7 +223,7 @@ Functions enable you to build expressions without you needing to write any code.
 
 The way I like to describe it, is that a function in agent flows is similar to Excel functions. You can perform an operation on data to transform it into a desired output. When building your formula in Excel you select your input value from the cells in a table or a range, and then apply functions to manipulate the data output. An example is using the `COUNT` function to work out the number of cells that contain numbers from a range.
 
-In agent flows, instead of referencing data from cells in a table, you're referencing data outputs from the trigger or actions when building your expressions. Continuing with the previous example, use the function _length_ to retrieve the number of items returned from the _Get items_ SharePoint connector action.
+In agent flows, instead of referencing data from cells in a table, you're referencing data outputs from the trigger or actions when building your expressions. Continuing with the previous example, use the function `length` to retrieve the number of items returned from the _Get items_ SharePoint connector action.
 
 ### Why do functions matter?
 
