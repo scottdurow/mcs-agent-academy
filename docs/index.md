@@ -11,8 +11,6 @@ Your mission—should you choose to accept it—is to master the art of building
 
 This hands-on training is your entry point into the **world of agents**: from grounded prompts to Adaptive Cards and agent flows, you'll learn how to build, scale, and deploy intelligent agents using real-world tools and use cases.
 
-[🚀 Get started with the Recruit course](https://aka.ms/agent-academy-recruit){ .md-button .md-button--primary }
-
 ---
 
 ## 🏅 Rank Progression
@@ -21,7 +19,7 @@ The **Copilot Studio Agent Academy** is a multi-phase training program designed 
 
 | Rank             | Level | Visual |
 |------------------|:-----:|--------|
-| 🟢 **Recruit**</br>[🚀 Get started](https://aka.ms/agent-academy-recruit){ .md-button .md-button--primary }     | •     | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png){ width="300" }     |
+| 🟢 **Recruit**</br></br>[🚀 Get started](https://aka.ms/agent-academy-recruit){ .md-button .md-button--primary }     | •     | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png){ width="300" }     |
 | 🔵 **Operative**</br>(Coming Soon)   | ••    | ![Operative Badge](./images/mcs-agent-academy-operative-badge.png){ width="300" } |
 | 🟡 **Commander**</br>(Coming Soon)    | •••   | ![Commander Badge](./images/mcs-agent-academy-commander-badge.png){ width="300" } |
 
