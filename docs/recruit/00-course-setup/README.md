@@ -125,7 +125,7 @@ A new SharePoint site needs to be created  which will be used in [Lesson 06 - Cr
 
     ![Site information](images/0.4_06_SiteDetails.png)
 
-1. In the final step, a language can be selected for the SharePoint site. By default it will be **English**. Leave the Language as **English** and select **Create site**,
+1. In the final step, a language can be selected for the SharePoint site. By default it will be **English**. Leave the Language as **English** and select **Create site**.
 
     ![Language and other options](images/0.4_07_LanguageOtherOptions.png)
 
