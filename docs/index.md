@@ -19,7 +19,7 @@ The **Copilot Studio Agent Academy** is a multi-phase training program designed 
 
 | Rank             | Level | Visual |
 |------------------|:-----:|--------|
-| 🟢 **Recruit**     | •     | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png){ width="300" }     |
+| 🟢 **Recruit**</br></br>[🚀 Get started](https://aka.ms/agent-academy-recruit){ .md-button .md-button--primary }     | •     | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png){ width="300" }     |
 | 🔵 **Operative**</br>(Coming Soon)   | ••    | ![Operative Badge](./images/mcs-agent-academy-operative-badge.png){ width="300" } |
 | 🟡 **Commander**</br>(Coming Soon)    | •••   | ![Commander Badge](./images/mcs-agent-academy-commander-badge.png){ width="300" } |
 
