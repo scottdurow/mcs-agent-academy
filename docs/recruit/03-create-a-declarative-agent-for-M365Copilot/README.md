@@ -120,6 +120,10 @@ Let's begin!
 
 ### 3.1 Create a declarative agent
 
+!!! warning "Copilot questions may differ across sessions"
+
+    The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously.
+
 1. Navigate to [https://copilotstudio.microsoft.com/](https://copilotstudio.microsoft.com/) and sign in using your credentials. Make sure to switch to your environment that you're using for these labs.
 
 1. Select **Agents** from the menu and select **Copilot for Microsoft 365**.

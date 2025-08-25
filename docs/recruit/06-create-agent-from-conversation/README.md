@@ -248,6 +248,10 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
 ### 6.1 Use natural language to create an agent with Copilot
 
+!!! warning "Copilot questions may differ across sessions"
+
+    The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously.
+
 1. Navigate to the Home page of Copilot Studio and in the field, enter the following prompt which describes the IT help desk agent. The prompt includes the goal of the agent, the context, the expected tasks and format of the agent's response.
 
     ```text
