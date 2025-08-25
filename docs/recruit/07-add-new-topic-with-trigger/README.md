@@ -520,7 +520,7 @@ Let's begin!
 1. Copy and paste the following as the description.
 
     ```text
-    List of possible values: laptop, desktop, smartphone
+    List of possible values: Laptop, Desktop, Smartphone
     ```
 
     ![Description](assets/7.2_06_InputDescription.png)
