@@ -268,9 +268,9 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
 
         ![Prompt instructions](assets/3.2_10_Options.png)
 
-1. Select the **prompt library** link.
+1. Select the **prompt template** link.
 
-    ![Select prompt library](assets/3.2_11_SelectPromptLibrary.png)
+    ![Select prompt template](assets/3.2_11_SelectPromptLibrary.png)
 
 1. You'll see a list of prompt templates to choose from. These are from the [Power Platform Prompt library](https://aka.ms/power-prompts).
 
