@@ -166,10 +166,10 @@ When adding sample data, make sure that the following fields are filled out:
 
 |Device  |URL  |
 |---------|---------|
-|Surface Laptop 13     | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-13-ocean-render-compare-fy25?scl=1)        |
-|Surface Laptop 15     | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/laptop-15-black-render-compare-fy25?scl=1)        |
-|Surface Pro    | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/pro-violet-render1-fy25?scl=1)        |
-|Surface Studio    | [https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1](https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/surface-studio-2-plus-compare-render?scl=1)        |
+|Surface Laptop 13     | [https://github.com/microsoft/agent-academy/blob/main/docs/recruit/00-course-setup/images/device-images/Surface-Laptop-13.png](https://github.com/microsoft/agent-academy/blob/main/docs/recruit/00-course-setup/images/device-images/Surface-Laptop-13.png)        |
+|Surface Laptop 15     | [https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Laptop-15.png](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Laptop-15.png)        |
+|Surface Pro    | [https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Pro-12.png](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Pro-12.png)        |
+|Surface Studio    | [https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Studio.png](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Studio.png)        |
 
 ---
 
