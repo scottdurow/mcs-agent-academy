@@ -45,6 +45,7 @@ repo_name: microsoft/agent-academy
 markdown_extensions:
   - admonition
   - attr_list
+  - def_list
   - md_in_html
   - pymdownx.blocks.caption
   - pymdownx.details
@@ -59,6 +60,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - toc:
       permalink: true
       toc_depth: 2
