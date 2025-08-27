@@ -158,7 +158,9 @@ Let's begin!
     
        ![Instructions updated](assets/3.1_05_InstructionsUpdated.png)
 
-      > The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously.
+    !!! warning "Reminder: Copilot questions may differ across sessions"
+
+        The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously.
 
 1. The name of the agent has now been updated as seen on the right hand side pane. We're now asked to refine the instructions for the agent. The instructions on the right hand side pane is already suitable as it covers the topics we want - refer to yellow highlighted text in screenshot below. Instead, we'll expand on how it should format its response and the tone. We'll enter the following,
 
@@ -183,9 +185,11 @@ Let's begin!
 
 1. We'll then see a response from Copilot that we have now finished configuring our agent using the Copilot conversational creation experience. Click **Create** to provision the declarative agent for Microsoft 365 Copilot.
 
-       > **Reminder:** The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously. So you may be seeing a different message from Copilot at the end of your configuration.
-
       ![Create agent](assets/3.1_08_CreateDeclarativeAgent.png)
+
+    !!! warning "Reminder: Copilot questions may differ across sessions"
+
+        The Copilot conversational creation experience can vary each time where the provided questions for guidance may be slightly different than previously.
 
 1. Once the agent has been provisioned, you'll see the details of the agent which contains the description and the instructions defined during the Copilot conversational creation experience.
 

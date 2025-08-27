@@ -50,7 +50,7 @@ Both agent flows and Power Automate cloud flows help automate tasks. They're des
 **Limitations:**
 
 - You can't share them, copy them, or assign co-owners.
-- They're only visible and usable within Copilot Studio.
+- Agent flows are only visible and usable within Copilot Studio, whereas currently event triggers for agents can be edited in the Power Automate maker portal.
 
 ### ☁️ Power Automate cloud flows
 
@@ -210,7 +210,7 @@ Expressions let you:
 - **Customize how data is handled** - combine names, format dates.
 - **Make decisions** - if a value is greater than 10, do something.
 - **Transform data** - change text to lowercase, extract part of a string.
-- **Automate logic** - without writing full code
+- **Automate logic** - without writing full code.
 
 ### What do expressions look like?
 
@@ -240,36 +240,36 @@ The following are common functions used in agent flows. For the full list of fun
 #### 🔡 Text
 
 - `concat()` - Joins two or more pieces of text together.
-  - Example: `concat('Hello ', firstName)` → “Hello John”
+      - Example: `concat('Hello ', firstName)` → “Hello John”
 
 - `toLower()` / `toUpper()` - Changes text to lowercase or uppercase.
-  - Useful for standardizing input.
+      - Useful for standardizing input.
 
 - `substring()` - Extracts part of a string.
-  - Example: Get the first 3 letters of a name.
+      - Example: Get the first 3 letters of a name.
 
 - `trim()` - Removes spaces from the beginning and end of text.
 
 #### 🔢 Math and number
 
 - `add()`, `sub()`, `mul()`, `div()` - Basic math operations.
-  - Example: `add(5, 3)` - the output is 8
+      - Example: `add(5, 3)` - the output is 8
 
 #### 📅 Date and time
 
 - `utcNow()` - Gets the current date and time in UTC.
-  - Great for timestamps.
+      - Great for timestamps.
 
 - `addDays()`, `addHours()` - Adds time to a date.
-  - Example: `addDays(utcNow(), 7)` output is 7 days from now.
+      - Example: `addDays(utcNow(), 7)` output is 7 days from now.
 
 - `formatDateTime()` - Formats a date into a readable string.
-  - Example: Monday, July 7, 2025
+      - Example: Monday, July 7, 2025
 
 #### ✅ Logical
 
 - `if()` - Runs one value if true, another if false.
-  - Example: `if(score > 50, 'Pass', 'Fail')`
+      - Example: `if(score > 50, 'Pass', 'Fail')`
 
 - `equals()` - Checks if two values are the same.
 
@@ -278,10 +278,10 @@ The following are common functions used in agent flows. For the full list of fun
 #### 🪣 Other handy functions
 
 - `coalesce()` - Returns the first non-empty value.
-  - Useful for fallback/default values.
+      - Useful for fallback/default values.
 
 - `guid()` - Generates a unique ID.
-  - Useful for tracking or logging.
+      - Useful for tracking or logging.
 
 - `length()` - Counts how many characters or items are in a string or array.
 
