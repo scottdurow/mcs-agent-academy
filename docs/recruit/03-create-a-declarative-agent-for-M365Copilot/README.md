@@ -203,7 +203,7 @@ Let's begin!
 
       ![Change icon](assets/3.1_10_02_ChangeIcon.png)
 
-1. Let's do a quick test of the agent we've created. Select one of the **Starter Prompts** in the test pane on the left hand side.
+1. Let's do a quick test of the agent we've created. Select one of the **Starter Prompts** in the test pane on the right hand side.
 
       ![Change icon](assets/3.1_11_TestUsingStarterPrompt.png)
 
