@@ -1,5 +1,7 @@
 # Generate Candidate Specific Interview Docs with Prompts
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 - Document generation in Prompts

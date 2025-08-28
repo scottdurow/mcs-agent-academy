@@ -1,5 +1,7 @@
 # Make your agent multi-agent ready with connected agents
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 - Explain multi-agent (connected vs child agents)

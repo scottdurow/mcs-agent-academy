@@ -1,5 +1,7 @@
 # Content Moderation and AI Safety Essentials
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 - Content moderation
