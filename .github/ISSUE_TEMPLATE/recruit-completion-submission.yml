@@ -55,7 +55,7 @@ body:
     id: challenges
     attributes:
       label: Challenges Faced
-      description: Did you encounter any difficulties in the Recruit path?
+      description: Did you encounter any difficulties in the Recruit path? If you have mission-specific feedback, please be sure to include the mission title you are referring to.
     validations:
       required: true
 
