@@ -50,7 +50,8 @@ Both agent flows and Power Automate cloud flows help automate tasks. They're des
 **Limitations:**
 
 - You can't share them, copy them, or assign co-owners.
-- Agent flows are only visible and usable within Copilot Studio, whereas currently event triggers for agents can be edited in the Power Automate maker portal.
+- Agent flows are only visible and usable within Copilot Studio.
+- Currently, event triggers for agents can be edited in the Power Automate maker portal.
 
 ### ☁️ Power Automate cloud flows
 
