@@ -1,5 +1,7 @@
 # Applying Deep Reasoning to Evaluate Candidate Fit and Interview Preparation
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 - Explain what deep reasoning is

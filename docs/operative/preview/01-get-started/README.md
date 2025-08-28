@@ -1,5 +1,7 @@
 # Get started with the Hiring Agent
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 - Explain overall scenario

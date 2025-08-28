@@ -1,5 +1,7 @@
 # Extracting Resume Contents with Multi-Modal Prompts
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 - Explain what prompts are and what multimodal means

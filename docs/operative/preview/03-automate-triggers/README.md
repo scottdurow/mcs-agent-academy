@@ -1,5 +1,7 @@
 # Automate your agent with Triggers
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 - What are triggers and why do we use them

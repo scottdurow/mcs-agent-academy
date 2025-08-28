@@ -1,5 +1,7 @@
 # Authoring Agent Instructions
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 This mission is THE place to talk about advanced instructions - what to do, what not to do.... what to include, what not to include... Also - take into account that there is a mission coming on customizing responses. That part should not be covered in this mission.

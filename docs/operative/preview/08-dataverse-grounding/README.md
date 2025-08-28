@@ -1,5 +1,7 @@
 # Prompts - Dataverse Grounding
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 - Explain about Prompts with Dataverse grounding

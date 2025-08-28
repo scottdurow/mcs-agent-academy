@@ -1,5 +1,7 @@
 # Obtain User Feedback with Adaptive Cards
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 - Explain Analytics in Copilot Studio

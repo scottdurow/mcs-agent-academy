@@ -1,5 +1,7 @@
 # Personalizing Agent Responses
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 This mission is all about customizing responses. This is the place to give your agent a personality.

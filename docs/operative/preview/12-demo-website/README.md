@@ -1,5 +1,7 @@
 # Publishing Your Agents to a Demo Website for Stakeholder Testing
 
+--8<-- "disclaimer.md"
+
 ## Theory
 
 - Explain publishing to a demo website (why would you use it, why wouldn't you?)
