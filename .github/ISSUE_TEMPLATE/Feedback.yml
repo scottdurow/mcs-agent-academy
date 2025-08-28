@@ -49,7 +49,10 @@ body:
     id: general_course_feedback
     attributes:
       label: Any other general feedback for the course?
-      description: Share any other thoughts or suggestions about the course.
+      description: Share any other thoughts or suggestions about the course.  If you have mission-specific feedback, please be sure to include the mission title you are referring to.
+    validations:
+      required: true
+
     validations:
       required: false
 
