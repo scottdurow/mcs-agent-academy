@@ -151,6 +151,12 @@ This is the **raw JSON code** behind your card. Advanced users can edit this dir
 
 Even if you're new to the Adaptive Card designer, it's helpful to see how the visual design translates into codes.
 
+!!! tip "Tip - Check out the Adaptive Card samples"
+
+    Browse to [https://adaptivecards.microsoft.com/designer](https://adaptivecards.microsoft.com/designer) and select **New card**, you'll see a list of samples that you can select from and modify. This designer is external (web-based). This means what you build in the web-based Adaptive Card Designer, you'll need to copy the JSON from within the Card Payload Editor and paste into your adaptive card of your agent in Copilot Studio.
+
+    ![Adaptive Card Designer Samples](assets/8.0_04_AdaptiveCardDesignerSamples.png)
+
 ## 🌵 Common use cases
 
 The following are common use cases for Adaptive Cards in Copilot Studio when used in the **Send a message** or **Ask a question** nodes.
