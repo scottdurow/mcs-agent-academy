@@ -153,7 +153,10 @@ Even if you're new to the Adaptive Card designer, it's helpful to see how the vi
 
 !!! tip "Tip - Check out the Adaptive Card samples"
 
-    Browse to [https://adaptivecards.microsoft.com/designer](https://adaptivecards.microsoft.com/designer) and select **New card**, you'll see a list of samples that you can select from and modify. This designer is external (web-based). This means what you build in the web-based Adaptive Card Designer, you'll need to copy the JSON from within the Card Payload Editor and paste into your adaptive card of your agent in Copilot Studio.
+    1. Browse to [https://adaptivecards.microsoft.com/designer](https://adaptivecards.microsoft.com/designer).
+    2. Select **New card** to see a list of samples you can choose and modify.
+    3. Note that this designer is external (web-based). When you build your card in the web-based Adaptive Card Designer, copy the JSON from the Card Payload Editor.
+    4. Paste the JSON into your adaptive card in your agent in Copilot Studio.
 
     ![Adaptive Card Designer Samples](assets/8.0_04_AdaptiveCardDesignerSamples.png)
 
