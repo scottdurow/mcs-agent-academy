@@ -239,11 +239,11 @@ In Copilot Studio, Power Fx is a low-code programming language used to add logic
 ### What Power Fx can do in topics
 
 - Set and manipulate variables
-  - Example: `Set(userName, "Adele Vance")`
+      - Example: `Set(userName, "Adele Vance")`
 - Create conditions
-  - Example: `If(score > 80, "Pass", "Fail")`
+      - Example: `If(score > 80, "Pass", "Fail")`
 - Format and transform data
-  - Example: `Text(DateValue, "dd/mm/yyyy")`
+      - Example: `Text(DateValue, "dd/mm/yyyy")`
 
 ### Why use Power Fx?
 
@@ -276,9 +276,9 @@ This allows you to describe what you want using natural language, and Copilot wi
 #### What Copilot supports
 
 - Can create and edit:
-  - Message nodes
-  - Question nodes
-  - Condition nodes
+      - Message nodes
+      - Question nodes
+      - Condition nodes
 - Doesn’t support advanced settings such as how to reprompt the user if they don’t respond or how to manage interruptions during a question. You can still adjust those settings manually if needed.
 
 #### Why this is useful
