@@ -63,6 +63,9 @@ body:
     id: final_thoughts
     attributes:
       label: Final Thoughts
-      description: Any feedback on how to improve the Recruit path?
+      description: Any feedback on how to improve the Recruit path? If you have mission-specific feedback, please be sure to include the mission title you are referring to.
+    validations:
+      required: true
+
     validations:
       required: true
