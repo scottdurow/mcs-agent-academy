@@ -1,4 +1,4 @@
-# Mission 01: Get started with the Hiring Agent
+# 🚨 Mission 01: Get started with the Hiring Agent
 
 --8<-- "disclaimer.md"
 
