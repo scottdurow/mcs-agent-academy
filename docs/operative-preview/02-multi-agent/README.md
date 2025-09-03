@@ -10,9 +10,9 @@
 
 Welcome back, Agent. In Mission 01, you built your main Hiring Agent - a solid foundation for managing recruitment workflows. But one agent can only do so much.
 
-This mission transforms your single agent into a **multi-agent system**: an orchestrated team of specialized agents that work together to handle complex hiring challenges. Think of it as upgrading from a solo operator to commanding a specialized task force.
+Your assignment, should you choose to accept it, is **Operation Symphony** - transforming your single agent into a **multi-agent system**: an orchestrated team of specialized agents that work together to handle complex hiring challenges. Think of it as upgrading from a solo operator to commanding a specialized task force.
 
-You'll add two critical specialists to your existing Hiring Agent: an Application Intake Agent to process resumes automatically, and an Interview Prep Agent to create comprehensive interview materials. These agents will work together seamlessly under your main orchestrator.
+Like a symphony orchestra where each musician plays their part in perfect harmony, you'll add two critical specialists to your existing Hiring Agent: an Application Intake Agent to process resumes automatically, and an Interview Prep Agent to create comprehensive interview materials. These agents will work together seamlessly under your main orchestrator.
 
 Welcome to the world of connected intelligence.
 
@@ -20,11 +20,11 @@ Welcome to the world of connected intelligence.
 
 In this mission, you'll learn:
 
-1. The difference between **child agents** and **connected agents** and when to use each
-1. How to design **multi-agent architectures** that scale and collaborate effectively  
-1. Creating specialized **child agents** for focused tasks within your existing Hiring Agent
-1. Establishing **communication patterns** between your main agent and specialist agents
-1. Adding the Application Intake Agent and Interview Prep Agent to your hiring system
+1. When to use **child agents** vs **connected agents**
+1. How to design **multi-agent architectures** that scale  
+1. Creating **child agents** for focused tasks
+1. Establishing **communication patterns** between agents
+1. Building the Application Intake Agent and Interview Prep Agent
 
 ## 🤔What are connected agents?
 
@@ -195,11 +195,15 @@ Before starting, ensure you have:
 !!! note "Building on Mission 01"
     This mission builds directly on the Hiring Agent you created in Mission 01. If you haven't completed that mission or need to start fresh, you can import the Mission 02 starter solution which includes the base Hiring Agent and required Dataverse tables.
 
+#### Solution setup
+
 1. Inside Copilot Studio, Select the ellipsis (...) below Tools in the left hand navigation.
 1. Select **Solutions**.
 1. Locate your Operative solution, select the ellipsis (...) next to it, and choose **Set preferred solution**. This will ensure that all your work will be added to this solution.
 
-### 1. Open your existing Hiring Agent
+### 1. Configure your main Hiring Agent
+
+#### Update agent instructions
 
 1. **Navigate** to Copilot Studio. Ensure your environment is selected in the top right Environment Picker.
 
@@ -225,7 +229,9 @@ Before starting, ensure you have:
     | Use information from the Web | **Off** |
     | File uploads | **On** |
 
-### 2. Add the Application Intake child agent
+### 2. Create the Application Intake child agent
+
+#### Add the new agent
 
 1. **Navigate** to the **Agents** tab within your Hiring Agent - this is where you'll add specialist agents.
 
@@ -243,11 +249,13 @@ Before starting, ensure you have:
 
 1. Ensure that the toggle **Web Search** is set to **Disabled**. This is because we only want to use information provided by the parent agent.
 
-### 3. Add tools and connections
+### 3. Configure agent flows for data processing
 
 Agents can't perform any actions without being given tools or topics.
 
 We're using **Agent Flow tools** rather than Topics for the *Upload Resume* and *Upsert Candidate* steps because these are complex, multi-step backend processes that require deterministic execution and integration with external systems. While Topics are best for guiding the conversational dialog, Agent Flows provide the structured automation needed to reliably handle file processing, data validation, and database upserts (insert new or update existing) without depending on user interaction.
+
+#### Create the Resume Upload flow
 
 1. Locate the **Tools** section inside the Application Intake Agent page.
    **Important:** This isn't the Tools tab of the parent agent, but can be found if you scroll down underneath the child agent instructions.
@@ -311,6 +319,10 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* and 
 
 1. Select the **Designer** tab again, and select **Publish**.
 
+#### Connect the flow to your agent
+
+Now you'll connect the published flow to your Application Intake Agent.
+
 1. Navigate back to the **Hiring Agent** and select the **Agents** tab. Open the **Application Intake Agent**, and then locate the **Tools** panel.
 
 1. Select **+ Add**
@@ -350,19 +362,19 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* and 
 
 1. In the **Instructions** field, paste the following clear guidance for your child agent:
 
-   ```text
-   You are tasked with managing incoming Resumes, Candidate information, and creating Job Applications.  
-   Only use tools if the step exactly matches the defined process. Otherwise, indicate you cannot help.  
-   
-   Process for Resume Upload via Chat  
-   1. Upload Resume  
+    ```text
+    You are tasked with managing incoming Resumes, Candidate information, and creating Job Applications.  
+    Only use tools if the step exactly matches the defined process. Otherwise, indicate you cannot help.  
+    
+    Process for Resume Upload via Chat  
+    1. Upload Resume  
       - Trigger only if /System.Activity.Attachments contains exactly one new resume.  
       - If more than one file, instruct the user to upload one at a time and stop.  
       - Call /Upload Resume once. Never upload more than once for the same message.  
-   
-   2. Post-Upload  
+    
+    2. Post-Upload  
       - Always output the [ResumeNumber] (R#####).  
-   ```
+    ```
 
 1. Where the instructions include a forward slash (/), select the text following the / and select the resolved name. Do this for:
 
@@ -371,7 +383,9 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* and 
 
 1. Select **Save**
 
-### 5. Test your child agent
+### 5. Test your Application Intake Agent
+
+Now let's verify your first orchestra member is working correctly.
 
 1. Download the [test Resumes.](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
 
@@ -397,7 +411,9 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* and 
 
 Now let's create our connected agent for interview preparation and add it to your existing Hiring Agent.
 
-### 1. Create a new standalone agent
+### 1. Create the Interview Agent
+
+#### Create a new standalone agent
 
 1. **Navigate** to Copilot Studio. Ensure your environment is still selected in the top right Environment Picker.
 
@@ -409,6 +425,8 @@ Now let's create our connected agent for interview preparation and add it to you
 
 1. Select **+ New agent**
 
+#### Configure basic settings
+
 1. Select the Configure tab, and enter the following properties:
 
     - **Name**: `Interview Agent`
@@ -419,40 +437,40 @@ Now let's create our connected agent for interview preparation and add it to you
 
 1. Instructions:
 
-   ```text
-   You are the Interview Agent. You help interviewers and hiring managers prepare for interviews. You never contact candidates. 
-   Use Knowledge to help with interview preparation. 
-   
-   The only valid identifiers are:
-     - ResumeNumber (ppa_resumenumber)→ format R#####
-     - CandidateNumber (ppa_candidatenumber)→ format C#####
-     - ApplicationNumber (ppa_applicationnumber)→ format A#####
-     - JobRoleNumber (ppa_jobrolenumber)→ format J#####
-   
-   Examples you handle
-     - Give me a summary of ...
-     - Help me prepare to interview candidates for the Power Platform Developer role
-     - Create interview assistance for the candidates for Power Platform Developer
-     - Give targeted questions for Candidate Alex Johnson focusing on the criteria for the Job Application
-     
-   How to work:
-       It is expected that you will need to ask Clarification Questions if required information for queries are not given
-       - If not asking for interview help without providing a job role, ask for it
-       - If asking for interview questions, ask for the candidate and job role if not provided.
-   
-   General behavior
-   - Do not invent or guess facts
-   - Be concise, professional, and evidence-based
-   - Map strengths and risks to the highest-weight criteria
-   - If data is missing (e.g., no resume), state what is missing and ask for clarification
-   - Never address or message a candidate
-   ```
-   
+    ```text
+    You are the Interview Agent. You help interviewers and hiring managers prepare for interviews. You never contact candidates. 
+    Use Knowledge to help with interview preparation. 
+    
+    The only valid identifiers are:
+      - ResumeNumber (ppa_resumenumber)→ format R#####
+      - CandidateNumber (ppa_candidatenumber)→ format C#####
+      - ApplicationNumber (ppa_applicationnumber)→ format A#####
+      - JobRoleNumber (ppa_jobrolenumber)→ format J#####
+    
+    Examples you handle
+      - Give me a summary of ...
+      - Help me prepare to interview candidates for the Power Platform Developer role
+      - Create interview assistance for the candidates for Power Platform Developer
+      - Give targeted questions for Candidate Alex Johnson focusing on the criteria for the Job Application
+      
+    How to work:
+        It is expected that you will need to ask Clarification Questions if required information for queries are not given
+        - If not asking for interview help without providing a job role, ask for it
+        - If asking for interview questions, ask for the candidate and job role if not provided.
+    
+    General behavior
+    - Do not invent or guess facts
+    - Be concise, professional, and evidence-based
+    - Map strengths and risks to the highest-weight criteria
+    - If data is missing (e.g., no resume), state what is missing and ask for clarification
+    - Never address or message a candidate
+    ```
+
 1. Toggle **Web Search** to **Disabled**
 
 1. Select **Create**
 
-### 3. Add specialized knowledge
+### 2. Configure data access and publish
 
 1. In the Knowledge section, select **+ Add knowledge**
 1. Select **Dataverse**
@@ -467,40 +485,40 @@ Now let's create our connected agent for interview preparation and add it to you
 1. Select **Save**
 1. Select **Publish**, and wait for the publishing to complete.
 
-### 4. Connect the Interview Prep Agent to your Hiring Agent
+### 3. Connect the Interview Prep Agent to your Hiring Agent
 
 1. Navigate back to your **Hiring Agent**
 1. Select the **Agents** Tab
 1. Ensure that you see both the **Application Intake Agent**, and the Interview Agent. If not, use the **+Add an agent** → **Copilot Studio**, to add the Interview Agent.
 
-### 5. Test multi-agent collaboration
+### 4. Test multi-agent collaboration
 
 1. **Toggle** the test panel open by selecting **Test**.
 
 1. **Upload** one of the test resumes, and enter the following:
 
-   ```text
-   Upload this resume, then show me open job roles, each with a description of the evaluation criteria, then use this to match the resume to at least one suitable job role even if not a perfect match.
-   ```
+    ```text
+    Upload this resume, then show me open job roles, each with a description of the evaluation criteria, then use this to match the resume to at least one suitable job role even if not a perfect match.
+    ```
 
 1. Play with different ways of asking questions about Job Roles and Evaluation Criteria.
    **Examples:**
 
-   ```text
-   Which job roles have similar evaluation criteria?
-   ```
+    ```text
+    Which job roles have similar evaluation criteria?
+    ```
 
-   ```text
-   Which active resumes are suitable for the Power Platform Developer role?
-   ```
+    ```text
+    Which active resumes are suitable for the Power Platform Developer role?
+    ```
 
 ## 🎉  Mission Complete
 
-Outstanding work, Agent! You've successfully transformed your single Hiring Agent into a sophisticated multi-agent system with specialized capabilities.
+Excellent work, Agent! **Operation Symphony** is now complete. You've successfully transformed your single Hiring Agent into a sophisticated multi-agent orchestra with specialized capabilities.
 
-Here's what you've accomplished:
+Here's what you've accomplished in this mission:
 
-**✅ Multi-agent architecture understanding**  
+**✅ Multi-agent architecture mastery**  
 You now understand when to use child agents vs connected agents and how to design systems that scale.
 
 **✅ Application Intake child agent**  
@@ -523,8 +541,12 @@ Your enhanced hiring system is now ready for the advanced features we'll add in 
 
 📖 [Add other agents (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-add-other-agents?WT.mc_id=power-182762-scottdurow)
 
-📖 [Create a solution](https://learn.microsoft.com/en-us/power-platform/alm/solution-concepts-alm?WT.mc_id=power-182762-scottdurow)
+📖 [Add tools to custom agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-plugin-actions?WT.mc_id=power-182762-scottdurow)
 
 📖 [Work with Dataverse in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-dataverse?WT.mc_id=power-182762-scottdurow)
 
-📖 [Power Platform solution ALM guide](https://learn.microsoft.com/en-us/power-platform/alm/overview-alm?WT.mc_id=power-182762-scottdurow))
+📖 [Agent flows overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview?WT.mc_id=power-182762-scottdurow)
+
+📖 [Create a solution](https://learn.microsoft.com/en-us/power-platform/alm/solution-concepts-alm?WT.mc_id=power-182762-scottdurow)
+
+📖 [Power Platform solution ALM guide](https://learn.microsoft.com/en-us/power-platform/alm/overview-alm?WT.mc_id=power-182762-scottdurow)
