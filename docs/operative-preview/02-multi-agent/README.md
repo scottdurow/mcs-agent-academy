@@ -26,44 +26,44 @@ In this mission, you'll learn:
 1. Establishing **communication patterns** between your main agent and specialist agents
 1. Adding the Application Intake Agent and Interview Prep Agent to your hiring system
 
-## 🤔What Are Connected Agents?
+## 🤔What are connected agents?
 
 In Copilot Studio, you're not limited to building single, monolithic agents. You can create **multi-agent systems** - networks of specialized agents that work together to handle complex workflows.
 
 Think of it like a real-world organization: instead of one person doing everything, you have specialists who excel at specific tasks and collaborate when needed.
 
-### Why Multi-Agent Systems Matter
+### Why multi-agent systems matter
 
 - **Scalability:** Each agent can be developed, tested, and maintained independently by different teams.  
 - **Specialization:** Agents can focus on what they do best. Perhaps one for data processing, another for user interaction, another for decision-making.  
 - **Flexibility:** You can mix and match agents, reuse them across projects, and evolve your system incrementally.  
 - **Maintainability:** Changes to one agent don't necessarily affect others, making updates safer and easier.
 
-### Real-World Example: Hiring Process
+### Real-world example: Hiring process
 
-Consider our hiring workflow, multiple agents might work together with the following responsibilities:
+Consider our hiring workflow - multiple agents might work together with the following responsibilities:
 
 - **Resume intake** requires document parsing and data extraction skills
 - **Scoring** involves evaluating candidate resumes and matching them to job requirements
 - **Interview preparation** needs deep reasoning about candidate fit  
-- **Candidate communication** requires empathetic, communication abilities
+- **Candidate communication** requires empathetic communication abilities
 
 Rather than building one massive agent that tries to handle all these different skills, you can create specialized agents for each area and orchestrate them together.
 
-## 🔗 Child Agents vs Connected Agents: The Key Difference
+## 🔗 Child agents vs connected agents: The key difference
 
 Copilot Studio offers two ways to build multi-agent systems, each with distinct use cases:
 
-### ↘️ Child Agents
+### ↘️ Child agents
 
 Child agents are **lightweight specialists** that live within your main agent. Think of them as specialized teams within the same department.
 
-#### Key Technical Details
+#### Key technical details
 
-- Child agents are contained within the parent agent, and have a single configuration page.
+- Child agents live within the parent agent and have a single configuration page.
 - Tools and Knowledge are **stored at the parent** agent, but configured to be "Available to" the child agent.
 - Child agents **share the topics** of their parent agent. Topics can be referenced by the child agent instructions.
-- Child agents **do not need to be published** separately - they are automatically available within their parent agent once created. This does make testing easier because changes to the parent and child agents can be performed in the **same shared workspace**.
+- Child agents **don't need separate publishing** - they're automatically available within their parent agent once created. This makes testing easier because changes to the parent and child agents can be performed in the **same shared workspace**.
 
 #### Use child agents when
 
@@ -79,11 +79,11 @@ Child agents are **lightweight specialists** that live within your main agent. T
 - Hardware troubleshooting  
 - Software installation guides
 
-### 🔀 Connected Agents
+### 🔀 Connected agents
 
 Connected agents are **full-fledged, independent agents** that your main agent can collaborate with. Think of them as separate departments working together on a project.
 
-#### Key Technical Details
+#### Key technical details
 
 - Connected agents have **their own topics** and conversation flows. They operate independently with their own settings, logic, and deployment lifecycle.
 - Connected agents **must be published** before they can be added to and used by other agents.
@@ -105,7 +105,7 @@ Connected agents are **full-fledged, independent agents** that your main agent c
 !!! tip "Tip"
     You can mix both approaches! For example, your main agent could connect to external agents from other teams while also having its own child agents for specialized internal tasks.
 
-## 🎯Multi-Agent Architecture Patterns
+## 🎯Multi-agent architecture patterns
 
 When designing multi-agent systems, several patterns emerge based on how agents interact:
 
@@ -118,60 +118,60 @@ When designing multi-agent systems, several patterns emerge based on how agents 
 !!! tip "Tip"
     You may even have a hybrid of two or more of these patterns.
 
-## 💬Agent Communication and Context Sharing
+## 💬Agent communication and context sharing
 
 When agents work together, they need to share information effectively. Here's how this works in Copilot Studio:
 
-### Conversation History
+### Conversation history
 
 By default, when a main agent calls a child or connected agent, it can pass along the **conversation history**. This gives the specialist agent full context about what the user has been discussing.
 
 You can disable this for security or performance reasons - for example, if the specialist agent only needs to complete a specific task without needing the full conversation context. This can be a good defense against **data leakage**.
 
-### Explicit Instructions
+### Explicit instructions
 
 Your main agent can give **specific instructions** to child or connected agents. For example: "Process this resume and summarize their skills for the Senior Developer role."
 
-### Return Values
+### Return values
 
 Agents can return structured information back to the calling agent, allowing the main agent to use that information in subsequent steps or share it with other agents.
 
-### Dataverse Integration
+### Dataverse integration
 
 For more complex scenarios, agents can share information through **Dataverse** or other data stores, allowing for persistent context sharing across multiple interactions.
 
-## ↘️Child Agent: Application Intake Agent
+## ↘️Child agent: Application Intake Agent
 
 Let's start building our multi-agent hiring system. Our first specialist will be the **Application Intake Agent** - a child agent responsible for processing incoming resumes and candidate information.
 
-### 🤝Application Intake Agent Responsibilities
+### 🤝Application Intake Agent responsibilities
 
-- **Parse resume content** from PDFs provided via interactive chat (In a future mission you will learn how to process resumes autonomously).
+- **Parse resume content** from PDFs provided via interactive chat (In a future mission you'll learn how to process resumes autonomously).
 - **Extract structured data** (name, skills, experience, education)
 - **Match candidates to open roles** based on qualifications and cover letter
 - **Store candidate information** in Dataverse for later processing
-- **Deduplicate applications** to avoid creating the same Candidate twice, match to existing records using the email address extracted from the Resume.
+- **Deduplicate applications** to avoid creating the same candidate twice, match to existing records using the email address extracted from the resume.
 
-### ⭐Why This Should Be a Child Agent
+### ⭐Why this should be a child agent
 
 The Application Intake Agent fits perfectly as a child agent because:
 
 - It's specialized for document processing and data extraction
-- It doesn't need to be published separately  
+- It doesn't need separate publishing  
 - It's part of our overall hiring solution managed by the same team
 - It focuses on a specific trigger (new resume received) and is invoked from the Hiring Agent.
 
-## 🔀Connected Agent: Interview Prep Agent  
+## 🔀Connected agent: Interview Prep Agent  
 
 Our second specialist will be the **Interview Prep Agent** - a connected agent that helps create comprehensive interview materials and evaluates candidate responses.
 
-### 🤝Interview Prep Agent Responsibilities
+### 🤝Interview Prep Agent responsibilities
 
 - **Create interview packs** with company information, role requirements, and evaluation criteria
 - **Generate interview questions** tailored to specific roles and candidate backgrounds
-- **Answer general questions** about the Job Roles and Applications for stakeholder communication
+- **Answer general questions** about the job roles and applications for stakeholder communication
 
-### ⭐Why This Should Be a Connected Agent
+### ⭐Why this should be a connected agent
 
 The Interview Prep Agent works better as a connected agent because:
 
@@ -199,7 +199,7 @@ Before starting, ensure you have:
 1. Select **Solutions**.
 1. Locate your Operative solution, select the ellipsis (...) next to it, and choose **Set preferred solution**. This will ensure that all your work will be added to this solution.
 
-### 1. Open Your Existing Hiring Agent
+### 1. Open your existing Hiring Agent
 
 1. **Navigate** to Copilot Studio. Ensure your environment is selected in the top right Environment Picker.
 
@@ -225,7 +225,7 @@ Before starting, ensure you have:
     | Use information from the Web | **Off** |
     | File uploads | **On** |
 
-### 2. Add the Application Intake Child Agent
+### 2. Add the Application Intake child agent
 
 1. **Navigate** to the **Agents** tab within your Hiring Agent - this is where you'll add specialist agents.
 
@@ -241,16 +241,16 @@ Before starting, ensure you have:
     Processes incoming resumes and stores candidates in the system
     ```
 
-1. Ensure that the toggle **Web Search** is set to **Disabled**. This is because we only want to used information provided by the parent agent.
+1. Ensure that the toggle **Web Search** is set to **Disabled**. This is because we only want to use information provided by the parent agent.
 
-### 3. Add Tools and Connections
+### 3. Add tools and connections
 
-Agents cannot perform any actions without being given Tools or Topics.
+Agents can't perform any actions without being given tools or topics.
 
-We are using **Agent Flow tools** rather than Topics for the *Upload Resume* and *Upsert Candidate* steps because these are complex, multi-step backend processes that require deterministic execution and integration with external systems. While Topics are best for guiding the conversational dialog, Agent Flows provide the structured automation needed to reliably handle file processing, data validation, and database upserts (insert new or update existing) without depending on user interaction.
+We're using **Agent Flow tools** rather than Topics for the *Upload Resume* and *Upsert Candidate* steps because these are complex, multi-step backend processes that require deterministic execution and integration with external systems. While Topics are best for guiding the conversational dialog, Agent Flows provide the structured automation needed to reliably handle file processing, data validation, and database upserts (insert new or update existing) without depending on user interaction.
 
 1. Locate the **Tools** section inside the Application Intake Agent page.
-   **Important:** This is not the Tools tab of the parent agent, but can be found if you scroll down underneath the child agent instructions.
+   **Important:** This isn't the Tools tab of the parent agent, but can be found if you scroll down underneath the child agent instructions.
 
 1. Select **+ Add** - > Select **+ New tool** → Select **Agent flow**.
    The Agent Flow designer will open, this is where we will add the upload resume logic.
@@ -344,7 +344,7 @@ We are using **Agent Flow tools** rather than Topics for the *Upload Resume* and
 
 1. Select **Save**
 
-### 4. Define Agent Instructions
+### 4. Define agent instructions
 
 1. Move back in to the **Application Intake Agent**, and then locate the **Instructions** panel.
 
@@ -371,7 +371,7 @@ We are using **Agent Flow tools** rather than Topics for the *Upload Resume* and
 
 1. Select **Save**
 
-### 5. Test Your Child Agent
+### 5. Test your child agent
 
 1. Download the [test Resumes.](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
 
@@ -385,7 +385,7 @@ We are using **Agent Flow tools** rather than Topics for the *Upload Resume* and
 
     - The agent should then give a message similar to *The resume for Avery Example has been successfully uploaded. The resume number is R10026.*
 
-1. In the Activity map, you should see the Application Intake Agent handling the Resume upload.
+1. In the Activity map, you should see the Application Intake Agent handling the resume upload.
 
 1. Navigate to make.powerapps.com → Ensure your environment is selected in the top right Environment Picker.
 
@@ -393,11 +393,11 @@ We are using **Agent Flow tools** rather than Topics for the *Upload Resume* and
 
 1. Navigate to Resumes, and check that the resume file is uploaded and the cover letter is set accordingly.
 
-## 🧪Lab 2.2: Adding the Interview Prep Connected Agent
+## 🧪Lab 2.2: Adding the Interview Prep connected agent
 
 Now let's create our connected agent for interview preparation and add it to your existing Hiring Agent.
 
-### 1. Create a New Standalone Agent
+### 1. Create a new standalone agent
 
 1. **Navigate** to Copilot Studio. Ensure your environment is still selected in the top right Environment Picker.
 
@@ -452,7 +452,7 @@ Now let's create our connected agent for interview preparation and add it to you
 
 1. Select **Create**
 
-### 3. Add Specialized Knowledge
+### 3. Add specialized knowledge
 
 1. In the Knowledge section, select **+ Add knowledge**
 1. Select **Dataverse**
@@ -467,13 +467,13 @@ Now let's create our connected agent for interview preparation and add it to you
 1. Select **Save**
 1. Select **Publish**, and wait for the publishing to complete.
 
-### 4. Connect the Interview Prep Agent to Your Hiring Agent
+### 4. Connect the Interview Prep Agent to your Hiring Agent
 
 1. Navigate back to your **Hiring Agent**
 1. Select the **Agents** Tab
 1. Ensure that you see both the **Application Intake Agent**, and the Interview Agent. If not, use the **+Add an agent** → **Copilot Studio**, to add the Interview Agent.
 
-### 5. Test Multi-Agent Collaboration
+### 5. Test multi-agent collaboration
 
 1. **Toggle** the test panel open by selecting **Test**.
 
@@ -487,11 +487,11 @@ Now let's create our connected agent for interview preparation and add it to you
    **Examples:**
 
    ```text
-   Which Job Roles have similar Evaluation Criteria?
+   Which job roles have similar evaluation criteria?
    ```
 
    ```text
-   Which active resumes are suitable for the Power Platform Developer Role?
+   Which active resumes are suitable for the Power Platform Developer role?
    ```
 
 ## 🎉  Mission Complete
@@ -500,24 +500,24 @@ Outstanding work, Agent! You've successfully transformed your single Hiring Agen
 
 Here's what you've accomplished:
 
-**✅ Multi-Agent Architecture Understanding**  
+**✅ Multi-agent architecture understanding**  
 You now understand when to use child agents vs connected agents and how to design systems that scale.
 
-**✅ Application Intake Child Agent**  
+**✅ Application Intake child agent**  
 You've added a specialized child agent to your Hiring Agent that processes resumes, extracts candidate data, and stores information in Dataverse.
 
-**✅ Interview Prep Connected Agent**  
+**✅ Interview Prep connected agent**  
 You've built a reusable connected agent for interview preparation and successfully connected it to your Hiring Agent.
 
-**✅ Agent Communication**  
+**✅ Agent communication**  
 You've seen how your main agent can coordinate with specialist agents, share context, and orchestrate complex workflows.
 
-**✅ Foundation for Autonomy**  
+**✅ Foundation for autonomy**  
 Your enhanced hiring system is now ready for the advanced features we'll add in upcoming missions: autonomous triggers, content moderation, and deep reasoning.
 
 🚀**Next up:** In your next mission, you'll learn how to configure your agent to autonomously process resumes from emails and perform actions on a schedule
 
-⏩[Move to Mission 03: Automate your agent with Triggers](../03-automate-triggers/README.md)
+⏩[Move to Mission 03: Automate your agent with triggers](../03-automate-triggers/README.md)
 
 ## 📚 Tactical Resources
 
