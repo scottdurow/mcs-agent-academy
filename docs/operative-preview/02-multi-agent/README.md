@@ -1,5 +1,7 @@
 # 🚨 Mission 02: Connected Agents
 
+--8<-- "disclaimer.md"
+
 ## 🕵️‍♂️ CODENAME: `OPERATION SYMPHONY`
 
 > **⏱️ Operation Time Window:** `~45 minutes`
