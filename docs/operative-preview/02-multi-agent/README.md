@@ -190,7 +190,6 @@ Before starting, ensure you have:
 
 - Your **Hiring Agent** from Mission 01 open in Copilot Studio
 - Access to the Dataverse environment with candidate storage tables
-- Sample resume files for testing
 
 !!! note "Building on Mission 01"
     This mission builds directly on the Hiring Agent you created in Mission 01. If you haven't completed that mission or need to start fresh, you can import the Mission 02 starter solution which includes the base Hiring Agent and required Dataverse tables.
