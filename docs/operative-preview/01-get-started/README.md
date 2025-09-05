@@ -64,21 +64,26 @@ In this hands-on lab, you'll establish the foundation for your hiring automation
 1. Select **Import**
 
 !!! success
-    On success, you will see a green notification bar when it's done!
+    On success, you will see a green notification bar with the following message when it's done:  
+    "Solution "Operative - 01" imported successfully."
 
-When the solution is imported, take a look at what you imported.
+When the solution is imported, take a look at what you imported by selecting the display name of the solution (`Operative -01`).
 
-![Imported tables](./assets/tables.png)
+![Imported tables](./assets/components.png)
 
-The following tables are imported:
+The following components are imported:
 
-| Display Name | Name | Description |
+| Display Name | Type | Description |
 |-------------|------|-------------|
-| Candidate | ppa_candidate | Candidate information |
-| Evaluation Criteria | ppa_evaluationcriteria | Evaluation criteria for the role |
-| Job Application | ppa_jobapplication | Job applications |
-| Job Role | ppa_jobrole | Job roles |
-| Resume | ppa_resume | Resumes of the candidates |
+| Candidate | Table | Candidate information |
+| Evaluation Criteria | Table | Evaluation criteria for the role |
+| Hiring Hub | Model-Driven App | Application for managing the hiring process |
+| Hiring Hub | Site Map | Navigation structure for the Hiring Hub app |
+| Job Application | Table | Job applications |
+| Job Role | Table | Job roles |
+| Resume | Table | Resumes of the candidates |
+
+As the last task for this lab, Select the **Publish all customizations** button at the top of the page.
 
 ### 🧪 Lab 1.2: Import sample data
 
@@ -89,18 +94,73 @@ In this lab, you will add sample data to some of the tables that you imported in
 1. **[Download](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/operative-preview/01-get-started/assets/evaluation-criteria.csv)** the CSV-file with the evaluation criteria
 1. **[Download](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/operative-preview/01-get-started/assets/job-roles.csv)** the CSV-file with the job roles
 
-#### Import the sample data
+#### Import the Job Role sample data
 
-1. Go to the **[Power Apps Maker Portal](https://make.powerapps.com)**
+1. Go back to the solution you just imported in the last lab
+1. Select the **Hiring Hub** Model-Driven App by selecting the checkmark in front of the row
+1. Select the **Play** button at the top
 
     !!! warning
-        Always make sure you are in the right environment! You want to make sure you are in the same environment as where you imported the tables.
+        You might be prompted to login again. Make sure to do that. After doing that, you should see the Hiring Hub app.
 
-1. Select **Tables** in the left navigation
-1. Select the **Custom** button to filter the tables to the custom tables
-1. Select **Evaluation Criteria** by clicking on the display name
-1. Select **Import > Import data from Excel**
-1.
+1. Select **Job Roles** in the left navigation
+1. Select the **More** icon (three dots below each other) in the command bar
+1. Select the **right arrow** next to *Import from Excel*
+
+    ![Import from Excel](./assets/import-from-excel.png)
+
+1. Select **Import from CSV**
+
+    ![Import from CSV](./assets/import-from-csv.png)
+
+1. Select the **Choose File** button, select the **job-roles.csv** file you just downloaded and then select **Open**
+1. Select **Next**
+1. Leave the next step as is and select **Review Mapping**
+
+    ![Review mapping](./assets/import-from-csv-job-roles.png)
+
+1. Make sure the mapping is correct and select **Finish Import**
+
+    !!! info
+        This will start an import and you will be able to track progress or finish the process immediately by selecting **Done**
+
+1. Select **Done**
+
+This can take a little while, but you can hit the **Refresh** button to see if the import has succeeded.
+
+![Job roles import successful](./assets/job-roles-import-successful.png)
+
+#### Import the Evaluation Criteria sample data
+
+1. Select **Evaluation Criteria** in the left navigation
+1. Select the **More** icon (three dots below each other) in the command bar
+1. Select the **right arrow** next to *Import from Excel*
+
+    ![Import from Excel](./assets/import-from-excel.png)
+
+1. Select **Import from CSV**
+
+    ![Import from CSV](./assets/import-from-csv.png)
+
+1. Select the **Choose File** button, select the **evaluation-criteria.csv** file you just downloaded and then select **Open**
+1. Select **Next**
+1. Leave the next step as is and select **Review Mapping**
+
+    ![Review mapping](./assets/import-from-csv-evaluation-criteria.png)
+
+1. Now we have to do a bit more work for the mapping. Select the magnifying glass(🔎 icon) next to the Job Role field
+1. Make sure **Job Title** is selected here, and if not - add it
+1. Select **OK**
+1. Make sure the rest of the mapping is correct too and select **Finish Import**
+
+    !!! info
+        This will start an import again and you will be able to track progress or finish the process immediately by selecting **Done**
+
+1. Select **Done**
+
+This can take a little while, but you can hit the **Refresh** button to see if the import has succeeded.
+
+![Evaluation Criteria import successful](./assets/evaluation-criteria-import-successful.png)
 
 ### 🧪 Lab 1.3: Create the hiring agent
 
