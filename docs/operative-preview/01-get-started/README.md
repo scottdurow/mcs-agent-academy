@@ -202,5 +202,5 @@ Next up is [Mission 02](../02-multi-agent/README.md): Make your agent multi-agen
 
 ## 📚 Tactical Resources
 
-- [Microsoft Copilot Studio Documentation](https://docs.microsoft.com/copilot-studio)
-- [Power Platform Dataverse Best Practices](https://docs.microsoft.com/power-platform/dataverse)
+- [Microsoft Copilot Studio - Create an agent](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot)
+- [Microsoft Dataverse Documentation](https://learn.microsoft.com/power-apps/maker/data-platform)
