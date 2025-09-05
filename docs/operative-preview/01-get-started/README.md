@@ -59,26 +59,48 @@ In this hands-on lab, you'll establish the foundation for your hiring automation
 1. Select the **...** in the left navigation and select **Solutions**
 1. Select the **Import Solution** button on the top
 1. **[Download](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/operative-preview/01-get-started/assets/Operative01_1_0_0_0.zip)** the prepared solution
-
-    !!! info "Solution"  
-        This solution contains multiple tables you need later on in the course:
-        <!-- markdownlint-disable-next-line MD009 -->
-        
-        - **Candidate** - Candidate information
-        - **Evaluation Criteria** - Evaluation criteria for the role
-        - **Job Application** - Job applications
-        - **Job Role** - Job roles
-        - **Resume** - Resumes of the candidates
-
 1. Select **Browse** and select the downloaded solution from the previous step
 1. Select **Next**
 1. Select **Import**
 
-This will import the solution, it might take a while, but you will see a green notification bar when it's done!
+!!! success
+    On success, you will see a green notification bar when it's done!
 
-### 🧪 Lab 1.2: Generate sample data
+When the solution is imported, take a look at what you imported.
 
-In this
+![Imported tables](./assets/tables.png)
+
+The following tables are imported:
+
+| Display Name | Name | Description |
+|-------------|------|-------------|
+| Candidate | ppa_candidate | Candidate information |
+| Evaluation Criteria | ppa_evaluationcriteria | Evaluation criteria for the role |
+| Job Application | ppa_jobapplication | Job applications |
+| Job Role | ppa_jobrole | Job roles |
+| Resume | ppa_resume | Resumes of the candidates |
+
+### 🧪 Lab 1.2: Import sample data
+
+In this lab, you will add sample data to some of the tables that you imported in lab 1.1.
+
+#### Download the files to import
+
+1. **[Download](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/operative-preview/01-get-started/assets/evaluation-criteria.csv)** the CSV-file with the evaluation criteria
+1. **[Download](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/operative-preview/01-get-started/assets/job-roles.csv)** the CSV-file with the job roles
+
+#### Import the sample data
+
+1. Go to the **[Power Apps Maker Portal](https://make.powerapps.com)**
+
+    !!! warning
+        Always make sure you are in the right environment! You want to make sure you are in the same environment as where you imported the tables.
+
+1. Select **Tables** in the left navigation
+1. Select the **Custom** button to filter the tables to the custom tables
+1. Select **Evaluation Criteria** by clicking on the display name
+1. Select **Import > Import data from Excel**
+1.
 
 ### 🧪 Lab 1.3: Create the hiring agent
 
@@ -86,9 +108,9 @@ In this
 
 Mission 01 is completed! You now have mastered the following skills:
 
-- **Scenario Understanding**: Comprehensive knowledge of hiring automation challenges and solutions
-- **Solution Deployment**: Successfully imported and configured the fundamentals of a hiring management system
-- **Agent Creation**: Built an hiring agent that is the start of the scenario you're going to build as an Agent Academy Operative
+✅ **Scenario Understanding**: Comprehensive knowledge of hiring automation challenges and solutions  
+✅ **Solution Deployment**: Successfully imported and configured the fundamentals of a hiring management system  
+✅ **Agent Creation**: Built an hiring agent that is the start of the scenario you're going to build as an Agent Academy Operative  
 
 Next up is Mission 02: Make your agent multi-agent ready with connected agents.
 
