@@ -42,9 +42,9 @@ The solution helps HR teams save time and make better decisions by:
 
 ### How It Works
 
-- A central "Hiring Agent" coordinates the process and stores data in Microsoft Dataverse.
-- An "Application Intake Agent" reads resumes and creates job applications.
-- An "Interview Prep Agent" generates interview questions and documents based on the candidate's background.
+- A central **Hiring Agent** coordinates the process and stores data in Microsoft Dataverse.
+- An **Application Intake Agent** reads resumes and creates job applications.
+- An **Interview Prep Agent** generates interview questions and documents based on the candidate's background.
 - The system can be published to a demo website, allowing stakeholders to interact with it.
 
 This scenario is ideal for organizations looking to modernize their recruitment workflows using AI-powered automation, while maintaining transparency, fairness, and efficiency.
@@ -58,16 +58,16 @@ In this hands-on lab, you'll establish the foundation for your hiring automation
 1. Go to **[Copilot Studio](https://copilotstudio.microsoft.com)**
 1. Select the **...** in the left navigation and select **Solutions**
 1. Select the **Import Solution** button on the top
-1. **[Download](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/operative-preview/01-get-started/assets/Operative01_1_0_0_0.zip)** the prepared solution
+1. **[Download](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/operative-preview/01-get-started/assets/Operative_1_0_0_0.zip)** the prepared solution
 1. Select **Browse** and select the downloaded solution from the previous step
 1. Select **Next**
 1. Select **Import**
 
 !!! success
     On success, you will see a green notification bar with the following message when it's done:  
-    "Solution "Operative - 01" imported successfully."
+    "Solution "Operative" imported successfully."
 
-When the solution is imported, take a look at what you imported by selecting the display name of the solution (`Operative -01`).
+When the solution is imported, take a look at what you imported by selecting the display name of the solution (`Operative`).
 
 ![Imported tables](./assets/components.png)
 
@@ -164,6 +164,32 @@ This can take a little while, but you can hit the **Refresh** button to see if t
 
 ### 🧪 Lab 1.3: Create the hiring agent
 
+Now you are done with the setup of the prerequisites, it's time for the actual work! Let's add our Hiring Agent first!
+
+1. Go to **[Copilot Studio](https://copilotstudio.microsoft.com)** and make sure you are in the same environment as where you imported the solution and the data
+1. Select **Agents** in the left navigation
+1. Select **New Agent**
+1. Select **Configure**
+1. For **Name**, enter:
+
+    ```text
+    Hiring Agent
+    ```
+
+1. For **Description**, enter:
+
+    ```text
+    Central orchestrator for all hiring activities
+    ```
+
+1. Select the **...** next to the *Create* button on the top right corner
+1. Select **Update advanced settings**
+1. As **Solution**, select `Operative`
+1. Select **Update**
+1. Select **Create** in the top right corner
+
+This will create the Hiring Agent for you, which you will use throughout this Operative course.
+
 ## 🎉 Mission Complete
 
 Mission 01 is completed! You now have mastered the following skills:
@@ -172,7 +198,7 @@ Mission 01 is completed! You now have mastered the following skills:
 ✅ **Solution Deployment**: Successfully imported and configured the fundamentals of a hiring management system  
 ✅ **Agent Creation**: Built an hiring agent that is the start of the scenario you're going to build as an Agent Academy Operative  
 
-Next up is Mission 02: Make your agent multi-agent ready with connected agents.
+Next up is [Mission 02](../02-multi-agent/README.md): Make your agent multi-agent ready with connected agents.
 
 ## 📚 Tactical Resources
 
