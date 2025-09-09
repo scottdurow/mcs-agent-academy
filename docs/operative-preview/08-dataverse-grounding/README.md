@@ -12,7 +12,7 @@ Welcome back, Operative. Your multi-agent hiring system is operational, but ther
 
 Currently, your Summarize Resume prompt operates with static knowledge. But what if it could dynamically access your job roles database to provide accurate, up-to-date matches? What if it understood your evaluation criteria without you having to hardcode them?
 
-In this mission, you'll enhance your custom prompt with **Dataverse grounding** - connecting your prompts directly to live data sources. This transforms your agents from static responders to dynamic, data-driven intelligence systems that adapt to changing business needs.
+In this mission, you'll enhance your custom prompt with **Dataverse grounding** - connecting your prompts directly to live data sources. This transforms your agents from static responders to dynamic, data-driven systems that adapt to changing business needs.
 
 Your mission: integrate real-time job role and evaluation criteria data into your resume analysis workflow, creating a self-updating system that stays current with your organization's hiring requirements.
 
@@ -63,7 +63,7 @@ When you enable Dataverse grounding for a custom prompt:
 
 ### From static to dynamic: The grounding advantage
 
-Let's examine your current Summarize Resume flow from Mission 07 and understand how Dataverse grounding transforms it from static to dynamic intelligence.
+Let's examine your current Summarize Resume flow from Mission 07 and see how Dataverse grounding transforms it from static to dynamic intelligence.
 
 **Current static approach:**
 Your existing prompt likely includes hardcoded evaluation criteria and predetermined matching logic. This approach works but requires manual updates whenever you add new job roles, change evaluation criteria, or shift company priorities.
@@ -241,7 +241,7 @@ First, let's examine the Dataverse tables you'll be grounding with:
 1. Select the **Resume** parameter, and upload a sample resume.
 1. Select **Test**.
 1. Once the test has run, notice that the JSON output now includes the **Matched Roles**.
-1. Select the **Knowledge used** tab, to see the Dataverse data that was merged with your prompt before it was executed.
+1. Select the **Knowledge used** tab, to see the Dataverse data that merged with your prompt before execution.
 1. **Save** your updated prompt. The system will now automatically include this Dataverse data with your prompt when the existing Summarize Resume Agent Flow calls it.
 
 ### 2. Add Job Application Tool
@@ -333,7 +333,7 @@ Now you'll connect the published flow to your Application Intake Agent.
 
 ### 3. Define agent instructions
 
-In order to create job applications, the agent must be told when to use the new tool. In this case we will be asking the user to confirm which of the suggested job roles to apply to, and instruct the agent to run the tool for each role.
+To create job applications, you need to tell the agent when to use the new tool. In this case, you'll ask the user to confirm which suggested job roles to apply to, and instruct the agent to run the tool for each role.
 
 1. Move back in to the **Application Intake Agent**, and then locate the **Instructions** panel.
 
@@ -370,7 +370,7 @@ In order to create job applications, the agent must be told when to use the new 
 1. Select **Save**
 
 !!! tip "Iterating over multiple items in Generative Orchestration"
-    These instructions make use of generative orchestrations ability to iterate over multiple rows when making a decision on which steps and tools to use.
+    These instructions use generative orchestration's ability to iterate over multiple rows when making decisions about which steps and tools to use.
 
 ### 4. Validate the enhancement
 

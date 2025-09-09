@@ -10,11 +10,11 @@
 
 Welcome, Operative. Your previous missions have equipped you with powerful agent orchestration skills, but now it's time to unlock a game-changing capability: **multimodal document analysis**.
 
-Your assignment, should you choose to accept it, is **Document Resume Recon** - mastering the art of extracting structured intelligence from any document with surgical precision. While your agents can process text with ease, the real world throws PDFs, images, and complex documents at you daily. Resumes pile up, invoices need processing, and forms require instant digitization.
+Your assignment, should you choose to accept it, is **Document Resume Recon** - extracting structured data from any document with precision. While your agents can process text with ease, the real world requires handling PDFs, images, and complex documents daily. Resumes pile up, invoices need processing, and forms require instant digitization.
 
-This mission will transform you from a text-only operative into a **multimodal intelligence expert**. You'll learn to configure AI that sees, reads, and understands documents like a human analyst - but with the speed that only AI can deliver. By mission's end, you'll have built a complete resume extraction system that seamlessly integrates with your hiring workflow.
+This mission will transform you from a text-only agent builder into a **multimodal expert**. You'll learn to configure AI that reads and understands documents like a human analyst - but with AI speed and consistency. By mission's end, you'll have built a complete resume extraction system that integrates with your hiring workflow.
 
-The intelligence you gather here will be critical for the advanced data grounding operations in your next mission.
+The techniques you learn here will be essential for the advanced data grounding operations in your next mission.
 
 ## 🔎 Objectives
 
@@ -30,7 +30,7 @@ In this mission, you'll learn:
 
 ### What makes a prompt "multimodal"?
 
-Here's the intelligence briefing: traditional prompts are text-only operatives. But multimodal prompts? They're elite agents capable of processing multiple types of intel:
+Traditional prompts work with text only. But multimodal prompts can process multiple types of content:
 
 - **Text**: Written instructions and content
 - **Images**: Photos, screenshots, charts, and diagrams (.PNG, .JPG, .JPEG)  
@@ -38,15 +38,15 @@ Here's the intelligence briefing: traditional prompts are text-only operatives. 
 
 This capability opens up powerful scenarios like analyzing resumes, processing invoices, or extracting data from forms.
 
-### Why multimodal matters for your operations
+### Why multimodal matters for your workflows
 
-Every day, your organization faces these intelligence challenges:
+Every day, your organization faces these document processing challenges:
 
-- **Resume screening**: Manually reading hundreds of resumes burns through valuable hours
-- **Invoice processing**: Extracting vendor details, amounts, and dates from unpredictable document structures
-- **Form analysis**: Converting paper forms into actionable digital intelligence
+- **Resume screening**: Manually reading hundreds of resumes takes valuable time
+- **Invoice processing**: Extracting vendor details, amounts, and dates from varied document formats
+- **Form analysis**: Converting paper forms into digital data
 
-Multimodal prompts eliminate these bottlenecks by combining AI's language understanding with advanced visual analysis capabilities. Think of it as giving your AI agent superhuman sight.
+Multimodal prompts eliminate these bottlenecks by combining AI's language understanding with visual analysis capabilities. This gives your AI the ability to process documents as effectively as text.
 
 ### Common business scenarios
 
@@ -133,7 +133,7 @@ JSON output is essential for:
 
 ## 🧪Lab 7: Building a resume extraction system
 
-Time to put your multimodal training into action, Operative. You'll construct a sophisticated resume extraction system that analyzes candidate documents and transforms them into structured intelligence for your hiring workflow.
+Time to put your multimodal knowledge into practice. You'll build a comprehensive resume extraction system that analyzes candidate documents and transforms them into structured data for your hiring workflow.
 
 ### Mission prerequisites
 
@@ -145,7 +145,7 @@ Before starting, ensure you have:
 - Sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
 
 !!! note "Mission 7 starter solution"
-    This mission builds on your multi-agent hiring system from previous operations. If you need a fresh start, you can import the Mission 08 starter solution which includes all required components.
+    This mission builds on your multi-agent hiring system from previous missions. If you need a fresh start, you can import the Mission 08 starter solution which includes all required components.
 
 ### 1. Create a multimodal prompt
 
