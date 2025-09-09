@@ -12,7 +12,7 @@ Welcome back, Operative. Your multi-agent hiring system is operational, but ther
 
 Currently, your Summarize Resume prompt operates with static knowledge. But what if it could dynamically access your job roles database to provide accurate, up-to-date matches? What if it understood your evaluation criteria without you having to hardcode them?
 
-In this mission, you'll enhance your AI Builder custom prompt with **Dataverse grounding** - connecting your prompts directly to live data sources. This transforms your agents from static responders to dynamic, data-driven intelligence systems that adapt to changing business needs.
+In this mission, you'll enhance your custom prompt with **Dataverse grounding** - connecting your prompts directly to live data sources. This transforms your agents from static responders to dynamic, data-driven intelligence systems that adapt to changing business needs.
 
 Your mission: integrate real-time job role and evaluation criteria data into your resume analysis workflow, creating a self-updating system that stays current with your organization's hiring requirements.
 
@@ -20,7 +20,7 @@ Your mission: integrate real-time job role and evaluation criteria data into you
 
 In this mission, you'll learn:
 
-1. How **Dataverse grounding** enhances AI Builder custom prompts
+1. How **Dataverse grounding** enhances custom prompts
 1. When to use data grounding vs static instructions
 1. Designing prompts that dynamically incorporate live data
 1. Enhancing the Summarize Resume flow with job role matching
@@ -28,7 +28,7 @@ In this mission, you'll learn:
 
 ## 🧠 Understanding Dataverse grounding for prompts
 
-**Dataverse grounding** allows your AI Builder custom prompts to access live data from your Dataverse tables during inference. Instead of static instructions, your prompts can incorporate real-time information to make informed decisions.
+**Dataverse grounding** allows your custom prompts to access live data from your Dataverse tables when processing requests. Instead of static instructions, your prompts can incorporate real-time information to make informed decisions.
 
 ### Why Dataverse grounding matters
 
@@ -56,17 +56,17 @@ This approach provides several key benefits:
 
 When you enable Dataverse grounding for a custom prompt:
 
-1. **Data selection:** Choose specific Dataverse tables and columns to include. Related tables can also be selected that will be filtered based on the parent records retrieved.
+1. **Data selection:** Choose specific Dataverse tables and columns to include. You can also select related tables that the system will filter based on the parent records retrieved.
 1. **Context injection:** The prompt automatically includes the retrieved data in the prompt context
-1. **Intelligent filtering:** The system includes only data relevant to the current request if any filtering is provided.
-1. **Structured output:** Your prompt can reference the retrieved data and reason of the records retrieved in order to create the output.
+1. **Intelligent filtering:** The system includes only data relevant to the current request if you provide any filtering.
+1. **Structured output:** Your prompt can reference the retrieved data and reason about the records retrieved to create the output.
 
 ### From static to dynamic: The grounding advantage
 
 Let's examine your current Summarize Resume flow from Mission 07 and understand how Dataverse grounding transforms it from static to dynamic intelligence.
 
 **Current static approach:**
-For your existing prompt to match to job roles, it would likely includes hardcoded evaluation criteria, and predetermined matching logic. This approach works but requires manual updates whenever new job roles are added, evaluation criteria change, or company priorities shift.
+Your existing prompt likely includes hardcoded evaluation criteria and predetermined matching logic. This approach works but requires manual updates whenever you add new job roles, change evaluation criteria, or shift company priorities.
 
 **Dataverse grounding transformation:**
 By adding Dataverse grounding, your Summarize Resume flow will:
@@ -108,14 +108,14 @@ Before starting this lab, ensure you have:
 - Completed Mission 07 (or imported the starter solution)
 - Your custom prompt from Mission 07
 - Job Roles and Evaluation Criteria data imported as described in Mission 01
-- Download the sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+- Downloaded sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
 
 !!! note "Building on previous missions"
     This mission builds directly on the Summarize Resume flow you created in Mission 07 and the multi-agent system from Mission 02. If you need to start fresh, import the Mission 08 starter solution which includes the required components.
 
 ### 1. Add Dataverse grounding to your prompt
 
-We are building on the Summarize Resume prompt that we created in Mission 07. Currently it simply summarizes the resume, but now we are going to ground it on the job roles as they currently exist in Dataverse, making it always current.
+You'll build on the Summarize Resume prompt that you created in Mission 07. Currently it simply summarizes the resume, but now you'll ground it with the job roles as they currently exist in Dataverse, keeping it always current.
 
 #### Examine the tables and columns
 
@@ -141,7 +141,7 @@ First, let's examine the Dataverse tables you'll be grounding with:
 
 1. **Navigate** to Copilot Studio, and select your environment using the **Environment switcher** on the top right of the navigation bar.
 
-1. Select **Tools** from the left hand navigation.
+1. Select **Tools** from the left-hand navigation.
 
 1. Choose **Prompt** and locate your **Summarize Resume** prompt from Mission 07
 
@@ -201,7 +201,7 @@ First, let's examine the Dataverse tables you'll be grounding with:
     
     - Extract information only from the provided resume and cover letter documents.
     - Ensure accuracy in identifying contact details.
-    - Use the grounded job role data for matching decisions.
+    - Use the available job role data for matching decisions.
     - The summary should be concise but informative, suitable for quick application review.
     - If no suitable matches are found, indicate an empty list for MatchedRoles and explain briefly in the summary.
     
@@ -228,13 +228,13 @@ First, let's examine the Dataverse tables you'll be grounding with:
     !!! tip
         You can use **Add value** here to add in an input parameter as well - for example if you had a prompt to summarize an existing record, you could provide the Resume Number as a parameter to filter by.
 
-1. Next we will add the related Dataverse table **Evaluation Criteria**, by again selecting **+ Add content**, finding **Job Roles**, and instead of selecting the columns on Job Role, expand **Job Role (Evaluation Criteria)** and select the following columns, and then select **Add**:
+1. Next, you'll add the related Dataverse table **Evaluation Criteria**, by again selecting **+ Add content**, finding **Job Roles**, and instead of selecting the columns on Job Role, expand **Job Role (Evaluation Criteria)** and select the following columns, and then select **Add**:
 
     1. **Criteria Name**
 
     1. **Description**
 
-1. Select **Settings**, and adjust the **Record retrieval** to be 1000 - this will allow for the maximum Job Roles and Evaluation criteria to be added to your prompt.
+1. Select **Settings**, and adjust the **Record retrieval** to 1000 - this will allow the maximum Job Roles and Evaluation criteria to be included in your prompt.
 
 #### Test the enhanced prompt
 
@@ -242,11 +242,11 @@ First, let's examine the Dataverse tables you'll be grounding with:
 1. Select **Test**.
 1. Once the test has run, notice that the JSON output now includes the **Matched Roles**.
 1. Select the **Knowledge used** tab, to see the Dataverse data that was merged with your prompt before it was executed.
-1. **Save** your updated prompt. This Dataverse data will now automatically be included with your prompt when it is called via the existing Summarize Resume Agent Flow.
+1. **Save** your updated prompt. The system will now automatically include this Dataverse data with your prompt when the existing Summarize Resume Agent Flow calls it.
 
 ### 2. Add Job Application Tool
 
-To allow our Application Intake Agent to create Job Roles based on the suggested roles, we need to create an Agent Flow. This tool will be called for each of the suggested job roles that that the candidate is interested in.
+To allow our Application Intake Agent to create Job Roles based on the suggested roles, we need to create an Agent Flow. The agent will call this tool for each of the suggested job roles that the candidate is interested in.
 
 #### Create Agent Flow
 
@@ -395,7 +395,7 @@ Outstanding work, Operative! **Operation Grounding Control** is now complete. Yo
 Here's what you've accomplished in this mission:
 
 **✅ Dataverse grounding mastery**  
-You now understand how to connect AI Builder prompts to live data sources for dynamic intelligence.
+You now understand how to connect custom prompts to live data sources for dynamic intelligence.
 
 **✅ Enhanced resume analysis**  
 Your Summarize Resume flow now accesses real-time job role data and evaluation criteria for accurate matching.

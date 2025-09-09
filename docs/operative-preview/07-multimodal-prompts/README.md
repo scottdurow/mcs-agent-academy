@@ -8,7 +8,13 @@
 
 ## 🎯 Mission Brief
 
-Welcome, Operative. Your ability to analyze documents is about to level up. This mission will transform you into a multimodal AI expert, capable of extracting detailed information from resumes, invoices, and other documents with precision. You'll learn how Copilot Studio's multimodal prompts can process both text and images, understand different model capabilities, and format outputs for seamless integration with your business processes.
+Welcome, Operative. Your previous missions have equipped you with powerful agent orchestration skills, but now it's time to unlock a game-changing capability: **multimodal document analysis**.
+
+Your assignment, should you choose to accept it, is **Document Resume Recon** - mastering the art of extracting structured intelligence from any document with surgical precision. While your agents can process text with ease, the real world throws PDFs, images, and complex documents at you daily. Resumes pile up, invoices need processing, and forms require instant digitization.
+
+This mission will transform you from a text-only operative into a **multimodal intelligence expert**. You'll learn to configure AI that sees, reads, and understands documents like a human analyst - but with the speed that only AI can deliver. By mission's end, you'll have built a complete resume extraction system that seamlessly integrates with your hiring workflow.
+
+The intelligence you gather here will be critical for the advanced data grounding operations in your next mission.
 
 ## 🔎 Objectives
 
@@ -24,23 +30,23 @@ In this mission, you'll learn:
 
 ### What makes a prompt "multimodal"?
 
-Traditional prompts work with text only. Multimodal prompts can process multiple types of input:
+Here's the intelligence briefing: traditional prompts are text-only operatives. But multimodal prompts? They're elite agents capable of processing multiple types of intel:
 
 - **Text**: Written instructions and content
-- **Images**: Photos, screenshots, charts, and diagrams (.PNG, .JPG, .JPEG)
-- **Documents**: Invoices, Resumes, Forms etc. (.PDF)
+- **Images**: Photos, screenshots, charts, and diagrams (.PNG, .JPG, .JPEG)  
+- **Documents**: Invoices, resumes, forms (.PDF)
 
 This capability opens up powerful scenarios like analyzing resumes, processing invoices, or extracting data from forms.
 
-### Why multimodal matters for business
+### Why multimodal matters for your operations
 
-Consider these common business challenges:
+Every day, your organization faces these intelligence challenges:
 
-- **Resume screening**: Manually reading hundreds of resumes takes hours
-- **Invoice processing**: Extracting vendor details, amounts, and dates from unknown document structures
-- **Form analysis**: Converting paper forms into digital data
+- **Resume screening**: Manually reading hundreds of resumes burns through valuable hours
+- **Invoice processing**: Extracting vendor details, amounts, and dates from unpredictable document structures
+- **Form analysis**: Converting paper forms into actionable digital intelligence
 
-Multimodal prompts solve these by combining AI's language understanding with visual analysis capabilities.
+Multimodal prompts eliminate these bottlenecks by combining AI's language understanding with advanced visual analysis capabilities. Think of it as giving your AI agent superhuman sight.
 
 ### Common business scenarios
 
@@ -70,7 +76,7 @@ All of the following models support vision and document processing
 | **GPT-4.1** | Standard | Moderate | Complex documents, advanced content creation, high accuracy needs |
 | **o3** | Premium | Slow (reasons first) | Data analysis, critical thinking, sophisticated problem-solving |
 | **GPT-5 chat** | Standard | Enhanced | Latest document understanding, highest response accuracy |
-| **GPT-5 reasoning** | Premium | Slow (complex reasoning) | Most complex analysis, planning, advanced reasoning tasks |
+| **GPT-5 reasoning** | Premium | Slow (complex analysis) | Most sophisticated analysis, planning, advanced reasoning |
 
 ### Temperature settings explained
 
@@ -127,29 +133,31 @@ JSON output is essential for:
 
 ## 🧪Lab 7: Building a resume extraction system
 
-In this lab, you'll create a multimodal prompt that extracts key information from candidate resumes and formats it as JSON so that it can be used to update Dataverse.
+Time to put your multimodal training into action, Operative. You'll construct a sophisticated resume extraction system that analyzes candidate documents and transforms them into structured intelligence for your hiring workflow.
 
-### Prerequisites
+### Mission prerequisites
 
 Before starting, ensure you have:
 
 - Your **Hiring Agent** from previous missions open in Copilot Studio
 - Access to the Dataverse environment with candidate storage tables
 - The Application Intake Agent configured from Mission 02
-- Download the sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+- Sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
 
 !!! note "Mission 7 starter solution"
-    This mission builds on the multi-agent hiring system from the previous missions. Alternatively, you can import the Mission 08 starter solution which includes the required components.
+    This mission builds on your multi-agent hiring system from previous operations. If you need a fresh start, you can import the Mission 08 starter solution which includes all required components.
 
 ### 1. Create a multimodal prompt
 
-1. Sign in to [Copilot Studio](https://copilotstudio.preview.microsoft.com) , and select **Tools** from the left navigation.
+Your first objective: create a prompt capable of analyzing resume documents and extracting structured data.
 
-1. Select **+ New tool**, and then select **Prompt**.
+1. Sign in to [Copilot Studio](https://copilotstudio.preview.microsoft.com) and select **Tools** from the left navigation.
 
-1. Select the **title** (that will look similar to *Custom prompt 09/04/2025, 04:59:11 PM*), and rename it to be `Summarize Resume`.
+1. Select **+ New tool**, then select **Prompt**.
 
-1. In the Instructions, add the following:
+1. Rename the prompt from the default timestamp name (E.g. *Custom prompt 09/04/2025, 04:59:11 PM*) to `Summarize Resume`.
+
+1. In the Instructions field, add this prompt:
 
     ```text
     You are tasked with extracting key candidate information from a resume and cover letter to facilitate matching with open job roles and creating a summary for application review.
@@ -179,21 +187,23 @@ Before starting, ensure you have:
     CoverLetter: /text
     ```
 
-    !!! tip "Use Copilot!"
-        You can use the "Get started with Copilot" to generate your prompt using a free text description. Experiment with this by asking Copilot to create you a prompt to summarize a Resume!
+    !!! tip "Use Copilot assistance"
+        You can use "Get started with Copilot" to generate your prompt using natural language. Try asking Copilot to create a prompt to summarize a resume!
 
-1. Configure the parameters as follows:
+1. Configure the input parameters:
 
     | Parameter | Type | Name | Sample Data |
     |-----------|------|------|-------------|
-    | Resume | Image or document | Resume | Upload sample resume from test-data folder |
+    | Resume | Image or document | Resume | Upload a sample resume from the test-data folder |
     | CoverLetter | Text | CoverLetter | Here is a Resume! |
 
-1. Select **Test**, and observe the Model response. You will see a free text output that matches your prompt.
+1. Select **Test** to see the initial text output from your prompt.
 
 ### 2. Configure JSON output
 
-1. Because we want to use this information in a structured way to update Dataverse, add the following to the end of the prompt
+Now you'll convert the prompt to output structured JSON data instead of plain text.
+
+1. Add this JSON format specification to the end of your prompt instructions:
 
     ```text
     Output Format:
@@ -212,28 +222,28 @@ Before starting, ensure you have:
     }
     ```
 
-1. Next, change **Output** to be **JSON**
+1. Change the **Output** setting from "Text" to **JSON**.
 
-1. Select **Test** again to see the output formatted as a JSON document.
+1. Select **Test** again to verify the output is now formatted as JSON.
 
-1. Experiment with selecting different models to see the different outputs, and then switch back to the default model.
+1. Optional: Experiment with different AI models to see how outputs vary, then return to the default model.
 
-1. Select
+1. Select **Save** to create the prompt.
 
-1. Select **Save**, to create the prompt.
+1. In the **Configure for use in Agent** dialog, select **Cancel**.
 
-1. In the **Configure for use in Agent** dialog, select **Cancel**. This is because we are going to use our prompt in an Agent Flow rather than adding it directly as a tool.
-
-    !!! tip "Prompts as tools"
-        You can add a prompt directly to your agent as you learned in recruit - this gives it very specific instructions on performing tasks, however we need to take a more sophisticated approach to perform analysis on Resumes that are stored in Dataverse.
+    !!! info "Why we're not adding this as a tool yet"
+        You'll use this prompt in an Agent Flow rather than directly as a tool, which gives you more control over the data processing workflow.
 
 ### 3. Add prompt to an Agent Flow
+
+You'll create an Agent Flow that uses your prompt to process resumes stored in Dataverse.
 
 1. Navigate to your **Hiring Agent** inside Copilot Studio
 
 1. Select the **Agents** tab, and select the child **Application Intake Agent**
 
-1. Inside the **Tools** panel, Select **+ Add** -> **+ New tool** -> **Agent flow**
+1. Inside the **Tools** panel, Select **+ Add** → **+ New tool** → **Agent flow**
 
 1. Select the When an agent calls the flow node, use **+ Add an input** to add the following parameter:
 
@@ -252,7 +262,9 @@ Before starting, ensure you have:
     | **Row count** | Enter | 1 |
 
 1. Select the **+** Insert action icon below the Get Resume Record node, search for **Dataverse**, select **See more**, and then locate the **Download a file or an image** action.
-    NOTE: Don't select the action that ends in "from selected environment"
+
+    !!! tip "Pick the correct action!"
+        Be sure not to select the action that ends in "from selected environment"
 
 1. Rename the action `Download Resume`, and then set the following parameters:
 
@@ -277,7 +289,7 @@ Before starting, ensure you have:
 
 ### 4. Create candidate record
 
-Next we need to take the information that the Prompt gave us and create a new candidate record if it doesn't already exist.
+Next, you need to take the information that the Prompt gave you and create a new candidate record if it doesn't already exist.
 
 1. Select the **+** Insert action icon below the Summarize Resume node, search for **Dataverse**, select **See more**, and then locate the **List rows** action
 
@@ -307,9 +319,9 @@ Next we need to take the information that the Prompt gave us and create a new ca
     | **Candidate Name** | Dynamic data (thunderbolt icon) | Summarize Resume → CandidateName |
     | **Email** | Dynamic data (thunderbolt icon) | Summarize Resume → Email |
 
-### 5. Update the Resume, and respond to the agent
+### 5. Update resume and configure flow outputs
 
-Now that we have structured information about the Resume and Candidate, we return parameters to the agent so that it can make a decision on what to do next. This is one of the most important distinctions between generative AI orchestration and deterministic agent flows.
+Complete the flow by updating the resume record and configuring what data to return to your agent.
 
 1. Select the **+** Insert action icon below the condition, search for **Dataverse**, select **See more**, and then locate the **Update a row** action
 
@@ -344,7 +356,9 @@ Now that we have structured information about the Resume and Candidate, we retur
 
 1. Select the **Designer** tab again, and select **Publish**.
 
-### 6. Instruct the agent to summarize resumes
+### 6. Connect the flow to your agent
+
+Now you'll add the flow as a tool and configure your agent to use it.
 
 1. Open your **Hiring Agent** inside Copilot Studio
 
@@ -361,8 +375,6 @@ Now that we have structured information about the Resume and Candidate, we retur
     | **Description** | Summarize an existing Resume stored in Dataverse using a [ResumeNumber] as input, return the [CandidateNumber], and resume summary JSON |
     | **When this tool may be used** | Only when referenced by topics or agents |
 
-1. Select **Save**
-
 1. Navigate to the Application Intake Child agent, and add the following to the end of the instructions:
 
     ```text
@@ -377,17 +389,32 @@ Now that we have structured information about the Resume and Candidate, we retur
 
 ### 7. Test your agent
 
-1. Now you are ready to test the resume summarization by selecting Test and in the test panel, typing:
+Test your complete multimodal system to ensure everything works correctly.
 
-    ```text
-    Here is a candidate Resume
-    ```
+1. **Start testing**:
+    - Select **Test** to open the test panel
+    - Type: `Here is a candidate Resume`
 
-1. Upload a sample resume from [test Resumes.](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+1. **Upload a resume**:
+    - Upload one of the sample resumes from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+    - The agent should process the resume and provide a structured response
 
-1. Select the open activity map icon, and notice how the Resume upload tool is first run and then the Summarize Resume tool is then automatically run using the agent instructions.
+1. **Verify the results**:
+    - Check that you receive a Resume Number (format: R#####)
+    - Verify you get a Candidate Number and summary
+    - Use the activity map to see both the Resume upload tool and Summarize Resume tool in action
 
-1. The response should then provide you with a Candidate Number and summary of the resume in a structured response. In the next mission we will be using this information to perform further processing!
+1. **Check data persistence**:
+    - Navigate to [Power Apps](https://make.powerapps.com)
+    - Open **Apps** → **Hiring Hub** → **Play**
+    - Go to **Resumes** to verify the resume was uploaded and processed
+    - Check **Candidates** to see the extracted candidate information
+
+!!! tip "Troubleshooting"
+    - **Resume not processing**: Ensure the file is a PDF and under size limits
+    - **No candidate created**: Check that the email was extracted correctly from the resume
+    - **JSON format errors**: Verify your prompt instructions include the exact JSON structure
+    - **Flow errors**: Check that all Dataverse connections and expressions are configured correctly
 
 ### Production readiness notes
 
