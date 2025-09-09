@@ -333,7 +333,7 @@ Now you'll connect the published flow to your Application Intake Agent.
     | Parameter | Value |
     |-----------|-------|
     | **Description** | `Uploads a Resume when instructed. STRICT RULE: Only call this tool when referenced in the form "Resume Upload" and there are Attachments` |
-    | **Additional details → Allow agent to decide dynamically when to use this tool** | `Unchecked` |
+    | **Additional details → When this tool may be used** | `only when referenced by topics or agents` |
     | **Inputs → Add Input** | `contentBytes` |
     | **Inputs → Add Input** | `name` |
 
