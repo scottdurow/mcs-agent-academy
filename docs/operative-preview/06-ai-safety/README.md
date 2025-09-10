@@ -211,19 +211,74 @@ Copilot Studio provides built-in security monitoring through the **Protection St
 
 All published agents automatically have threat detection enabled and display an "Active" label, with detailed drill-down capabilities for security investigation.
 
-### Enterprise Security and Governance Controls
+## 🎛️Copilot Control System: Enterprise Governance Framework
 
-Copilot Studio integrates with broader enterprise security through comprehensive governance controls. [Review security and governance overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance):
+For organizations deploying AI agents at scale, Microsoft's **Copilot Control System (CCS)** provides comprehensive governance capabilities that extend beyond individual agent safety controls. CCS is an enterprise framework that integrates with familiar admin tools to provide centralized management, security, and oversight of Microsoft 365 Copilot and custom AI agents across your organization.
 
-- **Data Policy Controls**: Admins can govern agent capabilities through Power Platform admin center policies
-- **Audit Logging**: Full visibility into maker activities through Microsoft Purview and Microsoft Sentinel integration
-- **Authentication Options**: Support for Entra ID manual authentication with certificate providers
-- **Sensitivity Labels**: SharePoint data sources display sensitivity labels in agent responses
-- **Security Warnings**: Makers receive alerts before publishing when security configurations are modified
+!!! info "Governance & Enterprise Scale"
+    **Copilot Control System** bridges AI Safety with enterprise **Governance** and **Security** at organizational scale. While this mission focuses on individual agent safety controls, CCS provides the enterprise framework for managing hundreds or thousands of agents across your organization.
 
-These enterprise-grade controls ensure agents meet organizational security and compliance requirements for handling sensitive business information.
+### CCS Core Capabilities: Three Pillars
 
-## 🎯 Human-in-the-loop concepts
+CCS provides enterprise governance through three integrated pillars:
+
+#### 1. Security & Data Governance
+
+- **Sensitivity Label Inheritance**: AI-generated content automatically inherits the same classification as source data
+- **Purview DLP Integration**: Data Loss Prevention policies can block labeled content from being processed by Copilot
+- **Threat Protection**: Integration with Microsoft Defender and Purview to detect oversharing and prompt injection attacks
+- **Access Controls**: Multi-layered restrictions including conditional access, IP filtering, and Private Link
+- **Data Residency**: Control where data and conversation transcripts are stored for compliance
+
+#### 2. Management Controls & Agent Lifecycle
+
+- **Agent Type Management**: Centralized control over custom, shared, first-party, external, and frontier agents
+- **Lifecycle Management**: Approve, publish, deploy, remove, or block agents from the admin center
+- **Environment Groups**: Organize multiple environments with unified policy enforcement across dev/test/production
+- **License Management**: Assign and manage Copilot licenses and agent access per user or group
+- **Role-Based Administration**: Delegate specific admin responsibilities using Global Admin, AI Admin, and specialized roles
+
+#### 3. Measurement & Reporting
+
+- **Agent Usage Analytics**: Track active users, agent adoption, and usage trends across the organization
+- **Message Consumption Reports**: Monitor AI message volume by user and agent for cost management
+- **Copilot Studio Analytics**: Detailed agent performance, satisfaction metrics, and session data
+- **Security Analytics**: Comprehensive threat detection and compliance reporting
+- **Cost Management**: Pay-as-you-go billing with budgets and message pack capacity management
+
+### Integration with AI Safety Controls
+
+CCS complements the agent-level safety controls you will implemented in this mission:
+
+| **Agent-Level Controls** (This Mission) | **Enterprise Controls** (CCS) |
+|----------------------------------------|-------------------------------|
+| Content moderation settings per agent | Organization-wide content policies |
+| Individual agent instructions | Environment group rules and compliance |
+| Topic-level safety configurations | Cross-agent governance and audit trails |
+| Agent runtime protection monitoring | Enterprise threat detection and analytics |
+| Custom safety responses | Centralized incident response and reporting |
+
+### When to Consider CCS Implementation
+
+Organizations should evaluate CCS when they have:
+
+- **Multiple agents** across different departments or business units
+- **Compliance requirements** for audit trails, data residency, or regulatory reporting
+- **Scale challenges** managing agent lifecycles, updates, and governance manually
+- **Cost optimization** needs for tracking and controlling AI consumption across teams
+- **Security concerns** requiring centralized threat monitoring and response capabilities
+
+### Getting Started with CCS
+
+While this mission focuses on individual agent safety, organizations interested in enterprise governance should:
+
+1. **Review CCS Documentation**: Start with the [official Copilot Control System overview](https://adoption.microsoft.com/en-us/copilot-control-system/)
+1. **Assess Current State**: Inventory existing agents, environments, and governance gaps
+1. **Plan Environment Strategy**: Design dev/test/production environment groups with appropriate policies
+1. **Pilot Implementation**: Begin with a small set of agents and environments to test governance controls
+1. **Scale Gradually**: Expand CCS implementation based on lessons learned and organizational needs
+
+## 👀Human-in-the-loop concepts
 
 While content moderation automatically blocks harmful content, agents can also [escalate complex conversations to human agents](https://learn.microsoft.com/microsoft-copilot-studio/advanced-hand-off) when needed. This human-in-the-loop approach ensures:
 
@@ -268,9 +323,12 @@ Let's start by updating your Interview Agent's greeting to properly disclose its
 
 1. Select **Test** → **Refresh** to start new conversation, and then check that your new greeting is visible in the chat pane.
 
-### 2. Understanding Content Moderation Errors and Custom Messages
+### 3. Understanding Content Moderation Errors and Custom Messages
 
 Let's explore how Responsible AI content filtering works and how to handle blocked content.
+
+!!! info "Red Teaming"
+    The following tests use **red teaming** - deliberately trying problematic inputs to validate that your safety controls work properly. We'll test different ways your agent might be misused and confirm it responds appropriately. **Red teaming** means intentionally testing an AI system with challenging inputs to find vulnerabilities before real users do. The goal is to strengthen safety, not break the system.
 
 #### Testing Input Content Filter Behavior
 
@@ -443,6 +501,7 @@ Excellent work, Operative. You've successfully implemented comprehensive AI safe
 
 **Key Learning Achievements:**
 
+- ✅ **Applied red teaming techniques**: Used deliberate testing with problematic inputs to validate safety controls
 - ✅ **Mastered the three content blocking mechanisms**: Responsible AI filtering, Unknown Intent fallback, and Agent instruction-based controls
 - ✅ **Implemented multi-level content moderation**: Configured both agent-level and topic-level settings with appropriate safety thresholds
 - ✅ **Created custom prompt modifications**: Built sophisticated safety instructions with variables, boundaries, and helpful error handling
