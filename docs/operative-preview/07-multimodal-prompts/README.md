@@ -135,17 +135,17 @@ JSON output is essential for:
 
 Time to put your multimodal knowledge into practice. You'll build a comprehensive resume extraction system that analyzes candidate documents and transforms them into structured data for your hiring workflow.
 
-### Mission prerequisites
+### Prerequisites to complete this mission
 
-Before starting, ensure you have:
+1. You'll need to **either**:
 
-- Your **Hiring Agent** from previous missions open in Copilot Studio
-- Access to the Dataverse environment with candidate storage tables
-- The Application Intake Agent configured from Mission 02
-- Sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+    - **Have completed Mission 06** and have your multi-agent hiring system ready, **OR**
+    - **Import the Mission 07 starter solution** if you're starting fresh or need to catch up. [Download Mission 07 Starter Solution](https://aka.ms/agent-academy)
 
-!!! note "Mission 7 starter solution"
-    This mission builds on your multi-agent hiring system from previous missions. If you need a fresh start, you can import the Mission 08 starter solution which includes all required components.
+1. Sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+
+!!! note "Solution Import and Sample Data"
+    If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
 
 ### 1. Create a multimodal prompt
 

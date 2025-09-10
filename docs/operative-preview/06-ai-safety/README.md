@@ -293,11 +293,17 @@ Human escalation is different from content moderation - escalation actively tran
 
 Now let's explore how the three content blocking mechanisms work in practice and implement comprehensive safety controls.
 
-### Prerequisites
+### Prerequisites to complete this mission
 
-- Completion of Mission 05
-- Access to your Interview Agent from previous missions
-- Understanding of Copilot Studio topics and Generative Answers nodes
+1. You'll need to **either**:
+
+    - **Have completed Mission 05** and have your Interview Agent ready, **OR**
+    - **Import the Mission 06 starter solution** if you're starting fresh or need to catch up. [Download Mission 06 Starter Solution](https://aka.ms/agent-academy)
+
+1. Understanding of Copilot Studio topics and [Generative Answers nodes](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-boost-node?WT.mc_id=power-182762-scottdurow)
+
+!!! note "Solution Import and Sample Data"
+    If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
 
 ### 1. Adding AI Safety Disclosure to Agent Greeting
 

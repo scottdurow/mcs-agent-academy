@@ -101,17 +101,17 @@ While this worked, dedicated prompts with Dataverse grounding offer significant 
 
 Time to upgrade your resume analysis capabilities! You'll enhance the existing Summarize Resume flow with dynamic job role matching.
 
-### Prerequisites
+### Prerequisites to complete this mission
 
-Before starting this lab, ensure you have:
+1. You'll need to **either**:
 
-- Completed Mission 07 (or imported the starter solution)
-- Your custom prompt from Mission 07
-- Job Roles and Evaluation Criteria data imported as described in Mission 01
-- Downloaded sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+    - **Have completed Mission 07** and have your resume analysis system ready, **OR**
+    - **Import the Mission 08 starter solution** if you're starting fresh or need to catch up. [Download Mission 08 Starter Solution](https://aka.ms/agent-academy)
 
-!!! note "Building on previous missions"
-    This mission builds directly on the Summarize Resume flow you created in Mission 07 and the multi-agent system from Mission 02. If you need to start fresh, import the Mission 08 starter solution which includes the required components.
+1. Sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+
+!!! note "Solution Import and Sample Data"
+    If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
 
 ### 1. Add Dataverse grounding to your prompt
 

@@ -184,15 +184,15 @@ The Interview Prep Agent works better as a connected agent because:
 
 Ready to put theory into practice? Let's add our first child agent to your existing Hiring Agent.
 
-### Prerequisites
+### Prerequisites to complete this mission
 
-Before starting, ensure you have:
+You'll need to **either**:
 
-- Your **Hiring Agent** from Mission 01 open in Copilot Studio
-- Access to the Dataverse environment with candidate storage tables
+- **Have completed Mission 01** and have your Hiring Agent ready, **OR**
+- **Import the Mission 02 starter solution** if you're starting fresh or need to catch up. [Download Mission 02 Starter Solution](https://aka.ms/agent-academy)
 
-!!! note "Building on Mission 01"
-    This mission builds directly on the Hiring Agent you created in Mission 01. If you haven't completed that mission or need to start fresh, you can import the Mission 02 starter solution which includes the base Hiring Agent and required Dataverse tables.
+!!! note "Solution Import and Sample Data"
+    If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
 
 #### Solution setup
 
