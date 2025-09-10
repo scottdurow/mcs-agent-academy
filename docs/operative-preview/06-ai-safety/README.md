@@ -45,7 +45,7 @@ In this mission, you'll learn:
 
 Microsoft Copilot Studio provides features that span all three areas, with some tools (like Agent Runtime Protection Status) bridging AI safety and security concerns. Throughout this mission, we'll focus on AI Safety.
 
-## 🛡️Understanding AI Safety in Copilot Studio
+## 🛡️ Understanding AI Safety in Copilot Studio
 
 Business agents handle sensitive scenarios daily:
 
@@ -157,7 +157,7 @@ I need to keep our conversation focused on appropriate business topics. How can 
 
 ### Generative Answers prompt modification
 
-You can significantly enhance the effectiveness the content moderation in generative answers using [prompt modification](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-prompt-modification) to create custom instructions. Prompt modification allows you to add custom safety guidelines that work alongside automatic content moderation
+You can significantly enhance the effectiveness of the content moderation in generative answers using [prompt modification](https://learn.microsoft.com/en-us/microsoft-copilot-studio/nlu-generative-answers-prompt-modification) to create custom instructions. Prompt modification allows you to add custom safety guidelines that work alongside automatic content moderation.
 
 **Example prompt modification for enhanced safety:**
 
@@ -223,7 +223,7 @@ Copilot Studio integrates with broader enterprise security through comprehensive
 
 These enterprise-grade controls ensure agents meet organizational security and compliance requirements for handling sensitive business information.
 
-## 🎯Human-in-the-loop concepts
+## 🎯 Human-in-the-loop concepts
 
 While content moderation automatically blocks harmful content, agents can also [escalate complex conversations to human agents](https://learn.microsoft.com/microsoft-copilot-studio/advanced-hand-off) when needed. This human-in-the-loop approach ensures:
 
@@ -276,7 +276,7 @@ Let's explore how Responsible AI content filtering works and how to handle block
 
 1. **Navigate to Settings** → **Moderation**
 1. **Set content moderation to "High"** (if not already).
-1. Add the following for **When potential responses get flagged by content moderation, send**:
+1. Add the following for **When potential responses get flagged by content moderation**:
 
     ```text
     I need to keep our conversation focused on appropriate and legally compliant hiring practices. 
@@ -304,13 +304,13 @@ Let's explore how Responsible AI content filtering works and how to handle block
 
     - **Successful responses**: Normal AI-generated content.
     - **Filtered content**: Error messages like "ContentFiltered".
-    - **Activity map:** When a content moderation is received, you will see that there are not nodes shown on the the map since the content was filtered as an input.
+    - **Activity map:** When content moderation is triggered, you will see that there are no nodes shown on the activity map since the content was filtered as input.
 
 #### Adding Custom Error Handling
 
 1. Select the **Topics** tab, and open the **On Error** topic.
 
-1. Notice how there is a branch that tests `System.Conversation.InTestMode`. Inside the Message node below All other conditions, edit the text and provide:
+1. Notice how there is a branch that tests `System.Conversation.InTestMode`. Inside the Message node below **All other conditions**, edit the text and provide:
 
     ```text
     I need to keep our conversation focused on appropriate and legally compliant hiring practices. 
@@ -318,13 +318,13 @@ Let's explore how Responsible AI content filtering works and how to handle block
 
 1. **Save** the topic.
 
-1. **Publish** the agent, and open it inside **Teams** using the knowledge that you learned from the recruit missions.
+1. **Publish** the agent, and open it inside **Teams** using the knowledge you learned from the recruit missions.
 
 1. **Test the fallback** by trying the potentially filtered questions again and notice the response.
 
 #### Generative Answers content moderation level and prompt modification
 
-1. Select the **Topics** tab, Select **System**, and then open the **Conversation boosting** topic.
+1. Select the **Topics** tab, select **System**, and then open the **Conversation boosting** topic.
 
 1. Locate the **Create generative answers** node, select the **ellipsis (...)** → **Properties.**
 
@@ -345,7 +345,7 @@ Let's see how agent instructions can deliberately restrict responses.
 #### Setting up instruction-based controls
 
 1. **Open Settings** → **Instructions** → **Edit**
-1. **Add these safety instructions** to the end of the instructions prompt
+1. **Add these safety instructions** to the end of the instructions prompt:
 
     ```text
     You are a professional Interview Assistant focused exclusively on legal, 
