@@ -1,4 +1,4 @@
-# 🚨 Mission 07: Extracting resume contents with multimodal prompts
+# 🚨 Mission 07: Extracting Resume Contents with Multimodal Prompts
 
 --8<-- "disclaimer.md"
 
@@ -26,7 +26,7 @@ In this mission, you'll learn:
 1. Best practices for prompt engineering with document analysis
 1. How to integrate multimodal prompts with Agent Flows
 
-## 🧠 Understanding multimodal prompts
+## 🧠 Understanding Multimodal Prompts
 
 ### What makes a prompt "multimodal"?
 
@@ -131,7 +131,7 @@ JSON output is essential for:
 - **Error handling**: Plan for documents that can't be processed
 - **Monitor costs**: Different models consume different amounts of AI Builder credits
 
-## 🧪Lab 7: Building a resume extraction system
+## 🧪 Lab 7: Building a Resume Extraction System
 
 Time to put your multimodal knowledge into practice. You'll build a comprehensive resume extraction system that analyzes candidate documents and transforms them into structured data for your hiring workflow.
 
@@ -142,20 +142,21 @@ Time to put your multimodal knowledge into practice. You'll build a comprehensiv
     - **Have completed Mission 06** and have your multi-agent hiring system ready, **OR**
     - **Import the Mission 07 starter solution** if you're starting fresh or need to catch up. [Download Mission 07 Starter Solution](https://aka.ms/agent-academy)
 
-1. Sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+1. Sample resume documents from [Test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
 
 !!! note "Solution Import and Sample Data"
     If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
 
-### 1. Create a multimodal prompt
+### 1. Create a Multimodal Prompt
 
 Your first objective: create a prompt capable of analyzing resume documents and extracting structured data.
 
 1. Sign in to [Copilot Studio](https://copilotstudio.preview.microsoft.com) and select **Tools** from the left navigation.
 
-1. Select **+ New tool**, then select **Prompt**.
+1. Select **+ New tool**, then select **Prompt**.  
+    ![New Prompt](./assets/7-new-prompt.png)
 
-1. Rename the prompt from the default timestamp name (E.g. *Custom prompt 09/04/2025, 04:59:11 PM*) to `Summarize Resume`.
+1. **Rename** the prompt from the default timestamp name (E.g. *Custom prompt 09/04/2025, 04:59:11 PM*) to `Summarize Resume`.
 
 1. In the Instructions field, add this prompt:
 
@@ -190,16 +191,17 @@ Your first objective: create a prompt capable of analyzing resume documents and 
     !!! tip "Use Copilot assistance"
         You can use "Get started with Copilot" to generate your prompt using natural language. Try asking Copilot to create a prompt to summarize a resume!
 
-1. Configure the input parameters:
+1. **Configure** the input parameters:
 
     | Parameter | Type | Name | Sample Data |
     |-----------|------|------|-------------|
     | Resume | Image or document | Resume | Upload a sample resume from the test-data folder |
     | CoverLetter | Text | CoverLetter | Here is a Resume! |
 
-1. Select **Test** to see the initial text output from your prompt.
+1. Select **Test** to see the initial text output from your prompt.  
+    ![Set parameters and test](./assets/7-prompt-parameters.png)
 
-### 2. Configure JSON output
+### 2. Configure JSON Output
 
 Now you'll convert the prompt to output structured JSON data instead of plain text.
 
@@ -213,20 +215,17 @@ Now you'll convert the prompt to output structured JSON data instead of plain te
         "CandidateName": "string",
         "Email": "string",
         "Summary": "string max 2000 characters",
-        "Skills":[ 
-        {"SkillName":"string", "SkillLevel":"5 highest, 1 lowest"}
-        ],
-    "Experience":[
-        {"Employer":"string", "StartYear":"number","EndYear":"number (leave blank if present)"}
-        ]
+        "Skills": [ {"item": "Skill 1"}, {"item": "Skill 2"}],
+        "Experience": [ {"item": "Experience 1"}, {"item": "Experience 2"}],
     }
     ```
 
 1. Change the **Output** setting from "Text" to **JSON**.
 
-1. Select **Test** again to verify the output is now formatted as JSON.
+1. Select **Test** again to verify the output is now formatted as JSON.  
+    ![Set prompt to be JSON](./assets/7-json-prompt.png)
 
-1. Optional: Experiment with different AI models to see how outputs vary, then return to the default model.
+1. **Optional:** Experiment with different AI models to see how outputs vary, then return to the default model.
 
 1. Select **Save** to create the prompt.
 
@@ -235,9 +234,12 @@ Now you'll convert the prompt to output structured JSON data instead of plain te
     !!! info "Why we're not adding this as a tool yet"
         You'll use this prompt in an Agent Flow rather than directly as a tool, which gives you more control over the data processing workflow.
 
-### 3. Add prompt to an Agent Flow
+### 3. Add Prompt to an Agent Flow
 
 You'll create an Agent Flow that uses your prompt to process resumes stored in Dataverse.
+
+!!! tip "Agent Flow Expressions"
+    It is very important that you follow the instructions for naming your nodes and entering expressions exactly because the expressions refer to the previous nodes using their name! Refer to the [Agent Flow mission in Recruit](https://microsoft.github.io/agent-academy/recruit/09-add-an-agent-flow/#you-mentioned-expressions-what-are-expressions) for a quick refresher!
 
 1. Navigate to your **Hiring Agent** inside Copilot Studio
 
@@ -253,7 +255,7 @@ You'll create an Agent Flow that uses your prompt to process resumes stored in D
 
 1. Select the **+** Insert action icon below the first node, search for **Dataverse**, select **See more**, and then locate the **List rows** action
 
-1. Select the title to rename the node as `Get Resume Record`, and then set the following parameters:
+1. Select the **ellipsis (...)** on the List rows node, and select **Rename** to `Get Resume Record`, and then set the following parameters:
 
     | Property | How to Set | Value |
     |----------|------------|-------|
@@ -261,18 +263,25 @@ You'll create an Agent Flow that uses your prompt to process resumes stored in D
     | **Filter rows** | Dynamic data (thunderbolt icon) | `ppa_resumenumber eq 'ResumeNumber'` Replace **ResumeNumber** with **When an agent calls the flow** → **ResumeNumber** |
     | **Row count** | Enter | 1 |
 
+    !!! tip "Optimize those queries!"
+        When using this technique in production, you should always limit the columns being selected to only those required by the Agent Flow.
+
+    ![Get Resume Record](./assets/7-summarize-resume-1.png)
+
 1. Select the **+** Insert action icon below the Get Resume Record node, search for **Dataverse**, select **See more**, and then locate the **Download a file or an image** action.
 
     !!! tip "Pick the correct action!"
         Be sure not to select the action that ends in "from selected environment"
 
-1. Rename the action `Download Resume`, and then set the following parameters:
+1. As before, rename the action `Download Resume`, and then set the following parameters:
 
     | Property | How to Set | Value |
     |----------|------------|-------|
     | **Table name** | Select | Resumes |
     | **Row ID** | Expression (fx icon) | `first(body('Get_Resume_Record')?['value'])?['ppa_resumeid']` |
     | **Column name** | Select | Resume PDF |
+
+    ![Download Resume](./assets/7-summarize-resume-2.png)
 
 1. Now, select the **+** Insert action icon below Download Resume, under **AI capabilities**, select **Run a prompt**,
 
@@ -284,22 +293,26 @@ You'll create an Agent Flow that uses your prompt to process resumes stored in D
     | **CoverLetter** | Expression (fx icon) | `first(body('Get_Resume_Record')?['value'])?['ppa_coverletter']` |
     | **Resume** | Dynamic data (thunderbolt icon) | Download Resume → File or image content |
 
+    ![Summarize Resume Prompt](./assets/7-summarize-resume-3.png)
+
     !!! tip "Prompt Parameters"
         Notice how the parameters you are filling out are the same ones that you configured as input parameters when you created your prompt.
 
-### 4. Create candidate record
+### 4. Create Candidate Record
 
 Next, you need to take the information that the Prompt gave you and create a new candidate record if it doesn't already exist.
 
 1. Select the **+** Insert action icon below the Summarize Resume node, search for **Dataverse**, select **See more**, and then locate the **List rows** action
 
-1. Select the title to rename the node as `Get Existing Candidate`, and then set the following parameters:
+1. Rename the node as `Get Existing Candidate`, and then set the following parameters:
 
     | Property | How to Set | Value |
     |----------|------------|-------|
     | **Table name** | Select | Candidates |
-    | **Filter rows** | Dynamic data (thunderbolt icon) | Summarize Resume → Email |
+    | **Filter rows** | Dynamic data (thunderbolt icon) | `ppa_email eq 'Email'`  **Replace** `Email` with **Summarize Resume → Email** |
     | **Row count** | Enter | 1 |
+
+    ![Get Existing Candidate](./assets/7-summarize-resume-4.png)
 
 1. Select the **+** Insert action icon below the Get Existing Candidate node, search for **Control**, select **See more**, and then locate the **Condition** action
 
@@ -309,17 +322,21 @@ Next, you need to take the information that the Prompt gave you and create a new
     |-----------|----------|-------|
     | Expression (fx icon): `length(outputs('Get_Existing_Candidate')?['body/value'])` | is equal to | 0 |
 
-1. Select the **+** Insert action icon in the True branch, search for **Dataverse**, select **See more**, and then locate the **Add a new row** action
+    ![Get Existing Candidate Condition](./assets/7-summarize-resume-5.png)
 
-1. Select the title to rename the node as `Add a New Candidate`, and then set the following parameters:
+1. Select the **+** Insert action icon in the **True** branch, search for **Dataverse**, select **See more**, and then locate the **Add a new row** action.
+
+1. Rename the node as `Add a New Candidate`, and then set the following parameters:
 
     | Property | How to Set | Value |
     |----------|------------|-------|
     | **Table name** | Select | Candidates |
-    | **Candidate Name** | Dynamic data (thunderbolt icon) | Summarize Resume → CandidateName |
-    | **Email** | Dynamic data (thunderbolt icon) | Summarize Resume → Email |
+    | **Candidate Name** | Dynamic data (thunderbolt icon) | Summarize Resume → `CandidateName` |
+    | **Email** | Dynamic data (thunderbolt icon) | Summarize Resume → `Email` |
 
-### 5. Update resume and configure flow outputs
+![Add New Candidate](./assets/7-summarize-resume-6.png)
+
+### 5. Update Resume and Configure Flow Outputs
 
 Complete the flow by updating the resume record and configuring what data to return to your agent.
 
@@ -329,12 +346,26 @@ Complete the flow by updating the resume record and configuring what data to ret
 
     | Property | How to Set | Value |
     |----------|------------|-------|
-    | **Table name** | Select | Resume |
+    | **Table name** | Select | Resumes |
     | **Row ID** | Expression (fx icon) | `first(body('Get_Resume_Record')?['value'])?['ppa_resumeid']` |
     | **Summary** | Dynamic data (thunderbolt icon) | Summarize Resume → Text |
     | **Candidate (Candidates)** | Expression (fx icon) | `if(equals(length(outputs('Get_Existing_Candidate')?['body/value']), 1), first(outputs('Get_Existing_Candidate')?['body/value'])?['ppa_candidateid'], outputs('Add_a_New_Candidate')?['body/ppa_candidateid'])` |
 
-1. Select **Save draft** on the top right
+    ![Update Resume](./assets/7-summarize-resume-7.png)
+
+1. Select the **Respond to the agent** node and then use **+ Add an output** to configure:
+
+    | Type | Name              | How to Set                      | Value                                                        | Description                                            |
+    | ---- | ----------------- | ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------ |
+    | Text | `CandidateName`   | Dynamic data (thunderbolt icon) | Summarize Resume → See more → CandidateName                  | The [CandidateName] given on the Resume                |
+    | Text | `CandidateEmail`  | Dynamic data (thunderbolt icon) | Summarize Resume → See more → Email                          | The [CandidateEmail] given on the Resume               |
+    | Text | `CandidateNumber` | Expression (fx icon)            | `concat('ppa_candidates/', if(equals(length(outputs('Get_Existing_Candidate')?['body/value']), 1), first(outputs('Get_Existing_Candidate')?['body/value'])?['ppa_candidateid'], outputs('Add_a_New_Candidate')?['body/ppa_candidateid']) )` | The [CandidateNumber] of the new or existing candidate |
+    | Text | `ResumeSummary`   | Dynamic data (thunderbolt icon) | Summarize Resume → See more → body/responsev2/predictionOutput/structuredOutput | The resume summary and details in JSON form            |
+
+    ![Respond to the agent](./assets/7-summarize-resume-8.png)
+
+1. Select **Save draft** on the top right. Your Agent Flow should look like the following  
+    ![Summarize Resume Agent Flow](./assets/7-summarize-resume-9.png)
 
 1. Select the **Overview** tab, Select **Edit** on the **Details** panel
 
@@ -345,26 +376,19 @@ Complete the flow by updating the resume record and configuring what data to ret
         Summarize an existing Resume stored in Dataverse using a [ResumeNumber] as input, return the [CandidateNumber], and resume summary JSON
         ```
 
-1. Select the Respond to the agent node and then use **+ Add an output** to configure:
-
-    | Type | Name | How to Set | Value | Description |
-    |------|------|------------|-------|-------------|
-    | Text | CandidateName | Dynamic data (thunderbolt icon) | Summarize Resume → See more → CandidateName | The [CandidateName] given on the Resume |
-    | Text | CandidateEmail | Dynamic data (thunderbolt icon) | Summarize Resume → See more → Email | The [CandidateEmail] given on the Resume |
-    | Text | CandidateNumber | Expression (fx icon) | `if(equals(length(outputs('Get_Existing_Candidate')?['body/value']), 1), first(outputs('Get_Existing_Candidate')?['body/value'])['ppa_candidatenumber'], outputs('Add_a_New_Candidate')?['body/ppa_candidatenumber'])` | The [CandidateNumber] of the new or existing candidate |
-    | Text | ResumeSummary | Dynamic data (thunderbolt icon) | Summarize Resume → See more → body/responsev2/predictionOutput/structuredOutput | The resume summary and details in JSON form |
+1. Select **Save**
 
 1. Select the **Designer** tab again, and select **Publish**.
 
-### 6. Connect the flow to your agent
+### 6. Connect the Flow to Your Agent
 
 Now you'll add the flow as a tool and configure your agent to use it.
 
 1. Open your **Hiring Agent** inside Copilot Studio
 
-1. Select the Agents tab, and open the **Application Intake Agent**
+1. Select the **Agents** tab, and open the **Application Intake Agent**
 
-1. Select the **Tools** panel, and Select **+ Add a tool** - > **Flow** -> **Summarize Resume**
+1. Select the **Tools** panel, and Select **+ Add a tool** - > **Flow** -> **Summarize Resume** **(Agent Flow)**
 
 1. Select **Add and configure**
 
@@ -375,7 +399,13 @@ Now you'll add the flow as a tool and configure your agent to use it.
     | **Description** | Summarize an existing Resume stored in Dataverse using a [ResumeNumber] as input, return the [CandidateNumber], and resume summary JSON |
     | **When this tool may be used** | Only when referenced by topics or agents |
 
-1. Navigate to the Application Intake Child agent, and add the following to the end of the instructions:
+1. Select **Save**  
+    ![Configure Summarize Resume Tool](./assets/7-configure-summarize-resume-tool.png)
+
+1. If you select Tools inside the Hiring Agent, you will now see both of our tools showing that they are usable by the **Application Intake Agent**.  
+    ![Agent Tools](./assets/7-agent-tools.png)
+
+1. Navigate to the **Application Intake Child** agent Instructions, and modify the **Post-Upload** step to be the following:
 
     ```text
     2. Post-Upload Processing  
@@ -385,30 +415,34 @@ Now you'll add the flow as a tool and configure your agent to use it.
        - Use the [ResumeSummary] to output a summary of the processed Resume and candidate
     ```
 
-    Replace `/Summarize Resume` by inserting a reference to the **Summarize Resume agent flow** by typing forward slash (`/)` or selecting `/Summarize` to insert the reference.
+    Replace `/Summarize Resume` by inserting a reference to the **Summarize Resume agent flow** by typing forward slash (`/)` or selecting `/Summarize` to insert the reference.  
+    ![Update Instructions](./assets/7-summarize-instructions-update.png)
+1. Select **Save**.
 
-### 7. Test your agent
+### 7. Test Your Agent
 
 Test your complete multimodal system to ensure everything works correctly.
 
 1. **Start testing**:
+
     - Select **Test** to open the test panel
     - Type: `Here is a candidate Resume`
 
-1. **Upload a resume**:
-    - Upload one of the sample resumes from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
-    - The agent should process the resume and provide a structured response
+    - Upload one of the sample resumes from [Test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
 
 1. **Verify the results**:
-    - Check that you receive a Resume Number (format: R#####)
+    - Once you send the message and resume, check that you receive a Resume Number (format: R#####)
     - Verify you get a Candidate Number and summary
-    - Use the activity map to see both the Resume upload tool and Summarize Resume tool in action
+    - Use the activity map to see both the Resume upload tool and Summarize Resume tool in action, and the outputs of the Summary Prompt are received by the agent:  
+        ![Testing Results](./assets/7-test-result.png)
 
 1. **Check data persistence**:
     - Navigate to [Power Apps](https://make.powerapps.com)
     - Open **Apps** → **Hiring Hub** → **Play**
-    - Go to **Resumes** to verify the resume was uploaded and processed
-    - Check **Candidates** to see the extracted candidate information
+    - Go to **Resumes** to verify the resume was uploaded and processed. It should have both summary information and an associated candidate record.
+    - Check **Candidates** to see the extracted candidate information  
+        ![Resume with Candidate and Summary](./assets/7-resume-in-dataverse.png)
+    - When you run the process again, it should use the existing Candidate (matched on the email extracted from the resume) instead of creating a new one.
 
 !!! tip "Troubleshooting"
     - **Resume not processing**: Ensure the file is a PDF and under size limits
@@ -416,13 +450,13 @@ Test your complete multimodal system to ensure everything works correctly.
     - **JSON format errors**: Verify your prompt instructions include the exact JSON structure
     - **Flow errors**: Check that all Dataverse connections and expressions are configured correctly
 
-### Production readiness notes
+### Production Readiness Notes
 
 To make this agent flow production ready you would also need to consider the following:
 
-1. Error handling - if the Resume Number was not found, or the prompt failed to parse the document, error handling should be added to return a clear error to the agent.
-1. Updating existing Candidates - the candidate is found using the email, then the name could be updated to match that on the resume
-1. Splitting the Resume summarization and the Candidate creation - This functionality could be split into small agent flows to make them easier to maintain, and then the agent given instructions to use them in turn.
+1. **Error handling** - If the Resume Number was not found, or the prompt failed to parse the document, error handling should be added to return a clear error to the agent.
+1. **Updating existing Candidates** - The candidate is found using the email, then the name could be updated to match that on the resume.
+1. **Splitting the Resume summarization and the Candidate creation** - This functionality could be split into smaller agent flows to make them easier to maintain, and then the agent given instructions to use them in turn.
 
 ## 🎉 Mission Complete
 
