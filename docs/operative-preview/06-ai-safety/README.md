@@ -264,7 +264,7 @@ Organizations should evaluate CCS when they have:
 
 - **Multiple agents** across different departments or business units
 - **Compliance requirements** for audit trails, data residency, or regulatory reporting
-- **Scale challenges** managing agent lifecycles, updates, and governance manually
+- **Scale challenges** managing agent lifecycle, updates, and governance manually
 - **Cost optimization** needs for tracking and controlling AI consumption across teams
 - **Security concerns** requiring centralized threat monitoring and response capabilities
 
