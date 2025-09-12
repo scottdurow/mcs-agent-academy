@@ -252,7 +252,7 @@ First, let's examine the Dataverse tables you'll be grounding with:
 To allow our Application Intake Agent to create Job Roles based on the suggested roles, we need to create an Agent Flow. The agent will call this tool for each of the suggested job roles that the candidate is interested in.
 
 !!! tip "Agent Flow Expressions"
-    It is very important that you follow the instructions for naming your nodes and entering expressions exactly because the expressions refer to the previous nodes using their name! Refer to the [Agent Flow mission in Recruit](https://microsoft.github.io/agent-academy/recruit/09-add-an-agent-flow/#you-mentioned-expressions-what-are-expressions) for a quick refresher!
+    It is very important that you follow the instructions for naming your nodes and entering expressions exactly because the expressions refer to the previous nodes using their name! Refer to the [Agent Flow mission in Recruit](../../recruit/09-add-an-agent-flow/README.md#you-mentioned-expressions-what-are-expressions) for a quick refresher!
 
 1. Inside the **Hiring Agent,** select the **Agents** tab, and open the **Application Intake Agent** child agent.
 

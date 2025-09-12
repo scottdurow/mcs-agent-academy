@@ -239,7 +239,7 @@ Now you'll convert the prompt to output structured JSON data instead of plain te
 You'll create an Agent Flow that uses your prompt to process resumes stored in Dataverse.
 
 !!! tip "Agent Flow Expressions"
-    It is very important that you follow the instructions for naming your nodes and entering expressions exactly because the expressions refer to the previous nodes using their name! Refer to the [Agent Flow mission in Recruit](https://microsoft.github.io/agent-academy/recruit/09-add-an-agent-flow/#you-mentioned-expressions-what-are-expressions) for a quick refresher!
+    It is very important that you follow the instructions for naming your nodes and entering expressions exactly because the expressions refer to the previous nodes using their name! Refer to the [Agent Flow mission in Recruit](../../recruit/09-add-an-agent-flow/README.md#you-mentioned-expressions-what-are-expressions) for a quick refresher!
 
 1. Navigate to your **Hiring Agent** inside Copilot Studio
 

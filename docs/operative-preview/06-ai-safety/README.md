@@ -394,7 +394,7 @@ Let's explore how Responsible AI content filtering works and how to handle block
 
 1. **Save** the topic.
 
-1. **Publish** the agent, and open it inside **Teams** using the knowledge you learned from the [previous recruit mission on publishing](https://microsoft.github.io/agent-academy/recruit/11-publish-your-agent/).
+1. **Publish** the agent, and open it inside **Teams** using the knowledge you learned from the [previous recruit mission on publishing](../../recruit/11-publish-your-agent/README.md).
 
 1. **Test the fallback** by trying the potentially filtered questions again and notice the response.  
     ![Content filtered in M365 Copilot](./assets/6-filtering-in-m365-copilot.png)
