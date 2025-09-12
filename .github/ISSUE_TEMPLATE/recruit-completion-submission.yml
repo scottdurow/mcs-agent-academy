@@ -59,9 +59,6 @@ body:
     validations:
       required: true
 
-    validations:
-      required: true
-
  - type: checkboxes
     attributes:
       label: Badge validation form
@@ -69,3 +66,7 @@ body:
       options:
         - label: I verify that I have completed the badge validation form.
           required: true
+
+    validations:
+      required: true
+
