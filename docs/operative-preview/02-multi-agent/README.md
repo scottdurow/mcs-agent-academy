@@ -229,7 +229,7 @@ You'll need to **either**:
 !!! note "Solution Import and Sample Data"
     If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
 
-#### Solution setup
+### 2.1.1 Solution setup
 
 1. Inside Copilot Studio, select the ellipsis (...) below Tools in the left hand navigation.
 1. Select **Solutions**.  
@@ -237,9 +237,7 @@ You'll need to **either**:
 1. Locate your Operative solution, select the **ellipsis (...)** next to it, and choose **Set preferred solution**. This will ensure that all your work will be added to this solution.  
     ![Set Preferred Solution](./assets/2-select-preferred-solution.png)
 
-### 1. Configure your main Hiring Agent
-
-#### Update agent instructions
+### 2.1.2 Configure your Hiring Agent agent instructions
 
 1. **Navigate** to Copilot Studio. Ensure your environment is selected in the top right **Environment Picker**.
 
@@ -270,9 +268,7 @@ You'll need to **either**:
 ![Moderation Setting](./assets/2-set-medium-moderation.png)
 ![Knowledge and Web settings](./assets/2-settings-knowledge-web.png)
 
-### 2. Create the Application Intake child agent
-
-#### Add the new agent
+### 2.1.3 Add the Application Intake child agent
 
 1. **Navigate** to the **Agents** tab within your Hiring Agent - this is where you'll add specialist agents.
 
@@ -297,13 +293,11 @@ You'll need to **either**:
 
 1. Select **Save**
 
-### 3. Configure agent flows for data processing
+### 2.1.4 Configure Resume Upload agent flow
 
 Agents can't perform any actions without being given tools or topics.
 
 We're using **Agent Flow tools** rather than Topics for the *Upload Resume* step because this multi-step backend process requires deterministic execution and integration with external systems. While Topics are best for guiding the conversational dialog, Agent Flows provide the structured automation needed to reliably handle file processing, data validation, and database upserts (insert new or update existing) without depending on user interaction.
-
-#### Create the Resume Upload flow
 
 1. Locate the **Tools** section inside the Application Intake Agent page.
    **Important:** This isn't the Tools tab of the parent agent, but can be found if you scroll down underneath the child agent instructions.
@@ -387,7 +381,7 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* step
 1. Select the **Designer** tab again, and select **Publish**.  
      ![Publishing](./assets/2-upload-resume-publish.png)
 
-#### Connect the flow to your agent
+### 2.1.5 Connect the flow to your agent
 
 Now you'll connect the published flow to your Application Intake Agent.
 
@@ -431,7 +425,7 @@ Now you'll connect the published flow to your Application Intake Agent.
 
 1. Select **Save**
 
-### 4. Define agent instructions
+### 2.1.6 Define agent instructions
 
 1. Move back in to the **Application Intake Agent** by selecting the **Agents** tab, and then locate the **Instructions** panel.
 
@@ -460,7 +454,7 @@ Now you'll connect the published flow to your Application Intake Agent.
 
 1. Select **Save**
 
-### 5. Test your Application Intake Agent
+### 2.1.7 Test your Application Intake Agent
 
 Now let's verify your first orchestra member is working correctly.
 
@@ -495,9 +489,7 @@ Now let's verify your first orchestra member is working correctly.
 
 Now let's create our connected agent for interview preparation and add it to your existing Hiring Agent.
 
-### 1. Create the Interview Agent
-
-#### Create a new standalone agent
+### 2.2.1 Create the connected Interview Agent
 
 1. **Navigate** to Copilot Studio. Ensure your environment is still selected in the top right Environment Picker.
 
@@ -509,7 +501,7 @@ Now let's create our connected agent for interview preparation and add it to you
 
 1. Select **+ New agent**
 
-#### Configure basic settings
+### 2.2.2 Configure basic settings
 
 1. Select the **Configure** tab, and enter the following properties:
 
@@ -552,7 +544,7 @@ Now let's create our connected agent for interview preparation and add it to you
 1. Select **Create**  
     ![Create the Interview Agent](./assets/2-create-interview-agent.png)
 
-### 2. Configure data access and publish
+### 2.2.3 Configure data access and publish
 
 1. In the **Knowledge** section, select **+ Add knowledge**  
     ![Add knowledge](./assets/2-interview-agent-add-knowledge.png)
@@ -571,7 +563,7 @@ Now let's create our connected agent for interview preparation and add it to you
 1. Select **Save**
 1. Select **Publish**, and wait for the publishing to complete.
 
-### 3. Connect the Interview Prep Agent to your Hiring Agent
+### 2.2.4 Connect the Interview Prep Agent to your Hiring Agent
 
 1. Navigate back to your **Hiring Agent**
 
@@ -591,7 +583,7 @@ Now let's create our connected agent for interview preparation and add it to you
 1. Ensure that you see both the **Application Intake Agent**, and the **Interview Agent**. Notice how one is a child and the other is a connected agent.  
     ![Child and connected agent](./assets/2-child-and-connected.png)
 
-### 4. Test multi-agent collaboration
+### 2.2.5 Test multi-agent collaboration
 
 1. **Toggle** the test panel open by selecting **Test**.
 

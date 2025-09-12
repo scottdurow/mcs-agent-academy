@@ -113,11 +113,9 @@ Time to upgrade your resume analysis capabilities! You'll enhance the existing S
 !!! note "Solution Import and Sample Data"
     If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
 
-### 1. Add Dataverse grounding to your prompt
+### 8.1 Add Dataverse grounding to your prompt
 
 You'll build on the Summarize Resume prompt that you created in Mission 07. Currently it simply summarizes the resume, but now you'll ground it with the job roles as they currently exist in Dataverse, keeping it always current.
-
-#### Examine the tables and columns
 
 First, let's examine the Dataverse tables you'll be grounding with:
 
@@ -137,7 +135,7 @@ First, let's examine the Dataverse tables you'll be grounding with:
 
 1. We will add these tables to the Interview Agent to allow it to give summaries and interview preparation notes.
 
-#### Add Dataverse grounding data to your prompt
+### 8.2 Add Dataverse grounding data to your prompt
 
 1. **Navigate** to Copilot Studio, and select your environment using the **Environment switcher** on the top right of the navigation bar.
 
@@ -236,7 +234,7 @@ First, let's examine the Dataverse tables you'll be grounding with:
 
 1. Select **Settings**, and adjust the **Record retrieval** to 1000 - this will allow the maximum Job Roles and Evaluation criteria to be included in your prompt.
 
-#### Test the enhanced prompt
+### 8.3 Test the enhanced prompt
 
 1. Select the **Resume** parameter, and upload a sample resume.
 1. Select **Test**.
@@ -244,11 +242,9 @@ First, let's examine the Dataverse tables you'll be grounding with:
 1. Select the **Knowledge used** tab, to see the Dataverse data that merged with your prompt before execution.
 1. **Save** your updated prompt. The system will now automatically include this Dataverse data with your prompt when the existing Summarize Resume Agent Flow calls it.
 
-### 2. Add Job Application Tool
+### 8.4 Add Job Application Agent Flow
 
 To allow our Application Intake Agent to create Job Roles based on the suggested roles, we need to create an Agent Flow. The agent will call this tool for each of the suggested job roles that the candidate is interested in.
-
-#### Create Agent Flow
 
 1. Inside the **Hiring Agent,** select the **Agents** tab, and open the **Application Intake Agent**
 
@@ -312,7 +308,7 @@ To allow our Application Intake Agent to create Job Roles based on the suggested
 
 1. Select the **Designer** tab again, and select **Publish**.
 
-#### Add Create Job Application to agent
+### 8.5 Add Create Job Application to agent
 
 Now you'll connect the published flow to your Application Intake Agent.
 
@@ -331,7 +327,7 @@ Now you'll connect the published flow to your Application Intake Agent.
 
 1. Select **Save**
 
-### 3. Define agent instructions
+### 8.6 Define agent instructions
 
 To create job applications, you need to tell the agent when to use the new tool. In this case, you'll ask the user to confirm which suggested job roles to apply to, and instruct the agent to run the tool for each role.
 
@@ -372,7 +368,7 @@ To create job applications, you need to tell the agent when to use the new tool.
 !!! tip "Iterating over multiple items in Generative Orchestration"
     These instructions use generative orchestration's ability to iterate over multiple rows when making decisions about which steps and tools to use.
 
-### 4. Validate the enhancement
+### 8.7 Validate the enhancement
 
 1. Open your **Hiring Agent** in Copilot Studio.
 

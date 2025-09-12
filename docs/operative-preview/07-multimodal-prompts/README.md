@@ -26,7 +26,7 @@ In this mission, you'll learn:
 1. Best practices for prompt engineering with document analysis
 1. How to integrate multimodal prompts with Agent Flows
 
-## 🧠 Understanding Multimodal Prompts
+## 🧠 Understanding multimodal prompts
 
 ### What makes a prompt "multimodal"?
 
@@ -131,7 +131,7 @@ JSON output is essential for:
 - **Error handling**: Plan for documents that can't be processed
 - **Monitor costs**: Different models consume different amounts of AI Builder credits
 
-## 🧪 Lab 7: Building a Resume Extraction System
+## 🧪 Lab 7: Building a resume extraction system
 
 Time to put your multimodal knowledge into practice. You'll build a comprehensive resume extraction system that analyzes candidate documents and transforms them into structured data for your hiring workflow.
 
@@ -147,7 +147,7 @@ Time to put your multimodal knowledge into practice. You'll build a comprehensiv
 !!! note "Solution Import and Sample Data"
     If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
 
-### 1. Create a Multimodal Prompt
+### 7.1 Create a multimodal prompt
 
 Your first objective: create a prompt capable of analyzing resume documents and extracting structured data.
 
@@ -201,7 +201,7 @@ Your first objective: create a prompt capable of analyzing resume documents and 
 1. Select **Test** to see the initial text output from your prompt.  
     ![Set parameters and test](./assets/7-prompt-parameters.png)
 
-### 2. Configure JSON Output
+### 7.2 Configure JSON output
 
 Now you'll convert the prompt to output structured JSON data instead of plain text.
 
@@ -234,7 +234,7 @@ Now you'll convert the prompt to output structured JSON data instead of plain te
     !!! info "Why we're not adding this as a tool yet"
         You'll use this prompt in an Agent Flow rather than directly as a tool, which gives you more control over the data processing workflow.
 
-### 3. Add Prompt to an Agent Flow
+### 7.3 Add prompt to an Agent Flow
 
 You'll create an Agent Flow that uses your prompt to process resumes stored in Dataverse.
 
@@ -298,7 +298,7 @@ You'll create an Agent Flow that uses your prompt to process resumes stored in D
     !!! tip "Prompt Parameters"
         Notice how the parameters you are filling out are the same ones that you configured as input parameters when you created your prompt.
 
-### 4. Create Candidate Record
+### 7.4 Create candidate record
 
 Next, you need to take the information that the Prompt gave you and create a new candidate record if it doesn't already exist.
 
@@ -336,7 +336,7 @@ Next, you need to take the information that the Prompt gave you and create a new
 
 ![Add New Candidate](./assets/7-summarize-resume-6.png)
 
-### 5. Update Resume and Configure Flow Outputs
+### 7.5 Update resume and configure flow outputs
 
 Complete the flow by updating the resume record and configuring what data to return to your agent.
 
@@ -380,7 +380,7 @@ Complete the flow by updating the resume record and configuring what data to ret
 
 1. Select the **Designer** tab again, and select **Publish**.
 
-### 6. Connect the Flow to Your Agent
+### 7.6 Connect the flow to your agent
 
 Now you'll add the flow as a tool and configure your agent to use it.
 
@@ -409,17 +409,18 @@ Now you'll add the flow as a tool and configure your agent to use it.
 
     ```text
     2. Post-Upload Processing  
-       - After uploading, be sure to also output the [ResumeNumber] in all messages
-       - Pass [ResumeNumber] to /Summarize Resume  - Be sure to use the correct value that will start with the letter R.
-       - Be sure to also output the [CandidateNumber] in all messages
-       - Use the [ResumeSummary] to output a summary of the processed Resume and candidate
+        - After uploading, be sure to also output the [ResumeNumber] in all messages
+        - Pass [ResumeNumber] to /Summarize Resume  - Be sure to use the correct value that will start with the letter R.
+        - Be sure to also output the [CandidateNumber] in all messages
+        - Use the [ResumeSummary] to output a summary of the processed Resume and candidate
     ```
 
     Replace `/Summarize Resume` by inserting a reference to the **Summarize Resume agent flow** by typing forward slash (`/)` or selecting `/Summarize` to insert the reference.  
     ![Update Instructions](./assets/7-summarize-instructions-update.png)
+
 1. Select **Save**.
 
-### 7. Test Your Agent
+### 7.7 Test your agent
 
 Test your complete multimodal system to ensure everything works correctly.
 
@@ -450,9 +451,9 @@ Test your complete multimodal system to ensure everything works correctly.
     - **JSON format errors**: Verify your prompt instructions include the exact JSON structure
     - **Flow errors**: Check that all Dataverse connections and expressions are configured correctly
 
-### Production Readiness Notes
+### Production readiness
 
-To make this agent flow production ready you would also need to consider the following:
+Although not part of this mission, to make this agent flow production ready you might also consider the following:
 
 1. **Error handling** - If the Resume Number was not found, or the prompt failed to parse the document, error handling should be added to return a clear error to the agent.
 1. **Updating existing Candidates** - The candidate is found using the email, then the name could be updated to match that on the resume.
@@ -483,7 +484,7 @@ Your enhanced document analysis capabilities are now ready for the advanced data
 
 ⏩ [Move to Mission 08: Enhanced prompts with Dataverse grounding](../08-dataverse-grounding/README.md)
 
-## 📚 Tactical Resources
+## 📚 Tactical resources
 
 📖 [Create a prompt](https://learn.microsoft.com/ai-builder/create-a-custom-prompt?WT.mc_id=power-power-182762-scottdurow)
 
