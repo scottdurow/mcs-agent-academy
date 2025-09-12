@@ -59,5 +59,3 @@ body:
     validations:
       required: true
 
-    validations:
-      required: true
