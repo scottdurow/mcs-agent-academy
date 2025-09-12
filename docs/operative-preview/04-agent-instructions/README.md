@@ -76,9 +76,8 @@ High-quality descriptions are essential for generative orchestration. Your agent
 - **Test for Overlap**: If multiple topics have similar descriptions, your agent may invoke them all. Test and revise to prevent overlap.
 
 !!! example "Good and Bad Description Examples"
- **Good:** This topic provides weather information for any location in the world for the next day. It provides the temperature. It doesn't get the current weather for today.
-
- **Bad:** This tool can answer questions. *(Too vague)*
+    **Good:** This topic provides weather information for any location in the world for the next day. It provides the temperature. It doesn't get the current weather for today.
+    **Bad:** This tool can answer questions. *(Too vague)*
 
 ## 🛠️ Best Practices for Instructions and Descriptions
 
@@ -95,10 +94,10 @@ To make your instructions and descriptions truly effective, keep these principle
 When writing instructions, consider the following structure for clarity and completeness:
 
 1. **Overview**: Briefly describe the agent’s mission and role
-1. **Process Steps**: List the main steps the agent should follow
-1. **Collaboration Points**: Indicate when to call other agents or use specific tools
-1. **Safety and Moderation**: Include any compliance or safety requirements
-1. **Feedback Loop**: Specify how the agent should collect feedback or escalate issues
+2. **Process Steps**: List the main steps the agent should follow
+3. **Collaboration Points**: Indicate when to call other agents or use specific tools
+4. **Safety and Moderation**: Include any compliance or safety requirements
+5. **Feedback Loop**: Specify how the agent should collect feedback or escalate issues
 
 ## 🧪 Lab: Authoring Agent Instructions
 
