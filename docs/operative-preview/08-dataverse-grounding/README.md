@@ -24,7 +24,6 @@ In this mission, you'll learn:
 1. When to use data grounding vs static instructions
 1. Designing prompts that dynamically incorporate live data
 1. Enhancing the Summarize Resume flow with job role matching
-1. Building data-driven AI workflows that adapt to changing requirements
 
 ## 🧠 Understanding Dataverse grounding for prompts
 
@@ -66,7 +65,7 @@ When you enable Dataverse grounding for a custom prompt:
 Let's examine your current Summarize Resume flow from Mission 07 and see how Dataverse grounding transforms it from static to dynamic intelligence.
 
 **Current static approach:**
-Your existing prompt likely includes hardcoded evaluation criteria and predetermined matching logic. This approach works but requires manual updates whenever you add new job roles, change evaluation criteria, or shift company priorities.
+Your existing prompt included hardcoded evaluation criteria and predetermined matching logic. This approach works but requires manual updates whenever you add new job roles, change evaluation criteria, or shift company priorities.
 
 **Dataverse grounding transformation:**
 By adding Dataverse grounding, your Summarize Resume flow will:
@@ -74,7 +73,6 @@ By adding Dataverse grounding, your Summarize Resume flow will:
 - **Access current job roles** from your Job Roles table
 - **Use live evaluation criteria** instead of static descriptions  
 - **Provide accurate matches** based on real-time requirements
-- **Adapt automatically** to organizational changes
 
 ## 🎯 Why dedicated prompts vs agent conversations
 
@@ -133,17 +131,16 @@ First, let's examine the Dataverse tables you'll be grounding with:
 
 1. Similarly, review the other tables such as the **Evaluation Criteria** table.
 
-1. We will add these tables to the Interview Agent to allow it to give summaries and interview preparation notes.
-
 ### 8.2 Add Dataverse grounding data to your prompt
 
 1. **Navigate** to Copilot Studio, and select your environment using the **Environment switcher** on the top right of the navigation bar.
 
 1. Select **Tools** from the left-hand navigation.
 
-1. Choose **Prompt** and locate your **Summarize Resume** prompt from Mission 07
+1. Choose **Prompt** and locate your **Summarize Resume** prompt from Mission 07.  
+    ![Select Prompt](./assets/8-select-prompt.png)
 
-1. Select **Edit** to modify the prompt, and replace with the enhanced version below
+1. Select **Edit** to modify the prompt, and replace with the enhanced version below:
 
     !!! important
         Ensure the Resume and Cover Letter parameters remain intact as parameters.
@@ -204,12 +201,9 @@ First, let's examine the Dataverse tables you'll be grounding with:
     - If no suitable matches are found, indicate an empty list for MatchedRoles and explain briefly in the summary.
     
     ### Input Data
-    
+    Open Job Roles (ppa_jobrolenumber, ppa_jobtitle): /Job Role 
     Resume: {Resume}
     Cover Letter: {CoverLetter}
-    
-    Open Job Roles (ppa_jobrolenumber, ppa_jobtitle): /Job Role 
-    
     ```
 
 1. In the prompt editor, replace `/Job Role` by selecting **+ Add content**,  selecting **Dataverse** → **Job Role** and select the following columns, and then select **Add**:
@@ -218,10 +212,13 @@ First, let's examine the Dataverse tables you'll be grounding with:
 
     1. **Job Title**
 
+    1. **Description**
+
     !!! tip
         You can type the table name to search.
 
-1. In the **Job Role** dialog, select **Filter** attribute, select **Status**, and then type **Active** as the **Filter** value.
+1. In the **Job Role** dialog, select **Filter** attribute, select **Status**, and then type **Active** as the **Filter** value.  
+    ![Add Dataverse Grounding](./assets/8-add-grounding.png)
 
     !!! tip
         You can use **Add value** here to add in an input parameter as well - for example if you had a prompt to summarize an existing record, you could provide the Resume Number as a parameter to filter by.
@@ -230,23 +227,34 @@ First, let's examine the Dataverse tables you'll be grounding with:
 
     1. **Criteria Name**
 
-    1. **Description**
+    1. **Description**  
+        ![Add related evaluation criteria](./assets/8-add-eval-criteria.png)
 
-1. Select **Settings**, and adjust the **Record retrieval** to 1000 - this will allow the maximum Job Roles and Evaluation criteria to be included in your prompt.
+        ![Completed Prompt parameters and grounding](./assets/8-all-prompt-parameters.png)
+
+    !!! tip
+        It is important to select the related Evaluation Criteria by first selecting the Job Role, and then navigating in the menu to Job Role (Evaluation Criteria). This will ensure that only the related records for the Job Role will be loaded.
+
+1. Select **Settings**, and adjust the **Record retrieval** to 1000 - this will allow the maximum Job Roles and Evaluation criteria to be included in your prompt.  
+    ![Prompt Settings](./assets/8-prompt-settings.png)
 
 ### 8.3 Test the enhanced prompt
 
-1. Select the **Resume** parameter, and upload a sample resume.
+1. Select the **Resume** parameter, and upload a sample resume that you used in Mission 07.
 1. Select **Test**.
 1. Once the test has run, notice that the JSON output now includes the **Matched Roles**.
 1. Select the **Knowledge used** tab, to see the Dataverse data that merged with your prompt before execution.
-1. **Save** your updated prompt. The system will now automatically include this Dataverse data with your prompt when the existing Summarize Resume Agent Flow calls it.
+1. **Save** your updated prompt. The system will now automatically include this Dataverse data with your prompt when the existing Summarize Resume Agent Flow calls it.  
+    ![Matched roles in JSON](./assets/8-matched-roles-json.png)
 
 ### 8.4 Add Job Application Agent Flow
 
 To allow our Application Intake Agent to create Job Roles based on the suggested roles, we need to create an Agent Flow. The agent will call this tool for each of the suggested job roles that the candidate is interested in.
 
-1. Inside the **Hiring Agent,** select the **Agents** tab, and open the **Application Intake Agent**
+!!! tip "Agent Flow Expressions"
+    It is very important that you follow the instructions for naming your nodes and entering expressions exactly because the expressions refer to the previous nodes using their name! Refer to the [Agent Flow mission in Recruit](https://microsoft.github.io/agent-academy/recruit/09-add-an-agent-flow/#you-mentioned-expressions-what-are-expressions) for a quick refresher!
+
+1. Inside the **Hiring Agent,** select the **Agents** tab, and open the **Application Intake Agent** child agent.
 
 1. Inside the **Tools** panel, select **+ Add** → **+ New tool** → **Agent Flow**
 
@@ -257,19 +265,23 @@ To allow our Application Intake Agent to create Job Roles based on the suggested
     | Text | `ResumeNumber`  | Be sure to only use the [ResumeNumber] - it MUST start with the letter R |
     | Text | `JobRoleNumber` | Be sure to only use the [JobRoleNumber] - it MUST start with the letter J |
 
+    ![When an agent calls the flow](./assets/8-add-application-1.png)
+
 1. Select the **+** Insert action icon below the first node, search for **Dataverse**, select **See more**, and then locate the **List rows** action.
 
-1. Select the title to rename the node as `Get Resume`, and then set the following parameters:
+1. **Rename** the node as `Get Resume`, and then set the following parameters:
 
     | Property        | How to Set                      | Value                                                        |
     | --------------- | ------------------------------- | ------------------------------------------------------------ |
     | **Table name**  | Select                          | Resumes                                                      |
-    | **Filter rows** | Dynamic data (thunderbolt icon) | `ppa_resumenumber eq 'ResumeNumber'` Select and replace**ResumeNumber** with **When an agent calls the flow** → **ResumeNumber** |
+    | **Filter rows** | Dynamic data (thunderbolt icon) | `ppa_resumenumber eq 'ResumeNumber'` Select and replace **ResumeNumber** with **When an agent calls the flow** → **ResumeNumber** |
     | **Row count**   | Enter                           | 1                                                            |
+
+    ![Get Resume](./assets/8-add-application-2.png)
 
 1. Now, select the **+** Insert action icon below **Get Resume**, search for **Dataverse**, select **See more**, and then locate the **List rows** action.
 
-1. Select the title to rename the node as `Get Job Role`, and then set the following parameters:
+1. **Rename** the node as `Get Job Role`, and then set the following parameters:
 
     | Property        | How to Set                      | Value                                                        |
     | --------------- | ------------------------------- | ------------------------------------------------------------ |
@@ -277,9 +289,11 @@ To allow our Application Intake Agent to create Job Roles based on the suggested
     | **Filter rows** | Dynamic data (thunderbolt icon) | `ppa_jobrolenumber eq 'JobRoleNumber'` Select and replace **JobRoleNumber** with **When an agent calls the flow** → **JobRoleNumber** |
     | **Row count**   | Enter                           | 1                                                            |
 
+    ![Get Job Role](./assets/8-add-application-3.png)
+
 1. Now, select the **+** Insert action icon below Get Job Role, search for **Dataverse**, select **See more**, and then locate the **Add a new row** action.
 
-1. Select the title to rename the node as `Add Application`, and then set the following parameters:
+1. **Rename** the node as `Add Application`, and then set the following parameters:
 
     | Property                           | How to Set           | Value                                                        |
     | ---------------------------------- | -------------------- | ------------------------------------------------------------ |
@@ -289,6 +303,8 @@ To allow our Application Intake Agent to create Job Roles based on the suggested
     | **Resume (Resumes)**                   | Expression (fx icon) | `concat('ppa_resumes/', first(outputs('Get_Resume')?['body/value'])?['ppa_resumeid'])` |
     | **Application Date** (use **Show all**) | Expression (fx icon) | `utcNow()`                                                   |
 
+    ![Add Application](./assets/8-add-application-4.png)
+
 1. Select the **Respond to the agent node**, and then select **+ Add an output**
 
      | Property        | How to Set                      | Details                                         |
@@ -296,7 +312,9 @@ To allow our Application Intake Agent to create Job Roles based on the suggested
      | **Type**        | Select                          | `Text`                                          |
      | **Name**        | Enter                           | `ApplicationNumber`                             |
      | **Value**       | Dynamic data (thunderbolt icon) | *Add Application → See More → Application Number* |
-     | **Description** | Enter                           | `The [ResumeNumber] of the Resume created`      |
+     | **Description** | Enter                           | `The [ApplicationNumber] of the Job Application created`      |
+
+     ![Respond to the agent](./assets/8-add-application-5.png)
 
 1. Select **Save draft** on the top right
 
@@ -325,7 +343,8 @@ Now you'll connect the published flow to your Application Intake Agent.
     | **Description**                                     | `Creates a new job application when given [ResumeNumber] and [JobRoleNumber]` |
     | **Additional details → When this tool may be used** | `Only when referenced by topics or agents`                   |
 
-1. Select **Save**
+1. Select **Save**  
+    ![Add Agent Flow to Agent](./assets/8-add-application-6.png)
 
 ### 8.6 Define agent instructions
 
@@ -343,9 +362,9 @@ To create job applications, you need to tell the agent when to use the new tool.
        - When the user has confirmed a set of [JobRoleNumber]s, move to the next step.
     
     4. Post Upload - Application Creation
-        - After the confirms which [SuggestedJobRoles] for a specific [ResumeNumber]:
+        - After the user confirms which [SuggestedJobRoles] for a specific [ResumeNumber]:
         E.g. "Apply [ResumeNumber] for the Job Roles [JobRoleNumber], [JobRoleNumber], [JobRoleNumber]
-        E.g. "apply to all suggested job roles" - this implies use all the [JobRolesNumbers] 
+        E.g. "apply to all suggested job roles" - this implies use all the [JobRoleNumbers] 
          - Loop over each [JobRoleNumber] and send with [ResumeNumber] to /Create Job Application   
          - Summarize the Job Applications Created
     
@@ -358,17 +377,17 @@ To create job applications, you need to tell the agent when to use the new tool.
       - JobRoleNumber (ppa_jobrolenumber)→ format J#####
     2. Never guess or invent these values.
     3. Always extract identifiers from the current context (conversation, data, or system output). 
-    4. If an identifier is missing:
     ```
 
 1. Where the instructions include a forward slash (/), select the text following the / and select the **Create Job Application** tool.
 
-1. Select **Save**
+1. Select **Save**  
+    ![Create Job Application Instructions](./assets/8-add-application-7.png)
 
 !!! tip "Iterating over multiple items in Generative Orchestration"
-    These instructions use generative orchestration's ability to iterate over multiple rows when making decisions about which steps and tools to use.
+    These instructions use generative orchestration's ability to iterate over multiple rows when making decisions about which steps and tools to use. The Matched Job Roles will be automatically read and the Application Intake Agent will run for each row. Welcome to the magical world of generative orchestration!
 
-### 8.7 Validate the enhancement
+### 8.7 Test your agent
 
 1. Open your **Hiring Agent** in Copilot Studio.
 
@@ -378,11 +397,22 @@ To create job applications, you need to tell the agent when to use the new tool.
     This is a new resume for the Power Platform Developer Role.
     ```
 
-1. Notice how the agent provides a list of Suggested Job Roles - each with a Job Role number.
+1. Notice how the agent provides a list of Suggested Job Roles - each with a Job Role number.  
+    ![Test results with suggested roles](./assets/8-test-1.png)
 
-1. You can then provide which of these you would like the Resume to be added as a job application for - e.g. 'Apply for all of those job roles' or 'Apply for the J10009 Power Platform Developer role'
+1. You can then provide which of these you would like the Resume to be added as a job application for.
+    **Examples:**
 
-1. The **Create Job Application tool** will then be run for each job role you specified.
+    ```text
+    "Apply for all of those job roles"
+    "Apply for the J10009 Power Platform Developer role"
+    "Apply for the Developer and Architect roles"
+    ```
+
+    ![Test results creating job applications](./assets/8-test-2.png)
+
+1. The **Create Job Application tool** will then be run for each job role you specified. Inside the Activity map, you will see the Create Job Application tool run for each of the Job Roles you asked to create an application for:  
+    ![Create Job Application in Activity Map](./assets/8-create-job-application-activity-map.png)
 
 ## 🎉 Mission Complete
 
