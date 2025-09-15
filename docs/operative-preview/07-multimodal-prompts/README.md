@@ -64,7 +64,7 @@ Here are some examples of how multimodal prompts can be applied:
 AI Builder offers different models optimized for specific tasks. Understanding which model to use is crucial for success.
 
 !!! note "Accurate as of September 2025"
-    AI Builder models are updated regularly, so check the latest [AI Builder model settings documentation](https://learn.microsoft.com/en-us/ai-builder/prompt-modelsettings) for current model availability.
+    AI Builder models are updated regularly, so check the latest [AI Builder model settings documentation](https://learn.microsoft.com/ai-builder/prompt-modelsettings) for current model availability.
 
 ### Model comparison
 
@@ -151,7 +151,7 @@ Time to put your multimodal knowledge into practice. You'll build a comprehensiv
 
 Your first objective: create a prompt capable of analyzing resume documents and extracting structured data.
 
-1. Sign in to [Copilot Studio](https://copilotstudio.preview.microsoft.com) and select **Tools** from the left navigation.
+1. Sign in to [Copilot Studio](https://copilotstudio.microsoft.com) and select **Tools** from the left navigation.
 
 1. Select **+ New tool**, then select **Prompt**.  
     ![New Prompt](./assets/7-new-prompt.png)

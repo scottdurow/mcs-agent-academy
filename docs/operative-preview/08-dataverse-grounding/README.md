@@ -438,14 +438,14 @@ Your enhanced system can now create Job Applications and is ready for further co
 
 ## 📚 Tactical Resources
 
-📖 [Use your own data in a prompt](https://learn.microsoft.com/en-us/ai-builder/use-your-own-prompt-data?WT.mc_id=power-182762-scottdurow)
+📖 [Use your own data in a prompt](https://learn.microsoft.com/ai-builder/use-your-own-prompt-data?WT.mc_id=power-182762-scottdurow)
 
-📖 [Create a custom prompt](https://learn.microsoft.com/en-us/ai-builder/create-a-custom-prompt?WT.mc_id=power-182762-scottdurow)
+📖 [Create a custom prompt](https://learn.microsoft.com/ai-builder/create-a-custom-prompt?WT.mc_id=power-182762-scottdurow)
 
-📖 [Work with Dataverse in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-dataverse?WT.mc_id=power-182762-scottdurow)
+📖 [Work with Dataverse in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/knowledge-add-dataverse?WT.mc_id=power-182762-scottdurow)
 
-📖 [AI Builder custom prompts overview](https://learn.microsoft.com/en-us/ai-builder/prompts-overview?WT.mc_id=power-182762-scottdurow)
+📖 [AI Builder custom prompts overview](https://learn.microsoft.com/ai-builder/prompts-overview?WT.mc_id=power-182762-scottdurow)
 
-📖 [Power Platform AI Builder documentation](https://learn.microsoft.com/en-us/ai-builder/?WT.mc_id=power-182762-scottdurow)
+📖 [Power Platform AI Builder documentation](https://learn.microsoft.com/ai-builder/?WT.mc_id=power-182762-scottdurow)
 
-📖 [Training: Create AI Builder prompts using your own Dataverse data](https://learn.microsoft.com/en-us/training/modules/ai-builder-grounded-prompts/?WT.mc_id=power-182762-scottdurow)
+📖 [Training: Create AI Builder prompts using your own Dataverse data](https://learn.microsoft.com/training/modules/ai-builder-grounded-prompts/?WT.mc_id=power-182762-scottdurow)

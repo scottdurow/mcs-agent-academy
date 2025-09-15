@@ -638,14 +638,14 @@ Your enhanced hiring system is now ready for the advanced features we'll add in 
 
 ## 📚 Tactical Resources
 
-📖 [Add other agents (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-add-other-agents?WT.mc_id=power-182762-scottdurow)
+📖 [Add other agents (preview)](https://learn.microsoft.com/microsoft-copilot-studio/authoring-add-other-agents?WT.mc_id=power-182762-scottdurow)
 
-📖 [Add tools to custom agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/advanced-plugin-actions?WT.mc_id=power-182762-scottdurow)
+📖 [Add tools to custom agents](https://learn.microsoft.com/microsoft-copilot-studio/advanced-plugin-actions?WT.mc_id=power-182762-scottdurow)
 
-📖 [Work with Dataverse in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-add-dataverse?WT.mc_id=power-182762-scottdurow)
+📖 [Work with Dataverse in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/knowledge-add-dataverse?WT.mc_id=power-182762-scottdurow)
 
-📖 [Agent flows overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview?WT.mc_id=power-182762-scottdurow)
+📖 [Agent flows overview](https://learn.microsoft.com/microsoft-copilot-studio/flows-overview?WT.mc_id=power-182762-scottdurow)
 
-📖 [Create a solution](https://learn.microsoft.com/en-us/power-platform/alm/solution-concepts-alm?WT.mc_id=power-182762-scottdurow)
+📖 [Create a solution](https://learn.microsoft.com/power-platform/alm/solution-concepts-alm?WT.mc_id=power-182762-scottdurow)
 
-📖 [Power Platform solution ALM guide](https://learn.microsoft.com/en-us/power-platform/alm/overview-alm?WT.mc_id=power-182762-scottdurow)
+📖 [Power Platform solution ALM guide](https://learn.microsoft.com/power-platform/alm/overview-alm?WT.mc_id=power-182762-scottdurow)
