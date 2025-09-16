@@ -66,7 +66,7 @@ This academy is structured as a progressive series of field operations—each mi
 | `12` | 🌐 [Publishing Your Agents to a Demo Website for Stakeholder Testing](./12-demo-website/README.md) | Deploy complete solution for stakeholder demonstration and testing |
 
 !!! note
-    ✅ Completing this curriculum earns you the **Operative** badge.
+    ✅ Completing this curriculum earns you the **Operative** badge.  
     🔓 **Commander** will be unlocked in future phases.
 
 <!-- markdownlint-disable-next-line MD033 -->
