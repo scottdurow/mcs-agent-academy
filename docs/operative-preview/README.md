@@ -1,5 +1,7 @@
 # Welcome Operative
 
+![Copilot Studio Agent Academy Operative](../images/mcs-agent-academy-operative-banner.png)
+
 **Welcome, Operative.**  
 Your advanced mission—should you choose to accept it—is to master the art of building **enterprise-grade multi-agent systems** using **Microsoft Copilot Studio**.
 
