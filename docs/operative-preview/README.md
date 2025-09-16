@@ -1,7 +1,5 @@
 # Welcome Operative
 
-![Copilot Studio Agent Academy Operative](../images/mcs-agent-academy-operative-badge.png)
-
 **Welcome, Operative.**  
 Your advanced mission—should you choose to accept it—is to master the art of building **enterprise-grade multi-agent systems** using **Microsoft Copilot Studio**.
 
@@ -67,6 +65,7 @@ This academy is structured as a progressive series of field operations—each mi
 
 !!! note
     ✅ Completing this curriculum earns you the **Operative** badge.
+    🔓 **Commander** will be unlocked in future phases.
 
 <!-- markdownlint-disable-next-line MD033 -->
 <img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/operative" alt="Analytics" />
