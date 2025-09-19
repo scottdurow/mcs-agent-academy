@@ -204,19 +204,55 @@ You'll need to **either**:
 
 1. By default, the **When a new email arrives** trigger in Power Automate may process multiple emails together if several arrive at once, running the flow only once for the batch.
 
-       To ensure the flow runs separately for each email, enable the **Split On** setting in the trigger’s **Settings**.
+In the **Id** field, select the **lightning bolt icon** or **fx icon** to the right.
 
        With **Split On** turned on and the array field set to `@triggerOutputs()?['body/value']`, the flow will run individually for each message, even if many arrive simultaneously.
 
        ![Turn on Split On settings in the trigger](assets/3.1_07_UpdateTriggerSettings.png)
 
-1. Let's next add some logic. Select the **+** icon below the trigger and select **Control** under the **Built in tools** section.
+1. Let's next add some logic to check the file type of the attachment, we only want to upload .PDF file attachments and not images (these could come from email signatures). Select the **+** icon below the trigger and select **Control** under the **Built in tools** section.
 
        ![Select Control](assets/3.1_08_Control.png)
 
 1. Select the **Condition** action.
 
        ![Select Condition action](assets/3.1_09_AddConditionAction.png)
+
+1. Now we configure the condition to only check that the type of the file attachment is equal to the .PDF file extension format. In the **Choose a value** field, select the **lightning bolt icon** or **fx icon** to the right.
+
+       In the **Search** field type the following,
+
+       ```text
+       content type
+       ```
+
+       Then select the **Attachments Content-Type** parameter from the trigger.
+
+       Next, select **Add** to add the dynamic content input into the **Id** parameter of the action.
+
+       ![Configure Condition action](assets/3.1_10_SetDynamicContentValue.png)
+
+1. Before we configure the Condition further, select the **For each** action. This action represents looping through each attachment in the email, since the **Attachments Content-Type** parameter from the trigger is tied to each attachment.
+
+       Underneath the hood, it's an array and that's why this **For each** action was automatically added when we selected the **Attachments Content-Type** parameter in the **Condition** action. Let's continue!
+
+       ![For Each action explained](assets/3.1_11_ForEach.png)
+
+1. Next, in the other **Choose a value** field, type the following,
+
+       ```text
+       application/pdf
+       ```
+       
+        This will ensure that for each file attachment, it will check the file extension format is .PDF.
+
+       ![EqualToValue](assets/3.1_12_EqualToValue.png)
+
+1. Now we'll configure the **True** path to extract the file from the email and upload it into the **Resume** Dataverse table.
+
+       Add a new action below in the **True** path and search for `html to text`. Select the **Html to text** action.
+
+       ![Add HTML to text action](assets/3.1_13_AddHTMLToTextAction.png)
 
 ## Lab 3.2 - Automating status report updates
 
