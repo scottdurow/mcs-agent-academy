@@ -2,13 +2,19 @@
 
 --8<-- "disclaimer.md"
 
-## 🕵️‍♂️ CODENAME: OPERATION TALENT SCOUT
+## 🕵️‍♂️ CODENAME: `OPERATION TALENT SCOUT`
 
 > **⏱️ Operation Time Window:** `~45 minutes`
 
 ## 🎯 Mission Brief
 
-In this mission, you'll get started with AI-powered recruitment by importing a pre-built solution that contains the foundational data structure for a hiring management system. You'll then create a basic Hiring Agent that serves as the starting point for the comprehensive hiring automation scenario you'll build throughout the Agent Academy Operative program. This initial agent will establish the foundation that you'll enhance with advanced capabilities in subsequent missions.
+Welcome, Agent. Your first assignment is **Operation Talent Scout** - establishing the foundational infrastructure for an AI-powered recruitment system that will transform how organizations identify and hire top talent.
+
+Your mission, should you choose to accept it, is to deploy and configure a comprehensive hiring management system using Microsoft Copilot Studio. You'll import a pre-built solution containing all the necessary data structures, then create your first AI agent - the **Hiring Agent** - which will serve as the central orchestrator for all future recruitment operations.
+
+This initial deployment establishes the command center that you'll enhance throughout the Agent Academy Operative program. Consider this your base of operations - the foundation upon which you'll build an entire network of specialized agents in subsequent missions.
+
+---
 
 ## 🔎 Objectives
 
@@ -18,6 +24,8 @@ By completing this mission, you will:
 - **Solution Deployment**: Successfully import and configure the fundamentals of a hiring management system
 - **Agent Creation**: Build a hiring agent that is the start of the scenario you're going to build as an Agent Academy Operative
 
+---
+
 ## 🔍 Prerequisites
 
 Before embarking on this mission, ensure you have:
@@ -25,6 +33,8 @@ Before embarking on this mission, ensure you have:
 - Copilot Studio license
 - Access to a Microsoft Power Platform environment
 - Administrative permissions to create solutions and agents
+
+---
 
 ## 🏢 Understanding the Hiring Automation Scenario
 
@@ -48,6 +58,8 @@ The solution helps HR teams save time and make better decisions by:
 - The system can be published to a demo website, allowing stakeholders to interact with it.
 
 This scenario is ideal for organizations looking to modernize their recruitment workflows using AI-powered automation, while maintaining transparency, fairness, and efficiency.
+
+---
 
 ## 🧪 Lab: Setup the Hiring Agent
 
@@ -190,6 +202,8 @@ Now you are done with the setup of the prerequisites, it's time for the actual w
 
 This will create the Hiring Agent for you, which you will use throughout this Operative course.
 
+---
+
 ## 🎉 Mission Complete
 
 Mission 01 is completed! You now have mastered the following skills:
@@ -200,7 +214,9 @@ Mission 01 is completed! You now have mastered the following skills:
 
 Next up is [Mission 02](../02-multi-agent/README.md): Make your agent multi-agent ready with connected agents.
 
+---
+
 ## 📚 Tactical Resources
 
-- [Microsoft Copilot Studio - Create an agent](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot)
-- [Microsoft Dataverse Documentation](https://learn.microsoft.com/power-apps/maker/data-platform)
+📖 [Microsoft Copilot Studio - Create an agent](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot)
+📖 [Microsoft Dataverse Documentation](https://learn.microsoft.com/power-apps/maker/data-platform)
