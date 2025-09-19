@@ -10,7 +10,7 @@ jobs:
       - name: Add comment to all issues with only 'recruit-completed' label
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_PAT }}}
           script: |
             const owner = 'microsoft';
             const repo = 'agent-academy';
@@ -37,7 +37,7 @@ jobs:
                   owner,
                   repo,
                   issue_number: issue.number,
-                  body: 'Thank you for filling out the Recruit Completion Form. In order to collect your digital badge, you must submit the following badge validation form: https://aka.ms/agent-academy-recruit/form.'
+                  body: 'Thank you for filling out the Recruit Completion Form. In order to collect your digital badge, you must submit the following Badge Validation Form: https://aka.ms/agent-academy-recruit/form.'
                 });
               }
             }
