@@ -10,7 +10,7 @@ jobs:
       - name: Add comment to all issues with only 'recruit-completed' label
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GH_PAT }}}
+          github-token: ${{ secrets.GH_PAT }}
           script: |
             const owner = 'microsoft';
             const repo = 'agent-academy';
