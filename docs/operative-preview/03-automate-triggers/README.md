@@ -124,7 +124,99 @@ The following table summarizes their differences and similarities.
 
 1. **Test before publishing.** Use **Test trigger** and the activity map to watch the plan and called actions - iterate on instructions/payload until behavior is stable.
 
-## Lab 3.1 - Automating candidate application emails
+## 🧪 Lab 03 - Automating candidate application emails
+
+We're next going to add an event trigger to the **Hiring Agent** and build an agent flow in the child **Application Intake Agent** to handle further processing for autonomy.
+
+### ✨ Use case scenario
+
+**As an** HR Recruiter
+
+**I want to** be notified of when an email with a resume has arrived in my Inbox that has been automatically uploaded to Dataverse
+
+**So that I can** stay notified of resumes sent by email for applications automatically uploaded to Dataverse
+
+We'll be achieving this using two techniques
+
+1. An event trigger for when the email arrives,
+    1. Check the contentType of the file equals .PDF as the format type.
+    1. Extract the file and upload to Dataverse using actions through the Dataverse connector.
+    1. Then send a prompt to the agent for further processing by passing inputs from the Dataverse actions.
+
+1. An agent flow will be added to the child **Application Intake Agent** which is invoked by the prompt in the event trigger.
+    1. Use the inputs passed from the prompt of the event trigger to post an adaptive card to a channel in Microsoft Teams to notify the HR Recruitment team. The adaptive card will have a link to the row in Dataverse which will be viewed in the **Hiring Agent**.
+
+Let's begin!
+
+### ✨ Prerequisites to complete this mission
+
+You'll need to **either**:
+
+- **Have completed Mission 01 and Mission 02** and have your Hiring Agent ready, **OR**
+- **Import the Mission 03 starter solution** if you're starting fresh or need to catch up. [Download Mission 03 Starter Solution](https://aka.ms/agent-academy)
+
+!!! note "Solution Import and Sample Data"
+    If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
+
+## Lab 3.1 - Automate uploading resumes to Dataverse received by email
+
+1. In the Hiring Agent, scroll down in the **Overview tab** and select **+ Add trigger**.
+
+       ![Add trigger to agent](assets/3.1_01_AddTrigger.png)
+
+1. A list of triggers will appear. Select **When a new email arrives (V3)** and select **Next**.
+
+       ![Select When a new email arrives (V3) trigger](assets/3.1_02_WhenANewEmailArrives.png)
+
+1. We'll now see the **Trigger name** and the **Sign in** connection references for the apps listed..
+
+       Rename the trigger name to the following,
+    
+       ```text
+       When a new email arrives from an applicant
+       ```
+
+       Make sure you see a green check by each of the connection references the apps listed. If you don't see a green check, sign in through the ellipsis (...) and select **+ New connection reference** to create a new connection reference.
+
+       ![Update details for trigger name and check connection references](assets/3.1._03_RenameTriggerName.png)
+
+1. The final step is to set the input properties of the trigger. Update the following properties to the following,
+
+     | Property | How to Set | Details |
+     |----------|------------|---------|
+     | **Include Attachments (Optional)** | Dropdown | Yes |
+     | **Subject Filter (Optional)** | Type/Enter with keyboard | Application |
+     | **Only with Attachments (Optional)** | Dropdown | Yes |
+
+       Select **Create trigger**.
+
+       ![Configure trigger inputs](assets/3.1_04_ConfigureTriggerInputs.png)
+
+1. Once created, a confirmation message will appear that the trigger has been added to the agent. Select **Close** and the trigger will be listed in the **Triggers** section.
+
+       We're now going to update the event trigger to add some more automation capabilities. Select the **ellipsis (...)** by the trigger and select **Edit in Power Automate**.
+
+       ![Select Edit in Power Automate](assets/3.1_05_SelectEditInPowerAutomate.png)
+
+1. The trigger will then load as a flow in the Power Automate maker portal. What you're seeing is the flow designer in the Power Automate maker portal. his is where we can add further logic and actions for more automation. The trigger will appear at the top, followed by an action `` as the last action in the flow.
+
+       ![Flow designer in Power Automate maker portal](assets/3.1_06_EditInPowerAutomate.png)
+
+1. By default, the **When a new email arrives** trigger in Power Automate may process multiple emails together if several arrive at once, running the flow only once for the batch.
+
+       To ensure the flow runs separately for each email, enable the **Split On** setting in the trigger’s **Settings**.
+
+       With **Split On** turned on and the array field set to `@triggerOutputs()?['body/value']`, the flow will run individually for each message, even if many arrive simultaneously.
+
+       ![Turn on Split On settings in the trigger](assets/3.1_07_UpdateTriggerSettings.png)
+
+1. Let's next add some logic. Select the **+** icon below the trigger and select **Control** under the **Built in tools** section.
+
+       ![Select Control](assets/3.1_08_Control.png)
+
+1. Select the **Condition** action.
+
+       ![Select Condition action](assets/3.1_09_AddConditionAction.png)
 
 ## Lab 3.2 - Automating status report updates
 
