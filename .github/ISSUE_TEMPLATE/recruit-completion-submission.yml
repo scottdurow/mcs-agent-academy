@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ### IMPORTANT: We are now be issuing badges from the [Global AI community](https://globalai.community). Please ensure you have [signed up for an account](https://globalai.community/auth/login) to view your badge. After you submit your issue, please submit this [form](https://aka.ms/agent-academy-recruit/form) to initiate your badge request.
+        ### IMPORTANT: We are now issuing badges from the [Global AI community](https://globalai.community). Please ensure you have [signed up for an account](https://globalai.community/auth/login) to view your badge. After you submit your issue, please submit this [form](https://aka.ms/agent-academy-recruit/form) to initiate your badge request.
 
   - type: checkboxes
     attributes:
