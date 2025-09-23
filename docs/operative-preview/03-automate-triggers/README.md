@@ -363,6 +363,18 @@ You'll need to **either**:
 
        ![Add expression for Resume Title parameter](assets/3.1_22_ResumeTitleParameter.png)
 
+1. We still need to configure several more parameters, select **Show all** and in the **Cover Letter** field, select the **lightning bolt icon** or **fx icon** to the right.
+
+       In the **Function tab**, enter the following expression that uses the same expression in the previous [mission ](../02-multi-agent/README.md).
+
+       ```text
+       if(greater(length(body('Html_to_text')), 2000), substring(body('Html_to_text'), 0, 2000), body('Html_to_text'))
+       ```
+
+      This expression checks if the text from the Html to text action is longer than 2000 characters, and if so, returns only the first 2000 characters; otherwise, it returns the full text.
+
+       ![Add expression for Cover Letter parameter](assets/3.1_23_CoverLetterParameter.png)
+
 ## Lab 3.2 - Automating status report updates
 
 - Make the agents autonomous - by adding triggers:
