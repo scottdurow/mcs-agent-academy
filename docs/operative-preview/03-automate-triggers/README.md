@@ -365,7 +365,7 @@ You'll need to **either**:
 
 1. We still need to configure several more parameters, select **Show all** and in the **Cover Letter** field, select the **lightning bolt icon** or **fx icon** to the right.
 
-       In the **Function tab**, enter the following expression that uses the same expression in the previous [mission ](../02-multi-agent/README.md).
+       In the **Function tab**, enter the following expression that uses the same expression in the previous [mission](../02-multi-agent/README.md).
 
        ```text
        if(greater(length(body('Html_to_text')), 2000), substring(body('Html_to_text'), 0, 2000), body('Html_to_text'))
