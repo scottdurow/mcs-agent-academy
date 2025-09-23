@@ -178,7 +178,7 @@ You'll need to **either**:
 
        Make sure you see a green check by each of the connection references the apps listed. If you don't see a green check, sign in through the ellipsis (...) and select **+ New connection reference** to create a new connection reference.
 
-       ![Update details for trigger name and check connection references](assets/3.1._03_RenameTriggerName.png)
+       ![Update details for trigger name and check connection references](assets/3.1_03_RenameTriggerName.png)
 
 1. The final step is to set the input properties of the trigger. Update the following properties to the following,
 
@@ -198,13 +198,13 @@ You'll need to **either**:
 
        ![Select Edit in Power Automate](assets/3.1_05_SelectEditInPowerAutomate.png)
 
-1. The trigger will then load as a flow in the Power Automate maker portal. What you're seeing is the flow designer in the Power Automate maker portal. his is where we can add further logic and actions for more automation. The trigger will appear at the top, followed by an action `` as the last action in the flow.
+1. The trigger will then load as a flow in the Power Automate maker portal. What you're seeing is the flow designer in the Power Automate maker portal. This is where we can add further logic and actions for more automation. The trigger will appear at the top, followed by **Sends a prompt to the specified copilot for processing** as the last action in the flow.
 
        ![Flow designer in Power Automate maker portal](assets/3.1_06_EditInPowerAutomate.png)
 
 1. By default, the **When a new email arrives** trigger in Power Automate may process multiple emails together if several arrive at once, running the flow only once for the batch.
 
-In the **Id** field, select the **lightning bolt icon** or **fx icon** to the right.
+       To ensure the flow runs separately for each email, enable the **Split On** setting in the trigger’s settings and select `@triggerOutputs()?['body/value']` in the dropdown array field.
 
        With **Split On** turned on and the array field set to `@triggerOutputs()?['body/value']`, the flow will run individually for each message, even if many arrive simultaneously.
 
@@ -218,7 +218,7 @@ In the **Id** field, select the **lightning bolt icon** or **fx icon** to the ri
 
        ![Select Condition action](assets/3.1_09_AddConditionAction.png)
 
-1. Now we configure the condition to only check that the type of the file attachment is equal to the .PDF file extension format. In the **Choose a value** field, select the **lightning bolt icon** or **fx icon** to the right.
+1. Now we configure the condition to check if the file attachment’s type is .PDF. In the **Choose a value** field, select the **lightning bolt icon** or **fx icon** to the right.
 
        In the **Search** field type the following,
 
@@ -232,9 +232,26 @@ In the **Id** field, select the **lightning bolt icon** or **fx icon** to the ri
 
        ![Configure Condition action](assets/3.1_10_SetDynamicContentValue.png)
 
-1. Before we configure the Condition further, select the **For each** action. This action represents looping through each attachment in the email, since the **Attachments Content-Type** parameter from the trigger is tied to each attachment.
+1. Let's pause here for a moment, you probably noticed that the **For each** action automatically appeared.
 
-       Underneath the hood, it's an array and that's why this **For each** action was automatically added when we selected the **Attachments Content-Type** parameter in the **Condition** action. Let's continue!
+      Select the **For each** action. This action represents looping through each attachment in the email, since the **Attachments Content-Type** parameter from the trigger is tied to each attachment.
+
+       Underneath the hood, it's an array and that's why the **For each** action was automatically added when we selected the **Attachments Content-Type** parameter in the **Condition** action. To learn more, select this (1) icon. Let's continue!
+       { .annotate }
+
+       1.  🤔 Why does "Apply to each" or "For each" Automatically Appear?
+           When you select a parameter (dynamic content) that represents a list or array of items - for example, a list of attachments, emails, or rows - Power Automate recognizes that you might want to process each item individually.
+
+           To help you do this, Power Automate automatically adds an **“Apply to each”** (or **For each**) loop around your action. This ensures that your action will run once for every item in the list, rather than trying to process the whole list at once (which could cause errors).
+
+        🦋 Example
+           - If you select "Attachments" from a previous action (which is an array), and try to use it in an action that expects a single file, Power Automate wraps your action in an **"Apply to each"** (or **For each**) loop. 
+           - This way, your action will run for **each attachment** - one at a time.
+           
+        💡 Key Points
+           - **Automatic:** The loop appears automatically to help you process each item in a collection.
+           - **Prevents errors:** Without the loop, your action might fail because it can’t handle multiple items at once.
+           - **Visual cue:** It’s a visual way to show that your flow will repeat the action for every item in the list.
 
        ![For Each action explained](assets/3.1_11_ForEach.png)
 
@@ -250,9 +267,101 @@ In the **Id** field, select the **lightning bolt icon** or **fx icon** to the ri
 
 1. Now we'll configure the **True** path to extract the file from the email and upload it into the **Resume** Dataverse table.
 
-       Add a new action below in the **True** path and search for `html to text`. Select the **Html to text** action.
+       Add a new action below in the **True** path and search for `html to text`. Select the **Html to text** action. To learn more about this action, select this (1) icon.
+       { .annotate }
+
+       1.  🤔 What is the "HTML to text" Action?
+           The **HTML to text** action in Power Automate is used to convert HTML-formatted content into plain text. This is especially useful when you receive data (like emails, web content, or API responses) that contains HTML tags, and you want to extract just the readable text without any formatting or code.
+
+        ⚙️ How does it work?
+           - **Input:** You provide a string of HTML content (for example, the body of an email).
+           - **Output:** The action removes all HTML tags and returns only the plain text.
+           
+        👍🏻 When should you use it?
+           - When you want to extract readable text from emails, web pages, or API responses that contain HTML.
+           - Before sending content to systems that don’t support HTML formatting (like SMS, Teams messages, or databases).
+           - To clean up data for further processing or analysis.
+           
+        🔭 Where to find it?
+           - In Power Automate for in Agent Flows, search for the action called `HTML to text`. It's under the **Data Operations** connector.
+
+        💡 Key points
+           - It removes all HTML tags and leaves only the text.
+           - It does not interpret or execute scripts/styles - just strips tags.
+           - Useful for data cleaning and preparing content for plain-text outputs.
 
        ![Add HTML to text action](assets/3.1_13_AddHTMLToTextAction.png)
+
+1. Next, we're need to create a new connection reference for the **Html to text** action by selecting **Add new**.
+
+       ![Add new connection reference](assets/3.1_14_AddNewConnection.png)
+
+1. The action can now be configured. Let's add the **Body** parameter from the trigger. In the **Content** field, select the **lightning bolt icon** or **fx icon** to the right.
+
+       ![Add Dynamic Content](assets/3.1_15_AddDynamicContent.png)
+
+1. In the **Dynamic content** tab, search for `body` and select the **Body** parameter, followed by selecting **Add**.
+
+       ![Add Body parameter](assets/3.1_16_AddDynamicContent.png)
+
+1. We've completed configuring this action so let's exit from the action by selecting the two angle brackets («) pointing to the left to collapse the panel.
+
+       ![Collapse action panel](assets/3.1_17_CollapseAction.png)
+
+1. We'll add a new action by selecting the **+ icon** underneath the **Html to text** action which will load the panel to add actions. Select the **Microsoft Dataverse** connector.
+
+       ![Add new action](assets/3.1_18_AddDataverseAction.png)
+
+1. Select the **Add a new row** action.
+
+       ![Add a new row action](assets/3.1_19_AddANewRow.png)
+
+1. Rename the action by selecting the **Ellipsis (...)**, copy and paste the following as the name,
+
+       ```text
+       Add a new Resume row
+       ```
+
+       For the Table name parameter, search for `res` and select the **Resumes** table.
+
+       ![Rename action and configure Table name parameter](assets/3.1_20_RenameAndSelectResumesTable.png)
+
+1. Select the **Resume Title** field next and select the **lightning bolt icon** or **fx icon** to the right.
+
+       ![Configure Resume Title parameter](assets/3.1_21_AddDynamicContent.png)
+
+1. In the **Function tab**, enter the following expression that uses the `item ()` function. To learn more about this function, select this (1) icon.
+       { .annotate }
+
+       1.  🤔 What is the `item()` function?
+           - `item()` is a function that returns the current item being processed in a loop or array operation.
+           - It’s most often used inside actions like **Apply to each** (or **For each**), **Select**, or **Filter array**.
+      
+        ⚙️ How does it work?
+           - When you use an **Apply to each** action, Power Automate goes through each element in a collection (array).
+           - Inside that loop, `item()` refers to the _current element_ being processed.
+
+        📌 Where do you use it?
+           - **Apply to each:** to access properties of the current item.
+           - **Select:** to transform each item in an array.
+           - **Filter array:** to reference the curren item being evaluated.
+
+        🦋 Example
+           - Expression inside a loop:
+               >  `item()?['Email']`
+           - This gets the `Email` property of the current item.
+
+        💡 Key points
+           - `item()` is _context-sensitive_: it always refers to the current item in the loop or array operation you're in.
+           - If you nest loops, you can use `items('LoopName')` to refer to items in a specific loop.
+
+       ```text
+       item()?['name']
+       ```
+      
+       Select **Add** to add the expression to the **Resume Title** parameter.
+
+       ![Add expression for Resume Title parameter](assets/3.1_22_ResumeTitleParameter.png)
 
 ## Lab 3.2 - Automating status report updates
 
