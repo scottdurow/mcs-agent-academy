@@ -371,9 +371,50 @@ You'll need to **either**:
        if(greater(length(body('Html_to_text')), 2000), substring(body('Html_to_text'), 0, 2000), body('Html_to_text'))
        ```
 
-      This expression checks if the text from the Html to text action is longer than 2000 characters, and if so, returns only the first 2000 characters; otherwise, it returns the full text.
+      This expression checks if the _text_ from the **Html to text** action is longer than 2000 characters, and if so, returns only the first 2000 characters; otherwise, it returns the full text.
 
        ![Add expression for Cover Letter parameter](assets/3.1_23_CoverLetterParameter.png)
+
+1. The expression will now be added to the **Cover Letter** field.
+
+       ![Expression added to the Cover Letter parameter](assets/3.1_24_ExpressionForCoverLetter.png)
+
+1. For the **Source Email Address** field, search for `from` select the **From** parameter from the trigger as this contains the email address value.
+
+       ![Source Email Address parameter](assets/3.1_25_FromParameter.png)
+
+1. For the **Upload Date** field, select the **lightning bolt icon** or **fx icon** to the right. In the **Function tab**, enter the following expression that uses the `utcNow()` function. To learn more about this function, select this (1) icon.
+       { .annotate }
+
+       1.  🤔 What is the `utcNow()` function?
+           - The utcnow() function in Power Automate returns the current date and time in Coordinated Universal Time (UTC) in an ISO 8601 format, like: `2025-09-23T04:32:14Z`
+
+        🦋 Example
+           - Expression:
+               >  `concat('Report generated on ', utcnow())`
+           - Output is:
+               - Report generated on `2025-09-23T04:32:14Z`
+      
+        💡 Key points
+           - **No arguments (input parameters) required:** it always gives the current UTC timestamp.
+           - **Use cases**
+               - Adding timestamps to logs or file names
+               - Comparing current time with other dates
+               - Scheduling or time-based conditions
+
+       ![Upload Date Parameter](assets/3.1_26_UploadDateParameter.png)
+
+1. We've now completed configuring the **Add a new Resume row** action so let's exit from the panel by collapsing it.
+
+       ![Exit from action panel](assets/3.1_27_CollapseAction.png)
+
+1. We'll add a new action by selecting the **+ icon** underneath the **Add a new Resume row** action which will load the panel to add actions. Select the **Microsoft Dataverse** connector again.
+
+       ![Add Dataverse action](assets/3.1_28_AddDataverseAction.png)
+
+1. Select the **Upload a file or an image** action.
+
+       ![Add the Upload a file or an image action](assets/3.1_29_AddUploadAFileOrAnImage.png)
 
 ## Lab 3.2 - Automating status report updates
 
