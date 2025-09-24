@@ -158,7 +158,7 @@ You'll need to **either**:
 !!! note "Solution Import and Sample Data"
     If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
 
-## Lab 3.1 - Automate uploading resumes to Dataverse received by email
+### Lab 3.1 - Automate uploading resumes to Dataverse received by email
 
 1. In the Hiring Agent, scroll down in the **Overview tab** and select **+ Add trigger**.
 
@@ -322,7 +322,7 @@ You'll need to **either**:
        Add a new Resume row
        ```
 
-       For the Table name parameter, search for `res` and select the **Resumes** table.
+       For the **Table name** parameter, search for `res` and select the **Resumes** table.
 
        ![Rename action and configure Table name parameter](assets/3.1_20_RenameAndSelectResumesTable.png)
 
@@ -379,7 +379,7 @@ You'll need to **either**:
 
        ![Expression added to the Cover Letter parameter](assets/3.1_24_ExpressionForCoverLetter.png)
 
-1. For the **Source Email Address** field, search for `from` select the **From** parameter from the trigger as this contains the email address value.
+1. For the **Source Email Address** field, search for `from` and select the **From** parameter from the trigger as this contains the email address value.
 
        ![Source Email Address parameter](assets/3.1_25_FromParameter.png)
 
@@ -415,6 +415,132 @@ You'll need to **either**:
 1. Select the **Upload a file or an image** action.
 
        ![Add the Upload a file or an image action](assets/3.1_29_AddUploadAFileOrAnImage.png)
+
+1. Rename the action by selecting the **Ellipsis (...)**, copy and paste the following as the name,
+
+       ```text
+       Upload Resume File
+       ```
+
+       ![Rename action](assets/3.1_30_RenameAction.png)
+
+1. Select the **Content name** field next and select the **lightning bolt icon** or **fx icon** to the right.
+
+      In the **Function tab**, enter the following expression that uses the `item ()` function. This gets the `name` property of the current item (the attachment file).
+
+       ```text
+       item()?['name']
+       ```
+
+       ![Configure Content name parameter](assets/3.1_31_ContentNameParameter.png)
+
+1. For the **Table name** parameter, search for `res` and select the **Resumes** table.
+
+       ![Configure Table name parameter](assets/3.1_32_SelectResumesTable.png)
+
+1. Select the **Row ID** field next and select the **lightning bolt icon** or **fx icon** to the right. 
+
+      Search for `ID` and select the **Resume** parameter from the _Add a new row_ Dataverse action as this contains the ID value of the row to upload the PDF file to. 
+
+      Select **Add**.
+
+       ![Select Row ID](assets/3.1_33_RowIDParameter.png)
+
+1. Select the **Column name** field and select the **Resume PDF** option.
+
+       ![Configure Column name parameter](assets/3.1_34_ColumnNameParameter.png)
+
+1. Select the **Content** field and select the **lightning bolt icon** or **fx icon** to the right.
+
+      In the **Function tab**, enter the following expression that uses the `item ()` function. This gets the `contentBytes` property of the current item (the attachment file). `contentBytes` refers to the raw binary data of a file or attachment, encoded as a Base64 string.
+
+       ```text
+       item()?['contentBytes']
+       ```
+
+1. We've completed configuring this action so let's exit from the action by selecting the two angle brackets («) pointing to the left to collapse the panel.
+
+       ![Collapse action panel](assets/3.1_36_CollapseAction.png)
+
+1. Next, select the **Sends a prompt to the specified copilot for processing**, then drag and drop this action to be below the **Upload Resume File** action in the _True_ path of the condition.
+
+       ![Drag and drop action in True path](assets/3.1_37_DragAndDropAction.png)
+
+1. Select the **Sends a prompt to the specified copilot for processing** to configure it.
+
+       ![Select action](assets/3.1_38_SelectAction.png)
+
+1. In the **Body/message** field, select all of the field content and clear/delete it.
+
+       ![Clear Body parameter](assets/3.1_39_ClearBodyParameter.png)
+
+1. Copy and paste the following text into the **Body/message** field and highlight the `RESUME ID PLACEHOLDER`.
+
+       ```text
+       Send [ResumeId (text)] = "RESUME ID PLACEHOLDER" and [ResumeTitle (text_1)] = "RESUME TITLE PLACEHOLDER" and [ResumeNumber (text_2)]= "RESUME NUMBER PLACEHOLDER" to the Tool "Notify Teams Applicant channel" in the child agent "Application Intake Agent"
+       ```
+
+       ![Replace Resume ID Placeholder text](assets/3.1_40_ReplaceResumeIDPlaceholder.png)
+
+1. Select the **lightning bolt icon** or **fx icon** to the right.
+
+      Search for `resume` and select the **Resume** parameter from the _Add a new row Dataverse_ action as this contains the `ID` value of the Resume row created.
+
+      Select **Add**.
+
+       ![Select Resume parameter](assets/3.1_41_SelectResumeParameter.png)
+
+1. Highlight the `RESUME TITLE PLACEHOLDER`. Select the **lightning bolt icon** or **fx icon** to the right.
+
+      Search for `title` and select the **Resume Title** parameter from the _Add a new row Dataverse_ action as this contains the `resume title` value of the Resume row created.
+
+      Select **Add**.
+
+       ![Select Resume parameter](assets/3.1_42_SelectResumeTitleParameter.png)
+
+1. Highlight the `RESUME NUMBER PLACEHOLDER`. Select the **lightning bolt icon** or **fx icon** to the right.
+
+      Search for `resume number` and select the **Resume Number** parameter from the _Add a new row Dataverse_ action as this contains the `Resume Number` value of the Resume row created.
+
+      Select **Add**.
+
+       ![Select Resume parameter](assets/3.1_43_SelectResumeNumberParameter.png)
+
+1. We've completed configuring this action and our agent flow 🙌🏻 You're doing great! Now let's save our event trigger flow by selecting **Save draft**.
+
+       ![Save draft](assets/3.1_44_SaveDraft.png)
+
+1. We now need to edit the details of the agent flow, select **Back**.
+
+       ![Select Back](assets/3.1_45_Back.png)
+
+1. Select **Edit** in the **Details** section and update the **Plan** to the **Copilot Studio** option.
+
+      Select **Save**.
+
+       ![Change Copilot Studio plan](assets/3.1_46_ChangePlanDetails.png)
+
+1. A modal will appear to ask you to confirm to switch to Copilot Studio plan. Select **Confirm**.
+
+       ![Confirm Copilot Studio plan change](assets/3.1_47_ConfirmCopilotStudioPlan.png)
+
+1. The plan is now updated to **Copilot Studio**. Select **Edit** as we need to publish the event trigger flow for our agent.
+
+       ![Edit flow](assets/3.1_48_PlanChangedAndEdit.png)
+
+1. Select **Publish**.
+
+       ![Publish](assets/3.1_49_Publish.png)
+
+Hooray! Let's proceed in creating a new agent flow that will be invoked by the child **Intake Application** agent.
+
+### Lab 3.2 - Notify a Teams channel using an adaptive card
+
+We're now going to create a new agent flow for the child **Intake Application** agent that uses the values passed by the event trigger, to post an adaptive card to a Teams channel. This adaptive card will alert the HR team about the PDF that was automatically uploaded so that they can review it.
+
+Let's begin!
+
+1. 
 
 ## Lab 3.2 - Automating status report updates
 
