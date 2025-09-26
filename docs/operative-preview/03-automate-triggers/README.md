@@ -532,15 +532,91 @@ You'll need to **either**:
 
        ![Publish](assets/3.1_49_Publish.png)
 
-Hooray! Let's proceed in creating a new agent flow that will be invoked by the child **Intake Application** agent.
+       Hooray! The event trigger flow is now Published 😃
+
+       ![Published](assets/3.1_50_Published.png)
+
+Let's proceed in creating a new agent flow that will be invoked by the child **Intake Application Agent**.
 
 ### Lab 3.2 - Notify a Teams channel using an adaptive card
 
-We're now going to create a new agent flow for the child **Intake Application** agent that uses the values passed by the event trigger, to post an adaptive card to a Teams channel. This adaptive card will alert the HR team about the PDF that was automatically uploaded so that they can review it.
+We're now going to create a new agent flow for the child **Intake Application Agent** that uses the values passed by the event trigger, to post an adaptive card to a Teams channel. This adaptive card will alert the HR team about the PDF that was automatically uploaded so that they can review it.
 
 Let's begin!
 
-1. 
+1. In the **Hiring Agent** select the **Agents** tab and select the **Application Intake Agent**
+
+       ![Select Application Intake Agent](assets/3.2_01_SelectApplicationIntakeAgent.png)
+
+1. Scroll down to **Tools** and select **+ Add**.
+
+       ![Add Tool](assets/3.2_02_AddNewTool.png)
+
+1. The **Add tool** modal will appear. Select **+ New tool**.
+
+       ![Select New Tool](assets/3.2_03_SelectNewTool.png)
+
+1. Select **Agent flow**.
+
+       ![Select Agent flow](assets/3.2_04_SelectAgentFlow.png)
+
+1. The **agent flow designer** will next load. In the **When an agent calls the flow** trigger, select **+ Add an input**.
+
+       ![Select add an input](assets/3.2_05_SelectAddAnInput.png)
+
+1. Select **Text** as the type of user input.
+
+       ![Select Text](assets/3.2_06_SelectText.png)
+
+1. In the input text field, copy and paste the following for the input parameter name.
+
+       ```text
+       ResumeId
+       ```
+
+       ![ResumeId input](assets/3.2_07_ResumeIdInput.png)
+
+1. Repeat the same steps to add a second text input. Copy and paste the following for the input parameter name.
+
+       ```text
+       ResumeTitle
+       ```
+
+       ![ResumeTitle input](assets/3.2_08_ResumeTitleInput.png)
+
+1. Repeat the same steps to add a third text input. Copy and paste the following for the input parameter name.
+
+       ```text
+       ResumeNumber
+       ```
+       ![ResumeNumber input](assets/3.2_09_ResumeNumberInput.png)
+
+1. We're now going to add another action that will post an adaptive card to a Teams channel. Select the **+ icon** below the trigger.
+
+       ![Add new action](assets/3.2_10_AddNewAction.png)
+
+1. Select **Post card in a chat or channel** action.
+
+       ![Select post card in a chat or channel action](assets/3.2_11_SelectPostCardInAChatOrChannel.png)
+
+1. A connection reference to Microsoft Teams needs to be created with your signed in user account. Select **Sign in**.
+
+       ![Select sign in](assets/3.2_12_SignInToCreateConnectionReference.png)
+
+1. Select your user account and then select **Allow access**.
+
+       ![Select Allow access](assets/3.2_13_AllowAccess.png)
+
+1. For the following input parameters,
+
+     | Parameter | How to Set | Details |
+     |----------|------------|---------|
+     | **Post as** | Dropdown | Select the `Flow bot` option |
+     | **Post in** | Dropdown | Select the `Channel` option |
+     | **Team** | Dropdown | Select a team that's available in your environment that you have access to for the purpose of completing this lab exercise |
+     | **Team** | Dropdown | Select a channel that's available in your environment that you have access to for the purpose of completing this lab exercise |
+
+       ![Configure input parameters](assets/3.2_14_ConfigureParameters.png)
 
 ## Lab 3.2 - Automating status report updates
 
