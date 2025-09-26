@@ -438,9 +438,9 @@ You'll need to **either**:
 
        ![Configure Table name parameter](assets/3.1_32_SelectResumesTable.png)
 
-1. Select the **Row ID** field next and select the **lightning bolt icon** or **fx icon** to the right. 
+1. Select the **Row ID** field next and select the **lightning bolt icon** or **fx icon** to the right.
 
-      Search for `ID` and select the **Resume** parameter from the _Add a new row_ Dataverse action as this contains the ID value of the row to upload the PDF file to. 
+      Search for `ID` and select the **Resume** parameter from the _Add a new row_ Dataverse action as this contains the ID value of the row to upload the PDF file to.
 
       Select **Add**.
 
