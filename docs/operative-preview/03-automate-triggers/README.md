@@ -624,7 +624,7 @@ Let's begin!
 
        ![Select Adaptive Card field](assets/3.2_15_SelectAdaptiveCardParameter.png)
 
-1. Copy and paste the JSON payload in the [Resume Table Updated JSON file](assets/8.2_ResumeTableUpdated.json).
+1. Copy and paste the JSON payload in the [Resume Table Updated JSON file](assets/3.2_ResumeTableUpdated.json).
 
        ![Copy and paste JSON](assets/3.2_16_JSON.png)
 
@@ -817,7 +817,7 @@ Let's begin!
 
        ![Select Add and configure](assets/3.2_49_AddAndConfigure.png)
 
-1. In the **Inputs** section of the agent flow, the three inputs we configured earlier in the agent flow are visible. By default, the **Fill using** configuration is set to **Dynamically fill with AI**. We'll keep this setting as-is as the prompt from the [event trigger](../03-automate-triggers/README.md#lab-31---automate-uploading-resumes-to-dataverse-received-by-email) (in the last action, **Sends a prompt to the specified copilot for processing** - this is steps 38-44) will contain the parameter values that AI will extract.
+1. In the **Inputs** section of the agent flow, the three inputs we configured earlier in the agent flow are visible. By default, the **Fill using** configuration is set to **Dynamically fill with AI**. We'll keep this setting as-is as the prompt from the event trigger (in the last action, **Sends a prompt to the specified copilot for processing** - this is steps 38-44 of **Lab 3.1 - Automate uploading resumes to Dataverse received by email**) will contain the parameter values that AI will extract.
 
        ![Tool agent flow inputs](assets/3.2_50_Inputs.png)
 
@@ -911,7 +911,7 @@ We can now test the agent!
 
        ![Activity completed](assets/3.3_04_StatusComplete.png)
 
-1. Select the activity, and select the event trigger in the activity map. On the right hand side panel, notice how the input parameters in the prompt contain the `Resume Id`, `Resume Title` and `Resume Number` parameter values from the **Dataverse** row that was created. This was from the dynamic content values configured earlier in steps 18 - 27 of [Lab 3.1 - Automate uploading resumes to Dataverse received by email](../03-automate-triggers/README.md#lab-31---automate-uploading-resumes-to-dataverse-received-by-email).
+1. Select the activity, and select the event trigger in the activity map. On the right hand side panel, notice how the input parameters in the prompt contain the `Resume Id`, `Resume Title` and `Resume Number` parameter values from the **Dataverse** row that was created. This was from the dynamic content values configured earlier in steps 18 - 27 of **Lab 3.1 - Automate uploading resumes to Dataverse received by email**.
 
        ![Event trigger](assets/3.3_05_EventTrigger.png)
 
@@ -923,7 +923,7 @@ We can now test the agent!
 
        ![Select agent flow](assets/3.3_07_NotifyTeamsApplicantChannel.png)
 
-1. Finally, let's take a look at the adaptive card posted to the channel in **Microsoft Teams**. In the channel, we'll see the adaptive card that displays the information about the newly created Resume row in Dataverse. Hover over the hyperlink at the start of the adaptive card, notice how the URL is the Resumes system view URL that we configured earlier in the JSON (steps 15 - 19 of [Lab 3.2 - Notify a Teams channel using an adaptive card](../03-automate-triggers/README.md#lab-32---notify-a-teams-channel-using-an-adaptive-card)) payload of the adaptive card.
+1. Finally, let's take a look at the adaptive card posted to the channel in **Microsoft Teams**. In the channel, we'll see the adaptive card that displays the information about the newly created Resume row in Dataverse. Hover over the hyperlink at the start of the adaptive card, notice how the URL is the Resumes system view URL that we configured earlier in the JSON (steps 15 - 19 of **Lab 3.2 - Notify a Teams channel using an adaptive card**) payload of the adaptive card.
 
        ![Adaptive Card Resume Table system view URL](assets/3.3_08_AdaptiveCardResumeTableURL.png)
 
@@ -931,7 +931,7 @@ We can now test the agent!
 
        ![Resume system view in Hiring Hub model-driven app](assets/3.3_09_ResumeTableSystemView.png)
 
-1. Navigate back to the adaptive card posted to the channel in Microsoft Teams. This time, hover over **View Resume** which is the `Action.OpenURL` action of the adaptive card. Notice how the URL is the Resumes row that we configured earlier in the JSON (steps 30 - 36 of [Lab 3.2 - Notify a Teams channel using an adaptive card](../03-automate-triggers/README.md#lab-32---notify-a-teams-channel-using-an-adaptive-card)) payload of the adaptive card.
+1. Navigate back to the adaptive card posted to the channel in Microsoft Teams. This time, hover over **View Resume** which is the `Action.OpenURL` action of the adaptive card. Notice how the URL is the Resumes row that we configured earlier in the JSON (steps 30 - 36 of **Lab 3.2 - Notify a Teams channel using an adaptive card**) payload of the adaptive card.
 
        ![Adaptive Card Resume row URL](assets/3.3_10_AdaptiveCardResumeRowURL.png)
 
