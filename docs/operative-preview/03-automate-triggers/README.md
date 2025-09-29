@@ -532,7 +532,7 @@ You'll need to **either**:
 
        ![Publish](assets/3.1_49_Publish.png)
 
-       Hooray! The event trigger flow is now Published 😃
+      Hooray! The event trigger flow is now Published 😃
 
        ![Published](assets/3.1_50_Published.png)
 
@@ -591,7 +591,9 @@ Let's begin!
        ```
        ![ResumeNumber input](assets/3.2_09_ResumeNumberInput.png)
 
-1. We're now going to add another action that will post an adaptive card to a Teams channel. Select the **+ icon** below the trigger.
+1. Remember how in [Recruit](../../recruit/08-add-adaptive-card/README.md#81-create-a-new-topic-with-an-adaptive-card-for-user-to-submit-their-request) we added an adaptive card within a Topic for our agent? This time round, we're going to add an adaptive card in an agent flow. We're now going to add another action to our agent flow that will post an adaptive card to a Teams channel.
+
+      Select the **+ icon** below the trigger.
 
        ![Add new action](assets/3.2_10_AddNewAction.png)
 
@@ -618,9 +620,349 @@ Let's begin!
 
        ![Configure input parameters](assets/3.2_14_ConfigureParameters.png)
 
-## Lab 3.2 - Automating status report updates
+1. Next, we'll configure the **Adaptive Card** field. Select the **Adaptive Card** field.
 
-- Make the agents autonomous - by adding triggers:
-  - On schedule
-  - On incoming email
-- [https://learn.microsoft.com/microsoft-copilot-studio/authoring-trigger-event](https://learn.microsoft.com/microsoft-copilot-studio/authoring-trigger-event)
+       ![Select Adaptive Card field](assets/3.2_15_SelectAdaptiveCardParameter.png)
+
+1. Copy and paste the JSON payload in the [Resume Table Updated JSON file](assets/8.2_ResumeTableUpdated.json).
+
+       ![Copy and paste JSON](assets/3.2_16_JSON.png)
+
+1. Similar to what we did in [Recruit](../../recruit/08-add-adaptive-card/README.md#81-create-a-new-topic-with-an-adaptive-card-for-user-to-submit-their-request), we're going to replace existing values in the JSON payload with actual values or dynamic content.
+
+      First, let's update the URL for the `url` property within the `selectAction` property. This URL will be replaced with the URL of the Resumes system view in the **Hiring Hub** model-driven app. This will allow the Recruiter to select the action and be directed to the Resumes system view in the model-driven app.
+
+      Highlight the current URL value and delete it.
+
+       ![Select URL value](assets/3.2_17_SystemViewURL.png)
+
+1. In the **Hiring Hub** model-driven app, navigate to the **Resumes** system view using the left hand side menu and copy the URL. Then navigate back to the agent flow, and paste the copied URL into the **url** property of the within the `selectAction property`.
+
+       ![Copy Resumes system view URL](assets/3.2_18_CopyResumesSystemViewURL.png)
+
+1. You should see the following where highlighted in Yellow is your environment details of the **Hiring Hub** model-driven app.
+
+     | Parameter | Value | Explanation |
+     |----------|------------|---------|
+     | **Organization URI** | GUID | The Dataverse/Dynamics 365 environment organization URL |
+     | **appid** | GUID | To open a specific model-driven app, the query parameter of either appid or appname is used. In this case, the appid is used |
+     | **viewid** | GUID | The query parameter which is the id of the view |
+
+       ![Paste URL](assets/3.2_19_PasteURL.png)
+
+1. Next, we'll add dynamic content values for several properties. Let's start with the text that will display the Resume Number reference of the row that was created by the event trigger autonomously.
+
+      Select the **panel** icon to load the action panel.
+
+       ![Select panel icon](assets/3.2_20_SelectPannelIcon.png)
+
+1. Scroll down to the line where you see the `text` property for `RESUME NUMBER PLACEHOLDER`. Highlight the placeholder value and delete it.
+
+       ![Delete placeholder](assets/3.2_21_DeleteResumeNumberPlaceholder.png)
+
+1. Click in-between the double quotation marks and select the **lightning bolt icon** or **fx icon** to the right.
+
+      In the **Dynamic Content** tab select the **ResumeNumber** parameter and select **Add**.
+
+       ![SAdd ResumeNumber parameter](assets/3.2_22_SelectResumeNumberParameter.png)
+
+1. The **ResumeNumber** parameter will now be added as dynamic content to the `text` property.
+
+       ![ResumeNumber dynamic content](assets/3.2_23_ResumeNumberDynamicContent.png)
+
+1. We'll repeat the same steps for the `RESUME NAME PLACEHOLDER`. Scroll down to the line where you see the `text` property for `RESUME NAME PLACEHOLDER`. Highlight the placeholder value and delete it.
+
+       ![Resume Name Placeholder](assets/3.2_24_ResumeNamePlaceholder.png)
+
+1. Click in-between the double quotation marks and select the select the **lightning bolt icon** or **fx icon** to the right.
+
+      In the **Dynamic Content** tab select the **ResumeTitle** parameter and select **Add**.
+
+       ![SAdd ResumeNumber parameter](assets/3.2_25_SelectResumeTitleParameter.png)
+
+1. The **ResumeTitle** parameter will now be added as dynamic content to the `text` property.
+
+       ![ResumeNumber dynamic content](assets/3.2_26_ResumeTitleDynamicContent.png)
+
+1. We'll repeat the same steps for the **Due Date** value that represents when a recruiter should review the resume by. Scroll down to the line where you see the `text` property for `May 21, 2023`.
+
+       ![Select Allow access](assets/3.2_27_DueDatePlaceholder.png)
+
+1. Delete this date placeholder value and click in-between the double quotation marks.
+
+       ![Delete](assets/3.2_28_DeleteDueDatePlaceholder.png)
+
+1. Select the **lightning bolt icon** or **fx icon** to the right and in the **Function** tab, enter the following expression and select **Add**.
+
+       ```text
+       addDays(utcNow(), 3, 'MMM dd, yyyy')
+       ```
+
+      This expression utilizes two functions.
+
+     | Function | Explanation |
+     |----------|------------|
+     | **addDays** | Adds a specified number of days to a given date and returns the resulting date in string format |
+     | **utcNow** | Returns the current date and time in Coordinated Universal Time (UTC) format as a string. |
+
+      For the utcNow value, we are formatting the date to be month and date, followed by the year.
+
+       ![Expression Due Date](assets/3.2_29_01_ExpressionDueDate.png)
+
+      The expression will now be added to the `text` property.
+
+       ![Expression Due Date](assets/3.2_29_02_ExpressionDueDate.png)
+
+1. Lastly, we'll update the URL for the `url` property within the `actions` array property at the bottom of the JSON payload. This current placeholder URL will be replaced with the URL of the Resume row in the **Hiring Hub** model-driven app. This will allow the Recruiter to select the `Action.OpenURL` action of the adaptive card and be directed to the Resume in the model-driven app.
+
+       ![Delete View Resume URL placeholder](assets/3.2_30_ViewResumeURLPlaceholder.png)
+
+1. In the **Hiring Hub** model-driven app, open a row in the **Resumes** system view using the left hand side menu. The resume row will load as a form in the model-driven app.
+
+      Copy the URL for the Resume row.
+
+       ![Copy Resume row URL](assets/3.2_31_CopyResumeURL.png)
+
+1. Then navigate back to the agent flow, highlight the current placeholder URL value and delete it.
+
+       ![Delete Resume row URL placeholder](assets/3.2_32_SelectResumeURLPlaceHolder.png)
+
+1. Then paste the copied URL into the **url** property of the within the `url property`.
+
+       ![Paste the copied Resume row URL](assets/3.2_33_PasteResumeRowURL.png)
+
+1. You should see the following. Delete the `GUID` id value at the end. We'll replace this dynamic content - the **ResumeId** parameter.
+
+       ![Delete View Resume URL placeholder](assets/3.2_34_DeleteViewResumePlaceholderURL.png)
+
+1. Select the **lightning bolt icon** or **fx icon** to the right.
+
+      In the **Dynamic Content** tab select the **ResumeId** parameter and select **Add**..
+
+       ![ResumeId parameter](assets/3.2_35_ResumeIdParameter.png)
+
+1. The **ResumeId** will be added as dynamic content. The following highlighted in Yellow is your environment details of the **Hiring Hub** model-driven app - the Organization URI and the appid, as learnt earlier when we added the URL for the **Resumes** system view.
+
+       ![ResumeId dynamic content](assets/3.2_36_ResumeIdDynamicContent.png)
+
+1. We've completed configuring the **Post card in a chat or channel** action 👏🏻 Exit from the action configuration panel by selecting the **x** icon.
+
+       ![Close panel](assets/3.2_37_CloseActionPanel.png)
+
+1. Finally, we'll configure the last action, **Respond to the agent** by sending a text back to the agent to end the processing.
+
+      In the **Respond to the agent** action, select **+Add an output**.
+
+       ![Select Add an output](assets/3.2_38_AddAnOutput.png)
+
+1. Select **Text** as the type of output.
+
+       ![Select test as the type output](assets/3.2_39_SelectText.png)
+
+1. Enter the following as the following as the name of the output.
+
+       ![End Conversation Output](assets/3.2_40_EndConversationOutput.png)
+
+1. Enter the following as the value for the output.
+
+       ```text
+       Finished
+       ```
+
+       ![End Conversation Output value](assets/3.2_41_EndConversationOutputValue.png)
+
+1. We've now completed configuring the agent flow. Select **Save draft** to save the agent flow. A confirmation message will appear once saved.
+
+       ![Save draft](assets/3.2_42_SaveDraft.png)
+
+1. Before publishing the agent flow, we need to update the details for the agent flow. Select the **Overview** tab and select **Edit**.
+
+      In the flow name field, enter the following.
+
+       ```text
+       Notify Teams Applicant channel
+       ```      
+
+      Afterwards, select the **Refresh** icon to update the description of the agent flow using AI.
+
+      Then select **Save** to save the updated details for the agent flow.
+
+       ![Edit and save details](assets/3.2_43_EditDetails.png)
+
+1. Navigate back to the **Designer** tab and select **Publish** to publish the agent flow. A confirmation message will appear once saved.
+
+       ![Publish agent flow](assets/3.2_44_PublishAgentFlow.png)
+
+1. The agent flow now needs to be added as a tool in the **Application Intake Agent**. Navigate back to the **Hiring Agent** and select the **Agents** tab, then select the **Application Intake Agent**.
+
+       ![Select Application Intake Agent](assets/3.2_45_ApplicationIntakeAgent.png)
+
+1. In the **Details** section of the agent, we'll update the **Description** field. Copy the following and paste and the end of the description text.
+
+       ```text
+       and also notify the Teams Applicant channel
+       ```
+
+       ![Update Agent Description](assets/3.2_46_UpdateAgentDescription.png)
+
+1. Next, we'll add the agent flow as a tool. Scroll down and select **+ Add**.
+
+       ![Select Add](assets/3.2_47_AddTools.png)
+
+1. Select the agent flow created earlier, **Notify Teams Applicant Channel**.
+
+       ![Select agent flow](assets/3.2_48_NotifyTeamsApplicantChannelAgentFlow.png)
+
+1. Select **Add and configure** next.
+
+       ![Select Add and configure](assets/3.2_49_AddAndConfigure.png)
+
+1. In the **Inputs** section of the agent flow, the three inputs we configured earlier in the agent flow are visible. By default, the **Fill using** configuration is set to **Dynamically fill with AI**. We'll keep this setting as-is as the prompt from the [event trigger](../03-automate-triggers/README.md#lab-31---automate-uploading-resumes-to-dataverse-received-by-email) (in the last action, **Sends a prompt to the specified copilot for processing** - this is steps 38-44) will contain the parameter values that AI will extract.
+
+       ![Tool agent flow inputs](assets/3.2_50_Inputs.png)
+
+1. Now that the tool has been added to the **Application Intake Agent**, the instructions of the agent needs to be updated. Select the **back arrow** icon to return to the list of agents.
+
+       ![Select back arrow icon](assets/3.2_51_SelectBack.png)
+
+1. Select the **Application Intake Agent** in the **Agents** tab of the **Hiring Agent**.
+
+       ![Select Add an output](assets/3.2_38_AddAnOutput.png)
+
+1. In the **Instructions** field, enter a new line after `2.Post-Upload` instructions. Copy and paste the following instructions.
+
+       ```text
+       Process for Resume Upload via Email
+       1. When you receive a message, **Send [ResumeId (text)] = "1680265f-5793-f011-b41b-7c1e525be9f7" and [ResumeTitle (text_1)] = "TAYLOR TESTPERSON (FICTITIOUS).pdf" and [ResumeNumber (text_2)]= "R01026" to the Tool "Notify Teams Applicant channel"** in the child agent "Application Intake Agent", call [AGENT FLOW PLACEHOLDER]
+       ```
+
+       ![Update instructions of Application Intake Agent](assets/3.2_53_PasteCopiedInstructions.png)
+
+1. Highlight the `[AGENT FLOW PLACEHOLDER` text.
+
+       ![Highlight placeholder](assets/3.2_54_HighlightPlaceholder.png)
+
+1. Enter the forward slash character, `/`, and select the **Notify Teams Applicant Channel** tool.
+
+       ![Select Notify Teams Applicant Channel tool](assets/3.2_55_NotifyTeamsApplicatnChannelTool.png)
+
+1. The agent flow will now be invoked by the **Application Intake Agent** as per the instructions, after the last action (**Sends a prompt to the specified copilot for processing**) in the event trigger sends the prompt that contains the parameter values back to the agent.
+
+      Select **Save** to save the updated instructions for the **Application Intake Agent**.
+
+       ![Select Save](assets/3.2_56_Save.png)
+
+1. The instructions will now be updated once the agent has been saved.
+
+       ![Instructions updated](assets/3.2_57_InstructionsUpdated.png)
+
+1. We now need to **Publish** the **Hiring Agent**. Select **Publish** on the upper right, and in the _Publish this agent modal_ that appears select **Publish**.
+
+       ![Publish Hiring Agent](assets/3.2_58_PublishAgent.png)
+
+1. Once published, a confirmation message will appear that the agent has been published.
+
+       ![Confirmation message](assets/3.2_59_AgentPublished.png)
+
+We can now test the agent!
+
+### Lab 3.3 - Test event trigger
+
+1. To execute the event trigger, an email needs to be sent with a Resume pdf file. In Outlook, compose a new email message.
+
+     | Email Component | Details |
+     |----------|------------|
+     | **To recipient** | Use your signed in user account as the value |
+     | **File attachment** | Upload the [TAYLOR TESTPERSON (FICTITIOUS)](../test-data/resumes/TAYLOR%20TESTPERSON%20(FICTITIOUS).pdf) file  |
+     | **Body** | Copy and paste the following below as the body of the email  |
+
+       ```text
+       Dear Hiring Manager,
+
+       I am writing to express my interest in the Senior Power Platform Engineer position at your organization. With over nine years of experience delivering secure and scalable solutions on Microsoft cloud platforms, I am confident in my ability to contribute effectively to your team.
+
+       In my most recent role as Lead Power Platform Engineer, I developed an automated resume-intake pipeline, reducing manual triage and improving searchability. I have delivered HR case management applications, introduced solution-aware flows, and implemented PR checks to enhance deployment lead times. My expertise includes Power Apps, Power Automate, Power Pages, Dataverse, and a range of Microsoft 365 services, as well as integration with Graph/REST APIs and Azure Functions.
+
+       Previously, I developed Teams approvals with adaptive cards, cutting approval times to the same day, and created robust error-handling frameworks. My background also includes migrating legacy workflows to Power Automate and building self-service portals adopted by hundreds of employees.
+
+       I hold a B.Sc. in Computer Science and am certified as a Power Platform Developer (PL-400) and Solution Architect (PL-600). I am also passionate about mentoring and have volunteered with local maker groups.
+
+       Please find my CV attached for your consideration. I would welcome the opportunity to discuss how my skills and experience align with your needs.
+
+       Thank you for your time and consideration.
+
+       Kind regards,
+       Taylor Testperson
+       ```
+
+       **Send** the email once composed.
+
+       ![Compose email with PDF file attachment](assets/3.3_01_ComposeEmailWithAttachment.png)
+
+1. In the Power Automate maker portal for the event trigger flow, select the **Refresh** icon to view the flow run that succeeded for the sent email.
+
+       ![Select refresh icon to view flow run](assets/3.2_38_AddAnOutput.png)
+
+1. Back in Copilot Studio in the **Hiring Agent** select the **Activity** tab.
+
+       ![Select Activity tab](assets/3.3_03_SelectActivity.png)
+
+1. The **Activity** tab will load which will display all the activities of the **Hiring Agent**. There will be an activity with the name value of **Automated** that has a status of **Complete**. This activity represents the event trigger and the agent flow that was invoked.
+
+       ![Activity completed](assets/3.3_04_StatusComplete.png)
+
+1. Select the activity, and select the event trigger in the activity map. On the right hand side panel, notice how the input parameters in the prompt contain the `Resume Id`, `Resume Title` and `Resume Number` parameter values from the **Dataverse** row that was created. This was from the dynamic content values configured earlier in steps 18 - 27 of [Lab 3.1 - Automate uploading resumes to Dataverse received by email](../03-automate-triggers/README.md#lab-31---automate-uploading-resumes-to-dataverse-received-by-email).
+
+       ![Event trigger](assets/3.3_05_EventTrigger.png)
+
+1. Navigate back to the **Hiring Hub** model-driven app and in the **Resumes system view**, select **Refresh** to refresh the view. The newly created row for the resume that was sent by email will now be listed as it was created through the event trigger.
+
+       ![Resume row created](assets/3.3_06_ResumeRowCreated.png)
+
+1. Navigate back to Copilot Studio and select the **Notify Teams Applicant Channel** agent flow within the **Application Intake Agent** in the activity map. On the right hand side panel, notice how the inputs have values from the Dataverse row. This was from the prompt sent by the last action (**Sends a prompt to the specified copilot for processing**) in the event trigger that contains the parameter values from the newly created Dataverse row. This is how we can pass parameter values from event triggers to agent flows.
+
+       ![Select agent flow](assets/3.3_07_NotifyTeamsApplicantChannel.png)
+
+1. Finally, let's take a look at the adaptive card posted to the channel in **Microsoft Teams**. In the channel, we'll see the adaptive card that displays the information about the newly created Resume row in Dataverse. Hover over the hyperlink at the start of the adaptive card, notice how the URL is the Resumes system view URL that we configured earlier in the JSON (steps 15 - 19 of [Lab 3.2 - Notify a Teams channel using an adaptive card](../03-automate-triggers/README.md#lab-32---notify-a-teams-channel-using-an-adaptive-card)) payload of the adaptive card.
+
+       ![Adaptive Card Resume Table system view URL](assets/3.3_08_AdaptiveCardResumeTableURL.png)
+
+1. Select the hyperlink, and you'll be directed to the Resumes system view in the **Hiring Hub** model-driven app on your browser.
+
+       ![Resume system view in Hiring Hub model-driven app](assets/3.3_09_ResumeTableSystemView.png)
+
+1. Navigate back to the adaptive card posted to the channel in Microsoft Teams. This time, hover over **View Resume** which is the `Action.OpenURL` action of the adaptive card. Notice how the URL is the Resumes row that we configured earlier in the JSON (steps 30 - 36 of [Lab 3.2 - Notify a Teams channel using an adaptive card](../03-automate-triggers/README.md#lab-32---notify-a-teams-channel-using-an-adaptive-card)) payload of the adaptive card.
+
+       ![Adaptive Card Resume row URL](assets/3.3_10_AdaptiveCardResumeRowURL.png)
+
+1. Select the action, and you'll be directed to the Resume row form in the **Hiring Hub** model-driven app on your browser.
+
+       ![Resume row in Hiring Hub model-driven app](assets/3.3_11_ResumeRow.png)
+
+## ✅ Mission Complete
+
+Congratulations! 👏🏻 Excellent work, Operative.
+
+✅ Event trigger: you've created an event trigger that passes Dataverse parameter values to an agent flow.
+✅ Built an agent flow: consumes the Dataverse parameter values to post an adaptive card to a channel in Microsoft Teams to alert the HR team.
+✅ Updated child agent instructions: to invoke the flow once the event trigger has completed.
+
+This enables the **Hiring Agent** to work autonomously whenever resumes are received as email attachments and notify the HR team for manual review.
+
+This is the end of **Lab 03 - Automating candidate application emails**, select the link below to move to the next lesson.
+
+⏭️ [Move to **Authoring Agent Instructions** lesson](../04-agent-instructions/README.md)
+
+## 📚 Tactical Resources
+
+📖 [Make your agent autonomous in Copilot Studio](https://learn.microsoft.com/training/modules/autonomous-agents-online-workshop/?WT.mc_id=power-188561-ebenitez)
+
+📖 [Add an event trigger](https://learn.microsoft.com/microsoft-copilot-studio/authoring-trigger-event?WT.mc_id=power-188561-ebenitez)
+
+📖 [Use agent flows with your agent](https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow?WT.mc_id=power-188561-ebenitez)
+
+📖 [Power Automate triggers introduction](https://learn.microsoft.com/power-automate/triggers-introduction?WT.mc_id=power-188561-ebenitez)
+
+📖 [Using Power Automate flows with agents](https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow-create?WT.mc_id=power-188561-ebenitez)
+
+📖 [Data loss prevention for Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention?WT.mc_id=power-188561-ebenitez)
