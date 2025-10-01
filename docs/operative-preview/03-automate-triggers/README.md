@@ -10,7 +10,9 @@
 
 Welcome back, Agent. In [Mission 02](../02-multi-agent/README.md) - you learnt how to build an Application Intake child agent and an Interview Prep connected agent to broaden your main Hiring Agent's capabilities.
 
-Your assignment, should you choose to accept it, is **Operation Signal Point** - diving deeper into **event triggers** to enable [TBC].
+Your assignment, should you choose to accept it, is **Operation Signal Point** - diving deeper into **event triggers** - elevating your agent system from reactive to **autonomous operation**. You'll transform your agents from waiting for human input to proactively responding to external events and taking intelligent action without supervision.
+
+Think of it as upgrading from agents that _answer questions_ to agents that _anticipate needs_ and _act independently_. Through event triggers and automated workflows, your Hiring Agent will detect incoming resume emails, process attachments automatically, store data in Dataverse, and notify your HR recruitment team via Microsoft Teams - all while you focus on higher-value tasks.
 
 Welcome to the world of where automation meets intelligence.
 
@@ -18,11 +20,11 @@ Welcome to the world of where automation meets intelligence.
 
 In this mission, you'll learn:
 
-1. TBC
-1. TBC  
-1. TBC
-1. TBC
-1. TBC
+1. How event triggers enable autonomous agent behavior without user interaction
+1. The differences between interactive and autonomous agents in Copilot Studio
+1. How to create event triggers that automatically process email attachments and upload files to Dataverse
+1. How to build agent flows that post adaptive cards to Teams channels for notifications
+1. How to pass data between event triggers and agent flows for end-to-end automation
 
 ## 🤔 What is an Event trigger?
 
@@ -139,12 +141,12 @@ We're next going to add an event trigger to the **Hiring Agent** and build an ag
 We'll be achieving this using two techniques
 
 1. An event trigger for when the email arrives,
-    1. Check the contentType of the file equals .PDF as the format type.
+    1. Check the `contentType` of the file equals `PDF` as the format type.
     1. Extract the file and upload to Dataverse using actions through the Dataverse connector.
-    1. Then send a prompt to the agent for further processing by passing inputs from the Dataverse actions.
+    1. Then send a prompt to the agent for further processing by passing input parameters from the Dataverse actions.
 
 1. An agent flow will be added to the child **Application Intake Agent** which is invoked by the prompt in the event trigger.
-    1. Use the inputs passed from the prompt of the event trigger to post an adaptive card to a channel in Microsoft Teams to notify the HR Recruitment team. The adaptive card will have a link to the row in Dataverse which will be viewed in the **Hiring Agent**.
+    1. Use the input parameters passed from the prompt of the event trigger in an adaptive card posted to a channel in Microsoft Teams to notify the HR Recruitment team. The adaptive card will have a link to the row in Dataverse which will be viewed in the **Hiring Agent**.
 
 Let's begin!
 
@@ -157,6 +159,8 @@ You'll need to **either**:
 
 !!! note "Solution Import and Sample Data"
     If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
+
+You'll also need access to **Microsoft Teams** to complete the second lab exercise of posting an adaptive card to Microsoft Teams.
 
 ### Lab 3.1 - Automate uploading resumes to Dataverse received by email
 
@@ -236,22 +240,28 @@ You'll need to **either**:
 
       Select the **For each** action. This action represents looping through each attachment in the email, since the **Attachments Content-Type** parameter from the trigger is tied to each attachment.
 
-       Underneath the hood, it's an array and that's why the **For each** action was automatically added when we selected the **Attachments Content-Type** parameter in the **Condition** action. To learn more, select this (1) icon. Let's continue!
-       { .annotate }
+       Underneath the hood, it's an array and that's why the **For each** action was automatically added when we selected the **Attachments Content-Type** parameter in the **Condition** action. 
 
-       1.  🤔 Why does "Apply to each" or "For each" Automatically Appear?
-           When you select a parameter (dynamic content) that represents a list or array of items - for example, a list of attachments, emails, or rows - Power Automate recognizes that you might want to process each item individually.
+      To learn more about this, expand the following additional learning block.
 
-           To help you do this, Power Automate automatically adds an **“Apply to each”** (or **For each**) loop around your action. This ensures that your action will run once for every item in the list, rather than trying to process the whole list at once (which could cause errors).
+    ??? info "Additional Learning: For each action automatically appearing"
 
-        🦋 Example
-           - If you select "Attachments" from a previous action (which is an array), and try to use it in an action that expects a single file, Power Automate wraps your action in an **"Apply to each"** (or **For each**) loop. 
-           - This way, your action will run for **each attachment** - one at a time.
+        🤔 **Why does "Apply to each" or "For each" Automatically Appear?**
+        
+        When you select a parameter (dynamic content) that represents a list or array of items - for example, a list of attachments, emails, or rows - Power Automate recognizes that you might want to process each item individually.
+        
+        To help you do this, Power Automate automatically adds an **“Apply to each”** (or **For each**) loop around your action. This ensures that your action will run once for every item in the list, rather than trying to process the whole list at once (which could cause errors).
+
+        🦋 **Example**
+        
+        - If you select "Attachments" from a previous action (which is an array), and try to use it in an action that expects a single file, Power Automate wraps your action in an **"Apply to each"** (or **For each**) loop. 
+        - This way, your action will run for **each attachment** - one at a time.
            
-        💡 Key Points
-           - **Automatic:** The loop appears automatically to help you process each item in a collection.
-           - **Prevents errors:** Without the loop, your action might fail because it can’t handle multiple items at once.
-           - **Visual cue:** It’s a visual way to show that your flow will repeat the action for every item in the list.
+        💡 **Key Points**
+        
+        - **Automatic:** The loop appears automatically to help you process each item in a collection.
+        - **Prevents errors:** Without the loop, your action might fail because it can't handle multiple items at once.
+        - **Visual cue:** It's a visual way to show that your flow will repeat the action for every item in the list.
 
        ![For Each action explained](assets/3.1_11_ForEach.png)
 
@@ -267,28 +277,36 @@ You'll need to **either**:
 
 1. Now we'll configure the **True** path to extract the file from the email and upload it into the **Resume** Dataverse table.
 
-       Add a new action below in the **True** path and search for `html to text`. Select the **Html to text** action. To learn more about this action, select this (1) icon.
-       { .annotate }
+       Add a new action below in the **True** path and search for `html to text`. Select the **Html to text** action. 
 
-       1.  🤔 What is the "HTML to text" Action?
-           The **HTML to text** action in Power Automate is used to convert HTML-formatted content into plain text. This is especially useful when you receive data (like emails, web content, or API responses) that contains HTML tags, and you want to extract just the readable text without any formatting or code.
+       To learn more about the **Html to text** action, expand the following additional learning block.
 
-        ⚙️ How does it work?
-           - **Input:** You provide a string of HTML content (for example, the body of an email).
-           - **Output:** The action removes all HTML tags and returns only the plain text.
+    ??? info "Additional Learning: Html to text action"
+
+        🤔 **What is the "HTML to text" Action?**
+        
+        The **HTML to text** action in Power Automate is used to convert HTML-formatted content into plain text. This is especially useful when you receive data (like emails, web content, or API responses) that contains HTML tags, and you want to extract just the readable text without any formatting or code.
+
+        ⚙️ **How does it work?**
+        
+        - **Input:** You provide a string of HTML content (for example, the body of an email).
+        - **Output:** The action removes all HTML tags and returns only the plain text.
+        
+        👍🏻 **When should you use it?**
+        
+        - When you want to extract readable text from emails, web pages, or API responses that contain HTML.
+        - Before sending content to systems that don’t support HTML formatting (like SMS, Teams messages, or databases).
+        - To clean up data for further processing or analysis.
+
+        🔭 **Where to find it?**
+        
+        - In Power Automate for in Agent Flows, search for the action called `HTML to text`. It's under the **Data Operations** connector.
            
-        👍🏻 When should you use it?
-           - When you want to extract readable text from emails, web pages, or API responses that contain HTML.
-           - Before sending content to systems that don’t support HTML formatting (like SMS, Teams messages, or databases).
-           - To clean up data for further processing or analysis.
-           
-        🔭 Where to find it?
-           - In Power Automate for in Agent Flows, search for the action called `HTML to text`. It's under the **Data Operations** connector.
-
-        💡 Key points
-           - It removes all HTML tags and leaves only the text.
-           - It does not interpret or execute scripts/styles - just strips tags.
-           - Useful for data cleaning and preparing content for plain-text outputs.
+        💡 **Key Points**
+        
+        - It removes all HTML tags and leaves only the text.
+        - It does not interpret or execute scripts/styles - just strips tags.
+        - Useful for data cleaning and preparing content for plain-text outputs.    
 
        ![Add HTML to text action](assets/3.1_13_AddHTMLToTextAction.png)
 
@@ -330,35 +348,43 @@ You'll need to **either**:
 
        ![Configure Resume Title parameter](assets/3.1_21_AddDynamicContent.png)
 
-1. In the **Function tab**, enter the following expression that uses the `item ()` function. To learn more about this function, select this (1) icon.
-       { .annotate }
-
-       1.  🤔 What is the `item()` function?
-           - `item()` is a function that returns the current item being processed in a loop or array operation.
-           - It’s most often used inside actions like **Apply to each** (or **For each**), **Select**, or **Filter array**.
-      
-        ⚙️ How does it work?
-           - When you use an **Apply to each** action, Power Automate goes through each element in a collection (array).
-           - Inside that loop, `item()` refers to the _current element_ being processed.
-
-        📌 Where do you use it?
-           - **Apply to each:** to access properties of the current item.
-           - **Select:** to transform each item in an array.
-           - **Filter array:** to reference the curren item being evaluated.
-
-        🦋 Example
-           - Expression inside a loop:
-               >  `item()?['Email']`
-           - This gets the `Email` property of the current item.
-
-        💡 Key points
-           - `item()` is _context-sensitive_: it always refers to the current item in the loop or array operation you're in.
-           - If you nest loops, you can use `items('LoopName')` to refer to items in a specific loop.
+1. In the **Function tab**, enter the following expression that uses the `item()` function.
 
        ```text
        item()?['name']
        ```
-      
+
+       To learn more about the `item ()` function, expand the following additional learning block.
+
+    ??? info "Additional Learning: `item()` function"
+
+        🤔 **What is the `item()` function?**
+        
+        - When you use an **Apply to each** action, Power Automate goes through each element in a collection (array).
+        - It’s most often used inside actions like **Apply to each** (or **For each**), **Select**, or **Filter array**.
+
+        ⚙️ **How does it work?**
+        
+        - `item()` is a function that returns the current item being processed in a loop or array operation.
+        - Inside that loop, `item()` refers to the _current element_ being processed.
+        
+        📌 **Where do you use it?**
+        
+        - **Apply to each:** to access properties of the current item.
+        - **Select:** to transform each item in an array.
+        - **Filter array:** to reference the current item being evaluated.
+
+        🦋 **Example**
+        
+        - Expression inside a loop:
+               -  `item()?['Email']`
+        - This gets the `Email` property of the current item.
+           
+        💡 **Key Points**
+        
+        - `item()` is _context-sensitive_: it always refers to the current item in the loop or array operation you're in.
+        - If you nest loops, you can use `items('LoopName')` to refer to items in a specific loop.      
+
        Select **Add** to add the expression to the **Resume Title** parameter.
 
        ![Add expression for Resume Title parameter](assets/3.1_22_ResumeTitleParameter.png)
@@ -383,20 +409,30 @@ You'll need to **either**:
 
        ![Source Email Address parameter](assets/3.1_25_FromParameter.png)
 
-1. For the **Upload Date** field, select the **lightning bolt icon** or **fx icon** to the right. In the **Function tab**, enter the following expression that uses the `utcNow()` function. To learn more about this function, select this (1) icon.
-       { .annotate }
+1. For the **Upload Date** field, select the **lightning bolt icon** or **fx icon** to the right. In the **Function tab**, enter the following expression that uses the `utcNow()` function.
 
-       1.  🤔 What is the `utcNow()` function?
-           - The utcnow() function in Power Automate returns the current date and time in Coordinated Universal Time (UTC) in an ISO 8601 format, like: `2025-09-23T04:32:14Z`
+       ```text
+       utcNow()
+       ```
 
-        🦋 Example
-           - Expression:
-               >  `concat('Report generated on ', utcnow())`
-           - Output is:
+      To learn more about the `utcNow` function, expand the following additional learning block.
+
+    ??? info "Additional Learning: `utcNow` function"
+
+        🤔 **What is the `utcNow()` function?**
+        
+        - The utcnow() function in Power Automate returns the current date and time in Coordinated Universal Time (UTC) in an ISO 8601 format, like: `2025-09-23T04:32:14Z`
+        
+        🦋 **Example**
+        
+        - Expression:
+               -  `concat('Report generated on ', utcnow())`
+        - Output is:
                - Report generated on `2025-09-23T04:32:14Z`
-      
-        💡 Key points
-           - **No arguments (input parameters) required:** it always gives the current UTC timestamp.
+           
+        💡 **Key Points**
+        
+        - **No arguments (input parameters) required:** it always gives the current UTC timestamp.
            - **Use cases**
                - Adding timestamps to logs or file names
                - Comparing current time with other dates
@@ -540,7 +576,7 @@ Let's proceed in creating a new agent flow that will be invoked by the child **I
 
 ### Lab 3.2 - Notify a Teams channel using an adaptive card
 
-We're now going to create a new agent flow for the child **Intake Application Agent** that uses the values passed by the event trigger, to post an adaptive card to a Teams channel. This adaptive card will alert the HR team about the PDF that was automatically uploaded so that they can review it.
+We're now going to create a new agent flow for the child **Intake Application Agent** that uses the values passed by the event trigger, to post an adaptive card to a Teams channel. This adaptive card will alert the HR recruitment team about the PDF that was automatically uploaded so that they can review it.
 
 Let's begin!
 
@@ -741,7 +777,13 @@ Let's begin!
 
        ![ResumeId parameter](assets/3.2_35_ResumeIdParameter.png)
 
-1. The **ResumeId** will be added as dynamic content. The following highlighted in Yellow is your environment details of the **Hiring Hub** model-driven app - the Organization URI and the appid, as learnt earlier when we added the URL for the **Resumes** system view.
+1. The **ResumeId** will be added as dynamic content. The following highlighted in Yellow is your environment details of the **Hiring Hub** model-driven app.
+
+     | Parameter | Value | Explanation |
+     |----------|------------|---------|
+     | **Organization URI** | GUID | The Dataverse/Dynamics 365 environment organization URL |
+     | **appid** | GUID | To open a specific model-driven app, the query parameter of either appid or appname is used. In this case, the appid is used |
+     | **id** | GUID | The query parameter which is the id of the Resume row |
 
        ![ResumeId dynamic content](assets/3.2_36_ResumeIdDynamicContent.png)
 
@@ -944,10 +986,10 @@ We can now test the agent!
 Congratulations! 👏🏻 Excellent work, Operative.
 
 ✅ Event trigger: you've created an event trigger that passes Dataverse parameter values to an agent flow.
-✅ Built an agent flow: consumes the Dataverse parameter values to post an adaptive card to a channel in Microsoft Teams to alert the HR team.
+✅ Built an agent flow: consumes the Dataverse parameter values to post an adaptive card to a channel in Microsoft Teams to alert the HR recruitment team.
 ✅ Updated child agent instructions: to invoke the flow once the event trigger has completed.
 
-This enables the **Hiring Agent** to work autonomously whenever resumes are received as email attachments and notify the HR team for manual review.
+This enables the **Hiring Agent** to work autonomously whenever resumes are received as email attachments and notify the HR recruitment team for manual review.
 
 This is the end of **Lab 03 - Automating candidate application emails**, select the link below to move to the next lesson.
 
