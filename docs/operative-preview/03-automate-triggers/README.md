@@ -869,7 +869,7 @@ Let's begin!
 
 1. Select the **Application Intake Agent** in the **Agents** tab of the **Hiring Agent**.
 
-       ![Select Add an output](assets/3.2_38_AddAnOutput.png)
+       ![Select Application Intake Agent](assets/3.2_52_SelectApplicationIntakeAgent.png)
 
 1. In the **Instructions** field, enter a new line after `2.Post-Upload` instructions. Copy and paste the following instructions.
 
