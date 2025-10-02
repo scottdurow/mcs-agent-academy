@@ -943,7 +943,7 @@ We can now test the agent!
 
 1. In the Power Automate maker portal for the event trigger flow, select the **Refresh** icon to view the flow run that succeeded for the sent email.
 
-       ![Select refresh icon to view flow run](assets/3.2_38_AddAnOutput.png)
+       ![Select refresh icon to view flow run](assets/3.3_02_FlowRun.png)
 
 1. Back in Copilot Studio in the **Hiring Agent** select the **Activity** tab.
 
