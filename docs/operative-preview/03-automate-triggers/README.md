@@ -660,7 +660,7 @@ Let's begin!
 
        ![Select Adaptive Card field](assets/3.2_15_SelectAdaptiveCardParameter.png)
 
-1. Copy and paste the JSON payload in the [Resume Table Updated JSON file](assets/3.2_ResumeTableUpdated.json).
+1. Open the [Resume Table Updated JSON file](assets/3.2_ResumeTableUpdated.json), copy its entire contents, and paste them into the Adaptive Card field.
 
        ![Copy and paste JSON](assets/3.2_16_JSON.png)
 
