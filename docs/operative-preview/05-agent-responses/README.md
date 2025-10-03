@@ -60,7 +60,7 @@ All the above models are capable with large context windows. For instance, GPT-4
 
 By default, a new Copilot agent starts on the GPT-4.1 Mini model, which is optimized as a balanced choice for most scenarios.
 
-You can switch the agent’s primary model anytime via the agent’s **Settings** page ➡️ **Model** section in the **Generative AI** tab, using a simple dropdown to pick from available models. 
+You can switch the agent’s primary model anytime via the agent’s **Settings** page ➡️ **Model** section in the **Generative AI** tab, using a simple dropdown to pick from available models.
 
 [E to insert screenshot here]
 
