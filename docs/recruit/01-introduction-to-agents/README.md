@@ -66,11 +66,6 @@ With RAG, your agent can call internal company wikis, plugin APIs, or search an 
 ## Conversational vs. Autonomous Agents
 
 In the context of Copilot Studio, the term **agent** can refer to multiple flavors of AI assistants. It’s helpful to draw a line between:
-
-- **Knowledge**
-- **Tools**
-- **Topics**
-- **Instructions**
       
 **Conversational Agents:**
 
