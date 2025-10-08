@@ -132,11 +132,13 @@ We're next going to add an event trigger to the **Hiring Agent** and build an ag
 
 ### ✨ Use case scenario
 
-**As an** HR Recruiter
+!!! info ""
 
-**I want to** be notified of when an email with a resume has arrived in my Inbox that has been automatically uploaded to Dataverse
+    **As an** HR Recruiter
 
-**So that I can** stay notified of resumes sent by email for applications automatically uploaded to Dataverse
+    **I want to** be notified of when an email with a resume has arrived in my Inbox that has been automatically uploaded to Dataverse
+
+    **So that I can** stay notified of resumes sent by email for applications automatically uploaded to Dataverse
 
 We'll be achieving this using two techniques
 
@@ -224,17 +226,17 @@ You'll also need access to **Microsoft Teams** to complete the second lab exerci
 
 1. Now we configure the condition to check if the file attachment’s type is .PDF. In the **Choose a value** field, select the **lightning bolt icon** or **fx icon** to the right.
 
-       In the **Search** field type the following,
+       1. In the **Search** field type the following,
 
-       ```text
-       content type
-       ```
+          ```text
+          content type
+          ```
 
-       Then select the **Attachments Content-Type** parameter from the trigger.
+       1. Then select the **Attachments Content-Type** parameter from the trigger.
 
-       Next, select **Add** to add the dynamic content input into the **Id** parameter of the action.
+       1. Next, select **Add** to add the dynamic content input into the **Id** parameter of the action.
 
-       ![Configure Condition action](assets/3.1_10_SetDynamicContentValue.png)
+       ![Configure Condition action](assets/3.1_10_SetDynamicContentValue_V2.png)
 
 1. Let's pause here for a moment, you probably noticed that the **For each** action automatically appeared.
 
@@ -271,7 +273,7 @@ You'll also need access to **Microsoft Teams** to complete the second lab exerci
        application/pdf
        ```
        
-        This will ensure that for each file attachment, it will check the file extension format is .PDF.
+      This will ensure that for each file attachment, it will check the file extension format is .PDF.
 
        ![EqualToValue](assets/3.1_12_EqualToValue.png)
 
@@ -756,6 +758,16 @@ Let's begin!
 1. In the **Hiring Hub** model-driven app, open a row in the **Resumes** system view using the left hand side menu. The resume row will load as a form in the model-driven app.
 
       Copy the URL for the Resume row.
+
+    ??? info "How to navigate back to the **Hiring Hub** model-driven app in case you exited/closed it"
+
+        1. Browse to [https://make.powerapps.com](https://make.powerapps.com) and make sure you are in your developer environment that you're using for these lab exercises, otherwise switch to it.
+        
+        ![Browse to make.powerapps.com](assets/3.2_31_Note_01_BrowseToURL.png)
+
+        1. Select **Apps** in the left hand side menu pane and for the **Hiring Hub** model-driven app, select the **Play** icon to load it in your browser.
+        
+        ![Select Hiring Hub model-driven app](assets/3.2_31_Note_02_HiringHubApp.png)
 
        ![Copy Resume row URL](assets/3.2_31_CopyResumeURL.png)
 
