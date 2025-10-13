@@ -90,7 +90,7 @@ Because this feature is on by default, makers should be aware of how to manage i
 - **Data Storage**: All feedback records (including any user comments) are stored in the agent's Dataverse environment, tied to conversation sessions. If needed, advanced users can query the Dataverse directly - for instance, to export all feedback data for offline analysis. For most purposes, however, the built-in analytics UI is sufficient.
 
 !!! tip "Best Practice"
-    If your agent is public or customer-facing, definitely keep the feedback feature on - it provides invaluable insight. If your agent is in a limited trial or internal-only, you might temporarily turn it off to avoid confusing testers, then re-enable for real users. Always abide by user feedback privacy guidelines (hence the optional disclaimer).
+    If your agent is public or customer-facing, definitely keep the feedback feature `On` - it provides invaluable insight. If your agent is in a limited trial or internal-only, you might temporarily turn it off to avoid confusing testers, then re-enable for real users. Always abide by user feedback privacy guidelines (hence the optional disclaimer).
 
 ## 📇 Collecting feedback via Adaptive Cards - custom approach
 
@@ -137,7 +137,8 @@ In summary, Adaptive Cards for feedback are ideal when you need more than a bina
 
 1. **Test on all channels**: Because Adaptive Cards can render a bit differently in Teams vs. web chat, test your feedback cycle in each deployed channel. Make sure the card looks as intended and the submission is received by the agent. For instance, if using Teams, ensure the card's schema is <=1.5 as noted earlier. Also verify that on mobile versions of Teams or web chat, the adaptive card is still easily usable.
 
-In the Copilot Studio documentation [example](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-card-add-feedback-for-every-response), once the adaptive card feedback was set up, they provided a YAML snippet indicating how the agent can route the "useful/not useful" responses to a specific handling topic. This is a hint at the implementation: essentially treat the feedback like an intent that triggers either a follow-up or just completes. Implementing this means editing your agent's topics (or code) to catch those JSON responses.
+!!! note ""
+    In the Copilot Studio documentation [example](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-card-add-feedback-for-every-response), once the adaptive card feedback was set up, they provided a YAML snippet indicating how the agent can route the "useful/not useful" responses to a specific handling topic. This is a hint at the implementation: essentially treat the feedback like an intent that triggers either a follow-up or just completes. Implementing this means editing your agent's topics (or code) to catch those JSON responses.
 
 ## 🧇 Comparison summary: thumbs reactions vs Adaptive Card feedback
 
@@ -158,6 +159,12 @@ As a rule of thumb (no pun intended 😆), **start with the built-in thumbs feed
 Some advanced implementations even use both: for example, keeping thumbs up/down _enabled_, but also asking a targeted question via an adaptive card at the end of a session (like a mini survey). In that case, you'd get per-response sentiment (via reactions) and an overall session rating or comment (via your card). However keep in mind that the built-in CSAT is also covered by the Copilot Studio Analytics as highlighted earlier. Therefore as we learnt in this mission, record responses from adaptive cards to build your own custom reporting.
 
 Ultimately, for most scenarios using one method at a time is clearer. If you opt for custom adaptive cards, it often makes sense to disable the default reactions to provide a single, cohesive feedback channel to the user.
+
+## 🎀 Wrapping it up (summary)
+
+| ⚡ **Built-in reactions: quick wins** | 🛠️ **Adaptive cards: custom fit** |
+|------------|------------|
+| Enable built-in 👍🏻/👎🏻 reactions to rapidly gauge user satisfaction on each answer. This yields instant analytics (no coding) and helps identify trouble spots early. | Use adaptive cards for feedback when you need more than a `yes/no`. You can ask tailored questions and route feedback into your own data stores or workflows for deeper analysis and action. |
 
 ## Lab
 
