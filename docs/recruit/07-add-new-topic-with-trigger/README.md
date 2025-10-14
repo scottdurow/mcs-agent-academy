@@ -431,6 +431,10 @@ Agent responds with,
 
 We're now going to learn how to add a new topic with a trigger and tools. This lab will cover creating a topic from blank so that you understand how to customize topics to your needs.
 
+- [7.1 Add a new topic from blank](#71-add-a-new-topic-from-blank)
+- [7.2 Define the trigger inputs and outputs](#72-define-the-trigger-inputs-and-outputs)
+- [7.3 Add a tool using a connector](#73-add-a-tool-using-a-connector)
+
 ### ✨ Use case
 
 **As an** employee
