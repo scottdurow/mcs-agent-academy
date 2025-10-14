@@ -96,8 +96,6 @@ We'll next learn how to build a declarative agent for a "Business-to-Employee" u
 
 !!! note
     This lab will outline steps to add a Prompt as a tool. The following lessons will dive into adding knowledge sources and adding other tools available. Keeping it simple for your learning 😊
-  
-    You do not need a Microsoft 365 Copilot user license to publish your declarative agent built in Copilot Studio to Microsoft 365 Copilot. However **users** of the declarative agent published to Microsoft 365 Copilot require a Microsoft 365 Copilot user license.
 
 ### 👩🏻‍💼 Understanding Business-to-Employee (B2E)
 
@@ -116,6 +114,11 @@ Let's begin!
 ### Prerequisites
 
 - Makers must have permissions to create in and have access to a Copilot Studio environment.
+
+!!! note "Licensing note"
+    This lab will outline steps to add a Prompt as a tool. The following lessons will dive into adding knowledge sources and adding other tools available. Keeping it simple for your learning 😊
+  
+    You do not need a Microsoft 365 Copilot user license to publish your declarative agent built in Copilot Studio to Microsoft 365 Copilot. However **users** of the _published declarative agent_ in Microsoft 365 Copilot require a Microsoft 365 Copilot user license.
 
 ### 3.1 Create a declarative agent
 
