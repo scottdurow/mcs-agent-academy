@@ -68,7 +68,7 @@ By default, a new Copilot agent starts on the GPT-4o model, which is optimized a
 
 You can switch the agent’s primary model anytime via the agent’s **Settings** page ➡️ **Model** section in the **Generative AI** tab, using a simple dropdown to pick from available models.
 
-![Agent models available](./assets/00_01_AgentModels.png)
+![Agent models available](./assets/5.0_01_AgentModels.png)
 
 This flexibility allows you to experiment with different models even after your agent is built. For example, switching to an experimental model to evaluate if it improves answer quality for your use case.
 
@@ -102,7 +102,7 @@ For example, to maintain compatibility, to meet compliance requirements, or simp
 
 On your agent’s **Settings** page, in the **Model** section in the **Generative AI** tab, there is a toggle option labeled **"Continue using retired models"**. This becomes available when a model update is rolled out.
 
-![Setting for Continue using retired models](./assets/00_02_ContinueUsingRetiredModels.png)
+![Setting for Continue using retired models](./assets/5.0_02_ContinueUsingRetiredModels.png)
 
 If you switch this on, your agent will remain on the previous model version for that 30-day window. During that window, you can toggle between the old and new model to compare responses and gradually roll over. After 30 days, the old model is fully removed from service, so you should plan to move to the new model by then. In practice, this feature offers a buffer to support a smooth transition.
 
@@ -122,13 +122,13 @@ Here are the key admin controls affecting which models a maker/developer can sel
 
     To use GPT-5 or any future preview, the admin must turn this setting **on** for that specific environment.
 
-[E to insert screenshot here]
+![Enable external model setting](./assets/5.0_03_EnableExternalModelsSetting.png)
 
 - **Move data across regions**: Because experimental models may not run in the same regional data centres as standard models, enabling them often requires allowing cross-region data movement. In the Power Platform admin centre (environment settings), there is a setting called **Move data across regions**. This must be turned on by the admin if you want to permit experimental model usage. It acknowledges that data processed by these models may leave your organization's geographic boundaries.
 
     For example, if your environment is in _Europe_ and an experimental model is only hosted in _US_ datacenters, this setting needs to be enabled to let that data flow happen. If it’s disabled, Copilot won’t use those models.
 
-[E to insert screenshot here]
+![Move data across regions settings](./assets/5.0_04_MoveDataAcrossRegions.png)
 
 These admin settings ensure that **organizations stay in control** of sensitive aspects like data residency and feature stability. As a developer building an agent, if you find that the option for GPT-5 preview models are missing or you see a warning about generative AI not being available, it could be that your admin has disabled experimental models or hasn’t enabled cross-region data movement. In such cases, you’d need to contact your tenant admin to adjust the environment settings if experimental features are desired.
 
