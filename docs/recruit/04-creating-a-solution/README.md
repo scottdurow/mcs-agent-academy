@@ -140,8 +140,8 @@ Imagine you're building an IT helpdesk agent to help employees with issues such 
 
 We're now going to learn
 
-- [How to create a Solution publisher](#41-create-a-solution-publisher)
-- [How to create a Solution](#42-create-a-new-solution)
+- [4.1 How to create a Solution publisher](#41-create-a-solution-publisher)
+- [4.2 How to create a Solution](#42-create-a-new-solution)
 
 We're going to stick with the example from earlier, where we're going to create a solution in the dedicated Copilot Studio environment to build our IT helpdesk agent in.
 
