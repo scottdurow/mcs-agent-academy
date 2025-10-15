@@ -40,13 +40,13 @@ Selecting the appropriate model ensures your agent performs optimally for your u
 
 AI capabilities evolve rapidly, and Copilot Studio keeps up by offering a range of Azure OpenAI models. As of 2025, the primary models to choose from include Microsoft’s GPT-4.1 family, the “o” series for reasoning, and the latest GPT-5 previews. The following table summarizes the main choices and what each is best suited for:
 
-| Model Version | Status | Cost| Key Strengths | Ideal Use Cases |
+| Model Version | Status | Key Strengths | Ideal Use Cases |
 |-------|----------|---------|-------------|-----------|
-| **GPT‑4o (Default)** | General Availability | Basic Pricing | - Fast, cost-effective responses. - Good for most standard tasks with moderate complexity | Everyday Q&A, summaries, routine helpdesk scenarios where quick answers matter and budget is limited |
-| **GPT-4.1** | Preview | Standard Pricing | - Higher-quality outputs, superior for complex tasks - Larger AI model with more advanced reasoning than GPT-4.1 Mini (may be slightly slower) | Complex queries, detailed content generation or analysis. Suitable for projects needing high accuracy and can afford higher latency or cost |
-| **o3 (Generative OpenAI)** | General Availability | Premium Pricing | - Specialized for reasoning and decision logic - Excels at nuanced problem-solving and complex analysis tasks | Use when your agent must perform sophisticated reasoning, such as intricate planning, multi-step problem solving, or data analysis with critical thinking |
-| **GPT‑5 Auto** | Experimental | Standard Pricing | - Latest-generation model with improved context awareness and up-to-date training (Sept 2024) - Handles the highest complexity in planning and analytical tasks with slower, more methodical responses. | Cutting-edge scenarios needing the most context-aware answers or enhanced document/image processing. Use to evaluate advanced capabilities early, but not yet for mission-critical production due to preview status. |
-| **GPT‑5 Reasoning** | Experimental | Premium Pricing | - Latest model optimized for complex reasoning (trained up to Oct 2024) - High scores in document understanding and response accuracy | Advanced reasoning tasks where top-tier analytical capability is required (such as extensive planning, interpreting complex data). Again, use cautiously in testing since it’s a preview model. |
+| **GPT‑4o (Default)** | General Availability | - Fast, cost-effective responses. - Good for most standard tasks with moderate complexity | Everyday Q&A, summaries, routine helpdesk scenarios where quick answers matter and budget is limited |
+| **GPT-4.1** | Preview | - Higher-quality outputs, superior for complex tasks - Larger AI model with more advanced reasoning than GPT-4.1 Mini (may be slightly slower) | Complex queries, detailed content generation or analysis. Suitable for projects needing high accuracy and can afford higher latency or cost |
+| **o3 (Generative OpenAI)** | General Availability | - Specialized for reasoning and decision logic - Excels at nuanced problem-solving and complex analysis tasks | Use when your agent must perform sophisticated reasoning, such as intricate planning, multi-step problem solving, or data analysis with critical thinking |
+| **GPT‑5 Auto** | Experimental | - Latest-generation model with improved context awareness and up-to-date training (Sept 2024) - Handles the highest complexity in planning and analytical tasks with slower, more methodical responses. | Cutting-edge scenarios needing the most context-aware answers or enhanced document/image processing. Use to evaluate advanced capabilities early, but not yet for mission-critical production due to preview status. |
+| **GPT‑5 Reasoning** | Experimental | - Latest model optimized for complex reasoning (trained up to Oct 2024) - High scores in document understanding and response accuracy | Advanced reasoning tasks where top-tier analytical capability is required (such as extensive planning, interpreting complex data). Again, use cautiously in testing since it’s a preview model. |
 
 !!! warning
 
@@ -54,9 +54,18 @@ AI capabilities evolve rapidly, and Copilot Studio keeps up by offering a range 
 
     **They are not recommended for production use** because of possible instability (variable quality, latency, or even time-outs). Always review any _preview_ model’s limitations and consider using them only in non-critical environments. Use them in _Sandbox_ or _Developer_ environments. If you do publish an agent with an experimental model, usage will still be billed at that model’s established rate.
 
-#### Anthropic models
+#### Anthropic models (external)
 
-TBC
+Currently there are two Anthropic models which are external and currently under Preview.
+
+- **Claude Sonnet 4.5** is Anthropic's newest, coding and agent-focused model.
+- **Claude Opus 4.1** is a reasoning-focused model.
+
+Both are available in Microsoft Copilot Studio as opt-in preview (Frontier Program) models rather than General Availability (GA), meaning they’re for early experimental use only. The table below compares their status, strengths, and ideal use cases in the Copilot Studio context:
+
+| Model Version | Status | Key Strengths | Ideal Use Cases |
+|-------|----------|---------|-------------|-----------|
+| **Claude Sonnet 4.5** | Preview | - Excels in coding, orchestrating complex agentic workflows, and seamlessly interacting with real-world tools. - Substantial improvements in reasoning and math over previous Claude models (most capable model to date) | Multi-step reasoning, integration across systems, and dynamic tool use to solve practical problems |
 
 #### 🔢 Context length and data training
 
