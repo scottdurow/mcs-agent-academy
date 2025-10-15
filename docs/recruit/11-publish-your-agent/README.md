@@ -4,6 +4,10 @@
 
 > **⏱️ Operation Time Window:** `~30 minutes`  
 
+🎥 **Watch the Walkthrough**
+
+[![Publish agent video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=eVZmljhYlSI "Watch the walkthrough on YouTube")
+
 ## 🎯 Mission Brief
 
 After completing a series of challenging modules, Agent Maker, you're now ready for your most critical step yet: publishing your agent. It’s time to make your creation available to users across Microsoft Teams and Microsoft 365 Copilot.

@@ -4,6 +4,10 @@
 
 > **⏱️ Operation Time Window:** `~30 minutes`  
 
+🎥 **Watch the Walkthrough**
+
+[![Agent flow video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=vtLZJT3eBXg "Watch the walkthrough on YouTube")
+
 ## 🎯 Mission Brief
 
 Your agent can now converse with users and provide information, but true operational excellence requires your agent to take action. This mission will transform your conversational agent into an automation powerhouse by equipping it with agent flows.

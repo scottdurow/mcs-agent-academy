@@ -4,6 +4,10 @@
 
 > **⏱️ Operation Time Window:** `~30 minutes – intel only, no fieldwork required`  
 
+🎥 **Watch the Walkthrough**
+
+[![Copilot Studio fundamentals video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=x4OCwDRGeLE "Watch the walkthrough on YouTube")
+
 ## 🎯 Mission Brief
 
 Welcome, Recruit. This mission will equip you with foundational intel to understand how Copilot Studio works, and how to build intelligent agents that deliver real business value.

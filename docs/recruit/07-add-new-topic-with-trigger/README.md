@@ -4,6 +4,10 @@
 
 > **⏱️ Operation Time Window:** `~60 minutes`
 
+🎥 **Watch the Walkthrough**
+
+[![Trigger video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=7iPAZaA8nJs "Watch the walkthrough on YouTube")
+
 ## 🎯  Mission Brief
 
 You’ve built an agent. It listens, learns, and answers questions - but now it’s time to get more tactical. In this mission, you’ll go deep under the hood and teach your agent how to respond to specific prompts with precision.
