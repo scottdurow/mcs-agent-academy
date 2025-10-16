@@ -8,13 +8,13 @@
 
 ## 🎯 Mission Brief
 
-Welcome back, Agent. In [Mission 04](../04-agent-instructions/README.md) - you learnt how to define your agent with instructions and invoke tools to equip your agent in handling requests.
+Welcome back, Agent. In [Mission 04](../04-agent-instructions/README.md) - you learned how to define your agent with instructions and invoke tools to equip your agent in handling requests. But even the most well-instructed agent can feel robotic without the right personality and response formatting.
 
-Your assignment, should you choose to accept it, is **Operation Archetype** - focusing on the model of the agent and format agent responses for maximum user understanding and shape your agent’s responses to be clear, effective, and on point..
+Your assignment, should you choose to accept it, is **Operation Archetype** - transforming your agent from a functional tool into a compelling digital personality. You'll master the art of selecting the optimal AI model and crafting response formats that resonate with users on a human level.
 
-TBC
+Your agent transforms to a sophisticated conversational partner that understands context, adapts its communication style, and delivers information in ways that truly connect with users. You'll learn to choose between models, then shape every interaction to reflect your agent's unique voice and purpose.
 
-Choose the right model for your agent and format responses to be impactful and easy to follow.
+Choose the right model for your agent and format responses to be impactful, clear, and unmistakably on-brand.
 
 ## 🔎 Objectives
 
@@ -246,7 +246,15 @@ Now that we know what we _can_ do, let’s talk about what we _should_ do to mak
 
 In summary, use formatting to enhance clarity, not distract. The user should be able to glance at the agent’s answer and grasp the needed information quickly. As a developer, utilize the **Response Formatting** in the **Generative AI** tab under the **Settings** of your agent to ensure the output is polished. Always test a variety of questions to see how the formatting holds up, and adjust your instructions as needed.
 
-## Lab
+## 🧪 Lab 05 - Model selection and response formatting for the Interview Agent
+
+### 5.1 Change the model of the Interview Agent
+
+TBC
+
+### 5.1 Adding instructions for response formatting
+
+TBC
 
 ## ✅ Mission Complete
 

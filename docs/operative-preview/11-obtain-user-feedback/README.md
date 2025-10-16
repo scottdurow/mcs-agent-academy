@@ -170,4 +170,35 @@ Ultimately, for most scenarios using one method at a time is clearer. If you opt
 
 - Build feedback into the Hiring agent so that people using that can give feedback for the user experience.
 
-[Obtain feedback for every response - Microsoft Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-card-add-feedback-for-every-response)
+## 🧪 Lab 11 - Provide feedback using built-in interactions vs adaptive cards (custom)
+
+### 11.1 User feedback through built-in interactions
+
+### 11.2 Reviewing built-in analytics
+
+### 11.3 Build adaptive card to collect feedback
+
+### 11.4 Logging telemetry to Azure Application Insights
+
+## ✅ Mission Complete
+
+Congratulations! 👏🏻 Excellent work, Operative.
+
+✅ Built-in feedback: you learnt how to provide user feedback and where to review the feedback analytics.
+✅ Adaptive cards (custom): you learnt how to collect feedback using an adaptive card and log telemetry to Azure Application Insights.
+
+Feedback is paramount to iterative improvements to your agents!
+
+This is the end of **Lab 11 - TBC**, select the link below to move to the next lesson.
+
+⏭️ [Move to **Publishing Your Agents to a Demo Website for Stakeholder Testing** lesson](../12-demo-website/README.md)
+
+## 📚 Tactical Resources
+
+📖 [Collect thumbs up or down feedback and comments for your agents](https://learn.microsoft.com/en-us/power-platform/release-plan/2025wave1/microsoft-copilot-studio/collect-thumbs-up-or-down-feedback-comments-agents?source=recommendations?WT.mc_id=power-188561-ebenitez)
+
+📖 [Enable enhanced user feedback for Copilot and related experiences](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/copilot/enable-copilot-feedback?WT.mc_id=power-188561-ebenitez)
+
+📖 [Analyze conversational agent effectiveness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-effectiveness?WT.mc_id=power-188561-ebenitez)
+
+📖 [Obtain feedback for every response](https://learn.microsoft.com/en-gb/microsoft-copilot-studio/guidance/adaptive-card-add-feedback-for-every-response?WT.mc_id=power-188561-ebenitez)
