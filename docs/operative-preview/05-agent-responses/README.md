@@ -41,7 +41,7 @@ Selecting the appropriate model ensures your agent performs optimally for your u
 AI capabilities evolve rapidly, and Copilot Studio keeps up by offering a range of Azure OpenAI models. As of 2025, the primary models to choose from include Microsoft’s GPT-4.1 family, the “o” series for reasoning, and the latest GPT-5 previews. The following table summarizes the main choices and what each is best suited for:
 
 | Model Version | Status | Key Strengths | Ideal Use Cases |
-|-------|----------|---------|-------------|-----------|
+|-------|----------|-------------|-----------|
 | **GPT‑4o (Default)** | General Availability | - Fast, cost-effective responses. - Good for most standard tasks with moderate complexity | Everyday Q&A, summaries, routine helpdesk scenarios where quick answers matter and budget is limited |
 | **GPT-4.1** | Preview | - Higher-quality outputs, superior for complex tasks - Larger AI model with more advanced reasoning than GPT-4.1 Mini (may be slightly slower) | Complex queries, detailed content generation or analysis. Suitable for projects needing high accuracy and can afford higher latency or cost |
 | **o3 (Generative OpenAI)** | General Availability | - Specialized for reasoning and decision logic - Excels at nuanced problem-solving and complex analysis tasks | Use when your agent must perform sophisticated reasoning, such as intricate planning, multi-step problem solving, or data analysis with critical thinking |
@@ -50,22 +50,31 @@ AI capabilities evolve rapidly, and Copilot Studio keeps up by offering a range 
 
 !!! warning
 
-    Experimental/preview models (like GPT-5 Chat) are accessible for testing new capabilities before they’re production-ready. They may have limited testing and higher variability in performance.
+    - Experimental/preview models (like GPT-5 Chat) are accessible for testing new capabilities before they’re production-ready. They may have limited testing and higher variability in performance.
 
-    **They are not recommended for production use** because of possible instability (variable quality, latency, or even time-outs). Always review any _preview_ model’s limitations and consider using them only in non-critical environments. Use them in _Sandbox_ or _Developer_ environments. If you do publish an agent with an experimental model, usage will still be billed at that model’s established rate.
+    - They are not recommended for production use because of possible instability (variable quality, latency, or even time-outs). Always review any _Preview_ model’s limitations and consider using them only in non-critical environments. Use them in _Sandbox_ or _Developer_ environments. If you do publish an agent with an experimental model, usage will still be billed at that model’s established rate.
 
 #### Anthropic models (external)
 
-Currently there are two Anthropic models which are external and currently under Preview.
+Currently there are two Anthropic models which are currently under Preview, they are accessible in early release environments.
 
 - **Claude Sonnet 4.5** is Anthropic's newest, coding and agent-focused model.
 - **Claude Opus 4.1** is a reasoning-focused model.
 
+OpenAI remains as the default model for new agents in Copilot Studio and you have the flexibility in selecting either of these models.
+
 Both are available in Microsoft Copilot Studio as opt-in preview (Frontier Program) models rather than General Availability (GA), meaning they’re for early experimental use only. The table below compares their status, strengths, and ideal use cases in the Copilot Studio context:
 
 | Model Version | Status | Key Strengths | Ideal Use Cases |
-|-------|----------|---------|-------------|-----------|
-| **Claude Sonnet 4.5** | Preview | - Excels in coding, orchestrating complex agentic workflows, and seamlessly interacting with real-world tools. - Substantial improvements in reasoning and math over previous Claude models (most capable model to date) | Multi-step reasoning, integration across systems, and dynamic tool use to solve practical problems |
+|-------|----------|-------------|-----------|
+| **Claude Sonnet 4.5** | External Preview | - Enterprise-ready safety: Improved alignment, reduced prompt injection risk, and strong error correction. - Advanced reasoning & math: Significant gains in multi-step reasoning and computational accuracy. | - Building autonomous coding agents and developer copilots. - Complex, multi-step workflows - Enterprise AI agents requiring long context and sustained reasoning. |
+| **Claude Opus 4.1** | External Preview | - Deep reasoning and complex problem-solving - Creative and multilingual so suitable for content generation, translation and narrative writing | - High stakes reasoning: legal, financial or scientific analysis - Enterprise research agents: synthesizing insights from large datasets -Advanced coding projects: multi-file refactoring, debugging, and architectural design - Creative generation: marketing copy, long-form content, multilingual support. |
+
+!!! warning
+
+    - It's important to note that these are external models. Anthropic models are hosted outside Microsoft and are subject to Anthropic terms and data handling, which need to be reviewed and accepted before makers can use them. These models are available before an official release so that you can get early access and [provide feedback](https://community.powerplatform.com/forums/thread/?groupid=db8f53c2-767d-47d6-a1ae-fe4c828a6553). Therefore is not recommended to use these models for Production purposes.
+
+    - Please note that you could also experience slowdowns or timeouts due to limited capacity and availability, and these models might not be supported in the future. Admins can control access to this feature (more of this soon as you progress from here!).
 
 #### 🔢 Context length and data training
 
@@ -127,7 +136,11 @@ It’s worth noting that not every copilot environment allows all model choices 
 
 Here are the key admin controls affecting which models a maker/developer can select for an agent:
 
-- **Allow Preview (Experimental) models**: An admin can toggle whether preview and experimental AI models are available in a given environment. If this is turned **off**, makers/developers will only see generally-available models (like GPT-4o) in the dropdown.
+- **Enable Anthropic models to be used within your organization**: An admin with the **Global administrator** role needs to enable (allow) anthropic models in the Microsoft 365 Admin Center. If this setting is disabled, only OpenAI models will be available to select.
+
+![Allow Anthropic provider setting in Microsoft 365 admin center](./assets/5.0_05_AllowAnthropicProvider.png)
+
+- **Allow Preview (Experimental) models to be used in Copilot Studio environments**: An admin can toggle whether preview and experimental AI models are available in a given environment. If this is turned **off**, makers/developers will only see generally-available models (like GPT-4o) in the dropdown.
 
     To use GPT-5 or any future preview, the admin must turn this setting **on** for that specific environment.
 
@@ -143,16 +156,15 @@ These admin settings ensure that **organizations stay in control** of sensitive 
 
 For a quick reference, here’s a summary of the admin controls related to model selection:
 
-| Admin Setting | Effect on Model selection |
-|----------|------------|
-| **Allow Preview & Experimental Models** | When **ON**, makers can choose preview/experimental AI models (for example GPT-5 Chat) for their agents. When **OFF**, only production-ready models are available. |
-| **Move Data Across Regions** | Required to be **ON** if experimental models are enabled. It permits data from the agent to be processed and stored outside the home region. If this is OFF, any model that would require cross-region data flow will be blocked, leading to the agent's generative AI features being unavailable. Managed in the Power Platform admin centre by a tenant administrator. |
-
-Both of these admin controls are found in the Power Platform admin centre per environment.
+| Admin Setting | Effect on Model selection | Setting location |
+|----------|------------|------------|
+| **Allow Anthropic models** | When **Allowed**, users can connect to the Anthropic external models for agents built in Copilot Studio. When **disabled**, only OpenAI models are available. | Microsoft 365 Admin Center |
+| **Allow Preview & Experimental Models** | When **ON**, makers can choose preview/experimental AI models (for example GPT-5 Chat) for their agents. When **OFF**, only production-ready models are available. | Power Platform admin center |
+| **Move Data Across Regions** | Required to be **ON** if experimental models are enabled. It permits data from the agent to be processed and stored outside the home region. If this is OFF, any model that would require cross-region data flow will be blocked, leading to the agent's generative AI features being unavailable. Managed in the Power Platform admin centre by a tenant administrator. | Power Platform admin center |
 
 !!! tip
-    - If you’re an **admin** concerned about data compliance, keep the preview models off and cross-region data moving off.
-    - If you’re a **developer** in a highly regulated industry environment, you may need to stick to General Availability (GA) models unless you get clearance to use previews.
+    - If you’re an **admin** concerned about data compliance, disable the use of Anthropic models + keep the preview models off and cross-region data moving off.
+    - If you’re a **developer** in a highly regulated industry environment, you may need to stick to General Availability (GA) models unless you get clearance to use preview models (OpenAI) or external preview models (Anthropic).
 
 ## 🔠 Response Formatting
 
