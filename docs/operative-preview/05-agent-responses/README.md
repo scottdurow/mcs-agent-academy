@@ -248,7 +248,27 @@ In summary, use formatting to enhance clarity, not distract. The user should be 
 
 ## Lab
 
-- Navigate to agent settings and put in a prompt to customize the tone, outputs and personality of the agent
+## ✅ Mission Complete
 
-[Multi-agent orchestration and more: Copilot Studio announcements](https://www.microsoft.com/microsoft-copilot/blog/copilot-studio/multi-agent-orchestration-maker-controls-and-more-microsoft-copilot-studio-announcements-at-microsoft-build-2025/#copilot-studio-enhancements)
-(Scroll down a bit to the response section of the blog)
+Congratulations! 👏🏻 Excellent work, Operative.
+
+✅ Change model: you learnt the differences of the outputs of the selected model of the **Interview Agent**.
+✅ Response formatting: you added instructions to enhance the response format of the **Interview Agent**.
+
+This enables the **Interview Agent** to be equipped in answering questions and inquiries using the power of the selected model and elegantly follow the same response format each time.
+
+This is the end of **Lab 05 - TBC**, select the link below to move to the next lesson.
+
+⏭️ [Move to **AI Safety and Content Moderation** lesson](../06-ai-safety/README.md)
+
+## 📚 Tactical Resources
+
+📖 [Multi-agent orchestration and more: Copilot Studio announcements](https://www.microsoft.com/microsoft-copilot/blog/copilot-studio/multi-agent-orchestration-maker-controls-and-more-microsoft-copilot-studio-announcements-at-microsoft-build-2025/#copilot-studio-enhancements)
+
+📖 [Choose an external model as the primary AI model](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-external-response-model?WT.mc_id=power-188561-ebenitez)
+
+📖 [Connect to Anthropic's AI models](https://learn.microsoft.com/en-us/copilot/microsoft-365/connect-to-ai-models?WT.mc_id=power-188561-ebenitez)
+
+📖 [Allow external large language models (LLMs) for generative responses](https://learn.microsoft.com/en-us/power-platform/admin/allow-llm-generative-responses?WT.mc_id=power-188561-ebenitez)
+
+📖 [Provide feedback on Anthropic models](https://community.powerplatform.com/forums/thread/?groupid=db8f53c2-767d-47d6-a1ae-fe4c828a6553)
