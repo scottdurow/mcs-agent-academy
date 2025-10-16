@@ -279,4 +279,6 @@ This is the end of **Lab 05 - TBC**, select the link below to move to the next l
 
 📖 [Allow external large language models (LLMs) for generative responses](https://learn.microsoft.com/en-us/power-platform/admin/allow-llm-generative-responses?WT.mc_id=power-188561-ebenitez)
 
+📖 [Move data across regions for Copilots and generative AI features](https://learn.microsoft.com/en-us/power-platform/admin/geographical-availability-copilot?tabs=new#copilots-and-generative-ai-features-that-depend-on-data-movement-across-regions?WT.mc_id=power-188561-ebenitez)
+
 📖 [Provide feedback on Anthropic models](https://community.powerplatform.com/forums/thread/?groupid=db8f53c2-767d-47d6-a1ae-fe4c828a6553)
