@@ -50,8 +50,8 @@ jobs:
         #   OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
         run: |
           translate -l "es fr de" -y
-          translate -l "fi nl he" -y
-          translate -l "id ms" -y
+          # translate -l "fi nl he" -y
+          # translate -l "id ms" -y
 
 
       - name: Authenticate GitHub App
