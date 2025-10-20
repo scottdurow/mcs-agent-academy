@@ -51,9 +51,9 @@ jobs:
         run: |
           # translate -l "es fr de" -y
           # translate -l "fi nl he" -y
-          # translate -l "ms" -y
+          translate -l "vi sw ms" -y
           # translate -l "id" -y
-          translate -l "pt zh ja" -y
+          # translate -l "pt zh ja" -y
 
 
       - name: Authenticate GitHub App
