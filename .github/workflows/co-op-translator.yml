@@ -52,9 +52,12 @@ jobs:
           # translate -l "es fr de" -y
           # translate -l "fi nl he" -y
           # translate -l "vi sw ms" -y
-          translate -l "hu cs sk ro" -y
-          # translate -l "id" -y
+          # translate -l "hu cs sk" -y
+          # translate -l "id ro" -y
           # translate -l "pt zh ja" -y
+          translate -l "bg sr hr sl" -y
+          # translate -l "uk my" -y 
+         
 
 
       - name: Authenticate GitHub App
