@@ -51,7 +51,8 @@ jobs:
         run: |
           # translate -l "es fr de" -y
           # translate -l "fi nl he" -y
-          translate -l "vi sw ms" -y
+          # translate -l "vi sw ms" -y
+          translate -l "hu cs sk ro" -y
           # translate -l "id" -y
           # translate -l "pt zh ja" -y
 
