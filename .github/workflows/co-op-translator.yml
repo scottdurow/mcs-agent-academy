@@ -56,9 +56,9 @@ jobs:
           # translate -l "id ro" -y
           # translate -l "pt zh ja" -y
           # translate -l "bg sr hr sl" -y
-          translate -l "uk my fa hi" -y 
-          #not yel translated languages are below. Uncomment line by line to translate.
-          # translate -l "ko lt pl hk" -y 
+          # translate -l "uk my fa hi" -y 
+          translate -l "ko lt pl hk" -y 
+          # not yet translated languages are below. Uncomment line by line to translate.
           # translate -l "tw ar ur tl" -y
           # translate -l "mr ne pa bn" -y
           # translate -l "ru mo br it" -y 
