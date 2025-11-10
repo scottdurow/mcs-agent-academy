@@ -4,6 +4,10 @@
 
 > **⏱️ Operation Time Window:** `~45 minutes`
 
+🎥 **Watch the Walkthrough**
+
+[![Create a solution video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=1iATbkgfcpU "Watch the walkthrough on YouTube")
+
 ## 🎯 Mission Brief
 
 Agent Maker, welcome to your next tactical operation. In this mission, you’ll learn to assemble a Solution - the official deployment vehicle for your IT Helpdesk Agent built with Microsoft Copilot Studio. Think of this as creating a digital briefcase that holds your agent and it's artifacts.

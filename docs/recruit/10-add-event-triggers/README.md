@@ -4,6 +4,10 @@
 
 > **⏱️ Operation Time Window:** `~45 minutes`
 
+🎥 **Watch the Walkthrough**
+
+[![Event triggers video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=ZgwHL8PQ1nY "Watch the walkthrough on YouTube")
+
 ## 🎯 Mission Brief
 
 It's time to elevate your agent from conversational assistant to autonomous operative. Your mission is to enable your agent to act without being summoned - responding to signals from across your digital domain with precision and speed.

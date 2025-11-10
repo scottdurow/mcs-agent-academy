@@ -4,6 +4,8 @@ theme:
   name: material
   logo: images/logo.png
   favicon: images/logo.png
+  icon:
+    repo: fontawesome/brands/github  
   palette:
     primary: blue
     accent: indigo

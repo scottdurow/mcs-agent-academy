@@ -4,6 +4,10 @@
 
 > **⏱️ Operation Time Window:** `~60 minutes`
 
+🎥 **Watch the Walkthrough**
+
+[![Create a Declarative Agent video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=BVNUmLXFCq8 "Watch the walkthrough on YouTube")
+
 ## 🎯 Mission Brief
 
 Welcome to your first field assignment, Agent Maker. You’ve been selected to design, equip, and deploy a Declarative Agent—a specialized operative embedded directly into Microsoft 365 Copilot and Microsoft Teams.

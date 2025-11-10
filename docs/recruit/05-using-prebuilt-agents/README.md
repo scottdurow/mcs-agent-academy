@@ -4,6 +4,10 @@
 
 > **⏱️ Operation Time Window:** `~30 minutes`
 
+🎥 **Watch the Walkthrough**
+
+[![Pre-built agent video thumbnail](./images/video-thumbnail.jpg)](https://www.youtube.com/watch?v=NmXsx8WjWuM "Watch the walkthrough on YouTube")
+
 ## 🎯 Mission Brief
 
 Welcome to your next mission in the Copilot Studio Agent Academy. You're about to explore the world of **pre-built agents**—intelligent, purpose-driven agents created by Microsoft to accelerate your deployment and reduce time to value.

@@ -2,7 +2,11 @@
 
 ## 🕵️‍♂️ CODENAME: `OPERATION AI AGENT DECODE`
 
-> **⏱️ Operation Time Window:** `~30 minutes – intel only, no fieldwork required`  
+> **⏱️ Operation Time Window:** `~30 minutes – intel only, no fieldwork required`
+
+🎥 **Watch the Walkthrough**
+
+[![Introduction to Agents video thumbnail](./images/video-thumbnail.jpg)](https://www.youtube.com/watch?v=BhPz_zicUnM "Watch the walkthrough on YouTube")
 
 ## 🎯 Mission Brief
 

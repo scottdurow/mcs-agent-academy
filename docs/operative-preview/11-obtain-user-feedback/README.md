@@ -178,7 +178,7 @@ Ultimately, for most scenarios using one method at a time is clearer. If you opt
 
 ### 11.3 Build adaptive card to collect feedback
 
-### 11.4 Logging telemetry to Azure Application Insights
+### 11.4 BONUS: Logging telemetry to Azure Application Insights
 
 ## ✅ Mission Complete
 

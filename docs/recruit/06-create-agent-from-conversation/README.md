@@ -4,6 +4,10 @@
 
 > **⏱️ Operation Time Window:** `~75 minutes`
 
+🎥 **Watch the Walkthrough**
+
+[![Create custom agent video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=qZTtQVncGFg "Watch the walkthrough on YouTube")
+
 ## 🎯 Mission Brief
 
 Welcome back, Agent Maker. This mission puts you in the command seat of the most powerful capability in Copilot Studio - creating a custom agent from scratch using only natural language… and supercharging it with your own data.
