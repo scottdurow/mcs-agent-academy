@@ -94,9 +94,15 @@ Because this feature is on by default, makers should be aware of how to manage i
 
 ## 📇 Collecting feedback via Adaptive Cards - custom approach
 
-An alternative to the built-in feature is building a custom feedback prompt using an Adaptive Card. We covered adaptive cards previously in [Recruit](../../recruit/10-add-event-triggers/README.md). As a reminder: Adaptive Cards are essentially UI panels defined in JSON that you can embed in a bot's conversation to collect input or display information. In this context, you design a card that asks the user for feedback - for example, `"Please rate this answer"` with buttons or a dropdown, and the user's response is sent back to the agent as structured data.
+An alternative to the built-in feature is building a custom feedback prompt using an Adaptive Card. We covered adaptive cards previously in [Recruit](../../recruit/10-add-event-triggers/README.md). As a reminder: Adaptive Cards are essentially UI panels defined in JSON that you can embed in an agent's conversation to collect input or display information. In this context, you design a card that asks the user for feedback - for example, `"Please rate this answer"` with buttons or a dropdown, and the user's response is sent back to the agent as structured data.
 
-Unlike the built-in reactions, this method requires the developer (or "maker") to configure the agent's topics to insert the card and handle the responses. Copilot Studio allows adding an Adaptive Card in a **Ask a question**, **Ask with adaptive card** or **Send a message** node within a topic. This means after the agent generates an answer, you can immediately follow up with a custom adaptive card asking for feedback before the conversation continues.
+Unlike the built-in reactions, this method requires the developer (or "maker") to configure the agent's topics to insert the card and handle the responses. Copilot Studio allows adding an Adaptive Card in the following nodes within a topic:
+
+- **Ask a question**
+- **Ask with adaptive card**
+- **Send a message**
+
+This means after the agent generates an answer, you can immediately follow up with a custom adaptive card asking for feedback before the conversation continues.
 
 ### How it works
 
@@ -117,17 +123,17 @@ Unlike the built-in reactions, this method requires the developer (or "maker") t
 
 Using an Adaptive Card for feedback requires additional effort to set up, but it offers greater flexibility and control. Some reasons you might choose this approach:
 
-- **Custom questions and UI**: You're not limited to a simple thumbs up/down. You could ask the user to rate on a scale of 1 - 5, choose a category for why they liked/disliked the answer, or even ask an open-ended question for detailed comments. You design the card's content to suit your scenario.
+- **Custom questions and UI**: You're not limited to a simple thumbs up/down. You could ask the user to rate on a scale of 1 - 5, choose a category for why they liked/disliked the answer, give them a range of answers to select (multiple-choice) or even ask an open-ended question for detailed comments. You design the card's content to suit your scenario.
 - **Contextual or conditional feedback**: You might not want to request feedback after every single response (to avoid annoying the user). With your own logic, you could decide to ask only after certain types of answers - for example, only after a long explanation, or only if the session is about to end. You could also tailor the wording: if the answer was an error message, the card could specifically ask, `"Sorry I couldn't help – was this error explanation useful?"` This level of nuance is not possible with the generic thumbs UI.
 - **Integrated workflows**: With custom feedback data, you can integrate directly into other processes. For example, if a user indicates an answer was not useful, you could automatically create a ticket for a human expert to review that query later. Or log the feedback to an **Azure Application Insights telemetry** for advanced analytics. Essentially, adaptive card feedback can plug into your own analytics or DevOps cycle more readily. The built-in thumbs data is somewhat siloed in the Copilot analytics dashboard, whereas custom-collected data is yours to route anywhere.
-- **Branding and tone**: You can format the feedback card to match your agent's personality or your organization's branding (within the Adaptive Card design limits). Even the text can be changed – for example, `"Rate this response"` or using emoji on buttons - giving a consistent user experience.
+- **Branding and tone**: You can format the feedback card to match your agent's personality or your organization's branding (within the Adaptive Card design limits). Even the text can be changed – for example, `"Rate this response"` or using emoji on buttons  giving a consistent user experience.
 - **Additional feedback gathering**: The card could ask for more than just a sentiment. For instance, a single card could both ask `"Was this helpful? (Yes/No)"` and if `"No"`, also include a quick text box saying `"What was missing?"`. All that could be submitted together. This is more advanced but illustrates the flexibility.
 
 In summary, Adaptive Cards for feedback are ideal when you need more than a binary signal or want to handle the feedback in custom ways. It's often used by developers who want to experiment with feedback collection beyond the basics.
 
 ## ⭐ Best practices for Adaptive Card feedback
 
-1. **Keep it brief and unobtrusive**: Users may get annoyed if after every message they have to fill out a survey. Make the card simple – usually a quick question with two buttons or a small rating scale. The [example](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-card-add-feedback-for-every-response) in Microsoft's guidance shows the agent's answer in the card followed by a subtle prompt “Generated answer, please rate it.”. The prompt is small and polite, which is good. Avoid very large or complex cards for routine feedback.
+1. **Keep it brief and unobtrusive**: Users may get annoyed if after every message they have to fill out a survey. Make the card simple – usually a quick question with two buttons or a small rating scale. The [example](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-card-add-feedback-for-every-response) in Microsoft's guidance shows the agent's answer in the card followed by a subtle prompt `"Generated answer, please rate it."`. The prompt is small and polite, which is good. Avoid very large or complex cards for routine feedback.
 
 1. **Handle the response gracefully**: When the user clicks feedback, you might simply thank them silently (no need to always say `"Thanks for your feedback"` every time). In a support scenario, if someone says the answer wasn't useful, you might follow up to help: `"Sorry about that. Let me clarify or escalate your question."` This turns a negative feedback into an opportunity to recover the user's satisfaction.
 
@@ -135,7 +141,7 @@ In summary, Adaptive Cards for feedback are ideal when you need more than a bina
 
 1. **Disable built-in reactions to avoid duplication**: If you are fully relying on a custom feedback card for every answer, it might be wise to turn off the default thumbs feedback in the agent settings. Otherwise, users will see two feedback requests (the thumbs UI and your adaptive card) for the same response, which is confusing and overkill. Most implementations choose either one method or the other in production. However, you could still use both in different contexts - for example, maybe you keep thumbs enabled for Teams users, but on a custom website you use a tailored card. In any case, ensure the user isn't bombarded with redundant feedback prompts.
 
-1. **Test on all channels**: Because Adaptive Cards can render a bit differently in Teams vs. web chat, test your feedback cycle in each deployed channel. Make sure the card looks as intended and the submission is received by the agent. For instance, if using Teams, ensure the card's schema is <=1.5 as noted earlier. Also verify that on mobile versions of Teams or web chat, the adaptive card is still easily usable.
+1. **Test on all channels**: Because Adaptive Cards can render a bit differently in Teams vs. web chat, test your feedback cycle in each deployed channel. Make sure the card looks as intended and the submission is received by the agent. For instance, if using Teams, ensure the card's schema is _less than or equal to 1.5_ as noted earlier. Also verify that on mobile versions of Teams or web chat, the adaptive card is still easily usable.
 
 !!! note ""
     In the Copilot Studio documentation [example](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-card-add-feedback-for-every-response), once the adaptive card feedback was set up, they provided a YAML snippet indicating how the agent can route the "useful/not useful" responses to a specific handling topic. This is a hint at the implementation: essentially treat the feedback like an intent that triggers either a follow-up or just completes. Implementing this means editing your agent's topics (or code) to catch those JSON responses.
@@ -166,17 +172,79 @@ Ultimately, for most scenarios using one method at a time is clearer. If you opt
 |------------|------------|
 | Enable built-in 👍🏻/👎🏻 reactions to rapidly gauge user satisfaction on each answer. This yields instant analytics (no coding) and helps identify trouble spots early. | Use adaptive cards for feedback when you need more than a `yes/no`. You can ask tailored questions and route feedback into your own data stores or workflows for deeper analysis and action. |
 
-## Lab
-
-- Build feedback into the Hiring agent so that people using that can give feedback for the user experience.
-
 ## 🧪 Lab 11 - Provide feedback using built-in interactions vs adaptive cards (custom)
+
+We're now going to provide feedback as a user using the following methods,
+
+1. Built-in user interactions and review them using the Analytics page of the agent.
+1. Build a custom adaptive card to collect feedback when the user has responded as dissatisfied with a 1 star or 2 stars for the CSAT survey. Bonus exercise of logging this as a telemetry event in Azure Application Insights.
+
+### ✨ Prerequisites to complete this mission
+
+For the built-in interactions to be captured in the Analytics page of the agent, the agent must be published. Ensure the **Interview Agent** is published.
 
 ### 11.1 User feedback through built-in interactions
 
+1. In Microsoft Teams, load the Interview Agent and start asking it questions.
+
+1. In the responses, select the thumbs up to provide positive feedback with a comment, or select the thumbs down to provide negative feedback.
+
+       1. Positive Feedback examples
+
+          ```text
+          Clear and Concise: The response was easy to understand and well-structured.
+          ```
+
+          ```text
+          Accurate and Relevant: The information provided was correct and directly addressed the question.
+          ```
+
+          ```text
+          Helpful and Actionable: The response included practical steps or examples that I could apply.
+          ```
+
+          ```text
+          Comprehensive: The answer covered all aspects of the question without leaving gaps.
+          ```
+
+          ```text
+          Engaging and Professional Tone: The response was friendly, respectful, and appropriate for the context.
+          ```
+
+          ```text
+          Adapted to Context: The response considered the specific scenario and provided tailored guidance.
+          ```
+
+       1. Negative Feedback examples
+
+          ```text
+          Incomplete or Vague: The response lacked detail or didn’t fully answer the question.
+          ```
+
+          ```text
+          Inaccurate or Misleading: The information provided was incorrect or not relevant to the query.
+          ```
+
+          ```text
+          Overly Complex or Hard to Follow: The explanation was confusing or used unnecessary jargon.
+          ```
+
+       ![Submit Positive Feedback](assets/11.1_01_SubmitPositiveFeedback.png)
+
+1. Repeat until you have submitted several feedback comments.
+
 ### 11.2 Reviewing built-in analytics
 
-### 11.3 Build adaptive card to collect feedback
+We're now going to review the feedback submitted in the **Analytics** page of the agent.
+
+!!! note
+    The submitted reactions and written feedback may take some time to show up in the Analytics page so if you're seeing it immediately, check it occasionally.
+
+1. Navigate to the **Analytics** tab of the agent and scroll down to the **Satisfaction** section. In the **Reactions** section, select **See details**. This will load the **Reactions** pane where you can view all the thumbs up and thumbs down for the period and the written feedback.
+
+       ![Submitted reactions and written feedback](assets/11.2_01_Reactions.png)
+
+### 11.3 Build adaptive card to collect custom feedback
 
 ### 11.4 BONUS: Logging telemetry to Azure Application Insights
 
