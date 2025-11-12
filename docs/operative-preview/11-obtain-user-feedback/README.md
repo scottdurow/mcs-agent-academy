@@ -325,10 +325,10 @@ We're now going to update the **End of Conversation** system topic to redirect t
 
     In the **To value** field, enter `0`.
 
-       ![Configure Variable properties](assets/11.3.2_05_ConfigureVariableProperties.png)
-
-    !!! tip ""
+    !!! note "Purpose of the **To value** field"
         This is a numeric variable that will store the CSAT rating.
+
+       ![Configure Variable properties](assets/11.3.2_05_ConfigureVariableProperties.png)
 
 1. In the **CSAT Question** node select the **... ellipsis** icon and select **Properties**.
 
@@ -346,7 +346,13 @@ We're now going to update the **End of Conversation** system topic to redirect t
 
        ![Add a Condition node](assets/11.3.2_08_AddAConditionNode.png)
 
-1. In the **Condition** node select the **greater than** icon to define the variable.
+1. The **Condition** node is now added to the system topic.
+
+    !!! note "The logic to be applied to the Condition node"
+        - If the user’s CSAT rating is `3`, `4`, or `5`, the conversation flow will follow the branch connected to this condition. This will act as a positive (satisfied) feedback path for ratings `3` and above.
+        - If the rating is `1` or `2`, the conversation flow will go to the **All other conditions** branch. This will act as a negative (dissatisfied) feedback path fro rating below `3`.
+
+    In the **Condition** node select the **greater than** icon to define the variable.
 
        ![Select a variable](assets/11.3.2_09_SelectAVariable.png)
 
@@ -354,30 +360,126 @@ We're now going to update the **End of Conversation** system topic to redirect t
 
        ![Select VarCSATRating variable](assets/11.3.2_10_SelectVarCSATRating.png)
 
-1. In the condition parameter, select `is greater or equal to`.
+1. For the condition **operator**, select `is greater or equal to`.
 
-    !!! tip ""
+    !!! note "The significance of the operator in a condition"
         This checks if the value of VarCSATRating meets or exceeds a specified threshold.
 
-    For value, enter the following integer,
+    For **Value**, enter the following integer,
 
     ```text
     3
     ```
 
-    !!! tip ""
+    !!! note "The significance of the Value"
         This is the threshold number. The condition will be `true` if VarCSATRating is greater or equal to `3`.
 
        ![Add integer value](assets/11.3.2_11_AddIntegerValue.png)
+
+1. Now let's complete the logic for when the rating is below `3` (when the user responds with a 1 star or 2 stars). In the **All other conditions** branch, select the **+ icon** to add a new node. Select **Topic management** and then select **Go to another topic >**.
+
+       ![Add new node in Other Conditions path](assets/11.3.2_12_AddNodeInOtherConditionsPath.png)
+
+1. Select the **Capture CSAT dissatisfied** custom topic created earlier.
+
+       ![Select Capture CSAT dissatisfied custom topic](assets/11.3.2_13_SelectCaptureCSATDissatisfiedFeedbackTopic.png)
+
+1. The topic will now be added to the branch. The **End of Conversation** topic will now explicitly call the **Capture CSAT dissatisfied** custom topic when the user responds to the CSAT question with a 1 star or 2 stars rating.
+
+       ![Redirect to Capture CSAT dissatisfied custom topic](assets/11.3.2_14_RedirectNodeAdded.png)
+
+1. **Save** the topic.
+
+1. Let's now test the agent by selecting the **new test session** icon and enter a question. Any question will do, the purpose of this test is to submit a CSAT response to collect feedback for the rating below 3 stars.
+
+       ![New test session and ask question](assets/11.3.2_15_NewTestAndAskQuestion.png)
+
+1. The agent will return a response.
+
+       ![Agent response](assets/11.3.2_16_AgentResponse.png)
+
+1. To trigger the system topic of **End of Conversation**, enter the following
+
+    ```text
+    end conversation
+    ```
+
+       ![Trigger end of conversation system topic](assets/11.3.2_17_EndConversation.png)
+
+1. The **End of Conversation** topic will now be triggered as we see the text (question) from the **Ask a question node** of the topic. Select **Yes** to the question asked about ending the conversation.
+
+       ![Yes end conversation](assets/11.3.2_18_YesEndConversation.png)
+
+1. Next, we'll see the next question from the system topic about whether our question has been answered. Select **Yes**.
+
+       ![Yes the question has been answered](assets/11.3.2_19_YesToAnsweringQuestion.png)
+
+1. Will now see the CSAT question. Select 1 star or 2 stars as the rating.
+
+       ![CSAT rating](assets/11.3.2_20_CSATSurvey.png)
+
+1. Since the CSAT rating submitted is below 3, we'll now see that the **End of Conversation** topic has redirected to the **Capture CSAT dissatisfied feedback** custom topic. Select either of the options.
+
+       ![Redirect to Capture CSAT dissatisfied custom topic](assets/11.3.2_21_RedirectToTopicForCustomFeedback.png)
+
+1. Select **Add comment** or the **^ caret** icon to add written feedback. The following are sample feedback comments for each of the selected reasons.
+
+    - The agent didn't understand my responses or questions accurately
+
+        ```text
+        I tried to explain my situation clearly, but the agent kept giving irrelevant answers. It felt like it wasn’t interpreting my input correctly.
+        ```
+
+    - The process was confusing or difficult to navigate
+
+        ```text
+        I wasn’t sure what to do next during the interaction. The conversation flow wasn’t intuitive, and I had to guess how to proceed.
+        ```
+
+    - I had technical issues during the interaction (e.g., errors, delays)
+
+        ```text
+        The agent froze midway and didn’t respond for a while. I also experienced delays and had to refresh the page to continue.
+        ```
+
+    - All of the above
+
+        ```text
+        The experience was frustrating overall. The agent misunderstood my questions, the interface was hard to follow, and I ran into multiple technical glitches.
+        ```
+
+    Next, select **Submit**.
+
+       ![Written feedback and submit](assets/11.3.2_22_WrittenFeedbackAndSubmit.png)
+
+1. The agent will resume the **End of Conversation** topic since the activity of the **Capture CSAT dissatisfied** topic has been completed. It proceeds with the question of asking the user if it can be of further assistance. Select **No**.
+
+       ![Resumes End of Conversation system topic](assets/11.3.2_23_ResumesEndOfConversationTopic.png)
+
+1. The last node sends a final message and the **End of Conversation** topic has been completed.
+
+       ![End of Conversation system topic completed](assets/11.3.2_22_WrittenFeedbackAndSubmit.png)
+
+Great work! 🙌🏻 You've added a custom topic with an adaptive card that handles written feedback to CSAT ratings below `3`. Let's take this further by logging this as an event in **Azure Application Insights** next.
 
 ### 11.4 BONUS: Logging telemetry to Azure Application Insights
 
 In this exercise you'll learn how to utilize the **Log custom telemetry event** node to log an event in **Azure Application Insights**.
 
+#### Prerequisite
+
+- You need to have an [Application Insights resource](https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource?tabs=portal#create-an-application-insights-resource) set up in **Azure**.
+- You also need to be able to access the Application Insights resource to obtain the **Connection string** value.
+
+Let's begin!
+
+1. Navigate to the **Capture CSAT dissatisfied** custom topic and select the **+ icon** below the **Ask with adaptive card** node.
+
+
 ## ✅ Mission Complete
 
 Congratulations! 👏🏻 Excellent work, Operative.
-
+value
 ✅ Built-in feedback: you learnt how to provide user feedback and where to review the feedback analytics.
 ✅ Adaptive cards (custom): you learnt how to collect feedback using an adaptive card and log telemetry to Azure Application Insights.
 
