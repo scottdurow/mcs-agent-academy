@@ -187,9 +187,9 @@ For the built-in interactions to be captured in the Analytics page of the agent,
 
 1. In Microsoft Teams, load the Interview Agent and start asking it questions.
 
-1. In the responses, select the thumbs up to provide positive feedback with a comment, or select the thumbs down to provide negative feedback.
+1. In the responses, select the **thumbs up** icon by the message to provide positive feedback with a comment, or select the **thumbs down** to provide negative feedback with a comment.
 
-       1. Positive Feedback examples
+       1. Positive feedback comment examples
 
           ```text
           Clear and Concise: The response was easy to understand and well-structured.
@@ -215,7 +215,7 @@ For the built-in interactions to be captured in the Analytics page of the agent,
           Adapted to Context: The response considered the specific scenario and provided tailored guidance.
           ```
 
-       1. Negative Feedback examples
+       1. Negative feedback comment examples
 
           ```text
           Incomplete or Vague: The response lacked detail or didn’t fully answer the question.
@@ -229,9 +229,9 @@ For the built-in interactions to be captured in the Analytics page of the agent,
           Overly Complex or Hard to Follow: The explanation was confusing or used unnecessary jargon.
           ```
 
-       ![Submit Positive Feedback](assets/11.1_01_SubmitPositiveFeedback.png)
+       ![Submit Positive feedback with written comment](assets/11.1_01_SubmitPositiveFeedback.png)
 
-1. Repeat until you have submitted several feedback comments.
+1. Repeat until you have submitted several reactions with written feedback.
 
 ### 11.2 Reviewing built-in analytics
 
@@ -246,7 +246,133 @@ We're now going to review the feedback submitted in the **Analytics** page of th
 
 ### 11.3 Build adaptive card to collect custom feedback
 
+In this exercise we're going to implement a process in the **Hiring Agent** to collect custom feedback in response to the built-in CSAT survey. When the user has responded with 1 star or 2 stars for the CSAT survey, we want to collect additional feedback to understand why they were dissatisfied. This will also give you hands-on learning on how to modify existing system topics.
+
+The following is what you'll learn:
+
+1. Create a new custom topic that contains the custom adaptive card to capture feedback.
+1. Modify an existing System topic, **End of conversation**, where a condition will route to the new custom topic that handles the custom feedback.
+
+Let's go!
+
+#### 11.3.1 Create a new custom topic
+
+1. In the **Hiring Agent**, browse to the **Topics** tab. Select **+Add a topic** and select **From blank**.
+
+       ![Add new topic from blank](assets/11.3.1_01_AddTopicFromBlank.png)
+
+1. Name the topic as the following,
+
+    ```text
+    Capture CSAT dissatisfied feedback
+    ```
+
+    In the Trigger node, select the **Change trigger** arrows icon and select **It's redirected to**.  This new topic will be triggered when it's explicitly called from an existing topic with through the **Go to another topic** node.
+
+       ![Rename topic and configure trigger](assets/11.3.1_02_RenameTopicAndConfigureTrigger.png)
+
+1. Next, we'll add a new node that will display the custom adaptive card to the user. This custom adaptive card will collect their dissatisfaction feedback based on their CSAT survey response. Select the **+ icon** and select the **Ask with adaptive card** node.
+
+       ![Add Ask with Adaptive Card node](assets/11.3.1_03_AskWithAdaptiveCardNode.png)
+
+1. Now it's time to configure the adaptive card 😊 Select the node and the **Adaptive Card Node properties** pane will appear. We're now going to edit the JSON. Select **Edit adaptive card**.
+
+       ![Add new topic from blank](assets/11.3.1_04_EditAdaptiveCard.png)
+
+1. This is the **Adaptive Card Designer** where you can design your card and see the card design in-real time. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. **Paste** the JSON from the [CSAT Feedback JSON file](assets/11.3.1_CSATFeedback.json).
+
+       ![Clear default JSON value and paste from CSATFeedback.json file](assets/11.3.1_05_UpdateJSON.png)
+
+1. Notice how the **Card Preview** now includes elements that display some text and a list of available devices. Select **Save**.
+
+       ![Card updated](assets/11.3.1_06_CardUpdated.png)
+
+1. Select **Preview** to view the card in different widths. The preview will load where you'll see different card outputs by width. The JSON accounts for responsive design so narrow widths will show different layout compared to the standard width.
+
+       ![Preview card widths](assets/11.3.1_08_PreviewCardWidths.png)
+
+1. Exit out of **Preview** by selecting the **x icon** or **Close**. Then close the **Adaptive Card Node properties** panel by selecting **X Close**.
+
+1. In the authoring canvas of the topic, you'll see the adaptive card. Scroll to the bottom of the node and you'll see output variables. The `notesId` and the `ratingId` were defined in the element properties. These two variables will store values from the card elements the users interact with. These values will be used in the bonus exercise of this lab.
+
+       ![Add new topic from blank](assets/11.3.1_09_CardOutputs.png)
+
+#### 11.3.2 Modify End of Conversation system topic
+
+We're now going to update the **End of Conversation** system topic to redirect to the **Capture CSAT dissatisfied feedback** custom topic created previously.
+
+1. Navigate to the **Topics** tab. Select **System** and select the **End of Conversation** system topic.
+
+       ![Select End of Conversation system topic](assets/11.3.2_01_SelectEndOfConversationTopic.png)
+
+1. Scroll down to the **Condition** node that checks the `SurveyResponse` variable. Select the **+ icon** below the node and select **Add node**.
+
+       ![Add node](assets/11.3.2_02_AddNode.png)
+
+1. Select **Variable management** and select **Set a variable value**.
+
+       ![Select Set a variable value node](assets/11.3.2_03_SelectSetAVariableValue.png)
+
+1. Select **Create a new variable**. This is to declare a variable that will store the user's response to the CSAT question node.
+
+       ![Select create a new variable node](assets/11.3.2_04_SelectCreateANewVariable.png)
+
+1. Select the variable and update the variable name to the following in the **Variable properties** pane.
+
+    ```text
+    VarCSATRating
+    ```
+
+    In the **To value** field, enter `0`.
+
+       ![Configure Variable properties](assets/11.3.2_05_ConfigureVariableProperties.png)
+
+    !!! tip ""
+        This is a numeric variable that will store the CSAT rating.
+
+1. In the **CSAT Question** node select the **... ellipsis** icon and select **Properties**.
+
+       ![Select properties of CSAT Question node](assets/11.3.2_06_CSATQuestionProperties.png)
+
+1. In the **CSAT Question properties** panel, there will be a field displayed where you can reference the variable to save the response rating selected by the end user. Enter the following which references the variable created earlier.
+
+    ```text
+    Topic.VarCSATRating
+    ```
+
+       ![Reference variable in CSAT Question properties](assets/11.3.2_07_CSATQuestionProperties.png)
+
+1. Next, we'll add logic to the topic to redirect to the **Capture CSAT dissatisfied feedback** custom topic when the user responds with a 1 star or 2 stars. Select the **+ icon** below the **CSAT Question** node and select **Add a condition**.
+
+       ![Add a Condition node](assets/11.3.2_08_AddAConditionNode.png)
+
+1. In the **Condition** node select the **greater than** icon to define the variable.
+
+       ![Select a variable](assets/11.3.2_09_SelectAVariable.png)
+
+1. Select the **VarCSATRating** variable.
+
+       ![Select VarCSATRating variable](assets/11.3.2_10_SelectVarCSATRating.png)
+
+1. In the condition parameter, select `is greater or equal to`.
+
+    !!! tip ""
+        This checks if the value of VarCSATRating meets or exceeds a specified threshold.
+
+    For value, enter the following integer,
+
+    ```text
+    3
+    ```
+
+    !!! tip ""
+        This is the threshold number. The condition will be `true` if VarCSATRating is greater or equal to `3`.
+
+       ![Add integer value](assets/11.3.2_11_AddIntegerValue.png)
+
 ### 11.4 BONUS: Logging telemetry to Azure Application Insights
+
+In this exercise you'll learn how to utilize the **Log custom telemetry event** node to log an event in **Azure Application Insights**.
 
 ## ✅ Mission Complete
 
