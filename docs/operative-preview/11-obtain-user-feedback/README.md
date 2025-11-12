@@ -475,7 +475,6 @@ Let's begin!
 
 1. Navigate to the **Capture CSAT dissatisfied** custom topic and select the **+ icon** below the **Ask with adaptive card** node.
 
-
 ## ✅ Mission Complete
 
 Congratulations! 👏🏻 Excellent work, Operative.
