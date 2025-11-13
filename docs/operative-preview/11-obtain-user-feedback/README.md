@@ -600,9 +600,79 @@ Let's begin!
 
 1. Let's now check out the custom event logged in Application Insights!
 
-    Navigate back to your browser that has your Application Insights resource and select **Events** on the left hand-side menu. Select `Any Custom Event` in the **Who used** dropdown field and in the **Events** dropdown field select our event **CSAT Dissatisfied** (which we created in Copilot Studio earlier).
+    Navigate back to your browser that has your Application Insights resource and select **Events** on the left hand-side menu. Select `Any Custom Event` in the **Who used** dropdown field and in the **Events** dropdown field select our event, **CSAT Dissatisfied**, which we created in Copilot Studio earlier. This will only show custom events with the event name of **CSAT Dissatisfied**.
 
        ![Application Insights Events](assets/11.4_17_Events.png)
+
+1. Scroll down and select **View More Insights**.
+
+       ![View more insights](assets/11.4_18_ViewMoreInsights.png)
+
+1. This is where you can see more information about the custom event logged by the agent.
+
+    !!! info "How this custom event links back to the agent"
+
+        Our **CSAT Dissatisfied** custom event corresponds to a telemetry signal indicating the user reported dissatisfaction in the CSAT survey after they submitted their feedback through the adaptive card. By logging a custom telemetry event in Application Insights, it helps track specific user actions or feedback signals from agents built in Copilot Studio.
+
+    Scroll down to the **Event Statistics** section and select **CSAT Dissatisfied**.
+
+       ![View Event Insights](assets/11.4_19_ViewEventInsights.png)
+
+1. We're now viewing **end-to-end transaction details** which provides a deep dive into telemetry for the event. It shows that 1 Event is logged in the Traces & events tab.
+
+    - the left **Event Summary** panel displays the local time, type and event details. The Details column typically references the `event name` and its associated `customDimensions` (metadata).
+    - the right **Event Properties** panel displays a breakdown of the event. The **Custom properties** are custom dimensions sent with the event.
+        - the `SerializedData` property stores the actual feedback message, which includes technical issues and user comments.
+        - other properties like `DesignMode`, `channelId`, and `conversationId` provide context about where and how the event occurred.
+
+       ![Custom event information](assets/11.4_20_CustomEventInformation.png)
+
+1. Now let's learn about another way to query events logged in Application Insights. Over time, you could have a large data set of events logged in Application Insights from different services. To query events, we can perform a Kusto query (a query language) on app insights data.
+
+    On the left hand-side menu, select **Logs** and the **Queries hub** dialog automatically loads. Exit by selecting the **X icon**.
+
+       ![Exit from the Queries hub dialog](assets/11.4_21_QueryLogs.png)
+
+1. By default, you'll see a list of Queries executed previously. To query data, select **Select a table**.
+
+       ![Select a table to query](assets/11.4_22_SelectATable.png)
+
+1. Select the `customEvents` table and select **Run**. This will now run a query on the `customEvents` table.
+
+       ![Run customEvents query](assets/11.4_23_RunCustomEvents.png)
+
+1. The results of the query will be displayed. By default it will display events from the last _24 hours_ and show only _1000 results_.
+
+       ![customEvents results](assets/11.4_24_customEventsResults.png)
+
+1. The view that is currently displayed is **Simple mode**. Let's change it to **KQL mode** so that we can apply a Kusto query.
+
+       ![Select KQL mode](assets/11.4_25_SelectKQLmode.png)
+
+1. For our Kusto query, enter the following
+
+    ```text
+    customEvents
+    | extend FeedbackData = customDimensions['SerializedData']
+    | where name == "CSAT Dissatisfied"
+    ```
+
+    !!! info "Explanation"
+
+        - `customEvents`
+            - Refers to the table in Application Insights that stores all custom telemetry events.
+        
+        - `| extend FeedbackData = customDimensions['SerializedData']`
+            - Adds a new column called `FeedbackData` to each row, extracting the value from the `SerializedData` field inside the `customDimensions` property (which is a dictionary of custom data attached to the event).
+
+        - `| where name == "CSAT Dissatisfied"`
+            - Filters the results to only include events where the event name is exactly "CSAT Dissatisfied" (i.e., only feedback events for dissatisfied CSAT ratings).
+
+        **Summary**
+        
+        This query retrieves all custom telemetry events named "CSAT Dissatisfied" and extracts the serialized feedback data for further analysis. It’s useful for reviewing negative feedback submitted by users.
+
+       ![Kusto query](assets/11.4_26_KustoQuery.png)
 
 ## ✅ Mission Complete
 
