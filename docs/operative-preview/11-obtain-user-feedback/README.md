@@ -695,4 +695,6 @@ This is the end of **Lab 11 - TBC**, select the link below to move to the next l
 
 📖 [Analyze conversational agent effectiveness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-improve-agent-effectiveness?WT.mc_id=power-188561-ebenitez)
 
+📖 [Application Insights telemetry with Microsoft Copilot Studio](https://learn.microsoft.com/en-us/dynamics365/guidance/resources/copilot-studio-appinsights?WT.mc_id=power-188561-ebenitez)
+
 📖 [Obtain feedback for every response](https://learn.microsoft.com/en-gb/microsoft-copilot-studio/guidance/adaptive-card-add-feedback-for-every-response?WT.mc_id=power-188561-ebenitez)
