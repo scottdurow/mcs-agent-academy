@@ -475,6 +475,135 @@ Let's begin!
 
 1. Navigate to the **Capture CSAT dissatisfied** custom topic and select the **+ icon** below the **Ask with adaptive card** node.
 
+    Select **Advanced** and select **Log a custom telemetry event**.
+
+       ![Add Log a Custom Telemetry Event node](assets/11.4_01_AddLogACustomTelemetryEvent.png)
+
+1. Select the **... ellipsis** and select **Properties**.
+
+       ![Select properties](assets/11.4_02_SelecProperties.png)
+
+1. We'll now define the Event name as the following,
+
+    ```text
+    CSAT Dissatisfied
+    ```
+
+    For the Properties, we'll next use a Power Fx formula that references the rating and the written feedback. Select the **... ellipsis** icon.
+
+      To learn more about this, expand the following additional learning block.
+
+    ??? info "Additional Learning: Event name and Properties"
+
+        🏷️ **Event name**
+        
+        - This is the **identifier** for the telemetry event you want to log. 
+        - Think of it as the "label" for the event, so you can easily recognize and filter it later in your analytics or monitoring tools.
+
+        🦋 **Example**
+        
+        - If you want to track when a user submits negative feedback, you might name the event `CSAT Dissatisfied`. 
+           
+        🌿 **Properties**
+        
+        - The properties to track - specific data related to the event, such as variables, user input, or error details.
+
+        🦋 **Example**
+        
+        - This could be a combination of values submitted through the adaptive card.
+
+       ![Log custom telemetry event properties](assets/11.4_03_EnterEventName.png)
+
+1. Select the **Formula** tab and enter the following Power Fx formula.
+
+    ```text
+    "Feedback: " & Text(Topic.ratingId) & ", " & "Comment: " & If(IsBlank(Topic.notesId), "NA", Topic.notesId)
+    ```
+
+    !!! note "Understanding the formula"
+        1. `"Feedback: "`
+            - Adds the label `"Feedback: "` at the start.
+        1. `Text(Topic.ratingId):`
+            - Converts the value of `Topic.ratingId` (the user's rating, e.g., a number from 1 to 5) to text and appends it.
+        1. `", ":`
+            - Adds a comma and space for separation.
+        1. `"Comment: "`
+            - Adds the label "Comment: ".
+        1. `If(IsBlank(Topic.notesId), "NA", Topic.notesId)`
+            - Checks if `Topic.notesId` (the user's written comment) is blank. If it is, it adds `"NA"` (not available); otherwise, it adds the actual comment.
+
+        **Example**
+        
+        - If the user gave a rating of 2 and wrote "Too slow", the result would be `Feedback: 2, Comment: Too slow`
+
+        **Summary**
+        
+        - This formula is used to log or display both the numeric feedback and any written comment in a clear, combined format, handling cases where the comment might be missing.
+
+       ![Enter formula](assets/11.4_04_EnterFormula.png)
+
+1. **Save** the topic.
+
+1. Next, we'll link the agent to the Application Insights resource. Select **Settings**.
+
+       ![Agent settings](assets/11.4_05_AgentSettings.png)
+
+1. Select **Advanced** and select **Application Insights**.
+
+       ![Application Insights settings](assets/11.4_06_ApplicationInsightSettings.png)
+
+1. Open your Application Insights resource in a new browser and under **Overview**, in the **Connection string** field select the copy icon. This will copy the value of the connection string.
+
+       ![Copy Connection string value](assets/11.4_07_CopyConnectionStringValue.png)
+
+1. Navigates back to Copilot Studio and paste the copied connecting string value into the **Connection string** field.
+
+    **Save** the updated settings.
+
+       ![Paste connection string and save.](assets/11.3.2_22_WrittenFeedbackAndSubmit.png)
+
+1. We can now test the telemetry event is logged into Application Insights when the CSAT rating is 1 star or 2 stars. We'll repeat the same steps earlier by asking the agent a question and after the agent has responded, enter the following to trigger the **End of conversation** topic.
+
+    ```text
+    end conversation
+    ```
+
+       ![Trigger end of conversation system topic](assets/11.3.2_17_EndConversation.png)
+
+1. Select **Yes** to the question asked about ending the conversation.
+
+       ![Yes end conversation](assets/11.3.2_18_YesEndConversation.png)
+
+1. Next, we'll see the next question from the system topic about whether our question has been answered. Select **Yes**.
+
+       ![Yes the question has been answered](assets/11.3.2_19_YesToAnsweringQuestion.png)
+
+1. Will now see the CSAT question. Select 1 star or 2 stars as the rating.
+
+       ![CSAT rating](assets/11.3.2_20_CSATSurvey.png)
+
+1. The **End of Conversation** topic has redirected to the **Capture CSAT dissatisfied feedback** custom topic.
+
+    Select either of the options and add written feedback by selecting **Add comment** or the **^ caret** icon.
+
+    Next, select **Submit**.
+
+       ![Written feedback and submit](assets/11.4_14_SubmitFeedback.png)
+
+1. The agent will resume the **End of Conversation** topic since the activity of the **Capture CSAT dissatisfied** topic has been completed. It proceeds with the question of asking the user if it can be of further assistance. Select **No**.
+
+       ![Resumes End of Conversation system topic](assets/11.3.2_23_ResumesEndOfConversationTopic.png)
+
+1. The last node sends a final message and the **End of Conversation** topic has been completed.
+
+       ![End of Conversation system topic completed](assets/11.3.2_22_WrittenFeedbackAndSubmit.png)
+
+1. Let's now check out the custom event logged in Application Insights!
+
+    Navigate back to your browser that has your Application Insights resource and select **Events** on the left hand-side menu. Select `Any Custom Event` in the **Who used** dropdown field and in the **Events** dropdown field select our event **CSAT Dissatisfied** (which we created in Copilot Studio earlier).
+
+       ![Application Insights Events](assets/11.4_17_Events.png)
+
 ## ✅ Mission Complete
 
 Congratulations! 👏🏻 Excellent work, Operative.
