@@ -10,21 +10,23 @@
 
 Welcome back, Agent. In [Mission 10](../04-agent-instructions/README.md) - you learnt how to build an effective prompt to generate documents.
 
-Your assignment, should you choose to accept it, is **Operation Echo** - focusing on collecting feedback to understand user satisfaction towards the agents you develop. This feedback loop allows you to make iterative enhancements to your agent to ensure end user satisfaction.
+Your assignment, should you choose to accept it, is **Operation Echo,** a critical intelligence-gathering mission focused on extracting actionable feedback from your deployed AI agents. In the shadowy world of conversational intelligence, user satisfaction data is more valuable than gold. This mission will teach you two primary methods of intelligence collection:
 
-TBC
+**Phase 1: Surveillance** - Deploy built-in reaction mechanisms (👍🏻/👎🏻) to conduct monitoring of user sentiment.
 
-Listen, modify, repeat - this is the mission when reviewing user feedback.
+**Phase 2: Active Engagement** - Implement custom Adaptive Card feedback systems for targeted intelligence gathering when deeper insights are required.
+
+*Listen, analyze, adapt* - this is the operative's creed when processing user intelligence.
 
 ## 🔎 Objectives
 
 In this mission, you'll learn:
 
-1. TBC
-1. TBC
-1. TBC
-1. TBC
-1. TBC
+1. How to use built-in thumbs up/down reactions to collect feedback from users
+1. How to analyze feedback data using Copilot Studio's Analytics dashboard
+1. How to create custom feedback collection using Adaptive Cards
+1. How to implement conditional feedback flows based on CSAT ratings
+1. How to log custom telemetry events to Azure Application Insights for advanced feedback tracking
 
 ## The importance of user feedback
 
@@ -57,13 +59,13 @@ After each AI response, users will see a small UI with 👍🏻/👎🏻 icons. 
 The thumbs up/down system's primary purpose is to measure user satisfaction at the response level. It provides immediate, granular feedback on whether each answer fulfilled the user's needs or not. Key benefits include:
 
 - **Quick Sentiment Signal**: A thumbs-up means the user was satisfied, while thumbs-down flags dissatisfaction. This binary signal is easy for users to provide and easy for developers to interpret at scale.
-- **Aggregated “Satisfaction” Metric**: In _Copilot Studio Analytics_, a "Reactions" section (under the broader Satisfaction analytics) tallies all feedback received. You can quickly see how many responses were marked positive or negative over time. This serves as a satisfaction scorecard for your agent's responses.
+- **Aggregated “Satisfaction” Metric**: In *Copilot Studio Analytics*, a "Reactions" section (under the broader Satisfaction analytics) tallies all feedback received. You can quickly see how many responses were marked positive or negative over time. This serves as a satisfaction scorecard for your agent's responses.
 - **Identify Improvement Areas**: By filtering or reviewing thumbs-down instances and their comments, developers can spot patterns. For example, specific topics or questions that often get negative feedback. These are prime candidates for improving your knowledge base or refining your prompts.
 - **No Coding Required**: Since it's built-in, makers do not need to configure anything to start collecting this feedback (the setting is on by default). The data is automatically available in the Copilot Studio analytics dashboard.
 
 ### Why it matters
 
-This reaction mechanism gives immediate, objective insight into how well the AI is performing from the user's perspective. Reviewing user feedback helps identify new user scenarios and issues, and make improvements based on what users are asking for. In short, thumbs feedback is a quick pulse-check on each answer's usefulness
+This reaction mechanism gives immediate, objective insight into how well the AI is performing from the user's perspective. Reviewing user feedback helps identify new user scenarios and issues, and make improvements based on what users are asking for. In short, thumbs feedback is a quick pulse-check on each answer's usefulness.
 
 ## Viewing and interpreting feedback analytics
 
@@ -73,8 +75,8 @@ Copilot Studio provides a dedicated analytics view to make sense of the collecte
 - **Filter and Details**: You can drill down by selecting "See details" on the Reactions chart. This typically lets you filter feedback by type (all/thumbs-up/thumbs-down) and view the list of user comments associated with each feedback. Comments are extremely useful – a thumbs-down by itself signals a problem, but the user's comment might explain why `"The answer was incorrect"` or `"Didn't address my question"` etc.
 - **Trend Over Time**: The analytics can be viewed for different date ranges (last 7 days, 30 days, etc., up to 90 days). Monitoring trends helps see if recent changes to the agent improved satisfaction - for example, an increase in thumbs-up percentage after adding a new knowledge source.
 - **Session CSAT vs Per-Response Reactions**: The **Satisfaction** analytics also include a **Survey results** section for end-of-session customer satisfaction (CSAT) surveys. Don't confuse this with the per-response thumbs reactions:
-      - _Reactions_: feedback on individual answers (our focus here)
-      - _Survey Results_: an optional overall rating at the end of a conversation (a 1–5 star survey). Both appear under **Satisfaction** analytics, but thumbs reactions specifically populate the **Reactions** chart.
+      - *Reactions*: feedback on individual answers (our focus here)
+      - *Survey Results*: an optional overall rating at the end of a conversation (a 1–5 star survey). Both appear under **Satisfaction** analytics, but thumbs reactions specifically populate the **Reactions** chart.
 
 Interpreting the data: A high ratio of 👍🏻 vs 👎🏻 means most answers are on target. A spike in 👎🏻 for certain questions might reveal a knowledge gap or a misunderstanding by the AI. For instance, if many users give a thumbs down after asking about "pricing" it signals the agent's answer on pricing is unsatisfactory – perhaps outdated or incomplete. Developers should investigate those chat transcripts and improve content for that topic.
 
@@ -117,7 +119,7 @@ This means after the agent generates an answer, you can immediately follow up wi
 1. **(Optional) Store or forward the feedback**: The feedback collected via Adaptive Card is not automatically saved to the Analytics like the built-in reactions. If you want to persist this data for analysis, you should explicitly store it. For example, you could call a Power Automate flow or an API to record the feedback in a database or SharePoint list, including context like which question it was for. Alternatively, since the feedback appears as part of the conversation transcript (the user's selection is essentially a message from the user), it will be saved in Dataverse conversations. But it will be in a raw text/JSON form, you'd have to extract it for reporting.
 
 !!! tip "Best Practice"
-    Adaptive Cards in Copilot Studio are supported in all channels that the agent supports, but be mindful of Adaptive Card schema version differences. Copilot Studio uses Adaptive Cards v1.6 in the web test chat, but Microsoft Teams and some other channels support up to **v1.5**. In practice, this means if you design your card with features only in 1.6, it _might not_ render in Microsoft Teams. Best practice is to stick to v1.5 features for broad compatibility, or test your card in each channel. The good news is the typical feedback card (text, buttons) is basic and works fine in all channels.
+    Adaptive Cards in Copilot Studio are supported in all channels that the agent supports, but be mindful of Adaptive Card schema version differences. Copilot Studio uses Adaptive Cards v1.6 in the web test chat, but Microsoft Teams and some other channels support up to **v1.5**. In practice, this means if you design your card with features only in 1.6, it *might not* render in Microsoft Teams. Best practice is to stick to v1.5 features for broad compatibility, or test your card in each channel. The good news is the typical feedback card (text, buttons) is basic and works fine in all channels.
 
 ## 🦜 Why use Adaptive Cards for feedback
 
@@ -137,11 +139,11 @@ In summary, Adaptive Cards for feedback are ideal when you need more than a bina
 
 1. **Handle the response gracefully**: When the user clicks feedback, you might simply thank them silently (no need to always say `"Thanks for your feedback"` every time). In a support scenario, if someone says the answer wasn't useful, you might follow up to help: `"Sorry about that. Let me clarify or escalate your question."` This turns a negative feedback into an opportunity to recover the user's satisfaction.
 
-1. **Data Handling and Privacy**: The feedback data from the adaptive card is just part of the conversation in terms of storage. It will _not_ show up in the Copilot Studio Analytics dashboard (since that only tracks the built-in feedback reaction mechanism). It also won't automatically appear in any compliance audits (those typically log that a user message was sent, but not the content of an Adaptive Card submission specifically). So, if analyzing this feedback is important, plan to capture it. You can create an agent flow triggered by the conversation to write each feedback entry to a separate Dataverse table or external storage along with relevant info (user ID, question asked, etc.). This way you can do your own reporting on it.
+1. **Data Handling and Privacy**: The feedback data from the adaptive card is just part of the conversation in terms of storage. It will *not* show up in the Copilot Studio Analytics dashboard (since that only tracks the built-in feedback reaction mechanism). It also won't automatically appear in any compliance audits (those typically log that a user message was sent, but not the content of an Adaptive Card submission specifically). So, if analyzing this feedback is important, plan to capture it. You can create an agent flow triggered by the conversation to write each feedback entry to a separate Dataverse table or external storage along with relevant info (user ID, question asked, etc.). This way you can do your own reporting on it.
 
 1. **Disable built-in reactions to avoid duplication**: If you are fully relying on a custom feedback card for every answer, it might be wise to turn off the default thumbs feedback in the agent settings. Otherwise, users will see two feedback requests (the thumbs UI and your adaptive card) for the same response, which is confusing and overkill. Most implementations choose either one method or the other in production. However, you could still use both in different contexts - for example, maybe you keep thumbs enabled for Teams users, but on a custom website you use a tailored card. In any case, ensure the user isn't bombarded with redundant feedback prompts.
 
-1. **Test on all channels**: Because Adaptive Cards can render a bit differently in Teams vs. web chat, test your feedback cycle in each deployed channel. Make sure the card looks as intended and the submission is received by the agent. For instance, if using Teams, ensure the card's schema is _less than or equal to 1.5_ as noted earlier. Also verify that on mobile versions of Teams or web chat, the adaptive card is still easily usable.
+1. **Test on all channels**: Because Adaptive Cards can render a bit differently in Teams vs. web chat, test your feedback cycle in each deployed channel. Make sure the card looks as intended and the submission is received by the agent. For instance, if using Teams, ensure the card's schema is *less than or equal to 1.5* as noted earlier. Also verify that on mobile versions of Teams or web chat, the adaptive card is still easily usable.
 
 !!! note ""
     In the Copilot Studio documentation [example](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-card-add-feedback-for-every-response), once the adaptive card feedback was set up, they provided a YAML snippet indicating how the agent can route the "useful/not useful" responses to a specific handling topic. This is a hint at the implementation: essentially treat the feedback like an intent that triggers either a follow-up or just completes. Implementing this means editing your agent's topics (or code) to catch those JSON responses.
@@ -158,11 +160,11 @@ Both feedback collection methods aim to improve your Copilot agent via user inpu
 | **Data captured** | Reaction (+ optional comment). Example: `"thumbs down (with comment: 'irrelevant answer')"`. No structured category beyond up/down. | Whatever data you design. Example: you might capture `"Rating: 3 stars"` or `"FeedbackChoice: NotUseful + Reason: Outdated info"`. The card submission is received as a JSON payload (key-value pairs) which you can parse |
 | **Analytics and visibility** | Automatically aggregated in Copilot Studio **Analytics** in **Satisfaction** section. Shows total count of 👍🏻 vs 👎🏻, and allows filtering/viewing comments | Not shown in Copilot Studio Analytics by default. These responses are essentially part of the conversation flow (stored in transcripts) and do not feed the out-of-box dashboards. You need to create your own reporting mechanism if you want to summarize this feedback. |
 | **Extensibility** | Limited (thumbs UI is fixed). Can't change the question or add more options to built-in mechanism. You can turn it off or on, that's it. | Extensible. You craft the adaptive card and can evolve it. Example: adding a third option `"Partially helpful"`, or asking a follow-up question if they respond negatively. Also, you decide when to invoke it (doesn't have to be every turn). |
-| **Ideal use cases** | General satisfaction monitoring for your agent's answers. Best when you want a quick gauge of every response's quality and a simple success metric to track over time. Great for initial deployments to gather broad feedback with minimal effort. | Deep feedback or custom workflows. Useful when specific insights are needed, Example: which of several answers is better, or when integrating feedback into other systems (like creating bug reports, triggering human review). Also valuable if you want to collect feedback in a specific format such as _category tags_ that the built-in reactions mechanism doesn't support. |
+| **Ideal use cases** | General satisfaction monitoring for your agent's answers. Best when you want a quick gauge of every response's quality and a simple success metric to track over time. Great for initial deployments to gather broad feedback with minimal effort. | Deep feedback or custom workflows. Useful when specific insights are needed, Example: which of several answers is better, or when integrating feedback into other systems (like creating bug reports, triggering human review). Also valuable if you want to collect feedback in a specific format such as *category tags* that the built-in reactions mechanism doesn't support. |
 
 As a rule of thumb (no pun intended 😆), **start with the built-in thumbs feedback** for any new agent – it's easy and provides immediate value in understanding user satisfaction. As your solution matures, if you find the need for more nuanced feedback, you can experiment with an Adaptive Card approach.
 
-Some advanced implementations even use both: for example, keeping thumbs up/down _enabled_, but also asking a targeted question via an adaptive card at the end of a session (like a mini survey). In that case, you'd get per-response sentiment (via reactions) and an overall session rating or comment (via your card). However keep in mind that the built-in CSAT is also covered by the Copilot Studio Analytics as highlighted earlier. Therefore as we learnt in this mission, record responses from adaptive cards to build your own custom reporting.
+Some advanced implementations even use both: for example, keeping thumbs up/down *enabled*, but also asking a targeted question via an adaptive card at the end of a session (like a mini survey). In that case, you'd get per-response sentiment (via reactions) and an overall session rating or comment (via your card). However keep in mind that the built-in CSAT is also covered by the Copilot Studio Analytics as highlighted earlier. Therefore as we learnt in this mission, record responses from adaptive cards to build your own custom reporting.
 
 Ultimately, for most scenarios using one method at a time is clearer. If you opt for custom adaptive cards, it often makes sense to disable the default reactions to provide a single, cohesive feedback channel to the user.
 
@@ -279,7 +281,7 @@ Let's go!
 
        ![Add new topic from blank](assets/11.3.1_04_EditAdaptiveCard.png)
 
-1. This is the **Adaptive Card Designer** where you can design your card and see the card design in-real time. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. **Paste** the JSON from the [CSAT Feedback JSON file](assets/11.3.1_CSATFeedback.json).
+1. This is the **Adaptive Card Designer** where you can design your card and see the card design in-real time. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of *Ctrl + A* or using the Mac keyboard shortcut of *Command + A*, followed by deleting the lines. **Paste** the JSON from the [CSAT Feedback JSON file](assets/11.3.1_CSATFeedback.json).
 
        ![Clear default JSON value and paste from CSATFeedback.json file](assets/11.3.1_05_UpdateJSON.png)
 
@@ -349,8 +351,8 @@ We're now going to update the **End of Conversation** system topic to redirect t
 1. The **Condition** node is now added to the system topic.
 
     !!! note "The logic to be applied to the Condition node"
-        - If the user’s CSAT rating is `3`, `4`, or `5`, the conversation flow will follow the branch connected to this condition. This will act as a positive (satisfied) feedback path for ratings `3` and above.
-        - If the rating is `1` or `2`, the conversation flow will go to the **All other conditions** branch. This will act as a negative (dissatisfied) feedback path fro rating below `3`.
+        - If the user's CSAT rating is `3`, `4`, or `5`, the conversation flow will follow the branch connected to this condition. This will act as a positive (satisfied) feedback path for ratings `3` and above.
+        - If the rating is `1` or `2`, the conversation flow will go to the **All other conditions** branch. This will act as a negative (dissatisfied) feedback path for ratings below `3`.
 
     In the **Condition** node select the **greater than** icon to define the variable.
 
@@ -414,7 +416,7 @@ We're now going to update the **End of Conversation** system topic to redirect t
 
        ![Yes the question has been answered](assets/11.3.2_19_YesToAnsweringQuestion.png)
 
-1. Will now see the CSAT question. Select 1 star or 2 stars as the rating.
+1. We will now see the CSAT question. Select 1 star or 2 stars as the rating.
 
        ![CSAT rating](assets/11.3.2_20_CSATSurvey.png)
 
@@ -556,7 +558,7 @@ Let's begin!
 
        ![Copy Connection string value](assets/11.4_07_CopyConnectionStringValue.png)
 
-1. Navigates back to Copilot Studio and paste the copied connecting string value into the **Connection string** field.
+1. Navigate back to Copilot Studio and paste the copied connection string value into the **Connection string** field.
 
     **Save** the updated settings.
 
@@ -578,7 +580,7 @@ Let's begin!
 
        ![Yes the question has been answered](assets/11.3.2_19_YesToAnsweringQuestion.png)
 
-1. Will now see the CSAT question. Select 1 star or 2 stars as the rating.
+1. We will now see the CSAT question. Select 1 star or 2 stars as the rating.
 
        ![CSAT rating](assets/11.3.2_20_CSATSurvey.png)
 
@@ -641,7 +643,7 @@ Let's begin!
 
        ![Run customEvents query](assets/11.4_23_RunCustomEvents.png)
 
-1. The results of the query will be displayed. By default it will display events from the last _24 hours_ and show only _1000 results_.
+1. The results of the query will be displayed. By default it will display events from the last *24 hours* and show only *1000 results*.
 
        ![customEvents results](assets/11.4_24_customEventsResults.png)
 
@@ -656,6 +658,8 @@ Let's begin!
     | extend FeedbackData = customDimensions['SerializedData']
     | where name == "CSAT Dissatisfied"
     ```
+
+    **Run** the query.
 
     !!! info "Explanation"
 
@@ -674,6 +678,14 @@ Let's begin!
 
        ![Kusto query](assets/11.4_26_KustoQuery.png)
 
+1. The results of the query will be displayed. Expand one of the results.
+
+       ![Query results](assets/11.4_27_Results.png)
+
+1. Scroll down and you'll see the new FeedbackData column defined in the Kusto query.
+
+       ![FeedbackData column](assets/11.4_28_ExtendSerializedData.png)
+
 ## ✅ Mission Complete
 
 Congratulations! 👏🏻 Excellent work, Operative.
@@ -683,7 +695,7 @@ value
 
 Feedback is paramount to iterative improvements to your agents!
 
-This is the end of **Lab 11 - TBC**, select the link below to move to the next lesson.
+This is the end of **Lab 11 - Provide feedback using built-in interactions vs adaptive cards (custom)**, select the link below to move to the next lesson.
 
 ⏭️ [Move to **Publishing Your Agents to a Demo Website for Stakeholder Testing** lesson](../12-demo-website/README.md)
 

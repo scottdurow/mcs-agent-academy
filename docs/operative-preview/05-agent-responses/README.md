@@ -20,11 +20,10 @@ Choose the right model for your agent and format responses to be impactful, clea
 
 In this mission, you'll learn:
 
-1. TBC
-1. TBC
-1. TBC
-1. TBC
-1. TBC
+1. How to understand and select the optimal AI model for your agent's use case
+1. How to compare different model capabilities and performance characteristics
+1. How to configure response formatting to enhance readability and user experience
+1. How to implement consistent styling and structure for agent responses
 
 ## 🤔 What is the Agent Model?
 
@@ -36,17 +35,46 @@ Selecting the appropriate model ensures your agent performs optimally for your u
 
 ### 🪁 Available models
 
+Copilot Studio supports OpenAI models and Anthropic models. Each model will have a category tag and an availability tag.
+
+#### Model use categories
+
+Different models are designed for specific tasks. Selecting the right model improves your agent’s performance. For instance, use a Deep model for complex decision-making or a General model for broad, conversational topics.
+
+The table below outlines model tags, their strengths, and key considerations - [source](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#model-use-categories).
+
+| Tag | Description | Strengths | Latency | Cost | Reasoning depth |
+|-------|----------|----------|-------------|-----------|-----------|
+| **Deep** | Optimized for deliberate, multi-step reasoning and tool-supported workflows. | Complex analytics, multi-hop reasoning, policy and contract analysis, troubleshooting with multi-system steps, and synthesis of long documents with citations | Highest | Highest | Multi-step, tool-rich |
+| **Auto** | Optimized for coverage across mixed workloads; routes queries dynamically. | Helpdesk and employee agents with mixed intents, blending knowledge and actions, and tier‑0 customer support with unpredictable complexity | Variable | Variable | Multi-step, tool-rich |
+| **General** | Optimized for speed and cost on everyday chat and light grounding. | Drafting, rewriting, summarizing, and translation, FAQ-style grounded answers, and simple action automation | Lowest | Lowest | Shallow-to-moderate |
+
+#### Model availability
+
+Models are released in stages. You can explore cutting-edge options like Experimental or Preview models, or stick with a stable, fully tested Generally Available model.
+
+The table below explains the availability tags - [source](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#model-use-categories).
+
+| Tag | Description |
+| **Experimental** | Used for experimentation, and not recommended for production use. Subject to preview terms, and can have limitations on availability and quality. See [Limitations of experimental and preview models.](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#limitations-of-experimental-and-preview-models) |
+| **Preview** | Will eventually become a generally available model, but currently not recommended for production use. Subject to preview terms, and can have limitations on availability and quality. See [Limitations of experimental and preview models.](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#limitations-of-experimental-and-preview-models) |
+| **No tag** | Generally available. You can use this model for scaled and production use. In most cases, generally available models have no limitations on availability and quality, but some might still have some limitations, like regional availability. |
+| **Default** | The default model for all agents, and usually the best performing generally available model. The default model is periodically upgraded as new, more capable models become generally available. Agents also use the default model as a fallback if a selected model is turned off or unavailable. |
+| **Retired** | When a new model becomes the default model, the old default model is retired. You can still use the retired model for up to one month after retirement. For more information, see [Continue using a retired AI model](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-retired-model). |
+
 #### OpenAI models
 
-AI capabilities evolve rapidly, and Copilot Studio keeps up by offering a range of Azure OpenAI models. As of 2025, the primary models to choose from include Microsoft’s GPT-4.1 family, the “o” series for reasoning, and the latest GPT-5 previews. The following table summarizes the main choices and what each is best suited for:
+AI capabilities evolve rapidly, and Copilot Studio keeps up by offering a range of Azure OpenAI models. As of 2025, the primary models to choose from include OpenAI's GPT-4.1, and the latest GPT-5 previews. The following table summarizes the main choices and what each is best suited for:
 
-| Model Version | Status | Key Strengths | Ideal Use Cases |
-|-------|----------|-------------|-----------|
-| **GPT‑4o (Default)** | General Availability | - Fast, cost-effective responses. - Good for most standard tasks with moderate complexity | Everyday Q&A, summaries, routine helpdesk scenarios where quick answers matter and budget is limited |
-| **GPT-4.1** | Preview | - Higher-quality outputs, superior for complex tasks - Larger AI model with more advanced reasoning than GPT-4.1 Mini (may be slightly slower) | Complex queries, detailed content generation or analysis. Suitable for projects needing high accuracy and can afford higher latency or cost |
-| **o3 (Generative OpenAI)** | General Availability | - Specialized for reasoning and decision logic - Excels at nuanced problem-solving and complex analysis tasks | Use when your agent must perform sophisticated reasoning, such as intricate planning, multi-step problem solving, or data analysis with critical thinking |
-| **GPT‑5 Auto** | Experimental | - Latest-generation model with improved context awareness and up-to-date training (Sept 2024) - Handles the highest complexity in planning and analytical tasks with slower, more methodical responses. | Cutting-edge scenarios needing the most context-aware answers or enhanced document/image processing. Use to evaluate advanced capabilities early, but not yet for mission-critical production due to preview status. |
-| **GPT‑5 Reasoning** | Experimental | - Latest model optimized for complex reasoning (trained up to Oct 2024) - High scores in document understanding and response accuracy | Advanced reasoning tasks where top-tier analytical capability is required (such as extensive planning, interpreting complex data). Again, use cautiously in testing since it’s a preview model. |
+| Model Version | Category | Availability | Key Strengths | Ideal Use Cases |
+|-------|----------|----------|-------------|-----------|
+| **GPT‑4o** | General | Retired | Fast, versatile responses; supports text and image input; cost-effective balance of speed and accuracy. | Routine Q&A; summarizing support chats or calls; quick content drafts; tasks combining text with visuals. |
+| **GPT-4.1** | General | Default | Higher accuracy and reasoning than GPT-4o; excellent at complex text analysis (text-only model). | Analyzing detailed documents (policies, reports); complex knowledge-base Q&A; scenarios where precision is critical. |
+| **GPT‑5 Chat** | General | Preview | Advanced conversational abilities with strong context retention; produces human-like dialogue. |Employee self-service chatbots; IT/HR helpdesk assistants; interactive agents requiring natural, human-like responses. |
+| **GPT‑5 Auto** | Auto | General | Optimized for orchestrating multi-step workflows; can automate actions across systems (not just chit-chat). | End-to-end process automation (e.g. ticket creation to resolution); multi-step task sequences across apps; "digital project manager" scenarios. |
+| **GPT‑5 Reasoning** | Deep | Preview | - Latest model optimized for complex reasoning (trained up to Oct 2024) - High scores in document understanding and response accuracy | Advanced reasoning tasks where top-tier analytical capability is required (such as extensive planning, interpreting complex data). Again, use cautiously in testing since it’s a preview model. |
+| **GPT‑5.1 Chat** | General | Experimental | Latest experimental conversational model with broad task proficiency; improves on context awareness and responsiveness. | General-purpose Q&A and dialogue tasks leveraging the newest model’s capabilities; versatile chatbot scenarios where enhanced performance is beneficial. |
+| **GPT‑5.1 Reasoning** | Deep | Experimental | Experimental top-tier reasoning model offering maximum depth and accuracy for complex tasks. | Ultra-complex analytical queries or decision support requiring the highest precision (e.g. intricate strategic planning, high-stakes data analysis). |
 
 !!! warning
 
@@ -67,12 +95,12 @@ Both are available in Microsoft Copilot Studio as opt-in preview (Frontier Progr
 
 | Model Version | Status | Key Strengths | Ideal Use Cases |
 |-------|----------|-------------|-----------|
-| **Claude Sonnet 4.5** | External Preview | - Enterprise-ready safety: Improved alignment, reduced prompt injection risk, and strong error correction. - Advanced reasoning & math: Significant gains in multi-step reasoning and computational accuracy. | - Building autonomous coding agents and developer copilots. - Complex, multi-step workflows - Enterprise AI agents requiring long context and sustained reasoning. |
-| **Claude Opus 4.1** | External Preview | - Deep reasoning and complex problem-solving - Creative and multilingual so suitable for content generation, translation and narrative writing | - High stakes reasoning: legal, financial or scientific analysis - Enterprise research agents: synthesizing insights from large datasets -Advanced coding projects: multi-file refactoring, debugging, and architectural design - Creative generation: marketing copy, long-form content, multilingual support. |
+| **Claude Sonnet 4.5** | Experimental | Excels at code-related tasks and complex “agent” workflows; strong at tool use and step-by-step reasoning. | Advanced software development assistance (code generation & debugging); building multi-step autonomous agents; tasks requiring integration with external tools or systems. |
+| **Claude Opus 4.1** | Experimental | Specialized for intensive analysis and structured problem-solving. | In-depth data analysis and research projects; complex reasoning scenarios (e.g. compliance auditing, elaborate planning) where thoroughness is paramount. |
 
 !!! warning
 
-    - It's important to note that these are external models. Anthropic models are hosted outside Microsoft and are subject to Anthropic terms and data handling, which need to be reviewed and accepted before makers can use them. These models are available before an official release so that you can get early access and [provide feedback](https://community.powerplatform.com/forums/thread/?groupid=db8f53c2-767d-47d6-a1ae-fe4c828a6553). Therefore is not recommended to use these models for Production purposes.
+    - It's important to note that these are external models. Anthropic models are hosted outside Microsoft and are subject to Anthropic terms and data handling, which need to be reviewed and accepted before makers can use them. These models are available before an official release so that you can get early access and [provide feedback](https://community.powerplatform.com/forums/thread/?groupid=db8f53c2-767d-47d6-a1ae-fe4c828a6553). Therefore, it is not recommended to use these models for Production purposes.
 
     - Please note that you could also experience slowdowns or timeouts due to limited capacity and availability, and these models might not be supported in the future. Admins can control access to this feature (more of this soon as you progress from here!).
 
@@ -192,7 +220,7 @@ Copilot Studio generative answers support a subset of Markdown for rich text. He
 
 | Formatting Option | Purpose and Effect  | Example Usage |
 |----------|------------|---------|
-| **Bold** | Makes important words or phrases stand out. Use bold to highlight key | **"Your account balance is $1,250."** - The amount is bold so it’s immediately noticeable.  |
+| **Bold** | Makes important words or phrases stand out. Use bold to highlight key information or critical values. | **"Your account balance is $1,250."** - The amount is bold so it's immediately noticeable. |
 | _Italics_ | Adds subtle emphasis or denotes special terms. Commonly used for document titles, or to highlight a _phrase_ in a softer way than bold. | _"Please provide additional details for verification."_ - The words “additional details” are italicized to indicate a prompt or placeholder. |
 | Hyperlinks | Inserts clickable links in the response text. Useful for directing users to external articles, internal knowledge base, or any detailed reference. | "Refer to our [Microsoft Surface Warranty and Protection Plans](https://www.microsoft.com/surface/business/warranty-protection-plans-and-support) for more details." - The text "Microsoft Surface Warranty and Protection Plans" is a hyperlink to the web page. |
 | Power Fx expressions | Embeds dynamic content or logic-driven text in the response. Power Fx can pull in variables, do calculations, or enforce formatting (even with regex for validation). This allows parts of the answer to be determined by real-time data or conditions. | "Today is `${Text(Now(), "dddd, mmmm d, yyyy")}`." - This uses a Power Fx formula to insert the current date in a long format, `Friday, October 3, 2025`. You could also use expressions to format numbers, or ensure an output meets a pattern (using regex). |
@@ -248,13 +276,39 @@ In summary, use formatting to enhance clarity, not distract. The user should be 
 
 ## 🧪 Lab 05 - Model selection and response formatting for the Interview Agent
 
+We're next going to change the model of the Hiring agent and add instructions for the agent's response formatting.
+
 ### 5.1 Change the model of the Interview Agent
 
-TBC
+Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat experimental model.
 
-### 5.1 Adding instructions for response formatting
+1. Start a new test session in the **Hiring Agent** and enter the following question below. Use a **Resume Number** value from your existing active resumes in the **Hiring Hub** model-driven app.
 
-TBC
+    ```text
+    Summarize resume RXXXXX
+    ```
+
+       ![Enter first question for GPT-4.1 default model](assets/5.1_01_GPT-4.1DefaultModel.png)
+
+1. A summary of the resume will next be displayed and we can see it's in the output of bullet points.
+
+       ![Question 1 response](assets/5.1_02_01_Question1Response.png)
+
+       ![Question 1 response](assets/5.1_02_02_Question1Response.png)
+
+1. We'll ask another question for suggestions of questions to ask based on the evaluation criteria of a job role. Enter the question below.
+
+    ```text
+    Can you provide suggestions of questions to ask in an interview for the Power Platform developer role based on the evaluation criteria?
+    ```
+
+       ![Question 2](assets/5.1_03_Question2.png)
+
+1. A response with the suggested questions are displayed and is categorized in different headings that represent 
+
+### 5.2 Adding instructions for response formatting
+
+Coming soon
 
 ## ✅ Mission Complete
 
@@ -265,7 +319,7 @@ Congratulations! 👏🏻 Excellent work, Operative.
 
 This enables the **Interview Agent** to be equipped in answering questions and inquiries using the power of the selected model and elegantly follow the same response format each time.
 
-This is the end of **Lab 05 - TBC**, select the link below to move to the next lesson.
+This is the end of **Lab 05 - Model selection and response formatting for the Interview Agent**, select the link below to move to the next lesson.
 
 ⏭️ [Move to **AI Safety and Content Moderation** lesson](../06-ai-safety/README.md)
 
