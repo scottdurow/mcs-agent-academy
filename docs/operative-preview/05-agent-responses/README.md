@@ -304,7 +304,7 @@ Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat e
 
        ![Question 2](assets/5.1_03_Question2.png)
 
-1. A response with the suggested questions are displayed and is categorized in different headings that represent 
+1. A response with the suggested questions are displayed and is categorized in different headings that represent
 
 ### 5.2 Adding instructions for response formatting
 
