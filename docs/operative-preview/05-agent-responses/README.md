@@ -290,21 +290,66 @@ Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat e
 
        ![Enter first question for GPT-4.1 default model](assets/5.1_01_GPT-4.1DefaultModel.png)
 
-1. A summary of the resume will next be displayed and we can see it's in the output of bullet points.
+1. A summary of the resume will next be displayed and we can see it's in the output of bullet points by headings. There's also a reference to the Dataverse row for the **Active Resumes** system view.
 
        ![Question 1 response](assets/5.1_02_01_Question1Response.png)
 
        ![Question 1 response](assets/5.1_02_02_Question1Response.png)
 
-1. We'll ask another question for suggestions of questions to ask based on the evaluation criteria of a job role. Enter the question below.
+1. We'll ask another question for suggestions of interview questions to ask based on the evaluation criteria of a job role, and provide what the potential answers are. Enter the question below.
 
     ```text
-    Can you provide suggestions of questions to ask in an interview for the Power Platform developer role based on the evaluation criteria?
+    Can you provide suggestions of questions to ask in an interview for the Power Platform developer role (Job role number J1004) based on its associated evaluation criteria? Can you also please provide what the answers may be for each question?
     ```
 
        ![Question 2](assets/5.1_03_Question2.png)
 
-1. A response with the suggested questions are displayed and is categorized in different headings that represent
+1. The returned response lists interview questions in numbered format. Each question is followed by a `Model Answer`. Notice how the answer is in the point of view of the candidate, the model refers to the answers in first-person writing.
+
+       ![Question 2 response](assets/5.1_04_01_Question2Response.png)
+
+       ![Question 2 response](assets/5.1_04_02_Question2Response.png)
+
+1. Let's now change the agent's model. In the **Overview** tab select the **chevron** icon and from the list of **OpenAI** models, select **GPT-5.1 Chat**.
+
+       ![Select GPT-5.1 Chat](assets/5.1_05_SelectGPT-5.1Chat.png)
+
+1. A confirmation message will appear shortly to inform you that the agent model has been updated. Let's now test the responses of this model by starting a new test session.
+
+       ![New test session](assets/5.1_06_NewTestSession.png)
+
+1. Enter the following question below. Use a **Resume Number** value from your existing active resumes in the **Hiring Hub** model-driven app.
+
+    ```text
+    Summarize resume RXXXXX
+    ```
+
+       ![Question 1](assets/5.1_07_Question1.png)
+
+1. A response with the summarized resume is returned. Notice how it is more short and concise compared to the previous model's response.
+
+       ![Question 1 response](assets/5.1_08_Question1Response.png)
+
+1. We'll ask the same second question for a list of interview questions based on the evaluation criteria of a job role, and provide what the potential answers are. Enter the question below.
+
+    ```text
+    Can you provide suggestions of questions to ask in an interview for the Power Platform developer role (Job role number J1004) based on its associated evaluation criteria? Can you also please provide what the answers may be for each question?
+    ```
+
+       ![Question 2](assets/5.1_09_Question2.png)
+
+1. A response with the suggested list of interview questions are returned with the potential answers a candidate can provide during the interview. Notice how this time,
+
+    - The response is organized under a **main header** and **subsections**
+        - **Question Header**: 15. Environment Strategy
+            - This indicates the interview question being evaluated
+                - How do you structure environments for enterprise deployments?
+        - **Strong Answer Indicators**:
+            - This subsection lists key points that the agent considers strong or desirable in a candidate's response.
+
+       ![Question 2 response](assets/5.1_10_01_Question2Response.png)
+
+       ![Question 2 response](assets/5.1_10_02_Question2Response.png)
 
 ### 5.2 Adding instructions for response formatting
 
