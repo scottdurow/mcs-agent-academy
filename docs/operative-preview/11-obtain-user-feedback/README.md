@@ -8,9 +8,9 @@
 
 ## 🎯 Mission Brief
 
-Welcome back, Agent. In [Mission 10](../04-agent-instructions/README.md) - you learnt how to build an effective prompt to generate documents.
+Welcome back, Agent. In [Mission 10](../04-agent-instructions/README.md), you learned how to build an effective prompt to generate documents.
 
-Your assignment, should you choose to accept it, is **Operation Echo,** a critical intelligence-gathering mission focused on extracting actionable feedback from your deployed AI agents. In the shadowy world of conversational intelligence, user satisfaction data is more valuable than gold. This mission will teach you two primary methods of intelligence collection:
+Your assignment, should you choose to accept it, is **Operation Echo**, a critical intelligence-gathering mission focused on extracting actionable feedback from your deployed AI agents. In the shadowy world of conversational intelligence, user satisfaction data is more valuable than gold. This mission will teach you two primary methods of intelligence collection:
 
 **Phase 1: Surveillance** - Deploy built-in reaction mechanisms (👍🏻/👎🏻) to conduct monitoring of user sentiment.
 
@@ -460,7 +460,7 @@ We're now going to update the **End of Conversation** system topic to redirect t
 
 1. The last node sends a final message and the **End of Conversation** topic has been completed.
 
-       ![End of Conversation system topic completed](assets/11.3.2_22_WrittenFeedbackAndSubmit.png)
+       ![End of Conversation system topic completed](assets/11.3.2_24_EndOfConversationTopicCompleted.png)
 
 Great work! 🙌🏻 You've added a custom topic with an adaptive card that handles written feedback to CSAT ratings below `3`. Let's take this further by logging this as an event in **Azure Application Insights** next.
 
@@ -562,7 +562,7 @@ Let's begin!
 
     **Save** the updated settings.
 
-       ![Paste connection string and save.](assets/11.3.2_22_WrittenFeedbackAndSubmit.png)
+       ![Paste connection string and save.](assets/11.4_08_PasteConnectionStringAndSave.png)
 
 1. We can now test the telemetry event is logged into Application Insights when the CSAT rating is 1 star or 2 stars. We'll repeat the same steps earlier by asking the agent a question and after the agent has responded, enter the following to trigger the **End of conversation** topic.
 
@@ -598,7 +598,7 @@ Let's begin!
 
 1. The last node sends a final message and the **End of Conversation** topic has been completed.
 
-       ![End of Conversation system topic completed](assets/11.3.2_22_WrittenFeedbackAndSubmit.png)
+       ![End of Conversation system topic completed](assets/11.3.2_24_EndOfConversationTopicCompleted.png)
 
 1. Let's now check out the custom event logged in Application Insights!
 
@@ -689,9 +689,9 @@ Let's begin!
 ## ✅ Mission Complete
 
 Congratulations! 👏🏻 Excellent work, Operative.
-value
-✅ Built-in feedback: you learnt how to provide user feedback and where to review the feedback analytics.
-✅ Adaptive cards (custom): you learnt how to collect feedback using an adaptive card and log telemetry to Azure Application Insights.
+
+✅ Built-in feedback: you learned how to provide user feedback and where to review the feedback analytics..
+✅ Adaptive cards (custom): you learned how to collect feedback using an adaptive card and log telemetry to Azure Application Insights.
 
 Feedback is paramount to iterative improvements to your agents!
 

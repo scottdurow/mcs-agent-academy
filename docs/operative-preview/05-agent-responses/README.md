@@ -8,7 +8,7 @@
 
 ## 🎯 Mission Brief
 
-Welcome back, Agent. In [Mission 04](../04-agent-instructions/README.md) - you learned how to define your agent with instructions and invoke tools to equip your agent in handling requests. But even the most well-instructed agent can feel robotic without the right personality and response formatting.
+Welcome back, Agent. In [Mission 04](../04-agent-instructions/README.md), you learned how to define your agent with instructions and invoke tools to equip your agent in handling requests. But even the most well-instructed agent can feel robotic without the right personality and response formatting.
 
 Your assignment, should you choose to accept it, is **Operation Archetype** - transforming your agent from a functional tool into a compelling digital personality. You'll master the art of selecting the optimal AI model and crafting response formats that resonate with users on a human level.
 
@@ -56,6 +56,7 @@ Models are released in stages. You can explore cutting-edge options like Experim
 The table below explains the availability tags - [source](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#model-use-categories).
 
 | Tag | Description |
+|-----|-------------|
 | **Experimental** | Used for experimentation, and not recommended for production use. Subject to preview terms, and can have limitations on availability and quality. See [Limitations of experimental and preview models.](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#limitations-of-experimental-and-preview-models) |
 | **Preview** | Will eventually become a generally available model, but currently not recommended for production use. Subject to preview terms, and can have limitations on availability and quality. See [Limitations of experimental and preview models.](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#limitations-of-experimental-and-preview-models) |
 | **No tag** | Generally available. You can use this model for scaled and production use. In most cases, generally available models have no limitations on availability and quality, but some might still have some limitations, like regional availability. |
@@ -70,7 +71,7 @@ AI capabilities evolve rapidly, and Copilot Studio keeps up by offering a range 
 |-------|----------|----------|-------------|-----------|
 | **GPT‑4o** | General | Retired | Fast, versatile responses; supports text and image input; cost-effective balance of speed and accuracy. | Routine Q&A; summarizing support chats or calls; quick content drafts; tasks combining text with visuals. |
 | **GPT-4.1** | General | Default | Higher accuracy and reasoning than GPT-4o; excellent at complex text analysis (text-only model). | Analyzing detailed documents (policies, reports); complex knowledge-base Q&A; scenarios where precision is critical. |
-| **GPT‑5 Chat** | General | Preview | Advanced conversational abilities with strong context retention; produces human-like dialogue. |Employee self-service chatbots; IT/HR helpdesk assistants; interactive agents requiring natural, human-like responses. |
+| **GPT‑5 Chat** | General | Preview | Advanced conversational abilities with strong context retention; produces human-like dialogue. | Employee self-service chatbots; IT/HR helpdesk assistants; interactive agents requiring natural, human-like responses. |
 | **GPT‑5 Auto** | Auto | General | Optimized for orchestrating multi-step workflows; can automate actions across systems (not just chit-chat). | End-to-end process automation (e.g. ticket creation to resolution); multi-step task sequences across apps; "digital project manager" scenarios. |
 | **GPT‑5 Reasoning** | Deep | Preview | - Latest model optimized for complex reasoning (trained up to Oct 2024) - High scores in document understanding and response accuracy | Advanced reasoning tasks where top-tier analytical capability is required (such as extensive planning, interpreting complex data). Again, use cautiously in testing since it’s a preview model. |
 | **GPT‑5.1 Chat** | General | Experimental | Latest experimental conversational model with broad task proficiency; improves on context awareness and responsiveness. | General-purpose Q&A and dialogue tasks leveraging the newest model’s capabilities; versatile chatbot scenarios where enhanced performance is beneficial. |
@@ -120,17 +121,16 @@ This flexibility allows you to experiment with different models even after your 
 
 ## 📶 Model updates and retired models
 
-Microsoft periodically upgrades the available models to newer versions. Notably, in July 2025, several models were automatically upgraded:
+Microsoft periodically upgrades the available models to newer versions. Notably, in November 2025, several models were made available:
 
-- GPT-4.1 **replaced** the older GPT-4o Mini as the Basic tier model (same cost).
-- GPT-4.1 (full) **replaced** the GPT-4o model as the Standard tier, now generally available.
-- The o3 model (GA) **replaced** the previous o1 model for Premium tier reasoning tasks.
+- GPT-5.1 Chat
+- GPT-5.1 Reasoning
 
 !!! note ""
 
     Refer to [Model updates](https://learn.microsoft.com/en-us/ai-builder/prompt-modelsettings#model-updates) periodically to understand model updates made by Microsoft.
 
-If your agent was using GPT-4o or o1, it would have been transparently moved to the new equivalent model with no change in billing rates. Additionally, in August 2025, the GPT-5 Chat and Reasoning models were added as previews.
+If your agent was using the retired GPT-4o model, it would have been transparently moved to **GPT-4.1** which is the default OpenAI model.
 
 ### 🧶 Why might you continue using a "Retired" model?
 
@@ -326,7 +326,7 @@ Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat e
 
        ![Question 1](assets/5.1_07_Question1.png)
 
-1. A response with the summarized resume is returned. Notice how it is more short and concise compared to the previous model's response.
+1. A response with the summarized resume is returned. Notice how it is shorter and more concise compared to the previous model's response.
 
        ![Question 1 response](assets/5.1_08_Question1Response.png)
 
@@ -338,7 +338,7 @@ Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat e
 
        ![Question 2](assets/5.1_09_Question2.png)
 
-1. A response with the suggested list of interview questions are returned with the potential answers a candidate can provide during the interview. Notice how this time,
+1. A response with the suggested list of interview questions is returned with the potential answers a candidate can provide during the interview. Notice how this time,
 
     - The response is organized under a **main header** and **subsections**
         - **Question Header**: 15. Environment Strategy
@@ -359,7 +359,7 @@ Coming soon
 
 Congratulations! 👏🏻 Excellent work, Operative.
 
-✅ Change model: you learnt the differences of the outputs of the selected model of the **Interview Agent**.
+✅ Change model: you learned the differences of the outputs of the selected model of the **Interview Agent**.
 ✅ Response formatting: you added instructions to enhance the response format of the **Interview Agent**.
 
 This enables the **Interview Agent** to be equipped in answering questions and inquiries using the power of the selected model and elegantly follow the same response format each time.
