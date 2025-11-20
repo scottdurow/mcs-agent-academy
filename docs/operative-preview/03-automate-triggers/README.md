@@ -888,7 +888,7 @@ Let's begin!
 
     ![Select Notify Teams Applicant Channel tool](assets/3.2_55_NotifyTeamsApplicatnChannelTool.png)
 
-1. The agent flow will now be invoked by the **Application Intake Agent** as per the instructions, after the last action (**Sends a prompt to the specified copilot for processing**) in the event trigger sends the prompt that contains the parameter values back to the agent. 
+1. The agent flow will now be invoked by the **Application Intake Agent** as per the instructions, after the last action (**Sends a prompt to the specified copilot for processing**) in the event trigger sends the prompt that contains the parameter values back to the agent.
 
 Select **Save** to save the updated instructions for the **Application Intake Agent**.
 
