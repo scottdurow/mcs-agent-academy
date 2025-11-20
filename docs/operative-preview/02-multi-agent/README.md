@@ -1,4 +1,4 @@
-# 🚨 Mission 02: Connected Agents
+# 🚨 Mission 02: Multi-Agent Systems
 
 --8<-- "disclaimer.md"
 
@@ -223,8 +223,8 @@ Ready to put theory into practice? Let's add our first child agent to your exist
 
 You'll need to **either**:
 
-- **Have completed Mission 01** and have your Hiring Agent ready, **OR**
-- **Import the Mission 02 starter solution** if you're starting fresh or need to catch up. [Download Mission 02 Starter Solution](https://aka.ms/agent-academy)
+- **Have completed [Mission 01](../01-get-started/README.md)** and have your Hiring Agent ready, **OR**
+- **Import the Mission 02 starter solution** if you're starting fresh or need to catch up. [Download Mission 02 Starter Solution](./assets/Operative02Starter_1_0_0_1.zip) and follow the [data import steps](../01-get-started/DataImport.md) to ensure you have all the required sample data imported in your solution.
 
 !!! note "Solution Import and Sample Data"
     If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
@@ -234,7 +234,7 @@ You'll need to **either**:
 1. Inside Copilot Studio, select the ellipsis (...) below Tools in the left hand navigation.
 1. Select **Solutions**.  
     ![Select Solutions](./assets/2-select-solutions.png)
-1. Locate your Operative solution, select the **ellipsis (...)** next to it, and choose **Set preferred solution**. This will ensure that all your work will be added to this solution.  
+1. Locate your Operative solution, select the **ellipsis (...)** next to it, and choose **Set preferred solution**. Select **Apply** in the dialogue box that pops up. This will ensure that all your work will be added to this solution.  
     ![Set Preferred Solution](./assets/2-select-preferred-solution.png)
 
 ### 2.1.2 Configure your Hiring Agent agent instructions
@@ -243,7 +243,11 @@ You'll need to **either**:
 
 1. Open your **Hiring Agent** from Mission 01
 
-1. Select **Edit** in the **Instructions** section of the **Overview** tab, and add the following instructions to the top:
+1. Select **Edit** in the **Instructions** section of the **Overview** tab of the agent.
+
+![Edit Instructions](./assets/02-editinstructions.png)
+
+Copy and paste the following instructions in the instructions input:
 
     ```text
     You are the central orchestrator for the hiring process. You coordinate activities, provide summaries, and delegate work to specialized agents.
@@ -252,30 +256,47 @@ You'll need to **either**:
 1. Select **Save**  
     ![Hiring Agent Instructions](./assets/2-hiring-agent-instructions.png)
 
-1. Select **Settings** (top right)
+1. Select the **Settings** button in the top right of the screen
 
-1. Ensure the following settings:
+![Settings](./assets/02_settingsbtn.png)
+
+1. Review the page and ensure the following settings are applied:
 
     | Setting | Value |
     |---------|-------|
     | Use generative AI orchestration for your agent's responses | **Yes** |
+    | Deep Reasoning | **Off** |
+    | Let other agents connect to and use this one | **On** |
+    | Continue using retired models | **Off** |
     | Content Moderation | **Moderate** |
+    | Collect user reactions to agent messages | **On** |
     | Use general knowledge | **Off** |
     | Use information from the Web | **Off** |
     | File uploads | **On** |
+    | Code Interpreter | **Off** |
 
 ![Use Generative Orchestration](./assets/2-gen-orchestration.png)
 ![Moderation Setting](./assets/2-set-medium-moderation.png)
+
+1. Click **Save**
+
 ![Knowledge and Web settings](./assets/2-settings-knowledge-web.png)
+
+1. Click the **X** in the upper right hand corner to close out of the settings menu
+
+![Close settings](./assets/02_closesettings.png)
 
 ### 2.1.3 Add the Application Intake child agent
 
-1. **Navigate** to the **Agents** tab within your Hiring Agent - this is where you'll add specialist agents.
+1. **Navigate** to the **Agents** tab within your Hiring Agent (this is where you'll add specialist agents) and select **Add**.
 
-1. Select **+ Add** and then **Create an agent**. Note that this is labeled with "*Create a lightweight agent that lives inside your current agent and inherits its settings. Ideal for breaking down complex logic* "  
-    ![Add Child Agent](./assets/2-add-child-agent.png)
+![Add Button](./assets/02_agentsadd.png)
 
-1. **Name** your agent `Application Intake Agent`
+1. Select **New child agent**.
+
+    ![Add Child Agent](./assets/02_newchildagent.png)
+
+1. **Name** your agent ```Application Intake Agent```
 
 1. Select **The agent chooses** - Based on description in the **When will this be used?** dropdown. These options are similar to the triggers that can be configured for topics.
 
@@ -285,13 +306,17 @@ You'll need to **either**:
     Processes incoming resumes and stores candidates in the system
     ```
 
-    ![Application Intake Agent Description](./assets/2-application-intake-agent-description.png)
+    ![Application Intake Agent Description](./assets/02_agentnamedesc.png)
 
 1. Expand **Advanced**, and set the Priority to be `10000`. This will ensure that later the Interview Agent will be used to answer general questions before this one. A condition could be set here as well such as ensuring that there is at least one attachment.
+
+    ![Priority](./assets/02_priority.png)
 
 1. Ensure that the toggle **Web Search** is set to **Disabled**. This is because we only want to use information provided by the parent agent.
 
 1. Select **Save**
+
+    ![Web Search](./assets/02_websearchdisabled.png)
 
 ### 2.1.4 Configure Resume Upload agent flow
 
@@ -303,7 +328,7 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* step
    **Important:** This isn't the Tools tab of the parent agent, but can be found if you scroll down underneath the child agent instructions.
 
 1. Select **+ Add**
-   ![Add Tool](./assets/2-add-tool.png)
+   ![Add Tool](./assets/02_addtool.png)
 
 1. Select **+ New tool** ![Add new tool](./assets/2-new-tool-2.png)
 
@@ -311,23 +336,31 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* step
     The Agent Flow designer will open, this is where we will add the upload resume logic.  
     ![Add Agent Flow](./assets/2-add-agent-flow.png)
 
-1. Select the **When an agent calls the flow** node, and select **+ Add** an input for the following Parameters, being sure to add both the name and the description.
+1. Select the **When an agent calls the flow** node, and select **+ Add an input**
+
+    ![Add Input](./assets/02_flowaddinput.png)
+
+1. Add inputs for each of the following Parameters listed in the table below. Select the appropriate input type as shown in the table and be sure to add both the name and the description. It's important to include the description because it will help the agent know what to fill in the input.
 
     | Type  | Name     | Description                                                                                                   |
     |-------|----------|---------------------------------------------------------------------------------------------------------------|
-    | File  | Resume   | The Resume PDF file                                                                                           |
-    | Text  | Message  | Extract a cover letter style message from the context. The message must be less than 2000 characters.         |
-    | Text  | UserEmail| The email address that the Resume originated from. This will be the user uploading the resume in chat, or the from email address if received by email. |
+    | File  | ```Resume```   | ```The Resume PDF file```                                                                                           |
+    | Text  | ```Message```  | ```Extract a cover letter style message from the context. The message must be less than 2000 characters.```         |
+    | Text  | ```UserEmail```| ```The email address that the Resume originated from. This will be the user uploading the resume in chat, or the from email address if received by email.``` |
 
     ![Configure input parameters](./assets/2-upload-resume-trigger.png)
 
-1. Select the **+ icon** below the trigger node, search for `Dataverse`, select **See more** next to Microsoft Dataverse, and then select the **Add a new row** action in the **Microsoft Dataverse** section  
-    ![Add a new row node](./assets/2-upload-resume-add-resume.png)
+1. Select the **+ icon** below the when an agent calls the flow node and search for `Dataverse add`,then select the **Add a new row** action in the **Microsoft Dataverse** section  
+    ![Add a new row node](./assets/02-dataverseaddaction.png)
 
-1. Name the node to **Create Resume**, by selecting the **ellipsis(...)**, and selecting **Rename**  
-    ![Rename node](./assets/2-upload-resume-add-resume-rename.png)
+    Note: You may be prompted to create a new connection to Dataverse after you add the action. Enter any name for the connection and click add to create that connection.
+
+1. Name the node **Create Resume**, by selecting the **Add a new row node**, and replacing the tile as shown
+    ![Rename node](./assets/02-renamecreateresume.png)
 
 1. Set the **Table name** to **Resumes**, then select **Show all**, to show all the parameters.
+
+    ![Show all](./assets/02_resumeshowall.png)
 
 1. Set the following **properties**:
 
@@ -340,10 +373,13 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* step
 
     ![Edit Properties](./assets/2-upload-resume-add-resume-props.png)
 
-1. Select the **+ icon** below the Create Resume node, search for `Dataverse`, select **See more** next to Microsoft Dataverse, and then select the **Upload a file or an image** action.
+1. Select the **+ icon** below the Create Resume node, search for `Dataverse upload` and select the **Upload a file or an image** action.
+
+    ![Upload select](./assets/02_dataverseupload.png)
+
    **Important:** Be sure not to select the Upload a file or an image to the selected environment action.
 
-1. Name the node to **Upload Resume File**, by selecting the **ellipsis(...)**, and selecting **Rename**
+1. Name the node to **Upload Resume File**
 
 1. Set the following **properties**:
 
@@ -357,7 +393,7 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* step
 
      ![Set properties](./assets/2-upload-resume-upload-resume-file.png)
 
-1. Select the **Respond to the agent node**, and then select **+ Add an output**
+1. Select the **Respond to the agent node**, and then select **+ Add an output**. Create an output with the properties defined in the table below:
 
      | Property | How to Set | Details |
      |----------|------------|---------|
@@ -371,7 +407,7 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* step
 1. Select **Save draft** on the top right  
      ![Save as draft](./assets/2-upload-resume-save-draft.png)
 
-1. Select the **Overview** tab, Select **Edit** on the **Details** panel
+1. Select the **Overview** tab, Select **Edit** on the **Details** panel. Fill in the name and description as shown below and select **Save**
 
      1. **Flow name**:`Resume Upload`
      1. **Description**:`Uploads a Resume when instructed`
@@ -390,44 +426,80 @@ Now you'll connect the published flow to your Application Intake Agent.
 
 1. Select **+ Add**
 
-1. Select the **Flow** filter, and search for `Resume Upload`. Select the **Resume Upload** flow, and then **Add and configure**.
+    ![Add tool](./assets/02_addtool.png)
 
-1. Set the following parameters:
+1. Select the **Flow** filter, and search for `Resume Upload`. Select the **Resume Upload** flow.
+
+    ![Select tool](./assets/02_selectResumeUploadFlow.png)
+
+1. Select **Add and configure**.
+
+    ![Add and Configure](./assets/02_addconfigResupl.png)
+
+1. Set the following parameters for the description and when the tool should be used:
 
     | Parameter | Value |
     |-----------|-------|
     | **Description** | `Uploads a Resume when instructed. STRICT RULE: Only call this tool when referenced in the form "Resume Upload" and there are Attachments` |
     | **Additional details → When this tool may be used** | `only when referenced by topics or agents` |
-    | **Inputs → Add Input** | `contentBytes` |
-    | **Inputs → Add Input** | `name` |
 
     ![Resume Upload Details 1](./assets/2-resume-upload-tool-props-1.png)
 
+    Note: This description tells the agent when it should call this tool. Notice the use of "strict rule" in the description. This gives a way to provide additional guardrails on when the tool should be used, in this case, only if there are attachments and the context of the conversation is a resume upload. Choosing when this tool can be used is important as well. Since we are building a multi-agent system and we have a child agent, we want to be sure this tool is ONLY called in the child agent, not the main agent. Setting tha value to "only when referenced by topics or agents" ensure this.
+
+1. Scroll down to the inputs section and select **Add Input** to add the following inputs:
+
+    | Parameter | Value |
+    |-----------|-------|
+    | **Inputs → Add Input** | `contentBytes` |
+    | **Inputs → Add Input** | `name` |
+
     ![Add inputs](./assets/2-resume-upload-tool-props-2.png)
 
-1. Next set the properties of the inputs as follows:
+1. Now we need to set the properties of the inputs. We'll start with the **contentBytes** input which will store the actual resume file.  Select **Custom value** from the **Fill using** dropdown next to the **contentBytes** input.
+1. In the **Value** property, select the **three dots (...)** and select the **Formula** tab. Paste in the following formula which extracts the file from the chat and click the **Insert** button.
 
-    | Input Parameter | Property | Details |
-    |-----------------|----------|---------|
-    | **contentBytes** | Fill using | Custom value |
-    |                  | Value (...→Formula→Insert) | `First(System.Activity.Attachments).Content` |
-    | **name** | Fill using | Custom value |
-    |          | Value (...→Formula→Insert) | `First(System.Activity.Attachments).Name` |
-    | **Message** | Customize | Configure custom settings |
-    |             | Description | `Extract a cover letter style message from the context. Be sure to never prompt the user and create at least a minimal cover letter from the available context. STRICT RULE - the message must be less than 2000 characters.` |
-    |             | How many reprompts | Don't repeat |
-    |             | Action if no entity found | Set variable to value |
-    |             | Default entity value | Resume upload |
-    | **UserEmail** | Fill using | Custom value |
-    |  | Value (...→Formula→Insert) | `System.User.Email` |
+    ```First(System.Activity.Attachments).Content```
 
-    ![Set input properties](./assets/2-resume-upload-tool-props-3.png)
+    ![Content Bytes Configuration](./assets/02_contentbytesconfig.png)
+1. Now we'll configure the **name** input which will store the name of the resume file. This will be hard coded as well so select the **Custom value** option in the **Fill using** column.
+1. Select the **three dots (...)** in the **Value** column and paste in the following formula which extracts the file name from the chat and click the **Insert** button.
+
+    ```First(System.Activity.Attachments).Name```
+
+    ![name configuration](./assets/02_nameconfig.png)
+1. Now we'll configure the **Message** input. We want to fill this one dynamically with AI so we'll leave the fill using as-is. Select the **Customize** button in the **Value** column so we can fill out additional details for how this should be filled.
+
+    ![Message customization](./assets/02_messagecustomize.png)
+1. Enter the following in the **Description** field for the input:
+
+    ```Extract a cover letter style message from the context. Be sure to never prompt the user and create at least a minimal cover letter from the available context. STRICT RULE - the message must be less than 2000 characters.```
+
+    NOTE: Filling in the description for your dynamically filled inputs is a crucial step to ensure that your agent knows how to fill in the input correctly.
+
+1. Expand out the **Advanced** section to configure some additional properties for this input. In the **How many reprompts** section, select **Don't repeat**
+
+    ![Reprompts](./assets/02_messagereprompts.png)
+
+    NOTE: This setting helps you customize your user experience so the agent doesn't ask the same question multiple times if it can't identify the data it needs.
+
+1. Scroll down to the **No valid entity found** section. Select the **Set variable to value** option in the **Action if no entity found** dropdown. Type ```Resume upload``` in the **Default entity value** input.
+
+    ![No entity found](./assets/02_messageentitynotfound.png)
+
+    NOTE: This setting lets us hard code a backup value if the agent is unable to dynamically fill this message input.
+
+1. We'll fill the **UserEmail** input by selecting the **Custom value** option in the **Fill using** column and select the **three dots (...)** in the **Value** column. Select the **System** tab and search for **User**. Select the **User.Email** variable to get the email of the person using the agent
+
+    ![User Email Configuration](./assets/02_useremailconfig.png)
 
 1. Select **Save**
 
+    ![Save](./assets/02_saveresup.png)
+
 ### 2.1.6 Define agent instructions
 
-1. Move back in to the **Application Intake Agent** by selecting the **Agents** tab, and then locate the **Instructions** panel.
+1. Move back in to the **Application Intake Agent** by selecting the **Agents** tab, selecting the **Application Intake Agent**, and locating the **Instructions** panel.
 
 1. In the **Instructions** field, paste the following clear guidance for your child agent:
 
@@ -456,7 +528,7 @@ Now you'll connect the published flow to your Application Intake Agent.
 
 ### 2.1.7 Test your Application Intake Agent
 
-Now let's verify your first orchestra member is working correctly.
+Now let's verify that our agent is working correctly by calling our child agent and following our instructions.
 
 1. **Download** the [test Resumes.](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
 
@@ -464,11 +536,11 @@ Now let's verify your first orchestra member is working correctly.
 
 1. **Upload** two Resumes in the test chat, and give the message `Process these resumes`
 
-    - The agent should return a message similar to *Only a single resume can be uploaded at a time. Please upload one resume to proceed.*
+    - The agent should return a message similar to *Only a single resume can be uploaded at a time. Please upload one resume to proceed.* This is because in our instructions, we told the agent to only process one resume at a time so our instructions are working correctly!
 
     ![Test multiple uploads](./assets/2-test-multi-uploads.png)
 
-1. Try uploading **just one Resume**, with the message `Process this resume`
+1. Now, try uploading **just one Resume**, with the message `Process this resume`
 
     - The agent should then give a message similar to *The resume for Avery Example has been successfully uploaded. The resume number is R10026.*
 
@@ -493,15 +565,9 @@ Now let's create our connected agent for interview preparation and add it to you
 
 1. **Navigate** to Copilot Studio. Ensure your environment is still selected in the top right Environment Picker.
 
-1. Open your **Hiring Agent**
+1. Select the **Agents** tab in the left navigation and select **New Agent**
 
-1. Navigate to the Agent tab, and select **+ Add an agent**
-
-1. Select **Connect an existing agent** → **Copilot Studio**
-
-1. Select **+ New agent**
-
-### 2.2.2 Configure basic settings
+    ![New Agent](./assets/02_newConnectedAgent.png)
 
 1. Select the **Configure** tab, and enter the following properties:
 
@@ -540,36 +606,58 @@ Now let's create our connected agent for interview preparation and add it to you
     ```
 
 1. Toggle **Web Search** to **Disabled**
+1. Select the **three dots (...)** in the upper right hand corner and select **Update advanced settings**.
+
+    ![Advanced Settings](./assets/02_connectedAdvancedSettings.png)
+
+1. Select **Operative** in the Solution dropdown to make sure that this is added to the correct solution and select **Update**
+
+    ![Update Solution](./assets/02_connectedSolution.png)
 
 1. Select **Create**  
     ![Create the Interview Agent](./assets/2-create-interview-agent.png)
 
-### 2.2.3 Configure data access and publish
+### 2.2.2 Configure data access and publish
 
 1. In the **Knowledge** section, select **+ Add knowledge**  
     ![Add knowledge](./assets/2-interview-agent-add-knowledge.png)
 1. Select **Dataverse**  
     ![Select Dataverse](./assets/2-interview-agent-add-knowledge-select-dataverse.png)
-1. In the **Search box**, type `ppa_`. This is the prefix for the tables you imported previously.
+1. In the **Search box**, type `ppa_`. This is the prefix for the tables you imported previously in Module 01.
 1. **Select** all 5 tables (Candidate, Evaluation Criteria, Job Application, Job Role, Resume)
 1. Select **Add to agent**  
     ![Select Dataverse tables](./assets/2-interview-agent-add-knowledge-select-tables.png)
-1. Select the **Settings**, on the Interview Agent, and set the following settings:
+1. Select the **Settings** button in the upper right hand corner
+
+    ![Settings](./assets/02_connectedAgentSettings.png)
+
+1. Ensure that the following settings are configured:
 
     - **Let other agents connect to and use this one:** `On`
     - **Use general knowledge**: `Off`
     - **File uploads**: `Off`
     - **Content moderation level:** `Medium`
-1. Select **Save**
+1. Select **Save** and select the **X** in the upper right hand corner to close out of the settings menu.
+
+    ![Settings Configuration](./assets/02_connectedAgentsSettingsConfig.png)
+
 1. Select **Publish**, and wait for the publishing to complete.
 
-### 2.2.4 Connect the Interview Prep Agent to your Hiring Agent
+    ![Publish](./assets/02_connectedAgentPublish.png)
+
+### 2.2.3 Connect the Interview Prep Agent to your Hiring Agent
 
 1. Navigate back to your **Hiring Agent**
 
 1. Select the **Agents** Tab
 
-1. Use the **+Add an agent** → **Copilot Studio**, to add the **Interview Agent**. Set the Description to be:
+1. Selected **+Add an agent** and selected the **Interview Agent**.
+
+    ![Publish](./assets/02_selectedConnectedAgent.png)
+
+    NOTE: If the Interview Agent is grayed out and not selectable then tht means it did not Publish. Go back to the Interview Agent and publish it first.
+
+1. Set the Description to be:
 
     ```text
     Assists with the interview process and provides information about Resumes, Candidates, Job Roles, and Evaluation Criteria.
@@ -583,7 +671,7 @@ Now let's create our connected agent for interview preparation and add it to you
 1. Ensure that you see both the **Application Intake Agent**, and the **Interview Agent**. Notice how one is a child and the other is a connected agent.  
     ![Child and connected agent](./assets/2-child-and-connected.png)
 
-### 2.2.5 Test multi-agent collaboration
+### 2.2.4 Test multi-agent collaboration
 
 1. **Toggle** the test panel open by selecting **Test**.
 

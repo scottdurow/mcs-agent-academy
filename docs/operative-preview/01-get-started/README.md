@@ -12,13 +12,13 @@ Welcome, Agent. Your first assignment is **Operation Talent Scout** - establishi
 
 Your mission, should you choose to accept it, is to deploy and configure a comprehensive hiring management system using Microsoft Copilot Studio. You'll import a pre-built solution containing all the necessary data structures, then create your first AI agent - the **Hiring Agent** - which will serve as the central orchestrator for all future recruitment operations.
 
-This initial deployment establishes the command center that you'll enhance throughout the Agent Academy Operative program. Consider this your base of operations - the foundation upon which you'll build an entire network of specialized agents in subsequent missions.
+This initial deployment establishes the solution that you'll enhance throughout the Agent Academy Operative course. Consider this your base of operations - the foundation upon which you'll build an entire network of specialized agents in subsequent missions.
 
 ---
 
 ## 🔎 Objectives
 
-By completing this mission, you will:
+In this mission, you'll learn:
 
 - **Scenario Understanding**: Gain comprehensive knowledge of hiring automation challenges and solutions
 - **Solution Deployment**: Successfully import and configure the fundamentals of a hiring management system
@@ -34,11 +34,13 @@ Before embarking on this mission, ensure you have:
 - Access to a Microsoft Power Platform environment
 - Administrative permissions to create solutions and agents
 
+!!! Tip "Prerequisites help" If you need help getting a Copilot Studio license, please reference the [Recruit Course Setup lab](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) which walks you through setting up a Power Platform environment with a Copilot Studio trial.
+
 ---
 
 ## 🏢 Understanding the Hiring Automation Scenario
 
-This scenario demonstrates how a company can use Microsoft Copilot Studio to improve and automate its hiring process. It introduces a system of agents that work together to handle tasks like reviewing resumes, recommending job roles, preparing interview materials, and evaluating candidates.
+This scenario demonstrates how a company can use Microsoft Copilot Studio full to improve and automate its hiring process. It introduces a system of agents that work together to handle tasks like reviewing resumes, recommending job roles, preparing interview materials, and evaluating candidates.
 
 ### Business Value
 
@@ -69,21 +71,34 @@ In this hands-on lab, you'll establish the foundation for your hiring automation
 
 1. Go to **[Copilot Studio](https://copilotstudio.microsoft.com)**
 1. Select the **...** in the left navigation and select **Solutions**
+
+![Solutions tab](./assets/01-solutionstab.png)
+
 1. Select the **Import Solution** button on the top
+
+![Import Solution](./assets/01-importsolution.png)
+
 1. **[Download](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/operative-preview/01-get-started/assets/Operative_1_0_0_0.zip)** the prepared solution
 1. Select **Browse** and select the downloaded solution from the previous step
 1. Select **Next**
+
+![Browse Solution](./assets/01-nextsolution.png)
+
 1. Select **Import**
+
+![Import Solution](./assets/01-import.png)
 
 !!! success
     On success, you will see a green notification bar with the following message when it's done:  
     "Solution "Operative" imported successfully."
 
-When the solution is imported, take a look at what you imported by selecting the display name of the solution (`Operative`).
+1. Once you see the "imported successfully" message, take a look at what you imported by selecting the display name of the solution (`Operative`) in the solutions list.
+
+![Open Solution](./assets/01-selectsolution.png)
+
+Review the solution and ensure that the following components are imported:
 
 ![Imported tables](./assets/components.png)
-
-The following components are imported:
 
 | Display Name | Type | Description |
 |-------------|------|-------------|
@@ -96,6 +111,8 @@ The following components are imported:
 | Resume | Table | Resumes of the candidates |
 
 As the last task for this lab, Select the **Publish all customizations** button at the top of the page.
+
+![Publish Customizations](./assets/01-pubcustomizations.png)
 
 ### 🧪 Lab 1.2: Import sample data
 
@@ -111,6 +128,8 @@ In this lab, you will add sample data to some of the tables that you imported in
 1. Go back to the solution you just imported in the last lab
 1. Select the **Hiring Hub** Model-Driven App by selecting the checkmark in front of the row
 1. Select the **Play** button at the top
+
+![Play App](./assets/01-playhiringhubapp.png)
 
     !!! warning
         You might be prompted to login again. Make sure to do that. After doing that, you should see the Hiring Hub app.
@@ -161,8 +180,14 @@ This can take a little while, but you can hit the **Refresh** button to see if t
     ![Review mapping](./assets/import-from-csv-evaluation-criteria.png)
 
 1. Now we have to do a bit more work for the mapping. Select the magnifying glass(🔎 icon) next to the Job Role field
+
+![Job Role](./assets/01-jobrolemag.png)
+
 1. Make sure **Job Title** is selected here, and if not - add it
 1. Select **OK**
+
+![Job Title](./assets/01-jobtitle.png)
+
 1. Make sure the rest of the mapping is correct too and select **Finish Import**
 
     !!! info
@@ -180,7 +205,13 @@ Now you are done with the setup of the prerequisites, it's time for the actual w
 
 1. Go to **[Copilot Studio](https://copilotstudio.microsoft.com)** and make sure you are in the same environment as where you imported the solution and the data
 1. Select **Agents** in the left navigation
+
+![Agent Tab](./assets/01-agenttab.png)
+
 1. Select **New Agent**
+
+![New Agent](./assets/01-newagent.png)
+
 1. Select **Configure**
 1. For **Name**, enter:
 
@@ -194,10 +225,18 @@ Now you are done with the setup of the prerequisites, it's time for the actual w
     Central orchestrator for all hiring activities
     ```
 
+![Configuration](./assets/01-configname.png)
+
 1. Select the **...** next to the *Create* button on the top right corner
 1. Select **Update advanced settings**
+
+![Settings](./assets/01-advancedsettings.png)
+
 1. As **Solution**, select `Operative`
 1. Select **Update**
+
+![Update Solution Settings](./assets/01-solutionsettings.png)
+
 1. Select **Create** in the top right corner
 
 This will create the Hiring Agent for you, which you will use throughout this Operative course.
@@ -208,11 +247,11 @@ This will create the Hiring Agent for you, which you will use throughout this Op
 
 Mission 01 is completed! You now have mastered the following skills:
 
-✅ **Scenario Understanding**: Comprehensive knowledge of hiring automation challenges and solutions  
-✅ **Solution Deployment**: Successfully imported and configured the fundamentals of a hiring management system  
+✅ **Scenario Understanding**: Comprehensive knowledge of hiring automation challenges and the solution you will be building
+✅ **Solution Deployment**: Successfully imported and configured the building blocks of the hiring management system  
 ✅ **Agent Creation**: Built an hiring agent that is the start of the scenario you're going to build as an Agent Academy Operative  
 
-Next up is [Mission 02](../02-multi-agent/README.md): Make your agent multi-agent ready with connected agents.
+Next up is [Mission 02](../02-multi-agent/README.md): Make your agent multi-agent ready
 
 ---
 

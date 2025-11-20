@@ -21,7 +21,7 @@ Let’s go.
 In this mission, you’ll learn:
 
 1. Understanding what declarative agents are and how they extend Microsoft 365 Copilot with custom capabilities
-1. Comparing Microsoft Copilot Studio vs. Copilot Studio agent builder for building declarative agents
+1. Comparing Microsoft Copilot Studio full vs. Copilot Studio lite for building declarative agents
 1. Creating a declarative agent using natural language through the conversational creation experience
 1. Adding AI prompts as tools to enhance your agent's specialized knowledge and problem-solving abilities
 1. Publishing and testing your declarative agent in Microsoft 365 Copilot and Microsoft Teams
@@ -32,15 +32,15 @@ Declarative agents are tailored versions of Microsoft 365 Copilot. You can custo
 
 ## 🤔 Why would I use Microsoft Copilot Studio to build a declarative agent?
 
-As a maker, there's a chance you've already explored [Copilot Studio agent builder](https://learn.microsoft.com/microsoft-365-copilot/extensibility/copilot-studio-agent-builder?WT.mc_id=power-172614-ebenitez) in Microsoft 365 Copilot and so you're probably wondering _why build a declarative agent in Microsoft Copilot Studio?_
+As a maker, there's a chance you've already explored [Copilot Studio lite (formerly known as agent builder)](https://learn.microsoft.com/microsoft-365-copilot/extensibility/copilot-studio-agent-builder?WT.mc_id=power-172614-ebenitez) in Microsoft 365 Copilot and so you're probably wondering _why build a declarative agent in Microsoft Copilot Studio?_
 
-Microsoft Copilot Studio offers a comprehensive set of tools and features for declarative agents that go beyond the limitations of Copilot Studio agent builder. Similar to Copilot Studio agent builder, you don't need to know programming or software development to build in Microsoft Copilot Studio. Let's break this down further to understand the differences between Copilot Studio Agent Builder and Copilot Studio for building declarative agents.
+Microsoft Copilot Studio full offers a comprehensive set of tools and features for declarative agents that go beyond the limitations of Copilot Studio lite. Similar to Copilot Studio lite, you don't need to know programming or software development to build in Microsoft Copilot Studio. Let's break this down further to understand the differences between Copilot Studio lite and Copilot Studio full for building declarative agents.
 
 ### Feature comparison
 
-The following table highlights the differences when building a declarative agent in Copilot Studio agent builder and Copilot Studio.
+The following table highlights the differences when building a declarative agent in Copilot Studio lite and Copilot Studio full.
 
-| Feature                   | Copilot Studio agent builder in Microsoft 365 Copilot                          | Extend Microsoft 365 Copilot in Copilot Studio                                |
+| Feature                   | Copilot Studio lite in Microsoft 365 Copilot                          | Extend Microsoft 365 Copilot in Copilot Studio full                                |
 |---------------------------|-------------------------------------------------------|------------------------------------------------------------|
 | **Knowledge**       | Web, SharePoint, Microsoft Teams chats, Outlook emails, Copilot connectors     | Web search (via Bing), SharePoint, Dataverse, Dynamics 365, Copilot connectors  |
 | **Tools**       | Code interpreter, image generator     | 1400+ Power Platform connectors, custom connectors, prompt, computer use, REST API, Model Context Protocol   |
@@ -51,8 +51,8 @@ The following table highlights the differences when building a declarative agent
 There are more capabilities offered for declarative agents built in Microsoft Copilot Studio which we'll learn about next.
 
 !!! tip
-    - To learn more about Copilot Studio agent builder, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/make/agent-builder/01-first-agent/)
-    - For pro-development of extending a declarative agent beyond Copilot Studio agent builder for Microsoft 365 Copilot, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/)
+    - To learn more about Copilot Studio lite, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/make/agent-builder/01-first-agent/)
+    - For pro-development of extending a declarative agent beyond Copilot Studio lite for Microsoft 365 Copilot, head to [Copilot Developer Camp: Lab MAB1 - Build your first agent](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/)
 
 ### Extending Microsoft 365 Copilot with declarative agents built in Copilot Studio
 
@@ -79,7 +79,7 @@ Let's expand what we've learnt from the feature comparison table.
 
 - **AI prompts**: Use a prompt to analyze and transform text, documents, images and data with natural language and AI reasoning.
   - Select the chat model, choose from Basic (Default), Standard, Premium
-  - Option to bring-your-own Azure AI Foundry model to ground your prompt in
+  - Option to bring-your-own Microsoft Foundry model to ground your prompt in
 
 - **More deployment configuration options**: Select channels and define user permissions.
   - Publish to Microsoft Teams, a familiar user interface for your users for quicker adoption
@@ -253,7 +253,7 @@ Next we'll learn how to add a tool to our agent, we'll create a prompt.
 
       ![Enter name](assets/3.2_04_NamePrompt.png)
 
-1. Select the **chevron icon** next to the **Model** to see the different chat models you can choose from. By default, the **Basic GPT-4.1 mini** model is selected and you also have the option to bring-your-own-model using Azure AI Foundry Models. We'll stick with the selected default model.
+1. Select the **chevron icon** next to the **Model** to see the different chat models you can choose from. By default, the **Basic GPT-4.1 mini** model is selected and you also have the option to bring-your-own-model using Microsoft Foundry Models. We'll stick with the selected default model.
 
       ![Change model](assets/3.2_05_ChangeModel.png)
 

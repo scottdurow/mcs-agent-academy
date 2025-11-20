@@ -206,17 +206,17 @@ Your first objective: create a prompt capable of analyzing resume documents and 
 Now you'll convert the prompt to output structured JSON data instead of plain text.
 
 1. Add this JSON format specification to the end of your prompt instructions:
+Output Format:
+    Provide the output in valid JSON format with the following structure:
 
     ```text
-    Output Format:
-    Provide the output in valid JSON format with the following structure:
     
     {
-        "CandidateName": "string",
-        "Email": "string",
-        "Summary": "string max 2000 characters",
-        "Skills": [ {"item": "Skill 1"}, {"item": "Skill 2"}],
-        "Experience": [ {"item": "Experience 1"}, {"item": "Experience 2"}],
+    "CandidateName": "string",
+    "Email": "string",
+    "Summary": "string max 2000 characters",
+    "Skills": [{"item": "Skill 1"}, {"item": "Skill 2"}],
+    "Experience": [{"item": "Experience 1"}, {"item": "Experience 2"}]
     }
     ```
 
