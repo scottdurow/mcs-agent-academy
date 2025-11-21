@@ -224,7 +224,7 @@ Ready to put theory into practice? Let's add our first child agent to your exist
 You'll need to **either**:
 
 - **Have completed [Mission 01](../01-get-started/README.md)** and have your Hiring Agent ready, **OR**
-- **Import the Mission 02 starter solution** if you're starting fresh or need to catch up. [Download Mission 02 Starter Solution](./assets/Operative02Starter_1_0_0_1.zip) and follow the [data import steps](../01-get-started/DataImport.md) to ensure you have all the required sample data imported in your solution.
+- **Import the Mission 03 starter solution** if you're starting fresh or need to catch up. [Download Mission 03 Starter Solution](./assets/Operative02Starter_1_0_0_1.zip) and follow the [data import steps](../01-get-started/DataImport.md) to ensure you have all the required sample data imported in your solution.
 
 !!! note "Solution Import and Sample Data"
     If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
@@ -722,7 +722,7 @@ Your enhanced hiring system is now ready for the advanced features we'll add in 
 
 🚀**Next up:** In your next mission, you'll learn how to configure your agent to autonomously process resumes from emails!
 
-⏩[Move to Mission 03: Automate your agent with triggers](../03-automate-triggers/README.md)
+⏩[Move to Mission 04: Automate your agent with triggers](../04-automate-triggers/README.md)
 
 ## 📚 Tactical Resources
 

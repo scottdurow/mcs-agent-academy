@@ -992,9 +992,9 @@ Congratulations! 👏🏻 Excellent work, Operative.
 
 This enables the **Hiring Agent** to work autonomously whenever resumes are received as email attachments and notify the HR recruitment team for manual review.
 
-This is the end of **Lab 03 - Automating candidate application emails**, select the link below to move to the next lesson.
+This is the end of **Lab 04 - Automating candidate application emails**, select the link below to move to the next lesson.
 
-⏭️ [Move to **Authoring Agent Instructions** lesson](../04-agent-instructions/README.md)
+⏭️ [Move to **Agent Responses** lesson](../05-agent-responses/README.md)
 
 ## 📚 Tactical Resources
 

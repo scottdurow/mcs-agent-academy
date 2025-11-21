@@ -251,7 +251,7 @@ Mission 01 is completed! You now have mastered the following skills:
 ✅ **Solution Deployment**: Successfully imported and configured the building blocks of the hiring management system  
 ✅ **Agent Creation**: Built an hiring agent that is the start of the scenario you're going to build as an Agent Academy Operative  
 
-Next up is [Mission 02](../02-multi-agent/README.md): Make your agent multi-agent ready
+Next up is [Mission 02](../02-agent-instructions/README.md): Agent Instructions
 
 ---
 

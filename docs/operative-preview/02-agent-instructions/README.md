@@ -1,4 +1,4 @@
-# 🕵️‍♂️ Mission 04: Authoring Agent Instructions
+# 🕵️‍♂️ Mission 02: Authoring Agent Instructions
 
 --8<-- "disclaimer.md"
 
@@ -115,21 +115,17 @@ When writing instructions, consider the following structure for clarity and comp
 
 ---
 
-## 🧪 Lab: Authoring Agent Instructions
-
-*Lab content coming soon...*
-
----
-
 ## 🎉 Mission Complete
 
-Mission 04 is completed! You now have:
+Mission 02 is completed! You now have:
 
 ✅ **Instruction Mastery**: Learned how to write clear, actionable agent instructions  
 ✅ **Strategic Guidance**: Directed agents to use tools and collaborate effectively  
 ✅ **Operational Clarity**: Ensured agents act with precision and transparency
 
-Next up is [Mission 05](../05-agent-responses/README.md): Customizing agent responses for maximum impact.
+You will put your new instruction skills to practice in the upcoming lessons.
+
+Next up is [Mission 03](../03-multi-agent/README.md): Building multi-agent systems.
 
 ---
 
