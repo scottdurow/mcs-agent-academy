@@ -296,7 +296,7 @@ Now let's explore how the three content blocking mechanisms work in practice and
 1. You'll need to **either**:
 
     - **Have completed Mission 05** and have your Interview Agent ready, **OR**
-    - **Import the Mission 06 starter solution** if you're starting fresh or need to catch up. [Download Mission 06 Starter Solution](https://aka.ms/agent-academy)
+    - **Import the Mission 06 starter solution** if you're starting fresh or need to catch up. [Download Mission 06 Starter Solution](./assets/Operative06_Starter.zip)
 
 1. Understanding of Copilot Studio topics and [Generative Answers nodes](https://learn.microsoft.com/microsoft-copilot-studio/nlu-boost-node?WT.mc_id=power-182762-scottdurow)
 
@@ -343,7 +343,7 @@ Let's explore how Responsible AI content filtering works and how to handle block
 
 1. **Set content moderation to "High"** (if not already).
 
-1. Add the following for **When potential responses get flagged by content moderation**:
+1. Add the following for **When potential responses get flagged by content moderation** and select **Save**:
 
     ```text
     I need to keep our conversation focused on appropriate and legally compliant hiring practices. 
@@ -351,7 +351,7 @@ Let's explore how Responsible AI content filtering works and how to handle block
 
     ![Adjust content moderation](./assets/6-adjust-content-moderation.png)
 
-1. **Open the Test panel** and try these questions:
+1. Click the **X** in the upper right hand corner to close out of the settings screen. **Open the Test panel** and try these questions:
 
     **Questions that should work at High moderation:**
 
@@ -407,7 +407,7 @@ Let's explore how Responsible AI content filtering works and how to handle block
 
 1. You can now select a custom moderation level. Set this to **medium**.
 
-1. In the **text box**, type the following:
+1. In the **text box**, type the following and click **Save**:
 
     ```text
     Do not provide content about protected characteristics such as age, race, gender, religion, political affiliation, disability, family status, or financial situation.

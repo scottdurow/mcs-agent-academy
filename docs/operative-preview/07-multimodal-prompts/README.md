@@ -140,9 +140,9 @@ Time to put your multimodal knowledge into practice. You'll build a comprehensiv
 1. You'll need to **either**:
 
     - **Have completed Mission 06** and have your multi-agent hiring system ready, **OR**
-    - **Import the Mission 07 starter solution** if you're starting fresh or need to catch up. [Download Mission 07 Starter Solution](https://aka.ms/agent-academy)
+    - **Import the Mission 07 starter solution** if you're starting fresh or need to catch up. [Download Mission 07 Starter Solution](./assets/Operative07StarterTemplate.zip)
 
-1. Sample resume documents from [Test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+1. Sample resume documents from [Test Resumes](../test-data/resumes/)
 
 !!! note "Solution Import and Sample Data"
     If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
@@ -157,6 +157,8 @@ Your first objective: create a prompt capable of analyzing resume documents and 
     ![New Prompt](./assets/7-new-prompt.png)
 
 1. **Rename** the prompt from the default timestamp name (E.g. *Custom prompt 09/04/2025, 04:59:11 PM*) to `Summarize Resume`.
+
+    ![Rename](./assets/7-promptname.png)
 
 1. In the Instructions field, add this prompt:
 
@@ -245,6 +247,8 @@ You'll create an Agent Flow that uses your prompt to process resumes stored in D
 
 1. Select the **Agents** tab, and select the child **Application Intake Agent**
 
+    ![Select Agent](./assets/7-AppIntakeAgentSelect.png)
+
 1. Inside the **Tools** panel, Select **+ Add** → **+ New tool** → **Agent flow**
 
 1. Select the When an agent calls the flow node, use **+ Add an input** to add the following parameter:
@@ -253,7 +257,11 @@ You'll create an Agent Flow that uses your prompt to process resumes stored in D
     |------|------|-------------|
     | Text | ResumeNumber | Be sure to use [ResumeNumber]. This must always start with the letter R |
 
-1. Select the **+** Insert action icon below the first node, search for **Dataverse**, select **See more**, and then locate the **List rows** action
+    ![Trigger](./assets/7-AgentFlowTrigger.png)
+
+1. Select the **+** Insert action icon below the first node, search for **Dataverse list rows**, and select the **List rows** action
+
+    ![Add List Rows](./assets/7-AddListRows.png)
 
 1. Select the **ellipsis (...)** on the List rows node, and select **Rename** to `Get Resume Record`, and then set the following parameters:
 
@@ -268,10 +276,12 @@ You'll create an Agent Flow that uses your prompt to process resumes stored in D
 
     ![Get Resume Record](./assets/7-summarize-resume-1.png)
 
-1. Select the **+** Insert action icon below the Get Resume Record node, search for **Dataverse**, select **See more**, and then locate the **Download a file or an image** action.
+1. Select the **+** Insert action icon below the Get Resume Record node, search for **Dataverse download**, and select the **Download a file or an image** action.
 
     !!! tip "Pick the correct action!"
         Be sure not to select the action that ends in "from selected environment"
+
+    ![Dataverse Download](./assets/7-DataverseDownload.png)
 
 1. As before, rename the action `Download Resume`, and then set the following parameters:
 
@@ -284,6 +294,8 @@ You'll create an Agent Flow that uses your prompt to process resumes stored in D
     ![Download Resume](./assets/7-summarize-resume-2.png)
 
 1. Now, select the **+** Insert action icon below Download Resume, under **AI capabilities**, select **Run a prompt**,
+
+    ![Run Prompt](./assets/7-RunPrompt.png)
 
 1. Rename the action to `Summarize Resume` and set the following parameters:
 
@@ -302,7 +314,7 @@ You'll create an Agent Flow that uses your prompt to process resumes stored in D
 
 Next, you need to take the information that the Prompt gave you and create a new candidate record if it doesn't already exist.
 
-1. Select the **+** Insert action icon below the Summarize Resume node, search for **Dataverse**, select **See more**, and then locate the **List rows** action
+1. Select the **+** Insert action icon below the Summarize Resume node, search for **Dataverse list**, and select the **List rows** action
 
 1. Rename the node as `Get Existing Candidate`, and then set the following parameters:
 
@@ -324,7 +336,7 @@ Next, you need to take the information that the Prompt gave you and create a new
 
     ![Get Existing Candidate Condition](./assets/7-summarize-resume-5.png)
 
-1. Select the **+** Insert action icon in the **True** branch, search for **Dataverse**, select **See more**, and then locate the **Add a new row** action.
+1. Select the **+** Insert action icon in the **True** branch, search for **Dataverse add**, and select the **Add a new row** action.
 
 1. Rename the node as `Add a New Candidate`, and then set the following parameters:
 
@@ -340,7 +352,7 @@ Next, you need to take the information that the Prompt gave you and create a new
 
 Complete the flow by updating the resume record and configuring what data to return to your agent.
 
-1. Select the **+** Insert action icon below the condition, search for **Dataverse**, select **See more**, and then locate the **Update a row** action
+1. Select the **+** Insert action icon below the condition, search for **Dataverse update**, and select the **Update a row** action
 
 1. Select the title to rename the node as `Update Resume`, select **Show all**, and then set the following parameters:
 
@@ -349,7 +361,7 @@ Complete the flow by updating the resume record and configuring what data to ret
     | **Table name** | Select | Resumes |
     | **Row ID** | Expression (fx icon) | `first(body('Get_Resume_Record')?['value'])?['ppa_resumeid']` |
     | **Summary** | Dynamic data (thunderbolt icon) | Summarize Resume → Text |
-    | **Candidate (Candidates)** | Expression (fx icon) | `if(equals(length(outputs('Get_Existing_Candidate')?['body/value']), 1), first(outputs('Get_Existing_Candidate')?['body/value'])?['ppa_candidateid'], outputs('Add_a_New_Candidate')?['body/ppa_candidateid'])` |
+    | **Candidate (Candidates)** | Expression (fx icon) | `if(equals(length(outputs('Get_Existing_Candidate')?['body/value']), 1), first(outputs('Get_Existing_Candidate')?['body/value'])?['ppa_candidateids'], outputs('Add_a_New_Candidate')?['body/ppa_candidateids'])` |
 
     ![Update Resume](./assets/7-summarize-resume-7.png)
 
@@ -389,6 +401,8 @@ Now you'll add the flow as a tool and configure your agent to use it.
 1. Select the **Agents** tab, and open the **Application Intake Agent**
 
 1. Select the **Tools** panel, and Select **+ Add a tool** - > **Flow** -> **Summarize Resume** **(Agent Flow)**
+
+    ![Summarize Resume Agent Flow](./assets/7-SummarizeResumeFlowselect.png)
 
 1. Select **Add and configure**
 

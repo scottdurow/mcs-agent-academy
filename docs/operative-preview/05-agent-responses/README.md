@@ -8,13 +8,11 @@
 
 ## 🎯 Mission Brief
 
-Welcome back, Agent. In [Mission 04](../04-agent-instructions/README.md), you learned how to define your agent with instructions and invoke tools to equip your agent in handling requests. But even the most well-instructed agent can feel robotic without the right personality and response formatting.
+Welcome back, Agent. In [Mission 02](../02-agent-instructions/README.md), you learned about the importance of instructions when creating agents. But even the most well-instructed agent can feel robotic without the right personality and response formatting.
 
 Your assignment, should you choose to accept it, is **Operation Archetype** - transforming your agent from a functional tool into a compelling digital personality. You'll master the art of selecting the optimal AI model and crafting response formats that resonate with users on a human level.
 
 Your agent transforms to a sophisticated conversational partner that understands context, adapts its communication style, and delivers information in ways that truly connect with users. You'll learn to choose between models, then shape every interaction to reflect your agent's unique voice and purpose.
-
-Choose the right model for your agent and format responses to be impactful, clear, and unmistakably on-brand.
 
 ## 🔎 Objectives
 
@@ -174,7 +172,7 @@ Here are the key admin controls affecting which models a maker/developer can sel
 
 ![Enable external model setting](./assets/5.0_03_EnableExternalModelsSetting.png)
 
-- **Move data across regions**: Because experimental models may not run in the same regional data centres as standard models, enabling them often requires allowing cross-region data movement. In the Power Platform admin centre (environment settings), there is a setting called **Move data across regions**. This must be turned on by the admin if you want to permit experimental model usage. It acknowledges that data processed by these models may leave your organization's geographic boundaries.
+- **Move data across regions**: Because experimental models may not run in the same regional data centers as standard models, enabling them often requires allowing cross-region data movement. In the Power Platform admin center (environment settings), there is a setting called **Move data across regions**. This must be turned on by the admin if you want to permit experimental model usage. It acknowledges that data processed by these models may leave your organization's geographic boundaries.
 
     For example, if your environment is in _Europe_ and an experimental model is only hosted in _US_ datacenters, this setting needs to be enabled to let that data flow happen. If it’s disabled, Copilot won’t use those models.
 
@@ -288,13 +286,13 @@ Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat e
     Summarize resume RXXXXX
     ```
 
-       ![Enter first question for GPT-4.1 default model](assets/5.1_01_GPT-4.1DefaultModel.png)
+    ![Enter first question for GPT-4.1 default model](assets/5.1_01_GPT-4.1DefaultModel.png)
 
 1. A summary of the resume will next be displayed and we can see it's in the output of bullet points by headings. There's also a reference to the Dataverse row for the **Active Resumes** system view.
 
-       ![Question 1 response](assets/5.1_02_01_Question1Response.png)
+    ![Question 1 response](assets/5.1_02_01_Question1Response.png)
 
-       ![Question 1 response](assets/5.1_02_02_Question1Response.png)
+    ![Question 1 response](assets/5.1_02_02_Question1Response.png)
 
 1. We'll ask another question for suggestions of interview questions to ask based on the evaluation criteria of a job role, and provide what the potential answers are. Enter the question below.
 
@@ -302,21 +300,21 @@ Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat e
     Can you provide suggestions of questions to ask in an interview for the Power Platform developer role (Job role number J1004) based on its associated evaluation criteria? Can you also please provide what the answers may be for each question?
     ```
 
-       ![Question 2](assets/5.1_03_Question2.png)
+    ![Question 2](assets/5.1_03_Question2.png)
 
 1. The returned response lists interview questions in numbered format. Each question is followed by a `Model Answer`. Notice how the answer is in the point of view of the candidate, the model refers to the answers in first-person writing.
 
-       ![Question 2 response](assets/5.1_04_01_Question2Response.png)
+    ![Question 2 response](assets/5.1_04_01_Question2Response.png)
 
-       ![Question 2 response](assets/5.1_04_02_Question2Response.png)
+    ![Question 2 response](assets/5.1_04_02_Question2Response.png)
 
 1. Let's now change the agent's model. In the **Overview** tab select the **chevron** icon and from the list of **OpenAI** models, select **GPT-5.1 Chat**.
 
-       ![Select GPT-5.1 Chat](assets/5.1_05_SelectGPT-5.1Chat.png)
+    ![Select GPT-5.1 Chat](assets/5.1_05_SelectGPT-5.1Chat.png)
 
 1. A confirmation message will appear shortly to inform you that the agent model has been updated. Let's now test the responses of this model by starting a new test session.
 
-       ![New test session](assets/5.1_06_NewTestSession.png)
+    ![New test session](assets/5.1_06_NewTestSession.png)
 
 1. Enter the following question below. Use a **Resume Number** value from your existing active resumes in the **Hiring Hub** model-driven app.
 
@@ -324,11 +322,11 @@ Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat e
     Summarize resume RXXXXX
     ```
 
-       ![Question 1](assets/5.1_07_Question1.png)
+    ![Question 1](assets/5.1_07_Question1.png)
 
 1. A response with the summarized resume is returned. Notice how it is shorter and more concise compared to the previous model's response.
 
-       ![Question 1 response](assets/5.1_08_Question1Response.png)
+    ![Question 1 response](assets/5.1_08_Question1Response.png)
 
 1. We'll ask the same second question for a list of interview questions based on the evaluation criteria of a job role, and provide what the potential answers are. Enter the question below.
 
@@ -336,7 +334,7 @@ Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat e
     Can you provide suggestions of questions to ask in an interview for the Power Platform developer role (Job role number J1004) based on its associated evaluation criteria? Can you also please provide what the answers may be for each question?
     ```
 
-       ![Question 2](assets/5.1_09_Question2.png)
+    ![Question 2](assets/5.1_09_Question2.png)
 
 1. A response with the suggested list of interview questions is returned with the potential answers a candidate can provide during the interview. Notice how this time,
 

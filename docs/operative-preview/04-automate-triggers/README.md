@@ -1,4 +1,4 @@
-# Mission 03: Add Event Triggers to act autonomously
+# Mission 04: Add Event Triggers to act autonomously
 
 --8<-- "disclaimer.md"
 
@@ -8,7 +8,7 @@
 
 ## 🎯 Mission Brief
 
-Welcome back, Agent. In [Mission 02](../02-multi-agent/README.md) - you learned how to build an Application Intake child agent and an Interview Prep connected agent to broaden your main Hiring Agent's capabilities.
+Welcome back, Agent. In [Mission 03](../03-multi-agent/README.md) - you learned how to build an Application Intake child agent and an Interview Prep connected agent to broaden your main Hiring Agent's capabilities.
 
 Your assignment, should you choose to accept it, is **Operation Signal Point** - diving deeper into **event triggers** - elevating your agent system from reactive to **autonomous operation**. You'll transform your agents from waiting for human input to proactively responding to external events and taking intelligent action without supervision.
 
@@ -156,8 +156,8 @@ Let's begin!
 
 You'll need to **either**:
 
-- **Have completed [Mission 01](../01-get-started/README.md) and [Mission 02](../02-multi-agent/README.md)** and have your Hiring Agent ready, **OR**
-- **Import the Mission 03 starter solution** if you're starting fresh or need to catch up. [Download Mission 03 Starter Solution](./assets/Operative03_Starter.zip) and follow the [data import steps](../01-get-started/DataImport.md) to ensure you have all the required sample data imported in your solution.
+- **Have completed [Mission 01](../01-get-started/README.md) and [Mission 03](../03-multi-agent/README.md)** and have your Hiring Agent ready, **OR**
+- **Import the Mission 03 starter solution** if you're starting fresh or need to catch up. [Download Mission 04 Starter Solution](./assets/Operative04_Starter.zip) and follow the [data import steps](../01-get-started/DataImport.md) to ensure you have all the required sample data imported in your solution.
 
 !!! note "Solution Import and Sample Data"
     If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
