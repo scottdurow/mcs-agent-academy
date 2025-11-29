@@ -235,7 +235,7 @@ First, let's examine the Dataverse tables you'll be grounding with:
     !!! tip
         It is important to select the related Evaluation Criteria by first selecting the Job Role, and then navigating in the menu to Job Role (Evaluation Criteria). This will ensure that only the related records for the Job Role will be loaded.
 
-1. Select **Settings**, and adjust the **Record retrieval** to 1000 - this will allow the maximum Job Roles and Evaluation criteria to be included in your prompt.  
+1. Select the three dots (...) in the Instructions pane and select **Settings**. Adjust the **Record retrieval** to 1000 - this will allow the maximum Job Roles and Evaluation criteria to be included in your prompt.  
     ![Prompt Settings](./assets/8-prompt-settings.png)
 
 ### 8.3 Test the enhanced prompt

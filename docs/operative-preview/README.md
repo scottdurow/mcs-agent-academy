@@ -53,9 +53,9 @@ This academy is structured as a progressive series of field operations—each mi
 | Mission | Title | Operation Briefing |
 |---------|-------|-------------------|
 | `01` | 🚨 [Get started with the Hiring Agent](./01-get-started/README.md) | Deploy foundational infrastructure and create your central orchestrator agent |
-| `02` | 🎭 [Make your agent multi-agent ready with connected agents](./02-multi-agent/README.md) | Transform single agent into coordinated multi-agent system |
-| `03` | ⚡ [Automate your agent with Triggers](./03-automate-triggers/README.md) | Implement autonomous agent behaviors with event-driven triggers |
-| `04` | 📝 [Authoring Agent Instructions](./04-agent-instructions/README.md) | Master precise agent communication and behavior control |
+| `02` | 📝 [Authoring Agent Instructions](./02-agent-instructions/README.md) | Master precise agent communication and behavior control |
+| `03` | 🎭 [Make your agent multi-agent ready with connected agents](./03-multi-agent/README.md) | Transform single agent into coordinated multi-agent system |
+| `04` | ⚡ [Automate your agent with Triggers](./04-automate-triggers/README.md) | Implement autonomous agent behaviors with event-driven triggers |
 | `05` | 💬 [Personalizing Agent Responses](./05-agent-responses/README.md) | Customize agent responses for maximum impact and engagement |
 | `06` | 🛡️ [Content Moderation and AI Safety Essentials](./06-ai-safety/README.md) | Implement enterprise-grade safety and compliance measures |
 | `07` | 🎨 [Extracting Resume Contents with Multi-Modal Prompts](./07-multimodal-prompts/README.md) | Process documents and images with advanced AI capabilities |
@@ -65,9 +65,9 @@ This academy is structured as a progressive series of field operations—each mi
 | `11` | 📊 [Obtain User Feedback with Adaptive Cards](./11-obtain-user-feedback/README.md) | Collect and process user feedback for continuous improvement |
 | `12` | 🌐 [Publishing Your Agents to a Demo Website for Stakeholder Testing](./12-demo-website/README.md) | Deploy complete solution for stakeholder demonstration and testing |
 
-!!! note
-    ✅ Completing this curriculum earns you the **Operative** badge.  
-    🔓 **Commander** will be unlocked in future phases.
+> [!NOTE]
+> ✅ Completing this curriculum earns you the **Operative** badge.  
+> 🔓 **Commander** will be unlocked in future phases.
 
 <!-- markdownlint-disable-next-line MD033 -->
 <img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/operative" alt="Analytics" />
