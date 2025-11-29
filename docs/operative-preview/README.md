@@ -65,9 +65,9 @@ This academy is structured as a progressive series of field operations—each mi
 | `11` | 📊 [Obtain User Feedback with Adaptive Cards](./11-obtain-user-feedback/README.md) | Collect and process user feedback for continuous improvement |
 | `12` | 🌐 [Publishing Your Agents to a Demo Website for Stakeholder Testing](./12-demo-website/README.md) | Deploy complete solution for stakeholder demonstration and testing |
 
-!!! note
-    ✅ Completing this curriculum earns you the **Operative** badge.  
-    🔓 **Commander** will be unlocked in future phases.
+> [!NOTE]
+> ✅ Completing this curriculum earns you the **Operative** badge.  
+> 🔓 **Commander** will be unlocked in future phases.
 
 <!-- markdownlint-disable-next-line MD033 -->
 <img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/operative" alt="Analytics" />
