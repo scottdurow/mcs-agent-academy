@@ -245,9 +245,9 @@ You'll need to **either**:
 
 1. Select **Edit** in the **Instructions** section of the **Overview** tab of the agent.
 
-![Edit Instructions](./assets/02-editinstructions.png)
+    ![Edit Instructions](./assets/02-editinstructions.png)
 
-Copy and paste the following instructions in the instructions input:
+    Copy and paste the following instructions in the instructions input:
 
     ```text
     You are the central orchestrator for the hiring process. You coordinate activities, provide summaries, and delegate work to specialized agents.
