@@ -397,9 +397,9 @@ Let's explore how Responsible AI content filtering works and how to handle block
 1. **Test the fallback** by trying the potentially filtered questions again and notice the response.  
     ![Content filtered in M365 Copilot](./assets/6-filtering-in-m365-copilot.png)
 
-### 6.4 Generative answers content moderation level and prompt modification
+### 6.4 Generative Answers content moderation level and prompt modification
 
-Generative answers is a feature of Copilot Studio Topics that utilizes the configured knowledge to answer specific questions. When not using Generative Orchestration, there is a built in Topic called *Conversation Boosting*, however since we do have Generative Orchestration turned on, we shall create a custom topic to answer questions about Candidates.
+Generative Answers is a feature of Copilot Studio Topics that utilizes the configured knowledge to answer specific questions. When not using Generative Orchestration or when Web Search is turned on, there is a built in Topic called *Conversation Boosting*, however since we do have Generative Orchestration turned on and Web Search is turned off, we shall create a custom topic to answer questions about Candidates using Generative Answers.
 
 1. Select the **Topics** tab, select **Add a topic**, then select **From blank**.
 
