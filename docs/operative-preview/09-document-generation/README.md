@@ -114,17 +114,17 @@ Your first objective: create a prompt capable of analyzing a job description and
 1. Go back to your prompt and scroll down to the **input data** section of the prompt. Find the **/ApplicationNumber** text. Delete that and type a **forward slash (/)** to open up the add input panel and configure the input as follows:
 
     | Parameter Name | Type | Sample Data |
-    |-----------|------|------|-------------|
+    |-----------|------|-------------|
     | ApplicationNumber | Text  | Enter a job application number you copied from the step previous step |
 
 1. Now that we have an input to pass in the Job Application number, we want to get other relevant information for this prompt from Dataverse. To do that, find the remaining forward slashes in the **Input Data** section of the prompt and replace according to the table below:
 
     | Parameter Name | Table | Columns | Filter attribute | Filter value |
-    | -------------- | ----- | ------ | ------- |
+    | -------------- | ----- | ------- | ---------------- | ------------ |
     | CandidateDetails | Dataverse -> Job Application -> Candidate (Candidate)| Candidate Name, Email | Application Number |Add Value -> Application Number |
-   | ResumeDetails | Dataverse -> Job Application -> Resume (Resume)| Cover Letter, Resume Number, Resume Title, Summary | Application Number |Add Value -> Application Number |
-| JobDetails | Dataverse -> Job Application -> Job Role (Job Role)| Description, Job Role Number, Job Title | Application Number |Add Value -> Application Number |
-| Evaluation Criteria | Dataverse -> Job Application -> Job Role (Job Role) -> Job Role (Evaluation Criteria)| Criteria Name, Description, Weighting | Application Number |Add Value -> Application Number |
+    | ResumeDetails | Dataverse -> Job Application -> Resume (Resume)| Cover Letter, Resume Number, Resume Title, Summary | Application Number |Add Value -> Application Number |
+    | JobDetails | Dataverse -> Job Application -> Job Role (Job Role)| Description, Job Role Number, Job Title | Application Number |Add Value -> Application Number |
+    | Evaluation Criteria | Dataverse -> Job Application -> Job Role (Job Role) -> Job Role (Evaluation Criteria)| Criteria Name, Description, Weighting | Application Number |Add Value -> Application Number |
 
 The completed input section should look like the screenshot below
     ![Filled Prompt](./assets/PromptFIlled.png)
