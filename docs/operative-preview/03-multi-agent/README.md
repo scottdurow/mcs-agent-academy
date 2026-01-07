@@ -241,9 +241,9 @@ To complete this mission you need to:
 
 1. Select **Edit** in the **Instructions** section of the **Overview** tab of the agent.
 
-![Edit Instructions](./assets/02-editinstructions.png)
+    ![Edit Instructions](./assets/02-editinstructions.png)
 
-Copy and paste the following instructions in the instructions input:
+    Copy and paste the following instructions in the instructions input:
 
     ```text
     You are the central orchestrator for the hiring process. You coordinate activities, provide summaries, and delegate work to specialized agents.
@@ -526,7 +526,7 @@ Now you'll connect the published flow to your Application Intake Agent.
 
 Now let's verify that our agent is working correctly by calling our child agent and following our instructions.
 
-1. **Download** the [test Resumes.](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+1. **Download** the [test Resumes.](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/docs/operative/test-data/resumes&filename=operative_sampledata)
 
 1. **Toggle** the test panel open by selecting **Test**.
 

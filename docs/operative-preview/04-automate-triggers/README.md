@@ -14,7 +14,7 @@ Your assignment, should you choose to accept it, is **Operation Signal Point** -
 
 Think of it as upgrading from agents that _answer questions_ to agents that _anticipate needs_ and _act independently_. Through event triggers and automated workflows, your Hiring Agent will detect incoming resume emails, process attachments automatically, store data in Dataverse, and notify your HR recruitment team via Microsoft Teams - all while you focus on higher-value tasks.
 
-Welcome to the world of where automation meets intelligence.
+Welcome to the world where automation meets intelligence.
 
 ## 🔎 Objectives
 
@@ -39,7 +39,7 @@ Previously in [Recruit](../../recruit/10-add-event-triggers/README.md), we learn
 
 - **Payload-driven:**
       - Each event delivers a payload (variables + optional instructions) through a connector. The agent uses your defined instructions and the payload to choose what to do next.
-      - For example _call a topic_ or _execute actions defined by Tools_.
+      - For example, _call a topic_ or _execute actions defined by Tools_.
 
 - **Examples out-of-the-box:**
       - SharePoint/OneDrive file or item created
@@ -69,12 +69,12 @@ Previously in [Recruit](../../recruit/10-add-event-triggers/README.md), we learn
 
 ### Topic triggers - how they differ
 
-Previously you learnt about topic triggers in [Recruit](../../recruit/07-add-new-topic-with-trigger/README.md), however you might still be wondering how _Topic_ triggers differ from _Event_ triggers, and why that distinction matters for understanding what makes an agent autonomous.
+Previously you learned about topic triggers in [Recruit](../../recruit/07-add-new-topic-with-trigger/README.md), however you might still be wondering how _Topic_ triggers differ from _Event_ triggers, and why that distinction matters for understanding what makes an agent autonomous.
 
 Topic triggers control _when a topic runs_, usually in response to a user message.
 
 - In generative orchestration, the default trigger is **By agent** - the planner chooses a topic whose name/description best matches the user’s message.
-- In classic orchestration, the default is **Phrases** - the planner chooses a topic when one or several trigger phrases best matches the user's message.
+- In classic orchestration, the default is **Phrases** - the planner chooses a topic when one or several trigger phrases best match the user's message.
 
 Other trigger types include `Message received`, `Event received`, `Activity received`, `Conversation update`, `Invoke received`, `On redirect`, `Inactivity`, and `Plan complete`.
 
@@ -93,7 +93,7 @@ Other trigger types include `Message received`, `Event received`, `Activity rece
 
 Now that you know the difference between event triggers and topics triggers, let's next learn about the difference between an interactive agent vs an autonomous agent.
 
-In Copilot Studio terms, "interactive" maps to agents that primarily engage via **topics** in a chat of channel. "Autonomous" maps to agents that also leverage **event triggers** to run without user input.
+In Copilot Studio terms, "interactive" maps to agents that primarily engage via **topics** in a chat or channel. "Autonomous" maps to agents that also leverage **event triggers** to run without user input.
 
 The following table summarizes their differences and similarities.
 
@@ -126,7 +126,7 @@ The following table summarizes their differences and similarities.
 
 1. **Test before publishing.** Use **Test trigger** and the activity map to watch the plan and called actions - iterate on instructions/payload until behavior is stable.
 
-## 🧪 Lab 03 - Automating candidate application emails
+## 🧪 Lab 04 - Automating candidate application emails
 
 We're next going to add an event trigger to the **Hiring Agent** and build an agent flow in the child **Application Intake Agent** to handle further processing for autonomy.
 
@@ -136,7 +136,7 @@ We're next going to add an event trigger to the **Hiring Agent** and build an ag
 
     **As an** HR Recruiter
 
-    **I want to** be notified of when an email with a resume has arrived in my Inbox that has been automatically uploaded to Dataverse
+    **I want to** be notified when an email with a resume arrives in my Inbox and is automatically uploaded to Dataverse
 
     **So that I can** stay notified of resumes sent by email for applications automatically uploaded to Dataverse
 
@@ -148,7 +148,7 @@ We'll be achieving this using two techniques
     1. Then send a prompt to the agent for further processing by passing input parameters from the Dataverse actions.
 
 1. An agent flow will be added to the child **Application Intake Agent** which is invoked by the prompt in the event trigger.
-    1. Use the input parameters passed from the prompt of the event trigger in an adaptive card posted to a channel in Microsoft Teams to notify the HR Recruitment team. The adaptive card will have a link to the row in Dataverse which will be viewed in the **Hiring Agent**.
+    1. Use the input parameters passed from the prompt of the event trigger in an adaptive card posted to a channel in Microsoft Teams to notify the HR Recruitment team. The adaptive card will have a link to the Dataverse row which can be viewed in the **Hiring Agent**.
 
 Let's begin!
 
@@ -159,15 +159,15 @@ To complete this lab you will need to:
 - **Have completed [Mission 01](../01-get-started/README.md) and [Mission 03](../03-multi-agent/README.md)** and have your Hiring Agent ready.
 - You'll also need access to **Microsoft Teams** to complete the second lab exercise of posting an adaptive card to Microsoft Teams.
 
-### Lab 3.1 - Automate uploading resumes to Dataverse received by email
+### Lab 4.1 - Automate uploading resumes to Dataverse received by email
 
 1. In the Hiring Agent, scroll down in the **Overview tab** to the **Triggers and Channels** section and select **+ Add**.
 
-![Add trigger to agent](assets/03_addTrigger.png)
+    ![Add trigger to agent](assets/03_addTrigger.png)
 
 1. A list of triggers will appear. Select **When a new email arrives (V3)** and select **Next**.
 
-![Select When a new email arrives (V3) trigger](assets/03_selectTrigger.png)
+    ![Select When a new email arrives (V3) trigger](assets/03_selectTrigger.png)
 
 1. We'll now see the **Trigger name** and the **Sign in** connection references for the apps listed. Rename the trigger name to the following:
 
@@ -294,7 +294,7 @@ To complete this lab you will need to:
 
         🔭 **Where to find it?**
         
-        - In Power Automate for in Agent Flows, search for the action called `HTML to text`. It's under the **Data Operations** connector.
+        - In Agent Flows, search for the action called `HTML to text`. It's under the **Data Operations** connector.
            
         💡 **Key Points**
         
@@ -304,7 +304,7 @@ To complete this lab you will need to:
 
     ![Add HTML to text action](assets/3.1_13_AddHTMLToTextAction.png)
 
-1. Next, we're need to create a new connection reference for the **Html to text** action by selecting **Create new**.
+1. Next, we need to create a new connection reference for the **Html to text** action by selecting **Create new**.
 
     ![Add new connection reference](assets/03_createnewhtmlconnection.png)
 
@@ -381,7 +381,7 @@ To complete this lab you will need to:
 
 1. We still need to configure several more parameters, select **Show all** and in the **Cover Letter** field, select the **fx icon** to the right.
 
-    In the **Function tab**, enter the following expression that uses the same expression in the previous [mission](../02-multi-agent/README.md).
+    In the **Function tab**, enter the following expression that uses the same expression in the previous [mission](../03-multi-agent/README.md).
 
        ```text
        if(greater(length(body('Html_to_text')), 2000), substring(body('Html_to_text'), 0, 2000), body('Html_to_text'))
@@ -560,7 +560,7 @@ To complete this lab you will need to:
 
 Let's proceed in creating a new agent flow that will be invoked by the child **Intake Application Agent**.
 
-### Lab 3.2 - Notify a Teams channel using an adaptive card
+### Lab 4.2 - Notify a Teams channel using an adaptive card
 
 We're now going to create a new agent flow for the child **Intake Application Agent** that uses the values passed by the event trigger, to post an adaptive card to a Teams channel. This adaptive card will alert the HR recruitment team about the PDF that was automatically uploaded so that they can review it.
 
@@ -746,13 +746,13 @@ Let's begin!
     ??? info "How to navigate back to the **Hiring Hub** model-driven app in case you exited/closed it"
     1. Browse to [https://make.powerapps.com](https://make.powerapps.com) and make sure you are in your developer environment that you're using for these lab exercises, otherwise switch to it.
 
-       ![Browse to make.powerapps.com](assets/3.2_31_Note_01_BrowseToURL.png)
+        ![Browse to make.powerapps.com](assets/3.2_31_Note_01_BrowseToURL.png)
 
     1. Select **Apps** in the left hand side menu pane and for the **Hiring Hub** model-driven app, select the **Play** icon to load it in your browser.
 
         ![Select Hiring Hub model-driven app](assets/3.2_31_Note_02_HiringHubApp.png)
 
-       ![Copy Resume row URL](assets/3.2_31_CopyResumeURL.png)
+        ![Copy Resume row URL](assets/3.2_31_CopyResumeURL.png)
 
 1. Then navigate back to the agent flow, highlight the current placeholder URL value and delete it.
 
@@ -854,7 +854,7 @@ Let's begin!
 
     ![Select Add and configure](assets/03_addAndConfig.png)
 
-1. In the **Inputs** section, the three inputs we configured earlier in the agent flow are visible. By default, the **Fill using** configuration is set to **Dynamically fill with AI**. We'll keep this setting as-is as the prompt from the event trigger (in the last action, **Sends a prompt to the specified copilot for processing** - this is steps 38-44 of **Lab 3.1 - Automate uploading resumes to Dataverse received by email**) will contain the parameter values that AI will extract.
+1. In the **Inputs** section, the three inputs we configured earlier in the agent flow are visible. By default, the **Fill using** configuration is set to **Dynamically fill with AI**. We'll keep this setting as-is as the prompt from the event trigger (in the last action, **Sends a prompt to the specified copilot for processing** - this is steps 38 - 44 of **Lab 4.1 - Automate uploading resumes to Dataverse received by email**) will contain the parameter values that AI will extract.
 
     ![Tool agent flow inputs](assets/3.2_50_Inputs.png)
 
@@ -885,9 +885,9 @@ Let's begin!
 
 1. The agent flow will now be invoked by the **Application Intake Agent** as per the instructions, after the last action (**Sends a prompt to the specified copilot for processing**) in the event trigger sends the prompt that contains the parameter values back to the agent.
 
-Select **Save** to save the updated instructions for the **Application Intake Agent**.
+      Select **Save** to save the updated instructions for the **Application Intake Agent**.
 
-![Select Save](assets/3.2_56_Save.png)
+    ![Select Save](assets/3.2_56_Save.png)
 
 1. The instructions will now be updated once the agent has been saved.
 
@@ -903,7 +903,7 @@ Select **Save** to save the updated instructions for the **Application Intake Ag
 
 We can now test the agent!
 
-### Lab 3.3 - Test event trigger
+### Lab 4.3 - Test event trigger
 
 1. To execute the event trigger, an email needs to be sent with a Resume pdf file. In Outlook, compose a new email message.
 
@@ -949,7 +949,7 @@ We can now test the agent!
 
     ![Activity completed](assets/3.3_04_StatusComplete.png)
 
-1. Select the activity, and select the event trigger in the activity map. On the right hand side panel, notice how the input parameters in the prompt contain the `Resume Id`, `Resume Title` and `Resume Number` parameter values from the **Dataverse** row that was created. This was from the dynamic content values configured earlier in steps 18 - 27 of **Lab 3.1 - Automate uploading resumes to Dataverse received by email**.
+1. Select the activity, and select the event trigger in the activity map. On the right hand side panel, notice how the input parameters in the prompt contain the `Resume Id`, `Resume Title` and `Resume Number` parameter values from the **Dataverse** row that was created. This was from the dynamic content values configured earlier in steps 38 - 44 of **Lab 4.1 - Automate uploading resumes to Dataverse received by email**.
 
     ![Event trigger](assets/3.3_05_EventTrigger.png)
 
@@ -961,7 +961,7 @@ We can now test the agent!
 
     ![Select agent flow](assets/3.3_07_NotifyTeamsApplicantChannel.png)
 
-1. Finally, let's take a look at the adaptive card posted to the channel in **Microsoft Teams**. In the channel, we'll see the adaptive card that displays the information about the newly created Resume row in Dataverse. Hover over the hyperlink at the start of the adaptive card, notice how the URL is the Resumes system view URL that we configured earlier in the JSON (steps 15 - 19 of **Lab 3.2 - Notify a Teams channel using an adaptive card**) payload of the adaptive card.
+1. Finally, let's take a look at the adaptive card posted to the channel in **Microsoft Teams**. In the channel, we'll see the adaptive card that displays the information about the newly created Resume row in Dataverse. Hover over the hyperlink at the start of the adaptive card, notice how the URL is the Resumes system view URL that we configured earlier in the JSON (steps 15 - 19 of **Lab 4.2 - Notify a Teams channel using an adaptive card**) payload of the adaptive card.
 
     ![Adaptive Card Resume Table system view URL](assets/3.3_08_AdaptiveCardResumeTableURL.png)
 
@@ -969,7 +969,7 @@ We can now test the agent!
 
     ![Resume system view in Hiring Hub model-driven app](assets/3.3_09_ResumeTableSystemView.png)
 
-1. Navigate back to the adaptive card posted to the channel in Microsoft Teams. This time, hover over **View Resume** which is the `Action.OpenURL` action of the adaptive card. Notice how the URL is the Resumes row that we configured earlier in the JSON (steps 30 - 36 of **Lab 3.2 - Notify a Teams channel using an adaptive card**) payload of the adaptive card.
+1. Navigate back to the adaptive card posted to the channel in Microsoft Teams. This time, hover over **View Resume** which is the `Action.OpenURL` action of the adaptive card. Notice how the URL is the Resumes row that we configured earlier in the JSON (steps 30 - 36 of **Lab 4.2 - Notify a Teams channel using an adaptive card**) payload of the adaptive card.
 
     ![Adaptive Card Resume row URL](assets/3.3_10_AdaptiveCardResumeRowURL.png)
 
