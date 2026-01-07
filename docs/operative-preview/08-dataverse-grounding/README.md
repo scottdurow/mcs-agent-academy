@@ -103,13 +103,8 @@ Time to upgrade your resume analysis capabilities! You'll enhance the existing S
 
 1. You'll need to **either**:
 
-    - **Have completed Mission 07** and have your resume analysis system ready, **OR**
-    - **Import the Mission 08 starter solution** if you're starting fresh or need to catch up. [Download Mission 08 Starter Solution](https://aka.ms/agent-academy)
-
-1. Sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
-
-!!! note "Solution Import and Sample Data"
-    If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
+    - **Have completed [Mission 07](../07-multimodal-prompts/README.md)** and have your resume analysis system ready
+    - Have downloaded sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
 
 ### 8.1 Add Dataverse grounding to your prompt
 
@@ -432,9 +427,9 @@ Your hiring agents can now adapt automatically to changing job requirements with
 **✅ Job Application Creation**  
 Your enhanced system can now create Job Applications and is ready for further complex workflow orchestration.
 
-🚀 **Next up:** In your next mission, you'll learn how to implement deep reasoning capabilities that help your agents make complex decisions and provide detailed explanations for their recommendations.
+🚀 **Next up:** In your next mission, you'll learn how to expand your prompt skills to enable document generation.
 
-⏩ [Move to Mission 09: Deep reasoning](../09-deep-reasoning/README.md)
+⏩ [Move to Mission 09: Document generation](../09-document-generation/README.md)
 
 ## 📚 Tactical Resources
 

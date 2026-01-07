@@ -293,15 +293,10 @@ Now let's explore how the three content blocking mechanisms work in practice and
 
 ### Prerequisites to complete this mission
 
-1. You'll need to **either**:
+1. To complete this mission you'll need to:
 
-    - **Have completed Mission 05** and have your Interview Agent ready, **OR**
-    - **Import the Mission 06 starter solution** if you're starting fresh or need to catch up. [Download Mission 06 Starter Solution](./assets/Operative06_Starter.zip)
-
-1. Understanding of Copilot Studio topics and [Generative Answers nodes](https://learn.microsoft.com/microsoft-copilot-studio/nlu-boost-node?WT.mc_id=power-182762-scottdurow)
-
-!!! note "Solution Import and Sample Data"
-    If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
+    - **Have completed Mission 05** and have your Interview Agent ready.
+    - Understanding of Copilot Studio topics and [Generative Answers nodes](https://learn.microsoft.com/microsoft-copilot-studio/nlu-boost-node?WT.mc_id=power-182762-scottdurow)
 
 ### 6.1 Adding AI safety disclosure to agent greeting
 
