@@ -28,7 +28,7 @@ When a job application is added, you want to automate the process of preparing a
 
 1. Before starting this mission you need to:
 
-    - **Have completed Mission 08** and have your multi-agent hiring system ready
+    - **Have completed [Mission 08](../08-dataverse-grounding/README.md)** and have the agent ready and a good understanding of Dataverse grounding
 
 ### 9.1 Create the prompt
 
@@ -51,7 +51,6 @@ Your first objective: create a prompt capable of analyzing a job description and
 
     ```text
     You are tasked with evaluating a candidate’s resume against a specific job listing description and generating a targeted set of interview questions to support structured candidate screening.
-
     ### Instructions
     
     1. **Extract Candidate Details:**
@@ -106,7 +105,8 @@ Your first objective: create a prompt capable of analyzing a job description and
     Resume Details: /Resume Details
     Job Details (Job Number, Title, Description and Requirements): /JobDetails
     Evaluation Criteria (Weighting, Evaluation Criteria): /Criteria
-        ```
+    ```
+
 1. In a new tab, go to make.powerapps.com and find the **Job Application** table. Take note of one of the job application numbers in that table that you want to use for testing.
 
     ![Job App Table](./assets/JobAppTable.png)
@@ -117,7 +117,12 @@ Your first objective: create a prompt capable of analyzing a job description and
     |-----------|------|-------------|
     | ApplicationNumber | Text  | Enter a job application number you copied from the step previous step |
 
-1. Now that we have an input to pass in the Job Application number, we want to get other relevant information for this prompt from Dataverse. To do that, find the remaining forward slashes in the **Input Data** section of the prompt and replace according to the table below:
+1. Now that we have an input to pass in the Job Application number, we want to get other relevant information for this prompt from Dataverse using Dataverse Grounding.
+
+!!! tip "Tip"
+If you want to get an in-depth understanding of Dataverse Grounding, be sure to go through [module 8](../08-dataverse-grounding/README.md).
+
+To configure Dataverse grounding for our prompt, find the remaining forward slashes in the **Input Data** section of the prompt and replace according to the table below:
 
     | Parameter Name | Table | Columns | Filter attribute | Filter value |
     | -------------- | ----- | ------- | ---------------- | ------------ |
