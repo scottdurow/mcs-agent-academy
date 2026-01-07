@@ -119,10 +119,9 @@ Your first objective: create a prompt capable of analyzing a job description and
 
 1. Now that we have an input to pass in the Job Application number, we want to get other relevant information for this prompt from Dataverse using Dataverse Grounding.
 
-!!! tip "Tip"
-If you want to get an in-depth understanding of Dataverse Grounding, be sure to go through [module 8](../08-dataverse-grounding/README.md).
+    !!! tip "Tip" If you want to get an in-depth understanding of Dataverse Grounding, be sure to go through [module 8](../08-dataverse-grounding/README.md).
 
-To configure Dataverse grounding for our prompt, find the remaining forward slashes in the **Input Data** section of the prompt and replace according to the table below:
+    To configure Dataverse grounding for our prompt, find the remaining forward slashes in the **Input Data** section of the prompt and replace according to the table below:
 
     | Parameter Name | Table | Columns | Filter attribute | Filter value |
     | -------------- | ----- | ------- | ---------------- | ------------ |
@@ -131,7 +130,8 @@ To configure Dataverse grounding for our prompt, find the remaining forward slas
     | JobDetails | Dataverse -> Job Application -> Job Role (Job Role)| Description, Job Role Number, Job Title | Application Number |Add Value -> Application Number |
     | Evaluation Criteria | Dataverse -> Job Application -> Job Role (Job Role) -> Job Role (Evaluation Criteria)| Criteria Name, Description, Weighting | Application Number |Add Value -> Application Number |
 
-The completed input section should look like the screenshot below
+    The completed input section should look like the screenshot below
+
     ![Filled Prompt](./assets/PromptFIlled.png)
 
 1. It's always a good idea to test as you go along. Select **Test** to see the initial text output from your prompt and confirm it is pulling the correct information from Dataverse.  
@@ -140,7 +140,9 @@ The completed input section should look like the screenshot below
 1. Because we want to have this prompt generate a document, we need to change the model the prompt is using to one that supports multi-modal inputs and outputs. To do this, select the **model dropdown** and change it to **GPT-4.1**
     ![Model Select](./assets/ModelSelect.png)
 
-1. In order to have the prompt populate a Word document as the output, you need a Word template for it to fill. We have provided a template for you to use.  [Click this link to download](./assets/Interview_Questions_Template.docx) the template file and open it. The template itself is nothing special, they key thing you need to know is how to add the placeholders for where the prompt will insert the text. Anywhere that you want text added to you need to put the necessary placeholder text for what you want to fill it will and wrap that in **double curly brackets {}** as shown below.
+1. In order to have the prompt populate a Word document as the output, you need a Word template for it to fill. We have provided a template for you to use.  [Download the template file here](./assets/Interview_Questions_Template.docx) and open it.
+
+    >**NOTE:** The template itself is a basic Word document. The key thing you need to know is how to add the placeholders for where the prompt will insert the text. Anywhere that you want the prompt to insert text, you need to put the necessary placeholder text for what you want to fill it with and wrap that in **double curly brackets {{JobTitle}}** as shown below.
 
     ![Template](./assets/Template.png)
 
