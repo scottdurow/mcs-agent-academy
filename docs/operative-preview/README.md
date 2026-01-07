@@ -60,10 +60,9 @@ This academy is structured as a progressive series of field operations—each mi
 | `06` | 🛡️ [Content Moderation and AI Safety Essentials](./06-ai-safety/README.md) | Implement enterprise-grade safety and compliance measures |
 | `07` | 🎨 [Extracting Resume Contents with Multi-Modal Prompts](./07-multimodal-prompts/README.md) | Process documents and images with advanced AI capabilities |
 | `08` | 🗄️ [Prompts - Dataverse Grounding](./08-dataverse-grounding/README.md) | Ground agents in enterprise data for accurate responses |
-| `09` | 🧠 [Applying Deep Reasoning to Evaluate Candidate Fit and Interview Preparation](./09-deep-reasoning/README.md) | Implement sophisticated AI reasoning for complex decisions |
-| `10` | 📄 [Generate Candidate Specific Interview Docs with Prompts](./10-generate-documents/README.md) | Create dynamic documents based on agent analysis |
+| `09` | 🧠 [Generating an Interview Prep Document](./09-document-generation/README.md) | Implement document generation in AI prompts |
+| `10` | 📄 [Integrate with MCP Servers](./10-mcp/README.md) | Integrate with out of the box MCP servers |
 | `11` | 📊 [Obtain User Feedback with Adaptive Cards](./11-obtain-user-feedback/README.md) | Collect and process user feedback for continuous improvement |
-| `12` | 🌐 [Publishing Your Agents to a Demo Website for Stakeholder Testing](./12-demo-website/README.md) | Deploy complete solution for stakeholder demonstration and testing |
 
 > [!NOTE]
 > ✅ Completing this curriculum earns you the **Operative** badge.  
