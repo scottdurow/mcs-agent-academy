@@ -139,13 +139,8 @@ Time to put your multimodal knowledge into practice. You'll build a comprehensiv
 
 1. You'll need to **either**:
 
-    - **Have completed Mission 06** and have your multi-agent hiring system ready, **OR**
-    - **Import the Mission 07 starter solution** if you're starting fresh or need to catch up. [Download Mission 07 Starter Solution](./assets/Operative07StarterTemplate.zip)
-
-1. Sample resume documents from [Test Resumes](../test-data/resumes/)
-
-!!! note "Solution Import and Sample Data"
-    If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
+    - **Have completed Mission 06** and have your multi-agent hiring system ready
+    - Download sample resume documents from [Test Resumes](../test-data/resumes/)
 
 ### 7.1 Create a multimodal prompt
 

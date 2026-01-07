@@ -154,15 +154,10 @@ Let's begin!
 
 ### ✨ Prerequisites to complete this mission
 
-You'll need to **either**:
+To complete this lab you will need to:
 
-- **Have completed [Mission 01](../01-get-started/README.md) and [Mission 03](../03-multi-agent/README.md)** and have your Hiring Agent ready, **OR**
-- **Import the Mission 03 starter solution** if you're starting fresh or need to catch up. [Download Mission 04 Starter Solution](./assets/Operative04_Starter.zip) and follow the [data import steps](../01-get-started/DataImport.md) to ensure you have all the required sample data imported in your solution.
-
-!!! note "Solution Import and Sample Data"
-    If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
-
-You'll also need access to **Microsoft Teams** to complete the second lab exercise of posting an adaptive card to Microsoft Teams.
+- **Have completed [Mission 01](../01-get-started/README.md) and [Mission 03](../03-multi-agent/README.md)** and have your Hiring Agent ready.
+- You'll also need access to **Microsoft Teams** to complete the second lab exercise of posting an adaptive card to Microsoft Teams.
 
 ### Lab 4.1 - Automate uploading resumes to Dataverse received by email
 

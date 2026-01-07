@@ -8,7 +8,7 @@
 
 ## 🎯 Mission Brief
 
-Welcome back, Agent. In Mission 01, you built your main Hiring Agent - a solid foundation for managing recruitment workflows. But one agent can only do so much.
+Welcome back, Agent. In Mission 01, you built your main Hiring Agent giving you a solid foundation for managing recruitment workflows. But one agent can only do so much.
 
 Your assignment, should you choose to accept it, is **Operation Symphony** - transforming your single agent into a **multi-agent system**: an orchestrated team of specialized agents that work together to handle complex hiring challenges. Think of it as upgrading from a solo operator to commanding a specialized task force.
 
@@ -221,13 +221,9 @@ Ready to put theory into practice? Let's add our first child agent to your exist
 
 ### Prerequisites to complete this mission
 
-You'll need to **either**:
+To complete this mission you need to:
 
-- **Have completed [Mission 01](../01-get-started/README.md)** and have your Hiring Agent ready, **OR**
-- **Import the Mission 03 starter solution** if you're starting fresh or need to catch up. [Download Mission 03 Starter Solution](./assets/Operative03Starter_1_0_0_1.zip) and follow the [data import steps](../01-get-started/DataImport.md) to ensure you have all the required sample data imported in your solution.
-
-!!! note "Solution Import and Sample Data"
-    If you're using the starter solution, refer to [Mission 01](../01-get-started/README.md) for detailed instructions on how to import solutions and sample data into your environment.
+- **Have completed [Mission 01](../01-get-started/README.md)** and have your Hiring Agent ready
 
 ### 2.1.1 Solution setup
 
