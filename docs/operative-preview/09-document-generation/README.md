@@ -117,7 +117,7 @@ Your first objective: create a prompt capable of analyzing a job description and
     |-----------|------|-------------|
     | ApplicationNumber | Text  | Enter a job application number you copied from the step previous step |
 
-1. Now that we have an input to pass in the Job Application number, we want to get other relevant information for this prompt from Dataverse using Dataverse Grounding. 
+1. Now that we have an input to pass in the Job Application number, we want to get other relevant information for this prompt from Dataverse using Dataverse Grounding.
 
 !!! tip "Tip"
 If you want to get an in-depth understanding of Dataverse Grounding, be sure to go through [module 8](../08-dataverse-grounding/README.md).
