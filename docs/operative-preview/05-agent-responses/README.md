@@ -276,7 +276,7 @@ In summary, use formatting to enhance clarity, not distract. The user should be 
 
 We're next going to change the model of the Hiring agent and add instructions for the agent's response formatting.
 
-### 5.1 Change the model of the Interview Agent
+### Lab 5.1 Change the model of the Interview Agent
 
 Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat experimental model.
 
@@ -349,7 +349,7 @@ Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat e
 
        ![Question 2 response](assets/5.1_10_02_Question2Response.png)
 
-### 5.2 Adding instructions for response formatting
+### Lab 5.2 Adding instructions for response formatting
 
 Coming soon
 

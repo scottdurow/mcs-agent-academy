@@ -298,7 +298,7 @@ Now let's explore how the three content blocking mechanisms work in practice and
     - **Have completed Mission 05** and have your Interview Agent ready.
     - Understanding of Copilot Studio topics and [Generative Answers nodes](https://learn.microsoft.com/microsoft-copilot-studio/nlu-boost-node?WT.mc_id=power-182762-scottdurow)
 
-### 6.1 Adding AI safety disclosure to agent greeting
+### Lab 6.1 Adding AI safety disclosure to agent greeting
 
 Let's start by updating your Interview Agent's greeting to properly disclose its AI nature and safety measures.
 
@@ -327,7 +327,7 @@ Let's start by updating your Interview Agent's greeting to properly disclose its
 
 1. Select **Test** → **Refresh** to start new conversation, and then check that your new greeting is visible in the chat pane.
 
-### 6.2 Understanding content moderation errors and custom messages
+### Lab 6.2 Understanding content moderation errors and custom messages
 
 Let's explore how Responsible AI content filtering works and how to handle blocked content.
 
@@ -374,7 +374,7 @@ Let's explore how Responsible AI content filtering works and how to handle block
     - **Filtered content**: Error messages like "ContentFiltered".
     - **Activity map:** When content moderation is triggered, you will see that there are no nodes shown on the activity map since the content was filtered as input.
 
-### 6.3 Adding custom error handling
+### Lab 6.3 Adding custom error handling
 
 1. Select the **Topics** tab → System → and open the **On Error** topic. If you select the `ContentFiltered` message in the test chat, it will automatically show for you because it was the topic that generated that error message.  
     ![image-20250910185634848](./assets/6-error-topic.png)
@@ -392,7 +392,7 @@ Let's explore how Responsible AI content filtering works and how to handle block
 1. **Test the fallback** by trying the potentially filtered questions again and notice the response.  
     ![Content filtered in M365 Copilot](./assets/6-filtering-in-m365-copilot.png)
 
-### 6.4 Generative Answers content moderation level and prompt modification
+### Lab 6.4 Generative Answers content moderation level and prompt modification
 
 Generative Answers is a feature of Copilot Studio Topics that utilizes the configured knowledge to answer specific questions. When not using Generative Orchestration or when Web Search is turned on, there is a built in Topic called *Conversation Boosting*, however since we do have Generative Orchestration turned on and Web Search is turned off, we shall create a custom topic to answer questions about Candidates using Generative Answers.
 
@@ -441,7 +441,7 @@ Generative Answers is a feature of Copilot Studio Topics that utilizes the confi
 1. The agent should respond politely that political information is protected.  
      ![Generative Answers Moderation Test](./assets/6-generative-answer-test.png)
 
-### 6.5 Using agent instructions to control scope and responses
+### Lab 6.5 Using agent instructions to control scope and responses
 
 Let's see how agent instructions can deliberately restrict responses.
 
@@ -466,7 +466,7 @@ Let's see how agent instructions can deliberately restrict responses.
 
 1. Select **Save**
 
-### 6.6 Testing instruction-based blocking
+### Lab 6.6 Testing instruction-based blocking
 
 Test these prompts and observe how instructions override content moderation:
 
@@ -498,7 +498,7 @@ Observe these behaviors:
 - **Instruction-based refusal**: Polite explanation with alternatives
 - **Unknown Intent**: "I'm not sure how to help with that" → fallback topic
 
-### 6.7 Monitoring Security Threats with Agent Runtime Protection Status
+### Lab 6.7 Monitoring Security Threats with Agent Runtime Protection Status
 
 Learn to identify and analyze security threats using Copilot Studio's built-in monitoring.
 
@@ -513,7 +513,7 @@ Learn to identify and analyze security threats using Copilot Studio's built-in m
     ![Protection Status](./assets/6-protection-status.png)
 1. **Click on your agent's Protection Status** to view the protection summary dialog
 
-### 6.8 Analyzing security data
+### Lab 6.8 Analyzing security data
 
 1. **Publish** your agent to Teams, and try the prompts above to trigger content moderation.
 1. After a short period of time, the content moderation tests you performed should be available in the **Threat detection** section.

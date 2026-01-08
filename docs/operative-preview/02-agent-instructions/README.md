@@ -4,25 +4,27 @@
 
 ## 🕵️‍♂️ CODENAME: `OPERATION SECRET DIRECTIVE`
 
-> **⏱️ Operation Time Window:** `~45 minutes`
+> **⏱️ Operation Time Window:** `~20 minutes – intel only, no fieldwork required`
 
 ## 🎯 Mission Brief
 
-Agent, your next assignment is **Operation Secret Directive** - mastering the art of agent communication and control through precise instructions and descriptions.
+Agent, your next assignment is **Operation Secret Directive**, a focused training mission on agent communication and control.
 
-Your mission, should you choose to accept it, is to learn the critical skills of writing clear, actionable instructions that guide your agents to make intelligent decisions, use the right tools and knowledge sources, and collaborate seamlessly with other agents. You'll also master the craft of authoring high-quality descriptions that help agents understand their resources and respond with surgical precision to user queries.
+This mission is not a hands-on lab. Instead, it gives you the foundational knowledge you’ll need to write clear, effective instructions for your agents in later exercises. You’ll learn how well-written instructions influence agent behavior, decision-making, and tool usage, and why small wording choices can dramatically change outcomes.
 
-Consider this your advanced training in agent psychology and behavior modification. Just as a field operative needs clear mission parameters to succeed, your AI agents require expertly crafted instructions to act with clarity, precision, and deliver valuable intelligence in real-world scenarios.
+Your objective is to understand how to author precise, actionable instructions and high-quality descriptions that help agents interpret their role, select the right tools and knowledge sources, and respond accurately to user queries. These skills form the backbone of every successful agent you’ll build going forward.
+
+Think of this as advanced training in agent behavior and intent shaping. Just as a field operative relies on clear mission parameters, AI agents depend on carefully crafted instructions to act with clarity, consistency, and purpose in real-world scenarios.
 
 ---
 
 ## 🔎 Objectives
 
-By completing this mission, you will:
+In this mission, you'll learn:
 
-- **Instruction Mastery**: Understand the art and science of writing agent instructions in Copilot Studio
-- **Strategic Guidance**: Learn how to direct agents to use tools, knowledge sources, and collaborate with other agents
-- **Operational Clarity**: Ensure your agents act with precision, transparency, and efficiency
+1. The art and science of writing agent instructions in Copilot Studio
+1. How to direct agents to use tools, knowledge sources, and collaborate with other agents
+1. How to ensure your agents act with precision, transparency, and efficiency
 
 ---
 
