@@ -132,13 +132,11 @@ We're next going to add an event trigger to the **Hiring Agent** and build an ag
 
 ### ✨ Use case scenario
 
-!!! info ""
+**As an** HR Recruiter
 
-    **As an** HR Recruiter
+**I want to** be notified when an email with a resume arrives in my Inbox and is automatically uploaded to Dataverse
 
-    **I want to** be notified when an email with a resume arrives in my Inbox and is automatically uploaded to Dataverse
-
-    **So that I can** stay notified of resumes sent by email for applications automatically uploaded to Dataverse
+**So that I can** stay notified of resumes sent by email for applications automatically uploaded to Dataverse
 
 We'll be achieving this using two techniques
 
@@ -159,7 +157,7 @@ To complete this lab you will need to:
 - **Have completed [Mission 01](../01-get-started/README.md) and [Mission 03](../03-multi-agent/README.md)** and have your Hiring Agent ready.
 - You'll also need access to **Microsoft Teams** to complete the second lab exercise of posting an adaptive card to Microsoft Teams.
 
-### Lab 4.1 - Automate uploading resumes to Dataverse received by email
+### 🧪 Lab 4.1 - Automate uploading resumes to Dataverse received by email
 
 1. In the Hiring Agent, scroll down in the **Overview tab** to the **Triggers and Channels** section and select **+ Add**.
 
@@ -432,7 +430,7 @@ To complete this lab you will need to:
 
 1. We've now completed configuring the **Add a new Resume row** action so let's exit from the panel by collapsing it.
 
-       ![Exit from action panel](assets/3.1_27_CollapseAction.png)
+    ![Exit from action panel](assets/3.1_27_CollapseAction.png)
 
 1. We'll add a new action by selecting the **+ icon** underneath the **Add a new Resume row** action which will load the panel to add actions. Search for **Dataverse Upload**. Select the **Upload a file or an image** action.
 

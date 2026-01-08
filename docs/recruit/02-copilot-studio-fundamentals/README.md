@@ -31,13 +31,13 @@ In this mission, you will:
 
 ## What Are Agents in Copilot Studio?
 
-An **agent** is a specialized AI assistant you design to handle specific tasks or queries. Unlike a general-purpose chatbot, your agent:
+An **agent** is a specialized AI assistant you design to handle specific tasks. Unlike a general-purpose chatbot, your agent:
 
 - **Knows company-specific data** (policies, documents, databases)  
 - **Carries out real-world tasks** (sending messages, creating calendar events, updating records)  
 - **Maintains conversational context** so it can follow up on previous questions  
 
-Because Copilot Studio is low-code, you can drag and drop prebuilt components—no deep coding skills required. Once your agent is built, people can call on it inside Teams, Slack, or even a custom webpage to get answers or trigger workflows automatically.
+Because Copilot Studio is low-code, you can drag and drop prebuilt components to build your agent with no coding skills required. Once your agent is built, you can use it inside Teams, Slack, or even a custom webpage to get answers or trigger workflows automatically.
 
 ---
 
@@ -45,9 +45,9 @@ Because Copilot Studio is low-code, you can drag and drop prebuilt components—
 
 While Microsoft 365 Copilot provides general AI assistance across Office apps, you’ll want a custom agent when:
 
-### You need domain-specific knowledge
+### You need to mix and match knowledge from multiple sources
 
-- Out-of-the-box Copilot might not know your company’s internal procedures or data. An agent can query your SharePoint sites, databases, or custom sources to give accurate, up-to-date answers.  
+- M365 Copilot is great at retrieving context from M365 (SharePoint, Outlook, etc) but you might run into situations where you want your agent to be able to search through more knowledge sources which is a good use case for an agent.
 
 ### You want to automate multi-step workflows
 

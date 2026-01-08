@@ -2,89 +2,136 @@
 
 ## 🕵️‍♂️ CODENAME: `OPERATION KNOW WHAT YOU OWE`
 
-> **⏱️ Operation Time Window:** `~15 minutes`
+> **⏱️ Operation Time Window:** `~15 minutes – intel only, no fieldwork required`  
 
 ## 🎯 Mission Brief
 
-Welcome, Recruit. Before you deploy your agents into the field, you need to know **how usage is measured, licensed, and billed**. This mission breaks down the message-based billing model, explains what Microsoft 365 Copilot licenses include, and shows you how to plan with your estimator.
+Welcome, Recruit. Before you deploy agents into production, you need more than working prompts and polished responses, you need a clear understanding of how those agents are measured and billed. Licensing surprises tend to show up after an agent goes live, when usage scales and costs rise faster than expected.
+
+This mission exists to help prevent that moment. You’ll learn how Copilot Studio usage is tracked, how different deployment choices affect cost, and why pre-planning matters before publishing an agent to real users. Understanding licensing early helps you design agents that are not only effective, but also predictable and sustainable in production.
+
+Think of this as your cost-control briefing. With the right context, you can make informed design decisions, estimate impact ahead of time, and avoid unpleasant surprises once your agent is in the wild.
 
 ---
 
-## 🎯 Objective: Grasp the Message-Based Model
+## 🔎 Objectives
 
-Copilot Studio doesn’t charge per user or per feature—it bills you based on **how many messages your agents consume**. A “message” is an interaction between your agent and the user (or a system).
+In this lesson, you'll learn:
 
-- 💬 Every user interaction with your agent counts as at least **1 message**
-- 🔄 Complex interactions (like grounding, generative AI, or flows) consume **multiple messages**
-- 💼 You pay for messages either via **prepaid packs** or **pay-as-you-go (PAYGO)**
+1. How Copilot Studio licensing works using the Copilot Credits consumption model
+1. How Copilot Credits are acquired through pay-as-you-go, capacity packs, and prepaid commitments
+1. What Microsoft 365 Copilot user licenses include — and where Copilot Studio credits are still required
+1. How different agent scenarios (internal, external, automated, and integrated) affect credit consumption
+1. How to plan, estimate, and monitor usage to avoid unexpected costs when deploying agents at scale
 
----
+## 🔎 What are Copilot Credits?
 
-## Licensing Options
+Copilot Credits are the **currency used to measure usage** in Copilot Studio.
 
-### 1. **Copilot Studio Message Packs**
+Think of credits like metered usage, similar to minutes on a phone plan or miles on a taxi.
 
-- Prepaid tick-box: **25,000 messages/month for $200**
-- Best for predictable usage — capacity is pooled across the tenant
+- Copilot credits are used whenever an agent:
+  - looks up information
+  - answers a question
+  - run workflows and actions  
+- Every topic invocation, tool call, grounding operation, and custom skill consumes Copilot Credits.
+- More complex behavior uses more credits than simple answers
 
-### 2. **Pay-As-You-Go (PAYGO)**
+Every time your agent does real work behind the scenes, it uses Copilot Credits.
 
-- Post-paid:  **$0.01 per message**
-- No upfront commitment; usage is billed at month-end via Azure
-
----
-
-## What if you have M365 Copilot Licenses?
-
-If your team has **Microsoft 365 Copilot licenses**, your agents **can run without additional billing for key scenarios**:
-
-- Classic answers, generative responses, graph-grounded messages, and basic agent actions are **zero-rated** for authenticated M365 Copilot users in apps like Teams and Outlook  
-- However: if you enable advanced features like autonomous triggers, agent flows beyond basic actions, or use external channels/APIs, those **consume billable messages**
-
-| Scenario                                     | Additional Messages Billed?                  |
-|---------------------------------------------|----------------------------------------------|
-| M365 Copilot user asking agent in Teams     | ❌ Not billed                                  |
-| Agent calling external API or flow         | ✅ Billed (5 + messages)                      |
-| Agent using autonomous trigger or grounding | ✅ Billed                                     |
+Copilot Credits replace the older “message” concept. Instead of counting interactions, you now count credits, which map more directly to work done by the agent (including actions and advanced tooling).
 
 ---
 
-## 🧮 Plan with Precision: Use the Estimator
+## How Copilot Studio Licensing Works
 
-Before launching your agent, use our **Copilot Studio Usage Estimator** to forecast message consumption under realistic scenarios:
+### 1. **Copilot Studio Pay-As-You-Go (PAYGO) Meter**
 
-[👉 Use the Copilot Studio Usage Estimator](https://aka.ms/mcs-estimator){ .md-button .md-button--primary }
+This option includes:
 
-It lets you:
+- No upfront commitment
+- You pay for actual Copilot Credits consumed in a billing month
+- Billed at **$0.01 per Copilot Credit** via Azure (credits consumed = cost)
+- Provides **flexible, scalable usage** without capacity limits upfront
+- This is ideal for early development, variable usage, or unpredictable agent workloads
 
-- 🔢 Specify your **user count**
-- ⚙️ Select **agent features** (grounding, actions, flows, memory)
-- 📈 Estimate **total messages per agent per month**
-- 🧠 Optimize design and avoid billing surprises
+### 2. **Copilot Studio License (Copilot Credit Capacity Pack)**
+
+- Monthly subscription that gives you **25,000 Copilot Credits per pack**
+- Capacity packs are pooled at the tenant level
+- You can buy multiple packs depending on estimated consumption
+- Unused credits **do not roll over** month-to-month
+- Best for predictable usage
+- This option provides better predictable capacity for production environments
+
+### 3. **Copilot Credit Pre-Purchase Plan**
+
+- Annual, prepaid option for large volumes of Copilot Credits
+- Credits are purchased as **Copilot Credit Commit Units (CCCUs)**
+- Each Copilot CRedit Commit Unit converts to **100 Copilot Credits**
+- Unused credits **do not roll over** month-to-month
+- This option gives cost advantage at scale and predictable budgeting for big agent fleets
+
+---
+
+## 📌 Copilot Studio User Licenses
+
+Even with capacity or credits available, your makers need the right access:
+
+- **Copilot Studio Tenant License** (credit capacity pack or pay-as-you-go) enables **Copilot Studio** in your tenant.
+- **Copilot Studio User License** ($0 license) must be assigned to any person who will **create or manage** agents in Copilot Studio.
+
+This separation allows admin control of capacity while still enabling individual makers to build agents.
+
+---
+
+## 🧠 What Microsoft 365 Copilot Licenses Include
+
+Microsoft 365 Copilot (e.g., $30/user/month business plans) includes:
+
+- Copilot access in apps like Word, Teams, Outlook, and Excel.
+- The ability for licensed users to **create and interact with agents** in hosted channels like Teams or Microsoft 365 Copilot.
+
+### When Copilot Studio Credits Still Apply
+
+Even when users have Microsoft 365 Copilot licenses, **Copilot Credits from your Copilot Studio capacity are used** when agents do more advanced work,  including:
+
+- Running agent flows
+- Using connectors or external services
+- Publishing and using agents outside of internal Microsoft 365 experiences
+- Executing topics, triggers, or workflows that involve actions beyond simple responses
+
+These usages draw from your Copilot Studio capacity (paid credits), not just from an individual’s Copilot user subscription.
+
+### Simple rule of thumb
+
+- **Internal interaction in M365 and basic responses** — usually covered by the Microsoft 365 Copilot user license when the user is signed in and using built-in channels.
+- **Automation, integrations, and external publishing** — consume your Copilot Studio credits, regardless of individual Copilot subscriptions.
+
+## 📊 Capacity Planning Tips
+
+Before you launch an agent:
+
+- **Estimate consumption** using the [Copilot Studio Agent Usage Estimator](https://aka.ms/copilotstudioestimator) which helps you forecast credits used per agent per month.
+- **Disable unused tools** if you aren't using them in your agent to avoid incurring extra costs.
+- **Mix credit packs + pay-as-you-go** to prevent service interruptions if capacity packs run out.
+- Assign **Copilot Studio User Licenses** to all builders to avoid access issues.
+- Monitor consumption in the **Power Platform admin center** (Billing > License > Copilot Studio).
 
 !!! tip
-    ✅ Run it early — and again after building — to compare expected vs. actual usage.
+    ✅ Run the Copilot Studio Usage Estimator early in the planning process and again after building to compare expected vs. actual usage.
 
 ---
 
-## 💼 Sample Scenario
+## 🧠 Real-World Licensing Scenarios
 
-**Environment**: IT Help Desk agent with grounding + one Power Automate flow  
-**Sessions**: 5 user turns per session  
-**Assumptions**: grounding (10 msgs) + action (5 msgs) + 5 generative responses (10 msgs)  
-**Total**: ~25 messages per session  
-**Scale**: 500 sessions/month = ~12,500 messages (½ message pack)
-
----
-
-## 🧠 Pro Tips for Cost Control
-
-- Monitor usage via Power Platform Admin Center
-- Start in dev/test before going live
-- Disable unused actions and connectors
-- Use **Microsoft 365 Copilot licenses** when possible for internal use
-- Use message packs when scale becomes predictable
-- Use the **Copilot Studio Usage Estimator** to forecast usage
+| Scenario | Licensing / Credits |
+|----------|---------------------|
+| Internal Teams agent answering questions from default knowledge sources | Covered by user license for basic interaction; external actions still use credits |
+| Agent with Power Automate/connector actions | Uses Copilot Credits |
+| Autonomous agents | Uses Copilot Credits |
+| Published on external web or system | Uses Copilot Credits |
+| Maker building agents | Requires Copilot Studio User License |
 
 ---
 
@@ -92,11 +139,11 @@ It lets you:
 
 You now understand:
 
-- How usage is calculated and billed
-- When M365 Copilot covers usage — and when it doesn’t
-- How to forecast and manage your message consumption
+- How **Copilot Credits** work in Copilot Studio
+- What Microsoft 365 Copilot licenses include and what they don’t
+- How to plan with capacity packs, pay-as-you-go, and prepaid plans
 
-🎓 With this knowledge, you're cleared to advance and deploy your agents **efficiently and smartly**
+With this knowledge, you’re ready to manage agent usage cost-effectively and confidently as you scale your solutions.
 
 ---
 

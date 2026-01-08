@@ -20,9 +20,9 @@ This initial deployment establishes the solution that you'll enhance throughout 
 
 In this mission, you'll learn:
 
-- **Scenario Understanding**: Gain comprehensive knowledge of hiring automation challenges and solutions
-- **Solution Deployment**: Successfully import and configure the fundamentals of a hiring management system
-- **Agent Creation**: Build a hiring agent that is the start of the scenario you're going to build as an Agent Academy Operative
+1. About the scenario and gain comprehensive knowledge of hiring automation challenges and solutions
+1. How to successfully import and configure the fundamentals of a hiring management system
+1.How to build a hiring agent that is the start of the scenario you're going to build as an Agent Academy Operative
 
 ---
 
@@ -63,7 +63,7 @@ This scenario is ideal for organizations looking to modernize their recruitment 
 
 ---
 
-## 🧪 Lab: Setup the Hiring Agent
+## 🧪 Lab 1: Setup the Hiring Agent
 
 In this hands-on lab, you'll establish the foundation for your hiring automation system. You'll begin by importing a pre-configured solution that contains all the necessary Dataverse tables and data structure for managing candidates, job positions, and hiring workflows. Next, you'll populate these tables with sample data that will support your learning throughout this module and provide realistic scenarios for testing. Finally, you'll create the Hiring Agent in Copilot Studio, setting up the basic conversational interface that will serve as the cornerstone for all the other features you'll add in future missions.
 

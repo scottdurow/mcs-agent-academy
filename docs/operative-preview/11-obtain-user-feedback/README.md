@@ -8,7 +8,7 @@
 
 ## 🎯 Mission Brief
 
-Welcome back, Agent. In [Mission 10](../04-agent-instructions/README.md), you learned how to build an effective prompt to generate documents.
+Welcome back, Agent. In [Mission 10](../04-agent-instructions/README.md), you learned how to integrate with MCP servers to extend your agent.
 
 Your assignment, should you choose to accept it, is **Operation Echo**, a critical intelligence-gathering mission focused on extracting actionable feedback from your deployed AI agents. In the shadowy world of conversational intelligence, user satisfaction data is more valuable than gold. This mission will teach you two primary methods of intelligence collection:
 

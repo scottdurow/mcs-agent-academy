@@ -115,7 +115,7 @@ Time to upgrade your resume analysis capabilities! You'll enhance the existing S
 
 ### Prerequisites to complete this mission
 
-1. You'll need to **either**:
+1. You'll need to:
 
     - **Have completed [Mission 07](../07-multimodal-prompts/README.md)** and have your resume analysis system ready
     - Have downloaded sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
