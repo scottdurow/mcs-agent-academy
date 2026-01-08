@@ -1,17 +1,13 @@
----
-name: Operative Completion Submission Form
-about: Submit this issue to acknowledge completion of the Copilot Studio Agent Academy
-  Operative path
-title: First Last Name Operative Completion Submission
-labels: operative-completed
-
----
-
+name: 'Operative Completion Submission Form'
+description: "Submit this issue to acknowledge completion of the Copilot Studio Agent Academy Operative path"
+title: "<First Name Last Name> Operative Completion Submission"
+labels:
+  - operative-completed
 body:
   - type: markdown
     attributes:
       value: |
-        ### IMPORTANT: We issues badges from the [Global AI community](https://globalai.community). Please ensure you have [signed up for an account](https://globalai.community/auth/login) to view your badge. After you submit your issue, please submit this [form](https://aka.ms/agent-academy-operative/form) to initiate your badge request.
+        ### IMPORTANT: We issue badges from the [Global AI community](https://globalai.community). Please ensure you have [signed up for an account](https://globalai.community/auth/login) to view your badge. After you submit your issue, please submit this [form](https://aka.ms/agent-academy-operative/form) to initiate your badge request.
 
   - type: checkboxes
     attributes:
@@ -26,16 +22,16 @@ body:
       label: Solution Verification
       description: Please upload the following two screenshots of your final solution into the field below to confirm that you’ve completed the solution. The screenshots required are listed below.
       options:
-        - label: I verify that I have uploaded a screenshot of the Hiring agent test screen showing the working agent with my environment name shown into the field below.
+        - label: I verify that I have uploaded a screenshot of the Agent configuration with my environment name shown into the field below.
           required: true
-        - label: I verify that I have uploaded a screenshot of the final solution file showing all required objects (prompts, flows, etc) with my environment name shown into the field below.
+        - label: I verify that I have uploaded a screenshot of the final solution file with my environment name shown into the field below.
           required: true
 
   - type: textarea
     id: Final_solution
     attributes:
       label: Final Solution Screenshots
-      description: Please upload both screenshots of your final solution here. The two screenshots required are of your agent test screen showing it working with your environment name shown and of the final solution file with your environment name shown.
+      description: Please upload both screenshots of your final solution here. The two screenshots required are of your agent configuration with your environment name shown and of the final solution file with your environment name shown.
     validations:
       required: true
 
