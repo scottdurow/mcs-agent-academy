@@ -1,4 +1,4 @@
-# Mission 10: Arrange an interview prep-meeting with Model Context Protocol servers
+# Mission 10: Integrate with MCP Servers
 
 --8<-- "disclaimer.md"
 
@@ -107,6 +107,50 @@ While Agent 365 offers a comprehensive platform for agent management, governance
 You'll learn how to connect your agent to ready-made tooling servers (like Outlook Calendar and Teams) and enable real actions in Microsoft 365 applications - without building custom integrations. Think of this as learning to use the tools already in the toolbox before building your own.
 
 ## 🧪 Lab 10: Add MCP Servers to arrange an interview prep-meeting
+
+> [!IMPORTANT]
+> For this lab, you need to make sure that you are part of the [Frontier preview program](https://adoption.microsoft.com/copilot/frontier-program/) to get early access to Microsoft Agent 365. Frontier connects you directly with Microsoft’s latest AI innovations. Frontier previews are subject to the existing preview terms of your customer agreements. As these features are still in development, their availability and capabilities may change over time.
+
+### 📋 Your journey so far
+
+Throughout Missions 1-9, you've built a comprehensive hiring automation system. You started by deploying the Hiring Agent and foundational Dataverse infrastructure, then mastered agent instructions to control behavior and communication. You implemented multi-agent orchestration with connected agents and automated workflows with event-driven triggers. Along the way, you personalized agent responses with model selection and formatting, implemented content moderation and AI safety controls, and extracted resume data using multimodal prompts. You enhanced prompts with Dataverse grounding for dynamic data access and generated Word documents with interview prep questions. Now, you'll take your agent's capabilities even further by connecting it to MCP servers.
+
+### Add the Meeting Management MCP Server to the Interview Agent
+
+To add the Meeting Management MCP Server to the Interview Agent you only have to add one tool. This is different to connector tools. You have to add a tool for every connector action with that. The MCP Server makes this a lot easier.
+
+1. Open [Copilot Studio](https://copilotstudio.microsoft.com) and **open** the previously created Interview Agent
+1. Select **Tools** in the top navigation
+
+    ![Tools navigation](./assets/tools.png)
+
+1. Select **Add a tool** to start adding the MCP Server
+
+    ![Add a tool](./assets/add-a-tool.png)
+
+1. Select **Model Context Protocol** in the filters to filter the tools down to only MCP Servers
+
+    ![Filter the tools to only MCP Servers](./assets/filter-mcp.png)
+
+1. Select the **Meeting Management MCP Server** from the tools list
+
+    ![Select the Meeting Management MCP Server from the tools list](./assets/select-meeting-management-mcp.png)
+
+1. Select **Create new connection** from the connection dropdown
+
+    ![Creation dropdown - create a connection](./assets/create-new-connection.png)
+
+1. Select **Create** to start the create a connection process
+
+    ![Create connection process start](./assets/create-connection-create.png)
+
+1. Select **your account** in the pick your account popup to create the connection
+
+1. After picking your account, you will see the following screen. Select **Add and configure** to add the Meeting Management MCP Server tool to the Interview Agent
+
+    ![Add and configure Meeting Management MCP Server](./assets/add-and-configure.png)
+
+1.
 
 ## 🎉 Mission Complete
 
