@@ -18,17 +18,17 @@ By completing the Agent Academy Operative program, you'll be able to:
 - Design and implement **multi-agent systems** for complex business scenarios
 - Master **agent orchestration** and collaboration patterns
 - Implement **AI safety and content moderation** in production systems
-- Build **multi-modal prompts** for document processing and analysis
-- Deploy **enterprise-ready agents** with proper governance and testing
+- Build **multi-modal prompts** for document processing, creation and analysis
+- Configure **governance and testing**
 
 ---
 
 ## 🧪 Prerequisites
 
-To complete all missions, you'll need:
+Before starting this mission, you'll need to:
 
-- Completed **Agent Academy Recruit** training
-- A Microsoft Power Platform environment with **Copilot Studio** license
+- Have completed the **[Agent Academy Recruit](https://microsoft.github.io/agent-academy/recruit/)** training
+- A Microsoft Power Platform environment with **Copilot Studio** license or trial
 - Access to **Microsoft Dataverse**
 - Administrative permissions to create solutions and agents
 

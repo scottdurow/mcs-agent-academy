@@ -5,7 +5,7 @@ hide:
 
 # Operative (Coming soon)
 
-This course is still very top secret. This will be unlocked in the future! 🔓
+This course is still very top secret. This will be unlocked very soon! 🔓
 
 ![Operative](../images/mcs-agent-academy-operative-banner.png)
 
