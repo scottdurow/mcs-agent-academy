@@ -240,7 +240,7 @@ For the built-in interactions to be captured in the Analytics page of the agent,
 We're now going to review the feedback submitted in the **Analytics** page of the agent.
 
 !!! note
-    The submitted reactions and written feedback may take some time to show up in the Analytics page so if you're seeing it immediately, check it occasionally.
+    The submitted reactions and written feedback may take some time to show up in the Analytics page so if you're not seeing it immediately, check it occasionally.
 
 1. Navigate to the **Analytics** tab of the agent and scroll down to the **Satisfaction** section. In the **Reactions** section, select **See details**. This will load the **Reactions** pane where you can view all the thumbs up and thumbs down for the period and the written feedback.
 
@@ -527,7 +527,7 @@ Let's begin!
             - Adds the label `"Feedback: "` at the start.
         1. `Text(Topic.ratingId):`
             - Converts the value of `Topic.ratingId` (the user's rating, e.g., a number from 1 to 5) to text and appends it.
-        1. `", ":`
+        1. `", "`
             - Adds a comma and space for separation.
         1. `"Comment: "`
             - Adds the label "Comment: ".
