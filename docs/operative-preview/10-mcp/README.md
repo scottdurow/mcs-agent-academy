@@ -244,6 +244,22 @@ Now, we know both the MCP servers work. We want to plan an interview prep-meetin
 
     ![Debug](./assets/outlook-calendar-test-debug.png)
 
+    To plan the actual meeting you still have to respond to the agent.
+
+1. Enter the following prompt (replace the time with one of the suggested meeting slots you got from the agent):
+
+    `Please schedule the one on 10:30 AM UTC`
+
+    This will trigger the *createEvent* MCP tool and schedule the meeting.
+
+    ![Schedule meeting](./assets/outlook-calendar-meeting-create-event.png)
+
+    It will show the following meeting request in Jane Doe's mailbox:
+
+    ![Meeting Request](./assets/outlook-calendar-meeting-schedule-meeting-request.png)
+
+Now we're done with this lab. Hopefully this gave you a good overview of how MCP servers can help you in your agents!
+
 ## 🎉 Mission Complete
 
 Great work, Operative! **Operation MCP Rendezvous** is now complete. You've successfully integrated external MCP servers with your Copilot Studio agent, unlocking powerful new capabilities for extending your agent's functionality!
@@ -263,3 +279,7 @@ Great work, Operative! **Operation MCP Rendezvous** is now complete. You've succ
 📖 [Microsoft Agent 365 Overview](https://learn.microsoft.com/microsoft-agent-365/overview)
 
 📖 [Microsoft Agent 365 Tooling Servers Overview](https://learn.microsoft.com/microsoft-agent-365/tooling-servers-overview)
+
+📖 [Microsoft 365 User Profile MCP Server](https://learn.microsoft.com/microsoft-agent-365/mcp-server-reference/me)
+
+📖 [Microsoft Outlook Calendar MCP Server](https://learn.microsoft.com/microsoft-agent-365/mcp-server-reference/calendar)
