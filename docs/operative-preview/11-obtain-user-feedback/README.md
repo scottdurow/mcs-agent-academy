@@ -308,19 +308,19 @@ We're now going to update the **End of Conversation** system topic to redirect t
 
 1. Navigate to the **Topics** tab. Select **System** and select the **End of Conversation** system topic.
 
-       ![Select End of Conversation system topic](assets/11.3.2_01_SelectEndOfConversationTopic.png)
+    ![Select End of Conversation system topic](assets/11.3.2_01_SelectEndOfConversationTopic.png)
 
 1. Scroll down to the **Condition** node that checks the `SurveyResponse` variable. Select the **+ icon** below the node and select **Add node**.
 
-       ![Add node](assets/11.3.2_02_AddNode.png)
+    ![Add node](assets/11.3.2_02_AddNode.png)
 
 1. Select **Variable management** and select **Set a variable value**.
 
-       ![Select Set a variable value node](assets/11.3.2_03_SelectSetAVariableValue.png)
+    ![Select Set a variable value node](assets/11.3.2_03_SelectSetAVariableValue.png)
 
 1. Select **Create a new variable**. This is to declare a variable that will store the user's response to the CSAT question node.
 
-       ![Select create a new variable node](assets/11.3.2_04_SelectCreateANewVariable.png)
+    ![Select create a new variable node](assets/11.3.2_04_SelectCreateANewVariable.png)
 
 1. Select the variable and update the variable name to the following in the **Variable properties** pane.
 
@@ -345,11 +345,11 @@ We're now going to update the **End of Conversation** system topic to redirect t
     Topic.VarCSATRating
     ```
 
-       ![Reference variable in CSAT Question properties](assets/11.3.2_07_CSATQuestionProperties.png)
+    ![Reference variable in CSAT Question properties](assets/11.3.2_07_CSATQuestionProperties.png)
 
 1. Next, we'll add logic to the topic to redirect to the **Capture CSAT dissatisfied feedback** custom topic when the user responds with a 1 star or 2 stars. Select the **+ icon** below the **CSAT Question** node and select **Add a condition**.
 
-       ![Add a Condition node](assets/11.3.2_08_AddAConditionNode.png)
+    ![Add a Condition node](assets/11.3.2_08_AddAConditionNode.png)
 
 1. The **Condition** node is now added to the system topic.
 
@@ -359,11 +359,11 @@ We're now going to update the **End of Conversation** system topic to redirect t
 
     In the **Condition** node select the **greater than** icon to define the variable.
 
-       ![Select a variable](assets/11.3.2_09_SelectAVariable.png)
+    ![Select a variable](assets/11.3.2_09_SelectAVariable.png)
 
 1. Select the **VarCSATRating** variable.
 
-       ![Select VarCSATRating variable](assets/11.3.2_10_SelectVarCSATRating.png)
+    ![Select VarCSATRating variable](assets/11.3.2_10_SelectVarCSATRating.png)
 
 1. For the condition **operator**, select `is greater or equal to`.
 
@@ -379,29 +379,29 @@ We're now going to update the **End of Conversation** system topic to redirect t
     !!! note "The significance of the Value"
         This is the threshold number. The condition will be `true` if VarCSATRating is greater or equal to `3`.
 
-       ![Add integer value](assets/11.3.2_11_AddIntegerValue.png)
+    ![Add integer value](assets/11.3.2_11_AddIntegerValue.png)
 
 1. Now let's complete the logic for when the rating is below `3` (when the user responds with a 1 star or 2 stars). In the **All other conditions** branch, select the **+ icon** to add a new node. Select **Topic management** and then select **Go to another topic >**.
 
-       ![Add new node in Other Conditions path](assets/11.3.2_12_AddNodeInOtherConditionsPath.png)
+    ![Add new node in Other Conditions path](assets/11.3.2_12_AddNodeInOtherConditionsPath.png)
 
 1. Select the **Capture CSAT dissatisfied** custom topic created earlier.
 
-       ![Select Capture CSAT dissatisfied custom topic](assets/11.3.2_13_SelectCaptureCSATDissatisfiedFeedbackTopic.png)
+    ![Select Capture CSAT dissatisfied custom topic](assets/11.3.2_13_SelectCaptureCSATDissatisfiedFeedbackTopic.png)
 
 1. The topic will now be added to the branch. The **End of Conversation** topic will now explicitly call the **Capture CSAT dissatisfied** custom topic when the user responds to the CSAT question with a 1 star or 2 stars rating.
 
-       ![Redirect to Capture CSAT dissatisfied custom topic](assets/11.3.2_14_RedirectNodeAdded.png)
+    ![Redirect to Capture CSAT dissatisfied custom topic](assets/11.3.2_14_RedirectNodeAdded.png)
 
 1. **Save** the topic.
 
 1. Let's now test the agent by selecting the **new test session** icon and enter a question. Any question will do, the purpose of this test is to submit a CSAT response to collect feedback for the rating below 3 stars.
 
-       ![New test session and ask question](assets/11.3.2_15_NewTestAndAskQuestion.png)
+    ![New test session and ask question](assets/11.3.2_15_NewTestAndAskQuestion.png)
 
 1. The agent will return a response.
 
-       ![Agent response](assets/11.3.2_16_AgentResponse.png)
+    ![Agent response](assets/11.3.2_16_AgentResponse.png)
 
 1. To trigger the system topic of **End of Conversation**, enter the following
 
@@ -409,23 +409,23 @@ We're now going to update the **End of Conversation** system topic to redirect t
     end conversation
     ```
 
-       ![Trigger end of conversation system topic](assets/11.3.2_17_EndConversation.png)
+    ![Trigger end of conversation system topic](assets/11.3.2_17_EndConversation.png)
 
 1. The **End of Conversation** topic will now be triggered as we see the text (question) from the **Ask a question node** of the topic. Select **Yes** to the question asked about ending the conversation.
 
-       ![Yes end conversation](assets/11.3.2_18_YesEndConversation.png)
+    ![Yes end conversation](assets/11.3.2_18_YesEndConversation.png)
 
 1. Next, we'll see the next question from the system topic about whether our question has been answered. Select **Yes**.
 
-       ![Yes the question has been answered](assets/11.3.2_19_YesToAnsweringQuestion.png)
+    ![Yes the question has been answered](assets/11.3.2_19_YesToAnsweringQuestion.png)
 
 1. We will now see the CSAT question. Select 1 star or 2 stars as the rating.
 
-       ![CSAT rating](assets/11.3.2_20_CSATSurvey.png)
+    ![CSAT rating](assets/11.3.2_20_CSATSurvey.png)
 
 1. Since the CSAT rating submitted is below 3, we'll now see that the **End of Conversation** topic has redirected to the **Capture CSAT dissatisfied feedback** custom topic. Select either of the options.
 
-       ![Redirect to Capture CSAT dissatisfied custom topic](assets/11.3.2_21_RedirectToTopicForCustomFeedback.png)
+    ![Redirect to Capture CSAT dissatisfied custom topic](assets/11.3.2_21_RedirectToTopicForCustomFeedback.png)
 
 1. Select **Add comment** or the **^ caret** icon to add written feedback. The following are sample feedback comments for each of the selected reasons.
 
@@ -455,15 +455,15 @@ We're now going to update the **End of Conversation** system topic to redirect t
 
     Next, select **Submit**.
 
-       ![Written feedback and submit](assets/11.3.2_22_WrittenFeedbackAndSubmit.png)
+    ![Written feedback and submit](assets/11.3.2_22_WrittenFeedbackAndSubmit.png)
 
 1. The agent will resume the **End of Conversation** topic since the activity of the **Capture CSAT dissatisfied** topic has been completed. It proceeds with the question of asking the user if it can be of further assistance. Select **No**.
 
-       ![Resumes End of Conversation system topic](assets/11.3.2_23_ResumesEndOfConversationTopic.png)
+    ![Resumes End of Conversation system topic](assets/11.3.2_23_ResumesEndOfConversationTopic.png)
 
 1. The last node sends a final message and the **End of Conversation** topic has been completed.
 
-       ![End of Conversation system topic completed](assets/11.3.2_24_EndOfConversationTopicCompleted.png)
+    ![End of Conversation system topic completed](assets/11.3.2_24_EndOfConversationTopicCompleted.png)
 
 Great work! 🙌🏻 You've added a custom topic with an adaptive card that handles written feedback to CSAT ratings below `3`. Let's take this further by logging this as an event in **Azure Application Insights** next.
 
@@ -482,11 +482,11 @@ Let's begin!
 
     Select **Advanced** and select **Log a custom telemetry event**.
 
-       ![Add Log a Custom Telemetry Event node](assets/11.4_01_AddLogACustomTelemetryEvent.png)
+    ![Add Log a Custom Telemetry Event node](assets/11.4_01_AddLogACustomTelemetryEvent.png)
 
 1. Select the **... ellipsis** and select **Properties**.
 
-       ![Select properties](assets/11.4_02_SelecProperties.png)
+    ![Select properties](assets/11.4_02_SelecProperties.png)
 
 1. We'll now define the Event name as the following,
 
@@ -545,27 +545,27 @@ Let's begin!
         
         - This formula is used to log or display both the numeric feedback and any written comment in a clear, combined format, handling cases where the comment might be missing.
 
-       ![Enter formula](assets/11.4_04_EnterFormula.png)
+    ![Enter formula](assets/11.4_04_EnterFormula.png)
 
 1. **Save** the topic.
 
 1. Next, we'll link the agent to the Application Insights resource. Select **Settings**.
 
-       ![Agent settings](assets/11.4_05_AgentSettings.png)
+    ![Agent settings](assets/11.4_05_AgentSettings.png)
 
 1. Select **Advanced** and select **Application Insights**.
 
-       ![Application Insights settings](assets/11.4_06_ApplicationInsightSettings.png)
+    ![Application Insights settings](assets/11.4_06_ApplicationInsightSettings.png)
 
 1. Open your Application Insights resource in a new browser and under **Overview**, in the **Connection string** field select the copy icon. This will copy the value of the connection string.
 
-       ![Copy Connection string value](assets/11.4_07_CopyConnectionStringValue.png)
+    ![Copy Connection string value](assets/11.4_07_CopyConnectionStringValue.png)
 
 1. Navigate back to Copilot Studio and paste the copied connection string value into the **Connection string** field.
 
     **Save** the updated settings.
 
-       ![Paste connection string and save.](assets/11.4_08_PasteConnectionStringAndSave.png)
+    ![Paste connection string and save.](assets/11.4_08_PasteConnectionStringAndSave.png)
 
 1. We can now test the telemetry event is logged into Application Insights when the CSAT rating is 1 star or 2 stars. We'll repeat the same steps earlier by asking the agent a question and after the agent has responded, enter the following to trigger the **End of conversation** topic.
 
@@ -573,19 +573,19 @@ Let's begin!
     end conversation
     ```
 
-       ![Trigger end of conversation system topic](assets/11.3.2_17_EndConversation.png)
+    ![Trigger end of conversation system topic](assets/11.3.2_17_EndConversation.png)
 
 1. Select **Yes** to the question asked about ending the conversation.
 
-       ![Yes end conversation](assets/11.3.2_18_YesEndConversation.png)
+    ![Yes end conversation](assets/11.3.2_18_YesEndConversation.png)
 
 1. Next, we'll see the next question from the system topic about whether our question has been answered. Select **Yes**.
 
-       ![Yes the question has been answered](assets/11.3.2_19_YesToAnsweringQuestion.png)
+    ![Yes the question has been answered](assets/11.3.2_19_YesToAnsweringQuestion.png)
 
 1. We will now see the CSAT question. Select 1 star or 2 stars as the rating.
 
-       ![CSAT rating](assets/11.3.2_20_CSATSurvey.png)
+    ![CSAT rating](assets/11.3.2_20_CSATSurvey.png)
 
 1. The **End of Conversation** topic has redirected to the **Capture CSAT dissatisfied feedback** custom topic.
 
@@ -593,25 +593,25 @@ Let's begin!
 
     Next, select **Submit**.
 
-       ![Written feedback and submit](assets/11.4_14_SubmitFeedback.png)
+    ![Written feedback and submit](assets/11.4_14_SubmitFeedback.png)
 
 1. The agent will resume the **End of Conversation** topic since the activity of the **Capture CSAT dissatisfied** topic has been completed. It proceeds with the question of asking the user if it can be of further assistance. Select **No**.
 
-       ![Resumes End of Conversation system topic](assets/11.3.2_23_ResumesEndOfConversationTopic.png)
+    ![Resumes End of Conversation system topic](assets/11.3.2_23_ResumesEndOfConversationTopic.png)
 
 1. The last node sends a final message and the **End of Conversation** topic has been completed.
 
-       ![End of Conversation system topic completed](assets/11.3.2_24_EndOfConversationTopicCompleted.png)
+    ![End of Conversation system topic completed](assets/11.3.2_24_EndOfConversationTopicCompleted.png)
 
 1. Let's now check out the custom event logged in Application Insights!
 
     Navigate back to your browser that has your Application Insights resource and select **Events** on the left hand-side menu. Select `Any Custom Event` in the **Who used** dropdown field and in the **Events** dropdown field select our event, **CSAT Dissatisfied**, which we created in Copilot Studio earlier. This will only show custom events with the event name of **CSAT Dissatisfied**.
 
-       ![Application Insights Events](assets/11.4_17_Events.png)
+    ![Application Insights Events](assets/11.4_17_Events.png)
 
 1. Scroll down and select **View More Insights**.
 
-       ![View more insights](assets/11.4_18_ViewMoreInsights.png)
+    ![View more insights](assets/11.4_18_ViewMoreInsights.png)
 
 1. This is where you can see more information about the custom event logged by the agent.
 
@@ -621,7 +621,7 @@ Let's begin!
 
     Scroll down to the **Event Statistics** section and select **CSAT Dissatisfied**.
 
-       ![View Event Insights](assets/11.4_19_ViewEventInsights.png)
+    ![View Event Insights](assets/11.4_19_ViewEventInsights.png)
 
 1. We're now viewing **end-to-end transaction details** which provides a deep dive into telemetry for the event. It shows that 1 Event is logged in the Traces & events tab.
 
@@ -630,29 +630,29 @@ Let's begin!
         - the `SerializedData` property stores the actual feedback message, which includes technical issues and user comments.
         - other properties like `DesignMode`, `channelId`, and `conversationId` provide context about where and how the event occurred.
 
-       ![Custom event information](assets/11.4_20_CustomEventInformation.png)
+    ![Custom event information](assets/11.4_20_CustomEventInformation.png)
 
 1. Now let's learn about another way to query events logged in Application Insights. Over time, you could have a large data set of events logged in Application Insights from different services. To query events, we can perform a Kusto query (a query language) on app insights data.
 
     On the left hand-side menu, select **Logs** and the **Queries hub** dialog automatically loads. Exit by selecting the **X icon**.
 
-       ![Exit from the Queries hub dialog](assets/11.4_21_QueryLogs.png)
+    ![Exit from the Queries hub dialog](assets/11.4_21_QueryLogs.png)
 
 1. By default, you'll see a list of Queries executed previously. To query data, select **Select a table**.
 
-       ![Select a table to query](assets/11.4_22_SelectATable.png)
+    ![Select a table to query](assets/11.4_22_SelectATable.png)
 
 1. Select the `customEvents` table and select **Run**. This will now run a query on the `customEvents` table.
 
-       ![Run customEvents query](assets/11.4_23_RunCustomEvents.png)
+    ![Run customEvents query](assets/11.4_23_RunCustomEvents.png)
 
 1. The results of the query will be displayed. By default it will display events from the last *24 hours* and show only *1000 results*.
 
-       ![customEvents results](assets/11.4_24_customEventsResults.png)
+    ![customEvents results](assets/11.4_24_customEventsResults.png)
 
 1. The view that is currently displayed is **Simple mode**. Let's change it to **KQL mode** so that we can apply a Kusto query.
 
-       ![Select KQL mode](assets/11.4_25_SelectKQLmode.png)
+    ![Select KQL mode](assets/11.4_25_SelectKQLmode.png)
 
 1. For our Kusto query, enter the following
 
@@ -679,15 +679,15 @@ Let's begin!
         
         This query retrieves all custom telemetry events named "CSAT Dissatisfied" and extracts the serialized feedback data for further analysis. It’s useful for reviewing negative feedback submitted by users.
 
-       ![Kusto query](assets/11.4_26_KustoQuery.png)
+    ![Kusto query](assets/11.4_26_KustoQuery.png)
 
 1. The results of the query will be displayed. Expand one of the results.
 
-       ![Query results](assets/11.4_27_Results.png)
+    ![Query results](assets/11.4_27_Results.png)
 
 1. Scroll down and you'll see the new FeedbackData column defined in the Kusto query.
 
-       ![FeedbackData column](assets/11.4_28_ExtendSerializedData.png)
+    ![FeedbackData column](assets/11.4_28_ExtendSerializedData.png)
 
 ## ✅ Mission Complete
 

@@ -987,7 +987,7 @@ This enables the **Hiring Agent** to work autonomously whenever resumes are rece
 
 This is the end of **Lab 04 - Automating candidate application emails**, select the link below to move to the next lesson.
 
-⏭️ [Move to **Agent Responses** lesson](../05-agent-responses/README.md)
+⏭️ [Move to **Understanding Agent Models** lesson](../05-model-selection/README.md)
 
 ## 📚 Tactical Resources
 

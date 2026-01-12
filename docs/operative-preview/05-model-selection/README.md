@@ -1,4 +1,4 @@
-# Personalizing Agent Responses
+# Understanding Agent Models
 
 --8<-- "disclaimer.md"
 
@@ -8,11 +8,13 @@
 
 ## 🎯 Mission Brief
 
-Welcome back, Agent. In [Mission 02](../02-agent-instructions/README.md), you learned about the importance of instructions when creating agents. But even the most well-instructed agent can feel robotic without the right personality and response formatting.
+Welcome back, Agent. In [Mission 02](../02-agent-instructions/README.md),you learned how strong instructions shape agent behavior.
 
-Your assignment, should you choose to accept it, is **Operation Archetype** - transforming your agent from a functional tool into a compelling digital personality. You'll master the art of selecting the optimal AI model and crafting response formats that resonate with users on a human level.
+Now it’s time to choose the brain.
 
-Your agent transforms to a sophisticated conversational partner that understands context, adapts its communication style, and delivers information in ways that truly connect with users. You'll learn to choose between models, then shape every interaction to reflect your agent's unique voice and purpose.
+In **Operation Archetype**, you’ll learn how to select the right AI model for your agent and how to test model changes to see the impact on response quality, structure, and depth. Different models can respond faster or slower, be more concise or more detailed, and handle complex reasoning differently.
+
+By the end of this mission, you’ll be able to confidently choose a model based on your scenario and validate that choice by comparing results.
 
 ## 🔎 Objectives
 
@@ -20,8 +22,8 @@ In this mission, you'll learn:
 
 1. How to understand and select the optimal AI model for your agent's use case
 1. How to compare different model capabilities and performance characteristics
-1. How to configure response formatting to enhance readability and user experience
-1. How to implement consistent styling and structure for agent responses
+1. How to switch your agent’s model
+1. How to test and evaluate differences in output when you change models
 
 ## 🤔 What is the Agent Model?
 
@@ -75,11 +77,10 @@ AI capabilities evolve rapidly, and Copilot Studio keeps up by offering a range 
 | **GPT‑5.1 Chat** | General | Experimental | Latest experimental conversational model with broad task proficiency; improves on context awareness and responsiveness. | General-purpose Q&A and dialogue tasks leveraging the newest model’s capabilities; versatile chatbot scenarios where enhanced performance is beneficial. |
 | **GPT‑5.1 Reasoning** | Deep | Experimental | Experimental top-tier reasoning model offering maximum depth and accuracy for complex tasks. | Ultra-complex analytical queries or decision support requiring the highest precision (e.g. intricate strategic planning, high-stakes data analysis). |
 
-!!! warning
-
-    - Experimental/preview models (like GPT-5 Chat) are accessible for testing new capabilities before they’re production-ready. They may have limited testing and higher variability in performance.
-
-    - They are not recommended for production use because of possible instability (variable quality, latency, or even time-outs). Always review any _Preview_ model’s limitations and consider using them only in non-critical environments. Use them in _Sandbox_ or _Developer_ environments. If you do publish an agent with an experimental model, usage will still be billed at that model’s established rate.
+> ⚠️ **Warning**
+>
+> - Experimental/preview models (like GPT-5 Chat) are accessible for testing new capabilities before they’re production-ready. They may have limited testing and higher variability in performance.
+> - They are not recommended for production use because of possible instability (variable quality, latency, or even time-outs). Always review any _Preview_ model’s limitations and consider using them only in non-critical environments. Use them in _Sandbox_ or _Developer_ environments. If you do publish an agent with an experimental model, usage will still be billed at that model’s established rate.
 
 #### Anthropic models (external)
 
@@ -97,11 +98,10 @@ Both are available in Microsoft Copilot Studio as opt-in preview (Frontier Progr
 | **Claude Sonnet 4.5** | Experimental | Excels at code-related tasks and complex “agent” workflows; strong at tool use and step-by-step reasoning. | Advanced software development assistance (code generation & debugging); building multi-step autonomous agents; tasks requiring integration with external tools or systems. |
 | **Claude Opus 4.1** | Experimental | Specialized for intensive analysis and structured problem-solving. | In-depth data analysis and research projects; complex reasoning scenarios (e.g. compliance auditing, elaborate planning) where thoroughness is paramount. |
 
-!!! warning
-
-    - It's important to note that these are external models. Anthropic models are hosted outside Microsoft and are subject to Anthropic terms and data handling, which need to be reviewed and accepted before makers can use them. These models are available before an official release so that you can get early access and [provide feedback](https://community.powerplatform.com/forums/thread/?groupid=db8f53c2-767d-47d6-a1ae-fe4c828a6553). Therefore, it is not recommended to use these models for Production purposes.
-
-    - Please note that you could also experience slowdowns or timeouts due to limited capacity and availability, and these models might not be supported in the future. Admins can control access to this feature (more of this soon as you progress from here!).
+> ⚠️ **Warning**
+>
+> - It's important to note that these are external models. Anthropic models are hosted outside Microsoft and are subject to Anthropic terms and data handling, which need to be reviewed and accepted before makers can use them. These models are available before an official release so that you can get early access and [provide feedback](https://community.powerplatform.com/forums/thread/?groupid=db8f53c2-767d-47d6-a1ae-fe4c828a6553). Therefore, it is not recommended to use these models for Production purposes.
+> - Please note that you could also experience slowdowns or timeouts due to limited capacity and availability, and these models might not be supported in the future. Admins can control access to this feature (more of this soon as you progress from here!).
 
 #### 🔢 Context length and data training
 
@@ -272,11 +272,14 @@ Now that we know what we _can_ do, let’s talk about what we _should_ do to mak
 
 In summary, use formatting to enhance clarity, not distract. The user should be able to glance at the agent’s answer and grasp the needed information quickly. As a developer, utilize the **Response Formatting** in the **Generative AI** tab under the **Settings** of your agent to ensure the output is polished. Always test a variety of questions to see how the formatting holds up, and adjust your instructions as needed.
 
-## 🧪 Lab 05 - Model selection and response formatting for the Interview Agent
+## 🧪 Lab 05 - Model selection for the Interview Agent
 
-We're next going to change the model of the Hiring agent and add instructions for the agent's response formatting.
+In this lab, you’ll compare responses from two different models by asking the same questions and observing differences in:
 
-### Lab 5.1 Change the model of the Interview Agent
+     - Depth
+     - Structure
+     - Tone
+     - Specificity
 
 Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat experimental model.
 
@@ -349,20 +352,13 @@ Let's compare the responses of the GPT-4.1 default model with the GPT 5.1 Chat e
 
        ![Question 2 response](assets/5.1_10_02_Question2Response.png)
 
-### Lab 5.2 Adding instructions for response formatting
-
-Coming soon
-
 ## ✅ Mission Complete
 
 Congratulations! 👏🏻 Excellent work, Operative.
 
-✅ Change model: you learned the differences of the outputs of the selected model of the **Interview Agent**.
-✅ Response formatting: you added instructions to enhance the response format of the **Interview Agent**.
+You learned about the differences in the available models and how it affects your agent output. This enables the **Interview Agent** to be equipped in answering questions and inquiries using the power of the selected model.
 
-This enables the **Interview Agent** to be equipped in answering questions and inquiries using the power of the selected model and elegantly follow the same response format each time.
-
-This is the end of **Lab 05 - Model selection and response formatting for the Interview Agent**, select the link below to move to the next lesson.
+This is the end of **Lab 05 - Understanding Agent Models**, select the link below to move to the next lesson.
 
 ⏭️ [Move to **AI Safety and Content Moderation** lesson](../06-ai-safety/README.md)
 
