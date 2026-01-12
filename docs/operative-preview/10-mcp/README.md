@@ -120,6 +120,7 @@ Throughout Missions 1-9, you've built a comprehensive hiring automation system. 
 > [!WARNING]
 > In this lab, you will learn how to add two MCP servers: the *Microsoft 365 User Profile MCP server* and the *Microsoft Outlook Calendar MCP*. In this lab, you will need to have the following added:
 >
+> - Have a manager configured for your user
 > - Have an appointment on your calendar in the upcoming 24 hours - this is because you will test the MCP server by asking "Get my meetings for today"
 > - Have an extra user created on your tenant, so that you can invite that user for the interview prep-meeting
 > - For that extra user, the mailbox needs to be provisioned and it would be good to set the working days / hours
@@ -157,7 +158,7 @@ To add MCP servers to your agent you only have to add one tool per MCP server. T
 
 1. After picking your account, you will see the following screen. Select **Add and configure** to add the Microsoft 365 User Profile MCP server to the Interview Agent
 
-    ![Add and configure Meeting Management MCP Server](./assets/add-and-configure.png)
+    ![Add and configure User Profile MCP server](./assets/add-and-configure.png)
 
 1. If you scroll down on the tool overview page, you can find the MCP tools that are part of the MCP server:
 
