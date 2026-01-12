@@ -54,7 +54,7 @@ Agent 365 addresses the needs of everyone involved in the agent ecosystem:
 
 ### 🔧 Agent 365 tooling servers for MCP integration
 
-Agent 365 provides **enterprise-grade MCP servers** that give your agents safe, governed access to business systems:
+Agent 365 provides **enterprise-grade MCP servers** that give your agents safe, governed access to business systems, including:
 
 **Pre-built MCP servers** for Microsoft 365 and business applications:
 
@@ -111,21 +111,17 @@ You'll learn how to connect your agent to ready-made tooling servers (like Outlo
 > [!IMPORTANT]
 > For this lab, you need to make sure that you are part of the [Frontier preview program](https://adoption.microsoft.com/copilot/frontier-program/) to get early access to Microsoft Agent 365. Frontier connects you directly with Microsoft’s latest AI innovations. Frontier previews are subject to the existing preview terms of your customer agreements. As these features are still in development, their availability and capabilities may change over time.
 
-### 📋 Your journey so far
-
-Throughout Missions 1-9, you've built a comprehensive hiring automation system. You started by deploying the Hiring Agent and foundational Dataverse infrastructure, then mastered agent instructions to control behavior and communication. You implemented multi-agent orchestration with connected agents and automated workflows with event-driven triggers. Along the way, you personalized agent responses with model selection and formatting, implemented content moderation and AI safety controls, and extracted resume data using multimodal prompts. You enhanced prompts with Dataverse grounding for dynamic data access and generated Word documents with interview prep questions. Now, you'll take your agent's capabilities even further by connecting it to MCP servers.
-
 ### Add MCP servers to the Interview Agent
 
 > [!WARNING]
-> In this lab, you will learn how to add two MCP servers: the *Microsoft 365 User Profile MCP server* and the *Microsoft Outlook Calendar MCP*. In this lab, you will need to have the following added:
+> In this lab, you will learn how to add two MCP servers: the *Microsoft 365 User Profile MCP server* and the *Microsoft Outlook Calendar MCP*. For the lab to work, you will need to configure the following in your tenant ahead of time:
 >
-> - Have a manager configured for your user
+> - Have a manager configured for your user which can be configured in the M365 Admin Center
 > - Have an appointment on your calendar in the upcoming 24 hours - this is because you will test the MCP server by asking "Get my meetings for today"
 > - Have an extra user created on your tenant, so that you can invite that user for the interview prep-meeting ([How to create a user in M365](#-tactical-resources))
 > - For that extra user, the mailbox needs to be provisioned and it would be good to set the working days / hours
 
-To add MCP servers to your agent you only have to add one tool per MCP server. This is different to connector tools. You have to add a tool for every connector action with that. The MCP Server makes this a lot easier.
+To add MCP servers to your agent you only have to add one tool per MCP server. This is different to connector tools which require you to add a tool for every connector action. This ability to add a single tool that handles multiple actions is one of the things that makes MCP Servers a lot easier to work with.
 
 #### Add the Microsoft 365 User Profile MCP server
 
