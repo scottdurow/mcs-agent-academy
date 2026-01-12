@@ -693,14 +693,40 @@ Let's begin!
 
 Congratulations! 👏🏻 Excellent work, Operative.
 
+In this final mission, you’ve learned how to close the feedback loop for your agents:
+
 ✅ Built-in feedback: you learned how to provide user feedback and where to review the feedback analytics..
 ✅ Adaptive cards (custom): you learned how to collect feedback using an adaptive card and log telemetry to Azure Application Insights.
 
-Feedback is paramount to iterative improvements to your agents!
+Feedback is paramount to iterative improvements to your agents! It's not optional. It's how good agents become great ones.
 
-This is the end of **Lab 11 - Provide feedback using built-in interactions vs adaptive cards (custom)**, select the link below to move to the next lesson.
+## 🎯 What’s Next
 
-⏭️ [Move to **Publishing Your Agents to a Demo Website for Stakeholder Testing** lesson](../12-demo-website/README.md)
+You now have everything you need to take your agent **from prototype to production**.
+
+We won’t walk you through publishing again here as you already mastered that skill in the **Recruit** course. The same steps apply:
+
+- Publish your agent to **Microsoft Teams**
+- Share it with real users
+- Start collecting feedback
+- Iterate
+
+If you need a refresher, revisit the [Recruit publishing module](https://microsoft.github.io/agent-academy/recruit/11-publish-your-agent/) then come right back and finish strong.
+
+> [!IMPORTANT]
+> If you are using a trial license to complete the course, you will not be able to publish.Publishing is not required to get a badge for this lab.
+
+## 🏁 Final Step: Deploy & Earn Your Badge
+
+🚀 **Publish your agent**  
+📊 **Verify feedback is flowing**  
+🏅 **Claim your Operative badge**
+
+You’ve completed Agent Academy: Operative and know how to build a real-world multi-agent system.
+
+The field is yours.
+
+👉 **[Claim your Operative badge](//docs/operative-preview/course-completion-badges-operative/README.md)**  
 
 ## 📚 Tactical Resources
 

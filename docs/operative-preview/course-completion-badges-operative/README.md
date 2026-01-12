@@ -1,4 +1,4 @@
-# 🚨 Final Mission: Securing Your Recruit Badge
+# 🚨 Final Mission: Securing Your Operative Badge
 
 ## 🕵️‍♂️ CODENAME: `OPERATION COURSE COMPLETION`
 
@@ -6,9 +6,9 @@
 
 ## 🎯 Mission Brief
 
-Welcome, Recruit. You've completed your training—now it's time to claim your badge and mark your achievement! Congratulations!  
+Welcome, Operative You've completed your training—now it's time to claim your badge and mark your achievement! Congratulations!  
 
-Let’s make your accomplishment official and get your Recruit badge.
+Let’s make your accomplishment official and get your Operative badge.
 
 ## 🔎 Objectives
 
@@ -18,9 +18,9 @@ Let’s make your accomplishment official and get your Recruit badge.
 1. What to expect after you submit your badge request
 1. Where to connect with Power Platform Advocates
 
-## 🏅 Secure Your Recruit Badge
+## 🏅 Secure Your Operative Badge
 
-Every Agent Academy path—Recruit, Operative, Commander, and beyond—includes a badge to recognize your accomplishment. To ensure your badge is issued correctly, follow the submission protocol below.
+Every Agent Academy path includes a badge to recognize your accomplishment. To ensure your badge is issued correctly, follow the submission protocol below.
 
 ### Submission Protocol
 
@@ -29,15 +29,15 @@ To initiate badge deployment, complete the following steps:
 1. ⭐ **Star the Agent Academy GitHub Repo**  
    [Agent Academy GitHub Repo](https://github.com/microsoft/agent-academy)
 
-1. 📤 **Submit the Recruit Completion Form**  
-   [Recruit Completion Form](https://aka.ms/agent-academy-recruit/badge)  
+1. 📤 **Submit the Operative Completion Form**  
+   [Recruit Completion Form](https://aka.ms/agent-academy-operative/badge)  
    **Include:**
       * 📸 Screenshot of your solution file in your environment (with environment name + file owner name visible)
       * 📸 Screenshot of the Agent Test screen (with environment name visible)
       * 📝 All required fields completed
 
 1. 🧾 **Complete the Badge Validation Form**  
-   [Badge Validation Form](https://aka.ms/agent-academy-recruit/form)
+   [Badge Validation Form](https://aka.ms/agent-academy-operative/form)
 
 1. 🔐 **Create and Log In to Your Global AI Community Account**  
    [Global AI Community Account Log In](https://globalai.community/auth/login)
@@ -46,7 +46,7 @@ To initiate badge deployment, complete the following steps:
 
 ## ⏳ Badge Deployment Timeline
 
-Badges are typically issued **within 7–10 business days** of submitting your completion form.
+Badges are typically issued **within 10–14 business days** of submitting your completion form.
 
 | Status           | Action                                    |
 |------------------|-------------------------------------------|
@@ -61,7 +61,7 @@ Badges are typically issued **within 7–10 business days** of submitting your c
 ## 🧠 Mission Intel
 
 Your feedback helps us improve the Academy experience—every submission is reviewed personally 💖  
-Future paths (Operative, Commander, and side-quests) will also include badge rewards.
+Future paths (Commander, and side-quests) will also include badge rewards.
 
 ---
 
@@ -78,4 +78,4 @@ Learn more about Power Platform Advocacy:
 * ⚡ [Power Platform Advocacy Hub](https://aka.ms/power-advocates)
 
 <!-- markdownlint-disable-next-line MD033 -->
-<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/recruit/final-mission" alt="Analytics" />
+<img src="https://m365-visitor-stats.azurewebsites.net/agent-academy/operative/final-mission" alt="Analytics" />
