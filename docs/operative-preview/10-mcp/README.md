@@ -122,7 +122,7 @@ Throughout Missions 1-9, you've built a comprehensive hiring automation system. 
 >
 > - Have a manager configured for your user
 > - Have an appointment on your calendar in the upcoming 24 hours - this is because you will test the MCP server by asking "Get my meetings for today"
-> - Have an extra user created on your tenant, so that you can invite that user for the interview prep-meeting
+> - Have an extra user created on your tenant, so that you can invite that user for the interview prep-meeting ([How to create a user in M365](#-tactical-resources))
 > - For that extra user, the mailbox needs to be provisioned and it would be good to set the working days / hours
 
 To add MCP servers to your agent you only have to add one tool per MCP server. This is different to connector tools. You have to add a tool for every connector action with that. The MCP Server makes this a lot easier.
@@ -284,3 +284,5 @@ Great work, Operative! **Operation MCP Rendezvous** is now complete. You've succ
 📖 [Microsoft 365 User Profile MCP Server](https://learn.microsoft.com/microsoft-agent-365/mcp-server-reference/me)
 
 📖 [Microsoft Outlook Calendar MCP Server](https://learn.microsoft.com/microsoft-agent-365/mcp-server-reference/calendar)
+
+📖 [Add users and assign licenses](https://learn.microsoft.com/microsoft-365/admin/add-users/add-users?view=o365-worldwide)
