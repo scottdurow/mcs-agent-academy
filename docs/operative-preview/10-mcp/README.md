@@ -115,9 +115,18 @@ You'll learn how to connect your agent to ready-made tooling servers (like Outlo
 
 Throughout Missions 1-9, you've built a comprehensive hiring automation system. You started by deploying the Hiring Agent and foundational Dataverse infrastructure, then mastered agent instructions to control behavior and communication. You implemented multi-agent orchestration with connected agents and automated workflows with event-driven triggers. Along the way, you personalized agent responses with model selection and formatting, implemented content moderation and AI safety controls, and extracted resume data using multimodal prompts. You enhanced prompts with Dataverse grounding for dynamic data access and generated Word documents with interview prep questions. Now, you'll take your agent's capabilities even further by connecting it to MCP servers.
 
-### Add the Meeting Management MCP Server to the Interview Agent
+### Add MCP servers to the Interview Agent
 
-To add the Meeting Management MCP Server to the Interview Agent you only have to add one tool. This is different to connector tools. You have to add a tool for every connector action with that. The MCP Server makes this a lot easier.
+> [!WARNING]
+> In this lab, you will learn how to add two MCP servers: the *Microsoft 365 User Profile MCP server* and the *Microsoft Outlook Calendar MCP*. In this lab, you will need to have the following added:
+>
+> - Have an appointment on your calendar in the upcoming 24 hours - this is because you will test the MCP server by asking "Get my meetings for today"
+> - Have an extra user created on your tenant, so that you can invite that user for the interview prep-meeting
+> - For that extra user, the mailbox needs to be provisioned and it would be good to set the working days / hours
+
+To add MCP servers to your agent you only have to add one tool per MCP server. This is different to connector tools. You have to add a tool for every connector action with that. The MCP Server makes this a lot easier.
+
+#### Add the Microsoft 365 User Profile MCP server
 
 1. Open [Copilot Studio](https://copilotstudio.microsoft.com) and **open** the previously created Interview Agent
 1. Select **Tools** in the top navigation
@@ -132,9 +141,9 @@ To add the Meeting Management MCP Server to the Interview Agent you only have to
 
     ![Filter the tools to only MCP Servers](./assets/filter-mcp.png)
 
-1. Select the **Meeting Management MCP Server** from the tools list
+1. Select the **Microsoft 365 User Profile MCP server** from the tools list
 
-    ![Select the Meeting Management MCP Server from the tools list](./assets/select-meeting-management-mcp.png)
+    ![Select the User Profile MCP Server from the tools list](./assets/select-user-profile-mcp.png)
 
 1. Select **Create new connection** from the connection dropdown
 
@@ -146,11 +155,94 @@ To add the Meeting Management MCP Server to the Interview Agent you only have to
 
 1. Select **your account** in the pick your account popup to create the connection
 
-1. After picking your account, you will see the following screen. Select **Add and configure** to add the Meeting Management MCP Server tool to the Interview Agent
+1. After picking your account, you will see the following screen. Select **Add and configure** to add the Microsoft 365 User Profile MCP server to the Interview Agent
 
     ![Add and configure Meeting Management MCP Server](./assets/add-and-configure.png)
 
-1.
+1. If you scroll down on the tool overview page, you can find the MCP tools that are part of the MCP server:
+
+    ![Tools overview](./assets/user-profile-mcp-tools.png)
+
+1. Next, select **Test** to test out the newly added tool
+1. Send the following prompt to the agent in the test pane:
+
+    `Who is my manager?`
+
+1. Select **Allow** to consent that you are OK with the MCP server using your data. This consent card will only show once for the agent and this MCP server combination, after you have allowed it for this agent it will not prompt again (unless you add another MCP server that uses the same connector).
+
+    ![Consent card](./assets/user-profile-manager-test-allow.png)
+
+    Next, you will see the response from the agent. If all goes well, you will see something like this:
+
+    ![Who is my manager test](./assets/user-profile-manager-test.png)
+
+    If you look on the left of the *Test your agent* pane, you will see that the agent initialized the MCP server, and it triggered the *getMyManager* MCP tool. You can also see the details of what the agent sent and received from the MCP tool.
+
+    ![Debug MCP tool](./assets/user-profile-manager-test-debug.png)
+
+The first part of the lab is done, you can now ask questions about users on your tenant. This enables you to ask questions like:
+
+    - Who is my manager?
+    - Who are my direct reports?
+    - What is the job role of Daniel Laskewitz?
+    - And much much more...
+
+You can now try out other tools if you want to as well. If you're ready, lets get the other MCP server added too.
+
+#### Add the Microsoft Outlook Calendar MCP server
+
+In the last section, you have added the User Profile MCP server, which makes it possible for you to work with user details on your tenant. This is very helpful when you want to for instance plan meetings, because users of your agent usually don't send a prompt that includes an email / user principal name when they want to plan a meeting. Instead, they will send a prompt like the following:
+
+    `meeting with Daniel Laskewitz tomorrow`
+
+To add capabilities like this, we need to add another MCP server: the Microsoft Outlook Calendar MCP server. Bear with us: the following steps are a lot like the previous section.
+
+1. Select **Tools** at the top navigation
+1. Select **Add a tool**
+1. Filter the tools by selecting **Model Context Protocol**
+1. Scroll down and select the **Microsoft Outlook Calendar MCP Server**
+
+    ![Add Microsoft Outlook Calendar MCP Server](./assets/select-outlook-calendar-mcp.png)
+
+1. Select **Add and configure**
+
+Now, you can scroll to the bottom again to see the tools in the Microsoft Outlook Calendar MCP server:
+
+![Microsoft Outlook Calendar MCP Server tools](./assets/outlook-calendar-mcp-tools.png)
+
+Let's test out this MCP server.
+
+1. Enter the following prompt:
+
+    `Get my meetings for today`
+
+1. The agent will respond with the consent card again, because we added another MCP server. Select **Allow** to consent with the MCP server using your data
+
+    ![Consent card](./assets/outlook-calendar-test-allow.png)
+
+1. Now you will get a response with the meetings you have on your calendar for today:
+
+    ![Get my meetings for today response](./assets/outlook-calendar-test-output.png)
+
+### Plan an interview prep-meeting
+
+Now, we know both the MCP servers work. We want to plan an interview prep-meeting though. So, let's see if that works too!
+
+1. Select **New test session** to start a new test session
+
+    ![New test session](./assets/new-test-session.png)
+
+1. Enter the following prompt:
+
+    `Can you find 3 meeting times for a 30 minute meeting with Jane Doe for an interview prep-meeting?`
+
+    This will trigger the *findMeetingTimes* MCP tool and it will look at the calendars of both the user of the agent and the Jane Doe and figure out which times work based on their availability. It will then respond with three options for meetings:
+
+    ![Find meeting times output](./assets/outlook-calendar-meeting-test-output.png)
+
+    And you will be able to figure out what tools have been called in the testing pane:
+
+    ![Debug](./assets/outlook-calendar-test-debug.png)
 
 ## 🎉 Mission Complete
 
