@@ -44,7 +44,7 @@ Different models are designed for specific tasks. Selecting the right model impr
 The table below outlines model tags, their strengths, and key considerations - [source](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#model-use-categories).
 
 | Tag | Description | Strengths | Latency | Cost | Reasoning depth |
-|-------|----------|----------|-------------|-----------|-----------|
+| ------- | ---------- | ---------- | ------------- | ----------- | ----------- |
 | **Deep** | Optimized for deliberate, multi-step reasoning and tool-supported workflows. | Complex analytics, multi-hop reasoning, policy and contract analysis, troubleshooting with multi-system steps, and synthesis of long documents with citations | Highest | Highest | Multi-step, tool-rich |
 | **Auto** | Optimized for coverage across mixed workloads; routes queries dynamically. | Helpdesk and employee agents with mixed intents, blending knowledge and actions, and tier‑0 customer support with unpredictable complexity | Variable | Variable | Multi-step, tool-rich |
 | **General** | Optimized for speed and cost on everyday chat and light grounding. | Drafting, rewriting, summarizing, and translation, FAQ-style grounded answers, and simple action automation | Lowest | Lowest | Shallow-to-moderate |
@@ -56,7 +56,7 @@ Models are released in stages. You can explore cutting-edge options like Experim
 The table below explains the availability tags - [source](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#model-use-categories).
 
 | Tag | Description |
-|-----|-------------|
+| ----- | ------------- |
 | **Experimental** | Used for experimentation, and not recommended for production use. Subject to preview terms, and can have limitations on availability and quality. See [Limitations of experimental and preview models.](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#limitations-of-experimental-and-preview-models) |
 | **Preview** | Will eventually become a generally available model, but currently not recommended for production use. Subject to preview terms, and can have limitations on availability and quality. See [Limitations of experimental and preview models.](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-select-agent-model#limitations-of-experimental-and-preview-models) |
 | **No tag** | Generally available. You can use this model for scaled and production use. In most cases, generally available models have no limitations on availability and quality, but some might still have some limitations, like regional availability. |
@@ -68,7 +68,7 @@ The table below explains the availability tags - [source](https://learn.microsof
 AI capabilities evolve rapidly, and Copilot Studio keeps up by offering a range of Azure OpenAI models. As of 2025, the primary models to choose from include OpenAI's GPT-4.1, and the latest GPT-5 previews. The following table summarizes the main choices and what each is best suited for:
 
 | Model Version | Category | Availability | Key Strengths | Ideal Use Cases |
-|-------|----------|----------|-------------|-----------|
+| ------- | ---------- | ---------- | ------------- | ----------- |
 | **GPT‑4o** | General | Retired | Fast, versatile responses; supports text and image input; cost-effective balance of speed and accuracy. | Routine Q&A; summarizing support chats or calls; quick content drafts; tasks combining text with visuals. |
 | **GPT-4.1** | General | Default | Higher accuracy and reasoning than GPT-4o; excellent at complex text analysis (text-only model). | Analyzing detailed documents (policies, reports); complex knowledge-base Q&A; scenarios where precision is critical. |
 | **GPT‑5 Chat** | General | Preview | Advanced conversational abilities with strong context retention; produces human-like dialogue. | Employee self-service chatbots; IT/HR helpdesk assistants; interactive agents requiring natural, human-like responses. |
@@ -94,7 +94,7 @@ OpenAI remains as the default model for new agents in Copilot Studio and you hav
 Both are available in Microsoft Copilot Studio as opt-in preview (Frontier Program) models rather than General Availability (GA), meaning they’re for early experimental use only. The table below compares their status, strengths, and ideal use cases in the Copilot Studio context:
 
 | Model Version | Status | Key Strengths | Ideal Use Cases |
-|-------|----------|-------------|-----------|
+| ------- | ---------- | ------------- | ----------- |
 | **Claude Sonnet 4.5** | Experimental | Excels at code-related tasks and complex “agent” workflows; strong at tool use and step-by-step reasoning. | Advanced software development assistance (code generation & debugging); building multi-step autonomous agents; tasks requiring integration with external tools or systems. |
 | **Claude Opus 4.1** | Experimental | Specialized for intensive analysis and structured problem-solving. | In-depth data analysis and research projects; complex reasoning scenarios (e.g. compliance auditing, elaborate planning) where thoroughness is paramount. |
 
@@ -183,7 +183,7 @@ These admin settings ensure that **organizations stay in control** of sensitive 
 For a quick reference, here’s a summary of the admin controls related to model selection:
 
 | Admin Setting | Effect on Model selection | Setting location |
-|----------|------------|------------|
+| ---------- | ------------ | ------------ |
 | **Allow Anthropic models** | When **Allowed**, users can connect to the Anthropic external models for agents built in Copilot Studio. When **disabled**, only OpenAI models are available. | Microsoft 365 Admin Center |
 | **Allow Preview & Experimental Models** | When **ON**, makers can choose preview/experimental AI models (for example GPT-5 Chat) for their agents. When **OFF**, only production-ready models are available. | Power Platform admin center |
 | **Move Data Across Regions** | Required to be **ON** if experimental models are enabled. It permits data from the agent to be processed and stored outside the home region. If this is OFF, any model that would require cross-region data flow will be blocked, leading to the agent's generative AI features being unavailable. Managed in the Power Platform admin centre by a tenant administrator. | Power Platform admin center |
@@ -216,8 +216,8 @@ In Copilot Studio’s generative answer node, you can allow or disallow certain 
 
 Copilot Studio generative answers support a subset of Markdown for rich text. Here are the main formatting elements you can leverage in the AI’s responses, and what they do:
 
-| Formatting Option | Purpose and Effect  | Example Usage |
-|----------|------------|---------|
+| Formatting Option | Purpose and Effect | Example Usage |
+| ---------- | ------------ | --------- |
 | **Bold** | Makes important words or phrases stand out. Use bold to highlight key information or critical values. | **"Your account balance is $1,250."** - The amount is bold so it's immediately noticeable. |
 | _Italics_ | Adds subtle emphasis or denotes special terms. Commonly used for document titles, or to highlight a _phrase_ in a softer way than bold. | _"Please provide additional details for verification."_ - The words “additional details” are italicized to indicate a prompt or placeholder. |
 | Hyperlinks | Inserts clickable links in the response text. Useful for directing users to external articles, internal knowledge base, or any detailed reference. | "Refer to our [Microsoft Surface Warranty and Protection Plans](https://www.microsoft.com/surface/business/warranty-protection-plans-and-support) for more details." - The text "Microsoft Surface Warranty and Protection Plans" is a hyperlink to the web page. |

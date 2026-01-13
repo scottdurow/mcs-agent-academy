@@ -51,12 +51,12 @@ This advanced course is ideal for:
 This academy is structured as a progressive series of field operations—each mission builds upon the previous to create a comprehensive hiring automation system.
 
 | Mission | Title | Operation Briefing |
-|---------|-------|-------------------|
+| --------- | ------- | ------------------- |
 | `01` | 🚨 [Get started with the Hiring Agent](./01-get-started/README.md) | Deploy foundational infrastructure and create your central orchestrator agent |
 | `02` | 📝 [Authoring Agent Instructions](./02-agent-instructions/README.md) | Master precise agent communication and behavior control |
 | `03` | 🎭 [Make your agent multi-agent ready with connected agents](./03-multi-agent/README.md) | Transform single agent into coordinated multi-agent system |
 | `04` | ⚡ [Automate your agent with Triggers](./04-automate-triggers/README.md) | Implement autonomous agent behaviors with event-driven triggers |
-| `05` | 💬 [Understanding Agent Models](./05-agent-responses/README.md) | Customize agent models for maximum impact and engagement |
+| `05` | 💬 [Understanding Agent Models](./05-model-selection/README.md) | Customize agent models for maximum impact and engagement |
 | `06` | 🛡️ [Content Moderation and AI Safety Essentials](./06-ai-safety/README.md) | Implement enterprise-grade safety and compliance measures |
 | `07` | 🎨 [Extracting Resume Contents with Multi-Modal Prompts](./07-multimodal-prompts/README.md) | Process documents and images with advanced AI capabilities |
 | `08` | 🗄️ [Prompts - Dataverse Grounding](./08-dataverse-grounding/README.md) | Ground agents in enterprise data for accurate responses |
