@@ -155,9 +155,9 @@ In summary, Adaptive Cards for feedback are ideal when you need more than a bina
 
 Both feedback collection methods aim to improve your Copilot agent via user input, but they serve different needs. Here's a side-by-side comparison to help understand when to use each:
 
-| Feature/aspect | Built-in thumbs up/down reactions  | Custom feedback via Adaptive Card |
-|----------|------------|---------|
-| **Setup and effort** | Zero setup required - enabled by default for all agents. Simply deploy your agent, and users will see 👍🏻/👎🏻 on each response. | Requires configuration: you must add an Adaptive Card node to your topics and define its JSON, then handle the submitted data. Moderate effort for developers.  |
+| Feature/aspect | Built-in thumbs up/down reactions | Custom feedback via Adaptive Card |
+| ---------- | ------------ | --------- |
+| **Setup and effort** | Zero setup required - enabled by default for all agents. Simply deploy your agent, and users will see 👍🏻/👎🏻 on each response. | Requires configuration: you must add an Adaptive Card node to your topics and define its JSON, then handle the submitted data. Moderate effort for developers. |
 | **Feedback format** | Binary sentiment (Positive or Negative). Users can optionally add a text comment with their rating | Fully customizable. Could be binary as well, or multi-choice, rating scale, text input, or any combination. The card's JSON defines the format |
 | **User experience** | Simple and unobtrusive: one click for thumbs up/down. The option is presented uniformly on all channels (icon buttons). | Potential for richer interaction, but if overused can be intrusive. You control the wording and look. Make sure the card is concise so it doesn't overwhelm the chat UI |
 | **Data captured** | Reaction (+ optional comment). Example: `"thumbs down (with comment: 'irrelevant answer')"`. No structured category beyond up/down. | Whatever data you design. Example: you might capture `"Rating: 3 stars"` or `"FeedbackChoice: NotUseful + Reason: Outdated info"`. The card submission is received as a JSON payload (key-value pairs) which you can parse |
@@ -174,7 +174,7 @@ Ultimately, for most scenarios using one method at a time is clearer. If you opt
 ## 🎀 Wrapping it up (summary)
 
 | ⚡ **Built-in reactions: quick wins** | 🛠️ **Adaptive cards: custom fit** |
-|------------|------------|
+| ------------ | ------------ |
 | Enable built-in 👍🏻/👎🏻 reactions to rapidly gauge user satisfaction on each answer. This yields instant analytics (no coding) and helps identify trouble spots early. | Use adaptive cards for feedback when you need more than a `yes/no`. You can ask tailored questions and route feedback into your own data stores or workflows for deeper analysis and action. |
 
 ## 🧪 Lab 11 - Provide feedback using built-in interactions vs adaptive cards (custom)
@@ -695,8 +695,11 @@ Congratulations! 👏🏻 Excellent work, Operative.
 
 In this final mission, you’ve learned how to close the feedback loop for your agents:
 
-✅ Built-in feedback: you learned how to provide user feedback and where to review the feedback analytics..
-✅ Adaptive cards (custom): you learned how to collect feedback using an adaptive card and log telemetry to Azure Application Insights.
+**✅ Built-in feedback**
+You learned how to provide user feedback and where to review the feedback analytics.
+
+**✅ Adaptive cards (custom)**
+You learned how to collect feedback using an adaptive card and log telemetry to Azure Application Insights.
 
 Feedback is paramount to iterative improvements to your agents! It's not optional. It's how good agents become great ones.
 
@@ -711,7 +714,7 @@ We won’t walk you through publishing again here as you already mastered that s
 - Start collecting feedback
 - Iterate
 
-If you need a refresher, revisit the [Recruit publishing module](https://microsoft.github.io/agent-academy/recruit/11-publish-your-agent/) then come right back and finish strong.
+If you need a refresher, revisit the [Recruit publishing module](../../recruit/11-publish-your-agent/README.md) then come right back and finish strong.
 
 > [!IMPORTANT]
 > If you are using a trial license to complete the course, you will not be able to publish.Publishing is not required to get a badge for this lab.

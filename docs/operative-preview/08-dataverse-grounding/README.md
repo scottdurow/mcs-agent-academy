@@ -76,7 +76,7 @@ By adding Dataverse grounding, your Summarize Resume flow will:
 
 ## 🎯 Why dedicated prompts vs agent conversations
 
-In Mission 02, you experienced how the Interview Agent could match candidates to job roles, but required complex user prompts like:
+In Mission 03, you experienced how the Interview Agent could match candidates to job roles, but required complex user prompts like:
 
 ```text
 Upload this resume, then show me open job roles,
@@ -90,7 +90,7 @@ While this worked, dedicated prompts with Dataverse grounding offer significant 
 ### Key advantages of dedicated prompts
 
 | Aspect | Agent Conversations | Dedicated Prompts |
-|--------|-------------------|------------------|
+| -------- | ------------------- | ------------------ |
 | **Consistency** | Results vary based on user's prompt crafting skills | Standardized processing every time |
 | **Specialization** | General-purpose reasoning may miss business nuances | Purpose-built with optimized business logic |
 | **Automation** | Requires human interaction and interpretation | Triggers automatically with structured JSON output |
@@ -133,7 +133,7 @@ First, let's examine the Dataverse tables you'll be grounding with:
 1. Review the key columns you'll use for grounding:
 
     | Column | Purpose |
-    |--------|---------|
+    | -------- | --------- |
     | **Job Role Number** | Unique identifier for role matching |
     | **Job Title** | Display name for the role |
     | **Description** | Detailed role requirements |
@@ -269,9 +269,9 @@ To allow our Application Intake Agent to create Job Roles based on the suggested
 
 1. Select the **When an agent calls the flow** node, use **+ Add an input** to add the following parameter:
 
-    | Type | Name            | Description                                                  |
-    | ---- | --------------- | ------------------------------------------------------------ |
-    | Text | `ResumeNumber`  | Be sure to only use the [ResumeNumber] - it MUST start with the letter R |
+    | Type | Name            | Description                                                               |
+    | ---- | --------------- | ------------------------------------------------------------------------- |
+    | Text | `ResumeNumber`  | Be sure to only use the [ResumeNumber] - it MUST start with the letter R  |
     | Text | `JobRoleNumber` | Be sure to only use the [JobRoleNumber] - it MUST start with the letter J |
 
     ![When an agent calls the flow](./assets/8-add-application-1.png)
@@ -280,11 +280,11 @@ To allow our Application Intake Agent to create Job Roles based on the suggested
 
 1. **Rename** the node as `Get Resume`, and then set the following parameters:
 
-    | Property        | How to Set                      | Value                                                        |
-    | --------------- | ------------------------------- | ------------------------------------------------------------ |
-    | **Table name**  | Select                          | Resumes                                                      |
+    | Property        | How to Set                      | Value                                                                                                                             |
+    | --------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+    | **Table name**  | Select                          | Resumes                                                                                                                           |
     | **Filter rows** | Dynamic data (thunderbolt icon) | `ppa_resumenumber eq 'ResumeNumber'` Select and replace **ResumeNumber** with **When an agent calls the flow** → **ResumeNumber** |
-    | **Row count**   | Enter                           | 1                                                            |
+    | **Row count**   | Enter                           | 1                                                                                                                                 |
 
     ![Get Resume](./assets/8-add-application-2.png)
 
@@ -292,11 +292,11 @@ To allow our Application Intake Agent to create Job Roles based on the suggested
 
 1. **Rename** the node as `Get Job Role`, and then set the following parameters:
 
-    | Property        | How to Set                      | Value                                                        |
-    | --------------- | ------------------------------- | ------------------------------------------------------------ |
-    | **Table name**  | Select                          | Job Roles                                                    |
+    | Property        | How to Set                      | Value                                                                                                                                 |
+    | --------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+    | **Table name**  | Select                          | Job Roles                                                                                                                             |
     | **Filter rows** | Dynamic data (thunderbolt icon) | `ppa_jobrolenumber eq 'JobRoleNumber'` Select and replace **JobRoleNumber** with **When an agent calls the flow** → **JobRoleNumber** |
-    | **Row count**   | Enter                           | 1                                                            |
+    | **Row count**   | Enter                           | 1                                                                                                                                     |
 
     ![Get Job Role](./assets/8-add-application-3.png)
 
@@ -304,24 +304,24 @@ To allow our Application Intake Agent to create Job Roles based on the suggested
 
 1. **Rename** the node as `Add Application`, and then set the following parameters:
 
-    | Property                           | How to Set           | Value                                                        |
-    | ---------------------------------- | -------------------- | ------------------------------------------------------------ |
-    | **Table name**                     | Select               | Job Applications                                             |
-    | **Candidate (Candidates)**             | Expression (fx icon) | `concat('ppa_candidates/',first(outputs('Get_Resume')?['body/value'])?['_ppa_candidate_value'])` |
-    | **Job Role (Job Roles)**               | Expression (fx icon) | `concat('ppa_jobroles/',first(outputs('Get_Job_Role')?['body/value'])?['ppa_jobroleid'])` |
-    | **Resume (Resumes)**                   | Expression (fx icon) | `concat('ppa_resumes/', first(outputs('Get_Resume')?['body/value'])?['ppa_resumeid'])` |
-    | **Application Date** (use **Show all**) | Expression (fx icon) | `utcNow()`                                                   |
+    | Property                                | How to Set           | Value                                                                                            |
+    | ----------------------------------      | -------------------- | ------------------------------------------------------------------------------------------------ |
+    | **Table name**                          | Select               | Job Applications                                                                                 |
+    | **Candidate (Candidates)**              | Expression (fx icon) | `concat('ppa_candidates/',first(outputs('Get_Resume')?['body/value'])?['_ppa_candidate_value'])` |
+    | **Job Role (Job Roles)**                | Expression (fx icon) | `concat('ppa_jobroles/',first(outputs('Get_Job_Role')?['body/value'])?['ppa_jobroleid'])`        |
+    | **Resume (Resumes)**                    | Expression (fx icon) | `concat('ppa_resumes/', first(outputs('Get_Resume')?['body/value'])?['ppa_resumeid'])`           |
+    | **Application Date** (use **Show all**) | Expression (fx icon) | `utcNow()`                                                                                       |
 
     ![Add Application](./assets/8-add-application-4.png)
 
 1. Select the **Respond to the agent node**, and then select **+ Add an output**
 
-     | Property        | How to Set                      | Details                                         |
-     | --------------- | ------------------------------- | ----------------------------------------------- |
-     | **Type**        | Select                          | `Text`                                          |
-     | **Name**        | Enter                           | `ApplicationNumber`                             |
-     | **Value**       | Dynamic data (thunderbolt icon) | *Add Application → See More → Application Number* |
-     | **Description** | Enter                           | `The [ApplicationNumber] of the Job Application created`      |
+     | Property        | How to Set                      | Details                                                  |
+     | --------------- | ------------------------------- | -------------------------------------------------------- |
+     | **Type**        | Select                          | `Text`                                                   |
+     | **Name**        | Enter                           | `ApplicationNumber`                                      |
+     | **Value**       | Dynamic data (thunderbolt icon) | *Add Application → See More → Application Number*        |
+     | **Description** | Enter                           | `The [ApplicationNumber] of the Job Application created` |
 
      ![Respond to the agent](./assets/8-add-application-5.png)
 
@@ -347,10 +347,10 @@ Now you'll connect the published flow to your Application Intake Agent.
 
 1. Set the following parameters:
 
-    | Parameter                                           | Value                                                        |
-    | --------------------------------------------------- | ------------------------------------------------------------ |
+    | Parameter                                           | Value                                                                         |
+    | --------------------------------------------------- | ----------------------------------------------------------------------------- |
     | **Description**                                     | `Creates a new job application when given [ResumeNumber] and [JobRoleNumber]` |
-    | **Additional details → When this tool may be used** | `Only when referenced by topics or agents`                   |
+    | **Additional details → When this tool may be used** | `Only when referenced by topics or agents`                                    |
 
 1. Select **Save**  
     ![Add Agent Flow to Agent](./assets/8-add-application-6.png)
