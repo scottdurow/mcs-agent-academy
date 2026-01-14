@@ -5,7 +5,7 @@ export default defineConfig({
   title: "Agent Academy",
   base: "/agent-academy/",
   head: [
-    ["link", { rel: "icon", href: "/images/logo.png" }],
+    ["link", { rel: "icon", href: "/logo.png" }],
     [
       "script",
       { text: "text/javascript" },
@@ -15,7 +15,7 @@ export default defineConfig({
   description:
     "Welcome to Copilot Studio Agent Academy. Curated lessons on getting started building agents with Copilot Studio.",
   themeConfig: {
-    logo: "/images/logo.png",
+    logo: "/logo.png",
     nav: [
       { text: "Home", link: "/" },
       { text: "Our Team", link: "/our-team/" },
