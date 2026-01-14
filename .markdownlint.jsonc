@@ -1,7 +1,7 @@
 // Configuration for markdownlint
 // See https://github.com/DavidAnson/markdownlint/blob/v0.32.1/schema/.markdownlint.jsonc
 {
-  
+
   // Default state for all rules
   "default": true,
 
