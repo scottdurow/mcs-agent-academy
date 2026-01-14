@@ -3,7 +3,7 @@ import { mermaidPlugin } from "./plugins/vitepress-mermaid";
 
 export default defineConfig({
   title: "Agent Academy",
-  base: "/agent-academy-pr/",
+  base: "/agent-academy/",
   head: [
     ["link", { rel: "icon", href: "/agent-academy/images/logo.png" }],
     [
