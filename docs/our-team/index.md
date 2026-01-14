@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD041 -->
 <script setup>
 import { VPTeamMembers } from 'vitepress/theme'
 
