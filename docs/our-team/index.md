@@ -48,6 +48,6 @@ const members = [
 
 # Our Team
 
-Say hello to the team behind Agent Academy!
+Say hello to the team behind Agent Academy! 👋
 
 <VPTeamMembers size="small" :members />
