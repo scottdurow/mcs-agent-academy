@@ -320,7 +320,7 @@ Let's begin!
 
     ![Undo](assets/8.1_08_Undo.png)
 
-1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. **Paste** the JSON from the [Request devices .JSON file](assets/8.1_RequestDevice.json).
+1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. **Paste** the JSON from the [Request devices .JSON file](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/08-add-adaptive-card/assets/8.1_RequestDevice.json).
 
     ![Clear card payload editor](assets/8.1_09_SelectAll.png)
 
