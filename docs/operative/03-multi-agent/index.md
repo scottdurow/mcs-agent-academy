@@ -114,11 +114,11 @@ Connected agents are **full-fledged, independent agents** that your main agent c
 
 When designing multi-agent systems, several patterns emerge based on how agents interact:
 
-| Pattern           | Description                                                                                                                                                         | Best For                                                                                  |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| **Hub and Spoke** | A main orchestrator agent coordinates with multiple specialized agents. The orchestrator handles user interaction and delegates tasks to child or connected agents. | Complex workflows where one agent coordinates specialized tasks                           |
-| **Pipeline**      | Agents pass work sequentially from one to the next, each adding value before passing to the next stage.                                                             | Linear processes like application processing (intake → screening → interview → decision) |
-| **Collaborative** | Agents work together simultaneously on different aspects of the same problem, sharing context and results.                                                          | Complex analysis requiring multiple perspectives or expertise areas                       |
+| Pattern           | Description                                                                                                                                                         | Best For                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Hub and Spoke** | A main orchestrator agent coordinates with multiple specialized agents. The orchestrator handles user interaction and delegates tasks to child or connected agents. | Complex workflows where one agent coordinates specialized tasks                                |
+| **Pipeline**      | Agents pass work sequentially from one to the next, each adding value before passing to the next stage.                                                             | Linear processes like application processing (intake -> screening -> interview -> decision)    |
+| **Collaborative** | Agents work together simultaneously on different aspects of the same problem, sharing context and results.                                                          | Complex analysis requiring multiple perspectives or expertise areas                            |
 
 > [!TIP]
 > You may even have a hybrid of two or more of these patterns.
@@ -345,11 +345,11 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* step
 
 1. Add inputs for each of the following Parameters listed in the table below. Select the appropriate input type as shown in the table and be sure to add both the name and the description. It's important to include the description because it will help the agent know what to fill in the input.
 
-    | Type | Name            | Description                                                                                                                                                       |
-    | ---- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | File | ```Resume```    | ```The Resume PDF file```                                                                                                                                         |
-    | Text | ```Message```   | ```Extract a cover letter style message from the context. The message must be less than 2000 characters.```                                                      |
-    | Text | ```UserEmail``` | ```The email address that the Resume originated from. This will be the user uploading the resume in chat, or the from email address if received by email.```     |
+    | Type | Name            | Description                                                                                                                                                   |
+    | ---- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    | File | ```Resume```    | ```The Resume PDF file```                                                                                                                                     |
+    | Text | ```Message```   | ```Extract a cover letter style message from the context. The message must be less than 2000 characters.```                                                   |
+    | Text | ```UserEmail``` | ```The email address that the Resume originated from. This will be the user uploading the resume in chat, or the from email address if received by email.```  |
 
     ![Configure input parameters](./assets/2-upload-resume-trigger.png)
 
@@ -368,12 +368,12 @@ We're using **Agent Flow tools** rather than Topics for the *Upload Resume* step
 
 1. Set the following **properties**:
 
-    | Property                 | How to Set                      | Details / Expression                                                                                                                                              |
-    | ------------------------ | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | **Resume Title**         | Dynamic data (thunderbolt icon) | **When an agent calls the flow** → **Resume name**    If you don't see the Resume name, make sure you have configured the Resume parameter above as a data type. |
-    | **Cover letter**         | Expression (fx icon)            | `if(greater(length(triggerBody()?['text']), 2000), substring(triggerBody()?['text'], 0, 2000), triggerBody()?['text'])`                                           |
-    | **Source Email Address** | Dynamic data (thunderbolt icon) | **When an agent calls the flow** → **UserEmail**                                                                                                                  |
-    | **Upload Date**          | Expression (fx icon)            | `utcNow()`                                                                                                                                                        |
+    | Property                 | How to Set                      | Details / Expression                                                                                                                                               |
+    | ------------------------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | **Resume Title**         | Dynamic data (thunderbolt icon) | **When an agent calls the flow** → **Resume name**    If you don't see the Resume name, make sure you have configured the Resume parameter above as a data type.   |
+    | **Cover letter**         | Expression (fx icon)            | `if(greater(length(triggerBody()?['text']), 2000), substring(triggerBody()?['text'], 0, 2000), triggerBody()?['text'])`                                            |
+    | **Source Email Address** | Dynamic data (thunderbolt icon) | **When an agent calls the flow** → **UserEmail**                                                                                                                   |
+    | **Upload Date**          | Expression (fx icon)            | `utcNow()`                                                                                                                                                         |
 
     ![Edit Properties](./assets/2-upload-resume-add-resume-props.png)
 
@@ -442,10 +442,10 @@ Now you'll connect the published flow to your Application Intake Agent.
 
 1. Set the following parameters for the description and when the tool should be used:
 
-    | Parameter                                           | Value                                                                                                                                         |
-    | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+    | Parameter                                           | Value                                                                                                                                        |
+    | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
     | **Description**                                     | `Uploads a Resume when instructed. STRICT RULE: Only call this tool when referenced in the form "Resume Upload" and there are Attachments`   |
-    | **Additional details → When this tool may be used** | `only when referenced by topics or agents`                                                                                                    |
+    | **Additional details → When this tool may be used** | `only when referenced by topics or agents`                                                                                                   |
 
     ![Resume Upload Details 1](./assets/2-resume-upload-tool-props-1.png)
 
