@@ -220,7 +220,12 @@ This is much faster than manually editing the configuration file for individual 
 
 We use VitePress to generate our documentation site. You can run it locally to preview your changes before submitting a pull request.
 
-📖 **Learn more**: [VitePress Documentation](https://vitepress.dev/)
+📖 **Learn more**:
+
+- [VitePress Documentation](https://vitepress.dev/)
+- [Getting Started](https://vitepress.dev/guide/getting-started)
+- [Site Config](https://vitepress.dev/reference/site-config)
+- [Markdown Extensions](https://vitepress.dev/guide/markdown)
 
 ### Prerequisites
 
