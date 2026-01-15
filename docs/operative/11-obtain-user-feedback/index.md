@@ -201,47 +201,47 @@ For the built-in interactions to be captured in the Analytics page of the agent,
 
 1. In the responses, select the **thumbs up** icon by the message to provide positive feedback with a comment, or select the **thumbs down** to provide negative feedback with a comment.
 
-       1. Positive feedback comment examples
+    1. Positive feedback comment examples
 
-          ```text
-          Clear and Concise: The response was easy to understand and well-structured.
-          ```
+        ```text
+        Clear and Concise: The response was easy to understand and well-structured.
+        ```
 
-          ```text
-          Accurate and Relevant: The information provided was correct and directly addressed the question.
-          ```
+        ```text
+        Accurate and Relevant: The information provided was correct and directly addressed the question.
+        ```
 
-          ```text
-          Helpful and Actionable: The response included practical steps or examples that I could apply.
-          ```
+        ```text
+        Helpful and Actionable: The response included practical steps or examples that I could apply.
+        ```
 
-          ```text
-          Comprehensive: The answer covered all aspects of the question without leaving gaps.
-          ```
+        ```text
+        Comprehensive: The answer covered all aspects of the question without leaving gaps.
+        ```
 
-          ```text
-          Engaging and Professional Tone: The response was friendly, respectful, and appropriate for the context.
-          ```
+        ```text
+        Engaging and Professional Tone: The response was friendly, respectful, and appropriate for the context.
+        ```
 
-          ```text
-          Adapted to Context: The response considered the specific scenario and provided tailored guidance.
-          ```
+        ```text
+        Adapted to Context: The response considered the specific scenario and provided tailored guidance.
+        ```
 
-       1. Negative feedback comment examples
+    1. Negative feedback comment examples
 
-          ```text
-          Incomplete or Vague: The response lacked detail or didn’t fully answer the question.
-          ```
+        ```text
+        Incomplete or Vague: The response lacked detail or didn’t fully answer the question.
+        ```
 
-          ```text
-          Inaccurate or Misleading: The information provided was incorrect or not relevant to the query.
-          ```
+        ```text
+        Inaccurate or Misleading: The information provided was incorrect or not relevant to the query.
+        ```
 
-          ```text
-          Overly Complex or Hard to Follow: The explanation was confusing or used unnecessary jargon.
-          ```
+        ```text
+        Overly Complex or Hard to Follow: The explanation was confusing or used unnecessary jargon.
+        ```
 
-       ![Submit Positive feedback with written comment](assets/11.1_01_SubmitPositiveFeedback.png)
+    ![Submit Positive feedback with written comment](assets/11.1_01_SubmitPositiveFeedback.png)
 
 1. Repeat until you have submitted several reactions with written feedback.
 
@@ -271,7 +271,7 @@ Let's go!
 
 1. In the **Hiring Agent**, browse to the **Topics** tab. Select **+Add a topic** and select **From blank**.
 
-       ![Add new topic from blank](assets/11.3.1_01_AddTopicFromBlank.png)
+    ![Add new topic from blank](assets/11.3.1_01_AddTopicFromBlank.png)
 
 1. Name the topic as the following,
 
@@ -281,33 +281,33 @@ Let's go!
 
     In the Trigger node, select the **Change trigger** arrows icon and select **It's redirected to**.  This new topic will be triggered when it's explicitly called from an existing topic through the **Go to another topic** node.
 
-       ![Rename topic and configure trigger](assets/11.3.1_02_RenameTopicAndConfigureTrigger.png)
+    ![Rename topic and configure trigger](assets/11.3.1_02_RenameTopicAndConfigureTrigger.png)
 
 1. Next, we'll add a new node that will display the custom adaptive card to the user. This custom adaptive card will collect their dissatisfaction feedback based on their CSAT survey response. Select the **+ icon** and select the **Ask with adaptive card** node.
 
-       ![Add Ask with Adaptive Card node](assets/11.3.1_03_AskWithAdaptiveCardNode.png)
+    ![Add Ask with Adaptive Card node](assets/11.3.1_03_AskWithAdaptiveCardNode.png)
 
 1. Now it's time to configure the adaptive card 😊 Select the node and the **Adaptive Card Node properties** pane will appear. We're now going to edit the JSON. Select **Edit adaptive card**.
 
-       ![Add new topic from blank](assets/11.3.1_04_EditAdaptiveCard.png)
+    ![Add new topic from blank](assets/11.3.1_04_EditAdaptiveCard.png)
 
 1. This is the **Adaptive Card Designer** where you can design your card and see the card design in-real time. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of *Ctrl + A* or using the Mac keyboard shortcut of *Command + A*, followed by deleting the lines. **Paste** the JSON from the [CSAT Feedback JSON file](assets/11.3.1_CSATFeedback.json).
 
-       ![Clear default JSON value and paste from CSATFeedback.json file](assets/11.3.1_05_UpdateJSON.png)
+    ![Clear default JSON value and paste from CSATFeedback.json file](assets/11.3.1_05_UpdateJSON.png)
 
 1. Notice how the **Card Preview** now includes elements that display some text and a list of available devices. Select **Save**.
 
-       ![Card updated](assets/11.3.1_06_CardUpdated.png)
+    ![Card updated](assets/11.3.1_06_CardUpdated.png)
 
 1. Select **Preview** to view the card in different widths. The preview will load where you'll see different card outputs by width. The JSON accounts for responsive design so narrow widths will show different layout compared to the standard width.
 
-       ![Preview card widths](assets/11.3.1_08_PreviewCardWidths.png)
+    ![Preview card widths](assets/11.3.1_08_PreviewCardWidths.png)
 
 1. Exit out of **Preview** by selecting the **x icon** or **Close**. Then close the **Adaptive Card Node properties** panel by selecting **X Close**.
 
 1. In the authoring canvas of the topic, you'll see the adaptive card. Scroll to the bottom of the node and you'll see output variables. The `notesId` and the `ratingId` were defined in the element properties. These two variables will store values from the card elements the users interact with. These values will be used in the bonus exercise of this lab.
 
-       ![Add new topic from blank](assets/11.3.1_09_CardOutputs.png)
+    ![Add new topic from blank](assets/11.3.1_09_CardOutputs.png)
 
 #### 11.3.2 Modify End of Conversation system topic
 
@@ -340,11 +340,11 @@ We're now going to update the **End of Conversation** system topic to redirect t
     > [!NOTE] Purpose of the To value field
     > This is a numeric variable that will store the CSAT rating.
 
-       ![Configure Variable properties](assets/11.3.2_05_ConfigureVariableProperties.png)
+    ![Configure Variable properties](assets/11.3.2_05_ConfigureVariableProperties.png)
 
 1. In the **CSAT Question** node select the **... ellipsis** icon and select **Properties**.
 
-       ![Select properties of CSAT Question node](assets/11.3.2_06_CSATQuestionProperties.png)
+    ![Select properties of CSAT Question node](assets/11.3.2_06_CSATQuestionProperties.png)
 
 1. In the **CSAT Question properties** panel, there will be a field displayed where you can reference the variable to save the response rating selected by the end user. Enter the following which references the variable created earlier.
 
@@ -480,7 +480,7 @@ In this exercise you'll learn how to utilize the **Log custom telemetry event** 
 
 #### Prerequisite
 
-- You need to have an [Application Insights resource](https://learn.microsoft.com/en-us/azure/azure-monitor/app/create-workspace-resource?tabs=portal#create-an-application-insights-resource) set up in **Azure**.
+- You need to have an [Application Insights resource](https://learn.microsoft.com/azure/azure-monitor/app/create-workspace-resource?tabs=portal#create-an-application-insights-resource) set up in **Azure**.
 - You also need to be able to access the Application Insights resource to obtain the **Connection string** value.
 
 Let's begin!
@@ -505,26 +505,28 @@ Let's begin!
 
       To learn more about this, expand the following additional learning block.
 
-    ??? info "Additional Learning: Event name and Properties"
+    ::: details Additional Learning: Event name and Properties
 
-        🏷️ **Event name**
-        
-        - This is the **identifier** for the telemetry event you want to log. 
-        - Think of it as the "label" for the event, so you can easily recognize and filter it later in your analytics or monitoring tools.
+    🏷️ **Event name**
 
-        🦋 **Example**
-        
-        - If you want to track when a user submits negative feedback, you might name the event `CSAT Dissatisfied`. 
-           
-        🌿 **Properties**
-        
-        - The properties to track - specific data related to the event, such as variables, user input, or error details.
+    - This is the **identifier** for the telemetry event you want to log.
+    - Think of it as the "label" for the event, so you can easily recognize and filter it later in your analytics or monitoring tools.
 
-        🦋 **Example**
-        
-        - This could be a combination of values submitted through the adaptive card.
+    🦋 **Example**
 
-       ![Log custom telemetry event properties](assets/11.4_03_EnterEventName.png)
+    - If you want to track when a user submits negative feedback, you might name the event `CSAT Dissatisfied`.
+
+    🌿 **Properties**
+
+    - The properties to track - specific data related to the event, such as variables, user input, or error details.
+
+    🦋 **Example**
+
+    - This could be a combination of values submitted through the adaptive card.
+
+    ![Log custom telemetry event properties](assets/11.4_03_EnterEventName.png)
+
+    :::
 
 1. Select the **Formula** tab and enter the following Power Fx formula.
 
@@ -548,9 +550,9 @@ Let's begin!
     >
     > - If the user gave a rating of 2 and wrote "Too slow", the result would be `Feedback: 2, Comment: Too slow`
 
-        **Summary**
-        
-        - This formula is used to log or display both the numeric feedback and any written comment in a clear, combined format, handling cases where the comment might be missing.
+    **Summary**
+
+    - This formula is used to log or display both the numeric feedback and any written comment in a clear, combined format, handling cases where the comment might be missing.
 
     ![Enter formula](assets/11.4_04_EnterFormula.png)
 
