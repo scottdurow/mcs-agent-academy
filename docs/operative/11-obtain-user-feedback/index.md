@@ -291,7 +291,7 @@ Let's go!
 
     ![Add new topic from blank](assets/11.3.1_04_EditAdaptiveCard.png)
 
-1. This is the **Adaptive Card Designer** where you can design your card and see the card design in-real time. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of *Ctrl + A* or using the Mac keyboard shortcut of *Command + A*, followed by deleting the lines. **Paste** the JSON from the [CSAT Feedback JSON file](assets/11.3.1_CSATFeedback.json).
+1. This is the **Adaptive Card Designer** where you can design your card and see the card design in-real time. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of *Ctrl + A* or using the Mac keyboard shortcut of *Command + A*, followed by deleting the lines. **Paste** the JSON from the [CSAT Feedback JSON file](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/operative/11-obtain-user-feedback/assets/11.3.1_CSATFeedback.json).
 
     ![Clear default JSON value and paste from CSATFeedback.json file](assets/11.3.1_05_UpdateJSON.png)
 
