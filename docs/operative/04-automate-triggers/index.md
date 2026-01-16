@@ -652,7 +652,7 @@ Let's begin!
 
     ![Select Adaptive Card field](assets/3.2_15_SelectAdaptiveCardParameter.png)
 
-1. Open the [Resume Table Updated JSON file](assets/3.2_ResumeTableUpdated.json), copy its entire contents, and paste them into the Adaptive Card field.
+1. Open the [Resume Table Updated JSON file](https://raw.githubusercontent.com/microsoft/agent-academy/main/docs/operative/04-automate-triggers/assets/3.2_ResumeTableUpdated.json), copy its entire contents, and paste them into the Adaptive Card field.
 
     ![Copy and paste JSON](assets/3.2_16_JSON.png)
 

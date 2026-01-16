@@ -10,11 +10,11 @@ This hands-on training is your entry point into the **world of agents**: from gr
 
 The **Copilot Studio Agent Academy** is a multi-phase training program designed to build your skills across three agent ranks. Each level includes a badge and increasing responsibilities:
 
-| Rank             | Level | Status | Visual |
-|------------------|:-----:|--------|--------|
-| 🟢 **Recruit**   | •     | [🚀 Get started](https://aka.ms/agent-academy-recruit) | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png){ width="300" } |
+| Rank             | Level | Status                                                   | Visual                                                                            |
+|------------------|:-----:|----------------------------------------------------------|-----------------------------------------------------------------------------------|
+| 🟢 **Recruit**   | •     | [🚀 Get started](https://aka.ms/agent-academy-recruit)   | ![Recruit Badge](./images/mcs-agent-academy-recruit-badge.png){ width="300" }     |
 | 🔵 **Operative** | ••    | [🚀 Get started](https://aka.ms/agent-academy-operative) | ![Operative Badge](./images/mcs-agent-academy-operative-badge.png){ width="300" } |
-| 🟡 **Commander** | •••   | Coming Soon | ![Commander Badge](./images/mcs-agent-academy-commander-badge.png){ width="300" } |
+| 🟡 **Commander** | •••   | Coming Soon                                              | ![Commander Badge](./images/mcs-agent-academy-commander-badge.png){ width="300" } |
 
 Each level builds on the last. Finish your Recruit mission, and stay tuned to level up your agent credentials.
 

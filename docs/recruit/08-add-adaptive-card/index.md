@@ -361,7 +361,7 @@ Let's begin!
 
     ![Click into payload card editor](assets/8.1_16_SelectAll.png)
 
-    Paste the Formula from the [Request Devices formula file](assets/8.1_RequestDeviceFormula.txt).
+    Paste the Formula from the [Request Devices formula file](https://raw.githubusercontent.com/microsoft/agent-academy/main/docs/recruit/08-add-adaptive-card/assets/8.1_RequestDeviceFormula.txt).
 
 1. In the formula, we'll loop through each SharePoint list item using the `For All` function to display the values of `Model` in the title of the choice option, and the SharePoint item `ID` is referenced as the value. We're also wrapping the values with the `If(IsBlank()` functions as the formula expects a value in order to render the adaptive card in the authoring canvas of the topic. Otherwise you'll see a message appear, "Property cannot be null"
 
