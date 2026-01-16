@@ -1,6 +1,10 @@
 ---
 name: agent-academy-mission-development
 description: Guidelines for creating new training missions for Agent Academy. Use this skill when developing new course missions (Operative, Recruit, or Commander), including mission structure, formatting conventions, lab design, and content patterns.
+globs:
+  - "docs/operative/**/*.md"
+  - "docs/recruit/**/*.md"
+  - "docs/commander/**/*.md"
 ---
 
 # Agent Academy Mission Development Guidelines
@@ -186,18 +190,18 @@ Use GitHub-flavored markdown callouts:
 
 > [!WARNING]
 > Potential issues or things that could go wrong.
-
-> [!INFO]
-> Background information or links to learn more.
 ```
+
+> [!NOTE]
+> VitePress supports NOTE, TIP, IMPORTANT, WARNING, and CAUTION callouts. There is no INFO callout - use NOTE for informational content.
 
 ### When to Use Each Callout
 
-- **NOTE**: Clarifications, "On success you will see...", edge cases
+- **NOTE**: Clarifications, "On success you will see...", edge cases, background information
 - **TIP**: Best practices, shortcuts, pro tips
 - **IMPORTANT**: Prerequisites, critical configuration, must-do items
 - **WARNING**: Common mistakes, preview/experimental features, data loss risks
-- **INFO**: Links to documentation, "Learn more" sections
+- **CAUTION**: Serious warnings about irreversible actions or security concerns
 
 ### Collapsible Details Blocks
 
@@ -216,7 +220,7 @@ You can include any markdown content here:
 
 ### Details with Custom Title
 
-```markdown
+````markdown
 ::: details Click me to view the full JSON
 ```json
 {
@@ -229,24 +233,20 @@ You can include any markdown content here:
   ]
 }
 ```
-
 :::
-
-```markdown
+````
 
 ### Details Open by Default
 
 Add the `{open}` attribute to have the details block expanded by default:
 
-```markdown
+````markdown
 ::: details Click me to toggle the code {open}
 ```js
 console.log('Hello, VitePress!')
 ```
-
 :::
-
-```markdown
+````
 
 ### When to Use Collapsible Details
 
@@ -314,6 +314,23 @@ End with links to official documentation:
 
 Where `[course-name]` is one of: `operative`, `recruit`, or `commander`.
 
+### Analytics Image URL Pattern
+
+The analytics image tracks page visits. Follow this exact pattern:
+
+```text
+https://m365-visitor-stats.azurewebsites.net/agent-academy/[course-name]/[folder-name]
+```
+
+Examples:
+
+- `agent-academy/operative/03-multi-agent`
+- `agent-academy/recruit/08-add-adaptive-card`
+- `agent-academy/commander/01-getting-started`
+
+> [!IMPORTANT]
+> The path must match the folder name exactly (e.g., `03-multi-agent`, not `03` or `multi-agent`).
+
 ## Asset Management
 
 ### Folder Structure
@@ -335,6 +352,21 @@ Where `[course-name]` is one of: `operative`, `recruit`, or `commander`.
 - Highlight or annotate important areas when helpful
 - Use consistent browser/window sizing
 - Include just enough context to orient the learner
+
+### Image Alt Text Guidelines
+
+Write descriptive alt text that helps learners understand what they should see:
+
+- **Do**: Describe the action or UI state: `"Copilot Studio topic editor with Add node button highlighted"`
+- **Don't**: Use generic text: `"screenshot"` or `"image"`
+- Include key UI elements mentioned in the step
+- Keep alt text concise but informative (under 125 characters when possible)
+
+Examples of good alt text:
+
+- `"Power Platform admin center showing environment list with Dev environment selected"`
+- `"Adaptive Card preview displaying candidate summary with Accept and Reject buttons"`
+- `"Topic trigger configuration panel with 'When a message is received' selected"`
 
 ## Writing Style
 
@@ -375,7 +407,7 @@ Where `[course-name]` is one of: `operative`, `recruit`, or `commander`.
 Some missions don't have labs (like Mission 02). Structure these as:
 
 ```markdown
-# 🕵️‍♂️ Mission XX: [Title]
+# 🚨 Mission XX: [Title]
 
 ## 🕵️‍♂️ CODENAME: `OPERATION [CODENAME]`
 
@@ -443,8 +475,8 @@ Before embarking on this mission, ensure you have:
 - [Required license or access]
 - [Required permissions]
 
-> [!TIP] Prerequisites help:
-> If you need help with [topic], please reference the [relevant lab](./path/to/lab) which walks you through [setup process].
+> [!TIP]
+> **Prerequisites help**: If you need help with [topic], please reference the [relevant lab](./path/to/lab) which walks you through [setup process].
 ```
 
 ## Developer Tips Sections
@@ -491,3 +523,75 @@ https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/[
 
 > [!IMPORTANT]
 > Always use `raw.githubusercontent.com` for JSON and TXT files so users can directly view or download the raw content. Regular GitHub links show the file in the GitHub UI, which is not suitable for copying code or downloading.
+
+## Mission Numbering
+
+Missions are numbered sequentially within each course (01, 02, 03, etc.):
+
+- Use two-digit numbering with leading zeros: `01`, `02`, ... `10`, `11`
+- Folder naming convention: `XX-mission-name` (e.g., `03-multi-agent`)
+- When inserting a new mission between existing ones:
+  1. Renumber all subsequent mission folders
+  1. Update `prev` and `next` frontmatter in all affected missions
+  1. Update any cross-references to renumbered missions
+  1. Update the analytics image URL in each affected mission
+
+> [!WARNING]
+> Renumbering missions is disruptive. Plan the course structure carefully before publishing to minimize future renumbering.
+
+## Pre-Publish Checklist
+
+Before publishing a new mission, verify the following:
+
+### Content Quality
+
+- [ ] All steps have been tested in current Copilot Studio version
+- [ ] Screenshots match current UI
+- [ ] All code, JSON, and formulas are tested and working
+- [ ] Time estimate is realistic (test with a colleague if possible)
+- [ ] Spy/operative theme is consistent throughout
+
+### Structure and Links
+
+- [ ] Frontmatter `prev` and `next` links are correct
+- [ ] All internal links work (to other missions, assets)
+- [ ] All external links work (Microsoft Learn, GitHub)
+- [ ] Raw GitHub links used for downloadable assets
+- [ ] Analytics image URL follows correct pattern
+
+### Accessibility
+
+- [ ] All images have descriptive alt text
+- [ ] Callout boxes used appropriately
+- [ ] Code blocks have language identifiers
+- [ ] Tables are properly formatted
+
+### Assets
+
+- [ ] All screenshots are in the `assets/` folder
+- [ ] Images are cropped and appropriately sized
+- [ ] JSON/TXT files are valid and tested
+- [ ] No sensitive data in screenshots or code samples
+
+## Common Mistakes to Avoid
+
+### Content Issues
+
+- **Generic alt text**: Don't use `"screenshot"` or `"image"` - describe what the learner should see
+- **Hardcoded dates**: Use `"current"` or `"latest"` instead of specific dates that will become outdated
+- **Skipping the Mission Brief**: Every mission needs context and motivation
+- **Inconsistent theming**: Maintain the spy/operative voice throughout
+
+### Technical Issues
+
+- **Regular GitHub links for assets**: Always use `raw.githubusercontent.com` for JSON, TXT, and downloadable files
+- **Relative paths without `./`**: Use `./assets/image.png`, not `assets/image.png`
+- **Missing language identifiers**: Always specify the language in code blocks (```json,```markdown, etc.)
+- **Untested code samples**: Verify all code, JSON, and formulas work before publishing
+
+### Structural Issues
+
+- **Incorrect prev/next links**: Double-check frontmatter navigation links
+- **Missing prerequisites**: Always specify what learners need before starting
+- **Inconsistent step numbering**: Follow the X.Y pattern for lab sections
+- **Orphaned assets**: Remove unused images and files from the assets folder
