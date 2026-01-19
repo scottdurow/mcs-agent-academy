@@ -917,7 +917,7 @@ We can now test the agent!
      | Email Component | Details |
      |----------|------------|
      | **To recipient** | Use your signed in user account as the value |
-     | **File attachment** | Upload the [TAYLOR TESTPERSON (FICTITIOUS)](../test-data/resumes/TAYLOR%20TESTPERSON%20(FICTITIOUS).pdf) file  |
+     | **File attachment** | Upload the [TAYLOR TESTPERSON (FICTITIOUS)](https://raw.githubusercontent.com/microsoft/agent-academy/main/docs/operative/test-data/resumes/TAYLOR%20TESTPERSON%20(FICTITIOUS).pdf) file  |
      |**Subject**| Job Application|
      |**Body** | Copy and paste the following below as the body of the email  |
 
