@@ -125,7 +125,7 @@ Time to upgrade your resume analysis capabilities! You'll enhance the existing S
 1. You'll need to:
 
     - **Have completed [Mission 07](../07-multimodal-prompts/index.md)** and have your resume analysis system ready
-    - Have downloaded sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/operative/sample-data/resumes&filename=operative_sampledata)
+    - Have downloaded sample resume documents from [test Resumes](https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/docs/operative/test-data/resumes)
 
 ### 8.1 Add Dataverse grounding to your prompt
 
