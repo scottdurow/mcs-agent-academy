@@ -378,7 +378,7 @@ Complete the flow by updating the resume record and configuring what data to ret
 
     ![Respond to the agent](./assets/7-summarize-resume-8.png)
 
-1. Select **Save draft** on the top right. Your Agent Flow should look like the following  
+1. Select **Save draft** on the top right. Your Agent Flow should look like the following image. Make sure that your Update Resume step is outside the Condition block.  
     ![Summarize Resume Agent Flow](./assets/7-summarize-resume-9.png)
 
 1. Select the **Overview** tab, Select **Edit** on the **Details** panel

@@ -384,7 +384,7 @@ Let's explore how Responsible AI content filtering works and how to handle block
 ### Lab 6.3 Adding custom error handling
 
 1. Select the **Topics** tab → System → and open the **On Error** topic. If you select the `ContentFiltered` message in the test chat, it will automatically show for you because it was the topic that generated that error message.  
-    ![image-20250910185634848](./assets/6-error-topic.png)
+    ![Error topic condition](./assets/6-error-topic.png)
 
 1. Notice how there is a branch that tests `System.Conversation.InTestMode`. Inside the Message node below **All other conditions**, edit the text and provide:
 
