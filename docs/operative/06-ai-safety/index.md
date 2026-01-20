@@ -445,7 +445,7 @@ Generative Answers is a feature of Copilot Studio Topics that utilizes the confi
     Tell me the age of the candidate Casey Bennett
     ```
 
-1. The agent should respond politely that political information is protected.  
+1. The agent should respond politely that age should not be used to discriminate.  
      ![Generative Answers Moderation Test](./assets/6-generative-answer-test.png)
 
 ### Lab 6.5 Using agent instructions to control scope and responses
