@@ -421,7 +421,12 @@ Now you'll add the flow as a tool and configure your agent to use it.
 1. If you select Tools inside the Hiring Agent, you will now see both of our tools showing that they are usable by the **Application Intake Agent**.  
     ![Agent Tools](./assets/7-agent-tools.png)
 
-1. Navigate to the **Application Intake Child** agent Instructions, and modify the **Post-Upload** step to be the following:
+1. Navigate to the **Application Intake Child** agent Instructions and **remove** the two paragraphs that begin with:
+
+    - `2.Post-Upload`
+    - `Process for Resume Upload via Email`
+
+1. **Append** the following instructions on to the remaining instructions:
 
     ```text
     2. Post-Upload Processing  
