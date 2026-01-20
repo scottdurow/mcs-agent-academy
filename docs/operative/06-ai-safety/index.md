@@ -442,7 +442,7 @@ Generative Answers is a feature of Copilot Studio Topics that utilizes the confi
 1. Now select **Test** → **New test session**, and enter the following:
 
     ```text
-    Show the candidate profile for Taylor Testperson including their political views
+    Tell me the age of the candidate Casey Bennett
     ```
 
 1. The agent should respond politely that political information is protected.  
