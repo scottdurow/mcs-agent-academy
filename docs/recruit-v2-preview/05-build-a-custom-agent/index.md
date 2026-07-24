@@ -121,7 +121,7 @@ Before starting this lab, make sure you have:
 
 1. In the prompt, the instructions included only referencing the added knowledge sources. In the **Requesting information** step of the authoring experience, it recognizes there are no knowledge sources that have been provided and asks you to provide these.
 
-    Copy and paste the following text, be sure to update the SharePoint site with your site's URL.
+    Copy and paste the following text. Make sure to update the SharePoint site with your site's URL.
 
    ```text
    https://YOURSITE.sharepoint.com/sites/ContosoIT, https://support.microsoft.com, https://learn.microsoft.com/troubleshoot
@@ -227,7 +227,13 @@ We'll now add another internal knowledge source by uploading a document directly
 
     ![Select Click to upload](./assets/5.3_02_SelectUploadFile.png)
 
-1. Download this [sample file](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/06-create-agent-from-conversation/assets/Contoso_Guest_WiFi_Connection_Guide.docx) and select it in your File Explorer. Select **Open**.
+1. Download the sample file by selecting the button below.
+
+    <download-files path="recruit-v2-preview/05-build-a-custom-agent/assets/WordFile" />
+
+    Once downloaded, extract the `.zip` file to a folder on your device.
+
+    In File Explorer, open the extracted folder, select `Contoso_Guest_WiFi_Connection_Guide.docx`, and then select **Open**.
 
     ![Select document](./assets/5.3_04_SelectWordFile.png)
 
