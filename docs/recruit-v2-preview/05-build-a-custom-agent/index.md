@@ -81,7 +81,7 @@ Before starting this lab, make sure you have:
 
 ### 5.1 Create a new agent with AI-based authoring
 
-1. Go to **Microsoft Copilot Studio** and in the **Home** page, copy and paste the following prompt into the field.
+1. Go to **Microsoft Copilot Studio** and on the **Home** page, copy and paste the following prompt into the field.
 
    ```text
    You are an IT Help Desk assistant that helps employees resolve common IT issues and find available devices. Be polite, concise, and helpful.
@@ -124,7 +124,7 @@ Before starting this lab, make sure you have:
     Copy and paste the following text, be sure to update the SharePoint site with your site's URL.
 
    ```text
-    https://YOURSITE.sharepoint.com/sites/ContosoIT, https://support.microsoft.com, https://learn.microsoft.com/troubleshoot
+   https://YOURSITE.sharepoint.com/sites/ContosoIT, https://support.microsoft.com, https://learn.microsoft.com/troubleshoot
    ```
 
     ![Provide parameters](./assets/5.1_03_ProvideParameters.png)
