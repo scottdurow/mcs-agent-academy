@@ -300,7 +300,7 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
     ![Create Solution](./assets/4.2_03_Create.png)
 
-1. The solution for Contoso Helpdesk Agent has now been created. There will be zero components until we create an agent in Copilot Studio.
+1. The solution for Contoso IT Concierge Agent has now been created. There will be zero components until we create an agent in Copilot Studio.
 
     Select the **back arrow** icon to return to the Solution Explorer.
 
