@@ -18,7 +18,7 @@ products:
 industries:
   - it
 created-date: 2026-06-28
-last-edited-date: 2026-06-10
+last-edited-date: 2026-07-24
 ---
 # 🚨 Mission 04: Creating a Solution for Your Agent {#mission-04-creating-a-solution-for-your-agent}
 
@@ -26,7 +26,7 @@ last-edited-date: 2026-06-10
 
 ## 🎯 Mission Brief {#mission-brief}
 
-Welcome back, Recruit. In this mission, you’ll learn to assemble a Solution, the official deployment vehicle for your IT Helpdesk Agent built with Microsoft Copilot Studio. Think of this as creating a digital briefcase that holds your agent and it's artifacts.
+Welcome back, Recruit. In this mission, you’ll learn to assemble a Solution, the official deployment vehicle for your IT Helpdesk Agent built with Microsoft Copilot Studio. Think of this as creating a digital briefcase that holds your agent and its artifacts.
 
 Every agent needs a well-structured home. That’s what a Power Platform solution provides - order, portability, and readiness for production.
 
@@ -51,7 +51,7 @@ In Microsoft Power Platform, solutions are like containers or packages that hold
 
 In Copilot Studio, every agent you create is stored in a Power Platform solution. By default, agents are created in the Default solution, unless you create a new custom solution to create your agent in. This is what we'll learn 🤓 in this lesson and in the hands-on lab.
 
-Solutions traditionally have been created in the **Power Apps maker portal** - a web based interface where you can build and customize apps, Dataverse, flows, explore AI components and more.
+Solutions traditionally have been created in the **Power Apps maker portal** - a web-based interface where you can build and customize apps, Dataverse, flows, explore AI components and more.
 
    ![Solutions](./assets/4.0_01_Solutions.png)
 
@@ -61,7 +61,7 @@ This means you can do the usual solution-related tasks:
 
 - **Create a solution** - custom solutions enable agents to be exported and imported between environments.
 - **Set your preferred solution** - choose the solution agents, apps, etc will be created in by default.
-- **Add or remove components** - your agent could be referencing other components such as environment variables or cloud flows. Therefore these components needed to be included in the solution.
+- **Add or remove components** - your agent could be referencing other components such as environment variables or cloud flows. Therefore these components need to be included in the solution.
 - **Export solutions** - to move solutions to another target environment.
 - **Import solutions** - import solutions created elsewhere, including upgrading or updating solutions.
 - **Create and manage solution pipelines** - automate the deployment of solutions between environments.
@@ -144,7 +144,7 @@ So now you understand the purpose of a Solution, let's next learn about the life
 
 **5. Import to Production environment** - deploy the tested solution to your live Production environment.
 
-**6. Apply Patches, Updates or Upgrades** - make improvements or fixes using patches, updated, or upgrades. 🔁 Repeat the cycle!
+**6. Apply Patches, Updates or Upgrades** - make improvements or fixes using patches, updates, or upgrades. 🔁 Repeat the cycle!
 
 > [!TIP] ✨ Example
 >
@@ -176,7 +176,7 @@ If you don’t have permission to manage solutions in the Power Apps admin cente
 
 To make sure everything works smoothly, check that you have the right security roles and permissions. Or if you don't manage environments in your organization, ask your IT administrator (or the equivalent) team who manages your tenant/environments.
 
-The following are the security roles that enables users to create a solution in their environment.
+The following are the security roles that enable users to create a solution in their environment.
 
 | Security role | Description |
 | ---------- | ---------- |
@@ -198,15 +198,15 @@ Make sure you switch to your dedicated developer environment. For details, see [
 
 1. From the left navigation, select the **ellipsis** icon near the bottom, then under **Explore** select **Solutions**.
 
-    ![Solutions](./assets/4.1_01_Solutions.png)
+    ![Select Solutions](./assets/4.1_01_Solutions.png)
 
 1. The **Solution Explorer** in Copilot Studio will load. Select **+ New solution**
 
-    ![Solutions](./assets/4.1_02_NewSolution.png)
+    ![Select New solution](./assets/4.1_02_NewSolution.png)
 
 1. The **New solution** pane will appear where we can define the details of our solution. First, we need to create a new publisher. Select **+ New publisher**.
 
-    ![Solutions](./assets/4.1_03_NewPublisher.png)  
+    ![Select New publisher](./assets/4.1_03_NewPublisher.png)  
 
 1. The **Properties** tab of the **New publisher** pane will appear with required and non-required fields to be populated in the **Properties** tab. This is where we can outline the details of the publisher which will be used as the label or brand that identifies who created or owns the solution.
 
@@ -244,47 +244,47 @@ Make sure you switch to your dedicated developer environment. For details, see [
 
     By default, the **Choice value** prefix will display an integer value. Update this integer value to the nearest thousand. For example, in my screenshot below, it was initially `77074`. Update this from `77074` to `77000`.
 
-    ![Solutions](./assets/4.1_04_PublisherProperties.png)  
+    ![Define publisher properties](./assets/4.1_04_PublisherProperties.png)  
 
 1. If you want to provide the contact details for the Solution, select the **Contact** tab and populate the following columns displayed.
 
-    ![Solutions](./assets/4.1_05_Contact.png)
+    ![Contact details for the Solution](./assets/4.1_05_Contact.png)
 
 1. Select the **Properties** tab and select **Save** to create the Publisher.
 
-    ![Solutions](./assets/4.1_06_SavePublisher.png)
+    ![Save the Publisher](./assets/4.1_06_SavePublisher.png)
 
 1. The New publisher pane will close and you'll be brought back to the **New solution** pane with the newly created Publisher selected.
 
-    ![Solutions](./assets/4.1_07_PublisherSelected.png)  
+    ![Publisher selected](./assets/4.1_07_PublisherSelected.png)  
 
 High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn how to create a new custom solution.
 
 ### 4.2 Create a new Solution
 
-1. Now that we've created our solutions, we can now complete the rest of the form in the **New solution** pane.
+1. Now that we've created our solution, we can now complete the rest of the form in the **New solution** pane.
 
     Copy and paste the following as the **Display name**,
 
     ```text
-    Contoso Helpdesk Agent
+    Contoso IT Concierge Agent
     ```
 
     Copy and paste the following as the **Name**,
 
     ```text
-    ContosoHelpdeskAgent
+    ContosoITConciergeAgent
     ```
 
     Since we're creating a new solution, the [**Version** number](https://learn.microsoft.com/power-apps/maker/data-platform/update-solutions#understanding-version-numbers-for-updates/?WT.mc_id=power-172615-ebenitez) by default will be `1.0.0.0`.
 
     Tick the **Set as your preferred solution** checkbox.
 
-    ![Solutions](./assets/4.2_01_SolutionDetails_.png)  
+    ![Define solution](./assets/4.2_01_SolutionDetails.png)  
 
 1. Expand the **More options** to see additional details that can be provided in a solution.
 
-    ![Solutions](./assets/4.2_02_MoreOptions.png)
+    ![View more options](./assets/4.2_02_MoreOptions.png)
 
 1. You'll see the following,
 
@@ -298,17 +298,17 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
     Select **Create**.
 
-    ![Solutions](./assets/4.2_03_Create.png)
+    ![Create Solution](./assets/4.2_03_Create.png)
 
-1. The solution for Contoso Helpdesk Agent has now been created. There will be zero components until we create an agent in Copilot Studio.
+1. The solution for Contoso IT Concierge Agent has now been created. There will be zero components until we create an agent in Copilot Studio.
 
     Select the **back arrow** icon to return to the Solution Explorer.
 
-    ![Solutions](./assets/4.2_04_SolutionCreated.png)
+    ![Return to Solution Explorer](./assets/4.2_04_SolutionCreated.png)
 
-1. Notice how the Contoso Helpdesk Agent now displays as the **Current preferred solution** since we ticked the **Set as your preferred solution** checkbox earlier.
+1. Notice how the `Contoso IT Concierge Agent` now displays as the **Current preferred solution** since we ticked the **Set as your preferred solution** checkbox earlier.
 
-    ![Solutions](./assets/4.2_05_CurrentPreferredSolutionSelected.png)
+    ![Preferred solution now the newly created solution](./assets/4.2_05_CurrentPreferredSolutionSelected.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
