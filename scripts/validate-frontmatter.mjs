@@ -93,11 +93,10 @@ for (const sectionName of MISSION_DIRS) {
       }
       if (fm.preview !== undefined) {
         const isBoolean = typeof fm.preview === "boolean";
-        const isMessage =
-          typeof fm.preview === "string" && fm.preview.trim() !== "";
-        if (!isBoolean && !isMessage) {
+        const isString = typeof fm.preview === "string";
+        if (!isBoolean && !isString) {
           console.error(
-            `Error: ${rel} — "preview" must be a boolean or a non-empty string (got: ${JSON.stringify(fm.preview)})`
+            `Error: ${rel} — "preview" must be a boolean or a string (got: ${JSON.stringify(fm.preview)})`
           );
           errors++;
         }
