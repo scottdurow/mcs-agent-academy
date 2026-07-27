@@ -113,7 +113,7 @@ Let's begin!
 1. Copy and paste the following text in the search bar.
 
    ```text
-    Get items
+   Get items
    ```
 
    Select the **Get items** tool.
