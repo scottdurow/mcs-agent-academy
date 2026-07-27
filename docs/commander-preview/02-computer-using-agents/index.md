@@ -1,13 +1,29 @@
 ---
+preview: true
 prev:
   text: 'Advanced MCP Server Usage'
   link: '/commander-preview/01-advanced-mcp'
 next:
   text: 'Code Interpreter'
   link: '/commander-preview/03-code-interpreter'
+short-description: 'Automate apps and websites with virtual mouse and keyboard control'
+difficulty: 3
+codename: 'OPERATION GHOST HANDS'
+time: 60
+tags:
+  - automation
+products:
+  - copilot-studio
+  - azure
+industries:
+  - it
+created-date: 2026-02-20
+last-edited-date: 2026-04-05
 ---
 
 # 🖥️ Mission 02: Computer Using Agents (CUA) {#mission-02-computer-using-agents-cua}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

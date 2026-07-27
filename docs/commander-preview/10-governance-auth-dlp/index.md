@@ -1,13 +1,30 @@
 ---
+preview: true
 prev:
   text: 'Handoff to Human Agents'
   link: '/commander-preview/09-handoff-to-human'
 next:
   text: 'Test, Monitor, Debug & Analytics'
   link: '/commander-preview/11-test-monitor-debug'
+short-description: 'Secure agent access with SSO, channel choices, and DLP policies'
+difficulty: 3
+codename: 'OPERATION IRON GATE'
+time: 60
+tags:
+  - compliance
+  - publishing
+products:
+  - copilot-studio
+  - power-platform
+industries:
+  - security
+created-date: 2026-02-20
+last-edited-date: 2026-04-05
 ---
 
 # 🔐 Mission 10: Governance Essentials with Authentication, Channels & DLP {#mission-10-governance-essentials-with-authentication-channels-dlp}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

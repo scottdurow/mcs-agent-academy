@@ -1,13 +1,29 @@
 ---
+preview: true
 prev:
   text: 'Human in the Loop (HITL)'
   link: '/commander-preview/04-human-in-the-loop'
 next:
   text: 'Localization'
   link: '/commander-preview/06-localization'
+short-description: 'Build IVR agents that handle phone calls with speech and DTMF input'
+difficulty: 3
+codename: 'OPERATION OPEN LINE'
+time: 60
+tags:
+  - multimodal
+products:
+  - copilot-studio
+  - azure
+industries:
+  - general
+created-date: 2026-02-20
+last-edited-date: 2026-04-05
 ---
 
 # 🎙️ Mission 05: Voice-enabled Agents {#mission-05-voice-enabled-agents}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

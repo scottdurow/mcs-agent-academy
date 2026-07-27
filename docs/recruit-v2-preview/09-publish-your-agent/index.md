@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: 'Automate with Workflows'
   link: '/recruit-v2-preview/08-automate-with-workflows'

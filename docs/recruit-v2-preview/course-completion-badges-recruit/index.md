@@ -1,4 +1,5 @@
 ---
+preview: true
 prev:
   text: Understanding Licensing
   link: /recruit/12-understanding-licensing

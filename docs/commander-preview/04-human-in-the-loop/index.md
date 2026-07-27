@@ -1,13 +1,29 @@
 ---
+preview: true
 prev:
   text: 'Code Interpreter'
   link: '/commander-preview/03-code-interpreter'
 next:
   text: 'Voice-enabled Agents'
   link: '/commander-preview/05-voice-enabled-agents'
+short-description: 'Build multi-stage approval workflows that mix AI and human review'
+difficulty: 3
+codename: 'OPERATION SECOND OPINION'
+time: 60
+tags:
+  - automation
+products:
+  - copilot-studio
+  - power-automate
+industries:
+  - general
+created-date: 2026-02-20
+last-edited-date: 2026-04-05
 ---
 
 # 🤝 Mission 04: Human in the Loop (HITL) {#mission-04-human-in-the-loop-hitl}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

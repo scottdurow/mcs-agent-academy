@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Copilot Studio fundamentals
   link: /recruit/03-copilot-studio-fundamentals

@@ -438,6 +438,33 @@ Use these when you need to show different images or text depending on the user's
 
 ---
 
+## Preview banner
+
+Pages that are still being developed can show a banner warning readers that the content is unfinished. The banner is injected automatically below the page title and its `<mission-meta />` card — there is no component to add to the markdown.
+
+Set `preview: true` in the frontmatter to show the default message:
+
+```yaml
+---
+preview: true
+---
+```
+
+> ⚠️ **Preview**
+> This module is in preview. Content may change and some steps might not work as intended.
+
+To replace the default text, set `preview` to a string instead:
+
+```yaml
+---
+preview: 'These steps target the new Copilot Studio authoring experience and may change.'
+---
+```
+
+When `preview` is absent, `false`, or an empty string, nothing renders. Missions with a truthy `preview` value also show a `PREVIEW` pill on their card in `<missions />` grids.
+
+---
+
 ## Frontmatter reference
 
 ### All available fields
@@ -459,6 +486,7 @@ Use these when you need to show different images or text depending on the user's
 | `created-date` | date | Required | Required | Required | ISO date of first publish. |
 | `last-edited-date` | date | Required | Required | Required | ISO date of last edit. |
 | `hide` | boolean | Optional | Optional | Optional | Set to `true` to exclude the page from all `<missions />` grids. |
+| `preview` | boolean \| string | Optional | Optional | Optional | Set to `true` to show the preview banner. A string replaces the default banner text. |
 | `lastUpdated` | boolean | Optional | Optional | Optional | Set to `false` on landing/overview pages to hide the VitePress last-updated footer. |
 
 *`prev` is not required on the first mission; `next` is not required on the last mission.

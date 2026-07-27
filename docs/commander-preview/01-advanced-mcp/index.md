@@ -1,13 +1,30 @@
 ---
+preview: true
 prev:
   text: 'Commander Preview Overview'
   link: '/commander-preview'
 next:
   text: 'Computer Using Agents (CUA)'
   link: '/commander-preview/02-computer-using-agents'
+short-description: 'Connect agents to MCP servers, configure authentication, and manage tools'
+difficulty: 3
+codename: 'OPERATION PROTOCOL BRIDGE'
+time: 60
+tags:
+  - mcp
+products:
+  - copilot-studio
+  - power-platform
+  - dataverse
+industries:
+  - it
+created-date: 2026-02-20
+last-edited-date: 2026-04-05
 ---
 
 # 🔌 Mission 01: Advanced MCP Server Usage {#mission-01-advanced-mcp-server-usage}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

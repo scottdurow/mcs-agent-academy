@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Add Event Triggers
   link: /operative/04-automate-triggers

@@ -1,13 +1,30 @@
 ---
+preview: true
 prev:
   text: 'Localization'
   link: '/commander-preview/06-localization'
 next:
   text: 'Knowledge Deep Dive'
   link: '/commander-preview/08-knowledge-deep-dive'
+short-description: 'Extend agents with Azure AI Search, AI Foundry, and custom models'
+difficulty: 3
+codename: 'OPERATION DEEP MIND'
+time: 60
+tags:
+  - grounding
+  - models
+products:
+  - copilot-studio
+  - azure
+industries:
+  - it
+created-date: 2026-02-20
+last-edited-date: 2026-04-05
 ---
 
 # 🧠 Mission 07: Extend with Azure AI & BYOM {#mission-07-extend-with-azure-ai-byom}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

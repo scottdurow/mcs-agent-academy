@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Multi-Agent Systems
   link: /operative/03-multi-agent

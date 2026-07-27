@@ -10,6 +10,7 @@ declare module "virtual:missions-data" {
     industries: string[];
     lastUpdated: number;
     createdAt: number;
+    preview: boolean;
   }
 
   export const missions: MissionData[];

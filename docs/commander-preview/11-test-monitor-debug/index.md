@@ -1,13 +1,29 @@
 ---
+preview: true
 prev:
   text: 'Governance with Auth, Channels & DLP'
   link: '/commander-preview/10-governance-auth-dlp'
 next:
   text: 'Deploy Agents with Solutions & Pipelines'
   link: '/commander-preview/12-deploy-solutions-pipelines'
+short-description: 'Test, evaluate, and monitor agents with analytics and telemetry'
+difficulty: 3
+codename: 'OPERATION GLASS BOX'
+time: 60
+tags:
+  - feedback
+products:
+  - copilot-studio
+  - azure
+industries:
+  - it
+created-date: 2026-02-20
+last-edited-date: 2026-04-05
 ---
 
 # 🧪 Mission 11: Test, Monitor, Debug & Analytics {#mission-11-test-monitor-debug-analytics}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

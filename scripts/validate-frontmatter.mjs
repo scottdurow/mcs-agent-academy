@@ -14,10 +14,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const docsDir = path.resolve(__dirname, "../docs");
 
 const MISSION_DIRS = ["special-ops", "cowork-collective"];
-const REQUIRED_FIELDS = ["difficulty", "time", "description", "created-date", "last-edited-date"];
+const REQUIRED_FIELDS = [
+  "difficulty",
+  "time",
+  "description",
+  "created-date",
+  "last-edited-date",
+];
 
 // Index pages for the section itself (not missions)
-const SECTION_INDEX_NAMES = new Set(MISSION_DIRS.map((d) => path.join(docsDir, d, "index.md")));
+const SECTION_INDEX_NAMES = new Set(
+  MISSION_DIRS.map((d) => path.join(docsDir, d, "index.md"))
+);
 
 let errors = 0;
 let checked = 0;
@@ -49,22 +57,48 @@ for (const sectionName of MISSION_DIRS) {
       errors++;
     } else {
       // Type checks
-      if (typeof fm.difficulty !== "number" || fm.difficulty < 1 || fm.difficulty > 5) {
-        console.error(`Error: ${rel} — "difficulty" must be a number between 1 and 5 (got: ${JSON.stringify(fm.difficulty)})`);
+      if (
+        typeof fm.difficulty !== "number" ||
+        fm.difficulty < 1 ||
+        fm.difficulty > 5
+      ) {
+        console.error(
+          `Error: ${rel} — "difficulty" must be a number between 1 and 5 (got: ${JSON.stringify(fm.difficulty)})`
+        );
         errors++;
       }
       if (typeof fm.time !== "number" || fm.time <= 0) {
-        console.error(`Error: ${rel} — "time" must be a positive number in minutes (got: ${JSON.stringify(fm.time)})`);
+        console.error(
+          `Error: ${rel} — "time" must be a positive number in minutes (got: ${JSON.stringify(fm.time)})`
+        );
         errors++;
       }
-      if (typeof fm.description !== "string" || fm.description.trim().length < 10) {
-        console.error(`Error: ${rel} — "description" must be a non-empty string of at least 10 characters`);
+      if (
+        typeof fm.description !== "string" ||
+        fm.description.trim().length < 10
+      ) {
+        console.error(
+          `Error: ${rel} — "description" must be a non-empty string of at least 10 characters`
+        );
         errors++;
       }
       for (const dateField of ["created-date", "last-edited-date"]) {
         const raw = fm[dateField];
         if (isNaN(new Date(raw).getTime())) {
-          console.error(`Error: ${rel} — "${dateField}" must be a valid date (got: ${JSON.stringify(raw)})`);
+          console.error(
+            `Error: ${rel} — "${dateField}" must be a valid date (got: ${JSON.stringify(raw)})`
+          );
+          errors++;
+        }
+      }
+      if (fm.preview !== undefined) {
+        const isBoolean = typeof fm.preview === "boolean";
+        const isMessage =
+          typeof fm.preview === "string" && fm.preview.trim() !== "";
+        if (!isBoolean && !isMessage) {
+          console.error(
+            `Error: ${rel} — "preview" must be a boolean or a non-empty string (got: ${JSON.stringify(fm.preview)})`
+          );
           errors++;
         }
       }
@@ -72,7 +106,9 @@ for (const sectionName of MISSION_DIRS) {
   }
 }
 
-console.log(`\nFrontmatter check: ${checked} mission(s) checked, ${errors} error(s) found.`);
+console.log(
+  `\nFrontmatter check: ${checked} mission(s) checked, ${errors} error(s) found.`
+);
 
 if (errors > 0) {
   process.exit(1);

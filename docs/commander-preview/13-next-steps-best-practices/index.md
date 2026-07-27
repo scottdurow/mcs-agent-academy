@@ -1,10 +1,26 @@
 ---
+preview: true
 prev:
   text: 'Deploy Agents with Solutions & Pipelines'
   link: '/commander-preview/12-deploy-solutions-pipelines'
+short-description: 'Apply implementation guidance and governance for long-term success'
+difficulty: 3
+codename: 'OPERATION LONG WATCH'
+time: 30
+tags:
+  - compliance
+products:
+  - copilot-studio
+  - power-platform
+industries:
+  - general
+created-date: 2026-02-20
+last-edited-date: 2026-04-05
 ---
 
 # 🏁 Mission 13: Next Steps and Best Practices {#mission-13-next-steps-and-best-practices}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

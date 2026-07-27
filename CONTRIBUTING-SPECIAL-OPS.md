@@ -71,6 +71,7 @@ last-edited-date: 2026-04-02
 | `created-date` | date | Yes | ISO date when the mission was first published. |
 | `last-edited-date` | date | Yes | ISO date of the most recent edit. Update this on every change. |
 | `hide` | boolean | No | Set to `true` to exclude the page from all `<missions />` grids. The page remains directly accessible. |
+| `preview` | boolean \| string | No | Set to `true` to show a preview banner at the top of the page. Provide a string to replace the default banner text. |
 
 > [!IMPORTANT]
 > Special Ops missions do **not** use `prev`, `next`, `short-description`, `codename`, or `section` in their frontmatter. They are standalone — there is no sequential navigation.

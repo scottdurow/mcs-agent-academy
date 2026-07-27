@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Introduction to agents
   link: /recruit-v2-preview/01-introduction-to-agents

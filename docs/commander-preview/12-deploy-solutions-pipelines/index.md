@@ -1,13 +1,30 @@
 ---
+preview: true
 prev:
   text: 'Test, Monitor, Debug & Analytics'
   link: '/commander-preview/11-test-monitor-debug'
 next:
   text: 'Next Steps and Best Practices'
   link: '/commander-preview/13-next-steps-best-practices'
+short-description: 'Ship agents across environments with solutions and pipelines'
+difficulty: 3
+codename: 'OPERATION SAFE PASSAGE'
+time: 60
+tags:
+  - solutions
+  - publishing
+products:
+  - copilot-studio
+  - power-platform
+industries:
+  - it
+created-date: 2026-02-20
+last-edited-date: 2026-04-05
 ---
 
 # 🚀 Mission 12: Deploy Agents with Solutions & Pipelines {#mission-12-deploy-agents-with-solutions-pipelines}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

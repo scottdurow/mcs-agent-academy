@@ -93,6 +93,7 @@ last-edited-date: 2026-03-13
 | `created-date` | date | Yes | ISO date when the mission was first published (for example `2025-08-20`). |
 | `last-edited-date` | date | Yes | ISO date of the most recent edit. Update this on every change. |
 | `hide` | boolean | No | Set to `true` to exclude the page from all `<missions />` grids. The page remains directly accessible. |
+| `preview` | boolean \| string | No | Set to `true` to show a preview banner at the top of the page. Provide a string to replace the default banner text. |
 
 Use single quotes for string values. Paths in `prev`/`next` are absolute and start with `/recruit/`, `/operative/`, or `/commander-preview/`.
 

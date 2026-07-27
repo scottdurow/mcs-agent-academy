@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: 'Course Setup'
   link: '/recruit-v2-preview/00-course-setup'

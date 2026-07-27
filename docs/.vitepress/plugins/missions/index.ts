@@ -36,6 +36,7 @@ interface MissionData {
   industries: string[];
   lastUpdated: number;
   createdAt: number;
+  preview: boolean;
 }
 
 function extractH1(content: string): string {
@@ -106,6 +107,10 @@ function loadMissions(docsDir: string): MissionData[] {
         createdAt: frontmatter["created-date"]
           ? new Date(frontmatter["created-date"]).getTime()
           : 0,
+        preview:
+          frontmatter.preview === true ||
+          (typeof frontmatter.preview === "string" &&
+            frontmatter.preview.trim() !== ""),
       });
     }
   }

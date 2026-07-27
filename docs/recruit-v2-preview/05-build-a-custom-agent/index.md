@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Creating a solution
   link: /recruit-v2-preview/04-creating-a-solution

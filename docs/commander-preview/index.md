@@ -1,4 +1,5 @@
 ---
+preview: true
 next:
   text: 'Advanced MCP Server Usage'
   link: '/commander-preview/01-advanced-mcp'
