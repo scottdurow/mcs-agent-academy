@@ -87,7 +87,7 @@ In this lab we’ll use the **SharePoint - Get items** connector action so the a
 
 ### Prerequisites
 
-1. **SharePoint list** - the **Devices** list from [Lesson 00 - Course Setup](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
+1. **SharePoint list** - the **EmployeeAssets** list from [Lesson 00 - Course Setup](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
 1. **Contoso IT Concierge** - the agent created in the earlier mission.
 
 Let's begin!
@@ -167,7 +167,7 @@ Let's begin!
 
    ![Configure List Name input parameter](./assets/6.2_06_UpdateListName.png)
 
-1. Select the SharePoint List created in the Course Setup mission, **EmployeeAssets** and select **Save**.
+1. Select the SharePoint List created in the Course Setup mission, **EmployeeAssets**, and select **Save**.
 
    ![Select List for the variable configuration](./assets/6.2_07_UpdateListNameVariable.png)
 
