@@ -8,7 +8,7 @@ description: >-
   Ground a Copilot Studio agent in your own documents with Retrieval-Augmented
   Generation (RAG) using Azure AI Search vector search, wired in as a connector
   tool in the new Copilot Studio experience.
-badge: ./assets/Academy_AzureAISearchRAG_Badge.png
+badge: ./assets/ai-search-badge.png
 products:
   - copilot-studio
   - azure
@@ -16,7 +16,7 @@ industries:
   - hr
 created-date: 2026-07-02
 last-edited-date: 2026-07-02
-hidden: true
+hide: true
 ---
 
 # 🔎 Azure AI Search RAG {#azure-ai-search-rag}

@@ -7,7 +7,7 @@ time: 45
 description: >-
   Consume a secured MCP server protected with OAuth 2.0 authorization from a
   Microsoft Copilot Studio agent.
-badge: ./assets/Academy_OAuth_Badge.png
+badge: ./assets/mc-oauth-badge.png
 products:
   - copilot-studio
   - entra-id
