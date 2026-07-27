@@ -1,6 +1,4 @@
 import type MarkdownIt from "markdown-it";
-import type Token from "markdown-it/lib/token.mjs";
-
 /**
  * Injects `<preview-banner />` after the page title and its `<mission-meta />`
  * block. The component itself decides whether to render, based on the
@@ -23,7 +21,7 @@ export const previewBannerPlugin = (md: MarkdownIt) => {
       insertAt = tokens[metaAt].type === "inline" ? metaAt + 2 : metaAt + 1;
     }
 
-    const token = new state.Token("html_block", "", 0) as Token;
+    const token = new state.Token("html_block", "", 0);
     token.content = "<preview-banner />\n";
     tokens.splice(insertAt, 0, token);
   });
