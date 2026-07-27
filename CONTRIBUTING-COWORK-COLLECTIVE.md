@@ -72,6 +72,7 @@ last-edited-date: 2026-04-06
 | `created-date` | date | Yes | ISO date when the mission was first published. |
 | `last-edited-date` | date | Yes | ISO date of the most recent edit. Update this on every change. |
 | `hide` | boolean | No | Set to `true` to exclude the page from all `<missions />` grids. The page remains directly accessible. |
+| `preview` | boolean \| string | No | Set to `true` to show a preview banner at the top of the page. Provide a string to replace the default banner text. |
 
 > [!IMPORTANT]
 > Cowork Collective missions require `section: cowork-collective` — this is what makes the mission appear on the Cowork Collective landing page. They do **not** use `prev`, `next`, `short-description`, or `codename`.
@@ -84,6 +85,7 @@ Cowork Collective frontmatter is validated automatically by `scripts/validate-fr
 - `time` is a number greater than 0
 - `description` is a string with at least 10 characters
 - `created-date` and `last-edited-date` are valid dates
+- `preview`, when present, is a boolean or a string
 
 Run the validation locally:
 

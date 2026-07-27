@@ -1,13 +1,29 @@
 ---
+preview: true
 prev:
   text: 'Voice-enabled Agents'
   link: '/commander-preview/05-voice-enabled-agents'
 next:
   text: 'Extend with Azure AI & BYOM'
   link: '/commander-preview/07-azure-ai-byom'
+short-description: 'Configure multilingual agents with regional date and time handling'
+difficulty: 3
+codename: 'OPERATION POLYGLOT'
+time: 45
+tags:
+  - topics
+  - adaptive-cards
+products:
+  - copilot-studio
+industries:
+  - general
+created-date: 2026-02-20
+last-edited-date: 2026-07-27
 ---
 
 # 🌍 Mission 06: Localization {#mission-06-localization}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

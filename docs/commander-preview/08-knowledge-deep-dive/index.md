@@ -1,13 +1,30 @@
 ---
+preview: true
 prev:
   text: 'Extend with Azure AI & BYOM'
   link: '/commander-preview/07-azure-ai-byom'
 next:
   text: 'Handoff to Human Agents'
   link: '/commander-preview/09-handoff-to-human'
+short-description: 'Optimize websites, SharePoint, and Bing as agent knowledge sources'
+difficulty: 3
+codename: 'OPERATION DEEP ARCHIVE'
+time: 45
+tags:
+  - grounding
+products:
+  - copilot-studio
+  - sharepoint
+  - onedrive
+industries:
+  - general
+created-date: 2026-02-20
+last-edited-date: 2026-07-27
 ---
 
 # 📚 Mission 08: Knowledge Deep Dive {#mission-08-knowledge-deep-dive}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

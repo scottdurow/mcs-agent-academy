@@ -21,13 +21,16 @@ Renders a metadata card showing the mission's codename, difficulty rating, estim
 | Field | What it renders |
 |-------|-----------------|
 | `codename` | 🕵️ badge with the operation name |
-| `difficulty` | Star rating (⭐). Values are clamped between 1 and 5. |
+| `difficulty` | Star rating out of 3 (⭐). Only values 1–3 render stars — 4 and 5 render none. |
 | `time` | ⏱️ label with a pie-chart icon. The pie fills proportionally — 60 minutes = full circle. |
 | `products` | Linked pills pointing to `/products/{slug}/` |
 | `tags` | Linked pills pointing to `/tags/{slug}/` |
 | `industries` | Linked pills pointing to `/industries/{slug}/` |
 
 The component renders only when at least one of these fields is present. Label lookups use `docs/.vitepress/data/products.json`, `tags.json`, and `industries.json`.
+
+> [!NOTE]
+> `<mission-meta />` uses a 3-star scale, while `<missions />` cards and `scripts/validate-frontmatter.mjs` allow `difficulty` values up to 5. Keep course and mission difficulty in the 1–3 range so the stars render.
 
 **When to use:** Place immediately after the H1 title on every mission page (courses, Special Ops, and Cowork Collective).
 
@@ -39,18 +42,18 @@ The component renders only when at least one of these fields is present. Label l
 
 ### `<missions />`
 
-Renders a filterable, paginated grid of mission cards. Each card shows the mission's section badge, title, difficulty stars, badge image, and date.
+Renders a filterable, paginated grid of mission cards. Each card shows the mission's section badge, title, difficulty stars, badge image, date, and a `PREVIEW` pill when the mission sets `preview` in its frontmatter.
 
 **Props:**
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `section` | string | — | Filter missions by section: `recruit`, `operative`, `special-ops`, `cowork-collective`, `commander-preview`. |
+| `section` | string | — | Filter missions by section: `recruit`, `operative`, `special-ops`, or `cowork-collective`. |
 | `sort` | string | `"alphabetical"` | Sort field. Options: `"alphabetical"`, `"last-updated"`, `"level"`, `"first-added"`. |
 | `order` | string | `"ascending"` | Sort direction: `"ascending"` or `"descending"`. |
 | `maxRows` | number | `2` | Maximum rows per page. Enables pagination when set. |
 | `filterable` | boolean | `true` | Show filter pills for tags, products, and industries. |
-| `filtersExpanded` | boolean | `true` | Whether the filter panel starts expanded. When collapsed, an active-filter count badge is shown. |
+| `filtersExpanded` | boolean | `false` | Whether the filter panel starts expanded. When collapsed, an active-filter count badge is shown. |
 | `tag` | string | — | Pre-filter by a tag slug (for example `fundamentals`). |
 | `product` | string | — | Pre-filter by a product slug (for example `copilot-studio`). |
 | `industry` | string | — | Pre-filter by an industry slug (for example `it`). |
@@ -78,6 +81,8 @@ Show all missions with pagination (4 rows per page):
 **When to use:** On section landing pages (`docs/special-ops/index.md`, `docs/cowork-collective/index.md`, etc.) and any taxonomy pages that list missions.
 
 Missions with `hide: true` in their frontmatter are excluded from every `<missions />` grid, including section, tag, product, and industry listings. The mission page remains available directly, and its `<mission-meta />` component is unaffected.
+
+The `commander-preview`, `recruit-v2-preview`, and `operative-v2-preview` folders are excluded from mission data entirely by `EXCLUDED_DIRS` in `docs/.vitepress/plugins/missions/index.ts`, so those missions never appear in a grid and passing one of those slugs to `section` returns nothing.
 
 **Preview:**
 
@@ -296,6 +301,90 @@ Renders a grid of all industries from `docs/.vitepress/data/industries.json` wit
 
 ---
 
+### `<preview-banner />`
+
+Renders a warning banner marking a page as preview content. Reads the `preview` frontmatter field — no props are needed.
+
+**When to use:** This component is injected automatically by a markdown-it plugin, directly below the page title and its `<mission-meta />` card, on any page whose frontmatter sets a truthy `preview` value. You do not need to add it manually. See [Preview banner](#preview-banner) for the frontmatter options.
+
+---
+
+### `<VideoLibrary />`
+
+Renders a searchable video gallery with track filter pills and inline YouTube playback. The video list is maintained inside the component.
+
+**Props:**
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `track` | string | `"all"` | Track selected on load. Options: `"all"`, `"recruit"`, `"operative"`, `"special-ops"`, `"cowork"`, `"agent-academy-live"`. |
+
+**Examples:**
+
+All videos, no pre-selected track:
+
+```markdown
+<VideoLibrary />
+```
+
+Pre-filtered to a single track:
+
+```markdown
+<VideoLibrary track="cowork" />
+```
+
+**When to use:** On the videos overview page (`docs/videos/index.md`) and on section or event pages that should surface only their own recordings.
+
+---
+
+### `<SessionSchedule />`
+
+Renders the Agent Academy Live agenda as an expandable list of sessions with speaker photos, titles, and bios.
+
+**Props:** None. Session and speaker data is hardcoded in `docs/.vitepress/theme/components/SessionSchedule.vue` — edit that file to change the agenda.
+
+**Example:**
+
+```markdown
+<SessionSchedule />
+```
+
+**When to use:** On the live event page (`docs/events/live/index.md`).
+
+---
+
+### `<WorkshopsPage />`
+
+Renders a grid of facilitator resource cards. Cards marked unavailable show a "Coming soon" label instead of a link.
+
+**Props:** None. The resource list is hardcoded in `docs/.vitepress/theme/components/WorkshopsPage.vue`.
+
+**Example:**
+
+```markdown
+<WorkshopsPage />
+```
+
+**When to use:** On the workshops page (`docs/events/workshops/index.md`).
+
+---
+
+### `<HackathonPrizes />`
+
+Renders the hackathon prize breakdown: a participant badge row plus a per-track grid of placement badges and prizes.
+
+**Props:** None. Tracks, placements, and badge images are hardcoded in `docs/.vitepress/theme/components/HackathonPrizes.vue`.
+
+**Example:**
+
+```markdown
+<HackathonPrizes />
+```
+
+**When to use:** On the hackathon page (`docs/events/hackathon/index.md`).
+
+---
+
 ## Mermaid diagrams
 
 Mermaid diagrams are rendered client-side with theme-aware styling (dark/light mode). Use the standard fenced code block syntax:
@@ -438,6 +527,33 @@ Use these when you need to show different images or text depending on the user's
 
 ---
 
+## Preview banner
+
+Pages that are still being developed can show a banner warning readers that the content is unfinished. The banner is injected automatically below the page title and its `<mission-meta />` card — there is no component to add to the markdown.
+
+Set `preview: true` in the frontmatter to show the default message:
+
+```yaml
+---
+preview: true
+---
+```
+
+> ⚠️ **Preview**
+> This module is in preview. Content may change and some steps might not work as intended.
+
+To replace the default text, set `preview` to a string instead:
+
+```yaml
+---
+preview: 'These steps target the new Copilot Studio authoring experience and may change.'
+---
+```
+
+When `preview` is absent, `false`, or an empty string, nothing renders. Missions with a truthy `preview` value also show a `PREVIEW` pill on their card in `<missions />` grids.
+
+---
+
 ## Frontmatter reference
 
 ### All available fields
@@ -459,6 +575,7 @@ Use these when you need to show different images or text depending on the user's
 | `created-date` | date | Required | Required | Required | ISO date of first publish. |
 | `last-edited-date` | date | Required | Required | Required | ISO date of last edit. |
 | `hide` | boolean | Optional | Optional | Optional | Set to `true` to exclude the page from all `<missions />` grids. |
+| `preview` | boolean \| string | Optional | Optional | Optional | Set to `true` to show the preview banner. A string replaces the default banner text. |
 | `lastUpdated` | boolean | Optional | Optional | Optional | Set to `false` on landing/overview pages to hide the VitePress last-updated footer. |
 
 *`prev` is not required on the first mission; `next` is not required on the last mission.

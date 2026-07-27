@@ -1,13 +1,28 @@
 ---
+preview: true
 prev:
   text: 'Knowledge Deep Dive'
   link: '/commander-preview/08-knowledge-deep-dive'
 next:
   text: 'Governance with Auth, Channels & DLP'
   link: '/commander-preview/10-governance-auth-dlp'
+short-description: 'Escalate conversations to live human agents with full context'
+difficulty: 3
+codename: 'OPERATION WARM TRANSFER'
+time: 45
+tags:
+  - topics
+products:
+  - copilot-studio
+industries:
+  - general
+created-date: 2026-02-20
+last-edited-date: 2026-07-27
 ---
 
 # 🔄 Mission 09: Handoff to Human Agents {#mission-09-handoff-to-human-agents}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

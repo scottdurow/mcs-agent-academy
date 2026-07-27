@@ -1,13 +1,31 @@
 ---
+preview: true
 prev:
   text: 'Computer Using Agents (CUA)'
   link: '/commander-preview/02-computer-using-agents'
 next:
   text: 'Human in the Loop (HITL)'
   link: '/commander-preview/04-human-in-the-loop'
+short-description: 'Run Python in a sandbox for analysis, forecasting, and charting'
+difficulty: 3
+codename: 'OPERATION SANDBOX CIPHER'
+time: 45
+tags:
+  - custom-skills
+  - document-generation
+products:
+  - copilot-studio
+  - excel
+  - sharepoint
+industries:
+  - general
+created-date: 2026-02-20
+last-edited-date: 2026-07-27
 ---
 
 # 🐍 Mission 03: Code Interpreter {#mission-03-code-interpreter}
+
+<mission-meta />
 
 ## 🕵️‍♂️ **CLASSIFIED** {#classified}
 

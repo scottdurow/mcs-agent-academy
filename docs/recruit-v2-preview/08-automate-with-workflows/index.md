@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Add Tools
   link: /recruit-v2-preview/07-add-tools

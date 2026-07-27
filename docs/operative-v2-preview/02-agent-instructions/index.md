@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Get started with the Hiring Agent
   link: /operative/01-get-started

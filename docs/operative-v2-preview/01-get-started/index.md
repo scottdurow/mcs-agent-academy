@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Operative Overview
   link: /operative

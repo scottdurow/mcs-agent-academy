@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: AI Safety and Content Moderation
   link: /operative/06-ai-safety

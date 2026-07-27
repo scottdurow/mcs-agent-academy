@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Authoring Agent Instructions
   link: /operative/02-agent-instructions

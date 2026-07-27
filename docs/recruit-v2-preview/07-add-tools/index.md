@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: 'Add a Skill'
   link: '/recruit-v2-preview/06-add-a-skill'

@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Publish your agent
   link: /recruit/11-publish-your-agent

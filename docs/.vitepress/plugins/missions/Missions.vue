@@ -64,6 +64,7 @@
         <span v-if="mission.difficulty" class="mission-difficulty-pill">
           {{ '⭐'.repeat(mission.difficulty) }}
         </span>
+        <span v-if="mission.preview" class="mission-preview-pill">PREVIEW</span>
         <div v-if="mission.badge" class="mission-badge">
           <img :src="withBase(mission.badge)" :alt="mission.title" />
         </div>
@@ -376,6 +377,20 @@ const visiblePages = computed<PageItem[]>(() => {
   padding: 0.15rem 0.55rem;
   border-radius: 999px;
   background: var(--vp-c-default-soft);
+}
+
+.mission-preview-pill {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--vp-c-warning-soft);
+  color: var(--vp-c-warning-1);
 }
 
 .mission-badge {

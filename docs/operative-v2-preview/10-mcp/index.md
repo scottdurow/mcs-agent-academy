@@ -1,5 +1,6 @@
 ---
 hide: true
+preview: true
 prev:
   text: Document Generation
   link: /operative/09-document-generation

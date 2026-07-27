@@ -1,4 +1,5 @@
 ---
+preview: true
 next:
   text: 'Advanced MCP Server Usage'
   link: '/commander-preview/01-advanced-mcp'
@@ -8,9 +9,6 @@ lastUpdated: false
 # Welcome Commander (Preview)
 
 ![Copilot Studio Agent Academy Commander](../images/mcs-agent-academy-commander-badge.png)
-
-> [!NOTE]
-> ⚠️ This is a **preview** of the Commander curriculum. Content is under active development.
 
 **Welcome, Commander.**  
 Your elite mission, should you choose to accept it, is to master the most advanced capabilities of **Microsoft Copilot Studio** and lead the charge in building **production-ready, enterprise-scale agent solutions**.
