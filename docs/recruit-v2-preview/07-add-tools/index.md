@@ -35,7 +35,7 @@ last-edited-date: 2026-06-28
 
 You’ve built an agent. It listens, learns, and answers questions, but now it’s time to get tactical and let it **take action**. In this mission you’ll connect your agent to a real data source so it can fetch live information and do something useful with it.
 
-In the new Copilot Studio experience, that capability comes from **tools**. You’ll add a **SharePoint - Get items** tool so your IT Helpdesk Agent can pull available devices straight from a SharePoint list.
+In the new Copilot Studio experience, that capability comes from **tools**. You’ll add a **SharePoint - Get items** tool so your Contoso IT Concierge agent can pull available devices straight from a SharePoint list.
 
 > [!IMPORTANT]
 > If your Copilot Studio screen looks different from these screenshots, make sure the **New experience** toggle in the upper-right corner is turned **on**.
@@ -47,8 +47,8 @@ In this mission, you’ll learn:
 1. Why **Topics** are gone in the new experience and what replaced them
 1. What **tools** are and how an agent decides when to use them
 1. How to add the **SharePoint - Get items** connector action as a tool
-1. How to set a tool’s name, usage description, and inputs
-1. How to test that your agent calls the tool
+1. How to rename the tool so its purpose is clear to the model
+1. How to configure the tool's input parameters for the SharePoint site and list
 
 ## ✋🏻 Wait - where did Topics go? {#where-did-topics-go}
 
@@ -63,7 +63,7 @@ The model reads your instructions, understands the user’s intent, and decides 
 
 ## 🔧 What are tools {#what-are-tools}
 
-Tools give your agent the ability to do something beyond chatting, such as calling an API or MCP Server, run a process, or read and write business data. Think of tools as "action blocks" that give your agent superpowers.
+Tools give your agent the ability to do something beyond chatting, such as calling an API or MCP Server, running a process, or reading and writing business data. Think of tools as "action blocks" that give your agent superpowers.
 
 Tools can come from several places:
 
@@ -116,7 +116,7 @@ Let's begin!
     Get items
    ```
 
-    Select the **Get items** tool.
+   Select the **Get items** tool.
 
    ![Select Get items tool](./assets/6.1_05_GetItems.png)
 
@@ -146,19 +146,36 @@ Let's begin!
 
    For this use case, where the agent retrieves device information and returns it to the user, set **Site Address** and **List Name** to the SharePoint site and list created in the Course Setup mission.
 
-    Update the **How is this filled?** field from `AI` to `Value`.
+   Update the **How is this filled?** field from `AI` to `Value`.
 
-    Then select the **Value** drop-down field and select **+Add variable**.
+   Then select the **Value** drop-down field and select **+ Add variable**.
 
    ![Update Site Address input](./assets/6.2_03_UpdateSiteAddress.png)
 
-1. Select **Save**.
+1. In the **Site Address** drop-down field, select the SharePoint site you created in the Course Setup mission.
 
-   ![Configure inputs](assets/step-06-annotated.png)
+   ![Select SharePoint site for the variable configuration](./assets/6.2_04_ConfigureVariable.png)
+
+1. Select **Save** to save the variable for the **Site Address** input parameter.
+
+   ![Select Save](./assets/6.2_05_SaveVariable.png)
+
+1. Scroll down to the **List Name** input parameter and repeat the same steps:
+
+   - In the **How is this filled?** field, select **Value**.
+   - In the **Value** drop-down field, select **Add variable**.
+
+   ![Configure List Name input parameter](./assets/6.2_06_UpdateListName.png)
+
+1. Select the SharePoint List created in the Course Setup mission, **EmployeeAssets** and select **Save**.
+
+   ![Select List for the variable configuration](./assets/6.2_07_UpdateListNameVariable.png)
+
+The input parameters for the **Get items** tool have been successfully configured. 👍🏻
 
 ## ✅ Mission Complete {#mission-complete}
 
-Congratulations! 👏🏻 You learned that **Topics are gone** in the new experience and the model now orchestrates the conversation. You added a **SharePoint - Get items** tool and configured its inputs 🙌🏻
+Congratulations! 👏🏻 You learned that **Topics are gone** in the new experience and the model now orchestrates the conversation. You added a **SharePoint - Get items** tool and configured its inputs. 🙌🏻
 
 In the next mission, you'll be testing the tool after one of the skills has been updated.
 
