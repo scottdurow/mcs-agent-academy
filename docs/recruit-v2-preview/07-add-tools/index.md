@@ -71,7 +71,7 @@ Tools can come from several places:
 - **Model Context Protocol (MCP)** - connect to MCP servers that expose tools.
 - **Workflows** - call automated flows you’ve built.
 
-When a user asks something, the model matches the request to a tool’s **description**, fills in the tool’s **inputs**, runs it, and uses the result in its reply. A clear description is what helps the model pick the right tool - so we’ll write a good one.
+When a user asks something, the model matches the request to a tool’s description, fills in the tool’s inputs, runs it, and uses the result in its reply. Because the description helps the model choose the right tool, in this lab you’ll review the existing description and decide whether to keep it or update it for the scenario.
 
 In this lab we’ll use the **SharePoint - Get items** connector action so the agent can read a list of devices.
 
