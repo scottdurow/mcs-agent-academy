@@ -35,7 +35,7 @@ last-edited-date: 2026-06-28
 
 You’ve built an agent. It listens, learns, and answers questions, but now it’s time to get tactical and let it **take action**. In this mission you’ll connect your agent to a real data source so it can fetch live information and do something useful with it.
 
-In the new Copilot Studio experience, that capability comes from **tools**. You’ll add a **SharePoint - Get items** tool so your IT Helpdesk Agent can pull available devices straight from a SharePoint list.
+In the new Copilot Studio experience, that capability comes from **tools**. You’ll add a **SharePoint - Get items** tool so your Contoso IT Concierge agent can pull available devices straight from a SharePoint list.
 
 > [!IMPORTANT]
 > If your Copilot Studio screen looks different from these screenshots, make sure the **New experience** toggle in the upper-right corner is turned **on**.
@@ -47,10 +47,10 @@ In this mission, you’ll learn:
 1. Why **Topics** are gone in the new experience and what replaced them
 1. What **tools** are and how an agent decides when to use them
 1. How to add the **SharePoint - Get items** connector action as a tool
-1. How to set a tool’s name, usage description, and inputs
-1. How to test that your agent calls the tool
+1. How to rename the tool so its purpose is clear to the model
+1. How to configure the tool's input parameters for the SharePoint site and list
 
-## 🪦 Wait - where did Topics go? {#where-did-topics-go}
+## ✋🏻 Wait - where did Topics go? {#where-did-topics-go}
 
 If you’ve used Copilot Studio before, you’ll remember **Topics**: hand-built conversation flows made of trigger phrases and connected **nodes** (send a message, ask a question, add a condition, call a tool, and so on). You routed conversations manually and stitched logic together node by node.
 
@@ -63,7 +63,7 @@ The model reads your instructions, understands the user’s intent, and decides 
 
 ## 🔧 What are tools {#what-are-tools}
 
-Tools gives your agent the ability to do something beyond chatting like call an API or MCP Server, run a process, or read and write business data. Think of tools as "action blocks" that give your agent superpowers.
+Tools give your agent the ability to do something beyond chatting, such as calling an API or MCP server, running a process, or reading and writing business data. Think of tools as "action blocks" that give your agent superpowers.
 
 Tools can come from several places:
 
@@ -71,7 +71,7 @@ Tools can come from several places:
 - **Model Context Protocol (MCP)** - connect to MCP servers that expose tools.
 - **Workflows** - call automated flows you’ve built.
 
-When a user asks something, the model matches the request to a tool’s **description**, fills in the tool’s **inputs**, runs it, and uses the result in its reply. A clear description is what helps the model pick the right tool - so we’ll write a good one.
+When a user asks something, the model matches the request to a tool’s description, fills in the tool’s inputs, runs it, and uses the result in its reply. Because the description helps the model choose the right tool, in this lab you’ll review the existing description and decide whether to keep it or update it for the scenario.
 
 In this lab we’ll use the **SharePoint - Get items** connector action so the agent can read a list of devices.
 
@@ -87,65 +87,97 @@ In this lab we’ll use the **SharePoint - Get items** connector action so the a
 
 ### Prerequisites
 
-1. **SharePoint list** - the **Devices** list from [Lesson 00 - Course Setup](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
-1. **Contoso Helpdesk Agent** - the agent created in the earlier missions.
+1. **SharePoint list** - the **EmployeeAssets** list from [Mission 00 - Course Setup](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
+1. **Contoso IT Concierge** - the agent created in [Mission 05 - Build a custom engine agent](../05-build-a-custom-agent/index.md#lab-05-create-a-custom-engine-agent-in-copilot-studio).
 
 Let's begin!
 
-### 7.1 Open the agent and find Tools
+### 6.1 Add a tool using a connector
 
-1. From **Agents**, open the **Contoso Helpdesk Agent**. The **Build** view shows the agent **Instructions** on the left and a configuration panel on the right with **Tools**, **Knowledge**, **Skills**, and more. There is no Topics tab. In the **Tools** section, select **Add tool**.
+1. In the **Build** view, in the **Tools** section, select the **+** icon to add a tool.
 
-   ![Tools section and Add tool](assets/step-01-annotated.png)
+   ![Select plus icon to add tool](./assets/6.1_01_SelectAddTool.png)
 
-### 7.2 Add the SharePoint connector
+1. The **Add a tool** dialog opens with **Featured**, **MCP**, **Connectors**, and **Workflows** pills.
 
-1. The **Add a tool** dialog opens with **Featured**, **MCP**, **Connectors**, and **Workflows** tabs. Select the **SharePoint** connector.
+   ![Tool types](./assets/6.1_02_ToolTypes.png)
 
-   ![Select SharePoint](assets/step-02-annotated.png)
+1. Take a moment to review what's available under the different types of tools. Select the **Model Context Protocol (MCP)** pill. Here, you'll see a list of first-party and third-party Microsoft certified MCP tools to select from.
 
-1. Under **Run a single action**, find and select **Get items**. (You can also type `Get items` into the search box.)
+   ![MCP tools available](./assets/6.1_03_MCPServers.png)
 
-   ![Select Get items](assets/step-03-annotated.png)
+1. Next, select the **Connectors** pill. You'll see a larger list of first-party and third-party Microsoft certified connector tools to select from.
 
-1. Review the action overview, then select **Add**.
+   ![Connectors available](./assets/6.1_04_Connectors.png)
 
-   ![Add Get items](assets/step-04-annotated.png)
-
-### 7.3 Configure the tool
-
-1. The tool now appears in the **Tools** list. Select **Get items** to open **Tool details**. On the **Details** tab, give the tool a clear usage description so the model knows when to use it. Copy and paste the following as the **Description**.
+1. Copy and paste the following text in the search bar.
 
    ```text
-   Retrieves available devices from the Devices SharePoint list. Use this to find devices that are available, including laptops, desktops, smartphones and accessories.
+   Get items
    ```
 
-   Leave **Authentication mode** set to **User**.
+   Select the **Get items** tool.
 
-   ![Tool details](assets/step-05-annotated.png)
+   ![Select Get items tool](./assets/6.1_05_GetItems.png)
 
-1. Select the **Inputs** tab. Each input (**Site Address**, **List Name**, **Filter Query**, …) can be filled by **AI** or pinned to a fixed **Value**. Leaving them as **AI** lets the agent populate them from the conversation and your instructions. Select **Save**.
+1. Select the **+ Add** button to add the tool to the agent.
 
-   ![Configure inputs](assets/step-06-annotated.png)
+   ![Select add button to add the tool](./assets/6.1_06_SelectAdd.png)
 
-### 7.4 Test your agent
+### 6.2 Configure the tool
 
-1. Select the **Preview** tab. Enter the following message:
+1. The tool now appears in the **Tools** list. Select **Get items** to open **Tool details**.
+
+   ![Select Get items to configure the tool](./assets/6.2_01_ConfigureGetItemsTool.png)
+
+1. On the **Details** tab, we'll rename the tool so that the model knows what the tool will be used for. Copy and paste the following text as the **Name**.
 
    ```text
-   I need a laptop
+   Get Employee Assets
    ```
 
-   The agent orchestrates on its own: it reads your instructions, picks the **Get items** tool, fills the inputs, and calls SharePoint - all without a single trigger phrase or node.
+   We usually provide a clear tool description so the model knows when to use it.
 
-   ![Test the tool](assets/step-07-annotated.png)
+   In this scenario, the existing description already fits because the model will retrieve items from the configured SharePoint list, so we can leave it as-is.
 
-   > [!TIP]
-   > If a tool call returns a validation error, the model may have guessed a column or filter that doesn’t exist. Pin **Site Address**, **List Name**, or **Filter Query** to a fixed **Value** on the Inputs tab to keep the call exact.
+   ![Rename tool](./assets/6.2_02_RenameTool.png)
+
+1. Select the **Inputs** tab. Each input parameter (**Site Address**, **List Name**, **Filter Query**, and so forth) can be filled by **AI** or pinned to a fixed **Value**. Leaving them as **AI** lets the agent populate them from the conversation and your instructions.
+
+   For this use case, where the agent retrieves device information and returns it to the user, set **Site Address** and **List Name** to the SharePoint site and list created in the Course Setup mission.
+
+   Update the **How is this filled?** field from `AI` to `Value`.
+
+   Then select the **Value** drop-down field and select **+ Add variable**.
+
+   ![Update Site Address input](./assets/6.2_03_UpdateSiteAddress.png)
+
+1. In the **Site Address** drop-down field, select the SharePoint site you created in the Course Setup mission.
+
+   ![Select SharePoint site for the variable configuration](./assets/6.2_04_ConfigureVariable.png)
+
+1. Select **Save** to save the variable for the **Site Address** input parameter.
+
+   ![Select Save](./assets/6.2_05_SaveVariable.png)
+
+1. Scroll down to the **List Name** input parameter and repeat the same steps:
+
+   - In the **How is this filled?** field, select **Value**.
+   - In the **Value** drop-down field, select **Add variable**.
+
+   ![Configure List Name input parameter](./assets/6.2_06_UpdateListName.png)
+
+1. Select the SharePoint List created in the Course Setup mission, **EmployeeAssets**, and select **Save**.
+
+   ![Select List for the variable configuration](./assets/6.2_07_UpdateListNameVariable.png)
+
+The input parameters for the **Get items** tool have been successfully configured. 👍🏻
 
 ## ✅ Mission Complete {#mission-complete}
 
-Congratulations! 👏🏻 You learned that **Topics are gone** in the new experience and the model now orchestrates the conversation. You added a **SharePoint - Get items** tool, gave it a usage description, configured its inputs, and tested that the agent calls it. 🙌🏻
+Congratulations! 👏🏻 You learned that **Topics are gone** in the new experience and the model now orchestrates the conversation. You added a **SharePoint - Get items** tool and configured its inputs. 🙌🏻
+
+In the next mission, you'll be testing the tool after one of the skills has been updated.
 
 ⏭️ [Move to **Automate with Workflows**](../08-automate-with-workflows/index.md)
 

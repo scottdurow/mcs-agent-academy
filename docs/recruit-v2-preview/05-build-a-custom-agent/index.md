@@ -169,7 +169,7 @@ Before starting this lab, make sure you have:
 
 ### 5.2 Refine agent details
 
-1. In the **Build** tab, review what Copilot Studio assembled from your AI authoring session. In this view:
+1. The **Build** view shows the agent **Instructions** on the left and a configuration panel on the right with **Tools**, **Knowledge**, **Skills**, and more. Review what Copilot Studio assembled from your AI authoring session:
 
    1. **Instructions** were generated from the natural language prompt you provided earlier.
    1. **Skills** were automatically created based on the same prompt and the tasks the agent is expected to perform.
