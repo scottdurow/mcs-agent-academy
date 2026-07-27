@@ -19,7 +19,7 @@ products:
 industries:
   - it
 created-date: 2026-02-20
-last-edited-date: 2026-04-05
+last-edited-date: 2026-07-27
 ---
 
 # 🚀 Mission 12: Deploy Agents with Solutions & Pipelines {#mission-12-deploy-agents-with-solutions-pipelines}

@@ -18,7 +18,7 @@ products:
 industries:
   - general
 created-date: 2026-02-20
-last-edited-date: 2026-04-05
+last-edited-date: 2026-07-27
 ---
 
 # 🎙️ Mission 05: Voice-enabled Agents {#mission-05-voice-enabled-agents}

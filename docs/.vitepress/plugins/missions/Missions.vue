@@ -381,8 +381,9 @@ const visiblePages = computed<PageItem[]>(() => {
 
 .mission-preview-pill {
   position: absolute;
-  top: 2rem;
-  left: 0.5rem;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.04em;

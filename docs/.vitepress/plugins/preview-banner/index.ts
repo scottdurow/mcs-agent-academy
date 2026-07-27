@@ -1,11 +1,18 @@
 import type MarkdownIt from "markdown-it";
+
 /**
  * Injects `<preview-banner />` after the page title and its `<mission-meta />`
- * block. The component itself decides whether to render, based on the
- * `preview` frontmatter field.
+ * block when the page sets a truthy `preview` frontmatter field. The component
+ * reads the same field to build the message it renders.
  */
 export const previewBannerPlugin = (md: MarkdownIt) => {
   md.core.ruler.push("preview_banner", (state) => {
+    const preview = state.env?.frontmatter?.preview;
+    const enabled =
+      preview === true ||
+      (typeof preview === "string" && preview.trim() !== "");
+    if (!enabled) return;
+
     const tokens = state.tokens;
 
     // Avoid injecting the banner twice if a page includes it manually.

@@ -18,7 +18,7 @@ products:
 industries:
   - it
 created-date: 2026-02-20
-last-edited-date: 2026-04-05
+last-edited-date: 2026-07-27
 ---
 
 # 🖥️ Mission 02: Computer Using Agents (CUA) {#mission-02-computer-using-agents-cua}

@@ -19,7 +19,7 @@ products:
 industries:
   - security
 created-date: 2026-02-20
-last-edited-date: 2026-04-05
+last-edited-date: 2026-07-27
 ---
 
 # 🔐 Mission 10: Governance Essentials with Authentication, Channels & DLP {#mission-10-governance-essentials-with-authentication-channels-dlp}

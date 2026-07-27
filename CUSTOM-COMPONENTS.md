@@ -82,7 +82,7 @@ Show all missions with pagination (4 rows per page):
 
 Missions with `hide: true` in their frontmatter are excluded from every `<missions />` grid, including section, tag, product, and industry listings. The mission page remains available directly, and its `<mission-meta />` component is unaffected.
 
-The `commander-preview` folder is excluded from mission data entirely by `EXCLUDED_DIRS` in `docs/.vitepress/plugins/missions/index.ts`, so those missions never appear in a grid and `section="commander-preview"` returns nothing.
+The `commander-preview`, `recruit-v2-preview`, and `operative-v2-preview` folders are excluded from mission data entirely by `EXCLUDED_DIRS` in `docs/.vitepress/plugins/missions/index.ts`, so those missions never appear in a grid and passing one of those slugs to `section` returns nothing.
 
 **Preview:**
 
@@ -305,7 +305,7 @@ Renders a grid of all industries from `docs/.vitepress/data/industries.json` wit
 
 Renders a warning banner marking a page as preview content. Reads the `preview` frontmatter field — no props are needed.
 
-**When to use:** This component is injected automatically by a markdown-it plugin, directly below the page title and its `<mission-meta />` card. You do not need to add it manually. See [Preview banner](#preview-banner) for the frontmatter options.
+**When to use:** This component is injected automatically by a markdown-it plugin, directly below the page title and its `<mission-meta />` card, on any page whose frontmatter sets a truthy `preview` value. You do not need to add it manually. See [Preview banner](#preview-banner) for the frontmatter options.
 
 ---
 

@@ -19,7 +19,7 @@ products:
 industries:
   - general
 created-date: 2026-02-20
-last-edited-date: 2026-04-05
+last-edited-date: 2026-07-27
 ---
 
 # 📚 Mission 08: Knowledge Deep Dive {#mission-08-knowledge-deep-dive}

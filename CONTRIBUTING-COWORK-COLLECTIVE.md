@@ -85,6 +85,7 @@ Cowork Collective frontmatter is validated automatically by `scripts/validate-fr
 - `time` is a number greater than 0
 - `description` is a string with at least 10 characters
 - `created-date` and `last-edited-date` are valid dates
+- `preview`, when present, is a boolean or a string
 
 Run the validation locally:
 

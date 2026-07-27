@@ -1,4 +1,5 @@
 ---
+hide: true
 preview: true
 prev:
   text: Collecting Feedback from Users

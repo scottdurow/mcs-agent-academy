@@ -19,7 +19,7 @@ products:
 industries:
   - it
 created-date: 2026-02-20
-last-edited-date: 2026-04-05
+last-edited-date: 2026-07-27
 ---
 
 # 🔌 Mission 01: Advanced MCP Server Usage {#mission-01-advanced-mcp-server-usage}
