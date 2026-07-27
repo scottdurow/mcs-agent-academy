@@ -8,11 +8,13 @@ export const previewBannerPlugin = (md: MarkdownIt) => {
   md.core.ruler.push("preview_banner", (state) => {
     const tokens = state.tokens;
 
+    // Avoid injecting the banner twice if a page includes it manually.
+    if (tokens.some((t) => t.content.includes("<preview-banner"))) return;
+
     let insertAt = tokens.findIndex(
       (token) => token.type === "heading_close" && token.tag === "h1"
     );
     insertAt = insertAt === -1 ? 0 : insertAt + 1;
-
     // Keep the banner below the `<mission-meta />` block when the page has one.
     const metaAt = tokens.findIndex(
       (token, i) => i >= insertAt && token.content.includes("<mission-meta")
