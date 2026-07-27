@@ -28,7 +28,8 @@ hide: true
 
 Welcome, agent. Your mission is **Operation Vector Vault**: give a Copilot Studio agent the ability to reason over your organization's own documents using **Retrieval-Augmented Generation (RAG)** powered by **Azure AI Search** vector search. You'll stand up a search service, vectorize a stack of candidate resumes, and wire the index into an **HR Knowledge Agent** so it answers questions by *meaning*, not just keywords, with document-backed citations. 🎯
 
-> [!NOTE] This mission uses the **new** Copilot Studio experience
+> [!NOTE]
+> This mission uses the **new** Copilot Studio experience
 
 ## ❓ What is Retrieval-Augmented Generation (RAG)? {#what-is-rag}
 
@@ -41,7 +42,7 @@ So RAG combines two steps:
 - **Retrieval:** finding relevant information from a large pool of data.
 - **Generation:** using that information to compose a detailed, accurate response.
 
-This makes answers more informed and trustworthy — ideal for question answering, research assistance, and any scenario where the truth lives in your documents rather than in the model's memory.
+This makes answers more informed and trustworthy which is ideal for question answering, research assistance, and any scenario where the truth lives in your documents rather than in the model's memory (which is most business scenarios).
 
 ## 🧠 Why vector search? {#why-vector-search}
 
@@ -57,7 +58,7 @@ Here's how it works:
 1. **Store vectors:** the vectors are stored in a search index (Azure AI Search) built to handle them efficiently.
 1. **Search with vectors:** your query is also converted to a vector, and the index returns the vectors closest in meaning.
 
-For example, a search for "software engineering skills" can surface candidates described as having "programming expertise" or "development capabilities" — even without the exact words from your query.
+For example, a search for "software engineering skills" can surface candidates described as having "programming expertise" or "development capabilities", even without the exact words from your query.
 
 ## ⚙️ Prerequisites {#prerequisites}
 
