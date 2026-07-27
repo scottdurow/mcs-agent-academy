@@ -63,7 +63,7 @@ The model reads your instructions, understands the user’s intent, and decides 
 
 ## 🔧 What are tools {#what-are-tools}
 
-Tools give your agent the ability to do something beyond chatting, such as calling an API or MCP Server, running a process, or reading and writing business data. Think of tools as "action blocks" that give your agent superpowers.
+Tools give your agent the ability to do something beyond chatting, such as calling an API or MCP server, running a process, or reading and writing business data. Think of tools as "action blocks" that give your agent superpowers.
 
 Tools can come from several places:
 
@@ -87,8 +87,8 @@ In this lab we’ll use the **SharePoint - Get items** connector action so the a
 
 ### Prerequisites
 
-1. **SharePoint list** - the **EmployeeAssets** list from [Lesson 00 - Course Setup](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
-1. **Contoso IT Concierge** - the agent created in the earlier mission.
+1. **SharePoint list** - the **EmployeeAssets** list from [Mission 00 - Course Setup](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
+1. **Contoso IT Concierge** - the agent created in [Mission 05 - Build a custom engine agent](../05-build-a-custom-agent/index.md#lab-05-create-a-custom-engine-agent-in-copilot-studio).
 
 Let's begin!
 
