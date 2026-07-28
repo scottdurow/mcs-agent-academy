@@ -34,19 +34,19 @@ last-edited-date: 2026-06-28
 
 ## 🎯 Mission Brief {#mission-brief}
 
-Your IT Helpdesk Agent can answer questions - but a great helpdesk follows a *process*: ask the right question, try the safe fix first, escalate cleanly when stuck. In the old experience you’d hand-build that flow with Topics and nodes. The new Copilot Studio experience has no Topics. So you teach behavior a different way: with a **Skill**.
+Your IT Helpdesk Agent can answer questions, but a reliable helpdesk also needs consistent behavior when it calls tools and handles edge cases. In the new Copilot Studio experience, you define that behavior through **Skills**.
 
-In this mission you’ll add a **troubleshooting protocol** skill so the agent diagnoses, fixes, and escalates every IT issue the same reliable way.
+In this mission, you will iteratively refine a device guidance skill so the agent can call SharePoint correctly, recover from query issues, map user-selected options to the correct item, and capture additional user requirements.
 
 > [!IMPORTANT]
 > Make sure the **New experience** toggle in the upper-right corner is turned **on**.
 
 ## 🔎 Objectives {#objectives}
 
-1. Understand what **skills** are and why they’re new
+1. Understand what **skills** are and why they're new
 1. See how skills replace work we used to do with **Topics** and **child agents**
-1. Create a skill from blank: a reusable troubleshooting playbook
-1. Attach the skill and test that the agent follows the protocol
+1. Review and refine an AI-generated skill to improve instruction quality
+1. Validate the updated skill behavior in **Preview**, including tool input handling and follow-up requirements
 
 ## 🧠 What is a skill? {#what-is-a-skill}
 
@@ -58,7 +58,7 @@ Skills are **new** in Copilot Studio and take over jobs we used to solve other w
 - **Provide repeatable behavior** for narrow specialties inside the same agent.
 - **Reusable and shareable**, upload a `SKILL.md` file into any agent.
 
-A troubleshooting process defined in a skill is a perfect fit: it’s multi-step, judgment-driven, and should behave identically every time.
+A troubleshooting process defined in a skill is a perfect fit: it's multi-step, judgment-driven, and should behave identically every time.
 
 ## 📄 Authoring Skills {#authoring-skills}
 
@@ -123,7 +123,7 @@ Example:
 ```text
 - **Troubleshooting Decision Rules**
   - If an error message is provided, use it to identify relevant troubleshooting steps.
-  - If no error message ia available, ask follow-up questions to gather more information.
+  - If no error message is available, ask follow-up questions to gather more information.
   - If the issue is resolved, confirm the solution and end the procedure.
   - If the issue cannot be resolved after available troubleshooting steps, recommend escalation.
 ```
@@ -152,7 +152,7 @@ This prevents the model from skipping important information gathering.
 
 ### 5. Define Tool Usage
 
-When a skills uses actions or connectors, tell the model when and how to use them.
+When a skill uses actions or connectors, tell the model when and how to use them.
 
 Example:
 
@@ -221,7 +221,7 @@ Do not:
 
 Scope boundaries help keep the agent focused and predictable.
 
-### 9. Included Escalation Paths
+### 9. Include Escalation Paths
 
 Tell the model what to do when it cannot continue.
 
@@ -266,7 +266,7 @@ Clear success criteria tell the model when to stop.
 
 ## 🧪 Lab 07 - Update existing skill {#lab-07-update-skill}
 
-In this lab, you will refine an existing skill from [Mission 05 - Build a custom agent](../05-build-a-custom-agent/index.md/#-lab-05-create-a-custom-engine-agent-in-copilot-studio-lab-05-create-a-custom-engine-agent-in-copilot-studio) by applying the effective skill instruction principles above to improve clarity, consistency, and reliability.
+In this lab, you will refine an existing skill from [Mission 05 - Build a custom agent](../05-build-a-custom-agent/index.md#lab-05-create-a-custom-engine-agent-in-copilot-studio) by applying the effective skill instruction principles above to improve clarity, consistency, and reliability.
 
 ### ✨ Use case {#use-case}
 
@@ -306,13 +306,15 @@ Let's take a closer look at one of the skills that was generated when the agent 
 
    ![Skill structure](./assets/7.1_02_SkillStructure.png)
 
-1. Review the skill instructions. They are a good starting point, but they do not yet follow the principles above, so let’s refine them.
+1. Review the skill instructions.
+
+    They are a good starting point, but they do not yet follow the principles above, so let's refine them. The skill will be updated to reference the tool added in [Mission 07 - Add Tools](../07-add-tools/index.md#lab-07-add-the-sharepoint-get-items-tool) to retrieve available devices from the SharePoint list when a user requests a laptop.
 
    ![Skill instructions](./assets/7.1_03_SkillInstructions.png)
 
 ### 7.2 Update skill and test
 
-The skill is read-only in Copilot Studio once saved however the `SKILL.md` can be downloaded for editing. You can then replace the skill by selecting the edited `SKILL.md` file.
+The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` file can be downloaded for editing. You can then replace the skill by selecting the edited `SKILL.md` file.
 
 1. Select the **ellipsis** icon and select **Replace**.
 
@@ -326,9 +328,131 @@ The skill is read-only in Copilot Studio once saved however the `SKILL.md` can b
 
     ![Select Skill file](./assets/7.2_02_SelectSKILL.png)
 
+1. The skill has now been updated. Select the updated skill to review the instructions.
+
+    - The description references the name of the tool
+    - The instructions outline steps including
+        - the purpose and trigger
+        - clear step-by-step actions, including aligning the selected device option to the corresponding SharePoint Item ID
+        - tool usage where the `Get Employee Assets` tool is referenced
+        - expected output that outlines the format of the response
+        - validation rules
+        - exception and escalation paths
+        - success criteria
+
+    ![Review instructions](./assets/7.2_03_ReviewSkillInstructions.png)
+
+    ![Review instructions](./assets/7.2_04_ReviewSkillInstructions.png)
+
+    ![Review instructions](./assets/7.2_05_ReviewSkillInstructions.png)
+
+1. Select **Preview** at the top center of the agent to test the updated skill.
+
+    Copy and paste the following text and submit it to the agent.
+
+   ```text
+   I need a laptop
+   ```
+
+   ![Test skill](./assets/7.2_06_TestSkill.png)
+
+1. You'll see an error appear. The SharePoint tool failed because the model guessed a column name for the OData filter query that does not exist.
+
+    ![Error encountered](./assets/7.2_07_ErrorEncountered.png)
+
+1. However, what happens next is that the model uses reasoning and dynamic planning to determine the next appropriate action when it encounters an issue.
+
+  In this step, the model applies reasoning and uses the correct SharePoint internal column name, `field_4` (the **Asset Type** column), to filter for the device type `Laptop`.
+
+  ![Reasoning applied](./assets/7.2_08_Reasoning.png)
+
+1. The agent then displays the available laptops from the SharePoint list.
+
+    ![Devices in list](./assets/7.2_09_DevicesFromList.png)
+
+1. Next, you'll update the skill to define the tool inputs. Remember, this applies the skill instruction principle of being explicit about parameters, field names, and expected inputs.
+
+    Download the skill package using the button below.
+
+    <download-files path="recruit-v2-preview/06-add-a-skill/assets/lab-skills/device-guidance-v1-0-2" />
+
+    Download `device-guidance-v1-0-2.zip` and extract it.
+
+   Repeat the same steps to replace the skill: in **Build**, select the `device-guidance` skill, select the **ellipsis**, select **Replace**, and upload the extracted `SKILL.md` file into the agent.
+
+   You'll then see an additional instruction on how to manage tool inputs for OData filter queries, including explicit column names and examples.
+
+    ![Replace skill and review input instructions](./assets/7.2_10_ReplaceSkillAndReviewFilterInstructions.png)
+
+1. Test the updated skill by navigating to Preview.
+
+    Copy and paste the following text and submit it to the agent.
+
+   ```text
+   I need a laptop
+   ```
+
+    The error should no longer appear because the updated instructions guide the model to use the tool inputs correctly.
+
+    ![Error no longer encountered](./assets/7.2_11_ErrorNoLongerEncountered.png)
+
+    ![Devices from List](./assets/7.2_12_DevicesFromList.png)
+
+1. In this test, respond to the agent by providing the device option you want to proceed with.
+
+    Copy and paste the following text and submit it to the agent.
+
+   ```text
+   A
+   ```
+
+    ![Confirm selected device](./assets/7.2_13_ConfirmSelectedDevice.png)
+
+1. Following the skill instructions, the agent summarizes the device selection in its response.
+
+    ![Device summary](./assets/7.2_14_DeviceSummary.png)
+
+  We're not done refining the skill yet. If a user wants to provide an additional comment as part of the request, that behavior also needs to be captured in the skill instructions. Let's update the skill again.
+
+1. Download the skill package using the button below.
+
+    <download-files path="recruit-v2-preview/06-add-a-skill/assets/lab-skills/device-guidance-v1-0-3" />
+
+    Download `device-guidance-v1-0-3.zip` and extract it.
+
+   Repeat the same steps to replace the skill: in **Build**, select the `device-guidance` skill, select the **ellipsis**, select **Replace**, and upload the extracted `SKILL.md` file into the agent.
+
+   You'll then see an additional instruction that tells the agent to ask for additional requirements. In the next mission, you'll pass this information into a workflow for the `Contoso IT Concierge` agent.
+
+    ![Replace skill and review additional requirements instructions](./assets/7.2_15_ReplaceSkillAndReviewAdditionalCommentInstruction.png)
+
+1. Test the updated skill by navigating to Preview.
+
+    Copy and paste the following text and submit it to the agent.
+
+   ```text
+   B
+   ```
+
+    ![Test skill](./assets/7.2_16_TestSkill.png)
+
+1. The agent responds by next asking the user for any additional requirements they may have for their device.
+
+    Copy and paste the following text and submit it to the agent.
+
+   ```text
+   16GB of RAM
+   ```
+
+    ![Additional requirements question](./assets/7.2_17_AdditionalCommentQuestion.png)
+
+1. The agent responds by summarizing the selected device and the additional requirement.
+
+    ![Summary with additional comment](./assets/7.2_18_SummaryWithAdditionalComment.png)
+
 ## ✅ Mission Complete {#mission-complete}
 
-You gave your agent a reusable **Skill** that enforces a consistent diagnose-fix-escalate playbook - taking on a job once handled by Topics and child agents. 🙌🏻
+You iteratively refined a reusable **Skill** so the agent can handle tool-input mapping more reliably, recover from OData filter errors, map user-selected options to SharePoint Item IDs, and capture additional user requirements. 🙌🏻
 
 ⏭️ [Move to **Add Tools**](../07-add-tools/index.md)
 
