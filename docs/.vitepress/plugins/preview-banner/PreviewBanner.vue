@@ -2,16 +2,24 @@
 import { computed } from "vue";
 import { useData } from "vitepress";
 
-const DEFAULT_MESSAGE =
-  "This module is in preview. Content may change and some steps might not work as intended.";
+const COURSE_MESSAGE =
+  "This course is in preview. Content may change and some steps might not work as intended.";
+const MISSION_MESSAGE =
+  "This mission is in preview. Content may change and some steps might not work as intended.";
 
-const { frontmatter } = useData();
+// Course landing pages live directly under a section folder, e.g.
+// `commander-preview/index.md`. Missions sit one level deeper.
+const COURSE_LEVEL_PATH = /^[^/]+\/index\.md$/;
+
+const { frontmatter, page } = useData();
 
 const message = computed(() => {
   const value = frontmatter.value.preview;
-  if (value === true) return DEFAULT_MESSAGE;
   if (typeof value === "string" && value.trim() !== "") return value.trim();
-  return null;
+  if (value !== true) return null;
+  return COURSE_LEVEL_PATH.test(page.value.relativePath)
+    ? COURSE_MESSAGE
+    : MISSION_MESSAGE;
 });
 </script>
 

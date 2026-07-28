@@ -539,8 +539,15 @@ preview: true
 ---
 ```
 
+The default text depends on the page level. Course landing pages (such as `docs/recruit-v2-preview/index.md`) show:
+
 > ⚠️ **Preview**
-> This module is in preview. Content may change and some steps might not work as intended.
+> This course is in preview. Content may change and some steps might not work as intended.
+
+Mission pages (such as `docs/recruit-v2-preview/00-course-setup/index.md`) show:
+
+> ⚠️ **Preview**
+> This mission is in preview. Content may change and some steps might not work as intended.
 
 To replace the default text, set `preview` to a string instead:
 
