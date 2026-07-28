@@ -47,7 +47,7 @@ This course is ideal for:
 ## 🧭 Curriculum Overview {#curriculum-overview}
 
 > [!TIP] 🚀 The next generation of Recruit is coming!
-> We're actively working on a new Recruit path showing how to build an agent with the **new experience** in Copilot Studio. [Get a sneak peek here →](/recruit-v2-preview/)
+> We're actively working on a new Recruit path showing how to build an agent with the **new experience** in Copilot Studio. [Get a sneak peek here →](/recruit-v2/)
 
 This academy is broken into progressive lessons—each one designed as a field mission to level up your agent-building skills.
 
