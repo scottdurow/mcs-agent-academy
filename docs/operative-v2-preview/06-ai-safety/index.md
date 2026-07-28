@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: Understanding Agent Models
-  link: /operative/05-model-selection
+  link: /operative-v2-preview/05-model-selection
 next:
   text: Multimodal Prompts
-  link: /operative/07-multimodal-prompts
+  link: /operative-v2-preview/07-multimodal-prompts
 short-description: Implement enterprise-grade safety and compliance measures
 difficulty: 2
 codename: OPERATION SAFE HARBOR

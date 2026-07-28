@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: Multimodal Prompts
-  link: /operative/07-multimodal-prompts
+  link: /operative-v2-preview/07-multimodal-prompts
 next:
   text: Document Generation
-  link: /operative/09-document-generation
+  link: /operative-v2-preview/09-document-generation
 short-description: Ground agents in enterprise data for accurate responses
 difficulty: 2
 codename: OPERATION GROUNDING CONTROL

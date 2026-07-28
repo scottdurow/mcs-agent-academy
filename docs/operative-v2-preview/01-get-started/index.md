@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: Operative Overview
-  link: /operative
+  link: /operative-v2-preview
 next:
   text: Authoring Agent Instructions
-  link: /operative/02-agent-instructions
+  link: /operative-v2-preview/02-agent-instructions
 short-description: Deploy foundational infrastructure and create your central orchestrator agent
 difficulty: 2
 codename: OPERATION TALENT SCOUT

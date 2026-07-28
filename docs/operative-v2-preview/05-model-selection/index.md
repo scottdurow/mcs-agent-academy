@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: Add Event Triggers
-  link: /operative/04-automate-triggers
+  link: /operative-v2-preview/04-automate-triggers
 next:
   text: AI Safety and Content Moderation
-  link: /operative/06-ai-safety
+  link: /operative-v2-preview/06-ai-safety
 short-description: Customize agent models for maximum impact and engagement
 difficulty: 2
 codename: OPERATION ARCHETYPE

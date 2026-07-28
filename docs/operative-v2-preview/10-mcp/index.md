@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: Document Generation
-  link: /operative/09-document-generation
+  link: /operative-v2-preview/09-document-generation
 next:
   text: Collecting Feedback from Users
-  link: /operative/11-obtain-user-feedback
+  link: /operative-v2-preview/11-obtain-user-feedback
 short-description: Integrate with out of the box MCP servers
 difficulty: 2
 codename: OPERATION MCP RENDEZVOUS

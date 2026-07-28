@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: Integrate with MCP Servers
-  link: /operative/10-mcp
+  link: /operative-v2-preview/10-mcp
 next:
   text: Securing Your Operative Badge
-  link: /operative/course-completion-badges-operative
+  link: /operative-v2-preview/course-completion-badges-operative
 short-description: Collect and process user feedback for continuous improvement
 difficulty: 2
 codename: OPERATION ECHO

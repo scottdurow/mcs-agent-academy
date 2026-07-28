@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: Multi-Agent Systems
-  link: /operative/03-multi-agent
+  link: /operative-v2-preview/03-multi-agent
 next:
   text: Understanding Agent Models
-  link: /operative/05-model-selection
+  link: /operative-v2-preview/05-model-selection
 short-description: Implement autonomous agent behaviors with event-driven triggers
 difficulty: 2
 codename: OPERATION SIGNAL POINT

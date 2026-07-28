@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: Authoring Agent Instructions
-  link: /operative/02-agent-instructions
+  link: /operative-v2-preview/02-agent-instructions
 next:
   text: Add Event Triggers
-  link: /operative/04-automate-triggers
+  link: /operative-v2-preview/04-automate-triggers
 short-description: Transform single agent into coordinated multi-agent system
 difficulty: 2
 codename: OPERATION SYMPHONY

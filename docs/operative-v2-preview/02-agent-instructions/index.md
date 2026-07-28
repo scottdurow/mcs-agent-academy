@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: Get started with the Hiring Agent
-  link: /operative/01-get-started
+  link: /operative-v2-preview/01-get-started
 next:
   text: Multi-Agent Systems
-  link: /operative/03-multi-agent
+  link: /operative-v2-preview/03-multi-agent
 short-description: Master precise agent communication and behavior control
 difficulty: 2
 codename: OPERATION SECRET DIRECTIVE

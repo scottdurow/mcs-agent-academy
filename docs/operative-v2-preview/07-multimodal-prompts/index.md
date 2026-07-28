@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: AI Safety and Content Moderation
-  link: /operative/06-ai-safety
+  link: /operative-v2-preview/06-ai-safety
 next:
   text: Dataverse Grounding
-  link: /operative/08-dataverse-grounding
+  link: /operative-v2-preview/08-dataverse-grounding
 short-description: Process documents and images with advanced AI capabilities
 difficulty: 2
 codename: DOCUMENT RESUME RECON

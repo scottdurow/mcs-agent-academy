@@ -3,10 +3,10 @@ hide: true
 preview: true
 prev:
   text: Dataverse Grounding
-  link: /operative/08-dataverse-grounding
+  link: /operative-v2-preview/08-dataverse-grounding
 next:
   text: Integrate with MCP Servers
-  link: /operative/10-mcp
+  link: /operative-v2-preview/10-mcp
 short-description: Generate a Word document natively with an agent skill
 difficulty: 2
 codename: OPERATION DOC ASSEMBLY

@@ -3,7 +3,7 @@ hide: true
 preview: true
 prev:
   text: Collecting Feedback from Users
-  link: /operative/11-obtain-user-feedback
+  link: /operative-v2-preview/11-obtain-user-feedback
 short-description: Claim your Operative badge and celebrate your achievement
 difficulty: 2
 codename: OPERATION COURSE COMPLETION
