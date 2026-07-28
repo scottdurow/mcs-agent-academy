@@ -103,7 +103,6 @@ Example:
   - What error message are you seeing?
   - When did the issue start?
   - Can the issue be reproduced?
-  - 
 ```
 
 Avoid:

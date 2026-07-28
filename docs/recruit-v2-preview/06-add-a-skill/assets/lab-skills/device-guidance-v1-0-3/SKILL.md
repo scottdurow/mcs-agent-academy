@@ -34,7 +34,7 @@ Use this skill when an employee asks about finding, selecting, or requesting a d
   - The user should respond using the Option value (A, B, C, D, etc.).
   - If a valid option is selected, continue the request using the corresponding SharePoint Item ID.
   - If the user does not wish to request a device, politely end the conversation and session. Do not continue asking follow-up questions.
-  - Do not ask any further questions.
+  - Do not ask any further questions other than the additional requirements question in the next step.
 
 - **Confirm additional requirements** — After the user selects a valid option, ask whether they have any additional requirements.
   - Examples are RAM size, hard drive capacity, or other specifications.
