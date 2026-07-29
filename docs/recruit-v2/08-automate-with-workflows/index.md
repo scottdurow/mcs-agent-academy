@@ -185,17 +185,17 @@ In the new experience, workflows are added to your agent as a **tool**.
 
 1. Next, it identifies that an email address of the manager is required to send the email. For the purpose of this lab, enter your email address.
 
-   ![Manager email address input parameter](./assets/8.1_05_ProvideManagerInputParameter.png.png)
+   ![Manager email address input parameter](./assets/8.1_05_ProvideManagerInputParameter.png)
 
 1. Lastly, the SharePoint List is needed to retrieve the item details of the device. Select the `EmployeeAssets` list from the picker.
 
    Select **Submit**.
 
-   ![Select SharePoint list](./assets/8.1_06_ProvideListInputParameter.png.png)
+   ![Select SharePoint list](./assets/8.1_06_ProvideListInputParameter.png)
 
-    > [!WARNING] AI authoring experience may differ across sessions
-    >
-    > Each session can vary on how the AI authoring experience interacts with you. During **Requesting information**, you may be asked to enter values as text rather than select them from a picker.
+   > [!WARNING] AI authoring experience may differ across sessions
+   >
+   > Each session can vary on how the AI authoring experience interacts with you. During **Requesting information**, you may be asked to enter values as text rather than select them from a picker.
 
 1. The AI authoring experience continues with the next step of building the workflow now that it has the information it requires.
 
@@ -400,8 +400,8 @@ In the new experience, workflows are added to your agent as a **tool**.
 
 1. Lastly, for the **Sensitivity** input parameter, select the **General\Anyone (unrestricted)** label from the drop-down list.
 
-  > [!TIP] Understanding sensitivity labels in Outlook emails
-  > A sensitivity label is a classification that helps protect and manage emails and files according to your organization's information protection policies. It helps users identify sensitive content and apply the appropriate level of protection without impacting collaboration or productivity.
+   > [!TIP] Understanding sensitivity labels in Outlook emails
+   > A sensitivity label is a classification that helps protect and manage emails and files according to your organization's information protection policies. It helps users identify sensitive content and apply the appropriate level of protection without impacting collaboration or productivity.
 
    ![Sensitivity label](./assets/8.1_29_SensitivityLabelParameter.png)
 
@@ -485,9 +485,9 @@ The agent can now be tested end-to-end.
 
 You're now going to run through the following test cases:
 
-- 1: User selects a device and provides additional requirements
-- 2: User selects a device and provides no additional requirements
-- 3: User does not proceed with selecting a device
+- Test Case 1: User selects a device and provides additional requirements
+- Test Case 2: User selects a device and provides no additional requirements
+- Test Case 3: User does not proceed with selecting a device
 
 1. Select **Preview** and start a new chat.
 
