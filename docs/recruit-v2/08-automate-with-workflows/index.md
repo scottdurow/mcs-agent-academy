@@ -234,7 +234,7 @@ In the new experience, workflows are added to your agent as a **tool**.
 
    ![Rename workflow](./assets/8.1_10_RenameWorkflow.png)
 
-1. Select the trigger, **When an agent calls the the flow**.
+1. Select the trigger, **When an agent calls the flow**.
 
    You'll see the text inputs configured as per the requirement provided in the prompt.
 
@@ -358,7 +358,7 @@ In the new experience, workflows are added to your agent as a **tool**.
 
    ![HTML tag](./assets/8.1_23_HTMLTag.png)
 
-1. Click after the HTML anchor tag `<a href="` ans paste the cut dynamic content.
+1. Click after the HTML anchor tag `<a href="` and paste the cut dynamic content.
 
    ![Paste dynamic content](./assets/8.1_24_PasteDynamicContent.png)
 
@@ -486,7 +486,7 @@ The agent can now be tested end-to-end.
 You're now going to run through the following test cases:
 
 - 1: User selects a device and provides additional requirements
-- 2: User select a device and provides no additional requirements
+- 2: User selects a device and provides no additional requirements
 - 3: User does not proceed with selecting a device
 
 1. Select **Preview** and start a new chat.
@@ -607,8 +607,6 @@ Your agent can now take action - reaching into line-of-business systems and trig
 🔗 [Use workflows with your agent](https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow?WT.mc_id=power-172621-ebenitez)
 
 🔗 [List of functions in the reference guide](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
-
-🔗 [Workflow expressions reference](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
 
 🔗 [Data loss prevention for Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention?WT.mc_id=power-177340-scottdurow)
 
