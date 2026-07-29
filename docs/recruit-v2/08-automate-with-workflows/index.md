@@ -7,7 +7,7 @@ prev:
 next:
   text: Publish your agent
   link: /recruit-v2/09-publish-your-agent
-short-description: Automate a device request and build an autonomous ticket workflow with the new Workflows experience
+short-description: Automate a device request with the new Workflows experience and call it from your agent
 difficulty: 1
 codename: OPERATION AUTOMATION POWERHOUSE
 time: 60
@@ -36,9 +36,7 @@ last-edited-date: 2026-06-28
 
 Your agent can converse with users and provide information, but true operational excellence requires it to take action. This mission transforms your conversational agent into an automation powerhouse by equipping it with a **workflow**.
 
-By mission's end, you'll have built an end-to-end device request automation in the new **Workflows** experience that retrieves data from SharePoint, sends a notification email to a manager, and returns a value to your agent — then connected that workflow to your **Contoso Helpdesk Agent** as a tool.
-
-You'll then go a step further and build an **autonomous workflow** — one that isn't called by an agent at all, but **triggers itself** the moment a new support ticket is created in SharePoint and automatically emails an acknowledgment to the person who submitted it.
+By mission's end, you'll have built an end-to-end device request automation in the new **Workflows** experience that retrieves data from SharePoint, sends a notification email to a manager, and returns a value to your agent — then connected that workflow to your **Contoso IT Concierge Agent** as a tool.
 
 ## 🔎 Objectives {#objectives}
 
@@ -48,7 +46,6 @@ In this mission, you'll learn:
 1. How the **workflow designer**, **node palette**, and **triggers** work together
 1. How to use connector actions, dynamic content, and expressions to handle data dynamically
 1. How to build a complete device request automation and call it from an agent as a tool
-1. How to build an **autonomous, event-triggered workflow** that runs by itself when a SharePoint item is created — no agent and no user required
 
 ## 🤔 What is the new Workflows experience? {#what-is-the-new-workflows-experience}
 
@@ -145,412 +142,459 @@ For the full list, see the [functions reference guide](https://learn.microsoft.c
 
 ### Prerequisites
 
-1. **SharePoint list** — the **Devices** SharePoint list from [Lesson 00 - Course Setup](../00-course-setup/index.md#step-4-create-new-sharepoint-site). If you haven't set it up, head back and create it.
+1. **SharePoint list** — the **EmployeeAssets** SharePoint list from [Mission 00 - Course Setup](../00-course-setup/index.md#step-5-create-new-sharepoint-site). If you haven't set it up, head back and create it.
 
-1. **Contoso Helpdesk Agent** — the agent created in [Lesson 06](../06-add-a-skill/index.md).
-
-1. The **New experience** toggle (upper-right) is turned **on**.
+1. **Contoso IT Concierge agent** — the agent created in [Mission 05 - Build a custom agent](../05-build-a-custom-agent/index.md#51-create-a-new-agent-with-ai-based-authoring).
 
 ### 8.1 Create a new workflow
 
-In this exercise, we'll build a workflow that retrieves the SharePoint item of the selected device, emails a manager with the details, and returns a value to the agent.
+In the new experience, workflows are added to your agent as a **tool**.
 
-1. From the Copilot Studio **Home** page, select the **Workflow** card under _"what do you want to build?"_.
+1. In the **Build** view, in the **Tools** section, select the **+** icon.
 
-   ![Select the Workflow card on Home](./assets/9.1_01_home_workflow_card.png)
+   ![Add a tool](./assets/8.1_01_AddATool.png)
 
    > [!TIP]
    > You can also select **Workflows** in the left navigation and choose **New Workflow**. The Workflows hub lists every workflow in your environment along with its status (Draft / Published).
    >
-   > ![Workflows hub](./assets/9.1_02_workflows_list.png)
+   > ![Workflows hub](./assets/8.1_01_Tip.png)
 
-1. The **workflow designer** opens with an empty canvas, a **Start** trigger, and the **node palette** on the left.
+1. The **Add a tool** dialog loads. Select **+ Add** and select **Workflow**.
 
-   ![The workflow designer](./assets/9.2_01_workflow_designer.png)
+   ![Select Workflow](./assets/8.1_02_AddWorkflow.png)
 
-### 8.2 Configure the trigger and inputs
+1. The AI-assisted authoring experience opens, similar to the one you used when creating your agent.
 
-1. Select the **Start** trigger node. In the configuration panel, open the **Trigger type** dropdown and select **When an agent calls the workflow** (_Trigger as a tool from an agent_).
-
-   The trigger is renamed to **When an agent calls the flow** and a **Respond to the agent** action is added automatically.
-
-1. We'll now add three inputs the agent will pass to the workflow:
-
-   - `DeviceSharePointId` — the **ID** of the selected SharePoint device item.
-   - `User` — the display name of the user making the request.
-   - `AdditionalComments` — an optional comment from the user.
-
-   Under **Inputs**, select **Add an input**, then choose **Text** as the input type.
-
-1. For the first input, set the label to the following.
+   Copy and paste the following prompt into the field.
 
    ```text
-   DeviceSharePointId
+   Agent calls the workflow and passes the text inputs of `sharepointItemId`, `additionalComment`, and `requestorName`. Using the `sharepointItemId` text input from the trigger, get the SharePoint item from the list, extract details of Manufacturer Value, Model, Link to Item, and insert them in an email that is sent to a manager. Then send a response back to the agent with a text output of `ModelValue`.
    ```
 
-1. Select **Add an input** again, choose **Text**, and set the label to the following.
+   Submit the prompt to have the AI authoring experience build the workflow.
 
-   ```text
-   User
-   ```
+   ![AI authoring experience](./assets/8.1_03_AIAuthoringExperience.png)
 
-1. Select **Add an input** a third time, choose **Text**, and set the label to the following.
+1. The AI authoring experience analyses the user's request and determines that additional information is required before it can build the solution.
 
-   ```text
-   AdditionalComments
-   ```
+   Using reasoning, it identifies the missing input parameters and generates clarifying questions to collect them. For each question, the experience can associate an appropriate input control, such as a SharePoint site picker, allowing the maker to select a value rather than manually entering it. Once the required information is provided, the AI can continue building the solution.
 
-1. We'll make the comment optional. Select the **More options (⋯)** icon on the **AdditionalComments** input and select **Make optional**.
+   Select your SharePoint site created in the Course Setup.
 
-   Your trigger should now have three inputs, with **AdditionalComments** optional.
+   ![SharePoint site input parameter](./assets/8.1_04_ProvideSharePointSiteInputParameter.png)
 
-   ![Trigger type and three inputs](./assets/9.2_02_trigger_and_inputs.png)
+1. Next, it identifies that an email address of the manager is required to send the email. For the purpose of this lab, enter your email address.
 
-### 8.3 Add the SharePoint Get item action
+   ![Manager email address input parameter](./assets/8.1_05_ProvideManagerInputParameter.png)
 
-1. In the **node palette** on the left, select **Connector**. A **Connector** action node is inserted after the trigger and the **Select a connector** dialog opens.
+1. Lastly, the SharePoint List is needed to retrieve the item details of the device. Select the `EmployeeAssets` list from the picker.
 
-1. In the connector list (or the search box), select **SharePoint**.
+   Select **Submit**.
 
-1. From the SharePoint actions, select **Get item**.
+   ![Select SharePoint list](./assets/8.1_06_ProvideListInputParameter.png)
 
-1. The **Get item** configuration panel opens. At the top of the panel, select the node name (**Get item**) under **Node name** and rename the action to the following.
+   > [!WARNING] AI authoring experience may differ across sessions
+   >
+   > Each session can vary on how the AI authoring experience interacts with you. During **Requesting information**, you may be asked to enter values as text rather than select them from a picker.
 
-   ```text
-   Get Device
-   ```
+1. The AI authoring experience continues with the next step of building the workflow now that it has the information it requires.
 
-1. Configure the parameters:
+   ![Building workflow in progress](./assets/8.1_07_BuildingWorkflowInProgress.png)
 
-   - **Site Address** — select the **Contoso IT** SharePoint site created in [Lesson 00](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
-   - **List Name** — select the **Devices** list.
-   - **Id** — select the **lightning bolt ⚡** icon, then in the **Dynamic content** tab choose the **DeviceSharePointId** input from the trigger and select **Add**.
+1. The AI authoring experience completes building the workflow.
 
-   ![Get item configuration](./assets/9.3_01_getitem_config.png)
+   ![Completed](./assets/8.1_08_WorkflowCompleted.png)
 
-1. Select **Advanced parameters → Show all**, find **Limit Columns by View**, and select the **All Items** view to limit the columns returned.
+1. Next, the workflows designer automatically loads with the trigger and actions based on the requirements provided in the prompt.
 
-### 8.4 Add the Send an email action
+   Let's take a moment to familiarize ourselves with the workflow designer.
 
-1. Select **+ Add a step** after the _Get Device_ node. In the **Add an action** dialog, search for `Office 365 Outlook`, select it, then select the **Send an email** action.
+   Left:
+   - Workflow name and status
+   - Panel containing available workflow nodes
+   - Canvas display controls
 
-   If prompted, the connection is created automatically using your account (the connector shows **Connected** after a moment).
+   Center:
+   - At the top you can switch views to **Build**, **Activity**, to **Monitor**.
+   - Canvas showing the workflow's trigger and actions
 
-1. At the top of the panel, select the node name under **Node name** and rename the action to the following.
+   Right:
+   - Controls for undo, redo, version history, feedback, saving, testing, reviewing issues, and publishing
+   - Configuration panel for the selected node
 
-   ```text
-   Send an email to manager
-   ```
+   ![Workflow loads in the designer](./assets/8.1_09_ReviewWorkflow.png)
 
-1. Configure the parameters:
+1. The AI authoring experience has built the workflow, but a few details still need to be configured. Let's take care of those next. First rename the workflow.
 
-   - **To** — select yourself (in production this would be the employee's manager).
-
-   - **Subject** — enter the following.
-
-     ```text
-     Request type: new device
-     ```
-
-1. Now build the **Body**. The body is a **rich-text editor**: type the static text, then use the body toolbar's **Insert token** button to drop in dynamic values at the cursor. Type the following text, pressing **Enter** for each new line.
-
-   ```text
-   Hi,
-   
-   A new device has been requested by
-   
-   Manufacturer:
-   Model:
-   Link to item in SharePoint:
-   Additional comments from:
-   
-   This is an automated email from Contoso Helpdesk Agent
-   ```
-
-1. Place the cursor after `by` on the _A new device has been requested by_ line, select **Insert token**, and on the **Insert dynamic content** tab select the **User** input from the trigger.
-
-1. Place the cursor after `Manufacturer:`, select **Insert token**, and in the **Get Device** group find **Manufacturer**. **Manufacturer** is a SharePoint lookup column, so it has a child **Value** property directly beneath it (it previews the manufacturer name, e.g. _Microsoft_). Select the **Value** property — **not** the parent **Manufacturer** entry.
-
-   > [!IMPORTANT]
-   > If you select the parent **Manufacturer** token, the email shows the raw lookup object (e.g. `{"@odata.type":"#…SPListExpandedReference","Id":3,"Value":"Microsoft"}`) instead of just `Microsoft`. Always pick the **Value** child for lookup/choice columns.
-
-1. Place the cursor after `Model:`, select **Insert token**, search `model`, and select the **Model** value from the **Get Device** action.
-
-1. Place the cursor after `Link to item in SharePoint:`, select **Insert token**, search `link`, and select the **Link to item** output from the **Get Device** action.
-
-1. Place the cursor after `Additional comments from:`, select **Insert token**, and insert the **User** input from the trigger. Then, after the user token, insert the **AdditionalComments** input from the trigger.
-
-   > [!NOTE]
-   > The classic lab used the expression `if(empty(triggerBody()?['AdditionalComments']), 'None', triggerBody()?['AdditionalComments'])` to show `None` when no comment was supplied. **Expression mode is not available for rich-text fields** in the new experience, so the **AdditionalComments** token is inserted directly. The field is optional, so when no comment is provided the line simply renders empty.
-
-1. **Make the link clickable and format the email as HTML.** The "Send an email" action sends an **HTML** body, and the rich-text editor lets you edit that HTML directly. On the body toolbar, select **More formatting options (⋯)**, then select **Edit HTML source**. You'll see your body as HTML, with each dynamic value shown as an `@{…}` expression — for example the link line looks like:
-
-   ```html
-   <div>Link to item in SharePoint:&nbsp;@{outputs('connector-xxxxxxxx')?['body/{Link}']}</div>
-   ```
-
-   Wrap the link's `@{…}` expression in an anchor tag, and (optionally) bold the labels with `<strong>`. Edit the source so it reads like the following — **keep your own `@{…}` expressions exactly as generated** (the `connector-xxxxxxxx` id is unique to your flow):
-
-   ```html
-   <div>Hi,</div>
-   <div><br></div>
-   <div>A new device has been requested by @{…User…}.</div>
-   <div><br></div>
-   <div><strong>Manufacturer:</strong> @{…Manufacturer/Value…}</div>
-   <div><strong>Model:</strong> @{…Model…}</div>
-   <div><strong>SharePoint item:</strong> <a href="@{…Link to item…}">Open the device record in SharePoint</a></div>
-   <div><strong>Additional comments from @{…User…}:</strong> @{…AdditionalComments…}</div>
-   <div><br></div>
-   <div>This is an automated email from Contoso Helpdesk Agent.</div>
-   ```
-
-1. On the body toolbar, select **Visual editor** to switch back. The link now appears as a hyperlink (**Open the device record in SharePoint**) and the labels are bold. The dynamic values remain bound to your tokens.
-
-   > [!NOTE]
-   > The classic lab built the hyperlink by typing raw `<a href="…">` tags. In the new experience you use **More formatting options → Edit HTML source** instead. Wrapping the **Link to item** expression in `<a href="…">` makes it a real clickable link in the email; without it, the message shows only the plain URL text.
-
-   ![Email body with hyperlink and Manufacturer Value token](./assets/9.4_01_email_body.png)
-
-### 8.5 Configure the Respond to the agent output
-
-1. Select the **Respond to the agent** action at the end of the canvas.
-
-1. Add a **Text** output and name it the following.
-
-   ```text
-   ModelValue
-   ```
-
-1. For the value, select **Insert token**, search `model`, and select the **Model** value from the **Get Device** action.
-
-   This returns the device model to the agent so it can confirm the request to the user.
-
-   ![Respond to the agent with ModelValue output](./assets/9.5_01_respond_modelvalue.png)
-
-### 8.6 Name, save, and publish the workflow
-
-1. Select the workflow title (**Untitled Workflow**) at the top and rename it to the following.
+   Copy and paste the following text.
 
    ```text
    Send device request email
    ```
 
-1. Select **Save** to save a draft. If the **Health Center** reports issues, open it and resolve any remaining errors.
+   ![Rename workflow](./assets/8.1_10_RenameWorkflow.png)
 
-1. When the workflow is error-free, select **Publish**. A confirmation appears once it's published — only published workflows can be added to an agent.
+1. Select the trigger, **When an agent calls the flow**.
 
-   ![Workflow published successfully](./assets/9.6_01_published.png)
+   You'll see the text inputs configured as per the requirement provided in the prompt.
 
-### 8.7 Add the workflow to your agent
+   - `SharePoint Item Id` - the **ID** of the selected SharePoint device item.
+   - `Additional Comments` - an optional comment from the user.
+   - `Requestor Name` - the display name of the user making the request.
 
-Because there are no topics in the new experience, you attach the workflow to your agent as a **tool**.
+   Clear the current input names and replace with the following.
 
-1. Select **Agents** in the left navigation and open the **Contoso Helpdesk Agent**.
+   For the first input, copy and paste the following text.
 
-1. In the **Build** view, find the **Tools** section in the right-hand panel and select the **+ (Add tool)** icon.
+   ```text
+   sharepointItemId
+   ```
 
-   ![Agent Build view with Tools section](./assets/9.7_01_agent_tools.png)
+   For the second input, copy and paste the following text.
 
-1. In the **Add a tool** dialog, select the **Workflows** tab, then select **Send device request email**.
+   ```text
+   additionalComment
+   ```
 
-   ![Add a tool - Workflows tab](./assets/9.7_02_add_tool_workflows.png)
+   For the third input, copy and paste the following text.
 
-1. With the tool added, update the agent **Instructions** so the agent knows to call the workflow when a user requests a device — passing the selected device's **SharePoint item ID**, the user's display name, and any comment, then confirming the returned model to the user. **Save** the agent (the agent auto-saves).
+   ```text
+   requestorName
+   ```
 
-   ![Agent instructions updated to call the workflow](./assets/9.7_03_agent_instructions.png)
+   These input names will be referenced in the skill file in a later lab exercise.
 
-### 8.8 Test the agent
+   ![Updated trigger input names](./assets/8.1_11_RenameTriggerInputs.png)
 
-1. Select the **Preview** (test) tab and start a new conversation.
+1. Select the **Get item** node. Clear the current action name.
 
-1. Enter the following.
+   Copy and paste the following text in the name field.
+
+   ```text
+   Get device
+   ```
+
+   ![Rename Get item action](./assets/8.1_12_RenameGetItemAction.png)
+
+1. In the **Id** parameter, clear the current dynamic content by selecting the **X** icon.
+
+   > [!TIP] What is dynamic content
+   > Dynamic content in workflows is data passed from previous triggers and actions. It lets you reuse values like email subjects, names, or IDs in later steps without writing code.
+
+   ![Remove selected dynamic content](./assets/8.1_13_RemoveSelectedDynamicContent.png)
+
+1. Option 1: Select the lightning bolt icon, then choose a property from the dynamic content modal.
+
+   Option 1 is to select the **thunderbolt** icon and select the dynamic content in the modal that appears, which lists all the properties of the trigger or action.
+
+   ![Option 1](./assets/8.1_14_Option1.png)
+
+1. Option 2: Enter a forward slash, `/`, then choose a property from the list.
+
+   ![Option 2](./assets/8.1_15_Option2.png)
+
+1. Select the **sharepointItemId** property from the trigger. It appears in the **Id** parameter field.
+
+   ![Dynamic Content selected in input parameter](./assets/8.1_16_DynamicContent.png)
+
+1. Next, select the **Send an email (V2)** node and rename the action.
+
+   Copy and paste the following text in the name field.
+
+   ```text
+   Send an email to manager
+   ```
+
+   ![Rename action](./assets/8.1_17_RenameSendAnEmailAction.png)
+
+1. Update the **Subject** text.
+
+   Copy and paste the following text.
+
+   ```text
+   Request type: new device
+   ```
+
+   ![Update Subject](./assets/8.1_18_Subject.png)
+
+1. The AI authoring experience generates the content in the **Body** field based on your prompt.
+
+   The first sentence may reference `item`. Copy and paste the following text to replace `item`.
+
+   ```text
+   device
+   ```
+
+   ![Update sentence in Body](./assets/8.1_19_UpdatedBody.png)
+
+1. Next, update the dynamic content reference for the **View Item**.
+
+   Delete the text `: View Item`.
+
+   Add the **Link to item** dynamic content using either method described earlier.
+
+   ![Insert dynamic content](./assets/8.1_20_InsertDynamicContent.png)
+
+1. The SharePoint item URL will appear as plain text in the email. To make it a clickable hyperlink, the HTML hyperlink tags need to be added. This can be achieved by toggling the Body parameter field to the HTML editor.
+
+   Select the **ellipsis** icon in the editor and select the **HTML** icon.
+
+   ![Toggle to HTML editor view](./assets/8.1_21_ToggleToHTMLView.png)
+
+   > [!NOTE]
+   > You can optionally skip these steps and display the link as plain text. The URL will remain visible in the email but won't be clickable.
+
+1. Highlight the **Link to item** dynamic content and **cut** the selected dynamic content text by pressing `Ctrl + X` on your keyboard for Windows. `Command-X` on your keyboard for Mac.
+
+   ![Cut dynamic content](./assets/8.1_22_CutDynamicContent.png)
+
+1. Click before the **Link to item** text and add an HTML anchor tag to create a hyperlink.
+
+   Copy and paste the following text.
+
+   ```text
+   <a href="
+   ```
+
+   ![HTML tag](./assets/8.1_23_HTMLTag.png)
+
+1. Click after the HTML anchor tag `<a href="` and paste the cut dynamic content.
+
+   ![Paste dynamic content](./assets/8.1_24_PasteDynamicContent.png)
+
+1. Click after the **Link to item** dynamic content.
+
+   Copy and paste the following text.
+
+   ```text
+   ">
+   ```
+
+1. Click after the **Link to item** text.
+
+   Copy and paste the following text.
+
+   ```text
+   </a>
+   ```
+
+   This closes the HTML anchor tag which results in the text showing as a clickable hyperlink instead of plain text in the email.
+
+   ![HTML tag](./assets/8.1_26_EnterHTMLTag.png)
+
+1. Select the **eye** icon to toggle the editor view.
+
+   ![Toggle HTML view](./assets/8.1_27_ToggleHTMLView.png)
+
+1. Next, add a sentence to the bottom of the message that indicates that the email was sent by an agent.
+
+   Copy and paste the following text.
+
+   ```text
+   This is an automated email from Contoso IT Concierge agent.
+   ```
+
+   Highlight the text and select the **Italic** icon to italicize the sentence.
+
+   ![Update body](./assets/8.1_28_UpdateBody.png)
+
+1. Lastly, for the **Sensitivity** input parameter, select the **General\Anyone (unrestricted)** label from the drop-down list.
+
+   > [!TIP] Understanding sensitivity labels in Outlook emails
+   > A sensitivity label is a classification that helps protect and manage emails and files according to your organization's information protection policies. It helps users identify sensitive content and apply the appropriate level of protection without impacting collaboration or productivity.
+
+   ![Sensitivity label](./assets/8.1_29_SensitivityLabelParameter.png)
+
+1. Select the **Respond to the agent** node, clear and update the text output name.
+
+   Copy and paste the following text.
+
+   ```text
+   ModelValue
+   ```
+
+   The dynamic content has already been correctly configured, it references the `Model` property from the **Get item** action. This value from the SharePoint dynamic content will be sent back to the agent to use in its summarized response to the user.
+
+   ![Update Output text name](./assets/8.1_30_UpdateOutputTextName.png)
+
+1. The workflow can now be saved and published. Select the **Save** icon on the upper-right.
+
+   ![Save workflow](./assets/8.1_31_SaveWorkflow.png)
+
+1. When the confirmation displays that the workflow has been saved, select **Publish**.
+
+   ![Publish workflow](./assets/8.1_32_PublishWorkflow.png)
+
+### 8.2 Add the workflow to your agent
+
+You can now add the workflow to your **Contoso IT Concierge** agent.
+
+1. Select **Agents** in the left menu navigation and open the **Contoso IT Concierge** agent.
+
+   ![Open agent](./assets/8.2_01_OpenAgent.png)
+
+1. In the **Build** view, in the **Tools** section, select the **+** icon.
+
+   ![Add a tool](./assets/8.2_02_SelectAddATool.png)
+
+1. The **Add a tool** dialog loads. Select the **Workflows** pill and select the **Send device request email** workflow.
+
+   ![Select workflow](./assets/8.2_03_SelectWorkflow.png)
+
+The workflow has now been added to the agent 👍🏻
+
+### 8.3 Update device request procedure skill
+
+With the workflow added, update the device request procedure skill so the agent knows when and how to call it.
+
+1. Select the **device request procedure** skill.
+
+   ![Select skill](./assets/8.3_01_ReplaceSkill.png)
+
+1. Select the **ellipsis** icon and select **Replace**.
+
+   Download the skill package using the button below.
+
+   <download-files path="recruit-v2/08-automate-with-workflows/assets/device-guidance-v1-0-4" />
+
+    Download `device-guidance-v1-0-4.zip`, extract it, then upload the `SKILL.md` file into the agent.
+
+1. Review the updated skill instructions.
+
+   The updated skill instructs the agent to:
+
+   - confirm that the user wants to proceed after collecting any additional requirements
+
+   ![Confirmation request instruction](./assets/8.3_02_ReviewSkillInstructions.png)
+
+   - retrieve the authenticated user's details
+
+   ![Retrieve user's details](./assets/8.3_03_ReviewSkillInstructions.png)
+
+   - pass the device's SharePoint item ID, the additional requirements, and the user's name to the workflow
+
+   ![pass request details](./assets/8.3_04_ReviewSkillInstructions.png)
+
+   - confirm completion by referencing the device model returned by the workflow and end the session
+
+   ![Confirmation message and end session](./assets/8.3_05_ReviewSkillInstructions.png)
+
+The agent can now be tested end-to-end.
+
+### 8.4 Test several scenarios
+
+You're now going to run through the following test cases:
+
+- Test Case 1: User selects a device and provides additional requirements
+- Test Case 2: User selects a device and provides no additional requirements
+- Test Case 3: User does not proceed with selecting a device
+
+1. Select **Preview** and start a new chat.
+
+1. Copy and paste the following text and submit it to the agent.
 
    ```text
    I need a new laptop
    ```
 
-   The agent responds using its knowledge sources. Because the new experience has no adaptive-card device picker, the agent needs the **SharePoint item ID** of the device to submit a request.
+1. The agent will next ask which device you want to request.
 
-1. Submit the request by giving the agent the device's SharePoint item ID and an optional comment, for example.
-
-   ```text
-   Please submit a request for the device with SharePoint item ID 1. Additional comments: needed for a new hire.
-   ```
-
-1. Approve the connection prompts if asked. The agent calls the **Send device request email** workflow, passing your three inputs, then confirms back to you that the request was submitted.
-
-   ![Agent calling the workflow tool in Preview](./assets/9.8_01_test_transcript.png)
-
-1. Check your inbox — you'll receive the HTML manager email showing the **Manufacturer** name (e.g. _Microsoft_), the model, and a clickable **Open the device record in SharePoint** hyperlink.
-
-   > [!NOTE]
-   > The workflow returns the device **Model** to the agent via the **ModelValue** output. If the chosen SharePoint item has an empty **Model** column, the workflow still succeeds but returns an empty value — populate the **Model** field on your **Devices** list items to see the model echoed back in the chat.
-
-## 🤖 Autonomous workflows with event triggers {#autonomous-workflows-with-event-triggers}
-
-The workflow you just built is **agent-triggered** — it only runs when your Contoso Helpdesk Agent decides to call it as a tool during a conversation. But workflows can also be **autonomous**: they run entirely on their own, with **no agent and no user involved**, the moment something happens in a connected system.
-
-This is the modern replacement for the classic **event triggers** that used to be attached to an agent. In the old experience, you added an event trigger to the agent itself, which spun up a hidden Power Automate cloud flow that sent a prompt back into the agent. **In the new experience, the event trigger _is_ the workflow** — you simply choose a **Connector** trigger (like SharePoint's _When an item is created_) as the workflow's starting point, and the workflow runs autonomously each time that event fires.
-
-### Connector (event) triggers
-
-When you create a workflow, the **Trigger type** dropdown offers several ways to start it:
-
-| Trigger type                         | Starts the workflow when…                                    |
-| ------------------------------------ | ------------------------------------------------------------ |
-| **When an agent calls the workflow** | an agent invokes it as a tool (this is what Lab 09 used)     |
-| **Connector**                        | an external event occurs — e.g. a SharePoint item is created, an email arrives, a Teams message is posted |
-| **Recurrence**                       | a schedule elapses (e.g. every morning at 9 AM)              |
-| **Manual**                           | you press **Run** by hand                                    |
-| **When a HTTP request is received**  | an external system calls the workflow's URL                  |
-
-Choosing a **Connector** trigger is what makes a workflow **autonomous and event-driven**.
-
-### Autonomous vs agent-called workflows
-
-| **Autonomous (event-triggered) workflow**                    | **Agent-called workflow**                         |
-| ------------------------------------------------------------ | ------------------------------------------------- |
-| Started by an external system event                          | Started by an agent during a conversation         |
-| Runs with **no user interaction**                            | Runs because a user asked the agent for something |
-| Uses the **maker's** credentials (the connection you signed in with) | Uses the agent/user's context                     |
-| Example: acknowledge every new support ticket                | Example: submit a device request on demand        |
-
-### How the SharePoint event trigger works
-
-The SharePoint **When an item is created** trigger **polls** the list on a short interval rather than firing instantly — so after you add an item, the workflow run typically starts within a few minutes. Each run receives the new item's columns as **trigger outputs** (`triggerOutputs()?['body/<column>']`), which you bind into your downstream actions exactly like the dynamic content in Lab 09.
-
-> [!IMPORTANT]
-> **Maker authentication.** An autonomous workflow signs in to SharePoint and Outlook using **your** connections (the maker's credentials) and acts "as you" every time it runs — even though no user triggered it. Before publishing autonomous automations to production, review what data the trigger can read, narrow the trigger to a specific site and list, and avoid putting sensitive data into the email body.
-
-## 🧪 Lab 08 - Build an autonomous ticket-acknowledgment workflow {#lab-08-build-an-autonomous-ticket-acknowledgment-workflow}
-
-### ✨ Use case {#use-case-2}
-
-You'll enhance the IT Help Desk experience so that **new support tickets are acknowledged automatically**. When someone creates a new item in the **Tickets** SharePoint list, an autonomous workflow will:
-
-1. **Trigger by itself** when the SharePoint ticket is created — no agent, no user.
-1. Read the ticket's details from the trigger output.
-1. **Email an acknowledgment** to the person who submitted the ticket, confirming it was received and will be reviewed within 3 working days.
-
-This is the new-experience equivalent of the classic "event trigger" lab — but instead of attaching a trigger to an agent and editing a hidden Power Automate flow, you build one self-contained, autonomous **workflow**.
-
-### Prerequisites
-
-1. **Tickets SharePoint list** — a list on your **Contoso IT** site with at least these columns: **Title** (displays as _Issue_), **Description** (displays as _Issue description_), and a **Priority** choice column. The built-in **ID** and **Author** (Created by) columns are used automatically.
-1. The **New experience** toggle (upper-right) is turned **on**.
-
-### 8.10 Create a workflow with a SharePoint event trigger
-
-1. From the Copilot Studio **Home** page, select the **Workflow** card (or select **Workflows → New Workflow**). The workflow designer opens with an empty canvas.
-
-1. Select the **Start** trigger node. In the configuration panel, open the **Trigger type** dropdown and select **Connector**.
-
-1. In the connector search, enter `When an item is created` and select the **When an item is created** trigger listed under **SharePoint**.
-
-1. Configure the trigger parameters:
-
-   - **Site Address** — select the **Contoso IT** SharePoint site.
-   - **List Name** — select the **Tickets** list.
-
-   ![SharePoint "When an item is created" trigger configured for Contoso IT / Tickets](./assets/10.1_01_trigger_config.png)
-
-   > [!NOTE]
-   > Unlike Lab 09's _When an agent calls the workflow_ trigger, this trigger has **no inputs you define** — its outputs are the columns of the newly created SharePoint item, available as dynamic content in the next steps.
-
-### 08.11 Add the acknowledgment email
-
-1. In the **node palette** on the left, select **Connector**, choose **Office 365 Outlook**, then select the **Send an email (V2)** action. If prompted, the connection is created automatically using your account.
-
-1. Configure the **Subject**. Type the following static text, then use **Insert dynamic content** to add the **Title** token from the trigger after the colon:
+   Copy and paste the following text and submit it to the agent.
 
    ```text
-   We received your support ticket: <Title>
+   A
    ```
 
-1. Configure the **To** field. The recipient must be the person who created the ticket — the SharePoint **Author** (Created by) person. The most reliable way to bind this is with an **expression** rather than the people-picker token:
-
-   1. On the **To** field, select **Switch to expression mode**.
-
-   1. Enter the following expression and confirm it shows **Expression is valid**:
-
-      ```text
-      triggerOutputs()?['body/Author/Email']
-      ```
-
-   > [!IMPORTANT]
-   > In the people-picker (token) mode, the **Author** person token can serialize to an empty value at runtime — the run then fails with **`To Field cannot be null or empty`**. Binding **To** with the explicit expression `triggerOutputs()?['body/Author/Email']` returns the submitter's email address as a plain string and resolves reliably.
-
-1. Build the **Body** as **HTML**, reusing the Lab 09 technique. On the body toolbar, select **More formatting options (⋯) → Edit HTML source**, then enter the following — replacing each `@{…}` placeholder by leaving the editor's generated trigger tokens in place, or by selecting **Visual editor** afterward and inserting the matching tokens:
-
-   ```html
-   <div>Hello,</div>
-   <div><br></div>
-   <div>Thank you for contacting the Contoso IT Helpdesk. We have received your support ticket and a member of our team will review it shortly. We aim to respond within 3 working days.</div>
-   <div><br></div>
-   <div>Here is a summary of your request:</div>
-   <div><strong>Ticket ID:</strong> @{triggerOutputs()?['body/ID']}</div>
-   <div><strong>Title:</strong> @{triggerOutputs()?['body/Title']}</div>
-   <div><strong>Description:</strong> @{triggerOutputs()?['body/Description']}</div>
-   <div><strong>Priority:</strong> @{triggerOutputs()?['body/Priority/Value']}</div>
-   <div><br></div>
-   <div>If you need to add more information, simply reply to this email and we will append it to your ticket.</div>
-   <div><br></div>
-   <div>Thank you,</div>
-   <div>Contoso IT Helpdesk</div>
-   <div><br></div>
-   <div>This is an automated message from the Contoso Helpdesk Agent.</div>
-   ```
-
-1. Select **Visual editor** to switch back. Each `@{…}` expression rebinds to a token chip. Note that **Priority** is a choice column, so you bind its **Value** child (`Priority/Value`) — exactly like the **Manufacturer/Value** lookup in Lab 09 — to email the readable text (e.g. _High_) instead of the raw choice object.
-
-   ![Send an email action with Title subject token and HTML body tokens](./assets/10.2_01_email_config.png)
-
-### 08.12 Name, save, and publish
-
-1. Select the workflow title at the top and rename it to the following.
+1. Next, for the additional requirement, copy and paste the following text and submit it to the agent (or type your own requirement).
 
    ```text
-   Acknowledge new support ticket
+   16GB of RAM
    ```
 
-1. Select **Save**, resolve any **Health Center** issues, then select **Publish**. Only a published workflow runs autonomously.
+1. You'll then see the agent ask if you want to proceed with the request after it summarizes the request. This is from the updated instructions in the skill.
 
-   ![Published autonomous workflow: trigger plus Send an email](./assets/10.3_01_published_canvas.png)
+   Copy and paste the following text and submit it to the agent.
 
-### 08.13 Test the autonomous workflow
+   ```text
+   Yes please proceed
+   ```
 
-1. Open a new browser tab and navigate to your **Contoso IT → Tickets** list. Select **+ New** (Add new item) and create a test ticket, for example:
+   ![Proceed with request](./assets/8.4_01_TestCase1.png)
 
-   - **Issue (Title)**: `Outlook keeps crashing on launch`
-   - **Issue description**: `Outlook crashes immediately every time I open it after the latest Windows update. I cannot access any of my email.`
-   - **Priority**: `High`
+1. The agent invokes the workflow. When it completes successfully, the agent confirms the request, includes the selected device model, explains that the manager will review it, and ends the session. This behavior follows the updated skill instructions.
 
-   **Save** the item.
+   ![Test Case 1 summarized response](./assets/8.4_02_TestCase1SummarizedResponse.png)
 
-   ![Test ticket created in the SharePoint Tickets list](./assets/10.4_01_test_ticket.png)
+1. Review the email sent to your address. Its subject, sensitivity label, and body should match the values configured earlier in the workflow’s **Send an email (V2)** action. The email body should also display the dynamic content values retrieved from the trigger and the **Get item** action.
 
-   > [!TIP]
-   > The **Issue description** field is read-only until you select its **Edit** button, which opens an _Edit Issue description_ dialog — type your text there and **Save** the dialog before saving the item.
+   ![Test Case 1 email](./assets/8.4_03_TestCase1Email.png)
 
-1. Return to your workflow and open the **Activity** tab. The SharePoint trigger **polls on an interval**, so wait a few minutes and select **Refresh** until a new run appears. When it does, it should show **Succeeded**.
+1. Click the **Link to Item** hyperlink. The SharePoint List item will load in a new browser tab. Cool!
 
-   ![Successful autonomous run in the Activity panel](./assets/10.4_02_success_run.png)
+   ![SharePoint List item](./assets/8.4_04_TestCase1Device.png)
 
-1. Check the inbox of the ticket submitter (here, your own mailbox). You'll find the acknowledgment email with the subject **"We received your support ticket: Outlook keeps crashing on launch"** and an HTML body showing the resolved **Ticket ID**, **Title**, **Description**, and **Priority** (e.g. _High_).
+1. In **Preview**, proceed with the next test case of providing no additional requirements.
 
-   ![Acknowledgment email received by the submitter](./assets/10.4_03_ack_email.png)
+   Start a new chat. Copy and paste the following text and submit it to the agent.
 
-   > [!NOTE]
-   > Because the workflow runs under **maker authentication**, it sent the email "as you." In a multi-user deployment, every new ticket would be acknowledged automatically to whoever submitted it — with no agent conversation and no manual step.
+   ```text
+   I need a new laptop
+   ```
+
+   Next, copy and paste the following text for the device request and submit it to the agent.
+
+   ```text
+   B
+   ```
+
+   Copy and paste the following text and submit it to the agent for additional requirements.
+
+   ```text
+   None
+   ```
+
+   ![Test Case 2](./assets/8.4_05_TestCase2.png)
+
+1. The agent invokes the workflow and summarizes your request, just as it did in the first test case.
+
+   ![Test Case 2 summarized response](./assets/8.4_06_TestCase2SummarizedResponse.png)
+
+1. Check the email and this time, you'll see the text for the **Additional Comment** as `No additional requirements provided` which is the expected behavior from the updated skill instructions.
+
+   ![Review test case 2 email](./assets/8.4_07_TestCase2Email.png)
+
+1. For the last test case, start a new chat in **Preview**. Copy and paste the following text and submit it to the agent.
+
+   ```text
+   I need a new laptop
+   ```
+
+   Next, copy and paste the following text for the device request and submit it to the agent.
+
+   ```text
+   B
+   ```
+
+   This time, you're not going to proceed with the request. Copy and paste the following text and submit it to the agent.
+
+   ```text
+   Cancel request, do not proceed.
+   ```
+
+   The agent cancels the request and ends the session, as defined in the updated skill instructions.
+
+   ![Test Case 3](./assets/8.4_08_TestCase3.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
-Congratulations! 👏🏻 You've built **two** automations in the **new Workflows experience**, all without a single topic:
+Congratulations! 👏🏻 You've built an end-to-end device request automation in the **new Workflows experience**:
 
-- An **agent-called workflow** that retrieves a SharePoint device item, emails a manager an HTML notification, and returns the model to your **Contoso Helpdesk Agent** as a tool (Lab 09).
-- An **autonomous, event-triggered workflow** that fires by itself when a new SharePoint ticket is created and emails an acknowledgment to the submitter (Lab 10).
+- Created a workflow that retrieves device details from SharePoint, composes an email with dynamic content, and sends it to a manager.
+- Connected the workflow to your agent as a reusable tool.
+- Updated your skill to call the workflow and pass user inputs.
+- Tested three scenarios: with requirements, without requirements, and cancellation.
 
-Together they show the two halves of the new experience: workflows your agent calls **on demand**, and workflows that act **autonomously** on real-world events.
+Your agent can now take action - reaching into line-of-business systems and triggering automations without needing to hand off to a human.
 
 ⏭️ [Move to **Publish your agent** lesson](../09-publish-your-agent/index.md)
 
@@ -563,10 +607,6 @@ Together they show the two halves of the new experience: workflows your agent ca
 🔗 [Use workflows with your agent](https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow?WT.mc_id=power-172621-ebenitez)
 
 🔗 [List of functions in the reference guide](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
-
-🔗 [Make your agent autonomous in Copilot Studio](https://learn.microsoft.com/training/modules/autonomous-agents-online-workshop/?WT.mc_id=power-177340-scottdurow)
-
-🔗 [SharePoint "When an item is created" trigger reference](https://learn.microsoft.com/connectors/sharepointonline/#when-an-item-is-created)
 
 🔗 [Data loss prevention for Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention?WT.mc_id=power-177340-scottdurow)
 
