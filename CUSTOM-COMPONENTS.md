@@ -82,7 +82,7 @@ Show all missions with pagination (4 rows per page):
 
 Missions with `hide: true` in their frontmatter are excluded from every `<missions />` grid, including section, tag, product, and industry listings. The mission page remains available directly, and its `<mission-meta />` component is unaffected.
 
-The `commander-preview`, `recruit-v2`, and `operative-v2` folders are excluded from mission data entirely by `EXCLUDED_DIRS` in `docs/.vitepress/plugins/missions/index.ts`, so those missions never appear in a grid and passing one of those slugs to `section` returns nothing.
+The `commander-preview`, `recruit-nextgen`, and `operative-v2` folders are excluded from mission data entirely by `EXCLUDED_DIRS` in `docs/.vitepress/plugins/missions/index.ts`, so those missions never appear in a grid and passing one of those slugs to `section` returns nothing.
 
 **Preview:**
 
