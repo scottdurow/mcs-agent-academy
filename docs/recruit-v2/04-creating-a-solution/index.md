@@ -27,24 +27,27 @@ last-edited-date: 2026-07-24
 
 ## 🎯 Mission Brief {#mission-brief}
 
-Welcome back, Recruit. In this mission, you’ll learn to assemble a Solution, the official deployment vehicle for your IT Helpdesk Agent built with Microsoft Copilot Studio. Think of this as creating a digital briefcase that holds your agent and its artifacts.
+Welcome back, Agent. In this mission, you'll learn to assemble a Solution, you'll create a Power Platform solution for the `Contoso IT Concierge` agent you'll build in the next mission with Microsoft Copilot Studio. Think of the solution as your digital briefcase: it keeps everything together as the agent moves from development through testing and into production.
 
-Every agent needs a well-structured home. That’s what a Power Platform solution provides - order, portability, and readiness for production.
+Every agent needs a well-structured home. A Power Platform solution provides organization, portability, and readiness for deployment.
 
-Let’s pack up.
+Let's establish the base.
 
-> [!NOTE]
-> If your Copilot Studio screen looks different from the screenshots in this lesson, toggle on **New Experience** in the upper-right corner to switch back to the **new experience** used here.
+> [!NOTE] Note: New Copilot Studio experience
+>
+> Make sure the **New experience** toggle in the upper-right corner of the Home page is **on** so your screen matches the screenshots in this mission.
+>
+> ![New experience](./assets/4.0_04_NewExperience.png)
 
 ## 🔎 Objectives {#objectives}
 
-In this mission, you’ll learn:
+In this mission, you'll learn:
 
-1. Understanding what Power Platform solutions are and their role in agent development
-1. Learning the benefits of using solutions for organizing and deploying agents
-1. Exploring solution publishers and their importance in component management
+1. What Power Platform solutions are and how they support agent development
+1. How solutions organize components and support deployment across environments
+1. How solution publishers identify and manage custom components
 1. Understanding the Power Platform solution lifecycle from development to production
-1. Creating your own solution publisher and custom solution for your IT Helpdesk Agent
+1. Creating your own solution publisher and custom solution for your `Contoso IT Concierge` agent
 
 ## 🕵🏻‍♀️ Solution? What's that? {#solution-whats-that}
 
@@ -107,7 +110,7 @@ It's good practice to create an agent in a dedicated solution in your source (de
 
 ## 🪪 Understanding Solution Publishers {#understanding-solution-publishers}
 
-A Solution Publisher in Power Platform is like a label or brand that identifies who created or owns a solution. It’s a small but important part of managing your apps, agents and flow customizations, especially when working in teams or across environments.
+A Solution Publisher in Power Platform is like a label or brand that identifies who created or owns a solution. It's a small but important part of managing your apps, agents and flow customizations, especially when working in teams or across environments.
 
 When you create a solution, you must choose a publisher. This publisher defines:
 
@@ -125,7 +128,7 @@ When you create a solution, you must choose a publisher. This publisher defines:
 
 > [!TIP] ✨ Example
 >
-> Let’s say you create a publisher called Contoso Solutions with the prefix `cts_`.
+> Let's say you create a publisher called Contoso Solutions with the prefix `cts_`.
 >
 > If you add a custom column called _Priority_, it will be stored as `cts_Priority` in the solution.
 >
@@ -170,10 +173,17 @@ Let's begin!
 
 ### Prerequisites
 
+- Copilot Studio license
+- Access to Copilot Studio with the **new experience** enabled
+- Administrative permissions to create solutions and agents
+
+> [!TIP] Prerequisites help:
+> If you need help getting a Copilot Studio license, please reference the [Recruit Course Setup lab](./../../recruit-v2/00-course-setup/index.md) which walks you through setting up a Power Platform environment with a Copilot Studio trial.
+
 #### Security role
 
 In Copilot Studio, what you _can do_ in the solution explorer depends on your user security role.
-If you don’t have permission to manage solutions in the Power Apps admin center, you won’t be able to do those tasks in Copilot Studio either.
+If you don't have permission to manage solutions in the Power Apps admin center, you won't be able to do those tasks in Copilot Studio either.
 
 To make sure everything works smoothly, check that you have the right security roles and permissions. Or if you don't manage environments in your organization, ask your IT administrator (or the equivalent) team who manages your tenant/environments.
 
@@ -291,7 +301,7 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
     - **Installed on** - the date of when the Solution was installed.
 
-    - **Configuration page** - developers set up an HTML web resource to help users interact with their app, agent or tool where it'll appear as a web page in the Information section with instructions or buttons. It’s mostly used by companies or developers who build and share solutions with others.
+    - **Configuration page** - developers set up an HTML web resource to help users interact with their app, agent or tool where it'll appear as a web page in the Information section with instructions or buttons. It's mostly used by companies or developers who build and share solutions with others.
 
     - **Description** - describes the solution or a high level description of the configuration page.
 
@@ -313,21 +323,19 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
 ## ✅ Mission Complete {#mission-complete}
 
-Congratulations! 👏🏻 You've created a Publisher and used it in your newly created Solution to build your agent in!
+Mission accomplished, Recruit! You created a solution publisher and a custom Power Platform solution for the `Contoso IT Concierge` agent.
 
 Well done, Agent Maker. A tidy digital footprint is the first step toward operability at scale. Now you have the tools and the mindset for sustainable, enterprise-ready agent development.
 
-This is the end of **Lab 04 - Creating a Solution**, select the link below to move to the next lesson. Your solution created in this lab will be used in the next lesson's lab.
+This is the end of **Lab 04 - Creating a Solution**, select the link below to move to the next mission. Your solution created in this lab will be used in the next mission's lab.
 
-⏭️ [Move to **Build a custom engine agent** lesson](../05-build-a-custom-agent/index.md)
+⏭️ [Move to **Build a custom engine agent** mission](../05-build-a-custom-agent/index.md)
 
 ## 📚 Tactical Resources {#tactical-resources}
 
 🔗 [Create a solution](https://learn.microsoft.com/power-apps/maker/data-platform/create-solution/?WT.mc_id=power-172615-ebenitez)
 
 🔗 [Create and manage solutions in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/authoring-solutions-overview/?WT.mc_id=power-172615-ebenitez)
-
-🔗 [Share agents with other users](https://learn.microsoft.com/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-172615-ebenitez)
 
 🔗 [Summary of resources available to predefined security roles](https://learn.microsoft.com/power-platform/admin/database-security#summary-of-resources-available-to-predefined-security-roles/?WT.mc_id=power-172615-ebenitez)
 
