@@ -289,7 +289,7 @@ Let's take a closer look at one of the skills that was generated when the agent 
     >
     > Each session can produce a different skill name in the AI authoring experience, so your skill may not match the screenshot exactly. Look for the skill associated with device requests.
 
-   ![Select device request skill](./assets/7.1_01_ReviewSkill.png)
+    ![Select device request skill](./assets/7.1_01_ReviewSkill.png)
 
 1. In the skill, you'll see the structure of the skill learned earlier.
 
@@ -303,13 +303,13 @@ Let's take a closer look at one of the skills that was generated when the agent 
     >
     > Together, these components help the model determine when to use the skill and how to execute it correctly.
 
-   ![Skill structure](./assets/7.1_02_SkillStructure.png)
+    ![Skill structure](./assets/7.1_02_SkillStructure.png)
 
 1. Review the skill instructions.
 
     They are a good starting point, but they do not yet follow the principles above, so let's refine them. The skill will be updated to reference the tool added in [Mission 07 - Add Tools](../07-add-tools/index.md#lab-07-add-the-sharepoint-get-items-tool) to retrieve available devices from the SharePoint list when a user requests a laptop.
 
-   ![Skill instructions](./assets/7.1_03_SkillInstructions.png)
+    ![Skill instructions](./assets/7.1_03_SkillInstructions.png)
 
 ### 7.2 Update skill and test
 
@@ -317,11 +317,11 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
 1. Select the **ellipsis** icon and select **Replace**.
 
-   ![Replace skill](./assets/7.2_01_ReplaceSkill.png)
+    ![Replace skill](./assets/7.2_01_ReplaceSkill.png)
 
 1. Download the skill package using the button below.
 
-    <download-files path="recruit-v2/06-add-a-skill/assets/lab-skills/device-guidance-v1-0-1" />
+    <download-files path="recruit-v2/06-add-a-skill/assets/device-guidance-v1-0-1" />
 
     Download `device-guidance-v1-0-1.zip`, extract it, then upload the `SKILL.md` file into the agent.
 
@@ -349,11 +349,11 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
     Copy and paste the following text and submit it to the agent.
 
-   ```text
-   I need a laptop
-   ```
+    ```text
+    I need a laptop
+    ```
 
-   ![Test skill](./assets/7.2_06_TestSkill.png)
+    ![Test skill](./assets/7.2_06_TestSkill.png)
 
 1. You'll see an error appear. The SharePoint tool failed because the model guessed a column name for the OData filter query that does not exist.
 
@@ -361,9 +361,9 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
 1. However, what happens next is that the model uses reasoning and dynamic planning to determine the next appropriate action when it encounters an issue.
 
-  In this step, the model applies reasoning and uses the correct SharePoint internal column name, `field_4` (the **Asset Type** column), to filter for the device type `Laptop`.
+    In this step, the model applies reasoning and uses the correct SharePoint internal column name, `field_4` (the **Asset Type** column), to filter for the device type `Laptop`.
 
-  ![Reasoning applied](./assets/7.2_08_Reasoning.png)
+    ![Reasoning applied](./assets/7.2_08_Reasoning.png)
 
 1. The agent then displays the available laptops from the SharePoint list.
 
@@ -373,23 +373,35 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
     Download the skill package using the button below.
 
-    <download-files path="recruit-v2/06-add-a-skill/assets/lab-skills/device-guidance-v1-0-2" />
+    <download-files path="recruit-v2/06-add-a-skill/assets/device-guidance-v1-0-2" />
 
     Download `device-guidance-v1-0-2.zip` and extract it.
 
-   Repeat the same steps to replace the skill: in **Build**, select the `device-guidance` skill, select the **ellipsis**, select **Replace**, and upload the extracted `SKILL.md` file into the agent.
+    Repeat the same steps to replace the skill: in **Build**, select the `device-guidance` skill, select the **ellipsis**, select **Replace**, and upload the extracted `SKILL.md` file into the agent.
 
-   You'll then see an additional instruction on how to manage tool inputs for OData filter queries, including explicit column names and examples.
+    The updated skill now explicitly maps SharePoint display names to their internal column names. This prevents the model from guessing field names and ensures OData filters use valid columns, such as `field_4` for the **Asset Type** column. It also includes an example showing how to construct a filter correctly.
 
     ![Replace skill and review input instructions](./assets/7.2_10_ReplaceSkillAndReviewFilterInstructions.png)
+
+    > [!NOTE] How to find the SharePoint column schema name
+    >
+    > 1. In your SharePoint list, select the **Settings** icon, and then select **List settings**.
+    > 1. Under **Columns**, select the column whose internal name you want to find, such as **Asset Type**.
+    > 1. In the edit-column page URL, locate the `Field` query parameter. For example:
+    >
+    >     ```text
+    >     .../FldEdit.aspx?List={LIST-ID}&Field=field%5F4
+    >     ```
+    >
+    > The value of `Field` is the column's internal schema name. SharePoint URL-encodes `_` as `%5F`, so `Field=field%5F4` corresponds to the internal name `field_4`. Use this internal name when constructing the OData filter query.
 
 1. Test the updated skill by navigating to Preview.
 
     Copy and paste the following text and submit it to the agent.
 
-   ```text
-   I need a laptop
-   ```
+    ```text
+    I need a laptop
+    ```
 
     The error should no longer appear because the updated instructions guide the model to use the tool inputs correctly.
 
@@ -401,9 +413,9 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
     Copy and paste the following text and submit it to the agent.
 
-   ```text
-   A
-   ```
+    ```text
+    A
+    ```
 
     ![Confirm selected device](./assets/7.2_13_ConfirmSelectedDevice.png)
 
@@ -411,17 +423,21 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
     ![Device summary](./assets/7.2_14_DeviceSummary.png)
 
-  We're not done refining the skill yet. If a user wants to provide an additional comment as part of the request, that behavior also needs to be captured in the skill instructions. Let's update the skill again.
+    We're not done refining the skill yet. If a user wants to provide an additional comment as part of the request, that behavior also needs to be captured in the skill instructions. Let's update the skill again.
 
 1. Download the skill package using the button below.
 
-    <download-files path="recruit-v2/06-add-a-skill/assets/lab-skills/device-guidance-v1-0-3" />
+    <download-files path="recruit-v2/06-add-a-skill/assets/device-guidance-v1-0-3" />
 
     Download `device-guidance-v1-0-3.zip` and extract it.
 
-   Repeat the same steps to replace the skill: in **Build**, select the `device-guidance` skill, select the **ellipsis**, select **Replace**, and upload the extracted `SKILL.md` file into the agent.
+    Repeat the same steps to replace the skill:
 
-   You'll then see an additional instruction that tells the agent to ask for additional requirements. In the next mission, you'll pass this information into a workflow for the `Contoso IT Concierge` agent.
+    - In **Build**, select the `device-guidance` skill
+    - Select the **ellipsis** icon and select **Replace**
+    - Upload the extracted `SKILL.md` file into the agent
+
+    The updated skill now instructs the agent to ask about additional device requirements after the user selects an option. It captures specifications such as RAM or storage capacity and includes them in the device request. In the next mission, you'll pass this information into a workflow for the `Contoso IT Concierge` agent.
 
     ![Replace skill and review additional requirements instructions](./assets/7.2_15_ReplaceSkillAndReviewAdditionalCommentInstruction.png)
 
@@ -429,9 +445,9 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
     Copy and paste the following text and submit it to the agent.
 
-   ```text
-   B
-   ```
+    ```text
+    B
+    ```
 
     ![Test skill](./assets/7.2_16_TestSkill.png)
 
@@ -439,9 +455,9 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
     Copy and paste the following text and submit it to the agent.
 
-   ```text
-   16GB of RAM
-   ```
+    ```text
+    16GB of RAM
+    ```
 
     ![Additional requirements question](./assets/7.2_17_AdditionalCommentQuestion.png)
 
@@ -451,14 +467,18 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
 ## ✅ Mission Complete {#mission-complete}
 
-You iteratively refined a reusable **Skill** so the agent can handle tool-input mapping more reliably, recover from OData filter errors, map user-selected options to SharePoint Item IDs, and capture additional user requirements. 🙌🏻
+Mission accomplished, Recruit! You iteratively refined a reusable skill so the `Contoso IT Concierge` agent can reliably map tool inputs, recover from OData filter errors, match user-selected options to SharePoint item IDs, and capture additional device requirements.
 
-⏭️ [Move to **Add Tools**](../07-add-tools/index.md)
+Well done, Agent Maker. You now have a focused skill with clear instructions, tool guidance, validation rules, escalation paths, and success criteria that produce more consistent agent behavior.
+
+This is the end of **Lab 06 - Add a Skill**, select the link below to move to the next mission. The skill refined in this lab will use the tool configured in the next mission's lab.
+
+⏭️ [Move to **Add Tools** mission](../07-add-tools/index.md)
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Skills in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/authoring-skills?WT.mc_id=power-172619-ebenitez)
+🔗 [Skills in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-overview?WT.mc_id=power-172619-ebenitez)
 
-🔗 [Write effective instructions](https://learn.microsoft.com/microsoft-copilot-studio/authoring-instructions?WT.mc_id=power-172619-ebenitez)
+🔗 [Write effective instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create#write-effective-skill-instructions?WT.mc_id=power-172619-ebenitez)
 
 <analytics-tag section="recruit-v2" mission="06-add-a-skill" />
