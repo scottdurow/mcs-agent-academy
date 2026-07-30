@@ -379,7 +379,7 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
     Repeat the same steps to replace the skill: in **Build**, select the `device-guidance` skill, select the **ellipsis**, select **Replace**, and upload the extracted `SKILL.md` file into the agent.
 
-    The updated skill now explicitly maps SharePoint display names to their internal column names. This prevents the model from guessing field names and ensures OData filters use valid columns, such as `field_4` for Device Type. It also includes an example showing how to construct a filter correctly.
+    The updated skill now explicitly maps SharePoint display names to their internal column names. This prevents the model from guessing field names and ensures OData filters use valid columns, such as `field_4` for the **Asset Type** column. It also includes an example showing how to construct a filter correctly.
 
     ![Replace skill and review input instructions](./assets/7.2_10_ReplaceSkillAndReviewFilterInstructions.png)
 

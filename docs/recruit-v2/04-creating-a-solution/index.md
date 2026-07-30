@@ -27,7 +27,7 @@ last-edited-date: 2026-07-24
 
 ## 🎯 Mission Brief {#mission-brief}
 
-Welcome back, Agent. In this mission, you'll learn to assemble a Solution, you'll create a Power Platform solution for the `Contoso IT Concierge` agent you'll build in the next mission with Microsoft Copilot Studio. Think of the solution as your digital briefcase: it keeps everything together as the agent moves from development through testing and into production.
+Welcome back, Agent. In this mission, you'll create a Power Platform solution for the `Contoso IT Concierge` agent you'll build in the next mission with Microsoft Copilot Studio. Think of the solution as your digital briefcase: it keeps everything together as the agent moves from development through testing and into production.
 
 Every agent needs a well-structured home. A Power Platform solution provides organization, portability, and readiness for deployment.
 
