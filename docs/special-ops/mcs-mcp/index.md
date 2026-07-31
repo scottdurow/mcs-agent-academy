@@ -186,11 +186,11 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
 
 1. Go to [Copilot Studio](https://copilotstudio.microsoft.com/)
 
-1. Select the environment picker at the top right corner
+1. Select the environment picker at the bottom left corner and select the environment you want to use
 
 1. Select **Agents** in the left navigation
 
-1. Select the **Create blank agent** button
+1. Select the **New Agent** button
 
     ![New agent](./assets/newagent.png)
 
