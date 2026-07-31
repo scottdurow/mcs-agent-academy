@@ -190,14 +190,14 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
 
 1. Select **Agents** in the left navigation
 
-1. Select the **New Agent** button
+1. Select the either the **New Agent** or the **Create your first agent** button (both do the same thing)
 
     ![New agent](./assets/newagent.png)
 
     > [!NOTE]
-    > This will start creating your agent, usually within 10 seconds your agent will be visible, but it will take around a minute until everything is provisioned. You will see a green bar at the top with the message `Your agent has been provisioned.` when your agent is provisioned.
+    > This will start creating your agent, usually within 10 seconds your agent will be visible.
 
-1. When it's done provisioning, select **Edit** in the details card on the overview page
+1. Now you'll be able to change the name to **Jokester**
 
     ![Edit name](./assets/editname.png)
 
@@ -206,16 +206,6 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
     ```text
     Jokester
     ```
-
-1. Add the following **Description**
-
-    ```text
-    A humor-focused agent that delivers concise, engaging jokes only upon user request, adapting its style to match the user's tone and preferences. It remains in character, avoids repetition, and filters out offensive content to ensure a consistently appropriate and witty experience.
-    ```
-
-1. Select **Save** to save the changes
-
-1. Select **Edit** in the instructions card on the overview page
 
 1. Add the following **Instructions**
 
@@ -235,15 +225,15 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
 
 1. Select **Save** to save the instructions
 
-1. Select **Tools** in the top menu
+1. Select **Tools** in the menu on the right
 
     ![Tools](./assets/tools.png)
 
-1. Select the blue **Add a tool** button
-
-1. Select the **Model Context Protocol** button under **Create new** text
+1. Select **Add** and then **Model Context Protocol MCP**
 
     ![Create MCP](./assets/create-mcp.png)
+
+    This will open a wizard where you can create a new MCP server. You will need to provide the following information:
 
 1. Enter the name:
 
@@ -261,7 +251,7 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
 
 1. Select **Create** to create the MCP Server
 
-    ![Creating MCP Server](./assets/create-mcp.png)
+    ![Creating MCP Server](./assets/add-mcp.png)
 
     This will take a couple of seconds, because Copilot Studio is now creating a connector behind the scenes.
 
