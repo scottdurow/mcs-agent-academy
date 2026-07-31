@@ -67,14 +67,14 @@ Copilot Studio resides within Microsoft 365, so you need a Microsoft 365 account
    1. Go to the [Microsoft 365 Business Plans and Pricing Page](https://www.microsoft.com/microsoft-365/business/microsoft-365-plans-and-pricing)
    1. The cheapest option to get you started is the Microsoft 365 Business Basic plan. Select `Try for free` and walk through the guided form to fill in your subscription and account details and payment information.
    ![Microsoft 365 Signup](./images/m365-freetrial.png)
-   1. Once you have your new account, login.
+   1. Once you have your new account, log in.
 
 > [!TIP]
 > If you plan to publish agents into Microsoft 365 Copilot Chat or connect to organizational data (SharePoint, OneDrive, Dataverse), a Microsoft 365 Copilot license is required. This is an add-on license which you can learn more about [on the licensing site](https://www.microsoft.com/microsoft-365/copilot#plans)
 
 ## Step 2: Start a Copilot Studio Trial
 
-Once you have your Microsoft 365 Tenant, you need to get access to Copilot Studio. You can get a free 30 day trial by following these steps:
+Once you have your Microsoft 365 tenant, you need to get access to Copilot Studio. You can get a free 30-day trial by following these steps:
 
 1. Navigate to [aka.ms/TryCopilotStudio](https://aka.ms/TryCopilotStudio).
 1. Enter the email address from the new account you configured in the previous step and select `Next`.  
@@ -109,12 +109,12 @@ Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Develope
 
     ![Sign up for Power Apps Developer Plan](images/0.3_01_SignUp.png)
 
-1. After signing up for the Developer Plan, you'll be redirected to [Power Apps](https://make.powerapps.com/). The environment uses your name, for example **Adele Vance's environment**. If there's already an environment with that name, the developer new environment is named **Adele Vance's (1)** environment.
+1. After signing up for the Developer Plan, you'll be redirected to [Power Apps](https://make.powerapps.com/). The environment uses your name, for example **Adele Vance's environment**. If there's already an environment with that name, the new developer environment is named **Adele Vance's (1)** environment.
 
     Use this developer environment in Copilot Studio when completing the labs.
 
 > [!NOTE]
-> If you are using an existing Microsoft 365 account and did not create one in Step 1, for example - using your own account in your work organization, your IT administrator (or the equivalent) team who manages your tenant/environments might have turned off the sign up process. In this case, please contact your administrator, or create a test tenant as per Step 1.
+> If you are using an existing Microsoft 365 account and did not create one in Step 1, for example, - using your own account in your work organization, your IT administrator (or the equivalent) team who manages your tenant/environments might have turned off the sign-up process. In this case, please contact your administrator, or create a test tenant as per Step 1.
 >
 > If you are using an existing environment from your organization, ensure it is **not** a managed environment. Managed environment restrictions can prevent certain features — such as adding Power Automate flows as agent tools — from working correctly.
 
@@ -166,7 +166,7 @@ First, you need a security group to hold everyone you want to be able to publish
 
     ![Tenant Settings](images/pp-admin-tenantsettings.png)
 
-1. Select the ***copilot studio authors** option
+1. Select the ***Copilot Studio authors** option
 
     ![Authors](images/pp-authors.png)
 
@@ -210,11 +210,11 @@ A new SharePoint site is required for completing `Mission 04 - Build a custom en
 
 1. Enter your site details. Example:
 
-    | Field | Value |
-    | --- | --- |
-    | Site name | Contoso IT |
+    | Field            | Value                        |
+    | ---------------- | ---------------------------- |
+    | Site name        | Contoso IT                   |
     | Site description | Copilot Studio Agent Academy |
-    | Site address | ContosoIT |
+    | Site address     | ContosoIT                    |
 
     Select **Create site**.
 
@@ -244,48 +244,72 @@ A new SharePoint site is required for completing `Mission 04 - Build a custom en
 
     ![Select file](images/0.5_11_SelectFile.png)
 
+1. Next, in the **Customize** step, select the `EmployeeAssets` table and review the detected column types. Most columns are automatically detected as `Single line of text`, which is common when importing an Excel file. Some column types need to be adjusted, so we'll do that next.
+
+    ![Customize column data types](images/0.5_12_CustomizeColumnTypes.png)
+
+1. Change the following columns manually from `Single line of text` to `Choice` fields.
+
+    | Column       | Updated Type |
+    | ------------ | ------------ |
+    | Status       | Choice       |
+    | Manufacturer | Choice       |
+    | Asset Type   | Choice       |
+
+    ![Change column types to Choice](images/0.5_13_ChangeColumnTypes.png)
+
+1. Change the following columns manually from `Single line of text` to `Choice`, `Date and time` and `Number` fields.
+
+    | Column         | Updated Type  |
+    | -------------- | ------------- |
+    | Color          | Choice        |
+    | Purchase Date  | Date and time |
+    | Purchase Price | Number        |
+
+    ![CHange column types to Choice](images/0.5_14_ChangeColumnTypes.png)
+
 1. Enter `EmployeeAssets` as the list name, select the **Show list in site navigation** checkbox, then select **Create**.
 
-    ![Select Create](images/0.5_12_CreateList.png)
+    ![Select Create](images/0.5_15_CreateList.png)
 
 1. Add a new column with the type `Hyperlink`. Scroll across the list, select **+ Add column**, select **Hyperlink**, then select **Next**.
 
-    ![Add new hyperlink column](images/0.5_13_AddNewHyperlinkColumn.png)
+    ![Add new hyperlink column](images/0.5_16_AddNewHyperlinkColumn.png)
 
 1. Enter the following information for the column and select **Save**.
 
-    | Field | Value |
-    | --- | --- |
-    | Name | Image URL |
+    | Field       | Value                               |
+    | ----------- | ----------------------------------- |
+    | Name        | Image URL                           |
     | Description | The image URL of the employee asset |
 
-    ![Create a column](images/0.5_14_CreateAColumn.png)
+    ![Create a column](images/0.5_17_CreateAColumn.png)
 
 1. Copy each value from the **Image** column to the **Image URL** column. Select **Edit in grid view**.
 
-    ![Select Edit in Grid View](images/0.5_15_SelectEditInGridView.png)
+    ![Select Edit in Grid View](images/0.5_18_SelectEditInGridView.png)
 
 1. In the first row (the first item in the list), double-click the **Image** column and copy the value. Press the `Esc` key to exit editing.
 
-    ![Double click column](images/0.5_16_DoubleClickColumn.png)
+    ![Double click column](images/0.5_19_DoubleClickColumn.png)
 
-1. Double-click the corresponding **Image URL** column, paste the value in the **Link** field, then select the checkmark icon to save.
+1. Double-click the corresponding **Image URL** column, paste the value in the **Link** field, then select the check mark icon to save.
 
-    ![Paste value into image URL column](images/0.5_17_PasteValueIntoImageURLColumn.png)
+    ![Paste value into image URL column](images/0.5_20_PasteValueIntoImageURLColumn.png)
 
 1. Repeat the same steps for the remaining three rows in the list.
 
-1. Lastly, delete the Image text column. Select the column, then select **Column settings** followed by **Edit**.
+1. Lastly, delete the Image `Single line of text` column. Select the column, then select **Column settings** followed by **Edit**.
 
-    ![Select Edit](images/0.5_18_EditColumnSettings.png)
+    ![Select Edit](images/0.5_21_EditColumnSettings.png)
 
 1. Select **Delete**.
 
-    ![Select Delete](images/0.5_19_SelectDelete.png)
+    ![Select Delete](images/0.5_22_SelectDelete.png)
 
 1. A confirmation dialog appears. Select **Delete** to confirm removing the column from the list.
 
-    ![Confirm Deletion](images/0.5_20_ConfirmDeletion.png)
+    ![Confirm Deletion](images/0.5_23_ConfirmDeletion.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
@@ -294,7 +318,7 @@ You’ve successfully:
 - Set up a Microsoft 365 dev environment  
 - Activated your Copilot Studio trial  
 - Created a SharePoint site for grounding agents  
-- Populated the Devices list for use in future missions
+- Populated the EmployeeAssets list for use in future missions
 
 You're officially cleared to begin your **Recruit-level agent training** in [Lesson 01](../01-introduction-to-agents/index.md).  
 
