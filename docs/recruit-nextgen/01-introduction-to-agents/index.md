@@ -47,7 +47,7 @@ In this mission, you'll learn:
 1. What **orchestration** is, and why generative orchestration replaced the topic tree
 1. The **agent spectrum** from reactive to autonomous, and the control boundaries that keep it safe
 1. The common Microsoft build surfaces for agents, from **no-code** to **pro-code**
-1. The two paths you'll build in this course: **declarative** vs. **custom** agents
+1. The three Copilot Studio harnesses and when to use each one
 
 Let's decode it.
 
@@ -119,17 +119,20 @@ Because autonomy cuts both ways, you set **control boundaries**, deciding, per a
 > [!TIP] Opinion: design the boundaries before the capabilities
 > The failure mode of agentic AI isn't a wrong sentence, it's a confident wrong *action* against a real system. Decide what the agent is allowed to do **before** you wire up what it *can* do.
 
-## Two Paths You'll Build: Declarative vs. Custom
+## The Three Copilot Studio Harnesses
 
-This course builds both kinds of agent, so meet them now as *concepts* (the how-to is in later missions):
+Whatever you build in Copilot Studio runs on a **harness**. The model supplies reasoning and generation; the harness is the runtime that decides when to call the model, which components to provide, how to interpret the result, and which tools to invoke.
 
-- **Declarative agent** — You *declare* the agent's instructions, knowledge, and actions, and it runs on **Microsoft 365 Copilot's** orchestrator and models. Fastest path to value; lives natively inside M365 Copilot. *(Not built in this course — try it at [Copilot Camp](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/01-first-agent-builder/).)*
-- **Custom agent** — You configure the agent's instructions, knowledge, tools, triggers, topics, actions, and orchestration behavior. This gives you more control over the agent experience, business process integration, channels, governance, and how the agent handles work beyond a simple Microsoft 365 Copilot declarative agent. *(This is the focus of the rest of the course.)*
+| Harness | Best for | How it works |
+| --- | --- | --- |
+| **GitHub Copilot harness** | Complex, reasoning-heavy, multi-step business processes | Plans toward a goal, uses knowledge and tools, adjusts when conditions change, and supports skills, memory, connected agents, and file creation |
+| **Standard harness** | Rule-based agents and structured, repeatable conversations | Follows the topics, prompts, branches, and paths you define |
+| **Copilot chat harness** | Extending Microsoft 365 Copilot Chat with enterprise knowledge | Grounds Copilot Chat in organizational content for internal users |
+
+This course builds an agent powered by the **GitHub Copilot harness**. That choice is why the later missions use natural-language instructions, skills, tools, and workflows rather than authored topic trees.
 
 > [!INFO] Pro-code note
-> For fully code-driven agents where you bring your own orchestrator, model choices, runtime, and deployment architecture, you move into custom engine agents, Microsoft 365 Agents SDK, Agent Framework, or Microsoft Foundry.
-
-The rule of thumb: **start declarative when you want the fastest path inside Microsoft 365 Copilot**. Move to **Copilot Studio** when you need more control over business logic, actions, topics, triggers, governance, or channels. Move to a **custom engine or pro-code path** when you need full control over orchestration, model choice, runtime, or architecture.
+> For fully code-driven agents where you bring your own orchestration, models, runtime, and deployment architecture, use Microsoft 365 Agents SDK, Microsoft Agent Framework, or Microsoft Foundry.
 
 ## Where Agents Get Built
 
@@ -142,7 +145,7 @@ There are **multiple ways to build agents**, and they sit across a spectrum from
 
 The simplest way to think about it is this: **Agent Builder** is a great starting point, **Copilot Studio** gives you more control without requiring a fully code-first approach, and the **SDK/toolkit** and **Foundry** paths are for teams that want deeper developer control.
 
-Now that you've seen the two agent types, you can map the tools to them more clearly: **Agent Builder** creates **declarative agents** for Microsoft 365 Copilot. **Copilot Studio** can create **declarative agents** and more advanced **custom agents**. **Microsoft 365 Agents SDK + Agents Toolkit** can support declarative agents and custom engine agents. **Microsoft Foundry / Foundry Agent Service** is typically used when teams need deeper control over models, frameworks, hosting, tools, runtime, or agent architecture.
+Now that you've seen the harnesses, you can map the tools to them more clearly: **Agent Builder** creates agents that extend Microsoft 365 Copilot Chat. **Copilot Studio** lets you build on the Copilot chat, standard, or GitHub Copilot harness. **Microsoft 365 Agents SDK**, **Microsoft Agent Framework**, and **Microsoft Foundry** support code-first scenarios that need deeper control over models, frameworks, hosting, tools, runtime, or architecture.
 
 These also aren't the only tools available. There are more specialized options, like **Custom SharePoint Agents** for SharePoint-centric scenarios, **Microsoft Agent Framework** for fully code-driven agent and workflow development, and other ecosystem-specific frameworks.
 
@@ -167,12 +170,12 @@ You now have the mental model. You can explain:
 1. **RAG = the memory** — grounded, cited answers from *your* data (the knowledge layer).
 1. **Generative orchestration = the director** — a planner that composes tools and knowledge instead of a hand-drawn topic tree.
 1. **Agency is a spectrum** — set control boundaries before capabilities.
-1. **Declarative vs. custom** — start simple, move to Copilot Studio or pro-code paths when you need more control.
+1. **Harness choice matters** — use the Copilot chat harness for grounded M365 Copilot Chat extensions, the standard harness for rule-based experiences, and the GitHub Copilot harness for complex multi-step work.
 
-Next up, you'll dig into **Copilot Studio** — what it is, how it works, and the building blocks you'll use for the rest of the custom-agent track: [**Mission 02: Copilot Studio Fundamentals**](../02-copilot-studio-fundamentals/index.md).
+Next up, you'll dig into **Copilot Studio** — what it is, how its harnesses work, and the building blocks you'll use for the rest of the GitHub Copilot harness track: [**Mission 02: Copilot Studio Fundamentals**](../02-copilot-studio-fundamentals/index.md).
 
 > [!TIP] Want to explore Agent Builder?
-> This course focuses on building custom agents in **Copilot Studio**. If you'd like to learn more about **Agent Builder** and how to build declarative agents there, head over to Copilot Camp and work through the [**Declarative Agent Foundation with Agent Builder**](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/01-first-agent-builder/) lab.
+> This course focuses on the **GitHub Copilot harness** in Copilot Studio. If you'd like to build an agent that extends Microsoft 365 Copilot Chat, head over to Copilot Camp and work through the [**Declarative Agent Foundation with Agent Builder**](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/01-first-agent-builder/) lab.
 
 Stay sharp, Recruit because your AI journey is just beginning!
 
@@ -181,6 +184,8 @@ Stay sharp, Recruit because your AI journey is just beginning!
 🔗 [AI Agents for Beginners](https://github.com/microsoft/ai-agents-for-beginners)
 
 🔗 [Copilot Studio Documentation Home](https://learn.microsoft.com/microsoft-copilot-studio/)
+
+🔗 [Choose a harness in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)
 
 🔗 [Copilot Developer Camp](https://aka.ms/copilot-camp) — hands-on learning paths for Agent Builder, Copilot Studio, Microsoft 365 Agents SDK, Agent Framework, and Foundry
 

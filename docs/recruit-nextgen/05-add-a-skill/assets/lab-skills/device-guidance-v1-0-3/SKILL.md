@@ -4,7 +4,7 @@ description: >-
   Helps employees identify available device options based on their needs, using the `Get Employee Assets` tool.
 license: MIT
 metadata:
-  author: elaiza-benitez
+  author: april-dunnam
   version: 1.0.3
 ---
 # Device Request Guidance

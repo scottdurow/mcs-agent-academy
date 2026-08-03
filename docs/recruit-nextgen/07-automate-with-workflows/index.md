@@ -7,7 +7,7 @@ prev:
 next:
   text: Publish your agent
   link: /recruit-nextgen/08-publish-your-agent
-short-description: Automate a device request with the new Workflows experience and call it from your agent
+short-description: Automate a device request with a workflow and call it from your GitHub Copilot harness agent
 difficulty: 1
 codename: OPERATION AUTOMATION POWERHOUSE
 time: 60
@@ -27,29 +27,28 @@ last-edited-date: 2026-06-28
 <mission-meta />
 
 > [!NOTE]
-> This lab has been rewritten for the **new Copilot Studio experience** (2026-06-28).
-> In the new experience, **topics no longer exist** — automations are built in the new
-> **Workflows** experience as standalone, reusable workflows that your agent calls as a tool.
-> Make sure the **New experience** toggle in the upper-right corner is **on**.
+> This lab uses an agent and workflows powered by the **GitHub Copilot harness**.
+> On this harness, workflows are standalone, reusable automations that an agent can call as a tool.
+> In the current Copilot Studio UI, make sure the **New experience** toggle in the upper-right corner is **on**.
 
 ## 🎯 Mission Brief {#mission-brief}
 
 Your agent can converse with users and provide information, but true operational excellence requires it to take action. This mission transforms your conversational agent into an automation powerhouse by equipping it with a **workflow**.
 
-By mission's end, you'll have built an end-to-end device request automation in the new **Workflows** experience that retrieves data from SharePoint, sends a notification email to a manager, and returns a value to your agent — then connected that workflow to your **Contoso IT Concierge Agent** as a tool.
+By mission's end, you'll have built an end-to-end device request automation in **Workflows** that retrieves data from SharePoint, sends a notification email to a manager, and returns a value to your agent — then connected that workflow to your **Contoso IT Concierge Agent** as a tool.
 
 ## 🔎 Objectives {#objectives}
 
 In this mission, you'll learn:
 
-1. What the new **Workflows** experience is and how it differs from the classic agent flows you built inside topics
+1. What **Workflows** are on the GitHub Copilot harness and how they differ from agent flows on the standard harness
 1. How the **workflow designer**, **node palette**, and **triggers** work together
 1. How to use connector actions, dynamic content, and expressions to handle data dynamically
 1. How to build a complete device request automation and call it from an agent as a tool
 
-## 🤔 What is the new Workflows experience? {#what-is-the-new-workflows-experience}
+## 🤔 What are Workflows? {#what-are-workflows}
 
-In the classic experience, automations called **agent flows** were created _inside a topic_ — you added a node to a conversation tree and the flow was tied to that topic. **In the new experience, topics are gone.**
+On the standard harness, **agent flows** can support topic-based, structured agent behavior. The GitHub Copilot harness instead uses standalone **workflows** for deterministic automation.
 
 Instead, automations are first-class objects called **workflows**. A workflow is a standalone, reusable, step-by-step automation that lives in its own **Workflows** hub. You build it once on a visual canvas, publish it, and then any agent in your environment can call it as a **tool**.
 
@@ -144,11 +143,11 @@ For the full list, see the [functions reference guide](https://learn.microsoft.c
 
 1. **SharePoint list** — the **EmployeeAssets** SharePoint list from [Mission 00 - Course Setup](../00-course-setup/index.md#step-5-create-new-sharepoint-site). If you haven't set it up, head back and create it.
 
-1. **Contoso IT Concierge agent** — the agent created in [Mission 04 - Build a custom agent](../04-build-a-custom-agent/index.md#41-create-a-new-agent-with-ai-based-authoring).
+1. **Contoso IT Concierge agent** — the agent created in [Mission 04 - Build an agent with the GitHub Copilot harness](../04-build-a-custom-agent/index.md#41-create-a-new-agent-with-ai-based-authoring).
 
 ### 7.1 Create a new workflow
 
-In the new experience, workflows are added to your agent as a **tool**.
+On the GitHub Copilot harness, workflows are added to your agent as a **tool**.
 
 1. In the **Build** view, in the **Tools** section, select the **+** icon.
 
@@ -587,7 +586,7 @@ You're now going to run through the following test cases:
 
 ## ✅ Mission Complete {#mission-complete}
 
-Congratulations! 👏🏻 You've built an end-to-end device request automation in the **new Workflows experience**:
+Congratulations! 👏🏻 You've built an end-to-end device request automation with a workflow powered by the **GitHub Copilot harness**:
 
 - Created a workflow that retrieves device details from SharePoint, composes an email with dynamic content, and sends it to a manager.
 - Connected the workflow to your agent as a reusable tool.

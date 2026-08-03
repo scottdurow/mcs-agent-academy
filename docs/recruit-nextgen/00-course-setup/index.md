@@ -188,7 +188,7 @@ The following steps are required regardless of whether you're using a trial or a
 
 ## Step 5: Create new SharePoint site
 
-A new SharePoint site is required for completing `Mission 04 - Build a custom engine agent`. In this step, you'll also create a new list in that site to store available devices.
+A new SharePoint site is required for completing `Mission 04 - Build an agent with the GitHub Copilot harness`. In this step, you'll also create a new list in that site to store available devices.
 
 1. Select the waffle icon in the top-left corner of [Power Apps](https://make.powerapps.com/) or the [Microsoft 365 admin center](https://admin.cloud.microsoft) to open the app menu, then select **SharePoint**.
 

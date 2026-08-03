@@ -7,12 +7,12 @@ prev:
 next:
   text: Add a skill
   link: /recruit-nextgen/05-add-a-skill
-short-description: Create a custom engine agent from scratch in Copilot Studio using AI-based authoring
+short-description: Create an agent powered by the GitHub Copilot harness using AI-based authoring
 difficulty: 1
 codename: OPERATION ENGINE SHIFT
 time: 60
 tags:
-  - custom-engine-agents
+  - github-copilot-harness
   - ai-authoring
   - solutions
 products:
@@ -25,17 +25,17 @@ created-date: 2026-06-28
 last-edited-date: 2026-07-24
 ---
 
-# 🚨 Mission 04: Build a custom engine agent {#mission-04-build-a-custom-engine-agent}
+# 🚨 Mission 04: Build an Agent with the GitHub Copilot Harness {#mission-04-build-an-agent-with-the-github-copilot-harness}
 
 <mission-meta />
 
 > [!NOTE]
-> This lab uses the **new Copilot Studio experience**.
-> Make sure the **New experience** toggle in the upper-right corner of the Home page is **on** so your screen matches the screenshots in this mission.
+> This lab builds an agent powered by the **GitHub Copilot harness**.
+> In the current Copilot Studio UI, make sure the **New experience** toggle in the upper-right corner of the Home page is **on** so your screen matches the screenshots in this mission.
 
 ## 🎯 Mission Brief {#mission-brief}
 
-Welcome back, Agent. In this mission, you'll build a new custom engine agent from scratch in Copilot Studio by using the AI-based authoring experience.
+Welcome back, Agent. In this mission, you'll build an agent powered by the GitHub Copilot harness.
 
 You'll describe what your agent needs to do in natural language, let Copilot Studio generate the initial agent experience, then refine the result by updating the agent name and adding knowledge sources.
 
@@ -45,7 +45,7 @@ Because you set the custom solution as your preferred solution in the previous m
 
 In this mission, you'll learn:
 
-1. How to create a new custom engine agent in Copilot Studio by describing it in natural language
+1. How to create an agent powered by the GitHub Copilot harness
 1. How to review and refine the generated agent details
 1. How to add knowledge sources
 1. How to run baseline tests before adding more functionality in upcoming labs
@@ -71,25 +71,25 @@ Copilot Studio provides [governance controls](https://learn.microsoft.com/micros
 
 Administrators can also use the Power Platform admin center and Microsoft Purview to manage environments, monitor usage, review audit data, and help ensure agents remain aligned with organizational policies.
 
-## 🆕 Meet the new agent experience {#meet-the-new-agent-experience}
+## 🧠 Meet the GitHub Copilot harness {#meet-the-github-copilot-harness}
 
-Now that you understand why Copilot Studio is suited for building and governing more advanced agents, let's look at the authoring experience you'll use. The [new agent experience](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/overview) uses a natural-language-first approach. Instead of designing every conversation path manually, you describe the agent's purpose and behavior, then connect the knowledge and capabilities it needs.
+Now that you understand why Copilot Studio is suited for building and governing more advanced agents, let's look at the runtime architecture you'll use. The [GitHub Copilot harness](https://learn.microsoft.com/microsoft-copilot-studio/harnesses-overview) is designed for reasoning-heavy, multi-step work. Instead of designing every conversation path manually, you describe the agent's purpose and behavior, then connect the knowledge and capabilities it needs.
 
 ![AI-based authoring](./assets/5.0_01_AIBasedAuthoring.png)
 
 The agent lifecycle follows a simple pattern: create, build, test, publish, and monitor. In this mission, you'll focus on creating, building, and testing your agent.
 
-## 🔄 New experience versus classic {#new-experience-versus-classic}
+## 🔄 GitHub Copilot harness versus standard harness {#github-copilot-harness-versus-standard-harness}
 
-The [classic experience](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/classic-vs-new#what-the-new-experience-does-better) organizes agent behavior around topics, triggers, branching logic, and conversation nodes. The new experience uses natural language instructions and enhanced orchestration to reason about what to do next.
+The **standard harness** organizes agent behavior around topics, prompts, branching logic, and defined conversation paths. The GitHub Copilot harness uses natural-language instructions and goal-driven orchestration to reason about what to do next.
 
-It also brings agent configuration, testing, evaluation, and monitoring into a unified, tab-based authoring surface. Agents can't be transferred between the classic and new experiences because each uses a different architecture.
+The GitHub Copilot harness also brings agent configuration, testing, evaluation, and monitoring into a unified, tab-based authoring surface. Agents can't be transferred between the standard and GitHub Copilot harnesses because each uses a different architecture.
 
 ## 🧠 Why AI-based authoring matters {#why-ai-based-authoring-matters}
 
-Copilot Studio gives you a faster path to a working custom agent by letting you describe its purpose and behavior in natural language instead of building everything manually. The AI authoring experience uses that description to generate an initial draft of the agent, including its name, purpose, and instructions.
+Copilot Studio gives you a faster path to a working GitHub Copilot harness agent by letting you describe its purpose and behavior in natural language instead of building everything manually. The AI authoring experience uses that description to generate an initial draft of the agent, including its name, purpose, and instructions.
 
-[Instructions](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/authoring-instructions) are the primary way to shape agent behavior in the new experience. They define the agent's role, tone, scope, response style, boundaries, and when it should escalate or redirect a request.
+[Instructions](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/authoring-instructions) are the primary way to shape behavior on the GitHub Copilot harness. They define the agent's role, tone, scope, response style, boundaries, and when it should escalate or redirect a request.
 
 The generated instructions provide a useful starting point, but authoring is iterative. After the agent is created, you can review and refine its instructions in the **Build** tab, test the results in **Preview**, and continue making adjustments to improve consistency and reliability.
 
@@ -101,7 +101,7 @@ From this tab, you can refine the agent's instructions and connect components su
 
 ![Build tab](./assets/5.0_02_BuildTab.png)
 
-## 🧪 Lab 04: Create a custom engine agent in Copilot Studio {#lab-04-create-a-custom-engine-agent-in-copilot-studio}
+## 🧪 Lab 04: Create an agent with the GitHub Copilot harness {#lab-04-create-an-agent-with-the-github-copilot-harness}
 
 ### ✨ Use case {#use-case}
 
@@ -119,13 +119,25 @@ We'll continue using the same IT helpdesk scenario introduced earlier in the cou
 
 Before starting this lab, make sure you have:
 
-- Access to Copilot Studio with the **new experience** enabled
+- Access to Copilot Studio with the **New experience** toggle enabled for the GitHub Copilot harness authoring surface
 - The solution from [Mission 03 - Creating a solution](../03-creating-a-solution/index.md)
 - Your test knowledge source(s), for example the **Contoso IT** SharePoint site from [Mission 00 - Course setup](../00-course-setup/index.md#step-5-create-new-sharepoint-site)
 
-### 4.1 Create a new agent with AI-based authoring
+### 4.1 Create a new agent with the GitHub Copilot harness
 
-1. Browse to [**Microsoft Copilot Studio**](https://copilotstudio.microsoft.com) and on the **Home** page, copy and paste the following prompt into the field.
+1. Browse to [**Microsoft Copilot Studio**](https://copilotstudio.microsoft.com) and on the **Home** page, select the **Agent (GitHub Copilot)** tile.
+
+    ![Agent](./assets/4.1.01_NewAgent.png)
+
+1. Update the agent name to the following text,
+
+    ```text
+    Contoso IT Concierge
+    ```
+
+    ![Rename agent](./assets/4.1.02_Rename.png)
+
+1. Copy and paste the following into the Instructions field.  Review the instructions closely. They help the agent stay safe, follow company rules, and stay focused on approved IT help desk tasks, making responses more reliable, secure, and easier to test.
 
     ```text
     You are an IT Help Desk assistant that helps employees resolve common IT issues and find available devices. Be polite, concise, and helpful.
@@ -153,125 +165,83 @@ Before starting this lab, make sure you have:
     - Do not respond to requests outside of this scope.
     ```
 
-    ![Paste Prompt](./assets/5.1_01_PastePrompt.png)
+    ![Paste Prompt](./assets/4.1.03_Instructions.png)
 
-1. This prompt contains the instructions used by the AI authoring experience to build the agent.
+### 4.2 Add knowledge
 
-    Review them closely. They help the agent stay safe, follow company rules, and stay focused on approved IT help desk tasks, making responses more reliable, secure, and easier to test.
+1. The **Build** view shows the agent **Instructions** on the left and a configuration panel on the right with **Tools**, **Knowledge**, **Skills**, and more. Let's provide the agent with **knowledge** so it knows where the source of truth is for IT related questions. Select the **Add Button** next to the **Instructions** section in the configuration panel.
 
-    Submit the prompt to begin the AI authoring experience and create the agent.
+    ![Add Knowledge](./assets/4.1.04_AddInstruction.png)
 
-    ![Submit Prompt](./assets/5.1_02_SubmitPrompt.png)
+1. Select the **Public websites** option
 
-1. In the prompt, the instructions included only referencing the added knowledge sources. In the **Requesting information** step of the authoring experience, it recognizes there are no knowledge sources that have been provided and asks you to provide these.
+    ![Public Website](./assets/4.1.05_pubwebsite.png)
 
-    Copy and paste the following text. Make sure to update the SharePoint site with your site's URL.
+1. You'll notice that everything is grayed out here. That's because the default behavior is to allow the agent to search all public websites. We want to limit it to only references the sites that we provide so we need to toggle the **Search all websites** setting to *off**.
 
-    ```text
-    https://YOURSITE.sharepoint.com/sites/ContosoIT, https://support.microsoft.com, https://learn.microsoft.com/troubleshoot
-    ```
+    ![All websites off](./assets/4.1.06_allsitesoff.png)
 
-    ![Provide parameters](./assets/5.1_03_ProvideParameters.png)
-
-    > [!WARNING] AI authoring experience may differ across sessions
-    >
-    > Each AI authoring session can behave differently. If you aren't prompted to provide knowledge sources during the **Requesting information** step, you can add them during the **Complete** step.
-
-    Expand the following learning block to learn how.
-
-    ::: details Provide knowledge sources via Make edits
-    **Add knowledge sources in the Complete step**
-
-    1. Once the custom agent has been designed, select **Make edits**.
-
-       ![Select Make edits](./assets/5.1_04_Alternative_MakeEdits.png)
-
-    1. Copy and paste the following text to add the knowledge sources.
-
-       ```text
-       Can you add these knowledge sources https://YOURSITE.sharepoint.com/sites/ContosoIT, https://support.microsoft.com, https://learn.microsoft.com/troubleshoot
-       ```
-
-       ![Paste knowledge sources](./assets/5.1_05_Alternative_AddKnowledgeSources.png)
-
-    1. The authoring experience will run through the steps to add the knowledge sources. In the **Complete** step, you'll see confirmation and you can proceed to selecting **Keep it** to make no further changes.
-
-       ![Select Keep it](./assets/5.1_07_Alternative_KeepIt.png)
-    :::
-
-1. After you provide the knowledge sources in the **Requesting information** step, the flow moves to **Building**. In this step, you can see Copilot Studio's reasoning as it assembles and prepares the agent.
-
-    ![Building agent](./assets/5.1_08_BuildingAgent.png)
-
-1. Eventually the agent is built and reaches the **Complete** step in the authoring experience. Select **Keep it** since no further changes need to be made.
-
-    ![Select Keep it](./assets/5.1_09_Review.png)
-
-1. To open the agent in Copilot Studio, select the agent under **Artifacts** on the right-hand side panel.
-
-    ![Select agent](./assets/5.1_10_SelectAgent.png)
-
-### 4.2 Refine agent details
-
-1. The **Build** view shows the agent **Instructions** on the left and a configuration panel on the right with **Tools**, **Knowledge**, **Skills**, and more. Review what Copilot Studio assembled from your AI authoring session:
-
-    1. **Instructions** were generated from the natural language prompt you provided earlier.
-    1. **Skills** were automatically created based on the same prompt and the tasks the agent is expected to perform.
-    1. **Knowledge** includes the sources you supplied during the authoring experience (for example, your SharePoint site and the websites you provided).
-
-    ![Agent created](./assets/5.2_01_AgentCreated.png)
-
-1. Update the agent name to the following text,
+1. Copy and paste the following text into the **add public websites** input then select **Add**
 
     ```text
-    Contoso IT Concierge
+    https://support.microsoft.com
     ```
 
-    Next, review the agent settings by selecting the ellipsis icon on the upper-right corner.
+    ![Add](./assets/4.1.07_addpubsite.png)
 
-    ![Rename agent](./assets/5.2_02_RenameAgent.png)
+1. Select **Add to Agent**
 
-1. In the **Agent details** tab, review the **Solution** field. It displays the solution you created and set as preferred in the previous mission.
+    ![Add to agent](./assets/4.1.08_addtoagent.png)
 
-    ![Review agent details under settings](./assets/5.2_03_ReviewAgentSettings.png)
+1. Select the **Add Button** next to the **Instructions** section in the configuration panel.
 
-1. Next, select the **Greeting & prompts** tab. Copilot Studio automatically generated a greeting message during agent creation. Review the current message.
+    ![Add Knowledge](./assets/4.1.09_addknowledge.png)
 
-    ![View Greeting message](./assets/5.2_04_GreetingMessage.png)
+1. Select the **Public websites** option
 
-1. To align the greeting with the agent's new name, replace the existing message with the following text:
+    ![Public Website](./assets/4.1.05_pubwebsite.png)
+
+1. Copy and paste the following text into the input then select **Add**. Make sure to update the SharePoint site with your site's URL.
 
     ```text
-    Welcome to Contoso IT Concierge. Whether you're experiencing a technical issue or looking for a device, I'll help you find the right solution or next step. How can I assist you today?
+    https://learn.microsoft.com/troubleshoot
     ```
 
-    ![Update Greeting message](./assets/5.2_05_UpdateGreetingMessage.png)
+    ![Add](./assets/4.1.10_add.png)
 
-    Exit from agent settings by selecting the **X** icon on the upper-right corner.
+1. Select **Add to Agent**
 
-1. Let's review the other components of the agent. First, there are **Skills**, which define the agent's behavior through structured instructions that tell it how to handle specific tasks, apply logic, and respond consistently across different user requests. You'll learn more about skills in an upcoming mission.
+    ![Add to agent](./assets/4.1.11_addtoagent.png)
 
-    ![Skills added](./assets/5.2_06_ReviewSkills.png)
+1. Select the **Add Button** next to the **Instructions** section in the configuration panel one last time.
 
-1. Select one of the generated skills (for example, **Escalation ticket summary**) to open its details. Review the skill name, description, and the structured instructions that define how the agent should execute that behavior.
+    ![Add Knowledge](./assets/4.1.12_add.png)
 
-    ![Escalation ticket summary skills](./assets/5.2_07_EscalationTicketySummarySkill.png)
+1. Select the **SharePoint** option
 
-1. Next, review **Tools**. [Tools](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/tools-overview) are external capabilities an agent can use to retrieve real-time data, run workflows, and take actions in other systems. You'll learn how to add and configure a tool in [Mission 06 - Add Tools](../06-add-tools/index.md).
+    ![Public Website](./assets/4.1.13_addsp.png)
 
-1. Finally, review **Knowledge**. The SharePoint site and websites were added as knowledge sources during the authoring experience, but let's add another source.
+1. Copy and paste the following text into the input then select **Add**. Make sure to update the SharePoint site with your site's URL.
 
-### 4.3 Add an internal knowledge source by uploading a document
+    ```text
+    https://YOURSITE.sharepoint.com/sites/ContosoIT
+    ```
 
-We'll now add another internal knowledge source by uploading a document directly to our agent.
+    ![Add](./assets/4.1.14_add.png)
 
-1. In the **Knowledge** section, select **+** icon.
+1. Select **Add to Agent**
 
-    ![Select plus icon to add knowledge](./assets/5.3_01_AddKnowledge.png)
+    ![Add to agent](./assets/4.1.15_add.png)
+
+Now, we'll now add another internal knowledge source by uploading a document directly to our agent.
+
+1. In the **Knowledge** section, select **Add+** icon.
+
+    ![Select plus icon to add knowledge](./assets/4.1.16_add.png)
 
 1. Select **Click to upload**.
 
-    ![Select Click to upload](./assets/5.3_02_SelectUploadFile.png)
+    ![Select Click to upload](./assets/4.1.17_add.png)
 
 1. Download the sample file by selecting the button below.
 
@@ -285,13 +255,37 @@ We'll now add another internal knowledge source by uploading a document directly
 
 1. The file has been selected for upload. Select **Add to agent**.
 
-    ![Select Add to Agent](./assets/5.3_05_SelectAddToAgent.png)
+    ![Select Add to Agent](./assets/4.1.18_add.png)
 
 1. The document is now available to the agent as a knowledge source. You'll test it alongside the other connected sources in the next section.
 
     ![Word file added as knowledge source](./assets/5.3_06_WordFileAdded.png)
 
-Now that the agent's knowledge sources are ready, let's test how it uses them.
+Now that the agent's knowledge sources are ready, let's review some settings before we test.
+
+### 4.3 Review Agent settings
+
+1. Select the **three dots ...** in the upper right hand corner and select the **Settings** option.
+
+    ![Agent settings](./assets/4.2.01_threedots.png)
+
+1. In the **Agent details** tab, review the **Solution** field. It displays the solution you created and set as preferred in the previous mission.
+
+    ![Review agent details under settings](./assets/4.2.02_solution.png)
+
+1. Next, select the **Greeting & prompts** tab. Copilot Studio automatically generated a greeting message during agent creation. Review the current message.
+
+    ![View Greeting message](./assets/5.2_04_GreetingMessage.png)
+
+1. To align the greeting with the agent's new name, replace the existing message with the following text:
+
+    ```text
+    Welcome to Contoso IT Concierge. Whether you're experiencing a technical issue or looking for a device, I'll help you find the right solution or next step. How can I assist you today?
+    ```
+
+    ![Update Greeting message](./assets/4.2.03_greeting.png)
+
+    Exit from agent settings by selecting the **X** icon on the upper-right corner.
 
 ### 4.4 Test agent
 
@@ -339,15 +333,15 @@ Before moving to the next mission, take a look at the solution to see the agent 
 
 1. The solution shows all components that belong to this agent in one place, and you'll see the uploaded Word file listed there as well. Think of a solution as your ALM package: it groups the agent and related components together so you can track changes, move them between environments (dev, test, production), and deploy consistently.
 
-    ![Solution components](./assets/5.5_03_SolutionObjects.png)
+    ![Solution components](./assets/4.6.01_solution.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
-Mission accomplished, Recruit! You created a custom engine agent from scratch in Copilot Studio, verified its instructions and knowledge, added it to your solution, and completed baseline preview tests.
+Mission accomplished, Recruit! You created an agent powered by the GitHub Copilot harness, verified its instructions and knowledge, added it to your solution, and completed baseline preview tests.
 
-Well done, Agent Maker. You now have a working custom engine agent baseline that you can extend with additional functionality in the missions ahead.
+Well done, Agent Maker. You now have a working GitHub Copilot harness agent that you can extend with additional functionality in the missions ahead.
 
-This is the end of **Lab 04 - Build a Custom Engine Agent**, select the link below to move to the next mission. The agent created in this lab will be used in the next mission's lab.
+This is the end of **Lab 04 - Build an Agent with the GitHub Copilot Harness**. Select the link below to move to the next mission. The agent created in this lab will be used in the next mission's lab.
 
 ⏭️ [Move to **Add a skill** mission](../05-add-a-skill/index.md)
 

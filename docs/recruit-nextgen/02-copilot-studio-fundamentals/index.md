@@ -17,20 +17,20 @@ next:
 
 ## 🎯 Mission Brief
 
-In [Mission 01](../01-introduction-to-agents/index.md) you learned *how to think about agents*. This mission is the **toolbox**: what Microsoft Copilot Studio actually is, the parts you assemble into an agent in the **new agent experience**, and, just as important, **how to decide** which part to reach for.
+In [Mission 01](../01-introduction-to-agents/index.md) you learned *how to think about agents*. This mission is the **toolbox**: what Microsoft Copilot Studio actually is, how its three harnesses differ, and which building blocks are available when you build on the **GitHub Copilot harness**.
 
 We're not building yet. The hands-on missions (04 onward) do that. This is the map you'll keep open in another tab while you build, so the panels in the product line up with the ideas in your head.
 
-> [!IMPORTANT] This module describes the **new agent experience**
-> Copilot Studio now has a redesigned authoring experience built on an **enhanced orchestration runtime**. It runs *alongside* the older "classic" experience, and you pick which one to use when you create an agent, but they don't convert to each other. **This course uses the new experience**, so if a screenshot online still shows **topics, flows, and branching**, that's classic. The building blocks below are the new ones.
+> [!IMPORTANT] This module uses the **GitHub Copilot harness**
+> Copilot Studio offers three harnesses: **GitHub Copilot** for reasoning-heavy, multi-step work; **standard** for rule-based agents; and **Copilot chat** for extending Microsoft 365 Copilot Chat. This course uses the GitHub Copilot harness. In the current product UI, turn on the **New experience** toggle when instructed to select this authoring surface.
 
 ## 🔎 Objectives
 
 By the end of this mission you'll be able to:
 
 1. Place Copilot Studio in the wider Microsoft AI stack
-1. Choose between a **declarative** and a **custom** agent with confidence
-1. Name the **building blocks** of the new agent experience and what each is for
+1. Choose among the **GitHub Copilot**, **standard**, and **Copilot chat** harnesses
+1. Name the building blocks available on the **GitHub Copilot harness** and what each is for
 1. Understand how **Work IQ**, **Skills**, and **Workflows** change what an agent can do
 1. Know when to use a **workflow** instead of letting the orchestrator decide
 1. Understand the **channels** and **governance** story at a high level
@@ -44,7 +44,7 @@ By the end of this mission you'll be able to:
 - It **reaches into Azure AI** — bring your own models and search/knowledge when you need them.
 
 > [!INFO] The repositioning that matters
-> In the new experience you don't script conversations, you **describe** the agent, point it at knowledge, give it skills and tools, and let the orchestrator reason. The skills that pay off are **writing clear instructions and choosing the right capabilities**, not drawing dialog trees.
+> On the GitHub Copilot harness you don't script conversation paths. You **describe** the agent, point it at knowledge, give it skills and tools, and let the harness reason through the goal. The skills that pay off are **writing clear instructions and choosing the right capabilities**, not drawing dialog trees.
 
 ## First Decision: Which Build Surface?
 
@@ -64,7 +64,7 @@ Copilot Studio isn't the only place to build an agent in the Microsoft stack. Th
 
 ### Agent Builder: Copilot Studio's lightweight cousin
 
-This is the one most people get confused about. **Agent Builder** lives *inside* the Microsoft 365 Copilot app (in Copilot chat, Teams, microsoft365.com). It's part of the same Microsoft agent family and produces **declarative agents** that are scoped to Microsoft 365 Copilot and only Microsoft 365 Copilot. No separate portal, no code, no broad publishing: you describe an agent in natural language, point it at some public websites or Work IQ content, and it's live for you or your team in minutes. It runs on the **M365 Copilot orchestrator and foundation models**, and it's governed from the **M365 admin center**.
+This is the one most people get confused about. **Agent Builder** lives *inside* the Microsoft 365 Copilot app (in Copilot chat, Teams, microsoft365.com). It provides a simple way to build agents that extend Microsoft 365 Copilot Chat through the **Copilot chat harness**. No separate portal, no code, no broad publishing: you describe an agent in natural language, point it at public websites or Work IQ content, and it's live for you or your team in minutes. It's governed from the **M365 admin center**.
 
 > [!TIP] The graduation path is the whole point
 > Start in **Agent Builder** when the job is "a Q&A agent over our content, for our team." The moment you need **broad/external publishing, multi-step workflows, custom connectors, autonomous triggers, etc**, you **copy the agent into Copilot Studio**, its core configuration and instructions carry over, so you don't start from scratch.
@@ -73,28 +73,25 @@ This is the one most people get confused about. **Agent Builder** lives *inside*
 
 Go the *other* direction, past Copilot Studio to **Microsoft Foundry**, when you need **code-first control over orchestration**, your own **model and inference stack**, sub-100ms latency, an **Azure data boundary**, or you're really building a **custom AI application** rather than a business agent. Foundry can still publish to Microsoft 365 Copilot, so "pro-code" doesn't mean "leaves the ecosystem." *(Beyond Foundry, we also have the pure-SDK options like Microsoft Agent Framework and the M365 Agents SDK. Use these when you want full code ownership; that's a deeper dive than this mission.)*
 
-## Second Decision: Declarative vs. Custom Agent
+## Second Decision: Which Harness?
 
-Once you've chosen **Copilot Studio** as your surface, the next fork is *which kind of agent* to build. This course builds **both**, so here's the opinionated guidance:
+Once you've chosen **Copilot Studio** as your build surface, choose the runtime architecture that matches the work:
 
-| | **Declarative agent** | **Custom agent** |
-|---|---|---|
-| **Runs on** | Microsoft 365 Copilot's orchestrator & models | Copilot Studio's orchestrator, with your model choice |
-| **You provide** | Instructions, knowledge, skills, actions | Everything—model, knowledge, tools, skills, workflows, channels |
-| **Lives in** | Microsoft 365 Copilot (Teams, M365 Copilot) | Wherever you publish—Teams, web, voice, custom apps |
-| **Best when** | You want fast value inside M365, on Microsoft's stack | You need control: a specific model, custom logic, or a non-M365 channel |
-| **In this course** | Not built here — see [Copilot Camp](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/01-first-agent-builder/) | Mission 02 onward |
-
-> [!TIP] Rule of thumb
-> **Start declarative.** Reach for a custom agent the moment you hit a wall the M365 Copilot orchestrator can't scale like needing a particular model, bespoke business logic, autonomous behavior, or a channel outside Microsoft 365. Don't pay for the flexibility until you need it.
+| | **GitHub Copilot harness** | **Standard harness** | **Copilot chat harness** |
+|---|---|---|---|
+| **Best when** | The agent must reason through complex, multi-step work | The experience should follow predictable topics, rules, and paths | The goal is to ground Microsoft 365 Copilot Chat in enterprise knowledge |
+| **Key capabilities** | Skills, memory, connected agents, tools, workflows, and file creation | Topics, prompts, branches, and structured conversations | Enterprise knowledge inside M365 Copilot Chat |
+| **Publishing** | Internal teams or external customers | Internal teams or external customers | Internal teams |
+| **Billing** | Usage-based Copilot Credits | Standard Copilot Studio licensing | Consumption-based or included in eligible M365 Copilot user licenses |
+| **In this course** | **Mission 02 onward** | Not built here | Not built here |
 
 ## The Anatomy of an Agent
 
-In the new experience, an agent is organized around a handful of **core components**, all configured from the **Build** tab.
+On the GitHub Copilot harness, an agent is organized around a handful of **core components**, all configured from the **Build** tab.
 
 ### 1. Instructions
 
-The agent's standing brief: its **identity, personality, tone, scope, and behavioral rules**. In the new experience there are no conversation trees to fall back on, so **instructions are your primary steering wheel**, they shape every plan the orchestrator makes. Write them like contracts, not suggestions.
+The agent's standing brief: its **identity, personality, tone, scope, and behavioral rules**. On the GitHub Copilot harness there are no authored conversation trees to fall back on, so **instructions are your primary steering wheel**, they shape every plan the orchestrator makes. Write them like contracts, not suggestions.
 
 ### 2. Knowledge (including Work IQ & Memory)
 
@@ -130,14 +127,14 @@ Choose the **AI model** that powers the agent's reasoning, including current GPT
 Specialized agents your agent can **delegate to**. Instead of one bloated agent that does everything, you compose a *team*: a coordinator hands subtasks to focused experts and stitches their results together.
 
 > [!NOTE] Wait...what happened to Topics, Triggers, and branching?
-> In the **classic** experience you authored **topics**, conversation **flows**, and **branching logic**, and you wired **triggers** by hand. The **new experience replaces all of that**: you describe the agent in natural language and the **enhanced orchestrator** generates and runs the plan over your knowledge, skills, tools, and connected agents. Classic still exists for teams that need it, but if you're learning today, learn the new model.
+> The **standard harness** uses authored **topics**, conversation paths, and branching logic for predictable, rule-based behavior. The **GitHub Copilot harness** uses natural-language instructions and reasons over your knowledge, skills, tools, and connected agents. Neither is universally better: choose the harness that matches the work.
 
-## The New Agent Experience: How You Build
+## Building on the GitHub Copilot Harness
 
 Mission 01 covered the orchestration *idea*. Here's how it shows up when you build in Copilot Studio:
 
 - **Natural-language-first, single surface.** You describe what you want; Copilot Studio generates the configuration. No topic inventory to maintain.
-- **One orchestrator, always on.** Unlike the classic experience, where you *configured* orchestration, the new experience uses the **enhanced orchestration runtime with deep reasoning for every agent**. You steer it through *instructions and capabilities*, not branches.
+- **Goal-driven orchestration.** The GitHub Copilot harness can break a goal into steps, call the right capabilities, and adjust when a request changes or a step fails. You steer it through *instructions and capabilities*, not branches.
 - **A tab-based workspace.** **Build** (identity, knowledge, tools, skills, model), **Preview** (test it interactively), **Evaluate** (run test sets to measure quality), and **Monitor** (review tasks, files accessed, and activity after you ship).
 
 > [!TIP] How you actually steer the orchestrator
@@ -166,15 +163,15 @@ You don't need to master this yet, but know the shape because "it works in my en
 - **Solutions & environments** — Package your agent (and everything it depends on) into a **solution** so you can move it cleanly from dev to test to production. *(Mission 03.)*
 - **Identity & permissions** — Agents respect Microsoft 365 identity; users only ever see what they're allowed to. Work IQ enforces this at the platform level, per user.
 - **Central oversight** — As an org's agent estate grows, **Microsoft Agent 365** acts as a control plane for inventory, permissions, behavior, and cost across the ecosystem.
-- **Licensing** — Agentic work (and Work IQ) consumes **Copilot credits** via usage-based billing; knowing the model up front avoids surprises. *(Mission 09.)*
+- **Licensing** — Building, testing, evaluating, and running agents on the GitHub Copilot harness can consume **Copilot Credits** through usage-based billing. *(Mission 09.)*
 
 ## 🎉 Mission Complete
 
 You've toured the Copilot Studio HQ. You can now:
 
 1. **Place Copilot Studio** — an agent platform that extends M365 Copilot, lives in Power Platform, and reaches into Azure AI.
-1. **Make the first decision** — declarative for speed inside M365; custom for control.
-1. **Name the new building blocks** — instructions, knowledge (incl. **Work IQ** & memory), **tools & skills**, **workflows**, model, and connected agents.
+1. **Choose a harness** — GitHub Copilot for complex multi-step work, standard for rule-based experiences, or Copilot chat for extending M365 Copilot Chat.
+1. **Name the GitHub Copilot harness building blocks** — instructions, knowledge (incl. **Work IQ** & memory), **tools & skills**, **workflows**, model, and connected agents.
 1. **Steer the orchestrator** — via instructions and well-named capabilities, using Preview, Evaluate, and Monitor.
 1. **Choose deterministic vs. generative** — workflows for the repeatable, orchestration for the ambiguous.
 1. **See the whole lifecycle** — channels, solutions, identity, governance, licensing.
@@ -185,7 +182,9 @@ Stay sharp, Recruit, the toolbox is yours now.
 
 ## 📚 Tactical Resources
 
-🔗 [Agents overview — the new agent experience](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview)
+🔗 [Choose a harness in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)
+
+🔗 [GitHub Copilot harness agents overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview)
 
 🔗 [Work IQ MCP overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/use-work-iq) — the intelligence layer, and how to add it
 
