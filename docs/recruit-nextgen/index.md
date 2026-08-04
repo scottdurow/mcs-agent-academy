@@ -11,9 +11,9 @@ lastUpdated: false
 ![Copilot Studio Agent Academy Recruit](../images/banner_recruit_nextgen.png)
 
 **Welcome, Recruit.**  
-Your mission—should you choose to accept it—is to master the art of building agents using the new **Microsoft Copilot Studio** experience.
+Your mission—should you choose to accept it—is to master the art of building agents powered by the **GitHub Copilot harness** in Microsoft Copilot Studio.
 
-This hands-on training is your entry point into the **world of agents** where you'll learn how to build, scale, and deploy intelligent agents using real-world tools and use cases.
+This hands-on training focuses on Copilot Studio's most capable harness for reasoning-heavy, multi-step work. You'll learn how to build, extend, and deploy an agent using instructions, knowledge, skills, tools, and workflows.
 
 ## 🎯 Mission Objective {#mission-objective}
 
@@ -21,7 +21,8 @@ By completing the Agent Academy, you'll be able to:
 
 - Understand what agents are in the context of Microsoft Copilot Studio
 - Explore how Large Language Models (LLMs), retrieval-augmented generation (RAG), and orchestration come together in an agent
-- Build both **declarative** and **custom agents**
+- Understand the **GitHub Copilot**, **standard**, and **Copilot chat** harnesses
+- Build an agent powered by the **GitHub Copilot harness**
 - Enhance agents with **Skills**, **Tools**, and **Workflows**
 - Deploy agents to **Microsoft Teams** and **Microsoft 365 Copilot**
 
@@ -49,10 +50,10 @@ This academy is broken into progressive lessons—each one designed as a field m
 | Lesson | Title | Mission Briefing |
 | ------ | ----- | ---------------- |
 | `00` | 🧰 [Course Setup](./00-course-setup/index.md) | Set up your dev environment, Copilot Studio trial, and SharePoint site |
-| `01` | 🧠 [Introduction to Agents](./01-introduction-to-agents/index.md) | Understand conversational AI concepts, LLMs, and autonomous vs. declarative agents |
+| `01` | 🧠 [Introduction to Agents](./01-introduction-to-agents/index.md) | Understand agent concepts, orchestration, and the three Copilot Studio harnesses |
 | `02` | 🛠️ [Copilot Studio Fundamentals](./02-copilot-studio-fundamentals/index.md) | Learn the building blocks |
 | `03` | 🧩 [Creating a Solution](./03-creating-a-solution/index.md) | Package your agent into a reusable solution for environment management |
-| `04` | ✍️ [Build a Custom Agent](./04-build-a-custom-agent/) | Create a new agent grounded in knowledge sources |
+| `04` | ✍️ [Build with the GitHub Copilot Harness](./04-build-a-custom-agent/) | Create a reasoning-first agent grounded in knowledge sources |
 | `05` | 🧠 [Add a Skill](./05-add-a-skill/) | Use Skills to fine tune your agent |
 | `06` | 🪪 [Add a Tool](./06-add-tools/) | Add tools to extend with data integration |
 | `07` | 🔁 [Automate with Workflows](./07-automate-with-workflows/) | Add deterministic logic and automation to your agent |

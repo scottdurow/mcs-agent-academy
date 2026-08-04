@@ -29,23 +29,23 @@ last-edited-date: 2026-06-28
 <mission-meta />
 
 > [!NOTE]
-> This lab has been updated for the new Copilot Studio experience (2026-06-28).
+> This lab uses an agent powered by the **GitHub Copilot harness**.
 > See `evaluation.md` for a full comparison with the original Topics-based lab.
 
 ## 🎯 Mission Brief {#mission-brief}
 
 You’ve built an agent. It listens, learns, and answers questions, but now it’s time to get tactical and let it **take action**. In this mission you’ll connect your agent to a real data source so it can fetch live information and do something useful with it.
 
-In the new Copilot Studio experience, that capability comes from **tools**. You’ll add a **SharePoint - Get items** tool so your Contoso IT Concierge agent can pull available devices straight from a SharePoint list.
+On the GitHub Copilot harness, that capability comes from **tools**. You’ll add a **SharePoint - Get items** tool so your Contoso IT Concierge agent can pull available devices straight from a SharePoint list.
 
 > [!IMPORTANT]
-> If your Copilot Studio screen looks different from these screenshots, make sure the **New experience** toggle in the upper-right corner is turned **on**.
+> If your Copilot Studio screen looks different from these screenshots, make sure the **New experience** toggle in the upper-right corner is turned **on** to use the GitHub Copilot harness authoring surface.
 
 ## 🔎 Objectives {#objectives}
 
 In this mission, you’ll learn:
 
-1. Why **Topics** are gone in the new experience and what replaced them
+1. Why the GitHub Copilot harness uses instructions and tools instead of authored **Topics**
 1. What **tools** are and how an agent decides when to use them
 1. How to add the **SharePoint - Get items** connector action as a tool
 1. How to rename the tool so its purpose is clear to the model
@@ -55,7 +55,7 @@ In this mission, you’ll learn:
 
 If you’ve used Copilot Studio before, you’ll remember **Topics**: hand-built conversation flows made of trigger phrases and connected **nodes** (send a message, ask a question, add a condition, call a tool, and so on). You routed conversations manually and stitched logic together node by node.
 
-The new experience removes the **Topics** tab entirely. Instead of you wiring conversations by hand, the agent’s **large language model orchestrates** the conversation for you. You give the agent:
+The GitHub Copilot harness doesn't use the **Topics** tab. Instead of you wiring conversations by hand, the agent’s **large language model orchestrates** the conversation for you. You give the agent:
 
 - **Instructions** - plain-language guidance on how to behave, and
 - **Tools, Knowledge, and Skills** - the capabilities it can draw on.
@@ -89,7 +89,7 @@ In this lab we’ll use the **SharePoint - Get items** connector action so the a
 ### Prerequisites
 
 1. **SharePoint list** - the **EmployeeAssets** list from [Mission 00 - Course Setup](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
-1. **Contoso IT Concierge** - the agent created in [Mission 04 - Build a custom engine agent](../04-build-a-custom-agent/index.md#lab-04-create-a-custom-engine-agent-in-copilot-studio).
+1. **Contoso IT Concierge** - the agent created in [Mission 04 - Build an agent with the GitHub Copilot harness](../04-build-a-custom-agent/index.md#lab-04-create-an-agent-with-the-github-copilot-harness).
 
 Let's begin!
 
@@ -97,7 +97,7 @@ Let's begin!
 
 1. In the **Build** view, in the **Tools** section, select the **+** icon to add a tool.
 
-   ![Select plus icon to add tool](./assets/6.1_01_SelectAddTool.png)
+   ![Select plus icon to add tool](./assets/6.1.01_add.png)
 
 1. The **Add a tool** dialog opens with **Featured**, **MCP**, **Connectors**, and **Workflows** pills.
 
@@ -105,11 +105,11 @@ Let's begin!
 
 1. Take a moment to review what's available under the different types of tools. Select the **Model Context Protocol (MCP)** pill. Here, you'll see a list of first-party and third-party Microsoft certified MCP tools to select from.
 
-   ![MCP tools available](./assets/6.1_03_MCPServers.png)
+   ![MCP tools available](./assets/6.1.02_MCPTab.png)
 
 1. Next, select the **Connectors** pill. You'll see a larger list of first-party and third-party Microsoft certified connector tools to select from.
 
-   ![Connectors available](./assets/6.1_04_Connectors.png)
+   ![Connectors available](./assets/6.1.03_connectors.png)
 
 1. Copy and paste the following text in the search bar.
 
@@ -123,13 +123,13 @@ Let's begin!
 
 1. Select the **+ Add** button to add the tool to the agent.
 
-   ![Select add button to add the tool](./assets/6.1_06_SelectAdd.png)
+   ![Select add button to add the tool](./assets/6.1.05_addsp.png)
 
 ### 6.2 Configure the tool
 
 1. The tool now appears in the **Tools** list. Select **Get items** to open **Tool details**.
 
-   ![Select Get items to configure the tool](./assets/6.2_01_ConfigureGetItemsTool.png)
+   ![Select Get items to configure the tool](./assets/6.1.06_selectsp.png)
 
 1. On the **Details** tab, we'll rename the tool so that the model knows what the tool will be used for. Copy and paste the following text as the **Name**.
 
@@ -176,7 +176,7 @@ The input parameters for the **Get items** tool have been successfully configure
 
 ## ✅ Mission Complete {#mission-complete}
 
-Congratulations! 👏🏻 You learned that **Topics are gone** in the new experience and the model now orchestrates the conversation. You added a **SharePoint - Get items** tool and configured its inputs. 🙌🏻
+Congratulations! 👏🏻 You learned that the GitHub Copilot harness uses instructions and capabilities instead of authored Topics, and the harness orchestrates the work toward the user's goal. You added a **SharePoint - Get items** tool and configured its inputs. 🙌🏻
 
 In the next mission, you'll be testing the tool after one of the skills has been updated.
 

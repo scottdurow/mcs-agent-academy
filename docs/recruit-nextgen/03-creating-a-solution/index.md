@@ -5,7 +5,7 @@ prev:
   text: Copilot Studio fundamentals
   link: /recruit-nextgen/02-copilot-studio-fundamentals
 next:
-  text: Build a custom engine agent
+  text: Build an agent with the GitHub Copilot harness
   link: /recruit-nextgen/04-build-a-custom-agent
 short-description: Package your agent into a reusable solution for environment management
 difficulty: 1
@@ -33,11 +33,11 @@ Every agent needs a well-structured home. A Power Platform solution provides org
 
 Let's establish the base.
 
-> [!NOTE] Note: New Copilot Studio experience
+> [!NOTE] GitHub Copilot harness authoring surface
 >
-> Make sure the **New experience** toggle in the upper-right corner of the Home page is **on** so your screen matches the screenshots in this mission.
+> In the current Copilot Studio UI, make sure the **New experience** toggle in the upper-right corner of the Home page is **on**. This selects the authoring surface used for agents powered by the GitHub Copilot harness and makes your screen match the screenshots in this mission.
 >
-> ![New experience](./assets/4.0_04_NewExperience.png)
+> ![New experience](./assets/NewExperience.png)
 
 ## 🔎 Objectives {#objectives}
 
@@ -174,7 +174,7 @@ Let's begin!
 ### Prerequisites
 
 - Copilot Studio license
-- Access to Copilot Studio with the **new experience** enabled
+- Access to Copilot Studio with the **New experience** toggle enabled for the GitHub Copilot harness authoring surface
 - Administrative permissions to create solutions and agents
 
 > [!TIP] Prerequisites help:
@@ -329,7 +329,7 @@ Well done, Agent Maker. A tidy digital footprint is the first step toward operab
 
 This is the end of **Lab 03 - Creating a Solution**, select the link below to move to the next mission. Your solution created in this lab will be used in the next mission's lab.
 
-⏭️ [Move to **Build a custom engine agent** mission](../04-build-a-custom-agent/index.md)
+⏭️ [Move to **Build an agent with the GitHub Copilot harness** mission](../04-build-a-custom-agent/index.md)
 
 ## 📚 Tactical Resources {#tactical-resources}
 

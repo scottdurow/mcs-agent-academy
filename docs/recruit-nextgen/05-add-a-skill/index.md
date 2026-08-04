@@ -2,12 +2,12 @@
 hide: true
 preview: true
 prev:
-  text: 'Build a Custom Agent'
+  text: 'Build with the GitHub Copilot Harness'
   link: '/recruit-nextgen/04-build-a-custom-agent'
 next:
   text: 'Add Tools'
   link: '/recruit-nextgen/06-add-tools'
-short-description: Use a Skill to give your helpdesk agent a consistent troubleshooting playbook
+short-description: Use a GitHub Copilot harness Skill to create a reusable device guidance capability
 difficulty: 1
 codename: OPERATION SKILL BOOST
 time: 30
@@ -29,40 +29,44 @@ last-edited-date: 2026-06-28
 <mission-meta />
 
 > [!NOTE]
-> This lab has been updated for the new Copilot Studio experience (2026-06-28).
-> It replaces the previous Adaptive Cards mission. See `evaluation.md` for details.
+> **Skills are unique to agents powered by the GitHub Copilot harness** in Copilot Studio. They aren't available to agents powered by the standard or Copilot chat harness.
 
 ## 🎯 Mission Brief {#mission-brief}
 
-Your IT Helpdesk Agent can answer questions, but a reliable helpdesk also needs consistent behavior when it calls tools and handles edge cases. In the new Copilot Studio experience, you define that behavior through **Skills**.
+Your IT Helpdesk Agent can answer questions, but a reliable helpdesk also needs focused, reusable behavior for specific tasks. The **GitHub Copilot harness** introduces **Skills** for this purpose: self-contained capabilities that package a name, description, and task-specific instructions so the harness can activate the right behavior when it's needed.
 
-In this mission, you will iteratively refine a device guidance skill so the agent can call SharePoint correctly, recover from query issues, map user-selected options to the correct item, and capture additional user requirements.
+In this mission, you'll explore this GitHub Copilot harness capability by iteratively refining a device guidance skill. The skill will guide the agent to call SharePoint correctly, recover from query issues, map user-selected options to the correct item, and capture additional requirements.
 
 > [!IMPORTANT]
-> Make sure the **New experience** toggle in the upper-right corner is turned **on**.
+> In the current Copilot Studio UI, make sure the **New experience** toggle in the upper-right corner is turned **on** to use the GitHub Copilot harness authoring surface.
 
 ## 🔎 Objectives {#objectives}
 
-1. Understand what **skills** are and why they're new
-1. See how skills replace work we used to do with **Topics** and **child agents**
+1. Understand why **Skills** are unique to agents powered by the GitHub Copilot harness
+1. Understand how skills provide reusable, task-specific behavior without authored topic paths
 1. Review and refine an AI-generated skill to improve instruction quality
 1. Validate the updated skill behavior in **Preview**, including tool input handling and follow-up requirements
 
 ## 🧠 What is a skill? {#what-is-a-skill}
 
-Skills are the building blocks of intelligent agents in Copilot Studio, providing focused guidance for handling specific scenarios, business processes, or tasks. Each skill defines when it should be used, what information to collect, which tools to call, and how the agent should respond, outlining the process, decision logic, and execution steps required to achieve an outcome.
+Skills are reusable capabilities available to **GitHub Copilot harness agents** in Copilot Studio. Each skill provides focused guidance for a specific scenario, business process, or task by defining when it should be used, what information to collect, which tools to call, and how the agent should respond.
 
-Skills are **new** in Copilot Studio and take over jobs we used to solve other ways:
+Skills are part of what distinguishes the GitHub Copilot harness from the other Copilot Studio harnesses:
 
-- **Instead of Topics** (trigger phrases + nodes), you describe the process once and the model orchestrates it.
-- **Provide repeatable behavior** for narrow specialties inside the same agent.
-- **Reusable and shareable**, upload a `SKILL.md` file into any agent.
+- The **standard harness** uses topics, prompts, rules, and defined conversation paths for structured behavior.
+- The **Copilot chat harness** focuses on extending Microsoft 365 Copilot Chat with enterprise knowledge.
+- The **GitHub Copilot harness** can activate modular Skills as it reasons through complex, multi-step work.
+
+Skills provide repeatable behavior for focused tasks inside an agent. They are also reusable and shareable: you can package a skill as a `SKILL.md` file or ZIP package and add it to other agents powered by the GitHub Copilot harness.
 
 A troubleshooting process defined in a skill is a perfect fit: it's multi-step, judgment-driven, and should behave identically every time.
 
+> [!IMPORTANT]
+> Skills run as part of the GitHub Copilot harness. Building, testing, evaluating, and using these agents can consume Copilot Credits through usage-based billing.
+
 ## 📄 Authoring Skills {#authoring-skills}
 
-Skills are authored in a structured `SKILL.md` file containing the following sections:
+Skills use a portable Markdown-based format. A `SKILL.md` file contains the following sections:
 
 | Section | Purpose | What it should contain |
 | --- | --- | --- |
@@ -71,7 +75,7 @@ Skills are authored in a structured `SKILL.md` file containing the following sec
 | Optional frontmatter | Skill metadata and configuration | Structured YAML metadata such as author, version, tags, examples, dependencies, or other settings used for organization and governance. Not typically used for procedural instructions. |
 | Instructions | The skill's execution logic | Detailed guidance the model follows after selecting the skill. This can include procedure steps, decision logic, tool usage instructions, validation rules, response formats, escalation paths, and success criteria. |
 
-When a user submits a request, the agent's underlying AI model evaluates the available skills, uses the name and description to determine which skill is most relevant, and then follows the instructions in the skill file to execute the appropriate procedure. By separating specialized capabilities into reusable skills, builders can create agents that are more accurate, reliable, maintainable, and aligned to business requirements while making complex behaviors easier to design and manage.
+When a user submits a request, the GitHub Copilot harness evaluates the available skills and uses each skill's name and description to determine which one is relevant. When the harness activates a skill, its instructions guide the agent through that task. By separating specialized capabilities into reusable skills, builders can create agents that are more accurate, maintainable, and aligned to business requirements.
 
 ## 🧩 Principles for Effective Skill Instructions {#principles}
 
@@ -263,71 +267,41 @@ Clear success criteria tell the model when to stop.
 >
 > If those four areas are well-defined, the skill tends to behave much more consistently.
 
-## 🧪 Lab 05 - Update existing skill {#lab-05-update-skill}
+## 🧪 Lab 05 - Add the skills {#lab-05-add-skills}
 
-In this lab, you will refine an existing skill from [Mission 04 - Build a custom agent](../04-build-a-custom-agent/index.md#lab-04-create-a-custom-engine-agent-in-copilot-studio) by applying the effective skill instruction principles above to improve clarity, consistency, and reliability.
+In this lab, you will extend the agent you created in [Mission 04 - Build an agent with the GitHub Copilot harness](../04-build-a-custom-agent/index.md#lab-04-create-an-agent-with-the-github-copilot-harness) by creating a series of custom skills.
 
 ### ✨ Use case {#use-case}
 
 **As an** employee
 
-**I want** to know what devices are available
+**I want to** get quick and accurate IT support for common issues and device requests
 
-**so that I** have a list of available devices
+**So that I can** stay productive and resolve technical issues faster
 
 ### Prerequisites
 
-1. **Contoso IT Concierge** - the agent created in [Mission 04 - Build a custom engine agent](../04-build-a-custom-agent/index.md#lab-04-create-a-custom-engine-agent-in-copilot-studio).
+1. **Contoso IT Concierge** - the agent created in [Mission 04 - Build an agent with the GitHub Copilot harness](../04-build-a-custom-agent/index.md#lab-04-create-an-agent-with-the-github-copilot-harness).
 
-### 5.1 Review Skill
+### 5.1 Create a device request skill and test
 
-Let's take a closer look at one of the skills that was generated when the agent was created.
-
-1. In the **Build** view, in the **Skills** section, select the skill related to requesting a device to review it.
-
-    > [!WARNING] Skills generated may differ across sessions
-    >
-    > Each session can produce a different skill name in the AI authoring experience, so your skill may not match the screenshot exactly. Look for the skill associated with device requests.
-
-    ![Select device request skill](./assets/7.1_01_ReviewSkill.png)
-
-1. In the skill, you'll see the structure of the skill learned earlier.
-
-    > [!NOTE] Reminder of the skill structure
-    >
-    > A skill consists of four main components.
-    > 1. The `Name` identifies the skill.
-    > 1. The `Description` tells the model when the skill is applicable.
-    > 1. The `Optional Frontmatter` stores metadata and configuration information.
-    > 1. The `Instructions` contain the operational workflow the model follows to complete the task.
-    >
-    > Together, these components help the model determine when to use the skill and how to execute it correctly.
-
-    ![Skill structure](./assets/7.1_02_SkillStructure.png)
-
-1. Review the skill instructions.
-
-    They are a good starting point, but they do not yet follow the principles above, so let's refine them. The skill will be updated to reference the tool added in [Mission 06 - Add Tools](../06-add-tools/index.md#lab-06-add-the-sharepoint-get-items-tool) to retrieve available devices from the SharePoint list when a user requests a laptop.
-
-    ![Skill instructions](./assets/7.1_03_SkillInstructions.png)
-
-### 5.2 Update skill and test
-
-The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` file can be downloaded for editing. You can then replace the skill by selecting the edited `SKILL.md` file.
-
-1. Select the **ellipsis** icon and select **Replace**.
-
-    ![Replace skill](./assets/7.2_01_ReplaceSkill.png)
-
-1. Download the skill package using the button below.
+1. We've prepared a skill file for you that helps with listing devices. To use it, download the skill package using the button below.
 
     <download-files path="recruit-nextgen/05-add-a-skill/assets/device-guidance-v1-0-1" />
 
-    Download `device-guidance-v1-0-1.zip`, extract it, then upload the `SKILL.md` file into the agent.
+    Download `device-guidance-v1-0-1.zip` and extract it.
 
     ![Select Skill file](./assets/7.2_02_SelectSKILL.png)
 
-1. The skill has now been updated. Select the updated skill to review the instructions.
+1. In the **Build** tab of your agent, select the **Add +** button next to the **Skills** section.
+
+    ![Add skill](./assets/5.1.01_add.png)
+
+1. Make sure the **Upload a skill** tab is selected and either drag and drop your skill in or click to browse for the file
+
+    ![Add skill](./assets/5.1.02_upload.png)
+
+1. The skill will then be uploaded. Select the skill in the right hand panel to review the instructions. Select the **Close x** once you're done reviewing to close out of the skill.
 
     - The description references the name of the tool
     - The instructions outline steps including
@@ -339,11 +313,17 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
         - exception and escalation paths
         - success criteria
 
-    ![Review instructions](./assets/7.2_03_ReviewSkillInstructions.png)
+    ![Review instructions](./assets/5.1.03_view.png)
 
-    ![Review instructions](./assets/7.2_04_ReviewSkillInstructions.png)
-
-    ![Review instructions](./assets/7.2_05_ReviewSkillInstructions.png)
+    > [!NOTE] Reminder of the skill structure
+    >
+    > A skill consists of four main components.
+    > 1. The `Name` identifies the skill.
+    > 1. The `Description` tells the model when the skill is applicable.
+    > 1. The `Optional Frontmatter` stores metadata and configuration information.
+    > 1. The `Instructions` contain the operational workflow the model follows to complete the task.
+    >
+    > Together, these components help the model determine when to use the skill and how to execute it correctly.
 
 1. Select **Preview** at the top center of the agent to test the updated skill.
 
@@ -377,7 +357,7 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
     Download `device-guidance-v1-0-2.zip` and extract it.
 
-    Repeat the same steps to replace the skill: in **Build**, select the `device-guidance` skill, select the **ellipsis**, select **Replace**, and upload the extracted `SKILL.md` file into the agent.
+    In the **Build** tab, select the `device-guidance` skill, select the **ellipsis**, select **Replace**, and upload the extracted `SKILL.md` file into the agent.
 
     The updated skill now explicitly maps SharePoint display names to their internal column names. This prevents the model from guessing field names and ensures OData filters use valid columns, such as `field_4` for the **Asset Type** column. It also includes an example showing how to construct a filter correctly.
 
@@ -446,6 +426,12 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
     Copy and paste the following text and submit it to the agent.
 
     ```text
+    I need a laptop
+    ```
+
+1. In the response, copy and paste the following text and submit it to the agent.
+
+    ```text
     B
     ```
 
@@ -465,15 +451,90 @@ The skill is read-only in Copilot Studio once saved. However, the `SKILL.md` fil
 
     ![Summary with additional comment](./assets/7.2_18_SummaryWithAdditionalComment.png)
 
+### 5.2 Create a troubleshooting skill and test
+
+Now we'll work on a separate skill that specializes in troubleshooting issues.
+
+1. To use the troubleshooting skill, download the skill package using the button below.
+
+    <download-files path="recruit-nextgen/05-add-a-skill/assets/it-troubleshooting-procedure" />
+
+    Download `it-troubleshooting-procedure.zip` and extract it.
+
+1. In the **Build** tab of your agent, select the **Add +** button next to the **Skills** section.
+
+    ![Add skill](./assets/5.2.01_add.png)
+
+1. Make sure the **Upload a skill** tab is selected and either drag and drop your skill in or click to browse for the file
+
+    ![Add skill](./assets/5.1.02_upload.png)
+
+1. The skill will then be uploaded. Select the skill in the right hand panel to review the instructions. Select the **Close x** once you're done reviewing to close out of the skill.
+
+    ![Review instructions](./assets/5.2.02_skill.png)
+
+    > [!NOTE] Reminder of the skill structure
+    >
+    > A skill consists of four main components.
+    > 1. The `Name` identifies the skill.
+    > 1. The `Description` tells the model when the skill is applicable.
+    > 1. The `Optional Frontmatter` stores metadata and configuration information.
+    > 1. The `Instructions` contain the operational workflow the model follows to complete the task.
+    >
+    > Together, these components help the model determine when to use the skill and how to execute it correctly.
+
+1. Select **Preview** at the top center of the agent to test the updated skill.
+
+    Copy and paste the following text and submit it to the agent.
+
+    ```text
+    I'm not getting new emails anymore
+    ```
+
+    ![Test skill](./assets/5.2.03_test.png)
+
+1. Check and confirm that the agent calls the **it-troubleshooting-procedure** skill and asks a follow-up question.
+
+    ![Response](./assets/5.2.04_response.png)
+
+1. In this test, respond with the following
+
+    ```text
+    Happening on both outlook on windows and outlook mobile on my ios device
+    ```
+
+    ![Reply](./assets/5.2.05_reply.png)
+
+1. Following the skill instructions, check that it responds with a numbered list of troubleshooting steps to try and asks another follow up question. Reply with the following:
+
+    ```text
+    The Windows Outlook status bar is showing working offline
+    ```
+
+    ![Response](./assets/5.2.06_secondreponse.png)
+
+1. Check that it replies back with a suggested fix and reply with the following:
+
+    ```text
+    That fixed it, I'm receiving email now!
+    ```
+
+    ![Response](./assets/5.2.07_reply2.png)
+
+1. The agent should then close out with a message confirming the fix
+
+    ![Test skill](./assets/5.2.08_closeout.png)
+
 ## ✅ Mission Complete {#mission-complete}
 
-Mission accomplished, Recruit! You iteratively refined a reusable skill so the `Contoso IT Concierge` agent can reliably map tool inputs, recover from OData filter errors, match user-selected options to SharePoint item IDs, and capture additional device requirements.
+Mission accomplished, Recruit! You used a capability unique to the GitHub Copilot harness and iteratively refined a reusable skill so the `Contoso IT Concierge` agent can reliably map tool inputs, recover from OData filter errors, match user-selected options to SharePoint item IDs, and capture additional device requirements.
+
 
 Well done, Agent Maker. You now have a focused skill with clear instructions, tool guidance, validation rules, escalation paths, and success criteria that produce more consistent agent behavior.
 
-This is the end of **Lab 05 - Add a Skill**, select the link below to move to the next mission. The skill refined in this lab will use the tool configured in the next mission's lab.
+This skill will be refined in the next mission by integrating it with a tool.
 
-⏭️ [Move to **Add Tools** mission](../06-add-tools/index.md)
+⏭️ [Move to **Add Tools** mission](../06-add-tools/index.md) to get started.
 
 ## 📚 Tactical Resources {#tactical-resources}
 

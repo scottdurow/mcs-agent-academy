@@ -2,15 +2,15 @@
   "name": "mcp-streamable-http",
   "private": true,
   "version": "1.0.0",
-  "main": "src/server.js",
+  "main": "dist/server.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && node --test dist/server.test.js"
   },
   "files": [
-    "build"
+    "dist"
   ],
   "bin": {
     "demo": "./dist/server.js"
@@ -19,14 +19,22 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "engines": {
+    "node": ">=22"
+  },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.26.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "express": "^5.2.1",
-    "zod": "^4.0.0"
+    "express-rate-limit": "^8.2.1",
+    "zod": "^4.2.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
     "@types/node": "^22.15.17",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "@hono/node-server": "^2.0.5",
+    "zod-to-json-schema": "3.25.1"
   }
 }
