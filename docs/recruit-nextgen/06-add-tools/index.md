@@ -97,7 +97,7 @@ Let's begin!
 
 1. In the **Build** view, in the **Tools** section, select the **+** icon to add a tool.
 
-   ![Select plus icon to add tool](./assets/6.1_01_SelectAddTool.png)
+   ![Select plus icon to add tool](./assets/6.1.01_add.png)
 
 1. The **Add a tool** dialog opens with **Featured**, **MCP**, **Connectors**, and **Workflows** pills.
 
@@ -105,11 +105,11 @@ Let's begin!
 
 1. Take a moment to review what's available under the different types of tools. Select the **Model Context Protocol (MCP)** pill. Here, you'll see a list of first-party and third-party Microsoft certified MCP tools to select from.
 
-   ![MCP tools available](./assets/6.1_03_MCPServers.png)
+   ![MCP tools available](./assets/6.1.02_MCPTab.png)
 
 1. Next, select the **Connectors** pill. You'll see a larger list of first-party and third-party Microsoft certified connector tools to select from.
 
-   ![Connectors available](./assets/6.1_04_Connectors.png)
+   ![Connectors available](./assets/6.1.03_connectors.png)
 
 1. Copy and paste the following text in the search bar.
 
@@ -123,13 +123,13 @@ Let's begin!
 
 1. Select the **+ Add** button to add the tool to the agent.
 
-   ![Select add button to add the tool](./assets/6.1_06_SelectAdd.png)
+   ![Select add button to add the tool](./assets/6.1.05_addsp.png)
 
 ### 6.2 Configure the tool
 
 1. The tool now appears in the **Tools** list. Select **Get items** to open **Tool details**.
 
-   ![Select Get items to configure the tool](./assets/6.2_01_ConfigureGetItemsTool.png)
+   ![Select Get items to configure the tool](./assets/6.1.06_selectsp.png)
 
 1. On the **Details** tab, we'll rename the tool so that the model knows what the tool will be used for. Copy and paste the following text as the **Name**.
 
