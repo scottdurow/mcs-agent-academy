@@ -84,6 +84,8 @@ and derive those options from what you found in Phase 1.
 
 Always ask:
 
+1. **Mission status** — is this a new mission or an update to an existing mission? For an update,
+   ask which mission is changing and treat its current content as the implementation baseline.
 1. **Mission type** — Special Ops, Cowork Collective, or a course mission (Recruit / Operative /
    Commander)?
 1. **Scenario** — what will the learner actually build? Offer 3-4 scoped options drawn from the
@@ -123,31 +125,38 @@ Run these in parallel:
    spec must reflect the right one; proposing a `codename` for a Special Ops mission or omitting
    the `⚙️ Prerequisites` section is a spec bug, not an authoring bug.
 
-If either duplicate check finds a genuine match, **stop and tell the user** before drafting. Offer
-to pivot the angle, extend the existing mission, or proceed anyway. Do not silently file a second
-spec for work that already exists.
+For a new mission, if either duplicate check finds a genuine match, **stop and tell the user**
+before drafting. Offer to pivot the angle, extend the existing mission, or proceed anyway. Do not
+silently file a second spec for work that already exists. For an updated mission, confirm that the
+named mission exists, inspect its current content, and use related open issues to identify overlap
+rather than treating the mission itself as a duplicate.
 
 ## Phase 4: Title convention
 
-Format: `[New Mission] <Section>: <Action verb> <what they build>`
+Formats:
+
+- New mission: `[New Mission] <Section>: <Action verb> <what they build>`
+- Updated mission: `[Updated Mission] <Section>: <Action verb> <what changes>`
 
 Examples:
 
 - `[New Mission] Special Ops: Build your own MCP server with the MCP Management Server`
 - `[New Mission] Operative Mission 12: Ground an agent in SharePoint knowledge`
 - `[New Mission] Cowork Collective: Turn a badge-scan export into an emailed report`
+- `[Updated Mission] Special Ops: Refresh the Copilot Studio MCP lab`
 
 Rules:
 
-- The prefix is `[New Mission]`, not `[New Lab]`. Missions are the unit of content in this repo
-  across every track.
+- Use `[New Mission]` or `[Updated Mission]` according to the mission status selected in Phase 2.
+  Never use `[New Lab]`; missions are the unit of content in this repo across every track.
 - Keep the whole title **under 80 characters**. GitHub truncates issue titles around 70 in list
   views.
 - One bracketed prefix only. Do not nest a pipe inside the brackets — `[New Mission | Special Ops]`
   reads like a UI breadcrumb and costs characters without adding information.
-- Course missions are sequential, so include the proposed number (`Operative Mission 12`). Confirm
-  the next free number from the track's `index.md` before claiming it. Special Ops and Cowork
-  Collective are standalone and take no number.
+- New course missions are sequential, so include the proposed number (`Operative Mission 12`).
+  Confirm the next free number from the track's `index.md` before claiming it. Updated course
+  missions retain their existing number. Special Ops and Cowork Collective are standalone and
+  take no number.
 - Avoid repeating a product acronym. "Microsoft MCP Management Server" says MCP twice; "MCP
   Management Server" is enough because the body spells it out.
 - Prefer "Build your own" over "Build a custom" — shorter and states the value.

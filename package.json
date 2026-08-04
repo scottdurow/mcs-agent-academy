@@ -25,5 +25,10 @@
   },
   "overrides": {
     "lodash-es": "^4.18.1"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "fsevents@2.3.3": true,
+    "fsevents@2.3.2": true
   }
 }

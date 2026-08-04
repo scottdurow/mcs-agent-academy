@@ -12,7 +12,7 @@ products:
 industries:
   - it
 created-date: 2026-02-20
-last-edited-date: 2026-03-17
+last-edited-date: 2026-08-04
 ---
 # 🤖 Microsoft Copilot Studio ❤️ MCP {#microsoft-copilot-studio-mcp}
 
@@ -22,9 +22,6 @@ last-edited-date: 2026-03-17
 <p align="center"><img src="./assets/MCP_Joker_Badge.png" alt="MCP Joker Badge" width="220" /></p>
 
 Welcome, agent. Your mission — should you choose to accept it — is to deploy an **MCP Server** behind enemy lines and wire it up to **Microsoft Copilot Studio**. Expect turbulence. Trust the protocol. Leave no endpoint unconfigured. 🎯
-
-> [!IMPORTANT] This mission currently uses the classic Copilot Studio experience
-> Microsoft Copilot Studio is rolling out a new authoring experience. The screenshots and steps in the Copilot Studio portions of this mission use the **classic experience**. If your screen looks different, turn off **New Experience** in the upper-right corner before you continue. Refreshed instructions for the new experience are planned, but this mission remains valid in the classic experience.
 
 ## ❓ What is MCP? {#what-is-mcp}
 
@@ -186,18 +183,18 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
 
 1. Go to [Copilot Studio](https://copilotstudio.microsoft.com/)
 
-1. Select the environment picker at the top right corner
+1. Select the environment picker at the bottom left corner and select the environment you want to use
 
 1. Select **Agents** in the left navigation
 
-1. Select the **Create blank agent** button
+1. Select the either the **New Agent** or the **Create your first agent** button (both do the same thing)
 
     ![New agent](./assets/newagent.png)
 
     > [!NOTE]
-    > This will start creating your agent, usually within 10 seconds your agent will be visible, but it will take around a minute until everything is provisioned. You will see a green bar at the top with the message `Your agent has been provisioned.` when your agent is provisioned.
+    > This will start creating your agent, usually within 10 seconds your agent will be visible.
 
-1. When it's done provisioning, select **Edit** in the details card on the overview page
+1. Now you'll be able to change the name to **Jokester**
 
     ![Edit name](./assets/editname.png)
 
@@ -206,16 +203,6 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
     ```text
     Jokester
     ```
-
-1. Add the following **Description**
-
-    ```text
-    A humor-focused agent that delivers concise, engaging jokes only upon user request, adapting its style to match the user's tone and preferences. It remains in character, avoids repetition, and filters out offensive content to ensure a consistently appropriate and witty experience.
-    ```
-
-1. Select **Save** to save the changes
-
-1. Select **Edit** in the instructions card on the overview page
 
 1. Add the following **Instructions**
 
@@ -235,15 +222,15 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
 
 1. Select **Save** to save the instructions
 
-1. Select **Tools** in the top menu
+1. Select **Tools** in the menu on the right
 
     ![Tools](./assets/tools.png)
 
-1. Select the blue **Add a tool** button
-
-1. Select the **Model Context Protocol** button under **Create new** text
+1. Select **Add** and then **Model Context Protocol MCP**
 
     ![Create MCP](./assets/create-mcp.png)
+
+    This will open a wizard where you can create a new MCP server. You will need to provide the following information:
 
 1. Enter the name:
 
@@ -259,9 +246,9 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
 
 1. Enter the URL of the devtunnel. This should be something like `https://something-3000.something.devtunnels.ms/mcp` or the URL of your deployed MCP server in Azure
 
-1. Select **Create** to create the MCP Server
+1. Select **Add** to create the MCP Server
 
-    ![Creating MCP Server](./assets/create-mcp.png)
+    ![Creating MCP Server](./assets/add-mcp.png)
 
     This will take a couple of seconds, because Copilot Studio is now creating a connector behind the scenes.
 
@@ -269,72 +256,40 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
 
     ![Action and connection](./assets/create-connection-mcp-create.png)
 
-1. Select **Create**
+1. Enter a **display name** (1) if you want and select **Create** (2)
 
-    ![Create connection](./assets/create-connection-action-create.png)
+    ![Create connection](./assets/create-connection-mcp-create-name.png)
 
-1. Select **Add and configure** to add the tool to the agent
+1. Select **Add** to add the MCP Server to the agent
 
-    ![Add tool to agent](./assets/add-tool-to-agent.png)
+    ![Add MCP Server to agent](./assets/create-connection-mcp-create-add.png)
 
     > [!TIP]
-    > This will add your MCP server to the agent. On the page that appears after selecting **Add and configure**, you are able to see the tools in the MCP server inside of Copilot Studio.
+    > This will add your MCP server to the agent.
     >
-    > ![MCP Server Tools](./assets/mcp-server-tools.png)
+    > ![MCP Server Tools](./assets/tools-mcp-server.png)
 
-1. Select the **+ icon** in the **Test your agent** pane to start a new testing session
+1. Switch from *Build mode* to *Preview mode* by selecting **Preview** in the top middle.
 
-    ![Refresh testing pane](./assets/start-new-testing-session.png)
+    ![Preview mode](./assets/preview-mode.png)
 
-1. Expand the testing pane by selecting **the icon with the arrow**
-
-    ![Expand test pane](./assets/expand-test-pane.png)
-
-1. In the **Test your agent** pane send the following message:
+1. In the Preview mode send the following message:
 
     ```text
     Can I get a Chuck Norris joke?
     ```
   
-    This will show you a message that you need to connect first.
+    This will show you a message that permission for the agent is required.
 
-1. Select **Open connection manager**
+1. Select **Allow**
 
-    ![Additional permissions](./assets/connection-prompt.png)
+    ![Allow agent to use connection](./assets/connection-allow.png)
   
-    This will open a new window where you can manage your connections for this agent.
+    This will allow the agent to use the MCP server and display a joke.
 
-1. Select **Connect** next to the **Jokes MCP Server**
+    ![Joke result](./assets/joke-result.png)
 
-    ![Connect to JokesMCP](./assets/mcp-server-connect.png)
-
-1. Wait until the connection is created and select **Submit**
-
-    ![Pick a connection](./assets/mcp-server-connect-submit.png)
-
-1. The connection should now be connected, so the status should be set to **Connected**
-
-    ![Status connected](./assets/mcp-server-connected.png)
-
-1. Close the manage your connections tab in your browser
-
-    Now you should be back in the Jokester agent screen.
-
-1. Select the **+ icon** in the **Test your agent** pane to start a new testing session
-
-    ![Refresh testing pane](./assets/start-new-testing-session.png)
-
-1. In the **Test your agent** pane send the following message:
-
-    ```text
-    Can I get a Chuck Norris joke?
-    ```
-
-    This will now show a Chuck Norris joke - instead of the additional permissions. Also notice that you can easily see which tool has been triggered (get-chuck-joke) and what the output was the agent received.
-
-    ![Chuck Norris joke](./assets/chucknorrisjoke.png)
-
-1. In the **Test your agent** pane send the following message:
+1. Now try the following message:
 
     ```text
     Can I get a Dad joke?
@@ -342,7 +297,7 @@ To use the Jokes MCP Server in Microsoft Copilot Studio, you need to create an a
 
     This will now show a Dad joke.
 
-    ![Dad joke](./assets/dadjoke.png)
+    ![Dad joke](./assets/dad-joke-result.png)
 
 And that was the Jokes MCP Server working in Microsoft Copilot Studio.
 

@@ -457,9 +457,9 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
 
 1. To use the troubleshooting skill, download the skill package using the button below.
 
-    <download-files path="recruit-nextgen/05-add-a-skill/assets/troubleshooting-procedure" />
+    <download-files path="recruit-nextgen/05-add-a-skill/assets/it-troubleshooting-procedure" />
 
-    Download `troubleshooting-procedure.zip` and extract it.
+    Download `it-troubleshooting-procedure.zip` and extract it.
 
 1. In the **Build** tab of your agent, select the **Add +** button next to the **Skills** section.
 
