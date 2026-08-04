@@ -1,5 +1,5 @@
 ---
-name: troubleshooting-procedure
+name: it-troubleshooting-procedure
 description: Call this when a user states an IT issue and requests troubleshooting help. It provides step-by-step procedure for diagnosing and resolving IT issues, including escalation with a ticket summary.
 ---
 # IT Troubleshooting Procedure
