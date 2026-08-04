@@ -1,6 +1,6 @@
 ---
-name: IT Troubleshooting Procedure
-description: Step-by-step procedure for diagnosing and resolving IT issues, including escalation with a ticket summary.
+name: it-troubleshooting-procedure
+description: Call this when a user states an IT issue and requests troubleshooting help. It provides step-by-step procedure for diagnosing and resolving IT issues, including escalation with a ticket summary.
 ---
 Follow this procedure when an employee reports a technical issue.
 

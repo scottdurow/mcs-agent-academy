@@ -267,23 +267,23 @@ Clear success criteria tell the model when to stop.
 >
 > If those four areas are well-defined, the skill tends to behave much more consistently.
 
-## 🧪 Lab 05 - Add a skill {#lab-05-add-skill}
+## 🧪 Lab 05 - Add the skills {#lab-05-add-skills}
 
-In this lab, you will extend the agent you created in [Mission 04 - Build an agent with the GitHub Copilot harness](../04-build-a-custom-agent/index.md#lab-04-create-an-agent-with-the-github-copilot-harness) by creating a custom skill.
+In this lab, you will extend the agent you created in [Mission 04 - Build an agent with the GitHub Copilot harness](../04-build-a-custom-agent/index.md#lab-04-create-an-agent-with-the-github-copilot-harness) by creating a series of custom skills.
 
 ### ✨ Use case {#use-case}
 
 **As an** employee
 
-**I want** to know what devices are available
+**I want to** get quick and accurate IT support for common issues and device requests
 
-**so that I** have a list of available devices
+**So that I can** stay productive and resolve technical issues faster
 
 ### Prerequisites
 
 1. **Contoso IT Concierge** - the agent created in [Mission 04 - Build an agent with the GitHub Copilot harness](../04-build-a-custom-agent/index.md#lab-04-create-an-agent-with-the-github-copilot-harness).
 
-### 5.1 Create a skill and test
+### 5.1 Create a device request skill and test
 
 1. We've prepared a skill file for you that helps with listing devices. To use it, download the skill package using the button below.
 
@@ -450,6 +450,80 @@ In this lab, you will extend the agent you created in [Mission 04 - Build an age
 1. The agent responds by summarizing the selected device and the additional requirement.
 
     ![Summary with additional comment](./assets/7.2_18_SummaryWithAdditionalComment.png)
+
+### 5.2 Create a troubleshooting skill and test
+
+Now we'll work on a separate skill that specializes in troubleshooting issues.
+
+1. To use the troubleshooting skill, download the skill package using the button below.
+
+    <download-files path="recruit-nextgen/05-add-a-skill/assets/troubleshooting-procedure" />
+
+    Download `troubleshooting-procedure.zip` and extract it.
+
+1. In the **Build** tab of your agent, select the **Add +** button next to the **Skills** section.
+
+    ![Add skill](./assets/5.2.01_add.png)
+
+1. Make sure the **Upload a skill** tab is selected and either drag and drop your skill in or click to browse for the file
+
+    ![Add skill](./assets/5.1.02_upload.png)
+
+1. The skill will then be uploaded. Select the skill in the right hand panel to review the instructions. Select the **Close x** once you're done reviewing to close out of the skill.
+
+    ![Review instructions](./assets/5.2.02_skill.png)
+
+    > [!NOTE] Reminder of the skill structure
+    >
+    > A skill consists of four main components.
+    > 1. The `Name` identifies the skill.
+    > 1. The `Description` tells the model when the skill is applicable.
+    > 1. The `Optional Frontmatter` stores metadata and configuration information.
+    > 1. The `Instructions` contain the operational workflow the model follows to complete the task.
+    >
+    > Together, these components help the model determine when to use the skill and how to execute it correctly.
+
+1. Select **Preview** at the top center of the agent to test the updated skill.
+
+    Copy and paste the following text and submit it to the agent.
+
+    ```text
+    I'm not getting new emails anymore
+    ```
+
+    ![Test skill](./assets/5.2.03_test.png)
+
+1. Check and confirm that the agent calls the **it-troubleshooting-procedure** skill and asks a follow-up question.
+
+    ![Response](./assets/5.2.04_response.png)
+
+1. In this test, respond with the following
+
+    ```text
+    Happening on both outlook on windows and outlook mobile on my ios device
+    ```
+
+    ![Reply](./assets/5.2.05_reply.png)
+
+1. Following the skill instructions, check that it responds with a numbered list of troubleshooting steps to try and asks another follow up question. Reply with the following:
+
+    ```text
+    The Windows Outlook status bar is showing working offline
+    ```
+
+    ![Response](./assets/5.2.06_secondreponse.png)
+
+1. Check that it replies back with a suggested fix and reply with the following:
+
+    ```text
+    That fixed it, I'm receiving email now!
+    ```
+
+    ![Response](./assets/5.2.07_reply2.png)
+
+1. The agent should then close out with a message confirming the fix
+
+    ![Test skill](./assets/5.2.08_closeout.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
