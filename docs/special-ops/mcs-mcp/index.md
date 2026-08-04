@@ -12,7 +12,7 @@ products:
 industries:
   - it
 created-date: 2026-02-20
-last-edited-date: 2026-03-17
+last-edited-date: 2026-08-04
 ---
 # 🤖 Microsoft Copilot Studio ❤️ MCP {#microsoft-copilot-studio-mcp}
 
