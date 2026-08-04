@@ -157,7 +157,7 @@ On the GitHub Copilot harness, workflows are added to your agent as a **tool**.
    > [!TIP]
    > The Workflows hub lists every workflow in your environment along with its status (Draft / Published).
 
-1. Next, the workflows designer loads. Let's take a moment to familiarize ourselves with the workflow designer.
+1. Next, the workflow designer loads. Let's take a moment to familiarize ourselves with the workflow designer.
 
    Left:
    - Workflow name and status
@@ -435,7 +435,7 @@ On the GitHub Copilot harness, workflows are added to your agent as a **tool**.
 
    ![Toggle HTML view](./assets/8.1_30_ToggleHTMLSource.png)
 
-1. Lastly, for the **Sensitivity** input parameter, select the **General\Anyone (unrestricted)** label from the drop-down list.
+1. Lastly, for the **Sensitivity** input parameter, select the **General\All Employees (unrestricted)** label from the drop-down list.
 
    > [!TIP] Understanding sensitivity labels in Outlook emails
    > A sensitivity label is a classification that helps protect and manage emails and files according to your organization's information protection policies. It helps users identify sensitive content and apply the appropriate level of protection without impacting collaboration or productivity.
