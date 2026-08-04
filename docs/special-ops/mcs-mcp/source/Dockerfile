@@ -7,7 +7,8 @@ COPY package*.json ./
 COPY tsconfig.json ./
 COPY src/ ./src/
 
-RUN --mount=type=cache,target=/root/.npm npm install
+# No BuildKit cache mount: ACR remote build uses the classic Docker builder.
+RUN npm ci
 
 RUN npm run build
 

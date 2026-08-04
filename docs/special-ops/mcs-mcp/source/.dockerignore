@@ -1,0 +1,24 @@
+# Dependencies and build output (rebuilt inside the image)
+node_modules
+dist
+
+# Local azd state and infrastructure
+.azure
+infra
+
+# Source control and editor metadata
+.git
+.gitignore
+.vscode
+.DS_Store
+
+# Local environment and logs
+.env
+.env.*
+*.log
+npm-debug.log*
+
+# Container/build files not needed inside the image
+Dockerfile
+.dockerignore
+azure.yaml
