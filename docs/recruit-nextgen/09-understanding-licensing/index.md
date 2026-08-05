@@ -5,7 +5,7 @@ prev:
   text: Publish your agent
   link: /recruit-nextgen/08-publish-your-agent
 next:
-  text: Securing Your Recruit Badge
+  text: Securing Your Recruit NextGen Badge
   link: /recruit-nextgen/course-completion-badges-recruit
 short-description: Learn how licensing and usage-based billing work for the GitHub Copilot harness
 difficulty: 1
@@ -18,8 +18,8 @@ products:
   - microsoft-365
 industries:
   - it
-created-date: 2025-08-20
-last-edited-date: 2026-08-04
+created-date: 2026-08-05
+last-edited-date: 2026-08-05
 ---
 # 🚨 Mission 09: Understanding Licensing {#mission-09-understanding-licensing}
 
@@ -133,7 +133,7 @@ You can now:
 
 ✅ **Distinguish licenses from capacity**: Explain why a Microsoft 365 Copilot user license doesn't replace Copilot Credit capacity.
 
-⏭️ [Move to **Securing Your Recruit Badge**](../course-completion-badges-recruit/index.md) to complete the Recruit path.
+⏭️ [Move to **Securing Your Recruit NextGen Badge**](../course-completion-badges-recruit/index.md) to complete the Recruit path.
 
 ## 📚 Tactical Resources {#tactical-resources}
 

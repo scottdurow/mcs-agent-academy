@@ -18,8 +18,8 @@ products:
   - microsoft-365-copilot
 industries:
   - general
-created-date: 2026-06-23
-last-edited-date: 2026-08-04
+created-date: 2026-08-05
+last-edited-date: 2026-08-05
 ---
 
 # 🛠️ Mission 02: Copilot Studio Fundamentals

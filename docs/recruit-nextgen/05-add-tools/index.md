@@ -19,8 +19,8 @@ products:
   - power-platform
 industries:
   - it
-created-date: 2025-08-20
-last-edited-date: 2026-08-04
+created-date: 2026-08-05
+last-edited-date: 2026-08-05
 
 ---
 

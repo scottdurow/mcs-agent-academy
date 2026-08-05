@@ -19,8 +19,8 @@ products:
   - teams
 industries:
   - it
-created-date: 2026-08-04
-last-edited-date: 2026-08-04
+created-date: 2026-08-05
+last-edited-date: 2026-08-05
 ---
 
 # 🚨 Mission 08: Publish Your Agent {#mission-08-publish-your-agent}

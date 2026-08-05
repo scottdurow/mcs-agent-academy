@@ -11,13 +11,16 @@ import { coursePathGroups } from "./theme/coursePaths";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const docsDir = path.resolve(__dirname, "..");
 
-const recruitGroup = coursePathGroups.find((group) => group.hub === "/recruit/");
+const recruitGroup = coursePathGroups.find(
+  (group) => group.hub === "/recruit/"
+);
 const recruitStandardHome =
   recruitGroup?.paths.find((coursePath) => coursePath.root === "/recruit/")
     ?.home ?? "/recruit/";
 const recruitNextGenHome =
-  recruitGroup?.paths.find((coursePath) => coursePath.root === "/recruit-nextgen/")
-    ?.home ?? "/recruit-nextgen/";
+  recruitGroup?.paths.find(
+    (coursePath) => coursePath.root === "/recruit-nextgen/"
+  )?.home ?? "/recruit-nextgen/";
 
 export default defineConfig({
   title: "Agent Academy",
