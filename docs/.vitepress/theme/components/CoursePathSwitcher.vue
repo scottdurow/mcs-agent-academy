@@ -1,29 +1,33 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { useData, withBase } from "vitepress";
+import { useRoute, withBase } from "vitepress";
 import { recruitExperienceSwitcherEnabled } from "../../featureFlags";
-import { coursePathGroups, type CoursePath } from "../coursePaths";
+import { findGroupForPath, isPathActive, type CoursePath } from "../coursePaths";
 
-const { page } = useData();
+const route = useRoute();
 
-const relativePath = computed(() => `/${page.value.relativePath.replace(/index\.md$/, "")}`);
+function normalizeRoutePath(path: string) {
+  const [pathname] = path.split(/[?#]/);
+  const normalizedPathname = pathname.replace(/\/index(?:\.html)?$/, "/");
+  return normalizedPathname.endsWith("/")
+    ? normalizedPathname
+    : `${normalizedPathname}/`;
+}
 
-const activeGroup = computed(() =>
-  coursePathGroups.find((group) =>
-    group.paths.some((path) => relativePath.value.startsWith(path.root)),
-  ),
-);
+const relativePath = computed(() => normalizeRoutePath(route.path));
+
+const activeGroup = computed(() => findGroupForPath(relativePath.value));
 
 const isCourseOverview = computed(() =>
-  activeGroup.value?.paths.some((path) => relativePath.value === path.root),
+  activeGroup.value?.paths.some((path) => relativePath.value === path.home),
 );
 
 function isActive(path: CoursePath) {
-  return relativePath.value.startsWith(path.root);
+  return activeGroup.value ? isPathActive(activeGroup.value, path, relativePath.value) : false;
 }
 
 function selectPath(path: CoursePath) {
-  if (!isActive(path)) window.location.assign(withBase(path.root));
+  if (!isActive(path)) window.location.assign(withBase(path.home));
 }
 </script>
 
@@ -40,7 +44,7 @@ function selectPath(path: CoursePath) {
         :key="path.root"
         class="course-path-switcher__option"
         :class="{ 'course-path-switcher__option--active': isActive(path) }"
-        :href="withBase(path.root)"
+        :href="withBase(path.home)"
         :aria-current="isActive(path) ? 'page' : undefined"
         @click.prevent="selectPath(path)"
       >

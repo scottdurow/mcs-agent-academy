@@ -15,8 +15,8 @@ Your mission—should you choose to accept it—is to master the art of building
 
 This beginner, hands-on course introduces the GitHub Copilot harness and its instruction-driven approach to agent building. You'll use a familiar IT support scenario so you can focus on how instructions, skills, tools, and workflows work together.
 
-> [!INFO] How this path differs from the original Recruit course
-> The [original Recruit course](../recruit/index.md) was created before the GitHub Copilot harness was available and introduces the standard, topic-based authoring experience. Recruit NextGen revisits a familiar business scenario using a different architecture: natural-language instructions, skills, tools, and workflows replace manually authored conversation paths.
+> [!INFO] How this path differs from the standard harness path
+> The [standard harness path](/recruit/) was created before the GitHub Copilot harness was available and introduces the topic-based authoring experience. This path revisits a familiar business scenario using a different architecture: natural-language instructions, skills, tools, and workflows replace manually authored conversation paths.
 >
 > Reusing the scenario is intentional. It helps you compare the approaches without also learning a new business process. It doesn't mean every IT support agent requires the GitHub Copilot harness; the right harness depends on how the agent must behave.
 
@@ -33,20 +33,17 @@ By completing the Agent Academy, you'll be able to:
 
 ## 🧪 Prerequisites {#prerequisites}
 
-To complete all missions, you’ll need:
+To complete all missions, you'll need:
 
 - A Microsoft 365 Developer tenant (with SharePoint enabled)
 - Access to **Microsoft Copilot Studio** (trial or licensed)
+- **Copilot Credits** available in your tenant
 - Optional: Basic knowledge of SharePoint, Power Platform, or Power Fx
 
-## 🧬 Who This Is For {#who-this-is-for}
+> [!IMPORTANT] This path consumes Copilot Credits
+> Agents and workflows on the GitHub Copilot harness use **Copilot Credits** for usage-based billing during LLM-powered creation and runtime execution. The billing exception available to licensed Microsoft 365 Copilot users in authenticated employee scenarios doesn't apply here, so make sure your environment has credit capacity before you start. [Mission 09](/recruit-nextgen/09-understanding-licensing/) covers this in detail.
 
-This course is ideal for:
-
-- Makers and developers exploring **Copilot Studio**
-- IT pros building **Microsoft 365 Copilot extensions**
-- Power Platform enthusiasts who want to **level up** with intelligent agents
-- Anyone who prefers to learn by **doing**
+The [Course Setup](/recruit-nextgen/00-course-setup/) mission walks you through getting these in place.
 
 ## 🧭 Curriculum Overview {#curriculum-overview}
 
