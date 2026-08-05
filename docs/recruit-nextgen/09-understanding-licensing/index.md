@@ -1,6 +1,6 @@
 ---
-hide: true
-preview: true
+hide: false
+preview: false
 prev:
   text: Publish your agent
   link: /recruit-nextgen/08-publish-your-agent

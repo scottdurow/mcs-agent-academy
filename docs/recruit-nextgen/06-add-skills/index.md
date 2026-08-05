@@ -1,6 +1,6 @@
 ---
-hide: true
-preview: true
+hide: false
+preview: false
 prev:
     text: 'Add Tools'
     link: '/recruit-nextgen/05-add-tools'

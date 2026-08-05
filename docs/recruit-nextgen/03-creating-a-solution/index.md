@@ -1,6 +1,6 @@
 ---
-hide: true
-preview: true
+hide: false
+preview: false
 prev:
   text: Copilot Studio fundamentals
   link: /recruit-nextgen/02-copilot-studio-fundamentals

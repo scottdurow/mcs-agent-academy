@@ -1,6 +1,6 @@
 ---
-hide: true
-preview: true
+hide: false
+preview: false
 prev:
    text: 'Build with the GitHub Copilot Harness'
    link: '/recruit-nextgen/04-build-a-custom-agent'
