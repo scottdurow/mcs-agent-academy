@@ -17,11 +17,13 @@ import SessionSchedule from "./components/SessionSchedule.vue";
 import VideoLibrary from "./components/VideoLibrary.vue";
 import WorkshopsPage from "./components/WorkshopsPage.vue";
 import HackathonPrizes from "./components/HackathonPrizes.vue";
+import CoursePathSwitcher from "./components/CoursePathSwitcher.vue";
 
 export default {
   extends: DefaultTheme,
   Layout() {
     return h(DefaultTheme.Layout, null, {
+      "doc-before": () => h(CoursePathSwitcher),
       "doc-footer-before": () => h(PageDates),
     });
   },
@@ -41,5 +43,6 @@ export default {
     app.component("VideoLibrary", VideoLibrary);
     app.component("WorkshopsPage", WorkshopsPage);
     app.component("HackathonPrizes", HackathonPrizes);
+    app.component("CoursePathSwitcher", CoursePathSwitcher);
   },
 } satisfies Theme;
