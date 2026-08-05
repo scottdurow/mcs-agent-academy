@@ -192,7 +192,7 @@ Included:
 - Expected outcomes
 - Next steps if the action fails
 
-Without output instructions, responses may become inconsistent
+Without output instructions, responses may become inconsistent.
 
 ### 7. Include Validation Rules
 
@@ -301,11 +301,11 @@ The first skill we're going to create is one to handle device requests. We'll ta
 
     ![Add a new skill to agent](./assets/06-add-a-new-skill-to-agent.png)
 
-1. Make sure the **Upload a skill** tab is selected and either drag and drop your skill in or click to browse for the file
+1. Make sure the **Upload a skill** tab is selected. Then drag and drop the extracted `SKILL.md` file, or locate the file and upload it.
 
     ![Upload the selected device guidance skill](./assets/06-upload-the-selected-device-guidance-skill.png)
 
-1. The skill will then be uploaded. Select the skill in the right-hand panel to review the instructions. Select the **Close x** once you're done reviewing to close out of the skill.
+1. The skill will then be uploaded. Select the skill in the right-hand panel to review the instructions.
 
     - The description references the name of the tool
     - The instructions outline steps including
@@ -316,6 +316,8 @@ The first skill we're going to create is one to handle device requests. We'll ta
         - validation rules
         - exception and escalation paths
         - success criteria
+
+    Select the **X** icon when you're done reviewing to close the skill.
 
     ![Review the imported device guidance instructions](./assets/06-review-the-imported-device-guidance-instructions.png)
 
@@ -329,7 +331,21 @@ The first skill we're going to create is one to handle device requests. We'll ta
     >
     > Together, these components help the model determine when to use the skill and how to execute it correctly.
 
-1. Select **Preview** at the top center of the agent to test the updated skill.
+1. Next, update the agent instructions to explicitly reference the skill for device requests. Under the `For device requests:` heading, delete the existing bullet points.
+
+    ![Delete device request bullet points](./assets/06-DeleteDeviceRequestBulletPoints.png)
+
+1. Copy and paste the following text as a new bullet point under the `For device requests:` heading.
+
+    ```text
+    Refer to the `device-guidance-v1-0-1` skill
+    ```
+
+    **Save** the agent.
+
+    ![Update agent instructions and save](./assets/06-InstructionsUpdatedToReferenceSkill.png)
+
+1. Select **Preview** at the top center of the agent and select **New chat** to test the updated skill.
 
     Copy and paste the following text and submit it to the agent.
 
@@ -337,11 +353,21 @@ The first skill we're going to create is one to handle device requests. We'll ta
     I need a laptop
     ```
 
+    The agent invokes the skill according to the updated instructions.
+
     ![Test the imported device guidance skill](./assets/06-test-the-imported-device-guidance-skill.png)
 
-1. You'll see an error appear. The SharePoint tool failed because the model guessed a column name for the OData filter query that does not exist.
+1. You may encounter an error if the model guesses a column name that doesn't exist in the SharePoint list.
 
-    ![Review the SharePoint query error](./assets/06-review-the-sharepoint-query-error.png)
+    The following are examples of errors you may encounter.
+
+    Example 1:
+
+    ![Example of a SharePoint query error](./assets/06-review-the-sharepoint-query-error-ex1.png)
+
+    Example 2:
+
+    ![Another example of a SharePoint query error](./assets/06-review-the-sharepoint-query-error-ex2.png)
 
 1. However, what happens next is that the model uses reasoning and dynamic planning to determine the next appropriate action when it encounters an issue.
 
@@ -353,7 +379,7 @@ The first skill we're going to create is one to handle device requests. We'll ta
 
     ![Review devices returned from SharePoint list](./assets/06-review-devices-returned-from-sharepoint-list.png)
 
-1. Next, you'll update the skill to define the tool inputs. Remember, this applies the skill instruction principle of being explicit about parameters, field names, and expected inputs.
+1. Regardless of whether you encountered an error, refine the skill inputs. As you learned in the **Define Tool Usage** principle, effective skill instructions should explicitly define parameters, field names, and expected inputs.
 
     Download the skill package using the button below.
 
@@ -361,7 +387,7 @@ The first skill we're going to create is one to handle device requests. We'll ta
 
     Download `device-guidance-v1-0-2.zip` and extract it.
 
-1. In the **Build** tab, select the `device-guidance` skill, select the **ellipsis**, select **Replace**
+1. In the **Build** tab, select the `device-guidance-v1-0-1` skill, select the **ellipsis**, select **Replace**
 
     ![Replace the existing device guidance skill](./assets/06-replace-the-existing-device-guidance-skill.png)
 
@@ -383,7 +409,17 @@ The first skill we're going to create is one to handle device requests. We'll ta
     >
     > The value of `Field` is the column's internal schema name. SharePoint URL-encodes `_` as `%5F`, so `Field=field%5F4` corresponds to the internal name `field_4`. Use this internal name when constructing the OData filter query.
 
-1. Test the updated skill by navigating to Preview.
+1. Next, update the agent instructions to reference the updated skill. Replace the bullet point under the `For device requests:` heading with the following text.
+
+    ```text
+    Refer to the `device-guidance-v1-0-2` skill
+    ```
+
+    **Save** the agent.
+
+    ![Update agent instructions and save](./assets/06-ReferenceSkill-v1-0-2.png)
+
+1. Test the updated skill by navigating to **Preview**.
 
     Copy and paste the following text and submit it to the agent.
 
@@ -391,11 +427,13 @@ The first skill we're going to create is one to handle device requests. We'll ta
     I need a laptop
     ```
 
-    The error should no longer appear because the updated instructions guide the model to use the tool inputs correctly.
+    The agent invokes the skill. Expand the skill details and confirm that `device-guidance-v1-0-2` is referenced.
 
-    ![Confirm the SharePoint query error is resolved](./assets/06-confirm-the-sharepoint-query-error-is-resolved.png)
+    ![device-guidance-v1-0-2 skill invoked](./assets/06-device-guidance-v1-0-2-invoked.png)
 
-    ![Review devices returned by updated skill](./assets/06-review-devices-returned-by-updated-skill.png)
+1. The error should no longer appear because the updated skill instructions guide the model to use the correct tool inputs when constructing the filter query.
+
+    ![Review devices returned by device-guidance-v1-0-2 skill](./assets/06-review-devices-returned-by-updated-skill.png)
 
 1. In this test, respond to the agent by providing the device option you want to proceed with.
 
@@ -429,7 +467,18 @@ The first skill we're going to create is one to handle device requests. We'll ta
 
     ![Replace skill and review additional requirements instructions](./assets/06-replace-skill-and-review-additional-requirements-instructions.png)
 
-1. Test the updated skill by navigating to Preview.
+1. Next, update the agent instructions to reference the updated skill. Replace the bullet point under the `For device requests:` heading with the following text.
+
+    ```text
+    Refer to the `device-guidance-v1-0-3` skill
+    ```
+
+    **Save** the agent.
+
+    ![Update agent instructions to invoke device-guidance-v1-0-3 skill and save](./assets/06-ReferenceSkill-v1-0-3.png)
+
+
+1. Test the updated skill by navigating to **Preview**.
 
     Copy and paste the following text and submit it to the agent.
 
@@ -437,17 +486,21 @@ The first skill we're going to create is one to handle device requests. We'll ta
     I need a laptop
     ```
 
+    The agent invokes the skill. Expand the skill details and confirm that `device-guidance-v1-0-3` is referenced.
+
+    ![device-guidance-v1-0-3 skill invoked](./assets/06-device-guidance-v1-0-3-invoked.png)
+
 1. In the response, copy and paste the following text and submit it to the agent.
 
     ```text
-    B
+    A
     ```
+
+    The agent responds by next asking the user for any additional requirements they may have for their device.
 
     ![Test the refined device guidance skill](./assets/06-test-the-refined-device-guidance-skill.png)
 
-1. The agent responds by next asking the user for any additional requirements they may have for their device.
-
-    Copy and paste the following text and submit it to the agent.
+1. Copy and paste the following text and submit it to the agent.
 
     ```text
     16GB of RAM
@@ -458,6 +511,8 @@ The first skill we're going to create is one to handle device requests. We'll ta
 1. The agent responds by summarizing the selected device and the additional requirement.
 
     ![Device summary includes additional user requirements](./assets/06-device-summary-includes-additional-user-requirements.png)
+
+Notice that the agent can't complete the device request because it hasn't been configured to submit requests. In the next mission, you'll add a workflow that enables the agent to proceed with submitting the device request.
 
 ### 6.2 Create a troubleshooting skill and test
 
@@ -473,11 +528,13 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
 
     ![Add another skill to the agent](./assets/06-add-another-skill-to-the-agent.png)
 
-1. Make sure the **Upload a skill** tab is selected and either drag and drop your skill in or click to browse for the file
+1. Make sure the **Upload a skill** tab is selected. Then drag and drop the extracted `SKILL.md` file, or locate the file and upload it.
 
     ![Upload the IT troubleshooting skill](./assets/06-upload-the-selected-device-guidance-skill.png)
 
-1. The skill will then be uploaded. Select the skill in the right-hand panel to review the instructions. Select the **Close x** once you're done reviewing to close out of the skill.
+1. The skill will then be uploaded. Select the skill in the right-hand panel to review the instructions.
+
+    Select the **X** icon when you're done reviewing to close the skill.
 
     ![Review the IT troubleshooting skill instructions](./assets/06-review-the-it-troubleshooting-skill-instructions.png)
 
@@ -491,6 +548,16 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
     >
     > Together, these components help the model determine when to use the skill and how to execute it correctly.
 
+1. Next, update the agent instructions to reference the updated skill. Replace the bullet point under the `For troubleshooting:` heading with the following text.
+
+    ```text
+    Refer to the `troubleshooting-procedure` skill
+    ```
+
+    **Save** the agent.
+
+    ![Update agent instructions to reference `troubleshooting-procedure` skill and save](./assets/06-Reference-troubleshooting-procedure-skill.png)
+
 1. Select **Preview** at the top center of the agent to test the updated skill.
 
     Copy and paste the following text and submit it to the agent.
@@ -499,13 +566,15 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
     I'm not getting new emails anymore
     ```
 
+    The agent invokes the skill. Expand the skill details and confirm that `troubleshooting-procedure` skill is referenced.
+
     ![Test the IT troubleshooting skill](./assets/06-test-the-it-troubleshooting-skill.png)
 
-1. Check and confirm that the agent calls the **it-troubleshooting-procedure** skill and asks a follow-up question.
+1. The agent asks a follow-up question.
 
     ![Review the initial troubleshooting response](./assets/06-review-the-initial-troubleshooting-response.png)
 
-1. In this test, respond with the following
+1. In this test, respond with the following:
 
     ```text
     Happening on both outlook on windows and outlook mobile on my ios device
@@ -513,7 +582,7 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
 
     ![Reply to the troubleshooting question](./assets/06-reply-to-the-troubleshooting-question.png)
 
-1. Following the skill instructions, check that it responds with a numbered list of troubleshooting steps to try and asks another follow up question. Reply with the following:
+1. Following the skill instructions, check that it responds with a numbered list of troubleshooting steps to try and asks another follow-up question. Reply with the following:
 
     ```text
     The Windows Outlook status bar is showing working offline
@@ -521,7 +590,7 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
 
     ![Review the second troubleshooting response](./assets/06-review-the-second-troubleshooting-response.png)
 
-1. Check that it replies back with a suggested fix and reply with the following:
+1. Check that it replies with a suggested fix and reply with the following:
 
     ```text
     That fixed it, I'm receiving email now!
@@ -529,7 +598,7 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
 
     ![Review the troubleshooting resolution response](./assets/06-review-the-troubleshooting-resolution-response.png)
 
-1. The agent should then close out with a message confirming the fix
+1. The agent should then close out with a message confirming the fix.
 
     ![Confirm the troubleshooting skill closes successfully](./assets/06-confirm-the-troubleshooting-skill-closes-successfully.png)
 
@@ -553,6 +622,6 @@ You can now:
 
 🔗 [Skills in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-overview?WT.mc_id=power-172619-adunnam)
 
-🔗 [Write effective instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create#write-effective-skill-instructions?WT.mc_id=power-172619-adunnam)
+🔗 [Write effective instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create?WT.mc_id=power-172619-adunnam#write-effective-skill-instructions)
 
 <analytics-tag section="recruit-nextgen" mission="06-add-skills" />
