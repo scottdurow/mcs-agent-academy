@@ -45,10 +45,6 @@ These badges are:
 ![Recruit Badge](../../images/mcs-agent-academy-recruit-badge.png)
 To ensure badges remain meaningful, we follow a **strict validation protocol**.
 
-> [!IMPORTANT]
-> **Only the IT Help Desk Agent built in the Recruit path is eligible for this badge.**
->
-
 ### 🧭 Submission Protocol {#submission-protocol}
 
 Please follow **ALL steps exactly and in order**.  

@@ -63,7 +63,7 @@ This academy is broken into progressive lessons—each one designed as a field m
 | `07` | 🔁 [Automate with Workflows](./07-automate-with-workflows/) | Add deterministic logic and automation to your agent |
 | `08` | 📢 [Publish Your Agent](./08-publish-your-agent/) | Deploy your agent to Microsoft Teams and Microsoft 365 Copilot |
 | `09` | 🪪 [Understanding Licensing](./09-understanding-licensing/index.md) | Learn how licensing and billing works with Copilot Studio |
-| `10` | 🚨 [Securing Your Recruit Badge](./course-completion-badges-recruit/index.md) | Claim your badge and mark your achievement! |
+| `10` | 🚨 [Securing Your Recruit NextGen Badge](./course-completion-badges-recruit/index.md) | Claim your badge and mark your achievement! |
 
 > [!NOTE]
 > ✅ Completing this curriculum earns you the **Recruit** badge.  

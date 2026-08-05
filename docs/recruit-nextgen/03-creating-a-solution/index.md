@@ -18,8 +18,8 @@ products:
   - power-platform
 industries:
   - it
-created-date: 2026-06-28
-last-edited-date: 2026-08-04
+created-date: 2026-08-05
+last-edited-date: 2026-08-05
 ---
 # 🚨 Mission 03: Creating a Solution for Your Agent {#mission-03-creating-a-solution-for-your-agent}
 

@@ -17,8 +17,8 @@ tags:
 products: [copilot-studio, power-automate, outlook, sharepoint]
 industries:
   - it
-created-date: 2026-06-28
-last-edited-date: 2026-08-04
+created-date: 2026-08-05
+last-edited-date: 2026-08-05
 
 ---
 

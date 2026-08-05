@@ -17,10 +17,10 @@ products:
   - copilot-studio
 industries:
   - it
-created-date: 2025-08-20
-last-edited-date: 2026-03-27
+created-date: 2026-08-05
+last-edited-date: 2026-08-05
 ---
-# 🚨 Final Mission: Securing Your Recruit Badge {#final-mission-securing-your-recruit-badge}
+# 🚨 Final Mission: Securing Your Recruit NextGen Badge {#final-mission-securing-your-recruit-nextgen-badge}
 
 <mission-meta />
 
@@ -34,7 +34,7 @@ This final mission verifies that:
 - Your solution runs in a real environment
 - Your badge is issued accurately and fairly
 
-## 🏅 Secure Your Recruit Badge {#secure-your-recruit-badge}
+## 🏅 Secure Your Recruit NextGen Badge {#secure-your-recruit-nextgen-badge}
 
 Every Agent Academy path, from **Recruit → Operative → Commander**, includes an official digital badge issued through the [Global AI Community](https://globalai.community/).
 
@@ -44,12 +44,8 @@ These badges are:
 - Shareable (LinkedIn, resumes, portfolios)
 - Tied to real technical work, not just attendance
 
-![Microsoft Copilot Studio Agent Academy Recruit badge](../../images/mcs-agent-academy-recruit-badge.png)
+![Microsoft Copilot Studio Agent Academy Recruit NextGen badge](../../images/mcs-agent-academy-recruit-nextgen-badge.png)
 To ensure badges remain meaningful, we follow a **strict validation protocol**.
-
-> [!IMPORTANT]
-> **Only the IT Help Desk Agent built in the Recruit path is eligible for this badge.**
->
 
 ### 🧭 Submission Protocol {#submission-protocol}
 
@@ -69,7 +65,7 @@ Starring the repo is quick, free, and required for badge eligibility.
 
 ### 2. 🧾 Complete the Badge Validation Form {#2-complete-the-badge-validation-form}
 
-👉 **[Badge Validation Form](https://aka.ms/agent-academy-recruit/form)**
+👉 **[Badge Validation Form](https://aka.ms/agent-academy-recruit-nextgen/form)**
 
 This form:
 
