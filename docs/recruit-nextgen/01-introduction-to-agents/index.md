@@ -38,39 +38,48 @@ And those ideas have changed.
 
 A couple of years ago, “building a bot” usually meant designing a conversation tree. You mapped out what the user might say, wrote scripted responses, and tried to predict every possible path.
 
-Today, an **agent** works differently. It can reason over what someone is trying to accomplish, use trusted data, choose from available tools, and take action.
+Today, a **reasoning-first agent** can work differently. It can reason over what someone is trying to accomplish, use trusted data, choose from available tools, and take action.
 
 That means our job has changed too.
 
 We aren't just scripting dialogue anymore. We're setting goals, providing capabilities, grounding the agent in the right knowledge, and defining the boundaries it needs to operate safely and effectively.
 
-By the end of this mission, you will understand what makes agents different, why that shift matters, and how to start thinking like an agent builder.
-
+By the end of this mission, you'll understand what makes agents different and how to start thinking like an agent builder.
 
 ## 🔎 Objectives
 
 In this mission, you'll learn:
 
-1. The difference between a chatbot, an AI assistant, and an **agent**
-1. How Large Language Models (LLMs) act as an agent's "brain"
-1. How Retrieval-Augmented Generation (RAG) keeps answers grounded and current
-1. What **orchestration** is, and why generative orchestration replaced the topic tree
-1. The **agent spectrum** from reactive to autonomous, and the control boundaries that keep it safe
-1. The common Microsoft build surfaces for agents, from **no-code** to **pro-code**
-1. The three Copilot Studio harnesses and when to use each one
+1. How traditional topic-driven chatbots differ from **reasoning-first agents**, and where AI assistants fit
+1. How Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) power grounded responses
+1. How an agent **harness** and **orchestration** work together
+1. How agents and workflows divide reasoning and execution, and the control boundaries that keep them safe
+1. The broad Microsoft agent-building landscape, from **no-code** to **pro-code**
 
 Let's decode it.
 
-## Chatbot vs. AI Assistant vs. Agent
+## From Traditional Chatbots to Reasoning-First Agents
 
-These words often get used interchangeably but they're not the same.
+The terms *chatbot*, *assistant*, and *agent* often overlap but they describe different aspects of an AI experience rather than strict product categories.
 
-- **Chatbot** — Matches your phrase to a pre-written answer or a branch in a scripted flow. Predictable, but brittle: say it differently and it breaks.
-- **AI Assistant** — Uses an LLM to respond fluently to almost anything, but mostly helps through conversation. Some assistants can call tools (like agents, MCP servers, etc), but they usually do less planning, delegation, or autonomous follow-through than an agent.
-- **Agent** — Reasons about your goal, decides which **knowledge** to consult and which **tools** to use, and may execute a multi-step plan. Some agents can also act on a **trigger**, like a schedule, new email, or new record, without you typing anything at all.
+A **traditional topic-driven chatbot** follows conversation logic defined by its maker. It might match a question to a prepared answer, guide someone through a topic, or follow a known sequence of steps.
+
+A **reasoning-first agent** is given a goal, capabilities, and boundaries. At runtime, it can reason about what needs to happen, select relevant knowledge and tools, and adjust its approach based on the results.
+
+| | Traditional topic-driven chatbot | Reasoning-first agent |
+| --- | --- | --- |
+| **Given by the maker** | Topics, rules, and conversation paths | Goals, instructions, knowledge, tools, and boundaries |
+| **At runtime** | Follows maker-defined routing and paths | Plans how to pursue the goal |
+| **Best suited for** | Predictable, structured interactions | Dynamic or multi-step work |
+| **Example** | Guides an employee through a fixed password-reset process | Diagnoses an IT request, checks relevant guidance, and selects an appropriate action |
+
+> [!NOTE] Where does an AI assistant fit?
+> **AI assistant** usually describes how an AI helps a person, not its underlying architecture. Microsoft 365 Copilot is an AI assistant, for example, and it can use agents to perform specialized work. An assistant stays centered on a person's broader work, while an agent is typically configured to pursue a particular goal or perform a defined role.
+
+<!-- Separate adjacent callouts for Markdownlint. -->
 
 > [!INFO] The one-line definition
-> An **agent** is an LLM given a goal, a set of tools and knowledge, and the autonomy to decide how to use them within boundaries you set.
+> An **agent** is an AI system powered by a model and given goals, instructions, knowledge, tools, and boundaries that shape how it reasons and acts.
 
 ## The Brain: Large Language Models (LLMs)
 
@@ -83,7 +92,7 @@ Modern agents are built around an LLM: a neural network trained on enormous amou
 > [!TIP] The autocomplete analogy
 > An LLM is a "super-smart autocomplete": it doesn't *understand* like a human, it predicts the next best token. That's why **clear instructions and good grounding matter more than clever phrasing** because you're steering a prediction engine, not briefing a colleague.
 
-## The Memory: Retrieval-Augmented Generation (RAG)
+## The Knowledge: Retrieval-Augmented Generation (RAG)
 
 An LLM only knows what it was trained on, which is frozen in time and knows nothing about *your* organization. **RAG** fixes that by letting the agent look things up before it answers:
 
@@ -94,101 +103,99 @@ An LLM only knows what it was trained on, which is frozen in time and knows noth
 
 This is the difference between an agent that *guesses* and one that *cites its sources*. In Copilot Studio this is called the **knowledge layer**, and it's read-only by design: knowledge informs answers, **tools** take actions. Keep those two ideas separate, it'll save you grief later.
 
+## A Quick Note About Harnesses
+
+Before we discuss orchestration, you need one Copilot Studio term: **harness**.
+
+A harness is the **runtime environment around the model**. It determines which capabilities are available, what context reaches the model, how responses are interpreted, and how actions are executed. **Orchestration** is one job the harness performs: directing what the agent should do next.
+
+Put simply: the **model reasons and generates**, the **harness provides the operating environment**, and **orchestration directs the work inside it**.
+
+Copilot Studio offers the **GitHub Copilot**, **standard**, and **Copilot chat** harnesses. This course uses the GitHub Copilot harness, which is designed for complex, multi-step work and uses enhanced, goal-driven orchestration.
+
+> [!NOTE] You'll unpack the harnesses next
+> [Mission 02: Copilot Studio Fundamentals](../02-copilot-studio-fundamentals/index.md) compares all three harnesses and explores the capabilities available on the GitHub Copilot harness. For now, remember that a harness is broader than its orchestration strategy.
+
 ## The Director: Orchestration
 
-Here's the concept that changed everything. **Orchestration** is the layer that decides *what the agent does* with a request: which knowledge to pull, which tools to call, in what order.
+Now that you know what a harness is, let's look more closely at one of the jobs it performs. **Orchestration** directs what the agent does with a request: which knowledge to retrieve, which topics or tools to select, and in what order.
 
-In the old world, *you* were the orchestrator. You hand-authored a **topic** for every path the conversation could take. It worked until it didn't: too many topics, too many exceptions, and the whole thing fell apart the moment a user phrased something unexpectedly.
+Orchestration can follow maker-defined paths, use a model to choose among available capabilities, or combine both approaches. The right approach depends on how predictable the work is and how much flexibility the agent needs.
 
-**Generative orchestration** flips this. An LLM acts as a **planner**: it reads the user's intent, looks at the knowledge, tools, and sub-agents available to it, and composes a plan on the fly:
+The **GitHub Copilot harness** used in this course can break complex work into steps, act, review the results, and adjust its approach:
 
 > **plan → act → observe → replan**
 
-You no longer script the path. You supply good building blocks like clearly named tools, well-described knowledge, sharp instructions, and let the planner assemble them. This is the most important shift in the course, and it changes the job:
+You provide the goal, instructions, capabilities, and boundaries. The harness decides how to combine them to pursue the goal.
+
+![Goal-driven orchestration planning and adjustment loop](./images/01-goal-driven-orchestration-loop.png)
 
 > [!INFO] Your job changed
 > You've gone from **writing the script** to **defining the operating environment**. Agent quality now lives in the quality of your *instructions, tool names, and data boundaries*, not in how many conversation branches you drew. A vaguely described tool isn't bad documentation anymore; it's a bad instruction handed to the planner.
 
-## The Agent Spectrum
+<!-- Separate adjacent callouts for Markdownlint. -->
 
-It's tempting to sort agents into two bins: "conversational" and "autonomous." The better way to think of it is a **dial**. The same agent can answer a chat now and run a scheduled job later. What varies is *how much it decides on its own*.
+> [!NOTE] You'll compare orchestration approaches next
+> [Mission 02: Copilot Studio Fundamentals](../02-copilot-studio-fundamentals/index.md) explains how orchestration differs across the three Copilot Studio harnesses and when each harness fits.
 
-|                 | More **reactive**                         | More **autonomous**                                       |
-| --------------- | ----------------------------------------- | --------------------------------------------------------- |
-| **Starts from** | A user message                            | A trigger (schedule, new email, new record)               |
-| **Good for**    | Q&A, guided help, support                 | Multi-step jobs, monitoring, back-office automation       |
-| **Human role**  | In the conversation                       | Reviewing outcomes, approving high-stakes steps           |
-| **Example**     | Teams agent answering HR-policy questions | Agent that triages an inbox and drafts replies for review |
+## How Agents and Workflows Work Together
 
-Because autonomy cuts both ways, you set **control boundaries**, deciding, per action, whether the agent can:
+An agent and a workflow solve different parts of a business process:
+
+| | Agent | Workflow |
+| --- | --- | --- |
+| **Best at** | Interpreting intent, reasoning through ambiguity, and deciding what should happen next | Running defined steps consistently and predictably |
+| **Example** | Determines whether an employee has provided enough information for a device request | Retrieves the device record and sends the approval email |
+
+How the work **starts** is a separate design choice. A user can ask an agent to begin a task, an agent can call a workflow as a tool, and a workflow can call an agent when one step requires reasoning. A schedule, email, or record change can start a workflow without turning the agent itself into an "autonomous agent."
+
+In this course, the `Contoso IT Concierge` interprets the employee's request and decides when it is ready. It then calls a standalone workflow to execute the repeatable transaction. You'll build that connection in Mission 07.
+
+Across the combined solution, set **control boundaries** for each action:
 
 - **Just do it** (low-risk: look up an answer, summarize a doc),
 - **Ask first** (medium-risk: confirm before sending or changing something), or
 - **Escalate** (high-risk: a human must approve—e.g., a payment or a deletion).
 
-> [!TIP] Opinion: design the boundaries before the capabilities
-> The failure mode of agentic AI isn't a wrong sentence, it's a confident wrong *action* against a real system. Decide what the agent is allowed to do **before** you wire up what it *can* do.
-
-## The Three Copilot Studio Harnesses
-
-Whatever you build in Copilot Studio runs on a **harness**. The model supplies reasoning and generation; the harness is the runtime that decides when to call the model, which components to provide, how to interpret the result, and which tools to invoke.
-
-| Harness | Best for | How it works |
-| --- | --- | --- |
-| **GitHub Copilot harness** | Complex, reasoning-heavy, multi-step business processes | Plans toward a goal, uses knowledge and tools, adjusts when conditions change, and supports skills, memory, connected agents, and file creation |
-| **Standard harness** | Rule-based agents and structured, repeatable conversations | Follows the topics, prompts, branches, and paths you define |
-| **Copilot chat harness** | Extending Microsoft 365 Copilot Chat with enterprise knowledge | Grounds Copilot Chat in organizational content for internal users |
-
-This course builds an agent powered by the **GitHub Copilot harness**. That choice is why the later missions use natural-language instructions, skills, tools, and workflows rather than authored topic trees.
-
-> [!INFO] Pro-code note
-> For fully code-driven agents where you bring your own orchestration, models, runtime, and deployment architecture, use Microsoft 365 Agents SDK, Microsoft Agent Framework, or Microsoft Foundry.
+> [!TIP] Design the boundaries before the capabilities
+> The failure mode of agentic AI isn't only a wrong sentence; it's a confident wrong *action* against a real system. Decide what the agent and its workflows are allowed to do **before** you connect them to business systems.
 
 ## Where Agents Get Built
 
-There are **multiple ways to build agents**, and they sit across a spectrum from **no-code** to **pro-code**.
+Agents can be built through **no-code**, **low-code**, and **pro-code** experiences. The right surface depends on who is building, where the agent will be used, and how much control the solution requires.
 
-- **Agent Builder in Microsoft 365 Copilot** — A simple, approachable starting point for creating agents right inside the Microsoft 365 experience. Good for quick experiments and lightweight productivity scenarios.
-- **Copilot Studio** — Microsoft's low-code platform for building business-ready agents with instructions, knowledge, actions, orchestration, and governance controls.
-- **Microsoft 365 Agents SDK + Agents Toolkit** — A pro-code path for developers who want to build agents in code and use Microsoft tooling to scaffold, test, and package them.
-- **Microsoft Foundry / Foundry Agent Service** — An advanced AI agent platform for teams that need deeper control over models, frameworks, hosting, tools, runtime, infrastructure, and custom AI application architecture.
+| Approach | Microsoft options | Best suited for |
+| --- | --- | --- |
+| **No-code** | Agent Builder in Microsoft 365 Copilot | Quickly creating focused agents grounded in Microsoft 365 content |
+| **Low-code** | Microsoft Copilot Studio | Business agents that need tools, workflows, publishing, and governance |
+| **Pro-code** | Microsoft 365 Agents SDK, Microsoft Agent Framework, and Microsoft Foundry | Custom applications, orchestration, runtime, infrastructure, and deployment |
 
-The simplest way to think about it is this: **Agent Builder** is a great starting point, **Copilot Studio** gives you more control without requiring a fully code-first approach, and the **SDK/toolkit** and **Foundry** paths are for teams that want deeper developer control.
+> [!TIP] Want to try Agent Builder?
+> This course builds with Copilot Studio, so it doesn't include an Agent Builder lab. For a hands-on introduction, complete the Copilot Developer Camp lab [Declarative Agent Foundation with Agent Builder](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/01-first-agent-builder/). It covers creating, grounding, testing, and governing a focused agent in Microsoft 365 Copilot.
 
-Now that you've seen the harnesses, you can map the tools to them more clearly: **Agent Builder** creates agents that extend Microsoft 365 Copilot Chat. **Copilot Studio** lets you build on the Copilot chat, standard, or GitHub Copilot harness. **Microsoft 365 Agents SDK**, **Microsoft Agent Framework**, and **Microsoft Foundry** support code-first scenarios that need deeper control over models, frameworks, hosting, tools, runtime, or architecture.
+These approaches aren't rigid tiers. The right choice depends on the scenario, the builder, and the level of control required. You don't need to choose among them yet; for now, the important point is that Microsoft provides options across the landscape.
 
-These also aren't the only tools available. There are more specialized options, like **Custom SharePoint Agents** for SharePoint-centric scenarios, **Microsoft Agent Framework** for fully code-driven agent and workflow development, and other ecosystem-specific frameworks.
-
-The important point is not memorizing every product. It's understanding that agent development spans **no-code, low-code, and pro-code approaches**, and each has strengths:
-
-- **No-code** tools help you get started fast and validate ideas quickly.
-- **Low-code** tools balance speed with more control, integration, and governance.
-- **Pro-code** tools give developers the deepest flexibility when they need custom architectures, advanced logic, or specialized deployment patterns.
-
-This course is focused on **building agents with Copilot Studio**. We'll go deeper into **what Copilot Studio is and how it works in Mission 02**, and we'll also touch on **Agent Builder** as a useful starting point for simpler scenarios and early experimentation.
+This course uses **Microsoft Copilot Studio**, a low-code platform for building and governing business agents. In [Mission 02](../02-copilot-studio-fundamentals/index.md), you'll compare it with other Microsoft build surfaces and learn why it fits this scenario.
 
 ## Why This Lands in Microsoft 365
 
-Concepts are universal, but in this course the agents you build **meet people where they already work**: in **Microsoft Teams** and the **Microsoft 365 Copilot** experience, grounded in Work IQ, acting through your connected tools, and bound by your organization's identity and permissions. An agent that's brilliant in isolation but invisible in the flow of work doesn't get used. That integration is the payoff and the subject of the rest of the curriculum.
+Concepts are universal, but in this course the agents you build **meet people where they already work**: in **Microsoft Teams** and the **Microsoft 365 Copilot** experience, where they can use organizational knowledge and Work IQ, act through connected tools, and respect your organization's identity and permissions.
 
 ## ✅ Mission Complete {#mission-complete}
 
-You now have the mental model. You can explain:
+You now have the mental model. You can:
 
-✅ **Distinguish agents from chatbots and AI assistants**: Explain how agents reason, retrieve information, use tools, and respond to triggers.
+✅ **Compare agent experiences**: Explain how topic-driven and reasoning-first approaches differ, where they overlap, and where AI assistants fit.
 
-✅ **Describe the role of an LLM**: Explain how instructions and model choice steer an agent's reasoning.
+✅ **Explain agent foundations**: Describe how models, instructions, and RAG support reasoning and grounded responses.
 
-✅ **Explain grounded retrieval**: Describe how RAG connects an agent to trusted organizational data.
+✅ **Explain orchestration**: Describe how orchestration directs knowledge retrieval, tool selection, and the next step in an agent's work.
 
-✅ **Recognize generative orchestration**: Explain how an orchestrator selects and combines knowledge and tools.
+✅ **Explain the harness concept**: Distinguish the roles of the model, harness, and orchestration.
 
-✅ **Choose an appropriate harness**: Match Copilot chat, standard, and GitHub Copilot harnesses to their intended scenarios.
+✅ **Recognize the build landscape**: Identify Microsoft's no-code, low-code, and pro-code options for creating agents.
 
 ⏭️ [Move to **Copilot Studio Fundamentals**](../02-copilot-studio-fundamentals/index.md) to learn how its harnesses work and explore the building blocks you'll use throughout the course.
-
-> [!TIP] Want to explore Agent Builder?
-> This course focuses on the **GitHub Copilot harness** in Copilot Studio. If you'd like to build an agent that extends Microsoft 365 Copilot Chat, head over to Copilot Camp and work through the [**Declarative Agent Foundation with Agent Builder**](https://microsoft.github.io/copilot-camp/pages/extend-m365-copilot/01-first-agent-builder/) lab.
 
 Stay sharp, Recruit because your AI journey is just beginning!
 
