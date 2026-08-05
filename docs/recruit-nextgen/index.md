@@ -10,6 +10,8 @@ lastUpdated: false
 
 ![Copilot Studio Agent Academy Recruit](../images/banner_recruit_nextgen.png)
 
+<preview-banner />
+
 **Welcome, Recruit.**  
 Your mission—should you choose to accept it—is to master the art of building agents powered by the **GitHub Copilot harness** in Microsoft Copilot Studio.
 
