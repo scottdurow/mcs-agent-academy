@@ -18,6 +18,7 @@ import VideoLibrary from "./components/VideoLibrary.vue";
 import WorkshopsPage from "./components/WorkshopsPage.vue";
 import HackathonPrizes from "./components/HackathonPrizes.vue";
 import CoursePathSwitcher from "./components/CoursePathSwitcher.vue";
+import CoursePathCards from "./components/CoursePathCards.vue";
 
 export default {
   extends: DefaultTheme,
@@ -44,5 +45,6 @@ export default {
     app.component("WorkshopsPage", WorkshopsPage);
     app.component("HackathonPrizes", HackathonPrizes);
     app.component("CoursePathSwitcher", CoursePathSwitcher);
+    app.component("course-path-cards", CoursePathCards);
   },
 } satisfies Theme;

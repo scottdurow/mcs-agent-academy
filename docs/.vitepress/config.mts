@@ -6,15 +6,29 @@ import { missionsPlugin } from "./plugins/missions";
 import { previewBannerPlugin } from "./plugins/preview-banner";
 import { downloadFilesPlugin } from "./plugins/download-files";
 import { recruitExperienceSwitcherEnabled } from "./featureFlags";
+import { coursePathGroups } from "./theme/coursePaths";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const docsDir = path.resolve(__dirname, "..");
+
+const recruitGroup = coursePathGroups.find(
+  (group) => group.course === "Recruit"
+)!;
+const recruitStandardHome = recruitGroup.paths[0].home;
+const recruitNextGenHome = recruitGroup.paths[1].home;
 
 export default defineConfig({
   title: "Agent Academy",
   base: "/agent-academy/",
   cleanUrls: true,
   ignoreDeadLinks: [/\.docx$/],
+  // While the switcher is off the standard course keeps /recruit/ and the chooser stays parked.
+  rewrites: recruitExperienceSwitcherEnabled
+    ? {
+        "recruit/index.md": "recruit/standard/index.md",
+        "recruit/choose/index.md": "recruit/index.md",
+      }
+    : {},
   head: [
     ["link", { rel: "icon", href: "/agent-academy/logo.png" }],
     [
@@ -76,10 +90,10 @@ export default defineConfig({
             text: "Recruit",
             link: "/recruit/",
             collapsed: true,
-            items: ([
+            items: [
               {
                 text: "Standard harness",
-                link: "/recruit/",
+                link: recruitStandardHome,
                 collapsed: true,
                 items: [
                   { text: "Course Setup", link: "/recruit/00-course-setup/" },
@@ -139,10 +153,13 @@ export default defineConfig({
               },
               {
                 text: "GitHub Copilot harness",
-                link: "/recruit-nextgen/",
+                link: recruitNextGenHome,
                 collapsed: true,
                 items: [
-                  { text: "Course Setup", link: "/recruit-nextgen/00-course-setup/" },
+                  {
+                    text: "Course Setup",
+                    link: "/recruit-nextgen/00-course-setup/",
+                  },
                   {
                     text: "Introduction to Agents",
                     link: "/recruit-nextgen/01-introduction-to-agents/",
@@ -185,8 +202,12 @@ export default defineConfig({
                   },
                 ],
               },
-            ]).flatMap((group, index) =>
-              recruitExperienceSwitcherEnabled ? [group] : index === 0 ? group.items : [],
+            ].flatMap((group, index) =>
+              recruitExperienceSwitcherEnabled
+                ? [group]
+                : index === 0
+                  ? group.items
+                  : []
             ),
           },
           {

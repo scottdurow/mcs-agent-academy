@@ -29,46 +29,34 @@ By completing the Agent Academy, you'll be able to:
 
 ## 🧪 Prerequisites {#prerequisites}
 
-To complete all missions, you’ll need:
+To complete all missions, you'll need:
 
 - A Microsoft 365 Developer tenant (with SharePoint enabled)
 - Access to **Microsoft Copilot Studio** (trial or licensed)
 - Optional: Basic knowledge of SharePoint, Power Platform, or Power Fx
 
-## 🧬 Who This Is For {#who-this-is-for}
-
-This course is ideal for:
-
-- Makers and developers exploring **Copilot Studio**
-- IT pros building **Microsoft 365 Copilot extensions**
-- Power Platform enthusiasts who want to **level up** with intelligent agents
-- Anyone who prefers to learn by **doing**
+The [Course Setup](/recruit/00-course-setup/) mission walks you through getting these in place.
 
 ## 🧭 Curriculum Overview {#curriculum-overview}
-
-> [!TIP] 🚀 The next generation of Recruit is coming!
-> We're actively working on a new Recruit path showing how to build an agent with the **new experience** in Copilot Studio. [Get a sneak peek here →](/recruit-nextgen/)
 
 This academy is broken into progressive lessons—each one designed as a field mission to level up your agent-building skills.
 
 | Lesson | Title | Mission Briefing |
 | ------ | ----- | ---------------- |
-| `00` | 🧰 [Course Setup](./00-course-setup/index.md) | Set up your dev environment, Copilot Studio trial, and SharePoint site |
-| `01` | 🧠 [Introduction to Agents](./01-introduction-to-agents/index.md) | Understand conversational AI concepts, LLMs, and autonomous vs. declarative agents |
-| `02` | 🛠️ [Copilot Studio Fundamentals](./02-copilot-studio-fundamentals/index.md) | Learn the building blocks: knowledge, skills, autonomy |
-| `03` | 👩‍💻 [Create a Declarative Agent](./03-create-a-declarative-agent-for-M365Copilot/index.md) | Add your own agent to the Microsoft 365 Copilot, grounded in a prompt |
-| `04` | 🧩 [Creating a Solution](./04-creating-a-solution/index.md) | Package your agent into a reusable solution for environment management |
-| `05` | 🚀 [Get Started with Pre-Built Agents](./05-using-prebuilt-agents/index.md) | Use and customize a template agent to accelerate setup |
-| `06` | ✍️ [Build a Custom Agent](./06-create-agent-from-conversation/index.md) | Create a new agent grounded in knowledge sources |
-| `07` | 🧠 [Add a Topic with Triggers](./07-add-new-topic-with-trigger/index.md) | Use Topics to define custom question/answer paths |
-| `08` | 🪪 [Enhance with Adaptive Cards](./08-add-adaptive-card/index.md) | Build an Adaptive Card using Power Fx and SharePoint |
-| `09` | 🔁 [Automate with Agent Flows](./09-add-an-agent-flow/index.md) | Use Adaptive Card input to trigger back-end flows |
-| `10` | 🧭 [Add Event Triggers](./10-add-event-triggers/index.md) | Enable your agent to act autonomously using event-based logic |
-| `11` | 📢 [Publish Your Agent](./11-publish-your-agent/index.md) | Deploy your agent to Microsoft Teams and Microsoft 365 Copilot |
-| `12` | 🪪 [Understanding Licensing](./12-understanding-licensing/index.md) | Learn how licensing and billing works with Copilot Studio |
-| `13` | 🚨 [Securing Your Recruit Badge](./course-completion-badges-recruit/index.md) | Claim your badge and mark your achievement! |
-
-<!-- markdownlint-disable-next-line MD028 -->
+| `00` | 🧰 [Course Setup](/recruit/00-course-setup/) | Set up your dev environment, Copilot Studio trial, and SharePoint site |
+| `01` | 🧠 [Introduction to Agents](/recruit/01-introduction-to-agents/) | Understand conversational AI concepts, LLMs, and autonomous vs. declarative agents |
+| `02` | 🛠️ [Copilot Studio Fundamentals](/recruit/02-copilot-studio-fundamentals/) | Learn the building blocks: knowledge, skills, autonomy |
+| `03` | 👩‍💻 [Create a Declarative Agent](/recruit/03-create-a-declarative-agent-for-M365Copilot/) | Add your own agent to the Microsoft 365 Copilot, grounded in a prompt |
+| `04` | 🧩 [Creating a Solution](/recruit/04-creating-a-solution/) | Package your agent into a reusable solution for environment management |
+| `05` | 🚀 [Get Started with Pre-Built Agents](/recruit/05-using-prebuilt-agents/) | Use and customize a template agent to accelerate setup |
+| `06` | ✍️ [Build a Custom Agent](/recruit/06-create-agent-from-conversation/) | Create a new agent grounded in knowledge sources |
+| `07` | 🧠 [Add a Topic with Triggers](/recruit/07-add-new-topic-with-trigger/) | Use Topics to define custom question/answer paths |
+| `08` | 🪪 [Enhance with Adaptive Cards](/recruit/08-add-adaptive-card/) | Build an Adaptive Card using Power Fx and SharePoint |
+| `09` | 🔁 [Automate with Agent Flows](/recruit/09-add-an-agent-flow/) | Use Adaptive Card input to trigger back-end flows |
+| `10` | 🧭 [Add Event Triggers](/recruit/10-add-event-triggers/) | Enable your agent to act autonomously using event-based logic |
+| `11` | 📢 [Publish Your Agent](/recruit/11-publish-your-agent/) | Deploy your agent to Microsoft Teams and Microsoft 365 Copilot |
+| `12` | 🪪 [Understanding Licensing](/recruit/12-understanding-licensing/) | Learn how licensing and billing works with Copilot Studio |
+| `13` | 🚨 [Securing Your Recruit Badge](/recruit/course-completion-badges-recruit/) | Claim your badge and mark your achievement! |
 
 > [!NOTE]
 > ✅ Completing this curriculum earns you the **Recruit** badge.  
