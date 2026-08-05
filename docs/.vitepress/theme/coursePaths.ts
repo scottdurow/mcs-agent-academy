@@ -34,7 +34,7 @@ export const coursePathGroups: CoursePathGroup[] = [
           ? "/recruit/standard/"
           : "/recruit/",
         root: "/recruit/",
-        tag: "Generally available",
+        tag: "Topic-based",
         highlights: [
           "13 missions",
           "Topics, Adaptive Cards, and agent flows",
@@ -47,7 +47,7 @@ export const coursePathGroups: CoursePathGroup[] = [
           "Guide agent behavior with instructions, skills, tools, and workflows",
         home: "/recruit-nextgen/",
         root: "/recruit-nextgen/",
-        tag: "New",
+        tag: "Instruction-driven",
         highlights: [
           "10 missions",
           "Instructions, Skills, Tools, and Workflows",
