@@ -22,7 +22,7 @@ const EXCLUDED_DIRS = new Set([
 
 const COURSE_BADGES: Record<string, string> = {
   recruit: "/images/mcs-agent-academy-recruit-badge.png",
-  "recruit-nextgen": "/images/mcs-agent-academy-recruit-badge.png",
+  "recruit-nextgen": "/images/mcs-agent-academy-recruit-nextgen-badge.png",
   operative: "/images/mcs-agent-academy-operative-badge.png",
   commander: "/images/mcs-agent-academy-commander-badge.png",
 };
