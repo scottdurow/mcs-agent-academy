@@ -1,5 +1,6 @@
 ---
-preview: true
+hide: false
+preview: false
 next:
   text: 'Course Setup'
   link: '/recruit-nextgen/00-course-setup'
@@ -9,8 +10,6 @@ lastUpdated: false
 # Welcome Recruit
 
 ![Copilot Studio Agent Academy Recruit](../images/banner_recruit_nextgen.png)
-
-<preview-banner />
 
 **Welcome, Recruit.**  
 Your mission—should you choose to accept it—is to master the art of building agents powered by the **GitHub Copilot harness** in Microsoft Copilot Studio.

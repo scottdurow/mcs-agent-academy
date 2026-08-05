@@ -1,6 +1,6 @@
 ---
-hide: true
-preview: true
+hide: false
+preview: false
 prev:
   text: 'Automate with Workflows'
   link: '/recruit-nextgen/07-automate-with-workflows'

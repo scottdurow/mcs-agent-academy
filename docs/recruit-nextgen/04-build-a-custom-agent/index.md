@@ -1,6 +1,6 @@
 ---
-hide: true
-preview: true
+hide: false
+preview: false
 prev:
   text: Creating a solution
   link: /recruit-nextgen/03-creating-a-solution

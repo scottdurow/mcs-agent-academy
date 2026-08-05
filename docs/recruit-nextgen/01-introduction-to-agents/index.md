@@ -1,6 +1,6 @@
 ---
-hide: true
-preview: true
+hide: false
+preview: false
 prev:
   text: 'Course Setup'
   link: '/recruit-nextgen/00-course-setup'

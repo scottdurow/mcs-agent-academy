@@ -1,6 +1,6 @@
 ---
-hide: true
-preview: true
+hide: false
+preview: false
 prev:
   text: 'Introduction to Agents'
   link: '/recruit-nextgen/01-introduction-to-agents'

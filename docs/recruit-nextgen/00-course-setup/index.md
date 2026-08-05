@@ -1,6 +1,6 @@
 ---
-hide: true
-preview: true
+hide: false
+preview: false
 prev:
   text: Recruit overview
   link: /recruit-nextgen

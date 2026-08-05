@@ -1,6 +1,6 @@
 ---
-hide: true
-preview: true
+hide: false
+preview: false
 prev:
    text: Add Skills
    link: /recruit-nextgen/06-add-skills
