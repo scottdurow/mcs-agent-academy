@@ -143,6 +143,7 @@ const props = withDefaults(
 const SECTION_LABELS: Record<string, string> = {
   "special-ops": "Special Ops",
   recruit: "Recruit",
+  "recruit-nextgen": "Recruit NextGen",
   operative: "Operative",
   "cowork-collective": "Cowork Collective",
 };
@@ -440,12 +441,14 @@ const visiblePages = computed<PageItem[]>(() => {
 
 /* Section pill colors */
 .pill-special-ops { background: #fef3c7; color: #92400e; }
-.pill-recruit { background: #d1fae5; color: #065f46; }
+.pill-recruit,
+.pill-recruit-nextgen { background: #d1fae5; color: #065f46; }
 .pill-operative { background: #dbeafe; color: #1e40af; }
 .pill-cowork-collective { background: #ede9fe; color: #5b21b6; }
 
 :root.dark .pill-special-ops { background: #78350f; color: #fef3c7; }
-:root.dark .pill-recruit { background: #064e3b; color: #d1fae5; }
+:root.dark .pill-recruit,
+:root.dark .pill-recruit-nextgen { background: #064e3b; color: #d1fae5; }
 :root.dark .pill-operative { background: #1e3a5f; color: #dbeafe; }
 :root.dark .pill-cowork-collective { background: #4c1d95; color: #ede9fe; }
 

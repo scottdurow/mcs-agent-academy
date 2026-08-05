@@ -48,7 +48,7 @@ Renders a filterable, paginated grid of mission cards. Each card shows the missi
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `section` | string | — | Filter missions by section: `recruit`, `operative`, `special-ops`, or `cowork-collective`. |
+| `section` | string | — | Filter missions by section: `recruit`, `recruit-nextgen`, `operative`, `special-ops`, or `cowork-collective`. |
 | `sort` | string | `"alphabetical"` | Sort field. Options: `"alphabetical"`, `"last-updated"`, `"level"`, `"first-added"`. |
 | `order` | string | `"ascending"` | Sort direction: `"ascending"` or `"descending"`. |
 | `maxRows` | number | `2` | Maximum rows per page. Enables pagination when set. |
@@ -82,7 +82,7 @@ Show all missions with pagination (4 rows per page):
 
 Missions with `hide: true` in their frontmatter are excluded from every `<missions />` grid, including section, tag, product, and industry listings. The mission page remains available directly, and its `<mission-meta />` component is unaffected.
 
-The `commander-preview`, `recruit-nextgen`, and `operative-v2` folders are excluded from mission data entirely by `EXCLUDED_DIRS` in `docs/.vitepress/plugins/missions/index.ts`, so those missions never appear in a grid and passing one of those slugs to `section` returns nothing.
+The `commander-preview` and `operative-v2` folders are excluded from mission data entirely by `EXCLUDED_DIRS` in `docs/.vitepress/plugins/missions/index.ts`, so those missions never appear in a grid and passing one of those slugs to `section` returns nothing.
 
 **Preview:**
 
