@@ -21,21 +21,23 @@ industries:
 created-date: 2026-08-05
 last-edited-date: 2026-08-05
 ---
+
 # 🚨 Mission 09: Understanding Licensing {#mission-09-understanding-licensing}
 
 <mission-meta />
 
 ## 🎯 Mission Brief {#mission-brief}
 
-Welcome, Recruit. Before you deploy an agent, you need to know which **harness** powers it. The harness affects capabilities, architecture, and billing.
+You've built and published the `Contoso IT Concierge`. Now it's time to step back from building and consider what operating it could mean for your organization.
 
-The agent and workflows in this course run on the **GitHub Copilot harness**. They use **Copilot Credits for usage-based billing** during LLM-powered creation experiences and runtime execution. This differs from the billing exceptions available to eligible Microsoft 365 Copilot users with standard or Copilot chat harness agents in authenticated employee scenarios.
+This mission isn't another deployment step or a detailed pricing exercise. It's a conceptual follow-up that connects the choices you already made—harness, model, context, tools, and workflows—to their licensing and consumption implications.
 
-That distinction matters before a pilot becomes a production service. Costs aren't determined only by how many employees can open the agent. The models, managed runtime, organizational context, tools, task complexity, and LLM-powered maker experiences all affect consumption. Teams need to understand those factors so they can estimate usage, monitor actual spend, and manage credits across the organization.
+The agent and workflow in this course use the **GitHub Copilot harness**. That means LLM-powered creation experiences and runtime execution consume **Copilot Credits**. Publishing can expand usage from a maker's tests to real employee interactions, so platform owners need to understand what drives consumption and how to monitor it.
 
-You'll compare the billing models associated with each Copilot Studio harness, identify which GitHub Copilot harness activities consume credits, and review how administrators purchase and manage capacity. You'll also separate user licensing from usage capacity: an employee's Microsoft 365 Copilot license doesn't replace the Copilot Credits required by this course's agent.
+By the end, you'll be able to explain why harness choice affects billing, recognize the activities and design choices that drive usage, and discuss funding and monitoring with your platform administrators. You won't calculate a production budget or memorize rates.
 
-This mission closes the build path with the operational context needed to run the `Contoso IT Concierge` responsibly. You won't calculate a detailed budget, but you will leave with the vocabulary and decision points needed to discuss harness choice, expected consumption, and capacity planning with platform owners.
+> [!IMPORTANT] Use the current guide as the source of truth
+> Licensing, rates, purchase options, and included entitlements can change. Use the [Microsoft Copilot Credits Guide - August 2026](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/ai/Microsoft-Copilot-Credits-Guide-August-2026.pdf) and applicable Microsoft Product Terms when making real licensing decisions. This mission explains the concepts; it doesn't replace those sources or advice from your Microsoft account team or partner.
 
 ## 🔎 Objectives {#objectives}
 
@@ -43,9 +45,8 @@ In this lesson, you'll learn:
 
 1. Why harness choice changes the Copilot Studio billing model
 1. What usage can consume Copilot Credits on the GitHub Copilot harness
-1. How models, runtime, context, and tools drive GitHub Copilot harness consumption
-1. How administrators purchase, allocate, and monitor credits
-1. How GitHub Copilot harness billing differs from standard and Copilot chat harness billing
+1. How models, runtime, context, tools, and task complexity affect consumption
+1. How organizations fund, govern, and monitor Copilot Credit usage
 
 ## 🧠 Harness Choice Determines Billing {#harness-choice-determines-billing}
 
@@ -85,14 +86,14 @@ Manual configuration, including work performed in the **Build** and **Monitor** 
 
 ## 🧾 Purchasing and Managing Copilot Credits {#purchasing-and-managing-copilot-credits}
 
-The August 2026 guide identifies two primary purchase options:
+The August 2026 guide identifies two primary ways to fund usage:
 
-- **Microsoft Copilot Studio Pay-As-You-Go Copilot Credit:** Organizations pay after the billing month for the credits agents consumed. The meter can be provisioned in the **Power Platform admin center**.
-- **Copilot Credit Pre-Purchase Plan (P3):** Organizations purchase an annual pool of credits in advance. Credits are deducted from the pool as they are used, and unused credits expire at the end of the annual term. The plan can be provisioned in the **Azure admin portal**.
+- **Pay as you go:** Pay after the billing month for the Copilot Credits consumed, with no upfront commitment.
+- **Copilot Credit Pre-Purchase Plan:** Purchase an annual pool of credits in advance and draw down from that balance as usage occurs.
 
-Copilot Credits are pooled at the tenant level. Microsoft also offers other purchasing constructs, so confirm the appropriate option in the current Copilot Studio licensing documentation.
+Copilot Credits are pooled at the tenant level. Organizations can choose a funding approach based on expected demand, purchasing preferences, and continuity requirements.
 
-Because pricing and purchase options can change, use the current Microsoft licensing documentation rather than hard-coding a rate into an architecture decision.
+Don't hard-code rates, discounts, plan names, or portal procedures into an architecture decision. Confirm those details in the current Copilot Credits Guide and Copilot Studio licensing documentation.
 
 ## 📊 Monitoring Usage {#monitoring-usage}
 
@@ -107,17 +108,17 @@ For Copilot Studio-specific capacity management, use the **Power Platform admin 
 
 Review natural-language authoring, Preview, Evaluation, and runtime usage so production estimates reflect representative agent behavior.
 
-## 🧭 Applying This to the Recruit Course {#applying-this-to-the-recruit-course}
+## 🧭 What This Means for Your Published Agent {#what-this-means-for-your-published-agent}
 
 The `Contoso IT Concierge` uses the GitHub Copilot harness because it combines goal-driven orchestration with knowledge, a skill, connector tools, and a workflow.
 
-For this course:
+When thinking about a pilot or production rollout:
 
-- Natural-language authoring consumes Copilot Credits based on conversation turns.
-- Preview and Evaluation consume credits at rates equivalent to runtime usage.
-- Manual configuration in the **Build** and **Monitor** tabs doesn't consume Copilot Credits.
-- Runtime consumption is driven by models, runtime, context, tools, and task complexity.
-- An existing Microsoft 365 Copilot user license doesn't replace GitHub Copilot harness usage-based billing.
+- Use representative tasks from the actual business scenario when estimating consumption.
+- Include authoring, Preview, Evaluation, and runtime activity in the usage picture.
+- Monitor real usage after publishing instead of relying only on an upfront estimate.
+- Revisit model, context, and tool choices if consumption or performance differs from expectations.
+- Remember that a Microsoft 365 Copilot user license doesn't replace usage-based billing for this GitHub Copilot harness agent.
 
 ## ✅ Mission Complete {#mission-complete}
 

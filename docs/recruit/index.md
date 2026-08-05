@@ -5,7 +5,7 @@ next:
 lastUpdated: false
 ---
 
-# Welcome Recruit
+# Recruit - Standard Harness
 
 ![Copilot Studio Agent Academy Recruit](../images/banner_recruit.png)
 

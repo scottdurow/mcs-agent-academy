@@ -7,12 +7,12 @@ next:
 lastUpdated: false
 ---
 
-# Welcome Recruit
+# Recruit - GitHub Copilot Harness
 
 ![Copilot Studio Agent Academy Recruit](../images/banner_recruit_nextgen.png)
 
 **Welcome, Recruit.**  
-Your mission—should you choose to accept it—is to master the art of building agents powered by the **GitHub Copilot harness** in Microsoft Copilot Studio.
+Your mission in this course is to master the art of building agents powered by the **GitHub Copilot harness** in Microsoft Copilot Studio.
 
 This beginner, hands-on course introduces the GitHub Copilot harness and its instruction-driven approach to agent building. You'll use a familiar IT support scenario so you can focus on how instructions, skills, tools, and workflows work together.
 
@@ -23,7 +23,7 @@ This beginner, hands-on course introduces the GitHub Copilot harness and its ins
 
 ## 🎯 Mission Objective {#mission-objective}
 
-By completing the Agent Academy, you'll be able to:
+By completing this course, you'll be able to:
 
 - Understand what agents are in the context of Microsoft Copilot Studio
 - Explore how Large Language Models (LLMs), retrieval-augmented generation (RAG), and orchestration come together in an agent
@@ -38,6 +38,7 @@ To complete all missions, you'll need:
 
 - A Microsoft 365 Developer tenant (with SharePoint enabled)
 - Access to **Microsoft Copilot Studio** (trial or licensed)
+- Microsoft 365 Copilot license
 - **Copilot Credits** available in your tenant
 - Optional: Basic knowledge of SharePoint, Power Platform, or Power Fx
 
@@ -48,7 +49,7 @@ The [Course Setup](/recruit-nextgen/00-course-setup/) mission walks you through 
 
 ## 🧭 Curriculum Overview {#curriculum-overview}
 
-This academy is broken into progressive lessons—each one designed as a field mission to level up your agent-building skills.
+This academy is broken into progressive lessons (aka "missions"), designed to level up your agent-building skills.
 
 | Lesson | Title | Mission Briefing |
 | ------ | ----- | ---------------- |
@@ -65,6 +66,6 @@ This academy is broken into progressive lessons—each one designed as a field m
 | `10` | 🚨 [Securing Your Recruit NextGen Badge](./course-completion-badges-recruit/index.md) | Claim your badge and mark your achievement! |
 
 > [!NOTE]
-> ✅ Completing this curriculum earns you the **Recruit** badge.  
+> ✅ Completing this curriculum earns you the **Recruit NextGen** badge.
 
 <analytics-tag section="recruit-nextgen" />
