@@ -1,12 +1,20 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { useData, withBase } from "vitepress";
+import { useRoute, withBase } from "vitepress";
 import { recruitExperienceSwitcherEnabled } from "../../featureFlags";
 import { findGroupForPath, isPathActive, type CoursePath } from "../coursePaths";
 
-const { page } = useData();
+const route = useRoute();
 
-const relativePath = computed(() => `/${page.value.relativePath.replace(/index\.md$/, "")}`);
+function normalizeRoutePath(path: string) {
+  const [pathname] = path.split(/[?#]/);
+  const normalizedPathname = pathname.replace(/\/index(?:\.html)?$/, "/");
+  return normalizedPathname.endsWith("/")
+    ? normalizedPathname
+    : `${normalizedPathname}/`;
+}
+
+const relativePath = computed(() => normalizeRoutePath(route.path));
 
 const activeGroup = computed(() => findGroupForPath(relativePath.value));
 
