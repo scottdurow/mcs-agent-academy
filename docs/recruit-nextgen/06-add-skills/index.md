@@ -192,7 +192,7 @@ Included:
 - Expected outcomes
 - Next steps if the action fails
 
-Without output instructions, responses may become inconsistent
+Without output instructions, responses may become inconsistent.
 
 ### 7. Include Validation Rules
 
@@ -301,7 +301,7 @@ The first skill we're going to create is one to handle device requests. We'll ta
 
     ![Add a new skill to agent](./assets/06-add-a-new-skill-to-agent.png)
 
-1. Make sure the **Upload a skill** tab is selected. Then drag and drop the extracted `SKILL.md` file, or click to browse for the file and upload it.
+1. Make sure the **Upload a skill** tab is selected. Then drag and drop the extracted `SKILL.md` file, or locate the file and upload it.
 
     ![Upload the selected device guidance skill](./assets/06-upload-the-selected-device-guidance-skill.png)
 
@@ -317,7 +317,7 @@ The first skill we're going to create is one to handle device requests. We'll ta
         - exception and escalation paths
         - success criteria
 
-    Select the **X** icon once you're done reviewing to the skill.
+    Select the **X** icon when you're done reviewing to close the skill.
 
     ![Review the imported device guidance instructions](./assets/06-review-the-imported-device-guidance-instructions.png)
 
@@ -341,7 +341,7 @@ The first skill we're going to create is one to handle device requests. We'll ta
     Refer to the `device-guidance-v1-0-1` skill
     ```
 
-    **Save** the the agent.
+    **Save** the agent.
 
     ![Update agent instructions and save](./assets/06-InstructionsUpdatedToReferenceSkill.png)
 
@@ -357,15 +357,15 @@ The first skill we're going to create is one to handle device requests. We'll ta
 
     ![Test the imported device guidance skill](./assets/06-test-the-imported-device-guidance-skill.png)
 
-1. You may encounter an error. The SharePoint tool failed because the model guessed a column name for the OData filter query that does not exist.
+1. You may encounter an error if the model guesses a column name that doesn't exist in the SharePoint list.
 
-   The following are examples of errors you may encounter.
+    The following are examples of errors you may encounter.
 
-   Example 1:
+    Example 1:
 
     ![Example of a SharePoint query error](./assets/06-review-the-sharepoint-query-error-ex1.png)
 
-   Example 2:
+    Example 2:
 
     ![Another example of a SharePoint query error](./assets/06-review-the-sharepoint-query-error-ex2.png)
 
@@ -379,7 +379,7 @@ The first skill we're going to create is one to handle device requests. We'll ta
 
     ![Review devices returned from SharePoint list](./assets/06-review-devices-returned-from-sharepoint-list.png)
 
-1. Regardless of whether you encountered an error, refine the skill inputs.  As you learned in the **Define Tool Usage** principle, effective skill instructions should explicitly define parameters, field names, and expected inputs.
+1. Regardless of whether you encountered an error, refine the skill inputs. As you learned in the **Define Tool Usage** principle, effective skill instructions should explicitly define parameters, field names, and expected inputs.
 
     Download the skill package using the button below.
 
@@ -415,11 +415,11 @@ The first skill we're going to create is one to handle device requests. We'll ta
     Refer to the `device-guidance-v1-0-2` skill
     ```
 
-    **Save** the the agent.
+    **Save** the agent.
 
     ![Update agent instructions and save](./assets/06-ReferenceSkill-v1-0-2.png)
 
-1. Test the updated skill by navigating to Preview.
+1. Test the updated skill by navigating to **Preview**.
 
     Copy and paste the following text and submit it to the agent.
 
@@ -473,7 +473,7 @@ The first skill we're going to create is one to handle device requests. We'll ta
     Refer to the `device-guidance-v1-0-3` skill
     ```
 
-    **Save** the the agent.
+    **Save** the agent.
 
     ![Update agent instructions to invoke device-guidance-v1-0-3 skill and save](./assets/06-ReferenceSkill-v1-0-3.png)
 
@@ -528,13 +528,13 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
 
     ![Add another skill to the agent](./assets/06-add-another-skill-to-the-agent.png)
 
-1. Make sure the **Upload a skill** tab is selected and either drag and drop your skill in or click to browse for the file
+1. Make sure the **Upload a skill** tab is selected. Then drag and drop the extracted `SKILL.md` file, or locate the file and upload it.
 
     ![Upload the IT troubleshooting skill](./assets/06-upload-the-selected-device-guidance-skill.png)
 
 1. The skill will then be uploaded. Select the skill in the right-hand panel to review the instructions.
 
-    Select the **X** icon once you're done reviewing to the skill.
+    Select the **X** icon when you're done reviewing to close the skill.
 
     ![Review the IT troubleshooting skill instructions](./assets/06-review-the-it-troubleshooting-skill-instructions.png)
 
@@ -554,7 +554,7 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
     Refer to the `troubleshooting-procedure` skill
     ```
 
-    **Save** the the agent.
+    **Save** the agent.
 
     ![Update agent instructions to reference `troubleshooting-procedure` skill and save](./assets/06-Reference-troubleshooting-procedure-skill.png)
 
@@ -574,7 +574,7 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
 
     ![Review the initial troubleshooting response](./assets/06-review-the-initial-troubleshooting-response.png)
 
-1. In this test, respond with the following
+1. In this test, respond with the following:
 
     ```text
     Happening on both outlook on windows and outlook mobile on my ios device
@@ -582,7 +582,7 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
 
     ![Reply to the troubleshooting question](./assets/06-reply-to-the-troubleshooting-question.png)
 
-1. Following the skill instructions, check that it responds with a numbered list of troubleshooting steps to try and asks another follow up question. Reply with the following:
+1. Following the skill instructions, check that it responds with a numbered list of troubleshooting steps to try and asks another follow-up question. Reply with the following:
 
     ```text
     The Windows Outlook status bar is showing working offline
@@ -590,7 +590,7 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
 
     ![Review the second troubleshooting response](./assets/06-review-the-second-troubleshooting-response.png)
 
-1. Check that it replies back with a suggested fix and reply with the following:
+1. Check that it replies with a suggested fix and reply with the following:
 
     ```text
     That fixed it, I'm receiving email now!
@@ -598,7 +598,7 @@ Now we'll work on a separate skill that specializes in troubleshooting issues.
 
     ![Review the troubleshooting resolution response](./assets/06-review-the-troubleshooting-resolution-response.png)
 
-1. The agent should then close out with a message confirming the fix
+1. The agent should then close out with a message confirming the fix.
 
     ![Confirm the troubleshooting skill closes successfully](./assets/06-confirm-the-troubleshooting-skill-closes-successfully.png)
 
@@ -622,6 +622,6 @@ You can now:
 
 🔗 [Skills in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-overview?WT.mc_id=power-172619-adunnam)
 
-🔗 [Write effective instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create#write-effective-skill-instructions?WT.mc_id=power-172619-adunnam)
+🔗 [Write effective instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create?WT.mc_id=power-172619-adunnam#write-effective-skill-instructions)
 
 <analytics-tag section="recruit-nextgen" mission="06-add-skills" />
