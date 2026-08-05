@@ -5,6 +5,7 @@ import { mermaidPlugin } from "./plugins/vitepress-mermaid";
 import { missionsPlugin } from "./plugins/missions";
 import { previewBannerPlugin } from "./plugins/preview-banner";
 import { downloadFilesPlugin } from "./plugins/download-files";
+import { recruitExperienceSwitcherEnabled } from "./featureFlags";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const docsDir = path.resolve(__dirname, "..");
@@ -75,61 +76,118 @@ export default defineConfig({
             text: "Recruit",
             link: "/recruit/",
             collapsed: true,
-            items: [
-              { text: "Course Setup", link: "/recruit/00-course-setup/" },
+            items: ([
               {
-                text: "Introduction to Agents",
-                link: "/recruit/01-introduction-to-agents/",
+                text: "Standard harness",
+                link: "/recruit/",
+                collapsed: true,
+                items: [
+                  { text: "Course Setup", link: "/recruit/00-course-setup/" },
+                  {
+                    text: "Introduction to Agents",
+                    link: "/recruit/01-introduction-to-agents/",
+                  },
+                  {
+                    text: "Copilot Studio Fundamentals",
+                    link: "/recruit/02-copilot-studio-fundamentals/",
+                  },
+                  {
+                    text: "Create A Declarative Agent For M365 Copilot",
+                    link: "/recruit/03-create-a-declarative-agent-for-M365Copilot/",
+                  },
+                  {
+                    text: "Creating A Solution",
+                    link: "/recruit/04-creating-a-solution/",
+                  },
+                  {
+                    text: "Using Prebuilt Agents",
+                    link: "/recruit/05-using-prebuilt-agents/",
+                  },
+                  {
+                    text: "Create Agent From Conversation",
+                    link: "/recruit/06-create-agent-from-conversation/",
+                  },
+                  {
+                    text: "Add New Topic With Trigger",
+                    link: "/recruit/07-add-new-topic-with-trigger/",
+                  },
+                  {
+                    text: "Add Adaptive Cards",
+                    link: "/recruit/08-add-adaptive-card/",
+                  },
+                  {
+                    text: "Add An Agent Flow",
+                    link: "/recruit/09-add-an-agent-flow/",
+                  },
+                  {
+                    text: "Add Event Triggers",
+                    link: "/recruit/10-add-event-triggers/",
+                  },
+                  {
+                    text: "Publish Your Agents",
+                    link: "/recruit/11-publish-your-agent/",
+                  },
+                  {
+                    text: "Understanding Licensing",
+                    link: "/recruit/12-understanding-licensing/",
+                  },
+                  {
+                    text: "Course Completion Badge",
+                    link: "/recruit/course-completion-badges-recruit/",
+                  },
+                ],
               },
               {
-                text: "Copilot Studio Fundamentals",
-                link: "/recruit/02-copilot-studio-fundamentals/",
+                text: "GitHub Copilot harness",
+                link: "/recruit-nextgen/",
+                collapsed: true,
+                items: [
+                  { text: "Course Setup", link: "/recruit-nextgen/00-course-setup/" },
+                  {
+                    text: "Introduction to Agents",
+                    link: "/recruit-nextgen/01-introduction-to-agents/",
+                  },
+                  {
+                    text: "Copilot Studio Fundamentals",
+                    link: "/recruit-nextgen/02-copilot-studio-fundamentals/",
+                  },
+                  {
+                    text: "Creating A Solution",
+                    link: "/recruit-nextgen/03-creating-a-solution/",
+                  },
+                  {
+                    text: "Build with the GitHub Copilot Harness",
+                    link: "/recruit-nextgen/04-build-a-custom-agent/",
+                  },
+                  {
+                    text: "Add a Tool",
+                    link: "/recruit-nextgen/05-add-tools/",
+                  },
+                  {
+                    text: "Add Skills",
+                    link: "/recruit-nextgen/06-add-skills/",
+                  },
+                  {
+                    text: "Automate with Workflows",
+                    link: "/recruit-nextgen/07-automate-with-workflows/",
+                  },
+                  {
+                    text: "Publish Your Agent",
+                    link: "/recruit-nextgen/08-publish-your-agent/",
+                  },
+                  {
+                    text: "Understanding Licensing",
+                    link: "/recruit-nextgen/09-understanding-licensing/",
+                  },
+                  {
+                    text: "Course Completion Badge",
+                    link: "/recruit-nextgen/course-completion-badges-recruit/",
+                  },
+                ],
               },
-              {
-                text: "Create A Declarative Agent For M365 Copilot",
-                link: "/recruit/03-create-a-declarative-agent-for-M365Copilot/",
-              },
-              {
-                text: "Creating A Solution",
-                link: "/recruit/04-creating-a-solution/",
-              },
-              {
-                text: "Using Prebuilt Agents",
-                link: "/recruit/05-using-prebuilt-agents/",
-              },
-              {
-                text: "Create Agent From Conversation",
-                link: "/recruit/06-create-agent-from-conversation/",
-              },
-              {
-                text: "Add New Topic With Trigger",
-                link: "/recruit/07-add-new-topic-with-trigger/",
-              },
-              {
-                text: "Add Adaptive Cards",
-                link: "/recruit/08-add-adaptive-card/",
-              },
-              {
-                text: "Add An Agent Flow",
-                link: "/recruit/09-add-an-agent-flow/",
-              },
-              {
-                text: "Add Event Triggers",
-                link: "/recruit/10-add-event-triggers/",
-              },
-              {
-                text: "Publish Your Agents",
-                link: "/recruit/11-publish-your-agent/",
-              },
-              {
-                text: "Understanding Licensing",
-                link: "/recruit/12-understanding-licensing/",
-              },
-              {
-                text: "Course Completion Badge",
-                link: "/recruit/course-completion-badges-recruit/",
-              },
-            ],
+            ]).flatMap((group, index) =>
+              recruitExperienceSwitcherEnabled ? [group] : index === 0 ? group.items : [],
+            ),
           },
           {
             text: "Operative",
