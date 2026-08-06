@@ -61,7 +61,7 @@ Copilot Studio stores every agent in a Power Platform solution. By default, new 
 
 Solutions have traditionally been managed in the **Power Apps maker portal**, where you can build and customize apps, Dataverse tables, flows, and other Power Platform components.
 
-    ![Solutions available in Power Apps maker portal](./assets/03-solutions-available-in-power-apps-maker-portal.png)
+![Solutions available in Power Apps maker portal](./assets/03-solutions-available-in-power-apps-maker-portal.png)
 
 You can now manage solutions directly from **Solution Explorer** in Copilot Studio without switching to the Power Apps maker portal.
 
@@ -329,16 +329,16 @@ You can now:
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Create a solution](https://learn.microsoft.com/power-apps/maker/data-platform/create-solution/?WT.mc_id=power-172615-ebenitez)
+🔗 [Create a solution](https://learn.microsoft.com/power-apps/maker/data-platform/create-solution)
 
-🔗 [Create and manage solutions in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/authoring-solutions-overview/?WT.mc_id=power-172615-ebenitez)
+🔗 [Create and manage solutions in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/authoring-solutions-overview)
 
-🔗 [Summary of resources available to predefined security roles](https://learn.microsoft.com/power-platform/admin/database-security#summary-of-resources-available-to-predefined-security-roles/?WT.mc_id=power-172615-ebenitez)
+🔗 [Summary of resources available to predefined security roles](https://learn.microsoft.com/power-platform/admin/database-security#summary-of-resources-available-to-predefined-security-roles)
 
-🔗 [Upgrade or update a solution](https://learn.microsoft.com/power-apps/maker/data-platform/update-solutions/?WT.mc_id=power-172615-ebenitez)
+🔗 [Upgrade or update a solution](https://learn.microsoft.com/power-apps/maker/data-platform/update-solutions)
 
-🔗 [Overview of pipelines in Power Platform](https://learn.microsoft.com/power-platform/alm/pipelines/?WT.mc_id=power-172615-ebenitez)
+🔗 [Overview of pipelines in Power Platform](https://learn.microsoft.com/power-platform/alm/pipelines)
 
-🔗 [Overview of Git integration in Power Platform](https://learn.microsoft.com/power-platform/alm/git-integration/overview/?WT.mc_id=power-172615-ebenitez)
+🔗 [Overview of Git integration in Power Platform](https://learn.microsoft.com/power-platform/alm/git-integration/overview)
 
 <analytics-tag section="recruit-nextgen" mission="03-creating-a-solution" />

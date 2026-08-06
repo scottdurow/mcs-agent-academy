@@ -154,7 +154,7 @@ Let's begin!
 
    For this use case, where the agent retrieves device information and returns it to the user, set **Site Address** and **List Name** to the SharePoint site and list created in the Course Setup mission.
 
-   Update the **How is this filled?** field from `AI` to `Value`.
+   For the **Site Address** input parameter, update the **How is this filled?** field from `AI` to `Value`.
 
    Then select the **Value** drop-down field and select the **New** button.
 
@@ -197,10 +197,10 @@ You can now:
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Add tools to agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/tools-overview?WT.mc_id=power-172618-apdunnam)
+🔗 [Add tools to agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/tools-overview)
 
 🔗 [SharePoint connector reference](https://learn.microsoft.com/connectors/sharepointonline/#get-items)
 
-🔗 [Write effective agent instructions](https://learn.microsoft.com/microsoft-copilot-studio/authoring-instructions?WT.mc_id=power-172618-ebenitez)
+🔗 [Configure agent details and instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-instructions)
 
 <analytics-tag section="recruit-nextgen" mission="05-add-tools" />

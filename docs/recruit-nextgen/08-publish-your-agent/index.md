@@ -179,6 +179,10 @@ In this lab, you'll configure the Teams + Microsoft 365 channel, publish the age
 
    ![Test the agent in Microsoft 365 Copilot](./assets/08-test-the-agent-in-microsoft-365-copilot.png)
 
+1. To review the citations, select Sources. A panel opens and lists the web pages referenced in the agent's response.
+
+   ![Review citations](./assets/08-review-citations.png)
+
 1. Confirm that the agent provides troubleshooting guidance grounded in its approved knowledge sources and asks for details to narrow down the issue.
 
    ![Review the grounded troubleshooting response](./assets/08-review-the-grounded-troubleshooting-response.png)
@@ -201,7 +205,10 @@ You can now:
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-- 🔗 [Publish an agent to live channels](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels?WT.mc_id=power-172619-adunnam)
-- 🔗 [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams?WT.mc_id=power-172619-adunnam)
+- 🔗 [Publish overview for agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-fundamentals-publish-channels)
+
+- 🔗 [Publish an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-publish-agent)
+
+- 🔗 [Available channels for agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-overview)
 
 <analytics-tag section="recruit-nextgen" mission="08-publish-your-agent" />

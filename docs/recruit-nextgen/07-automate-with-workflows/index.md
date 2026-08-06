@@ -130,7 +130,7 @@ Expressions are small formulas that work with your data - much like Excel functi
 - `coalesce()` - returns the first non-empty value
 - `length()` - counts characters or items
 
-For the full list, see the [functions reference guide](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez).
+For the full list, see the [functions reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/expression-functions-reference).
 
 ## ⭐ Best practices {#best-practices}
 
@@ -161,7 +161,7 @@ For the full list, see the [functions reference guide](https://learn.microsoft.c
 
 On the GitHub Copilot harness, workflows are added to your agent as a **tool**.
 
-1. In the left navigation, select **Workflows**, then select **New workflow**.
+1. In the left navigation, select **Workflows**, then select **Create your first workflow** or select **New workflow**.
 
    ![Select a new workflow in Copilot Studio](./assets/07-select-a-new-workflow-in-copilot-studio.png)
 
@@ -499,13 +499,13 @@ You can now add the workflow to your **Contoso IT Concierge** agent.
 
 The workflow is now available to the agent as a tool.
 
-### 7.3 Update device request procedure skill
+### 7.3 Update device request procedure skill and agent instructions
 
-With the workflow added, update the device request procedure skill so the agent knows when and how to call it.
+With the workflow added, update the device request skill and agent instructions to define when and how the agent should invoke it.
 
-1. Select the **device guidance** skill.
+1. Select the **device-guidance-v1-0-3** skill.
 
-   ![Select the device guidance skill](./assets/07-select-the-device-guidance-skill.png)
+   ![Select the device-guidance-v1-0-3 skill](./assets/07-select-the-device-guidance-v1-0-3-skill.png)
 
 1. Select the **ellipsis** icon and select **Replace**.
 
@@ -536,6 +536,16 @@ With the workflow added, update the device request procedure skill so the agent 
    - confirm completion by referencing the device model returned by the workflow and end the session
 
    ![Confirmation message and end session](./assets/07-confirmation-message-and-end-session.png)
+
+1. Next, update the agent instructions to reference the updated skill. Replace the bullet point under the `For device requests:` heading with the following text.
+
+    ```text
+    Refer to the `device-guidance-v1-0-4` skill
+    ```
+
+    **Save** the agent.
+
+    ![Update agent instructions and save](./assets/07-instructions-updated-and-save-agent.png)
 
 The agent and workflow are now ready for end-to-end testing.
 
@@ -661,12 +671,10 @@ You can now:
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Introducing agent flows: Transforming automation with AI-first workflows](https://www.microsoft.com/microsoft-copilot/blog/copilot-studio/introducing-agent-flows-transforming-automation-with-ai-first-workflows/)
-
 🔗 [Workflows overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flows-overview)
 
 🔗 [Add a workflow as a tool to an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flow-agent)
 
-🔗 [List of functions in the reference guide](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
+🔗 [List of functions in the reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/expression-functions-reference)
 
 <analytics-tag section="recruit-nextgen" mission="07-automate-with-workflows" />

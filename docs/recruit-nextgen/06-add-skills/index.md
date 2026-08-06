@@ -620,8 +620,8 @@ You can now:
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Skills in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-overview?WT.mc_id=power-172619-adunnam)
+🔗 [Skills in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-overview)
 
-🔗 [Write effective instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create?WT.mc_id=power-172619-adunnam#write-effective-skill-instructions)
+🔗 [Write effective instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/skills-create#write-effective-skill-instructions)
 
 <analytics-tag section="recruit-nextgen" mission="06-add-skills" />

@@ -134,7 +134,7 @@ Before starting this lab, make sure you have:
 
 1. Browse to [**Microsoft Copilot Studio**](https://copilotstudio.microsoft.com) and on the **Home** page, select the **Agent (GitHub Copilot)** tile.
 
-    ![New agent created from the prompt](./assets/04-new-agent-created-from-the-prompt.png)
+    ![Select agent tile](./assets/04-select-agent-tile.png)
 
 1. Update the agent name to the following text,
 
@@ -280,9 +280,9 @@ Now that the agent's knowledge sources are ready, let's review some settings bef
 
     ![Review agent details under settings](./assets/04-review-agent-details-under-settings.png)
 
-1. Next, select the **Greeting & prompts** tab. Copilot Studio automatically generated a greeting message during agent creation. Review the current message.
+1. Next, select the **Greeting & prompts** tab, where you can configure the initial greeting and suggested prompts that help users start conversations in channels such as Microsoft Teams.
 
-    ![View the default agent greeting message](./assets/04-view-the-default-agent-greeting-message.png)
+    ![Greeting and prompts tab](./assets/04-greeting-and-prompts-tab.png)
 
 1. To align the greeting with the agent's new name, replace the existing message with the following text:
 
@@ -360,14 +360,14 @@ You can now:
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Agents overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview/?WT.mc_id=power-172617-ebenitez)
+🔗 [Agents overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview)
 
-🔗 [Create an agent (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-first-bot/?WT.mc_id=power-172617-ebenitez)
+🔗 [Create an agent (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-first-bot)
 
-🔗 [Build an agent (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/build-overview/?WT.mc_id=power-172617-ebenitez)
+🔗 [Build an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/build-overview)
 
-🔗 [Configure agent details and instructions (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-instructions/?WT.mc_id=power-172617-ebenitez)
+🔗 [Configure agent details and instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-instructions)
 
-🔗 [Knowledge overview for agents (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-copilot-studio/?WT.mc_id=power-172617-ebenitez)
+🔗 [Knowledge overview for agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-copilot-studio)
 
 <analytics-tag section="recruit-nextgen" mission="04-build-a-custom-agent" />
