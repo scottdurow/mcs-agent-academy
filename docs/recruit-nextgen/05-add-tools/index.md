@@ -197,10 +197,10 @@ You can now:
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Add tools to agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/tools-overview?WT.mc_id=power-172618-apdunnam)
+🔗 [Add tools to agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/tools-overview)
 
 🔗 [SharePoint connector reference](https://learn.microsoft.com/connectors/sharepointonline/#get-items)
 
-🔗 [Write effective agent instructions](https://learn.microsoft.com/microsoft-copilot-studio/authoring-instructions?WT.mc_id=power-172618-ebenitez)
+🔗 [Configure agent details and instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-instructions)
 
 <analytics-tag section="recruit-nextgen" mission="05-add-tools" />

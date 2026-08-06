@@ -139,10 +139,15 @@ You can now:
 ## 📚 Tactical Resources {#tactical-resources}
 
 - 📘 [Microsoft Copilot Credits Guide - August 2026](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/ai/Microsoft-Copilot-Credits-Guide-August-2026.pdf)
+
 - 🧭 [Choose a harness in Copilot Studio](https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview)
+
 - 💳 [Usage-based billing for the GitHub Copilot harness](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview)
+
 - 🧾 [Purchase and manage Copilot Credits](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-manage-buy-credits)
+
 - 📊 [Manage Copilot Studio credits and capacity](https://learn.microsoft.com/en-us/power-platform/admin/manage-copilot-studio-messages-capacity)
+
 - 📄 [Standard harness licensing and billing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing)
 
 <analytics-tag section="recruit-nextgen" mission="09-understanding-licensing" />

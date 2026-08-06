@@ -130,7 +130,7 @@ Expressions are small formulas that work with your data - much like Excel functi
 - `coalesce()` - returns the first non-empty value
 - `length()` - counts characters or items
 
-For the full list, see the [functions reference guide](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez).
+For the full list, see the [functions reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/expression-functions-reference).
 
 ## ⭐ Best practices {#best-practices}
 
@@ -671,12 +671,10 @@ You can now:
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Introducing agent flows: Transforming automation with AI-first workflows](https://www.microsoft.com/microsoft-copilot/blog/copilot-studio/introducing-agent-flows-transforming-automation-with-ai-first-workflows/)
-
 🔗 [Workflows overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flows-overview)
 
 🔗 [Add a workflow as a tool to an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/workflows-experience/flow-agent)
 
-🔗 [List of functions in the reference guide](https://learn.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference?WT.mc_id=power-172621-ebenitez)
+🔗 [List of functions in the reference guide](https://learn.microsoft.com/en-us/azure/logic-apps/expression-functions-reference)
 
 <analytics-tag section="recruit-nextgen" mission="07-automate-with-workflows" />

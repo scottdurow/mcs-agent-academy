@@ -360,14 +360,14 @@ You can now:
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Agents overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview/?WT.mc_id=power-172617-ebenitez)
+🔗 [Agents overview](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview)
 
-🔗 [Create an agent (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-first-bot/?WT.mc_id=power-172617-ebenitez)
+🔗 [Create an agent (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-first-bot)
 
-🔗 [Build an agent (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/build-overview/?WT.mc_id=power-172617-ebenitez)
+🔗 [Build an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/build-overview)
 
-🔗 [Configure agent details and instructions (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-instructions/?WT.mc_id=power-172617-ebenitez)
+🔗 [Configure agent details and instructions](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/authoring-instructions)
 
-🔗 [Knowledge overview for agents (preview)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-copilot-studio/?WT.mc_id=power-172617-ebenitez)
+🔗 [Knowledge overview for agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/knowledge-copilot-studio)
 
 <analytics-tag section="recruit-nextgen" mission="04-build-a-custom-agent" />

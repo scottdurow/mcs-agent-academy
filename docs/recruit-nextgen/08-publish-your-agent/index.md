@@ -205,7 +205,10 @@ You can now:
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-- 🔗 [Publish an agent to live channels](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-fundamentals-publish-channels?WT.mc_id=power-172619-adunnam)
-- 🔗 [Connect and configure an agent for Teams and Microsoft 365](https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams?WT.mc_id=power-172619-adunnam)
+- 🔗 [Publish overview for agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-fundamentals-publish-channels)
+
+- 🔗 [Publish an agent](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-publish-agent)
+
+- 🔗 [Available channels for agents](https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/publication-channels-overview)
 
 <analytics-tag section="recruit-nextgen" mission="08-publish-your-agent" />
