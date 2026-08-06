@@ -61,7 +61,7 @@ Copilot Studio stores every agent in a Power Platform solution. By default, new 
 
 Solutions have traditionally been managed in the **Power Apps maker portal**, where you can build and customize apps, Dataverse tables, flows, and other Power Platform components.
 
-    ![Solutions available in Power Apps maker portal](./assets/03-solutions-available-in-power-apps-maker-portal.png)
+![Solutions available in Power Apps maker portal](./assets/03-solutions-available-in-power-apps-maker-portal.png)
 
 You can now manage solutions directly from **Solution Explorer** in Copilot Studio without switching to the Power Apps maker portal.
 

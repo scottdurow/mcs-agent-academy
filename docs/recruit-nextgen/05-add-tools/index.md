@@ -154,7 +154,7 @@ Let's begin!
 
    For this use case, where the agent retrieves device information and returns it to the user, set **Site Address** and **List Name** to the SharePoint site and list created in the Course Setup mission.
 
-   Update the **How is this filled?** field from `AI` to `Value`.
+   For the **Site Address** input parameter, update the **How is this filled?** field from `AI` to `Value`.
 
    Then select the **Value** drop-down field and select the **New** button.
 
