@@ -4,7 +4,7 @@ lastUpdated: false
 
 # Welcome Recruit
 
-![Copilot Studio Agent Academy Recruit](../../images/banner_recruit.png)
+![Copilot Studio Agent Academy Recruit course banner](../../images/banner_recruit.png)
 
 **Welcome, Recruit.**  
 Your mission—should you choose to accept it—is to master the art of building agents using **Microsoft Copilot Studio**.
@@ -49,9 +49,9 @@ Already know where you're headed? Jump straight to a mission.
 | `00` | 🧰 [Course Setup](/recruit/00-course-setup/) | 🧰 [Course Setup](/recruit-nextgen/00-course-setup/) |
 | `01` | 🧠 [Introduction to Agents](/recruit/01-introduction-to-agents/) | 🧠 [Introduction to Agents](/recruit-nextgen/01-introduction-to-agents/) |
 | `02` | 🛠️ [Copilot Studio Fundamentals](/recruit/02-copilot-studio-fundamentals/) | 🛠️ [Copilot Studio Fundamentals](/recruit-nextgen/02-copilot-studio-fundamentals/) |
-| `03` | 👩‍💻 [Create a Declarative Agent](/recruit/03-create-a-declarative-agent-for-M365Copilot/) | 🧩 [Creating a Solution](/recruit-nextgen/03-creating-a-solution/) |
+| `03` | 👩‍💻 [Deploy a Declarative Agent](/recruit/03-create-a-declarative-agent-for-M365Copilot/) | 🧩 [Creating a Solution](/recruit-nextgen/03-creating-a-solution/) |
 | `04` | 🧩 [Creating a Solution](/recruit/04-creating-a-solution/) | ✍️ [Build with the GitHub Copilot Harness](/recruit-nextgen/04-build-a-custom-agent/) |
-| `05` | 🚀 [Get Started with Pre-Built Agents](/recruit/05-using-prebuilt-agents/) | 🪪 [Add a Tool](/recruit-nextgen/05-add-tools/) |
+| `05` | 🚀 [Using a Pre-Built Agent](/recruit/05-using-prebuilt-agents/) | 🪪 [Add a Tool](/recruit-nextgen/05-add-tools/) |
 | `06` | ✍️ [Build a Custom Agent](/recruit/06-create-agent-from-conversation/) | 🧠 [Add Skills](/recruit-nextgen/06-add-skills/) |
 | `07` | 🧠 [Add a Topic with Triggers](/recruit/07-add-new-topic-with-trigger/) | 🔁 [Automate with Workflows](/recruit-nextgen/07-automate-with-workflows/) |
 | `08` | 🪪 [Enhance with Adaptive Cards](/recruit/08-add-adaptive-card/) | 📢 [Publish Your Agent](/recruit-nextgen/08-publish-your-agent/) |

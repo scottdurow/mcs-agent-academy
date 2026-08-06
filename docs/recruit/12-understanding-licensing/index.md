@@ -17,7 +17,7 @@ products:
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-03-11
+last-edited-date: 2026-08-06
 ---
 # 🚨 Mission 12: Understanding Licensing {#mission-12-understanding-licensing}
 
@@ -33,7 +33,7 @@ Think of it as your cost-control briefing.
 
 ## 🔎 Objectives {#objectives}
 
-In this lesson, you'll learn:
+In this mission, you’ll learn:
 
 1. How Copilot Studio licensing works using the Copilot Credits consumption model
 1. How Copilot Credits are acquired through pay-as-you-go, capacity packs, and prepaid commitments
@@ -183,20 +183,20 @@ Before you launch an agent:
 
 ## 🏁 Mission Complete {#mission-complete}
 
-You now understand:
+You’ve successfully:
 
-- How **Copilot Credits** work and what changed in September 2025
-- What Microsoft 365 Copilot licenses include and where they stop
-- How to choose between capacity packs, pay-as-you-go, and the Pre-Purchase Plan
-- What each feature type costs and how overage enforcement works
+- **Copilot Credits**: Explained how agent usage is measured
+- **License coverage**: Identified what Microsoft 365 Copilot licenses include
+- **Purchasing options**: Compared capacity packs, pay-as-you-go, and prepaid commitments
+- **Cost planning**: Evaluated how agent features and scenarios affect consumption
 
-With this in place, you can design agents with cost in mind from the start, not after the bill arrives.
+Next, continue to [Recruit Course Completion](../course-completion-badges-recruit/index.md) to secure your badge.
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-- 📄 [Copilot Studio Licensing & Billing](https://learn.microsoft.com/microsoft-copilot-studio/billing-licensing?WT.mc_id=power-170631-apdunnam)
-- 📄 [Billing Rates and Management](https://learn.microsoft.com/microsoft-copilot-studio/requirements-messages-management?WT.mc_id=power-170631-apdunnam)
-- 📘 [Power Platform Licensing Guide (November 2025)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/bizapps/Power-Platform-Licensing-Guide-November-2025.pdf?WT.mc_id=power-170631-apdunnam)
-- 📊 [Message Management & Capacity Monitoring](https://learn.microsoft.com/power-platform/admin/manage-copilot-studio-messages-capacity?WT.mc_id=power-170631-apdunnam)
+- [Copilot Studio licensing and billing](https://learn.microsoft.com/microsoft-copilot-studio/billing-licensing?WT.mc_id=power-170631-apdunnam)
+- [Billing rates and management](https://learn.microsoft.com/microsoft-copilot-studio/requirements-messages-management?WT.mc_id=power-170631-apdunnam)
+- [Power Platform Licensing Guide (November 2025)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/bizapps/Power-Platform-Licensing-Guide-November-2025.pdf?WT.mc_id=power-170631-apdunnam)
+- [Message management and capacity monitoring](https://learn.microsoft.com/power-platform/admin/manage-copilot-studio-messages-capacity?WT.mc_id=power-170631-apdunnam)
 
 <analytics-tag section="recruit" mission="12-understanding-licensing" />

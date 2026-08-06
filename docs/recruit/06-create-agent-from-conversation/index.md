@@ -11,11 +11,14 @@ codename: OPERATION AGENT FORGE
 time: 75
 tags:
   - declarative-agents
-products: [copilot-studio, sharepoint, microsoft-learn]
+products:
+    - copilot-studio
+    - sharepoint
+    - microsoft-learn
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-02-19
+last-edited-date: 2026-08-06
 ---
 # 🚨 Mission 06: Create a custom agent using natural language with AI and grounding it with your data {#mission-06-create-a-custom-agent-using-natural-language-with-ai-and-grounding-it-with-your-data}
 
@@ -23,11 +26,11 @@ last-edited-date: 2026-02-19
 
 🎥 **Watch the Walkthrough**
 
-[![Create custom agent video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=qZTtQVncGFg "Watch the walkthrough on YouTube")
+[![Video walkthrough: Create a Custom Agent](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=qZTtQVncGFg "Watch the walkthrough on YouTube")
 
 ## 🎯 Mission Brief {#mission-brief}
 
-Welcome back, Agent Maker. This mission puts you in the command seat of the most powerful capability in Copilot Studio - creating a custom agent from scratch using only natural language… and supercharging it with your own data.
+Welcome back, Recruit. This mission puts you in control of a powerful Copilot Studio capability: creating a custom agent from natural language and grounding it with your own data.
 
 This isn’t just another chatbot. You’re building a knowledge empowered digital coworker - one that can reason, respond, and reference real enterprise info.
 
@@ -35,18 +38,18 @@ Your weapon of choice? Natural language. Your mission? Design, train, and test a
 
 Let’s build your agent from the ground up.
 
-> [!NOTE]
-> If your Copilot Studio screen looks different from the screenshots in this lesson, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
+> [!IMPORTANT] This mission uses the classic Copilot Studio experience
+> If your Copilot Studio screen looks different from the screenshots in this mission, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
 
 ## 🔎 Objectives {#objectives}
 
 In this mission, you’ll learn:
 
-1. Understanding what custom agents are and how they differ from pre-built templates
-1. Creating agents using natural language prompts with AI
-1. Grounding agents with enterprise knowledge sources including SharePoint, documents, and websites
-1. Learning about generative orchestration and how agents dynamically search and respond using multiple data sources
-1. Building and testing a fully functional IT helpdesk agent that can answer questions from your own data
+1. What custom agents are and how they differ from pre-built templates
+1. How to create an agent using a natural-language description
+1. How to ground an agent with SharePoint, documents, and websites
+1. How generative orchestration searches multiple data sources
+1. How to build and test an IT helpdesk agent grounded in enterprise data
 
 ## 🤔 What is a _custom_ agent? {#what-is-a-custom-agent}
 
@@ -255,15 +258,15 @@ Let's begin!
 
 - **SharePoint site**
 
-We'll be using the **Contoso IT** SharePoint site from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
+We'll be using the **Contoso IT** SharePoint site from [Mission 00 - Course Setup - Step 5: Create new SharePoint site](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
 
-If you have not set up the **Contoso IT** SharePoint site, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
+If you have not set up the **Contoso IT** SharePoint site, return to [Mission 00 - Course Setup - Step 5: Create new SharePoint site](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
 
 - **Solution**
 
-We'll be using the **Contoso Helpdesk Agent** solution from [Lesson 04 - Creating a Solution for your agent](../04-creating-a-solution/index.md#41-create-a-solution-publisher).
+We'll be using the **Contoso Helpdesk Agent** solution from [Mission 04 - Create a new Solution](../04-creating-a-solution/index.md#42-create-a-new-solution).
 
-If you have not set up the **Contoso Agent** solution, please head back to [Lesson 04 - Creating a Solution for your agent](../04-creating-a-solution/index.md#41-create-a-solution-publisher).
+If you have not set up the **Contoso Helpdesk Agent** solution, return to [Mission 04 - Create a new Solution](../04-creating-a-solution/index.md#42-create-a-new-solution).
 
 ### 6.1 Use natural language to create an agent with AI
 
@@ -303,13 +306,13 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
     ![Enter prompt](./assets/6.1_01_Prompt.png)
 
-1. We'll double check the solution that our agent will be created in, is the solution we created and selected as the preferred solution in [Lesson 04 - Create a new solution](../04-creating-a-solution/index.md#42-create-a-new-solution).
+1. Confirm that the agent will be created in the solution you selected as preferred in [Mission 04 - Create a new Solution](../04-creating-a-solution/index.md#42-create-a-new-solution).
 
-    Select the **wheel cog** icon and the **Agent Settings** modal will appear and we can see our solution created from earlier is selected by default. This is due to selecting our solution as the preferred solution in [Lesson 04 - Create a new solution](../04-creating-a-solution/index.md#42-create-a-new-solution).
+    Select **Agent Settings** (gear icon). In the dialog, confirm that the solution from Mission 04 is selected by default.
 
     ![View of Agent Settings](./assets/6.1_02_AgentSettings.png)
 
-1. Select **Cancel.** Submit the prompt description and Copilot Studio will begin provisioning our agent.
+1. Select **Cancel**. Submit the prompt description, and Copilot Studio will begin provisioning the agent.
 
 1. Once the agent has been provisioned, you'll see a confirmation appear. Notice how AI automatically generated the **name**, **description** and **instructions** for your agent. The orchestration mode is enabled by default (found in **Settings**) and the default model is used for the response model of the agent.
 
@@ -327,7 +330,7 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
     ![Connected Agents, Topics and Suggested Prompts sections](./assets/6.1_05_ConnectedAgentsTopicsSuggestedPrompts.png)
 
-1. We'll next double check our agent has correctly been created in the `Contoso Helpdesk Agent` solution. Select **Settings** on the upper right.
+1. Confirm that the agent was created in the `Contoso Helpdesk Agent` solution. Select **Settings** in the Copilot Studio header.
 
     ![Select Settings](./assets/6.1_06_AgentSettings.png)
 
@@ -371,7 +374,7 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
     ![Disable Web Search](./assets/6.1_14_DisableWebSearch.png)
 
-1. Let's now test our newly created agent. In the **Testing** pane on the right hand side, select the **new test session** icon.
+1. Let's now test our newly created agent. In the **Testing** pane, select **Start a new test session**.
 
     ![Select start new test session in testing pane](./assets/6.1_15_StartNewTestSession.png)
 
@@ -383,7 +386,7 @@ If you have not set up the **Contoso Agent** solution, please head back to [Less
 
     ![Test newly created agent](./assets/6.1_16_EnterQuestion.png)
 
-1. The Activity map will then load which shows us in real-time what path the agent is processing. In this scenario, our agent has understood the question and searches the knowledge sources using the two website URLs.
+1. Review the **Activity map**, which shows the path the agent processes in real time. In this scenario, the agent understands the question and searches the two website knowledge sources.
 
     Our agent responds with answers that are outlined as numbered step-by-step instructions, as defined in the instructions. The response has references to the [https://support.microsoft.com](https://support.microsoft.com) website that the agent formed its response from. This enables users to verify the source of the answer.
 
@@ -393,13 +396,13 @@ Congratulations! You've built your first custom agent by starting with a descrip
 
 ### 6.2 Add an internal knowledge source using a SharePoint site
 
-Previously, we added a public website as an external knowledge source for our agent during the conversational creation experience. We're now going to add an internal knowledge source using a SharePoint site. This will be the SharePoint site you created during [Lesson 00 - Course Setup](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
+Previously, we added a public website as an external knowledge source for our agent during the conversational creation experience. We're now going to add an internal knowledge source using the SharePoint site you created during [Mission 00 - Course Setup](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
 
 1. In the **Knowledge** section, select **+ Add knowledge** and select **SharePoint**.
 
     ![Select SharePoint](./assets/6.2_01_SelectSharePoint.png)
 
-1. Paste in the **address of the SharePoint site** created in [Lesson 00 - Course Setup](../00-course-setup/index.md#step-4-create-new-sharepoint-site) in the SharePoint URL field and select **Add**.
+1. In the **SharePoint URL** field, paste the address of the site created in [Mission 00 - Course Setup](../00-course-setup/index.md#step-5-create-new-sharepoint-site), then select **Add**.
 
     Update the **name** of the SharePoint site to `Contoso IT` and select **Add to agent**.
 
@@ -491,24 +494,25 @@ The agent can answer multiple questions in a single message, and search the know
 
 ## ✅ Mission Complete {#mission-complete}
 
-Congratulations! 👏🏻 You've learnt how to create your own custom agent by starting with a description. Your custom agent can chat over your data from four different knowledge sources 🙌🏻
+You’ve successfully:
 
-This is the end of **Lab 06 - Create an agent with AI**, select the link below to move to the next lesson. Your custom agent created in this lab will be used in the next lesson's lab.
+- **Natural-language authoring**: Created a custom agent from a description
+- **Enterprise grounding**: Added SharePoint, file, and public website knowledge sources
+- **Generative orchestration**: Configured the agent to search across multiple sources
+- **Testing**: Verified generated answers against their source references
 
-⏭️ [Move to **Add a new Topic with trigger** lesson](../07-add-new-topic-with-trigger/index.md)
-
-Welcome to the elite. You now know how to forge digital agents that speak your language, reference your data, and support your team. Keep going—your mission’s just getting started.
+Next, continue to [Mission 07: Add a Topic with Triggers](../07-add-new-topic-with-trigger/index.md).
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Quickstart: Create and deploy an agent](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-get-started?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-172617-ebenitez)
+- [Quickstart: Create and deploy an agent](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-get-started?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext/?WT.mc_id=power-172617-ebenitez)
 
-🔗 [Create and delete agents](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-172617-ebenitez)
+- [Create and delete agents](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-172617-ebenitez)
 
-🔗 [Key concepts - Authoring agents](https://learn.microsoft.com/microsoft-copilot-studio/authoring-fundamentals/?WT.mc_id=power-172617-ebenitez)
+- [Key concepts: Authoring agents](https://learn.microsoft.com/microsoft-copilot-studio/authoring-fundamentals/?WT.mc_id=power-172617-ebenitez)
 
-📺 [Create a custom agent using natural language](https://aka.ms/ai-in-action/copilot-studio/ep1)
+- [Create a custom agent using natural language](https://aka.ms/ai-in-action/copilot-studio/ep1)
 
-📺 [Add knowledge to your agents](https://aka.ms/ai-in-action/copilot-studio/ep2)
+- [Add knowledge to your agents](https://aka.ms/ai-in-action/copilot-studio/ep2)
 
 <analytics-tag section="recruit" mission="06-create-agent-from-conversation" />

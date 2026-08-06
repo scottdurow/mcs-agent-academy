@@ -18,7 +18,7 @@ products:
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-03-16
+last-edited-date: 2026-08-06
 ---
 
 # 🚨 Mission 00: Course Setup {#mission-00-course-setup}
@@ -27,23 +27,22 @@ last-edited-date: 2026-03-16
 
 ## 🎯 Mission Brief {#mission-brief}
 
-Welcome to the first mission of your training as a Copilot Studio Agent.  
-Before you can start building your first AI agent, you need to establish your **field-ready development environment**.
+Welcome, Recruit. Before you can start building your first AI agent, you need to establish your **field-ready development environment**.
 
 This briefing outlines the systems, access credentials, and setup steps required to successfully operate in the Microsoft 365 ecosystem.
 
-> [!IMPORTANT] This lesson uses the classic Copilot Studio experience
-> Microsoft Copilot Studio is rolling out a new authoring experience. The screenshots and steps in this lesson use the **classic experience**. If your screen looks different, turn off **New Experience** in the upper-right corner before you continue. Refreshed instructions for the new experience are planned, but this lesson remains valid in the classic experience.
+> [!IMPORTANT] This mission uses the classic Copilot Studio UI
+> Microsoft Copilot Studio is rolling out a new user experience (UI). The screenshots and steps in this mission use the **classic experience**. If your screen looks different, turn off **New Experience** in the upper-right corner before you continue.
 
 ## 🔎 Objectives {#objectives}
 
-Your mission includes:
+In this mission, you’ll learn:
 
-1. Getting a Microsoft 365 account  
-1. Gaining access to Microsoft Copilot Studio  
-1. (Optional) Securing a Microsoft 365 Copilot license for production publishing
-1. Creating a developer environment as your Copilot Studio environment to build in  
-1. Creating a SharePoint site to serve as your data source in later missions
+1. How to obtain a Microsoft 365 account
+1. How to gain access to Microsoft Copilot Studio
+1. When a Microsoft 365 Copilot license is needed for production publishing
+1. How to create a developer environment for Copilot Studio
+1. How to create a SharePoint site that later missions use as a data source
 
 > [!IMPORTANT]
 > **Already have access to Microsoft 365, Power Platform, and Copilot Studio?**
@@ -64,31 +63,34 @@ Before you begin, ensure you have:
 
 Copilot Studio resides within Microsoft 365, so you need a Microsoft 365 account to access it. You can either use an existing account if you have one or follow these steps to get an appropriate license:
 
-1. **Acquire a Paid Microsoft 365 Business Subscription**  
-   1. Go to the [Microsoft 365 Business Plans and Pricing Page](https://www.microsoft.com/microsoft-365/business/microsoft-365-plans-and-pricing)
-   1. The cheapest option to get you started is the Microsoft 365 Business Basic plan. Select `Try for free` and walk through the guided form to fill in your subscription and account details and payment information.
-   ![Microsoft 365 Signup](./images/m365-freetrial.png)
-   1. Once you have your new account, login.
+**Acquire a paid Microsoft 365 Business subscription:**
+
+1. Go to the [Microsoft 365 Business Plans and Pricing page](https://www.microsoft.com/microsoft-365/business/microsoft-365-plans-and-pricing).
+1. Select the Microsoft 365 Business Basic plan, then select **Try for free**. Complete the guided form with your subscription, account, and payment information.
+
+    ![Microsoft 365 Business Basic trial signup page](./images/m365-freetrial.png)
+
+1. Sign in with your new account after setup is complete.
 
 > [!TIP]
-> If you plan to publish agents into Microsoft 365 Copilot Chat or connect to organizational data (SharePoint, OneDrive, Dataverse), a Microsoft 365 Copilot license is required. This is an add-on license which you can learn more about [on the licensing site](https://www.microsoft.com/microsoft-365/copilot#plans)
+> If you plan to publish agents into Microsoft 365 Copilot Chat or connect to organizational data (SharePoint, OneDrive, Dataverse), a Microsoft 365 Copilot license is required. Learn more about this add-on license on the [Microsoft 365 Copilot plans page](https://www.microsoft.com/microsoft-365/copilot#plans).
 
 ## Step 2: Start a Copilot Studio Trial
 
-Once you have your Microsoft 365 Tenant, you need to get access to Copilot Studio. You can get a free 30 day trial by following these steps:
+Once you have your Microsoft 365 tenant, you need to get access to Copilot Studio. You can get a free 30-day trial by following these steps:
 
-1. Navigate to [aka.ms/TryCopilotStudio](https://aka.ms/TryCopilotStudio).  
-1. Enter the email address from the new account you configured in the previous step and select `Next`.  
+1. Navigate to the [Copilot Studio trial signup page](https://aka.ms/TryCopilotStudio).
+1. Enter the email address from the new account you configured in the previous step and select **Next**.
 
-    ![Microsoft 365 Signup](./images/mcs-trial-screen.png)
+    ![Copilot Studio free trial welcome screen](./images/mcs-trial-screen.png)
 
-1. It should recognize your account. Select `Sign In`.
+1. Confirm that Copilot Studio recognizes your account, then select **Sign in**.
 
-    ![Microsoft 365 Signup](./images/mcs-trial-signin.png)  
+    ![Microsoft account sign-in for Copilot Studio](./images/mcs-trial-signin.png)
 
-1. Select `Start Free Trial`.
+1. Select **Start free trial**.
 
-    ![Microsoft 365 Signup](./images/mcs-start-trial.png)
+    ![Start free Copilot Studio trial page](./images/mcs-start-trial.png)
 
 > [!INFO] Trial Notes
 >
@@ -110,12 +112,12 @@ Using the same Microsoft 365 tenant in Step 1, sign up for a Power Apps Develope
 
     ![Sign up for Power Apps Developer Plan](images/0.3_01_SignUp.png)
 
-1. After signing up for the Developer Plan, you'll be redirected to [Power Apps](https://make.powerapps.com/). The environment uses your name, for example **Adele Vance's environment**. If there's already an environment with that name, the developer new environment is named **Adele Vance's (1)** environment.
+1. After signing up for the Developer Plan, you'll be redirected to [Power Apps](https://make.powerapps.com/). The environment uses your name, for example **Adele Vance's environment**. If there's already an environment with that name, the new developer environment is named **Adele Vance's (1)** environment.
 
     Use this developer environment in Copilot Studio when completing the labs.
 
 > [!NOTE]
-> If you are using an existing Microsoft 365 account and did not create one in Step 1, for example - using your own account in your work organization, your IT administrator (or the equivalent) team who manages your tenant/environments might have turned off the sign up process. In this case, please contact your administrator, or create a test tenant as per Step 1.
+> If you are using an existing Microsoft 365 account and did not create one in Step 1, for example, using your own account in your work organization, your IT administrator (or the equivalent) team who manages your tenant/environments might have turned off the sign-up process. In this case, please contact your administrator, or create a test tenant as per Step 1.
 >
 > If you are using an existing environment from your organization, ensure it is **not** a managed environment. Managed environment restrictions can prevent certain features — such as adding Power Automate flows as agent tools — from working correctly.
 
@@ -125,63 +127,63 @@ The Copilot Studio trial recently changed and it does not allow publishing of ag
 
 First, you need a security group to hold everyone you want to be able to publish. This is what you'll associate with the Copilot Studio Authors role.
 
-1. Navigate to [admin.cloud.microsoft](https://admin.cloud.microsoft)
+1. Navigate to the [Microsoft 365 admin center](https://admin.cloud.microsoft).
 1. Expand the **Teams & groups** tab and select **Active teams & groups**
 
-    ![Teams and groups](images/admin-teams-groups.png)
+    ![Teams and groups in admin center](images/admin-teams-groups.png)
 
 1. Select the **Security groups** tab and select **Add a security group**
 
-    ![Security Group](images/admin-securitygroup-tab.png)
+    ![Security groups tab in admin center](images/admin-securitygroup-tab.png)
 
 1. Give the security group a name like **AgentCreators** and select the **Next** button.
 
-    ![Security Group Name](images/admin-securitygroup-name.png)
+    ![Enter a name for security group](images/admin-securitygroup-name.png)
 
 1. Verify the name and select **Create group**
 
-    ![Create group](images/admin-creategroup.png)
+    ![Create the configured security group](images/admin-creategroup.png)
 
 1. Select your newly created security group from the list
 
-    ![Select group](images/admin-selectgroup.png)
+    ![Select the newly created security group](images/admin-selectgroup.png)
 
 1. Select the **members** tab and select **view all and manage members**
 
-    ![Add members](images/admin-viewmembers.png)
+    ![Open members for the security group](images/admin-viewmembers.png)
 
 1. Select **add members**
 
-    ![Add members](images/admin-addmember.png)
+    ![Add members to the security group](images/admin-addmember.png)
 
-1. Select your name from the list and click **Add** then **Add** again
+1. Select your name from the list and select **Add** then **Add** again
 
-    ![Select yourself](images/admin-selectname.png)
+    ![Select your account as group member](images/admin-selectname.png)
 
-1. Navigate to **admin.powerplatform.com**
+1. Navigate to the [Power Platform admin center](https://admin.powerplatform.com).
 1. Select the **manage** tab
 
-    ![Manage](images/pp-admin-managetab.png)
+    ![Manage tab in Power Platform admin center](images/pp-admin-managetab.png)
 
 1. Select the **tenant settings** tab
 
-    ![Tenant Settings](images/pp-admin-tenantsettings.png)
+    ![Tenant settings in Power Platform admin center](images/pp-admin-tenantsettings.png)
 
-1. Select the ***copilot studio authors** option
+1. Select the **Copilot Studio authors** option
 
-    ![Authors](images/pp-authors.png)
+    ![Copilot Studio authors security settings](images/pp-authors.png)
 
-1. Select the **pencil icon**
+1. Select **Edit** (pencil icon) for the **Copilot Studio authors** setting.
 
-    ![Pencil](images/pp-pencil.png)
+    ![Edit Copilot Studio author security settings](images/pp-pencil.png)
 
-1. Select your security group from the list and click **Done**
+1. Select your security group from the list and select **Done**
 
-    ![Select Security Group](images/pp-securitygroup.png)
+    ![Select security group for Copilot Studio authors](images/pp-securitygroup.png)
 
-1. Verify your security group is there and click **Save**
+1. Verify your security group is there and select **Save**
 
-    ![Save](images/pp-save.png)
+    ![Save Copilot Studio author security settings](images/pp-save.png)
 
 ## 🔧 Required Setup (Everyone) {#required-setup-everyone}
 
@@ -189,59 +191,57 @@ The following steps are required regardless of whether you're using a trial or a
 
 ## Step 5: Create new SharePoint site
 
-A new SharePoint site needs to be created  which will be used in [Lesson 06](../06-create-agent-from-conversation/index.md#62-add-an-internal-knowledge-source-using-a-sharepoint-site).
+A new SharePoint site needs to be created, which will be used in [Mission 06](../06-create-agent-from-conversation/index.md) when you add a SharePoint knowledge source.
 
-1. Select the waffle icon on the top left hand side of Microsoft Copilot Studio to view the menu. Select SharePoint from the menu.
+1. In [Power Apps](https://make.powerapps.com/) or the [Microsoft 365 admin center](https://admin.cloud.microsoft), select **App launcher** (grid icon) to open the app menu, then select **SharePoint**.
 
-    ![Select SharePoint](images/0.4_01_SelectSharePoint.png)
+    ![Select SharePoint in Power Apps](images/00-select-sharepoint-in-power-apps.png)
 
-1. SharePoint will load. Select **+ Create  site** to create a new SharePoint site.
+    ![Select SharePoint in Microsoft 365 Admin Center](images/00-select-sharepoint-in-microsoft-365-admin-center.png)
 
-    ![Create site](images/0.4_02_CreateSite.png)
+1. After SharePoint loads, select **Build** in the left navigation menu, then select **Site** to create a new SharePoint site.
 
-1. A dialog will appear to guide you in creating a new SharePoint site. Select **Team site**.
+    ![Create a new SharePoint site](images/00-create-a-new-sharepoint-site.png)
 
-    ![Team site](images/0.4_03_SelectTeamOrCommunicationSite.png)
+1. A dialog appears to guide site creation. Under the **Team site** option, select **IT help desk**.
 
-1. In the next step, a list of Microsoft templates will load by default. Scroll down and select the **IT help desk** template.
+    ![Select IT help desk site template](images/00-select-it-help-desk-site-template.png)
 
-    ![IT help desk template](images/0.4_04_SelectITHelpDeskTemplate.png)
+1. Select **Use template** to create a new SharePoint site from the IT help desk template.
 
-1. Select **Use template** to create a new SharePoint site using the IT help desk template.
+    ![Use the IT help desk template](images/00-use-the-it-help-desk-template.png)
 
-    ![Use template](images/0.4_05_SelectUseTemplate.png)
+1. Enter your site details. Example:
 
-1. Enter information for your site. The following is an example:
+    | Field            | Value                        |
+    | ---------------- | ---------------------------- |
+    | Site name        | Contoso IT                   |
+    | Site description | Copilot Studio Agent Academy |
+    | Site address     | ContosoIT                    |
 
-    | Field | Value |
-    | --- | --- |
-    | Site name | Contoso IT |
-    | Site description | Copilot Studio for Beginners |
-    | Site address | ContosoIT |
+    Select **Create site**.
 
-    ![Site information](images/0.4_06_SiteDetails.png)
+    ![Configure the new SharePoint site details](images/00-configure-the-new-sharepoint-site-details.png)
 
-1. In the final step, a language can be selected for the SharePoint site. By default it will be **English**. Leave the Language as **English** and select **Create site**.
+1. After selecting **Create site**, SharePoint may take a few seconds to finish provisioning. In the meantime, you can optionally add users by entering email addresses in the **Add members** field.
 
-    ![Language and other options](images/0.4_07_LanguageOtherOptions.png)
+    Once you see confirmation that the site is ready, select **Go to site**.
 
-1. The SharePoint site will provision for the next few seconds. In the mean time, you can choose to add other users to your site by entering their email address in the **Add members** field. When completed, select **Finish**.
+    ![Open the newly created SharePoint site](images/00-open-the-newly-created-sharepoint-site.png)
 
-    ![Select finish](images/0.4_08_SelectFinish.png)
-
-1. The SharePoint site home page will next load. **Copy** the SharePoint site URL.
+1. After the SharePoint site home page loads, **copy** the SharePoint site URL.
 
 1. This template provides pages with sample data about various IT policies and two sample lists (Tickets and Devices).
 
 ### Use Devices SharePoint list
 
-We will use the **Devices** list for in Mission 07.
+We will use the **Devices** list in Mission 07.
 
 ![Devices list](./images/devices-list.png)
 
 ### Add new column
 
-Scroll to the far right in the list and select the **+ Add column** button.  
+In the **Devices** list, navigate to the end of the columns and select **+ Add column**.
 
 ![Add column](./images/add-column.png)
 
@@ -270,20 +270,26 @@ When adding sample data, make sure that the following fields are filled out:
 
 | Device | URL |
 | ------ | --- |
-| Surface Laptop 13 | [https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Laptop-13.png](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Laptop-13.png) |
-| Surface Laptop 15 | [https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Laptop-15.png](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Laptop-15.png) |
-| Surface Pro | [https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Pro-12.png](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Pro-12.png) |
-| Surface Studio | [https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Studio.png](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Studio.png) |
+| Surface Laptop 13 | [Surface Laptop 13 image](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Laptop-13.png) |
+| Surface Laptop 15 | [Surface Laptop 15 image](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Laptop-15.png) |
+| Surface Pro | [Surface Pro image](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Pro-12.png) |
+| Surface Studio | [Surface Studio image](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/00-course-setup/images/device-images/Surface-Studio.png) |
 
 ## ✅ Mission Complete {#mission-complete}
 
 You’ve successfully:
 
-- Set up a Microsoft 365 dev environment  
-- Activated your Copilot Studio trial  
-- Created a SharePoint site for grounding agents  
-- Populated the Devices list for use in future missions
+- **Development environment**: Set up a Microsoft 365 developer environment
+- **Copilot Studio access**: Activated a Copilot Studio trial
+- **SharePoint site**: Created a site for grounding agents
+- **Device data**: Populated the Devices list for use in later missions
 
-You're officially cleared to begin your **Recruit-level agent training** in [Lesson 01](../01-introduction-to-agents/index.md).  
+Next, continue to [Mission 01: Introduction to Agents](../01-introduction-to-agents/index.md).
+
+## 📚 Tactical Resources {#tactical-resources}
+
+- [Power Apps Developer Plan](https://learn.microsoft.com/power-platform/developer/plan)
+- [Copilot Studio licensing](https://learn.microsoft.com/microsoft-copilot-studio/requirements-licensing-subscriptions)
+- [Create a team site in SharePoint](https://support.microsoft.com/office/create-a-team-site-in-sharepoint-ef10c1e7-15f3-42a3-98aa-b5972711777d)
 
 <analytics-tag section="recruit" mission="00-course-setup" />

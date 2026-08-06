@@ -18,7 +18,7 @@ products:
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-01-14
+last-edited-date: 2026-08-06
 ---
 # 🚨 Mission 11: Publish Your Agent {#mission-11-publish-your-agent}
 
@@ -26,28 +26,28 @@ last-edited-date: 2026-01-14
 
 🎥 **Watch the Walkthrough**
 
-[![Publish agent video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=eVZmljhYlSI "Watch the walkthrough on YouTube")
+[![Video walkthrough: Publish Your Agent](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=eVZmljhYlSI "Watch the walkthrough on YouTube")
 
 ## 🎯 Mission Brief {#mission-brief}
 
-After completing a series of challenging modules, Agent Maker, you're now ready for your most critical step yet: publishing your agent. It’s time to make your creation available to users across Microsoft Teams and Microsoft 365 Copilot.
+Welcome back, Recruit. After building and testing your agent, you’re ready to publish it for users in Microsoft Teams and Microsoft 365 Copilot.
 
 Your agent—equipped with a clear mission, powerful tools, and access to key knowledge sources—is ready to serve. Using Microsoft Copilot Studio, you deploy your agent so it can start assisting real users, right where they work.
 
 Let’s launch your agent into action.
 
-> [!NOTE]
-> If your Copilot Studio screen looks different from the screenshots in this lesson, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
+> [!IMPORTANT] This mission uses the classic Copilot Studio experience
+> If your Copilot Studio screen looks different from the screenshots in this mission, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
 
 ## 🔎 Objectives {#objectives}
 
-📖 This lesson covers:
+In this mission, you’ll learn:
 
-1. Why it's important to publish your agent
-1. What happens when you publish your agent
-1. How to add a channel (Microsoft Teams & Microsoft 365 Copilot)
+1. Why publishing is required to make agent updates available
+1. What happens when you publish an agent
+1. How to add Microsoft Teams and Microsoft 365 Copilot as a channel
 1. How to add the agent in Microsoft Teams
-1. How to make the agent available in Microsoft Teams for your whole organization
+1. How to make the agent available across your organization
 
 ## 🚀 Publish an agent {#publish-an-agent}
 
@@ -64,14 +64,14 @@ Channels determine where your users can access and interact with your agent. Aft
 
 You can add your agent to the following channels:
 
-- **Microsoft Teams and Microsoft 365 Copilot** - Make your agent available in Teams chats and meetings, and within Microsoft 365 Copilot experiences ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams))
-- **Demo website** - Test your agent on a demo website provided by Copilot Studio ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-web-channels))
-- **Custom website** - Embed your agent directly into your own website ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-web-channels))
-- **Mobile app** - Integrate your agent into a custom mobile application ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-custom-application))
-- **SharePoint** - Add your agent to SharePoint sites for document and site assistance ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-sharepoint))
-- **Facebook Messenger** - Connect with users through Facebook's messaging platform ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-facebook))
-- **Power Pages** - Integrate your agent into Power Pages websites ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-power-pages))
-- **Azure Bot Service channels** - Access additional channels including Slack, Telegram, Twilio SMS, and more ([Learn more](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels))
+- **Microsoft Teams and Microsoft 365 Copilot** - Make your agent available in Teams chats and meetings, and within Microsoft 365 Copilot experiences. See [publish an agent to Teams and Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams).
+- **Demo website** - Test your agent on a demo website provided by Copilot Studio. See [connect an agent to web channels](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-web-channels).
+- **Custom website** - Embed your agent directly into your own website. See [connect an agent to a custom website](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-web-channels).
+- **Mobile app** - Integrate your agent into a custom mobile application. See [connect an agent to a mobile app](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-custom-application).
+- **SharePoint** - Add your agent to SharePoint sites for document and site assistance. See [add an agent to SharePoint](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-sharepoint).
+- **Facebook Messenger** - Connect with users through Facebook's messaging platform. See [add an agent to Facebook](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-facebook).
+- **Power Pages** - Integrate your agent into Power Pages websites. See [add an agent to Power Pages](https://learn.microsoft.com/microsoft-copilot-studio/publication-add-bot-to-power-pages).
+- **Azure Bot Service channels** - Access additional channels including Slack, Telegram, Twilio SMS, and more. See [connect an agent to Azure Bot Service channels](https://learn.microsoft.com/microsoft-copilot-studio/publication-connect-bot-to-azure-bot-service-channels).
 
 To add a channel, navigate to the **Channels** tab in your agent and select the channel you want to configure. Each channel has specific setup requirements and may require additional authentication or configuration steps.
 
@@ -106,7 +106,7 @@ Different channels have different user experiences. When building an agent for m
 > [!NOTE]
 > There are some examples of where you can use different logic for different channels. An example of it can be found in the Power Platform Snippets repository:
 >
-> Henry Jammes shared an example of how to show a different adaptive card when the channel is Microsoft Teams. ([Link to example](https://github.com/pnp/powerplatform-snippets/blob/main/copilot-studio/multiple-topics-matched-topic/source/multiple-topics-matched.yaml#L40))
+> Henry Jammes shared an [Adaptive Card channel-logic example](https://github.com/pnp/powerplatform-snippets/blob/main/copilot-studio/multiple-topics-matched-topic/source/multiple-topics-matched.yaml#L40) that shows a different card when the channel is Microsoft Teams.
 
 ## 🧪 Lab 11: Publish your agent to Teams and Microsoft 365 Copilot {#lab-11-publish-your-agent-to-teams-and-microsoft-365-copilot}
 
@@ -145,7 +145,7 @@ Now that all our work on the agent is done, we have to make sure all our work is
 
     In Copilot Studio, it's easy to publish your agent. You can just select the publish button at the top of the agent overview.
 
-    ![Publish Agent overview](./assets/publish.png)
+    ![Agent overview with Publish button](./assets/publish.png)
 
 1. Select the **Publish** button in your agent
 
@@ -163,11 +163,11 @@ Now that all our work on the agent is done, we have to make sure all our work is
 
     ![Notification publish done](./assets/publish-notification.png)
 
-But - we only published the agent, we didn't add it to a channel yet, so lets fix that now!
+The agent is published, but it is not yet available through a channel. Let's fix that now.
 
 ### 11.2 Add the Teams and Microsoft 365 Copilot channel
 
-1. To add the Teams and Microsoft 365 Copilot channel to our agent, we need to select **Channel** in the top navigation of the agent
+1. Select **Channels** in the agent navigation.
 
     ![Channels tab](./assets/channels-tab.png)
 
@@ -181,7 +181,7 @@ But - we only published the agent, we didn't add it to a channel yet, so lets fi
 
     ![Select add channel](./assets/add-channel.png)
 
-    It will take a little while until it's added. After it's added a green notification will appear on the top of the sidebar.
+    It may take a little while to add. When it is ready, a success notification appears at the top of the sidebar.
 
     ![Channel added](./assets/channel-added.png)
 
@@ -251,12 +251,17 @@ There are even more possibilities here. Your admin can change the global setup p
 
 ## ✅ Mission Complete {#mission-complete}
 
-🎉 **Congratulations!** You successfully published your agent and added it to Teams and Microsoft 365 Copilot! Next up is the last mission of the course: Understanding licensing.
+You’ve successfully:
 
-⏭️ [Move to the **Understanding licensing** mission](../12-understanding-licensing/index.md)
+- **Publishing**: Published the latest version of your agent
+- **Channels**: Added Microsoft Teams and Microsoft 365 Copilot
+- **Teams installation**: Added and tested the agent in Microsoft Teams
+- **Organizational availability**: Prepared the agent for admin approval and distribution
+
+Next, continue to [Mission 12: Understanding Licensing](../12-understanding-licensing/index.md).
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Publish channels documentation](https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels)
+- [Publish agents and manage channels](https://learn.microsoft.com/microsoft-copilot-studio/publication-fundamentals-publish-channels)
 
 <analytics-tag section="recruit" mission="11-publish-your-agent" />

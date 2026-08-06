@@ -18,7 +18,7 @@ products:
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-03-13
+last-edited-date: 2026-08-06
 ---
 # 🚨 Mission 01: Introduction to Agents {#mission-01-introduction-to-agents}
 
@@ -26,7 +26,7 @@ last-edited-date: 2026-03-13
 
 🎥 **Watch the Walkthrough**
 
-[![Introduction to Agents video thumbnail](./images/video-thumbnail.jpg)](https://www.youtube.com/watch?v=BhPz_zicUnM "Watch the walkthrough on YouTube")
+[![Video walkthrough: Introduction to Agents](./images/video-thumbnail.jpg)](https://www.youtube.com/watch?v=BhPz_zicUnM "Watch the walkthrough on YouTube")
 
 ## 🎯 Mission Brief {#mission-brief}
 
@@ -109,27 +109,19 @@ In the context of Copilot Studio, the term **agent** can refer to multiple flavo
 1. **Multi-Modal Support:** Copilot studio agents support file uploads and speech conversations.
 1. **Publishing & Distribution:** Once your agent is ready, you can publish it to Microsoft 365 Copilot, embed it on your website or choose from several other deployment channels.
 
-## 🎉 Mission Complete {#mission-complete}
+## ✅ Mission Complete {#mission-complete}
 
-You’ve now completed your introduction to agents and foundational AI concepts. You understand:
+You’ve successfully:
 
-1. **LLMs = The “Brain” of Your Agent**  
-   - Responsible for language understanding and generation.  
+- **Large language models**: Explained how LLMs understand and generate language
+- **Retrieval-augmented generation**: Described how RAG grounds responses in current information
+- **Agent behavior**: Distinguished conversational agents from autonomous agents
+- **Copilot Studio**: Identified how Copilot Studio combines AI, knowledge, tools, and publishing channels
 
-1. **RAG = Real-Time Knowledge Integration**  
-   - Bridges the gap between a static LLM and ever-changing data sources.  
-   - Retrieves and injects relevant documents or records into the LLM prompt.  
-
-1. **Conversational vs. Autonomous**  
-   - **Conversational:** Focus on back and forth dialogue
-   - **Autonomous:** No dialogue required, kicks off from external triggers and performs actions autonomously
-
-Next up, you'll explore the [fundamentals of Copilot Studio](../02-copilot-studio-fundamentals/index.md)!
-
-Stay sharp, Recruit - your AI journey is just beginning!
+Next, continue to [Mission 02: Copilot Studio Fundamentals](../02-copilot-studio-fundamentals/index.md).
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Copilot Studio Documentation Home](https://learn.microsoft.com/microsoft-copilot-studio/)
+- [Copilot Studio documentation](https://learn.microsoft.com/microsoft-copilot-studio/)
 
 <analytics-tag section="recruit" mission="01-introduction-to-agents" />

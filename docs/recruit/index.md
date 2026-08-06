@@ -7,7 +7,7 @@ lastUpdated: false
 
 # Recruit - Standard Harness
 
-![Copilot Studio Agent Academy Recruit](../images/banner_recruit.png)
+![Copilot Studio Agent Academy Recruit course banner](../images/banner_recruit.png)
 
 **Welcome, Recruit.**  
 Your mission—should you choose to accept it—is to master the art of building agents using **Microsoft Copilot Studio**.
@@ -46,9 +46,9 @@ This academy is broken into progressive lessons—each one designed as a field m
 | `00` | 🧰 [Course Setup](/recruit/00-course-setup/) | Set up your dev environment, Copilot Studio trial, and SharePoint site |
 | `01` | 🧠 [Introduction to Agents](/recruit/01-introduction-to-agents/) | Understand conversational AI concepts, LLMs, and autonomous vs. declarative agents |
 | `02` | 🛠️ [Copilot Studio Fundamentals](/recruit/02-copilot-studio-fundamentals/) | Learn the building blocks: knowledge, skills, autonomy |
-| `03` | 👩‍💻 [Create a Declarative Agent](/recruit/03-create-a-declarative-agent-for-M365Copilot/) | Add your own agent to the Microsoft 365 Copilot, grounded in a prompt |
+| `03` | 👩‍💻 [Deploy a Declarative Agent](/recruit/03-create-a-declarative-agent-for-M365Copilot/) | Add your own agent to Microsoft 365 Copilot, grounded in a prompt |
 | `04` | 🧩 [Creating a Solution](/recruit/04-creating-a-solution/) | Package your agent into a reusable solution for environment management |
-| `05` | 🚀 [Get Started with Pre-Built Agents](/recruit/05-using-prebuilt-agents/) | Use and customize a template agent to accelerate setup |
+| `05` | 🚀 [Using a Pre-Built Agent](/recruit/05-using-prebuilt-agents/) | Use and customize a template agent to accelerate setup |
 | `06` | ✍️ [Build a Custom Agent](/recruit/06-create-agent-from-conversation/) | Create a new agent grounded in knowledge sources |
 | `07` | 🧠 [Add a Topic with Triggers](/recruit/07-add-new-topic-with-trigger/) | Use Topics to define custom question/answer paths |
 | `08` | 🪪 [Enhance with Adaptive Cards](/recruit/08-add-adaptive-card/) | Build an Adaptive Card using Power Fx and SharePoint |

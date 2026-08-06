@@ -12,11 +12,13 @@ time: 60
 tags:
   - topics
   - triggers
-products: [copilot-studio, sharepoint]
+products:
+    - copilot-studio
+    - sharepoint
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-02-19
+last-edited-date: 2026-08-06
 ---
 # 🚨 Mission 07: Add new topic with trigger and nodes {#mission-07-add-new-topic-with-trigger-and-nodes}
 
@@ -24,16 +26,16 @@ last-edited-date: 2026-02-19
 
 🎥 **Watch the Walkthrough**
 
-[![Trigger video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=7iPAZaA8nJs "Watch the walkthrough on YouTube")
+[![Video walkthrough: Add a Topic with Triggers](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=7iPAZaA8nJs "Watch the walkthrough on YouTube")
 
-## 🎯  Mission Brief {#mission-brief}
+## 🎯 Mission Brief {#mission-brief}
 
-You’ve built an agent. It listens, learns, and answers questions - but now it’s time to get more tactical. In this mission, you’ll go deep under the hood and teach your agent how to respond to specific prompts with precision.
+Welcome back, Recruit. You’ve built an agent that listens, learns, and answers questions. Now you’ll teach it to respond to specific requests with precision.
 
 With Topics and Triggers, your agent can:
 
-> [!NOTE]
-> If your Copilot Studio screen looks different from the screenshots in this lesson, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
+> [!IMPORTANT] This mission uses the classic Copilot Studio experience
+> If your Copilot Studio screen looks different from the screenshots in this mission, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
 
 - Recognize intent
 
@@ -49,11 +51,11 @@ You’re not just building dialogue, you’re wiring up its decision making cort
 
 In this mission, you’ll learn:
 
-1. Understanding what topics are and their role in creating structured conversations for your agent
-1. Learning the anatomy of topics including trigger phrases and conversation nodes
-1. Exploring different types of conversation nodes and how to use Power Fx for dynamic logic
-1. Creating custom topics from scratch to handle specific user requests and tasks
-1. Building a functional topic that connects to SharePoint data using connectors and tools
+1. What topics are and how they create structured conversations
+1. How triggers and conversation nodes define a topic
+1. How Power Fx adds dynamic logic to conversation nodes
+1. How to create a custom topic for a specific user request
+1. How to connect a topic to SharePoint data
 
 ## 🤔 What is a Topic? {#what-is-a-topic}
 
@@ -200,7 +202,7 @@ This node creates decision points in your agent's conversation flow by checking 
 - **Purpose** - stores or clears information (called variables) during the conversation.
 - **Example** - saves the date the user selected in the Ask a question node that displays an adaptive card.
 
-This node lets you store and manage information during a conversation, it could be a user's name, answer, or preferences. You can use different types of variables such as text, numbers, or dates, and they can be scoped to a single topic, shared across topics (global), or even pulled from the system or environment.
+This node lets you store and manage information during a conversation, such as a user's name, answer, or preferences. Variables can contain text, numbers, or dates and can be scoped to one topic, shared across topics, or pulled from the system or environment.
 
 > [!TIP]
 > Think of it as a "memory box" that helps your agent remember information and use them as the conversation continues with the user.
@@ -470,9 +472,9 @@ Let's begin!
 
 1. **SharePoint list**
 
-    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
+    We'll be using the **Devices** SharePoint list from [Mission 00 - Course Setup - Step 5: Create new SharePoint site](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
 
-    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
+    If you have not set up the **Devices** SharePoint list, return to [Mission 00 - Course Setup - Step 5: Create new SharePoint site](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
 
 1. **Contoso Helpdesk Agent**
 
@@ -480,7 +482,7 @@ Let's begin!
 
 ### 7.1 Add a new topic from blank
 
-1. Select the **Topics tab** near the name of the agent. If you don't see it visible, select **+6** and you'll see **Topics** listed.
+1. Select the **Topics** tab near the agent name. If **Topics** is not visible, open the tab overflow menu and select **Topics**.
 
     ![Select Topics](assets/7.1_01_Topics.png)
 
@@ -506,13 +508,13 @@ Let's begin!
 
 ### 7.2 Define the trigger inputs and outputs
 
-1. Next, we're going to add a new input variable that generative AI will use in its orchestration to extract the value of the device type from a user's message. Select the **More ellipsis (...)** in the topic and select **Details** to view the topic details pane.
+1. Next, we're going to add a new input variable that generative AI will use in its orchestration to extract the value of the device type from a user's message. In the topic, select **More options** (**...**), then select **Details** to view the topic details pane.
 
     ![Select Topic Details](assets/7.2_01_SelectTopicDetails.png)
 
 1. The **Topic details** pane has now loaded. Select the **Input** tab.
 
-    ![Input tab](assets/7.2_02_SelectInputTab.png)
+    ![Topic details pane with Input tab selected](assets/7.2_02_SelectInputTab.png)
 
 1. Select **Create a new variable**.
 
@@ -546,7 +548,7 @@ Let's begin!
     List of possible values: Laptop, Desktop, Smartphone
     ```
 
-    ![Description](assets/7.2_06_InputDescription.png)
+    ![Input variable description with possible device values](assets/7.2_06_InputDescription.png)
 
 1. Next, let's define our output for the topic. Select the **Output** tab.
 
@@ -572,15 +574,15 @@ Let's begin!
     List of available devices by device type
     ```
 
-    ![Output properties](assets/7.2_09_OutputVariable.png)
+    ![VarAvailableDevices output configured as a table](assets/7.2_09_OutputVariable.png)
 
-1. We've now completed defining the inputs and outputs of the topic. Select the **X icon** to exit from the **Topic details** pane.
+1. We've now completed defining the inputs and outputs of the topic. Select **Close** (X icon) to exit the **Topic details** pane.
 
     ![Exit from topic details pane.](assets/7.2_10_ExitTopicDetailsPane.png)
 
 ### 7.3 Add a tool using a connector
 
-1. Let's next add a node that enables the agent to retrieve the list of devices from the **Devices** SharePoint list. Select the **+ icon** below the trigger.
+1. Let's next add a node that enables the agent to retrieve the list of devices from the **Devices** SharePoint list. Select **Add node** (+) below the trigger.
 
     ![Add a tool](assets/7.3_01_AddNode.png)
 
@@ -592,7 +594,7 @@ Let's begin!
 
     Select **Submit** for the **Get items** SharePoint connector action to be added as a node to the topic.
 
-1. The **Get items** SharePoint connector action is now added to the topic. We can now begin configuring the inputs of the action. Select the **ellipsis (...) icon** and select **Properties**.
+1. The **Get items** SharePoint connector action is now added to the topic. We can now begin configuring the inputs of the action. Select **More options** (**...**), then select **Properties**.
 
     ![Select Properties](assets/7.3_04_GetItemsProperties.png)
 
@@ -607,7 +609,7 @@ Let's begin!
 
     ![Get items description](assets/7.3_05_UpdateDescription.png)
 
-1. Select the **Inputs** tab and select the **Contoso IT** site and the **Devices** list that you setup in [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
+1. Select the **Inputs** tab, then select the **Contoso IT** site and the **Devices** list that you set up in [Mission 00 - Course Setup - Step 5: Create new SharePoint site](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
 
     ![Configure Get items inputs](assets/7.3_06_GetItemsInputs.png)
 
@@ -617,13 +619,13 @@ Let's begin!
 
     we need to apply a filter. This is achieved by entering a filter query with the help of Power Fx. Select the **ellipsis (...) icon**.
 
-    ![Select ellipsis icon](assets/7.3_07_SelectVariable.png)
+    ![Filter Query field with Choose a value control](assets/7.3_07_SelectVariable.png)
 
 1. By default, you'll be in the **Custom** tab. Select the **Formula** tab.
 
     ![Select Formula tab](assets/7.3_08_SelectFormula.png)
 
-1. Select the **expand** icon to enlarge the **Formula** field. Copy and paste the following Power Fx expression.
+1. Select **Expand** to enlarge the **Formula** field. Copy and paste the following Power Fx expression.
 
     We are using the `Concatenate` function to create an expression that will filter
     - the SharePoint column of **Status** equals _Available_
@@ -661,7 +663,7 @@ Let's begin!
 
     ![Close Variable properties pane](assets/7.3_14_ExitVariablePropertiesPane.png)
 
-1. Select the **plus +** icon to insert a new node, select **Variable management** followed by selecting **Set a variable value**.
+1. Select **Add node** (+), then select **Variable management** and **Set a variable value**.
 
     ![Add Set a variable value node](assets/7.3_15_AddSetAVariableValueNode.png)
 
@@ -677,7 +679,7 @@ Let's begin!
 
     ![Select variable value](assets/7.3_18_SelectVariable.png)
 
-1. Select the **Formula** tab and select the **expand** icon to enlarge the **Formula** field.
+1. Select the **Formula** tab, then select **Expand** to enlarge the **Formula** field.
 
     ![Select Formula tab and select expand icon](assets/7.3_19_SelectFormulaTab.png)
 
@@ -721,7 +723,7 @@ Let's begin!
 
     ![Save instructions](assets/7.3_27_SaveUpdatedInstructions.png)
 
-1. We're now going to test our updated agent. Select **Test** on the upper right to display the test pane and **refresh** the test pane. Enter the following message to the agent.
+1. We're now going to test our updated agent. Select **Test** to display the test pane, then select **Refresh**. Enter the following message.
 
     ```text
     I need a laptop
@@ -737,7 +739,7 @@ Let's begin!
 
     ![Response of test](assets/7.3_30_TestResponse.png)
 
-1. One last thing to learn about is viewing the connections used by viewing the _Manage your connections_ page of the agent. Select the **ellipsis (...)** and select **Manage Connection**.
+1. One last thing to learn about is viewing the connections used on the _Manage your connections_ page of the agent. Select **More options** (**...**), then select **Manage Connection**.
 
     ![Manage connection](assets/7.3_31_ManageConnections.png)
 
@@ -748,7 +750,7 @@ Let's begin!
 1. This is where we can see the details of the Get items action and remember the _usage description_ we entered earlier? This is where we'll see the usage description. Select **Close**.
 
     > [!NOTE]
-    > This lets us know what actions are used and the purpose of it. This keeps our connections organized 📁.
+    > This identifies which actions use each connection and explains their purpose, helping you keep connections organized 📁.
 
     ![Usage description](assets/7.3_33_UsedByInformation.png)
 
@@ -756,26 +758,29 @@ Let's begin!
 
 ## ✅ Mission Complete {#mission-complete}
 
-Congratulations! 👏🏻 You've learnt how to add a new topic from scratch, how to add a tool which calls the Get items SharePoint connector action and use Power Fx to filter the response to only return devices where the status equals available and the device type equals laptop. 🙌🏻
+You’ve successfully:
 
-This is the end of **Lab 07 - Add a new topic with conversation nodes**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
+- **Topic design**: Created a topic with inputs, outputs, and conversation nodes
+- **SharePoint connector**: Retrieved device records from the Devices list
+- **Power Fx filtering**: Filtered records by availability and device type
+- **Agent instructions**: Configured the agent to invoke the topic when appropriate
 
-⏭️ [Move to **Enhance user interactions with Adaptive Cards** lesson](../08-add-adaptive-card/index.md)
+Next, continue to [Mission 08: Enhance Topics with Adaptive Cards](../08-add-adaptive-card/index.md).
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Use system topics](https://learn.microsoft.com/microsoft-copilot-studio/authoring-system-topics?mc_id=power-172618-ebenitez)
+- [Use system topics](https://learn.microsoft.com/microsoft-copilot-studio/authoring-system-topics?mc_id=power-172618-ebenitez)
 
-🔗 [Topics in Microsoft Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/guidance/topics-overview?WT.mc_id=power-172618-ebenitez)
+- [Topics in Microsoft Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/guidance/topics-overview?WT.mc_id=power-172618-ebenitez)
 
-🔗 [Set topic triggers](https://learn.microsoft.com/microsoft-copilot-studio/authoring-triggers?WT.mc_id=power-172618-ebenitez)
+- [Set topic triggers](https://learn.microsoft.com/microsoft-copilot-studio/authoring-triggers?WT.mc_id=power-172618-ebenitez)
 
-🔗 [Defining agent topics](https://learn.microsoft.com/microsoft-copilot-studio/guidance/defining-chatbot-topics?WT.mc_id=power-172618-ebenitez)
+- [Defining agent topics](https://learn.microsoft.com/microsoft-copilot-studio/guidance/defining-chatbot-topics?WT.mc_id=power-172618-ebenitez)
 
-🔗 [Create expressions using Power Fx](https://learn.microsoft.com/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172618-ebenitez)
+- [Create expressions using Power Fx](https://learn.microsoft.com/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172618-ebenitez)
 
-📺 [Author topics using natural language](https://aka.ms/ai-in-action/copilot-studio/ep6)
+- [Author topics using natural language](https://aka.ms/ai-in-action/copilot-studio/ep6)
 
-📺 [Add actions to agents using connectors](https://aka.ms/ai-in-action/copilot-studio/ep4)
+- [Add actions to agents using connectors](https://aka.ms/ai-in-action/copilot-studio/ep4)
 
 <analytics-tag section="recruit" mission="07-add-new-topic-with-trigger" />

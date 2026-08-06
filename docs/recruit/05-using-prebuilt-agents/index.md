@@ -18,15 +18,15 @@ products:
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-03-11
+last-edited-date: 2026-08-06
 ---
-# 🧰 Mission 05: Using a Pre-Built Agent   {#mission-05-using-a-pre-built-agent}
+# 🧰 Mission 05: Using a Pre-Built Agent {#mission-05-using-a-pre-built-agent}
 
 <mission-meta />
 
 🎥 **Watch the Walkthrough**
 
-[![Pre-built agent video thumbnail](./images/video-thumbnail.jpg)](https://www.youtube.com/watch?v=NmXsx8WjWuM "Watch the walkthrough on YouTube")
+[![Video walkthrough: Using a Pre-Built Agent](./images/video-thumbnail.jpg)](https://www.youtube.com/watch?v=NmXsx8WjWuM "Watch the walkthrough on YouTube")
 
 ## 🎯 Mission Brief {#mission-brief}
 
@@ -34,19 +34,21 @@ Welcome to your next mission in the Copilot Studio Agent Academy. You're about t
 
 Rather than building from scratch, pre-built agents (also called **agent templates**) give you a head start by providing ready-to-use scenarios that you can customize and deploy in minutes.
 
-In this mission, you’ll deploy the **Safe Travels** agent—an agent that helps your users prepare for business travel, understand company policies, and streamline planning.
+While you prepare the Contoso IT helpdesk agent, another requirement arrives: employees also need help preparing for business travel and finding travel policies. This is related to employee support, but it has a distinct purpose and knowledge domain. Instead of expanding the IT helpdesk agent beyond its core responsibility, you can use a focused agent for the travel scenario.
 
-> [!NOTE]
-> If your Copilot Studio screen looks different from the screenshots in this lesson, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
+In this mission, you’ll step away from the main helpdesk build to deploy the **Safe Travels** template. You’ll see how a pre-built agent can satisfy a new requirement quickly while keeping each agent focused on a clear responsibility.
 
-## 🧭 Objectives {#objectives}
+> [!IMPORTANT] This mission uses the classic Copilot Studio experience
+> If your Copilot Studio screen looks different from the screenshots in this mission, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
 
-Your goals for this mission are:
+## 🔎 Objectives {#objectives}
 
-1. Understand what pre-built agents are and why they matter  
-1. Deploy the **Safe Travels** agent template  
-1. Customize the agent’s responses and content  
-1. Test and publish the agent  
+In this mission, you’ll learn:
+
+1. Why pre-built agents accelerate common business scenarios
+1. How to deploy the **Safe Travels** agent template
+1. How to customize an agent’s knowledge
+1. How to test and publish a pre-built agent
 
 ## 🧠 What Are Pre-Built Agents? {#what-are-pre-built-agents}
 
@@ -60,9 +62,7 @@ These agents are perfect for getting started quickly or learning how agents are 
 
 ## 🧪 Lab 05: Quickly get started with a pre-built agent {#lab-05-quickly-get-started-with-a-pre-built-agent}
 
-We're now going to learn how to select a pre-built agent and customize it.
-
-We're going to stick with the example from earlier, where we're going to create a solution in the dedicated Copilot Studio environment to build our IT helpdesk agent in.
+In this lab, you’ll respond to the new travel-support requirement by selecting and customizing a pre-built agent. The Safe Travels agent is a standalone, focused agent rather than an extension of the Contoso IT helpdesk agent.
 
 Let's begin!
 
@@ -72,27 +72,22 @@ Let's begin!
 
 1. Sign in with your Microsoft 365 work or school account
 
-> [!WARNING]
-> You must be in a tenant where Copilot Studio is enabled. If you don’t see Copilot Studio, revisit [Mission 00](../00-course-setup/index.md) to complete your setup.
-
 ### 5.2 Choose the Safe Travels Agent Template
 
-1. From the Copilot Studio homepage, click **+ Create**
-    ![Create an agent](./images/create.png)
+1. Select the **Agents** tab in the left-hand menu.
+    ![Select the agents tab](./images/5.1.01_agentstab.png)
 
-1. Scroll down to the **Start with an agent template** section
+1. Scroll down to the **Start with an agent template** section. Find and select the **Safe Travels** template.
 
-1. Find and select **Safe Travels**
-
-    ![Choose safe travels template](./images/choose_template.png)
+    ![Choose safe travels template](./images/5.1.02_templateselect.png)
 
 1. Notice that the template comes pre-loaded with a description, instructions and knowledge.
 
     ![Review the template](./images/template-setup.png)
 
-1. Click **Create**
+1. Select **Create**.
 
-    ![Create an agent](./images/create-agent-setup.png)
+    ![Safe Travels template with Create button](./images/create-agent-setup.png)
 
 This will create a new agent in your environment based on the Safe Travels configuration.
 
@@ -102,23 +97,23 @@ Now that the agent is created, let’s tailor it to your organization:
 
 1. Now we'll equip the agent with an additional knowledge source so it can answer questions about Europe travel. To do this, scroll down to the **knowledge** section and select **Add knowledge**
 
-    ![Add Knowledge](./images/knowledge.png)
+    ![Safe Travels Knowledge section with Add knowledge](./images/knowledge.png)
 
 1. Select **Public websites**
 
-    ![Add a public website](./images/public-website.png)
+    ![Knowledge source options with Public websites](./images/public-website.png)
 
 1. In the text input, paste **<https://european-union.europa.eu/>** and select **Add**
 
-    ![Add the website](./images/paste-add.png)
+    ![Public website field with European Union URL](./images/paste-add.png)
 
 1. Select **Add to agent**
 
-    ![Add to Agent](./images/add-to-agent.png)
+    ![Knowledge source ready to add to agent](./images/add-to-agent.png)
 
 ### 5.4 Test and Publish
 
-1. Click **Test** in the top-right to launch the test window  
+1. Select **Test** to open the test pane.
 
 1. Try phrases like:
 
@@ -128,14 +123,14 @@ Now that the agent is created, let’s tailor it to your organization:
 
 1. Confirm the agent responds with accurate and helpful information and observe the Activity Map to see where it retrieved the information.
 
-    ![Add to Agent](./images/response-passport.png)
+    ![Safe Travels response to a passport question](./images/response-passport.png)
 
-1. When ready, click **Publish**
+1. When ready, select **Publish**.
 
-    ![Add to Agent](./images/publish-1.png)
+    ![Safe Travels agent with Publish button](./images/publish-1.png)
 
 1. Select **Publish** again in the dialog box
-    ![Add to Agent](./images/publish-2.png)
+    ![Publish confirmation dialog for Safe Travels](./images/publish-2.png)
 
 1. Optionally, add the agent to Microsoft Teams using the built-in **Channels** feature.
 
@@ -146,10 +141,19 @@ Now that the agent is created, let’s tailor it to your organization:
 
 You've now successfully:
 
-- Deployed a Microsoft pre-built agent  
-- Customized the agent
-- Tested and published your own version of the **Safe Travels** agent template
+- **Template selection**: Chose a pre-built agent for a focused business requirement
+- **Agent deployment**: Deployed the **Safe Travels** template
+- **Knowledge customization**: Added a public website as a knowledge source
+- **Testing and publishing**: Tested and published your customized agent
 
-⏭️ [Move to **Creating a custom agent from scratch** lesson](../06-create-agent-from-conversation/index.md).
+You used a focused agent to address the travel-support requirement without adding unrelated responsibilities to the Contoso IT helpdesk agent. In the next mission, you’ll return to the main course scenario and build that custom helpdesk agent from scratch.
+
+Next, continue to [Mission 06: Build a Custom Agent](../06-create-agent-from-conversation/index.md).
+
+## 📚 Tactical Resources {#tactical-resources}
+
+- [Create and delete agents](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot?WT.mc_id=power-172617-ebenitez)
+- [Add knowledge to an agent](https://learn.microsoft.com/microsoft-copilot-studio/knowledge-add-existing-copilot)
+- [Watch the Safe Travels walkthrough](https://www.youtube.com/watch?v=NmXsx8WjWuM)
 
 <analytics-tag section="recruit" mission="05-using-prebuilt-agents" />

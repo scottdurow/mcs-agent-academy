@@ -17,7 +17,7 @@ products:
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-07-09
+last-edited-date: 2026-08-06
 ---
 # 🚨 Mission 04: Creating a Solution for Your Agent {#mission-04-creating-a-solution-for-your-agent}
 
@@ -25,28 +25,28 @@ last-edited-date: 2026-07-09
 
 🎥 **Watch the Walkthrough**
 
-[![Create a solution video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=1iATbkgfcpU "Watch the walkthrough on YouTube")
+[![Video walkthrough: Creating a Solution](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=1iATbkgfcpU "Watch the walkthrough on YouTube")
 
 ## 🎯 Mission Brief {#mission-brief}
 
-Agent Maker, welcome to your next tactical operation. In this mission, you’ll learn to assemble a Solution - the official deployment vehicle for your IT Helpdesk Agent built with Microsoft Copilot Studio. Think of this as creating a digital briefcase that holds your agent and it's artifacts.
+Welcome back, Recruit. In this mission, you’ll assemble a solution—the deployment vehicle for your IT helpdesk agent built with Microsoft Copilot Studio. Think of it as a digital briefcase that holds your agent and its related components.
 
 Every agent needs a well-structured home. That’s what a Power Platform solution provides - order, portability, and readiness for production.
 
 Let’s pack up.
 
-> [!NOTE]
-> If your Copilot Studio screen looks different from the screenshots in this lesson, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
+> [!IMPORTANT] This mission uses the classic Copilot Studio experience
+> If your Copilot Studio screen looks different from the screenshots in this mission, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
 
 ## 🔎 Objectives {#objectives}
 
 In this mission, you’ll learn:
 
-1. Understanding what Power Platform solutions are and their role in agent development
-1. Learning the benefits of using solutions for organizing and deploying agents
-1. Exploring solution publishers and their importance in component management
-1. Understanding the Power Platform solution lifecycle from development to production
-1. Creating your own solution publisher and custom solution for your IT Helpdesk Agent
+1. What Power Platform solutions are and how they support agent development
+1. Why solutions help organize and deploy agents
+1. How solution publishers identify and manage components
+1. How solutions move from development to production
+1. How to create a publisher and custom solution for your IT helpdesk agent
 
 ## 🕵🏻‍♀️ Solution? What's that? {#solution-whats-that}
 
@@ -56,7 +56,7 @@ In Copilot Studio, every agent you create is stored in a Power Platform solution
 
 Solutions traditionally have been created in the **Power Apps maker portal** - a web based interface where you can build and customize apps, Dataverse, flows, explore AI components and more.
 
-   ![Solutions](./assets/4.0_01_Solutions.png)
+    ![Solutions list in the Power Apps maker portal](./assets/4.0_01_Solutions.png)
 
 In Copilot Studio, there is now the **Solution Explorer** where you can manage your solutions directly. You no longer need to switch to the Power Apps maker portal to manage your solutions, it can be done right inside Copilot Studio 🪄
 
@@ -70,7 +70,7 @@ This means you can do the usual solution-related tasks:
 - **Create and manage solution pipelines** - automate the deployment of solutions between environments.
 - **Git integration** - enables developers to connect solutions with Git repositories for version control, collaboration and ALM. Intended to be used in developer environments only.
 
-   ![Solutions](./assets/4.0_02_CopilotStudioSolutionExplorer.png)
+    ![Solution Explorer embedded in Copilot Studio](./assets/4.0_02_CopilotStudioSolutionExplorer.png)
 
 There are two types of solutions:
 
@@ -196,23 +196,23 @@ The following are the security roles that enables users to create a solution in 
 Make sure you switch to your dedicated developer environment. For details, see [Lesson 00 - Course Setup - Step 3: Create new developer environment](../00-course-setup/index.md#step-3-create-new-developer-environment).
 :::
 
-1. In the upper right, select the **gear (settings)** icon and switch from the default environment to your environment, for example **Adele Vance's environment**.
+1. Select **Environment** in the Copilot Studio header and switch from the default environment to your environment, for example **Adele Vance's environment**.
 
-    ![Developer environment](./assets/4.0_03_DeveloperEnvironment.png)
+    ![Environment selector showing a developer environment](./assets/4.0_03_DeveloperEnvironment.png)
 
 ### 4.1 Create a Solution publisher
 
 1. Select the **ellipsis icon (...)** on the left-hand side menu in Copilot Studio. Select **Solutions** under the **Explore** header.
 
-    ![Solutions](./assets/4.1_01_Solutions.png)
+    ![Explore Power Platform menu with Solutions option](./assets/4.1_01_Solutions.png)
 
 1. The **Solution Explorer** in Copilot Studio will load. Select **+ New solution**
 
-    ![Solutions](./assets/4.1_02_NewSolution.png)
+    ![Solution Explorer with New solution button](./assets/4.1_02_NewSolution.png)
 
 1. The **New solution** pane will appear where we can define the details of our solution. First, we need to create a new publisher. Select **+ New publisher**.
 
-    ![Solutions](./assets/4.1_03_NewPublisher.png)  
+    ![New solution pane with New publisher button](./assets/4.1_03_NewPublisher.png)
 
 1. The **Properties** tab of the **New publisher** pane will appear with required and non-required fields to be populated in the **Properties** tab. This is where we can outline the details of the publisher which will be used as the label or brand that identifies who created or owns the solution.
 
@@ -250,19 +250,19 @@ Make sure you switch to your dedicated developer environment. For details, see [
 
     By default, the **Choice value** prefix will display an integer value. Update this integer value to the nearest thousand. For example, in my screenshot below, it was initially `77074`. Update this from `77074` to `77000`.
 
-    ![Solutions](./assets/4.1_04_PublisherProperties.png)  
+    ![Publisher properties with Contoso values](./assets/4.1_04_PublisherProperties.png)
 
 1. If you want to provide the contact details for the Solution, select the **Contact** tab and populate the following columns displayed.
 
-    ![Solutions](./assets/4.1_05_Contact.png)
+    ![Optional publisher contact fields](./assets/4.1_05_Contact.png)
 
 1. Select the **Properties** tab and select **Save** to create the Publisher.
 
-    ![Solutions](./assets/4.1_06_SavePublisher.png)
+    ![Publisher properties with Save button](./assets/4.1_06_SavePublisher.png)
 
 1. The New publisher pane will close and you'll be brought back to the **New solution** pane with the newly created Publisher selected.
 
-    ![Solutions](./assets/4.1_07_PublisherSelected.png)  
+    ![New solution pane with Contoso publisher selected](./assets/4.1_07_PublisherSelected.png)
 
 High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn how to create a new custom solution.
 
@@ -286,11 +286,11 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
     Tick the **Set as your preferred solution** checkbox.
 
-    ![Solutions](./assets/4.2_01_SolutionDetails_.png)  
+    ![Contoso Helpdesk Agent solution details](./assets/4.2_01_SolutionDetails_.png)
 
 1. Expand the **More options** to see additional details that can be provided in a solution.
 
-    ![Solutions](./assets/4.2_02_MoreOptions.png)
+    ![Expanded optional solution details](./assets/4.2_02_MoreOptions.png)
 
 1. You'll see the following,
 
@@ -304,42 +304,43 @@ High five, you've now created a Solution Publisher! 🙌🏻 We'll next learn ho
 
     Select **Create**.
 
-    ![Solutions](./assets/4.2_03_Create.png)
+    ![New solution pane with Create button](./assets/4.2_03_Create.png)
 
 1. The solution for Contoso Helpdesk Agent has now been created. There will be zero components until we create an agent in Copilot Studio.
 
-    Select the **back arrow** icon to return to the Solution Explorer.
+    Select **Back** to return to **Solution Explorer**.
 
-    ![Solutions](./assets/4.2_04_SolutionCreated.png)
+    ![Created Contoso Helpdesk Agent solution](./assets/4.2_04_SolutionCreated.png)
 
 1. Notice how the Contoso Helpdesk Agent now displays as the **Current preferred solution** since we ticked the **Set as your preferred solution** checkbox earlier.
 
-    ![Solutions](./assets/4.2_05_CurrentPreferredSolutionSelected.png)
+    ![Contoso Helpdesk Agent marked current preferred solution](./assets/4.2_05_CurrentPreferredSolutionSelected.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
-Congratulations! 👏🏻 You've created a Publisher and used it in your newly created Solution to build your agent in!
+You’ve successfully:
 
-Well done, Agent Maker. A tidy digital footprint is the first step toward operability at scale. Now you have the tools and the mindset for sustainable, enterprise-ready agent development.
+- **Solution publisher**: Created a publisher with a custom prefix
+- **Custom solution**: Created a solution for the Contoso Helpdesk Agent
+- **Preferred solution**: Set the solution as the default location for new components
+- **Application lifecycle management**: Established a foundation for moving the agent between environments
 
-This is the end of **Lab 04 - Creating a Solution**, select the link below to move to the next lesson. Your solution created in this lab will be used in the next lesson's lab.
-
-⏭️ [Move to **Get started quickly with pre-built agents** lesson](../05-using-prebuilt-agents/index.md)
+Next, continue to [Mission 05: Using a Pre-Built Agent](../05-using-prebuilt-agents/index.md).
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Create a solution](https://learn.microsoft.com/power-apps/maker/data-platform/create-solution/?WT.mc_id=power-172615-ebenitez)
+- [Create a solution](https://learn.microsoft.com/power-apps/maker/data-platform/create-solution/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Create and manage solutions in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/authoring-solutions-overview/?WT.mc_id=power-172615-ebenitez)
+- [Create and manage solutions in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/authoring-solutions-overview/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Share agents with other users](https://learn.microsoft.com/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-172615-ebenitez)
+- [Share agents with other users](https://learn.microsoft.com/microsoft-copilot-studio/admin-share-bots/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Summary of resources available to predefined security roles](https://learn.microsoft.com/power-platform/admin/database-security#summary-of-resources-available-to-predefined-security-roles/?WT.mc_id=power-172615-ebenitez)
+- [Summary of resources available to predefined security roles](https://learn.microsoft.com/power-platform/admin/database-security#summary-of-resources-available-to-predefined-security-roles/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Upgrade or update a solution](https://learn.microsoft.com/power-apps/maker/data-platform/update-solutions/?WT.mc_id=power-172615-ebenitez)
+- [Upgrade or update a solution](https://learn.microsoft.com/power-apps/maker/data-platform/update-solutions/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Overview of pipelines in Power Platform](https://learn.microsoft.com/power-platform/alm/pipelines/?WT.mc_id=power-172615-ebenitez)
+- [Overview of pipelines in Power Platform](https://learn.microsoft.com/power-platform/alm/pipelines/?WT.mc_id=power-172615-ebenitez)
 
-🔗 [Overview of Git integration in Power Platform](https://learn.microsoft.com/power-platform/alm/git-integration/overview/?WT.mc_id=power-172615-ebenitez)
+- [Overview of Git integration in Power Platform](https://learn.microsoft.com/power-platform/alm/git-integration/overview/?WT.mc_id=power-172615-ebenitez)
 
 <analytics-tag section="recruit" mission="04-creating-a-solution" />
