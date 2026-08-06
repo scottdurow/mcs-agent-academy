@@ -179,6 +179,10 @@ In this lab, you'll configure the Teams + Microsoft 365 channel, publish the age
 
    ![Test the agent in Microsoft 365 Copilot](./assets/08-test-the-agent-in-microsoft-365-copilot.png)
 
+1. To review the citations, select Sources. A panel opens and lists the web pages referenced in the agent's response.
+
+   ![Review citations](./assets/08-test-the-agent-in-microsoft-365-copilot.png)
+
 1. Confirm that the agent provides troubleshooting guidance grounded in its approved knowledge sources and asks for details to narrow down the issue.
 
    ![Review the grounded troubleshooting response](./assets/08-review-the-grounded-troubleshooting-response.png)
