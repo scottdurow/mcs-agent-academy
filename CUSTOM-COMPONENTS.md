@@ -193,7 +193,13 @@ Button with a product icon:
 
 **Preview:**
 
+With JavaScript enabled — the interactive zip button:
+
 ![Download files button component](./assets/component-download-files.png)
+
+Without JavaScript (`<noscript>` fallback) — a plain link to the GitHub folder:
+
+![Download files no-JavaScript fallback](./assets/component-download-files-noscript.png)
 
 ---
 
