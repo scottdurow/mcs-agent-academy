@@ -16,7 +16,7 @@ products:
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-02-20
+last-edited-date: 2026-08-06
 ---
 # 🚨 Mission 02: Copilot Studio Fundamentals {#mission-02-copilot-studio-fundamentals}
 
@@ -24,7 +24,7 @@ last-edited-date: 2026-02-20
 
 🎥 **Watch the Walkthrough**
 
-[![Copilot Studio fundamentals video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=x4OCwDRGeLE "Watch the walkthrough on YouTube")
+[![Video walkthrough: Copilot Studio Fundamentals](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=x4OCwDRGeLE "Watch the walkthrough on YouTube")
 
 ## 🎯 Mission Brief {#mission-brief}
 
@@ -32,21 +32,17 @@ Welcome, Recruit. This mission will equip you with foundational intel to underst
 
 Before building your first agent, you need to understand the four key components that make up every custom AI agent: Knowledge, Tools, Topics, and Instructions. You’ll also learn how these elements work together in the Copilot Studio orchestrator.
 
-> [!IMPORTANT] This course currently follows the classic experience
-> Microsoft Copilot Studio is rolling out a new authoring experience. The concepts in this mission still apply, but the course screenshots and click paths use the **classic experience**. If later lessons look different on your screen, turn off **New Experience** in the upper-right corner to follow along.
+> [!IMPORTANT] This mission uses the classic Copilot Studio experience
+> Microsoft Copilot Studio is rolling out a new authoring experience. The concepts in this mission still apply, but the course screenshots and navigation paths use the **classic experience**. If later missions look different on your screen, turn off **New Experience** in the upper-right corner to follow along.
 
 ## 🔎 Objectives {#objectives}
 
-In this mission, you will:
+In this mission, you’ll learn:
 
-- **Learn what Copilot Studio is**
-- **Learn when and why to use agents**
-- **Explore the four building blocks of agents**
-      - **Knowledge**
-      - **Tools**
-      - **Topics**
-      - **Instructions**
-- **Understand how these components work together** to create an intelligent, automated agent
+1. What Copilot Studio is and when to use it
+1. Why organizations build agents for knowledge and automation scenarios
+1. How knowledge, tools, topics, and instructions shape an agent
+1. How the Copilot Studio orchestrator brings these components together
 
 ## What Are Agents in Copilot Studio?
 
@@ -231,17 +227,20 @@ sequenceDiagram
     Agent-->>User: "Your current PTO balance is 12 days."
 ```
 
-## 🎉 Mission Complete {#mission-complete}
+## ✅ Mission Complete {#mission-complete}
 
-You’ve successfully completed your fundamentals briefing. You’ve now learned the four essential building blocks of any agent in Copilot Studio:
+You’ve successfully:
 
-1. **Knowledge** – Where the agent looks up factual information and maintains conversation memory.  
-1. **Tools** – The tasks the agent can perform to make things happen automatically.  
-1. **Topics** – How the agent recognizes user intent and decides which workflow to run.  
-1. **Instructions** – The rules, tone, and boundaries that guide every response.
+- **Knowledge**: Identified where an agent finds factual information
+- **Tools**: Explained how an agent performs tasks and connects to other systems
+- **Topics**: Described how an agent handles defined conversation paths
+- **Instructions**: Explained how rules, tone, and boundaries guide responses
 
-With these components in place, you can build a basic agent that answers questions and executes simple workflows. In the next lesson, we’ll walk through a step-by-step tutorial to create a "Service Desk" agent—from connecting your first knowledge source to defining a topic and wiring up an action.
+Next, continue to [Mission 03: Deploy a Declarative Agent for Microsoft 365 Copilot](../03-create-a-declarative-agent-for-M365Copilot/index.md).
 
-Up next: You'll build your [first declarative agent for M365 Copilot](../03-create-a-declarative-agent-for-M365Copilot/index.md).
+## 📚 Tactical Resources {#tactical-resources}
+
+- [Microsoft Copilot Studio overview](https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio)
+- [Create an agent in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/authoring-first-bot)
 
 <analytics-tag section="recruit" mission="02-copilot-studio-fundamentals" />

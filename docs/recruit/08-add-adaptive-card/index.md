@@ -11,11 +11,13 @@ codename: OPERATION INTERFACE UPLIFT
 time: 45
 tags:
   - adaptive-cards
-products: [copilot-studio, sharepoint]
+products:
+    - copilot-studio
+    - sharepoint
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-02-19
+last-edited-date: 2026-08-06
 ---
 # 🚨 Mission 08: Enhance user interactions in Topics with Adaptive Cards {#mission-08-enhance-user-interactions-in-topics-with-adaptive-cards}
 
@@ -23,28 +25,28 @@ last-edited-date: 2026-02-19
 
 🎥 **Watch the Walkthrough**
 
-[![Adaptive cards video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=RhIlzYHPCXo "Watch the walkthrough on YouTube")
+[![Video walkthrough: Enhance Topics with Adaptive Cards](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=RhIlzYHPCXo "Watch the walkthrough on YouTube")
 
-## 🎯  Mission Brief {#mission-brief}
+## 🎯 Mission Brief {#mission-brief}
 
-Agents, your mission is to infiltrate the static user experience and replace it with rich, dynamic, and actionable Adaptive Cards. You’ll deploy JSON payloads and Power Fx formulas to transform Copilot Studio conversations from basic Q&A into fully interactive engagements. Your goal is to gather user input, present data beautifully, and direct conversations with precision and style. Fail to adapt, and your users may defect to less intelligent interfaces.
+Welcome back, Recruit. Your mission is to replace static interactions with rich, actionable Adaptive Cards. You’ll use JSON payloads and Power Fx formulas to gather input, present data, and guide conversations.
 
-> [!NOTE]
-> If your Copilot Studio screen looks different from the screenshots in this lesson, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
+> [!IMPORTANT] This mission uses the classic Copilot Studio experience
+> If your Copilot Studio screen looks different from the screenshots in this mission, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
 
 ## 🔎 Objectives {#objectives}
 
 In this mission, you’ll learn:
 
-1. Understanding what Adaptive Cards are and how they enhance user interactions in Copilot Studio
-1. Learning to build interactive cards using JSON and Power Fx formulas for dynamic content
-1. Exploring the Adaptive Card Designer and its key components for visual card creation
-1. Creating rich, interactive forms and data collection experiences within agent topics
-1. Implementing best practices for designing responsive and user-friendly adaptive cards
+1. What Adaptive Cards are and how they enhance agent interactions
+1. How JSON and Power Fx create dynamic card content
+1. How to use the Adaptive Card Designer
+1. How to collect user input within an agent topic
+1. How to design responsive and accessible Adaptive Cards
 
 ## 🤔 What is an Adaptive Card? {#what-is-an-adaptive-card}
 
-An **Adaptive Card** is way to create interactive, visually rich UI elements that can be embedded in apps like Microsoft Teams, Microsoft Outlook or agents. It is a structured JSON object that defines the layout and content of a card:
+An **Adaptive Card** is a way to create interactive, visually rich UI elements that can be embedded in apps like Microsoft Teams, Microsoft Outlook, or agents. It is a structured JSON object that defines the layout and content of a card:
 
 - What elements appear on the card - text, images, buttons
 - How those elements are arranged
@@ -80,7 +82,7 @@ This is one of the options to use when adding an adaptive card to your topic.
 
 ## 👀 I see another option for building an adaptive card using _formula_ {#i-see-another-option-for-building-an-adaptive-card-using-formula}
 
-Remember how we learnt about Power Fx in [Mission 07 - Using Power Fx in your nodes](../07-add-new-topic-with-trigger/index.md#what-power-fx-can-do-in-topics) The same can be applied in Adaptive Cards within Copilot Studio.
+Remember how we learned about Power Fx in [Mission 07 - Using Power Fx in your nodes](../07-add-new-topic-with-trigger/index.md#what-power-fx-can-do-in-topics)? The same concepts apply to Adaptive Cards in Copilot Studio.
 
 As a recap,
 
@@ -158,7 +160,7 @@ It helps you understand how elements are nested and organized.
 
 ### D) Element Properties
 
-When you click on any element in the card, this panel lets you **customize its settings**:
+When you select an element in the card, this panel lets you **customize its settings**:
 
 - Change text size, weight, or color.
 - Set image URLs or alt text.
@@ -273,9 +275,9 @@ Let's begin!
 
 1. **SharePoint list**
 
-    We'll be using the **Devices** SharePoint list from [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
+    We'll be using the **Devices** SharePoint list from [Mission 00 - Course Setup - Step 5: Create new SharePoint site](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
 
-    If you have not set up the **Devices** SharePoint list, please head back to [Lesson 00 - Course Setup - Step 3: Create new SharePoint site](../00-course-setup/index.md#step-4-create-new-sharepoint-site).
+    If you have not set up the **Devices** SharePoint list, return to [Mission 00 - Course Setup - Step 5: Create new SharePoint site](../00-course-setup/index.md#step-5-create-new-sharepoint-site).
 
 1. **Contoso Helpdesk Copilot**
 
@@ -327,11 +329,11 @@ Let's begin!
 
     ![Preview card at different widths](assets/8.1_07_PreviewCardWidths.png)
 
-1. Exit out of **Preview** by selecting the **x icon** and select **Undo** in the designer to remove the two card elements previously added.
+1. Select **Close** (X icon) to exit **Preview**, then select **Undo** in the designer to remove the two card elements previously added.
 
     ![Undo](assets/8.1_08_Undo.png)
 
-1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. **Paste** the JSON from the [Request devices .JSON file](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/08-add-adaptive-card/assets/8.1_RequestDevice.json).
+1. Place focus in the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines. **Paste** the JSON from the [Request devices JSON file](https://raw.githubusercontent.com/microsoft/agent-academy/refs/heads/main/docs/recruit/08-add-adaptive-card/assets/8.1_RequestDevice.json).
 
     ![Clear card payload editor](assets/8.1_09_SelectAll.png)
 
@@ -343,7 +345,7 @@ Let's begin!
 
     ![Select Save](assets/8.1_10_DeviceRequestCard.png)
 
-1. Close the **Adaptive Card Node properties** panel by selecting the **X** icon.
+1. Select **Close** (X icon) in the **Adaptive Card Node properties** panel.
 
     ![Close Adaptive Card Node properties panel](assets/8.1_11_ExitAdaptiveCardNodeProperties.png)
 
@@ -364,13 +366,13 @@ Let's begin!
 
     ![Change to formula](assets/8.1_14_ChangeToFormula.png)
 
-1. Click on the **expand** icon to enlarge the Formula field.
+1. Select **Expand** to enlarge the **Formula** field.
 
-    ![Click on expand icon](assets/8.1_15_SelectExpand.png)
+    ![Formula field with Expand control](assets/8.1_15_SelectExpand.png)
 
-1. Click into the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines.
+1. Place focus in the **Card payload editor** and select all lines using the Windows keyboard shortcut of _Ctrl + A_ or using the Mac keyboard shortcut of _Command + A_, followed by deleting the lines.
 
-    ![Click into payload card editor](assets/8.1_16_SelectAll.png)
+    ![Formula text selected in card payload editor](assets/8.1_16_SelectAll.png)
 
     Paste the Formula from the [Request Devices formula file](https://raw.githubusercontent.com/microsoft/agent-academy/main/docs/recruit/08-add-adaptive-card/assets/8.1_RequestDeviceFormula.txt).
 
@@ -452,20 +454,23 @@ Now that we created the new topic that handles the device requests, we need to u
 
 ## ✅ Mission Complete {#mission-complete}
 
-Congratulations! 👏🏻 You've learnt how to add adaptive cards using Power Fx formulas to display data from variables, and you also learnt how to redirect from one topic to another. Creating bite sized topics makes your agent more organized, but also helps guide users through different parts of the conversation flow with the agent.
+You’ve successfully:
 
-This is the end of **Lab 08 - Enhance user interactions with Adaptive Cards**, select the link below to move to the next lesson. We'll expand on the use case in this lab in the following lesson's lab.
+- **Adaptive Card design**: Created an interactive device request card
+- **Power Fx**: Used a formula to display data stored in variables
+- **User input**: Collected a device selection and additional comments
+- **Topic redirection**: Connected the available-device and request-device topics
 
-⏭️ [Move to **Add an agent flow to your Topic for automation** lesson](../09-add-an-agent-flow/index.md)
+Next, continue to [Mission 09: Add an Agent Flow](../09-add-an-agent-flow/index.md).
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-🔗 [Using Adaptive Cards in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-cards-overview?WT.mc_id=power-172619-ebenitez)
+- [Using Adaptive Cards in Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/guidance/adaptive-cards-overview?WT.mc_id=power-172619-ebenitez)
 
-🔗 [Add an adaptive card in Send a message node](https://learn.microsoft.com/microsoft-copilot-studio/authoring-send-message#add-an-adaptive-card?WT.mc_id=power-172619-ebenitez)
+- [Add an adaptive card in a Send a message node](https://learn.microsoft.com/microsoft-copilot-studio/authoring-send-message#add-an-adaptive-card?WT.mc_id=power-172619-ebenitez)
 
-🔗 [Create expressions using Power Fx](https://learn.microsoft.com/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172619-ebenitez)
+- [Create expressions using Power Fx](https://learn.microsoft.com/microsoft-copilot-studio/advanced-power-fx?WT.mc_id=power-172619-ebenitez)
 
-📺 [Building Adaptive Cards with Power FX](https://aka.ms/ai-in-action/copilot-studio/ep8)
+- [Build Adaptive Cards with Power Fx](https://aka.ms/ai-in-action/copilot-studio/ep8)
 
 <analytics-tag section="recruit" mission="08-add-adaptive-card" />

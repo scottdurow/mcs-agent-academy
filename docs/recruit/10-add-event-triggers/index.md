@@ -12,11 +12,16 @@ time: 45
 tags:
   - automation
   - triggers
-products: [copilot-studio, power-automate, outlook, sharepoint, power-platform]
+products:
+    - copilot-studio
+    - power-automate
+    - outlook
+    - sharepoint
+    - power-platform
 industries:
   - it
 created-date: 2025-08-20
-last-edited-date: 2026-02-19
+last-edited-date: 2026-08-06
 ---
 # 🚨 Mission 10: Add Event Triggers - Enable autonomous agent capabilities {#mission-10-add-event-triggers-enable-autonomous-agent-capabilities}
 
@@ -24,28 +29,28 @@ last-edited-date: 2026-02-19
 
 🎥 **Watch the Walkthrough**
 
-[![Event triggers video thumbnail](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=ZgwHL8PQ1nY "Watch the walkthrough on YouTube")
+[![Video walkthrough: Add Event Triggers](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=ZgwHL8PQ1nY "Watch the walkthrough on YouTube")
 
 ## 🎯 Mission Brief {#mission-brief}
 
-It's time to elevate your agent from conversational assistant to autonomous operative. Your mission is to enable your agent to act without being summoned - responding to signals from across your digital domain with precision and speed.
+Welcome back, Recruit. It’s time to elevate your agent from a conversational assistant to an autonomous agent that responds to events without waiting for user input.
 
 With Event Triggers, you'll train your agent to monitor external systems like SharePoint, Teams, and Outlook, and execute intelligent actions the moment a signal is received. This operation transforms your agent into a fully operational field asset - silent, swift, and always watching.
 
 Success means building agents that initiate value - not just respond to it.
 
-> [!NOTE]
-> If your Copilot Studio screen looks different from the screenshots in this lesson, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
+> [!IMPORTANT] This mission uses the classic Copilot Studio experience
+> If your Copilot Studio screen looks different from the screenshots in this mission, turn off **New Experience** in the upper-right corner to switch back to the **classic experience** used here.
 
 ## 🔎 Objectives {#objectives}
 
-📖 This lesson will cover:
+In this mission, you’ll learn:
 
-- Understanding Event Triggers and how they enable autonomous agent behavior
-- Learning the difference between event triggers and topic triggers, including trigger workflows and payloads
-- Exploring common Event Trigger scenarios
-- Understanding authentication, security, and publishing considerations for event-driven agents
-- Building an autonomous IT Help Desk agent that responds to SharePoint events and sends email acknowledgments
+1. How event triggers enable autonomous agent behavior
+1. How event triggers differ from topic triggers
+1. Which scenarios are a good fit for event triggers
+1. How authentication, security, and publishing affect event-driven agents
+1. How to respond to SharePoint events with email acknowledgments
 
 ## 🤔 What is an Event Trigger? {#what-is-an-event-trigger}
 
@@ -59,7 +64,7 @@ Unlike topic triggers, which require users to type something to activate a conve
 - When a new Microsoft Form response is submitted
 - When a new Microsoft Teams message is added
 - Based on a recurring schedule (like daily reminders)  
-![Add Trigger](./assets/10_AddTriggerDialog.png)
+![Trigger library showing available event triggers](./assets/10_AddTriggerDialog.png)
 
 ### Why Event Triggers matter in autonomous agents
 
@@ -247,7 +252,7 @@ Before starting this lab, ensure you have:
 
 1. Navigate to the **Overview** tab and locate the **Triggers** section
 
-1. Click **+ Add trigger** to open the trigger library  
+1. Select **+ Add trigger** to open the trigger library.
     ![Navigate to Triggers](./assets/10_NavigateToTrigger.png)
 
 1. Search for and select **When an item is created** (SharePoint)  
@@ -307,7 +312,7 @@ Before starting this lab, ensure you have:
 1. Select **Add**  
    ![Trigger output expression](./assets/10_TriggerOutputExpression.png)
 
-1. Select **Publish** on the top right toolbar.
+1. Select **Publish** in the toolbar.
 
 ### 10.3 Create a tool for email acknowledgment
 
@@ -315,7 +320,7 @@ Before starting this lab, ensure you have:
 
 1. Navigate to the **Tools** tab in your agent
 
-1. Click **+ Add a tool** and select **Connector**
+1. Select **+ Add a tool**, then select **Connector**.
 
 1. Search for and select **Send an email (V2)** - **Office 365 Output** connector  
     ![Select Outlook Connector](./assets/10_SelectOutlookConnector.png)
@@ -345,9 +350,9 @@ Before starting this lab, ensure you have:
 ### 10.4 Test the trigger
 
 1. Inside your **Help Desk Agent**, select the **Overview** tab
-1. Click **Test Trigger** icon next to the **New Support Ticket Created in SharePoint** trigger. This will load the **Test your trigger** window.
+1. Select **Test trigger** next to the **New Support Ticket Created in SharePoint** trigger. This will load the **Test your trigger** window.
 1. Open a new browser tab and navigate to your **SharePoint IT Support Tickets list**
-1. Click **+ Add new item** to create a test ticket:
+1. Select **+ Add new item** to create a test ticket:
    - **Title**: "Unable to connect to VPN"
    - **Description**: "Unable to connect to corporate WIFI network after recent update"
    - **Priority**: "Normal"
@@ -369,20 +374,21 @@ Before starting this lab, ensure you have:
 
 ## ✅ Mission Complete {#mission-complete}
 
-🎉 **Congratulations!** You've successfully implemented event triggers with connector tools that enable your agent to operate autonomously, automatically sending email acknowledgments and processing support tickets without user intervention. Once your agent is published, it will act autonomously on your behalf.
+You’ve successfully:
 
-🚀 **Next up**: In our next lesson, you'll learn how to [publish your agent](../11-publish-your-agent/index.md) to Microsoft Teams and Microsoft 365 Copilot, making it available to your entire organization!
+- **Event trigger**: Configured the agent to respond to new SharePoint items
+- **Trigger payload**: Passed ticket details to the agent
+- **Connector tool**: Added an email acknowledgment tool
+- **Autonomous testing**: Verified the trigger and tool without conversational input
 
-⏭️ [Move to **Publish your agent** lesson](../11-publish-your-agent/index.md)
+Next, continue to [Mission 11: Publish Your Agent](../11-publish-your-agent/index.md).
 
 ## 📚 Tactical Resources {#tactical-resources}
 
-Ready to dive deeper into event triggers and autonomous agents? Check out these resources:
-
-- **Microsoft Learn**: [Make your agent autonomous in Copilot Studio](https://learn.microsoft.com/training/modules/autonomous-agents-online-workshop/?WT.mc_id=power-177340-scottdurow)
-- **Documentation**: [Add an event trigger](https://learn.microsoft.com/microsoft-copilot-studio/authoring-trigger-event?WT.mc_id=power-177340-scottdurow)
-- **Best Practices**: [Power Automate triggers introduction](https://learn.microsoft.com/power-automate/triggers-introduction?WT.mc_id=power-177340-scottdurow)
-- **Advanced Scenarios**: [Using Power Automate flows with agents](https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow-create?WT.mc_id=power-177340-scottdurow)
-- **Security**: [Data loss prevention for Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention?WT.mc_id=power-177340-scottdurow)
+- [Make your agent autonomous in Copilot Studio](https://learn.microsoft.com/training/modules/autonomous-agents-online-workshop/?WT.mc_id=power-177340-scottdurow)
+- [Add an event trigger](https://learn.microsoft.com/microsoft-copilot-studio/authoring-trigger-event?WT.mc_id=power-177340-scottdurow)
+- [Power Automate triggers introduction](https://learn.microsoft.com/power-automate/triggers-introduction?WT.mc_id=power-177340-scottdurow)
+- [Use Power Automate flows with agents](https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow-create?WT.mc_id=power-177340-scottdurow)
+- [Data loss prevention for Copilot Studio](https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention?WT.mc_id=power-177340-scottdurow)
 
 <analytics-tag section="recruit" mission="10-add-event-triggers" />
