@@ -240,7 +240,7 @@ Before starting this lab, make sure you have:
 
     ![Add SharePoint site to the agent](./assets/04-add-sharepoint-site-to-the-agent.png)
 
-Now, we'll now add another internal knowledge source by uploading a document directly to our agent.
+    Now, we'll now add another internal knowledge source by uploading a document directly to our agent.
 
 1. In the **Knowledge** section, select **Add+** icon.
 
