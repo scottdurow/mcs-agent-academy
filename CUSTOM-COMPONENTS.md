@@ -189,6 +189,8 @@ Button with a product icon:
 
 **When to use:** On mission pages where learners need to download starter files, solution zips, or sample data. The `path` must point to a folder under `docs/` whose files are collected at build time by the Vite virtual module plugin.
 
+**No-JavaScript fallback:** The zip is generated in the browser with JSZip, so it can't be produced when JavaScript is disabled or blocked. In that case a `<noscript>` fallback renders a plain link to the browsable GitHub folder for the same `path` (`https://github.com/microsoft/agent-academy/tree/main/docs/<path>`), so learners can still reach and download the files manually.
+
 **Preview:**
 
 ![Download files button component](./assets/component-download-files.png)

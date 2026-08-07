@@ -34,6 +34,13 @@ const folderName = computed(() => {
 
 const files = computed(() => bundlesData.value[normalizedPath.value] ?? []);
 
+// Fallback for when JavaScript is disabled/blocked: the zip can't be built
+// client-side, so point learners to the browsable GitHub folder instead.
+const githubFolderUrl = computed(
+  () =>
+    `https://github.com/microsoft/agent-academy/tree/main/docs/${normalizedPath.value}`
+);
+
 const zipName = computed(() => `${folderName.value}.zip`);
 
 const buttonLabel = computed(() => props.label || `Download ${zipName.value}`);
@@ -202,6 +209,16 @@ async function download() {
       <span v-else>{{ buttonLabel }}</span>
     </component>
     <p v-if="status === 'error'" class="error-msg">{{ errorMessage }}</p>
+    <noscript>
+      <a
+        :class="isLink ? 'download-noscript-link' : 'download-noscript'"
+        :href="githubFolderUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        JavaScript is required to build the .zip — browse and download the files on GitHub instead.
+      </a>
+    </noscript>
   </div>
 </template>
 
@@ -314,5 +331,35 @@ async function download() {
 
 .download-link.error {
   color: var(--vp-c-danger-1);
+}
+
+/* No-JavaScript fallback */
+.download-noscript {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 8px;
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.download-noscript:hover {
+  background: var(--vp-c-brand-1);
+  color: var(--vp-c-white, #fff);
+}
+
+.download-noscript-link {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.download-noscript-link:hover {
+  color: var(--vp-c-brand-2);
 }
 </style>
