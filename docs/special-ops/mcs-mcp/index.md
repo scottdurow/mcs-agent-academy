@@ -3,6 +3,7 @@ tags:
   - mcp
 difficulty: 3
 time: 30
+harness: standard
 description: >-
   Deploy an MCP Server and wire it up to Microsoft Copilot Studio.
 badge: ./assets/MCP_Joker_Badge.png

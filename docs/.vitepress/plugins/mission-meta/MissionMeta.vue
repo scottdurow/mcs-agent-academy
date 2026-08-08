@@ -24,6 +24,20 @@
         {{ timeMinutes }} min
       </span>
     </span>
+    <span v-if="harnesses.length" class="meta-item meta-item--pills">
+      <span class="meta-label">🧭 Harness</span>
+      <span class="meta-pills">
+        <span
+          v-for="harness in harnesses"
+          :key="harness.slug"
+          class="meta-pill meta-pill--harness"
+          :class="`meta-pill--${harness.slug}`"
+        >
+          <span class="harness-dot" aria-hidden="true"></span>
+          {{ harness.label }}
+        </span>
+      </span>
+    </span>
     <span v-if="products.length" class="meta-item meta-item--pills">
       <span class="meta-label">🧩 Products</span>
       <span class="meta-pills">
@@ -55,6 +69,11 @@ import industryData from "../../data/industries.json";
 const PRODUCT_LABELS = Object.fromEntries(productData.map((p) => [p.slug, p.label]));
 const TAG_LABELS = Object.fromEntries(tagData.map((t) => [t.slug, t.label]));
 const INDUSTRY_LABELS = Object.fromEntries(industryData.map((i) => [i.slug, i.label]));
+const HARNESS_LABELS: Record<string, string> = {
+  "standard": "Standard",
+  "copilot-chat": "Copilot Chat",
+  "github-copilot": "GitHub Copilot",
+};
 
 const { frontmatter } = useData();
 
@@ -88,6 +107,15 @@ const timeIcon = computed(() => {
   };
 });
 
+const harnesses = computed(() => {
+  const value = frontmatter.value.harness;
+  const slugs = Array.isArray(value) ? value : value ? [value] : [];
+
+  return slugs
+    .filter((slug): slug is string => typeof slug === "string" && slug in HARNESS_LABELS)
+    .map((slug) => ({ slug, label: HARNESS_LABELS[slug] }));
+});
+
 const products = computed(() =>
   (frontmatter.value.products ?? []).map((slug: string) => ({
     slug,
@@ -112,7 +140,7 @@ const industries = computed(() =>
   }))
 );
 
-const hasAnything = computed(() => codename.value || difficulty.value || timeMinutes.value || products.value.length > 0 || tags.value.length > 0 || industries.value.length > 0);
+const hasAnything = computed(() => codename.value || difficulty.value || timeMinutes.value || harnesses.value.length > 0 || products.value.length > 0 || tags.value.length > 0 || industries.value.length > 0);
 </script>
 
 <style scoped>
@@ -249,6 +277,51 @@ const hasAnything = computed(() => codename.value || difficulty.value || timeMin
 .meta-pill--industry:hover {
   background: var(--vp-c-green-2, #10b981);
   color: #fff;
+}
+
+.meta-pill--harness {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid transparent;
+  font-weight: 600;
+}
+
+.harness-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.meta-pill--standard {
+  border-color: var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+}
+
+.meta-pill--copilot-chat {
+  border-color: #0e7490;
+  background: #ecfeff;
+  color: #155e75;
+}
+
+.meta-pill--github-copilot {
+  border-color: #24292f;
+  background: #24292f;
+  color: #fff;
+}
+
+:global(.dark) .meta-pill--copilot-chat {
+  border-color: #22d3ee;
+  background: #164e63;
+  color: #cffafe;
+}
+
+:global(.dark) .meta-pill--github-copilot {
+  border-color: #8c959f;
+  background: #f0f6fc;
+  color: #24292f;
 }
 
 .meta-pill:focus-visible {

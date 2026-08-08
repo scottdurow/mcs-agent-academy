@@ -4,6 +4,7 @@ tags:
     - Docusign
 difficulty: 2
 time: 90
+harness: standard
 description: >-
     Build a Copilot Studio agent that connects to the Docusign MCP Demo server to
     trigger Workflow Builder agreement automation.

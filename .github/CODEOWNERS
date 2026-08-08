@@ -24,6 +24,22 @@ docs/recruit/12-understanding-licensing/**                     @aprildunnam
 docs/recruit/course-completion-badges-recruit/**               @aprildunnam
 
 # ============================================================================
+# Recruit Next Gen — per-module ownership
+# ============================================================================
+docs/recruit-nextgen/**                                        @aprildunnam
+docs/recruit-nextgen/00-course-setup/**                        @aprildunnam
+docs/recruit-nextgen/01-introduction-to-agents/**              @aprildunnam
+docs/recruit-nextgen/02-copilot-studio-fundamentals/**         @aprildunnam
+docs/recruit-nextgen/03-creating-a-solution/**                 @elaizabenitez
+docs/recruit-nextgen/04-build-a-custom-agent/**                @aprildunnam
+docs/recruit-nextgen/05-add-tools/**                           @aprildunnam
+docs/recruit-nextgen/06-add-skills/**                          @aprildunnam
+docs/recruit-nextgen/07-automate-with-workflows/**             @elaizabenitez
+docs/recruit-nextgen/08-publish-your-agent/**                  @aprildunnam
+docs/recruit-nextgen/09-understanding-licensing/**             @aprildunnam
+docs/recruit-nextgen/course-completion-badges-recruit/**       @aprildunnam
+
+# ============================================================================
 # Operative — per-module ownership
 # ============================================================================
 docs/operative/01-get-started/**                               @laskewitz
@@ -48,6 +64,10 @@ docs/commander/**                                              @scottdurow
 # Special Ops — per-mission ownership
 # ============================================================================
 docs/special-ops/**                                            @laskewitz
+docs/special-ops/azure-ai-search-rag/**                        @aprildunnam
+docs/special-ops/docusign-mcp/**                               @elaizabenitez
+docs/special-ops/ghostwriter/**                                @aprildunnam
+docs/special-ops/mcp-oauth/**                                  @aprildunnam
 docs/special-ops/mcs-mcp/**                                    @laskewitz
 docs/special-ops/ms-learn-mcp/**                               @aprildunnam
 docs/special-ops/pac-cli-mcp/**                                @laskewitz
