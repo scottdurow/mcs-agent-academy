@@ -3,7 +3,8 @@ tags:
   - skills
   - generative-ai
 difficulty: 2
-time: 45
+time: 60
+harness: github-copilot
 description: >-
   Build a single marketing content agent powered by a series of focused Skills
   instead of one bloated instruction block — and watch the orchestrator load the
@@ -14,8 +15,8 @@ products:
 industries:
   - retail
 created-date: 2026-07-23
-last-edited-date: 2026-07-24
-hide: true
+last-edited-date: 2026-08-07
+hide: false
 ---
 
 # ✍️ Operation Ghostwriter: A Marketing Content Agent Built on Skills {#operation-ghostwriter}
@@ -25,38 +26,49 @@ hide: true
 <!-- markdownlint-disable-next-line MD033 -->
 <p align="center"><img src="../assets/ghostwriter-badge.png" alt="Operation Ghostwriter Badge" width="220" /></p>
 
-Welcome, agent. Your mission is **Operation Ghostwriter**: build a marketing content agent **without** drowning it in a wall of instructions. You will teach it four separate tradecraft procedures using **Skills** and let the orchestrator reach for the right one on demand. One agent. A series of Skills. Zero bloat. ✍️🎯
+Welcome, agent. Your mission is **Operation Ghostwriter**: build a marketing content agent **without** drowning it in a wall of instructions. You'll teach it four separate trade procedures using **Skills** and let the orchestrator reach for the right one on demand. One agent. A series of Skills. Zero bloat. ✍️🎯
 
 > [!NOTE]
-> This mission uses the **new Copilot Studio experience** and its **Skills** capability. Turn on **New experience** with the toggle in the upper-left of the home page before you start, and confirm your environment has Skills enabled (see Prerequisites).
+> This mission requires an agent powered by the **GitHub Copilot harness** in the new Copilot Studio experience. Skills aren't available to agents powered by the standard or Copilot Chat harness. Turn on **New experience** with the toggle in the upper-left of the home page before you start.
+
+## 🎯 Mission objectives {#mission-objectives}
+
+In this mission, you'll learn:
+
+- How to separate always-on **Instructions** from on-demand **Skills**
+- How to write routing metadata that helps the orchestrator select the right Skill
+- How to create Skills from scratch, adapt existing Skills, and draft a Skill with AI
+- How to test individual Skill boundaries and multi-Skill orchestration
+- How Memory can apply a user's preferences across conversations
 
 ## 🔧 What You'll Build {#what-youll-build}
 
 - A single **Marketing Content Agent** with lean, always-on Instructions
-- Four focused **Skills** — `draft-blog-post`, `seo-audit`, `repurpose-to-social`, and `brand-voice-check` — each authored as a `SKILL.md`
-- A working demonstration of the orchestrator selecting and chaining Skills across one conversation
+- Four core **Skills**: `draft-blog-post`, `seo-audit`, `repurpose-to-social`, and `brand-voice-check`
+- An optional fifth Skill, `video-script`, created with AI in the stretch lab
+- A working demonstration of the orchestrator activating and combining multiple Skills for one request
 
 ## ❓ What is a Skill? {#what-is-a-skill}
 
-A **Skill** is a new capability offered in the modern Copilot Studio experience. It gives you a way to define a reusable procedure, written in plain Markdown as a `SKILL.md` file, that the orchestrator can pull in only when a task actually needs it. It has a **name** and a **description** that act as routing metadata (always visible to the orchestrator), plus the full instructions and any supporting examples or files that load only when the scenario matches.
+A **Skill** is a reusable capability available to agents powered by the GitHub Copilot harness. It defines a procedure in plain Markdown that the orchestrator can activate when a task needs it. A Skill has a **name** and **description** that act as routing metadata, plus instructions and optional supporting files that become relevant after the Skill is activated.
 
-Here is the mental model. Your agent's **Instructions** are like its employee handbook, showing its purpose, how it should behave, and what it should and shouldn't do. In every conversation, the agent references its employee handbook (its Instructions) before responding. Those Instructions should be short, useful, and true in *every* conversation to avoid bloat.
+Your agent's **Instructions** are like its employee handbook, showing its purpose, how it should behave, and what it should and shouldn't do. In every conversation, the agent references its employee handbook (its Instructions) before responding. Those Instructions should be short, useful, and true in *every* conversation to avoid bloat.
 
 A **Skill**, on the other hand, is like a laminated procedure card pulled off the wall only when *that* situation walks in the door. You don't tape all forty procedure cards to every employee's forehead. You hang them on the wall, label them clearly, and trust people to grab the right one.
 
 This matters because everything you put into Instructions loads on **every** turn. A 1,500-word prompt that covers blog writing *and* SEO *and* social repurposing *and* brand voice makes the model weigh all four sets of rules on every request. This can lead to slower, more expensive, and often less accurate responses because irrelevant guidance competes for attention. Skills flip that: the model sees a short menu of what each Skill is *for* and loads the full procedure only when it picks one.
 
 > [!NOTE]
-> A Skill guides behavior. It is a procedure, not a fact store. If the agent needs *facts* (your product catalog or pricing), those belong in **Knowledge**, not a Skill. If it needs to *do* something external (such as post to a CMS), that belongs in a **Tool**. A Skill is the "how we do this here" playbook.
+> A Skill guides behavior. It's a procedure, not a fact store. If the agent needs *facts* (your product catalog or pricing), those belong in **Knowledge**, not a Skill. If it needs to *do* something external (such as post to a CMS), that belongs in a **Tool**. A Skill is the "how we do this here" playbook.
 
 ### 🗝️ Key Terms {#key-terms}
 
 | Term | Definition |
-|------|------------|
+| --- | --- |
 | **Instructions** | Global behavior loaded on every turn. What is true in *every* conversation. |
 | **Skill** | A reusable procedure loaded on demand. What is true only *sometimes*. |
 | **Routing metadata** | The `name` + `description` of a Skill. This is how the orchestrator decides whether to reach for it. |
-| **`SKILL.md`** | The markdown file that holds a Skill's metadata, instructions, and examples. |
+| **Skill file** | A Markdown file that holds a Skill's metadata, instructions, and examples. A ZIP package must contain this file under the name `SKILL.md`. |
 | **On-demand loading** | The orchestrator loads a Skill's full body only when a task matches its description. |
 
 ### Instructions vs. a Series of Skills {#instructions-vs-skills}
@@ -68,7 +80,6 @@ Let's take a look at two options to build an agent. One with a long set of instr
 Every procedure is written inline, and all of it loads on every turn:
 
 ```text
-
 You are Fabrikam Fitness's marketing content assistant.
 
 When the user asks for a blog post: write 600–900 words with a hook in the first
@@ -97,26 +108,22 @@ This should technically work, but the model reads all four procedures on every s
 
 The agent's instruction shrinks to a switchboard:
 
-``` text
+```text
 You are Fabrikam Fitness's marketing content assistant. Be concise, energetic,
-and never salesy. Route each request to the right skill:
-
-- If the user wants a blog post or article, use the draft-blog-post skill.
-- If the user wants an SEO check, use the seo-audit skill.
-- If the user wants social posts, use the repurpose-to-social skill.
-- If the user wants a voice or tone check, use the brand-voice-check skill.
+and never salesy. Route each request to the right skill.
 ```
 
-Every "600–900 words," "under 60 characters," "≤280 characters" detail moves out of the instruction and into the four SKILL.md files you build in the next labs. Only the procedure the task needs gets loaded, the instruction stays readable at a glance, and changing the LinkedIn count means editing one Skill while the other three sit untouched.
-
 > [!NOTE]
-> The modern orchestrator can already match a request to a Skill from that Skill's own description, so the routing lines above are you making the intent explicit and airtight but they aren't a hard requirement. Either way, the rule holds: the detail lives in the Skill, the instruction stays lean.
+> The modern orchestrator can match a request to a Skill from that Skill's own description, so you don't have to spell out the skill routing in the instructions.
 
 ## ⚙️ Prerequisites {#prerequisites}
 
-- A **Microsoft Copilot Studio** environment with the **modern agent experience** enabled — [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com). If you don't have an account, check out the [course setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) instructions for a free trial.
-- Permission to **create agents** and **add Skills** in your environment
-- Basic comfort editing markdown (you will author four small `SKILL.md` files)
+- A **Microsoft Copilot Studio** environment with the **new experience** enabled — [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com). If you don't have an account, check out the [course setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) instructions for a free trial.
+- An agent powered by the **GitHub Copilot harness**. Turn on **New experience**, create or open an agent, and confirm that **Skills** appears on the **Build** tab. If it doesn't appear, contact your administrator to confirm that the harness is available in your environment.
+- A Markdown editor of your choice
+
+> [!IMPORTANT]
+> The GitHub Copilot harness uses usage-based billing. Building, testing in Preview, evaluating, and using the agent might consume **Copilot Credits**. Review the [Copilot Credits billing overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview) before you begin.
 
 ## 🏢 The Scenario {#the-scenario}
 
@@ -124,7 +131,7 @@ Every "600–900 words," "under 60 characters," "≤280 characters" detail moves
 
 ## 🧬 Anatomy of a Skill {#anatomy-of-a-skill}
 
-Before you build one, let's look at what a Skill actually *is*. Under the hood, a Skill is a single file called `SKILL.md` which is a plain markdown with a little block of YAML at the top. That's the whole format. It has two parts:
+Before you build one, let's look at what a Skill actually *is*. Under the hood, a Skill is plain Markdown with a small block of YAML at the top. You can upload a standalone `.md` file. If you package a Skill and supporting files in a ZIP file, the main file must be named `SKILL.md`. The format has two parts:
 
 ```markdown
 ---
@@ -142,9 +149,9 @@ Given a piece of content, review and report on:
 3. ...the rest of the procedure...
 ```
 
-**The front matter (between the `---` lines) is the routing metadata.** It's just `name` and `description`, and it's the *only* part the orchestrator sees by default. Think of it as the label on a filing cabinet drawer: the orchestrator reads every Skill's label to decide which drawer to open, without pulling out the contents. That's why the `description` is the single most important line in the whole file. You should write it as **"use when… / do NOT use for…"**, not as a vague "helps with content." The `name` should be short and verb-like (`draft-blog-post`, `seo-audit`), because it's a handle, not a sentence.
+**The front matter (between the `---` lines) is the routing metadata.** When evaluating which Skill to activate, the orchestrator uses the `name` and `description` to decide whether the Skill matches the request. Think of it as the label on a filing cabinet drawer: the orchestrator reads the label to decide which drawer to open. That's why the `description` is the single most important line in the whole file. You should write it as **"use when… / do NOT use for…"**, not as a vague "helps with content." Use only lowercase letters, numbers, and hyphens for the `name`, and don't start or end it with a hyphen. Keep it short and action-oriented (`draft-blog-post`, `seo-audit`) because it's a handle, not a sentence.
 
-**Everything below the front matter is the body** which is the actual procedure, plus any examples. This is what loads **on demand**, only after the orchestrator has picked this Skill off the shelf. It can be as long and detailed as it needs to be, because it isn't costing you anything on the turns where it doesn't fire.
+**Everything below the front matter is the body** which is the actual procedure, plus any examples. These instructions guide the agent after the orchestrator activates the Skill. Keep the procedure focused and include only the steps, constraints, examples, and relevant tool references needed for that task.
 
 When you add a Skill in Copilot Studio, those two parts map cleanly onto the three fields in the dialog:
 
@@ -166,7 +173,7 @@ Open a blank file and write every line yourself, the name, description, and the 
 
 ### 📋 2. From an example {#build-from-example}
 
-A Skill is portable markdown, so you rarely have to start from a blank page. Community libraries like [skills.sh](https://www.skills.sh/) are full of battle-tested procedures like copywriting, SEO, cold email, content strategy, etc, that you can lift and reuse. Grab one, use it **as-is**, or **tweak it** to fit your brand (rename it, rewrite the `description` in your own "use when…" language, trim anything that doesn't apply), then save it as a `SKILL.md` and upload. You're standing on the shoulders of people who already solved the hard part.
+A Skill is portable Markdown, so you rarely have to start from a blank page. Community libraries like [skills.sh](https://www.skills.sh/) contain contributed procedures for copywriting, SEO, cold email, content strategy, and other tasks. Use them as starting points: review every line, verify the behavior, and adapt the name, `description`, and procedure to fit your scenario before you upload the file.
 
 > [!WARNING]
 > Treat any Skill you didn't write as **untrusted code**. A Skill steers your agent's behavior, so read every line before you add it, the same way you'd review a pull request. Never paste one in blind.
@@ -179,7 +186,7 @@ This is the one most people miss, and it's often the best of the three. Because 
 - **An agent workspace like Copilot Cowork**, where you can iterate on the file across turns, have it critiqued, and export clean markdown ready to upload.
 - **The Preview pane of the very agent you're building.** Your Copilot Studio agent is itself a capable model so you can ask it *in Preview* to draft a skill, then copy the output into a new Skill. The engine that runs your Skills can also help write them.
 
-Then save the AI's draft as a `.md` file and upload it. The same trick supercharges option 2: find a Skill on skills.sh (or any other skills sharing site), paste it into any of these tools, and say *"adapt this for a direct-to-consumer athletic apparel brand and tighten the description."* You get a tailored Skill in seconds.
+Then save the AI's draft as a `.md` file and upload it. The same trick supercharges option 2: find a Skill on skills.sh (or another Skill-sharing site), paste it into one of these tools, and say *"adapt this for a direct-to-consumer athletic apparel brand and tighten the description."* You get a tailored first draft in seconds, ready for your review and testing.
 
 > [!WARNING]
 > AI-authored Skills get the same rule as borrowed ones: **read every line before you trust it.** The model gives you a fast first draft, not a finished product you rubber-stamp. You are the reviewer.
@@ -189,7 +196,7 @@ Then save the AI's draft as a `.md` file and upload it. The same trick superchar
 However you authored the content, it enters your agent through one of **two doors** in the **Add skill** dialog:
 
 - **Create from blank** — type or paste the `name`, `description`, and instructions straight into the form. Best when you're writing from scratch or pasting a short Skill.
-- **Upload a skill** — drag in a finished `SKILL.md` file and Copilot Studio fills the three fields for you. Best when you already *have* a file, from an example, from AI, or from a teammate.
+- **Upload a skill** — drag in a finished Markdown Skill file and Copilot Studio fills the three fields for you. Best when you already *have* a file, from an example, from AI, or from a teammate.
 
 ## 🧪 Lab 1.1: Create the agent with lean instructions {#lab-11-create-the-agent}
 
@@ -197,9 +204,9 @@ You'll start by building the agent shell with *only* the instructions that are t
 
 1. Navigate to [Microsoft Copilot Studio](https://copilotstudio.microsoft.com) and sign in. Make sure the **New experience** toggle at the top of the home page is turned on.
 
-1. On the home page, under **Or select what you'd like to build**, select **Agent**.
+1. On the home page, select **Agent**.
 
-    ![Select Agent on the Copilot Studio home page](./assets/1.1_01_CreateAgent.png)
+    ![Agent option on the Copilot Studio home page](./assets/1.1_01_CreateAgent.png)
 
 1. You'll land directly in the agent's **Build** editor. Select the **Name your agent** field and copy and paste the following as the **Name**:
 
@@ -217,7 +224,7 @@ You'll start by building the agent shell with *only* the instructions that are t
     genuinely ambiguous.
     ```
 
-    ![The Instructions field with the lean prompt](./assets/1.1_02_Instructions-annotated.png)
+    ![Lean prompt entered in the Instructions field](./assets/1.1_02_Instructions-annotated.png)
 
 1. Select **Save** in the top command bar.
 
@@ -226,15 +233,15 @@ You'll start by building the agent shell with *only* the instructions that are t
 
 ## 🧪 Lab 1.2: Build the `draft-blog-post` Skill from scratch {#lab-12-draft-blog-post}
 
-We'll explore multiple ways to build and integrate skills in our Copilot Studio agents, starting with building one from scratch. For our marketing content agent, one of the many things we want it to do is to help us write drafts of blog posts for our website. To help with this, we'll draft a copywriting skill.
+We'll explore multiple ways to build and integrate Skills in our Copilot Studio agents, starting with one built from scratch. One key task for our marketing content agent is drafting blog posts, so we'll create a focused copywriting Skill.
 
 1. In the **Build** editor, find the **Skills** card in the configuration panel on the right and select **Add skill**.
 
-    ![The Add skill card in the agent configuration panel](./assets/1.2_01_AddSkill-annotated.png)
+    ![Add skill card in the agent configuration panel](./assets/1.2_01_AddSkill-annotated.png)
 
-1. The **Add skill** dialog offers two methods: **Upload a skill** (drag in a `SKILL.md` file) and **Create from blank** (fill in the fields directly). Select **Create from blank**.
+1. The **Add skill** dialog offers two methods: **Upload a skill** (drag in a Markdown Skill file) and **Create from blank** (fill in the fields directly). Select **Create from blank**.
 
-    ![The Add skill dialog with Upload a skill and Create from blank tabs](./assets/1.2_03_CreateFromBlank.png)
+    ![Create from blank tab in the Add skill dialog](./assets/1.2_03_CreateFromBlank.png)
 
 1. Fill in the fields with the inputs below:
 
@@ -252,7 +259,7 @@ We'll explore multiple ways to build and integrate skills in our Copilot Studio 
 
     Copy and paste the following as the **Instructions**:
 
-    ````markdown
+    ```markdown
     # Draft a Fabrikam blog post
 
     When drafting a blog post from the provided source material:
@@ -267,20 +274,22 @@ We'll explore multiple ways to build and integrate skills in our Copilot Studio 
     Input: "New Trailburst running shorts — 4-way stretch, hidden zip pocket, launches Friday."
     Output: a titled post opening on the frustration of pockets that bounce, three
     subheads (Move Freely, Carry What Matters, Get Yours Friday), and a CTA.
-    ````
+    ```
 
 1. Select **Create** to add the Skill
 
-    ![Create draft blog post skill](./assets/1.2_04_CreateBlogSKill.png)
+    ![Completed draft blog post Skill configuration](./assets/1.2_04_CreateBlogSKill.png)
 
 > [!TIP]
 > A general best practice when building agents is to test early and often as you add new features. The testing steps for this will be at the end but you could also test now before moving on.
 
 ## 🧪 Lab 1.3: Build the `seo-audit` Skill from an example {#lab-13-seo-audit}
 
+In this lab, you'll review and upload an existing Skill file instead of writing one from scratch. This pattern lets you reuse a trusted procedure while keeping it easy to inspect and maintain.
+
 Download the three prepared Skill files before continuing:
 
-<download-files path="special-ops/ghostwriter/assets/skills" label="Download the prepared Skill files" />
+<action-button href="https://download-directory.github.io/?url=https://github.com/microsoft/agent-academy/tree/main/docs/special-ops/ghostwriter/assets/skills&filename=ghostwriter-skills" label="Download the prepared Skill files" icon="📦" />
 
 1. Extract the downloaded ZIP file, then open and review [`seo-audit.md`](./assets/skills/seo-audit.md).
 
@@ -289,88 +298,111 @@ Download the three prepared Skill files before continuing:
 
 1. Back on the **Build** tab, find the **Skills** card and select the **plus button**.
 
-    ![Add skill](./assets/1.3_addskill.png)
+    ![Plus button beside Skills in the Build panel](./assets/1.3_addskill.png)
 
 1. This time we will choose the **Upload a skill** option.
 
-    ![Upload skill](./assets/1.3_uploadskill.png)
+    ![Upload a skill tab in the Add skill dialog](./assets/1.3_uploadskill.png)
 
 1. Drag `seo-audit.md` into the upload area (or browse to it). Copilot Studio reads the file and fills in the **Name**, **Description**, and **Instructions** for you. The YAML `name` and `description` become the routing metadata, and everything below the front matter becomes the Instructions. Select the `seo-audit` pill under **Skills** to review the result.
 
 ## 🧪 Lab 1.4: Build the `repurpose-to-social` Skill {#lab-14-repurpose-to-social}
+
+Next, you'll repeat the upload pattern with a Skill that adapts long-form content for individual social channels.
 
 1. Open `repurpose-to-social.md` from the extracted Skill files and give it a quick read. You can also [preview the file](./assets/skills/repurpose-to-social.md) online.
 
 1. Select **Add skill → Upload a skill**.
 1. Drag `repurpose-to-social.md` into the upload area. Select it from the **Skills** section and confirm that all properties mapped correctly.
 
-    ![Add skill](./assets/1.4_skillfilled.png)
+    ![Imported repurpose-to-social Skill fields in the Build panel](./assets/1.4_skillfilled.png)
 
 ## 🧪 Lab 1.5: Build the `brand-voice-check` Skill {#lab-15-brand-voice-check}
+
+Complete the agent's core Skill set by adding a reusable brand-voice review procedure.
 
 1. Open `brand-voice-check.md` from the extracted Skill files and read it. You can also [preview the file](./assets/skills/brand-voice-check.md) online.
 
 1. Select **Add skill → Upload a skill**.
 1. Drag `brand-voice-check.md` into the upload area. Select it from the **Skills** section and confirm that all properties mapped correctly.
 
-    ![The Skills card showing all four Skills](./assets/1.5_skillfilled.png)
+    ![Skills card showing all four marketing Skills](./assets/1.5_skillfilled.png)
 
-## 🧪 Lab 1.6: Test Skills Orchestration {#lab-16-prove-it}
+## 🧪 Lab 1.6: Test Multi-Skill Orchestration {#lab-16-prove-it}
 
-This is the payoff. Now we'll test to make sure that each request activates only the Skill it needs, and that the agent can flow across our skills naturally.
+This is the payoff. You'll give the agent one composite request and observe how the orchestrator activates and combines multiple Skills to produce one result.
 
 1. Select the **Preview** tab at the top of your agent.
 
-    ![Preview](./assets/1.5_previewtab.png)
+    ![Preview tab for the Fabrikam Content Agent](./assets/1.5_previewtab.png)
 
-1. We'll start by testing to make sure our draft-blog-post skill is called. Type the following prompts and press **Enter**:
-
-    ```text
-    Draft a blog post from these notes: Trailburst shorts, 4-way stretch, hidden zip pocket, launches Friday.
-    ```
-
-1. Review the agent response. Confirm that it calls the `draft-blog-post` Skill and follows the Skill instructions to create a blog draft.
-
-    ![View Blog Response](./assets/1.5_blogresponse.png)
-
-1. Next, test the `seo-audit` Skill. Type the following prompt and press **Enter**:
+1. Copy and paste the following prompt and press **Enter**:
 
     ```text
-    Now run an SEO audit on it.
+    Create a complete launch content package from these product notes:
+
+    Trailburst running shorts have four-way stretch, a hidden zip pocket,
+    and launch this Friday.
+
+    Produce a publish-ready blog post, audit its SEO, document the checks and
+    recommended fixes, apply appropriate improvements, adapt the final post for
+    LinkedIn and X, and ensure every deliverable follows the Fabrikam brand voice.
     ```
 
-1. Review the agent response. Confirm that it calls the `seo-audit` Skill and returns an SEO checklist with recommended fixes.
+    ![Composite launch package prompt entered in Preview](./assets/1.6.01_prompt.png)
 
-    ![Review the SEO audit response](./assets/1.5_seoskillresponse.png)
+1. Review the activity trace. For this composite request, the expected result is for the agent to load all four Skills: `draft-blog-post`, `seo-audit`, `repurpose-to-social`, and `brand-voice-check`.
 
-1. Next, test the `repurpose-to-social` Skill. Type the following prompt and press **Enter** in the preview pane:
+    The order can vary because the orchestrator plans the work dynamically. If one is missing, confirm that all four Skills are attached, review their descriptions, start a new chat, and retry with the same request. The exact plan and output can vary between runs.
+
+    ![Activity trace showing four loaded Skills](./assets/1.6.02_chaining.png)
+
+1. Review the response. It might provide a Markdown file or render the artifacts directly in the chat. If it creates a file, select the file to review it.
+
+    ![Generated Trailburst launch package file in Preview](./assets/1.6.03_file.png)
+
+1. Review the file and confirm it includes:
+
+    - The completed blog post
+    - An SEO audit showing each check, what it found, and any fixes applied
+    - LinkedIn and X posts adapted from the final blog post
+    - A Fabrikam brand-voice review
+
+    If a deliverable is missing, confirm that all four Skills are attached on the **Build** tab. Start a new Preview chat and retry the request.
+
+    ![Generated blog post with SEO metadata](./assets/1.6.04_filereview.png)
+
+    ![SEO audit showing checks and applied fixes](./assets/1.6.04_filereview2.png)
+
+### Test Skill boundaries {#test-skill-boundaries}
+
+A good Skill description helps the orchestrator decide when to activate a Skill and when to leave it on the shelf. Test both sides of that boundary before you consider the routing finished.
+
+1. In **Preview**, select **New chat** so the previous request doesn't influence this test.
+
+    ![New chat button in the Preview toolbar](./assets/1.6.06_newchat.png)
+
+1. Enter the following request:
 
     ```text
-    Make me LinkedIn and X posts so I can repurpose this blog.
+    Suggest five names for a new Fabrikam trail-running shoe.
     ```
 
-1. Review the agent response. Confirm that it calls the `repurpose-to-social` Skill and returns platform-specific posts.
+    ![Product naming request entered in a new Preview chat](./assets/1.6.07_newprompt.png)
 
-    ![Review the repurposed social posts](./assets/1.5_repurposeresponse.png)
+1. Review the response. None of the four Skills should activate because naming a product isn't one of their defined jobs. The agent can respond using its general Instructions.
 
-1. Finally, test the `brand-voice-check` Skill. Type the following prompt and press **Enter** in the preview pane:
+    ![General product naming response with no marketing Skills activated](./assets/1.6.08_response.png)
 
-    ```text
-    Does the LinkedIn one sound like us?
-    ```
-
-1. Review the agent response. Confirm that it calls the `brand-voice-check` Skill and evaluates the content against the Fabrikam voice.
-
-    ![Review the brand voice evaluation](./assets/1.5_voicecheckreponse.png)
-
-1. Notice how each turn triggered a **different** Skill. First `draft-blog-post`, then `seo-audit`, then `repurpose-to-social`, then `brand-voice-check`, and at no point did the agent's core Instructions carry any of that procedural detail.
+> [!TIP]
+> If an unrelated Skill activates, revise its **Description** to state more clearly when it should and shouldn't be used. Start a new chat and repeat the same test until the activity trace shows the intended routing. Skill quality depends as much on staying inactive for the wrong request as activating for the right one.
 
 Imagine maintaining this as one 1,500-word prompt. Changing the LinkedIn character count would mean editing a wall of unrelated text and re-testing everything. With Skills, you open `repurpose-to-social`, change one line, and the other three procedures are untouched. That is the maintainability win.
 
 > [!TIP]
 > If a Skill fires when it shouldn't (or fails to fire), the fix is almost always the **description**, not the instructions inside it. Tighten the "use when… / do NOT use for…" language and test again. Routing is a description problem.
 
-## 🧪 Lab 1.7 (Stretch): Build a Skill with AI {#lab-17-stretch}
+## 🧪 Lab 1.7 (Optional): Build a Skill with AI {#lab-17-stretch}
 
 You've authored Skills from scratch and from examples. The third (and often best) way to author skills is to let AI draft them for you. A Skill is just portable markdown, so a model is perfectly capable of writing them for you. With this approach your job shifts from *author* to *editor*.
 
@@ -378,7 +410,7 @@ One of the things that our marketing content agent is missing is the ability to 
 
 1. Navigate to the **Preview** tab of your agent. If you have an existing conversation, select **New chat** to start a fresh chat.
 
-1. Type in the following inside the chat and press **Enter**
+1. Enter the following prompt in the chat, then press **Enter**:
 
     ````text
     Write a Skill file (a SKILL.md) for a Microsoft Copilot Studio agent.
@@ -424,26 +456,26 @@ One of the things that our marketing content agent is missing is the ability to 
     Reply with only the SKILL.md code block and nothing else.
     ````
 
-    ![Prompt](./assets/1.7_skillprompt.png)
+    ![Video-script Skill generation prompt entered in Preview](./assets/1.7_skillprompt.png)
 
 1. **Review the provided Markdown.** Ensure that it's safe and accurate, then make any necessary changes. Select the **Copy** icon in the upper-right corner.
 
-    ![Prompt](./assets/1.7_reviewcopy.png)
+    ![Generated video-script Markdown ready to copy](./assets/1.7_reviewcopy.png)
 
 > [!NOTE]
-> Your skill response will look different as this is AI generated and the output will vary each time.
+> Your Skill response will look different because AI-generated output varies each time.
 
 1. Select the **Build** tab to go back to your agent configuration.
 
-    ![Prompt](./assets/1.7-addskill.png)
+    ![Build tab after returning from Preview](./assets/1.7-addskill.png)
 
 1. Select the **plus button** next to **Skills**.
 
-    ![Add Button](./assets/1.7_plusskill.png)
+    ![Plus button beside Skills in the Build panel](./assets/1.7_plusskill.png)
 
 1. Select **Create from blank**. Fill in the **Name**, **Description**, and **Instructions** according to the Markdown file created in the previous step, then select **Create**.
 
-    ![Create](./assets/1.7_createskill.png)
+    ![Create from blank fields for the video-script Skill](./assets/1.7_createskill.png)
 
 1. Go back to the **Preview** tab. Select **New Chat** to start a new test session. Type the following text and press **Enter**:
 
@@ -451,11 +483,61 @@ One of the things that our marketing content agent is missing is the ability to 
     Help me write a script for a short-form video about the launch of our new Trailburst running shorts with 4-way stretch and a hidden zip pocket. They launch Friday.
     ```
 
-    ![Test Prompt](./assets/1.7_testprompt.png)
+    ![Short-form video script test prompt in Preview](./assets/1.7_testprompt.png)
 
 1. Review the response, making sure it calls the video-script skill and produces a good script.
 
-    ![Review](./assets/1.7-test.png)
+    ![Generated response using the video-script Skill](./assets/1.7-test.png)
+
+## 🧠 Bonus: Personalize the agent with Memory {#bonus-memory}
+
+Memory lets the agent retain useful preferences for an individual user across conversations. It isn't a replacement for Instructions, Knowledge, or Skills, and shared brand rules still belong in those maker-managed components.
+
+> [!IMPORTANT]
+> Memory is a preview capability for agents powered by the GitHub Copilot harness and is subject to change. Each agent maintains a separate memory for each user. Memories are private to that user, and makers and other users can't view them. The system deletes a user's memories for an agent after 28 days without interaction. Memory is disabled in group chats and Microsoft Teams channels. Turning Memory off prevents the agent from using stored memories but doesn't delete them. Using a memory-enabled agent might consume Copilot Credits.
+
+1. Open the agent's **Build** tab.
+1. Turn on **Memory** in the components panel.
+
+    ![Memory toggle enabled in the agent Build panel](./assets/1.8.01_memorytoggle.png)
+
+1. Open **Preview**, then select **New chat**. You'll see a message letting you know memories are enabled. Copy and paste the following prompt and press **Enter**:
+
+    ```text
+    Remember that I prefer LinkedIn posts under 700 characters, with no emoji and one direct call to action.
+    ```
+
+    ![Request to remember personal LinkedIn post preferences](./assets/1.8.02_memoryprompt.png)
+
+1. The agent will respond with confirmation that it saved the memory.
+
+    ![Agent confirmation that the LinkedIn preferences were saved](./assets/1.8.03_memoryconfirm.png)
+
+1. Start a new chat. Copy and paste the following prompt to request the agent to create a new LinkedIn post to test the memory:
+
+    ```text
+    Create a LinkedIn post about a new purple colorway for our Trailburst running shorts with four-way stretch and a hidden zip pocket. They launch Friday.
+    ```
+
+    ![LinkedIn post request without repeating the saved preferences](./assets/1.8.05_memorytest.png)
+
+1. Confirm that the response activates the `brand-voice-check` Skill and applies your saved preference: fewer than 700 characters, no emoji, and one direct call to action.
+
+    ![LinkedIn response applying the brand voice Skill and saved preferences](./assets/1.8.06_memorytestresponse.png)
+
+1. Ask the agent to show what it remembers about you:
+
+    ```text
+    What do you remember about my content preferences?
+    ```
+
+1. Confirm that the response includes your LinkedIn preference. Then remove it to complete the memory lifecycle:
+
+    ```text
+    Forget my LinkedIn content preferences.
+    ```
+
+    You can update or delete a specific memory in chat. To review or clear all memories, open the memory portal from the link the agent provides in a memory-enabled conversation.
 
 ## ✅ Mission Accomplished {#mission-accomplished}
 
@@ -463,22 +545,36 @@ Congrats, agent, **Operation Ghostwriter** is complete! You built a real marketi
 
 In this mission, you accomplished:
 
-✅ **Instructions vs. Skills**: You know what belongs in always-on Instructions versus an on-demand Skill.  
-✅ **Routing metadata**: You can write `name` + `description` that make a Skill fire exactly when it should.  
-✅ **A series of Skills**: You built four focused Skills instead of one bloated prompt — and saw the orchestrator chain them across a conversation.  
-✅ **Borrow and adapt**: You know how to lift a procedure from the community and harden it before trusting it.
+- ✅ **Instructions vs. Skills**: You know what belongs in always-on Instructions versus an on-demand Skill.
+- ✅ **Routing metadata**: You can write `name` + `description` that make a Skill fire exactly when it should.
+- ✅ **Multi-Skill orchestration**: You built four focused Skills instead of one bloated prompt and saw the orchestrator combine them for one composite request.
+- ✅ **Borrow and adapt**: You know how to lift a procedure from the community and harden it before trusting it.
+- ✅ **Personal preferences with Memory**: In the optional bonus, you saved, reused, reviewed, and removed a user-specific preference.
 
 ## 🏅 Claim your completion badge {#claim-your-completion-badge}
+
 <!-- markdownlint-disable-next-line MD033 -->
 <p align="center"><img src="../assets/ghostwriter-badge.png" alt="Operation Ghostwriter Badge" width="200" /></p>
 
-> [!NOTE]
-> Badge requests for this mission are not open yet. The completion form will be added before the mission is published.
+Congrats, agent, mission accomplished! Now it's time to claim your badge.
+
+Simply submit the badge request form and answer all required questions:
+
+[https://aka.ms/agent-academy-special-ops/ghostwriter/form](https://aka.ms/agent-academy-special-ops/ghostwriter/form)
+
+Once your submission is reviewed, you will receive an email from Global AI Community with instructions to claim your badge.
+
+> [!TIP]
+> If you do not see the email, check your spam or junk folder.
 
 ## 📚 Tactical Resources {#tactical-resources}
 
 - 📖 [Microsoft Copilot Studio documentation](https://learn.microsoft.com/microsoft-copilot-studio/)
-- 📖 [Write agent instructions](https://learn.microsoft.com/microsoft-copilot-studio/authoring-instructions)
+- 📖 [Skills overview for GitHub Copilot harness agents](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/skills-overview)
+- 📖 [Add an existing Skill](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/skills-add-existing)
+- 📖 [Write instructions for a GitHub Copilot harness agent](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/authoring-instructions)
+- 📖 [Copilot Credits billing overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview)
+- 📖 [Memory overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/memory-overview)
 - 🔗 [skills.sh — community agent skills](https://www.skills.sh/)
 
 <analytics-tag section="special-ops" mission="skills-ghostwriter" />

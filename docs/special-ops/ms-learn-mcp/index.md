@@ -3,6 +3,7 @@ tags:
   - mcp
 difficulty: 1
 time: 15
+harness: standard
 description: >-
   Connect the Microsoft Learn Docs MCP Server to a Copilot Studio agent for
   real-time documentation access.

@@ -4,6 +4,7 @@ tags:
   - pac-cli
 difficulty: 3
 time: 30
+harness: standard
 description: >-
   Connect the Power Platform CLI to GitHub Copilot using MCP so you can issue
   commands in plain language.

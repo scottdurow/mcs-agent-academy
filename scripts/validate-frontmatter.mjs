@@ -21,6 +21,11 @@ const REQUIRED_FIELDS = [
   "created-date",
   "last-edited-date",
 ];
+const VALID_HARNESSES = new Set([
+  "standard",
+  "copilot-chat",
+  "github-copilot",
+]);
 
 // Index pages for the section itself (not missions)
 const SECTION_INDEX_NAMES = new Set(
@@ -97,6 +102,21 @@ for (const sectionName of MISSION_DIRS) {
         if (!isBoolean && !isString) {
           console.error(
             `Error: ${rel} — "preview" must be a boolean or a string (got: ${JSON.stringify(fm.preview)})`
+          );
+          errors++;
+        }
+      }
+      if (fm.harness !== undefined) {
+        const harnesses = Array.isArray(fm.harness)
+          ? fm.harness
+          : [fm.harness];
+        const invalidHarnesses = harnesses.filter(
+          (harness) =>
+            typeof harness !== "string" || !VALID_HARNESSES.has(harness)
+        );
+        if (harnesses.length === 0 || invalidHarnesses.length > 0) {
+          console.error(
+            `Error: ${rel} — "harness" must be one or more of: ${[...VALID_HARNESSES].join(", ")} (got: ${JSON.stringify(fm.harness)})`
           );
           errors++;
         }

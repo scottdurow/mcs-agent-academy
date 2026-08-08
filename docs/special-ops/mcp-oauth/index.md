@@ -4,6 +4,7 @@ tags:
   - oauth
 difficulty: 3
 time: 45
+harness: github-copilot
 description: >-
   Consume a secured MCP server protected with OAuth 2.0 authorization from a
   Microsoft Copilot Studio agent.

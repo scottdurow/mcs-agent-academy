@@ -3,6 +3,7 @@ tags:
   - yaml
 difficulty: 3
 time: 60
+harness: standard
 description: >-
   Build and extend Copilot Studio agents entirely from VS Code using the YAML
   agent definition language.
@@ -14,7 +15,7 @@ products:
 industries:
   - it
 created-date: 2026-03-30
-last-edited-date: 2026-04-02
+last-edited-date: 2026-08-07
 ---
 
 # 🧬 YAML Specialist {#yaml-specialist}

@@ -4,6 +4,7 @@ tags:
   - azure-ai-search
 difficulty: 3
 time: 60
+harness: github-copilot
 description: >-
   Ground a Copilot Studio agent in your own documents with Retrieval-Augmented
   Generation (RAG) using Azure AI Search vector search, wired in as a connector
