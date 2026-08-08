@@ -16,7 +16,7 @@ industries:
   - retail
 created-date: 2026-07-23
 last-edited-date: 2026-08-07
-hide: true
+hide: false
 ---
 
 # ✍️ Operation Ghostwriter: A Marketing Content Agent Built on Skills {#operation-ghostwriter}
