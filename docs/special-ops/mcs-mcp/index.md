@@ -3,17 +3,15 @@ tags:
   - mcp
 difficulty: 3
 time: 30
-harness: standard
+harness: github-copilot
 description: >-
   Deploy an MCP Server and wire it up to Microsoft Copilot Studio.
 badge: ./assets/MCP_Joker_Badge.png
-products:
-  - copilot-studio
-  - visual-studio-code
+products: [azure, copilot-studio, github-copilot, visual-studio-code]
 industries:
   - it
 created-date: 2026-02-20
-last-edited-date: 2026-08-04
+last-edited-date: 2026-08-10
 ---
 # 🤖 Microsoft Copilot Studio ❤️ MCP {#microsoft-copilot-studio-mcp}
 
@@ -23,6 +21,18 @@ last-edited-date: 2026-08-04
 <p align="center"><img src="./assets/MCP_Joker_Badge.png" alt="MCP Joker Badge" width="220" /></p>
 
 Welcome, agent. Your mission — should you choose to accept it — is to deploy an **MCP Server** behind enemy lines and wire it up to **Microsoft Copilot Studio**. Expect turbulence. Trust the protocol. Leave no endpoint unconfigured. 🎯
+
+> [!IMPORTANT] This mission uses the GitHub Copilot harness
+> The Copilot Studio steps require an agent powered by the **GitHub Copilot harness**. Turn on **New Experience** before you create the agent. GitHub Copilot in Visual Studio Code is also used separately to test the MCP server.
+
+## 🎯 Mission objectives {#mission-objectives}
+
+In this mission, you'll learn how to:
+
+- Run an MCP server locally or deploy it to Azure
+- Connect and test the MCP server with GitHub Copilot in Visual Studio Code
+- Add the MCP server to an agent powered by the GitHub Copilot harness in Copilot Studio
+- Remove the Azure resources after completing the mission
 
 ## ❓ What is MCP? {#what-is-mcp}
 
@@ -43,7 +53,10 @@ So, MCP and connectors are really **better together**.
 - Docker installed ([download](http://aka.ms/azure-dev/docker-install))
 - Azure Developer CLI installed ([download](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd))
 - Azure Subscription (with payment method added)
-- Copilot Studio trial or developer account
+- Copilot Studio trial or developer account with access to the **GitHub Copilot harness**
+
+> [!IMPORTANT] GitHub Copilot harness billing
+> This mission uses the **GitHub Copilot harness in Microsoft Copilot Studio**, which uses usage-based billing. Building, testing in Preview, evaluating, and using the agent might consume **Copilot Credits**. Review the [Copilot Credits billing overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview) before you begin.
 
 ## 🧪 Lab 1.1 - Set Up the MCP Server {#lab-11-set-up-the-mcp-server}
 
@@ -87,7 +100,7 @@ There are a couple of steps that you need to do for both:
 
 1. Enter `3000` as the port number (this should be the same as the port number you see when you ran the command in step 5). You might be prompted to sign in to GitHub, if so please do this, since this is required to use the port forwarding feature.
 
-1. Right click on the row you just added and select **Port visibility** > **Public** to make the server publicly available
+1. Right-click the row you just added and select **Port visibility** > **Public** to make the server publicly available
 
 1. Ctrl + click on the **Forwarded address**, which should be something like: `https://something-3000.something.devtunnels.ms`
 
@@ -332,7 +345,7 @@ In this mission, you accomplished:
 <!-- markdownlint-disable-next-line MD033 -->
 <p align="center"><img src="./assets/MCP_Joker_Badge.png" alt="MCP Joker Badge" width="220" /></p>
 
-Congrats, agent - mission accomplished! Now it's time to claim your badge.
+Congrats, agent — mission accomplished! Now it's time to claim your badge.
 
 Simply submit the badge request form and answer all required questions:
 

@@ -1,14 +1,13 @@
 ---
 tags:
-  - rag
-  - azure-ai-search
+    - grounding
 difficulty: 3
 time: 60
 harness: github-copilot
 description: >-
   Ground a Copilot Studio agent in your own documents with Retrieval-Augmented
   Generation (RAG) using Azure AI Search vector search, wired in as a connector
-  tool in the new Copilot Studio experience.
+    tool for an agent powered by the GitHub Copilot harness.
 badge: ./assets/ai-search-badge.png
 products:
   - copilot-studio
@@ -16,11 +15,11 @@ products:
 industries:
   - hr
 created-date: 2026-07-02
-last-edited-date: 2026-07-02
-hide: true
+last-edited-date: 2026-08-10
+hide: false
 ---
 
-# 🔎 Azure AI Search RAG {#azure-ai-search-rag}
+# 🔎 Build a RAG Agent with Azure AI Search {#azure-ai-search-rag}
 
 <mission-meta />
 
@@ -29,8 +28,17 @@ hide: true
 
 Welcome, agent. Your mission is **Operation Vector Vault**: give a Copilot Studio agent the ability to reason over your organization's own documents using **Retrieval-Augmented Generation (RAG)** powered by **Azure AI Search** vector search. You'll stand up a search service, vectorize a stack of candidate resumes, and wire the index into an **HR Knowledge Agent** so it answers questions by *meaning*, not just keywords, with document-backed citations. 🎯
 
-> [!NOTE]
-> This mission uses the **new** Copilot Studio experience
+> [!IMPORTANT] This mission uses the GitHub Copilot harness
+> The Copilot Studio steps require an agent powered by the **GitHub Copilot harness**. Turn on **New Experience** before you create the agent.
+
+## 🎯 Mission objectives {#mission-objectives}
+
+In this mission, you'll learn how to:
+
+- Create and populate an Azure AI Search vector index
+- Connect Azure AI Search to a Copilot Studio agent
+- Ground agent responses in your own documents
+- Test semantic retrieval and document-backed citations
 
 ## ❓ What is Retrieval-Augmented Generation (RAG)? {#what-is-rag}
 
@@ -43,7 +51,7 @@ So RAG combines two steps:
 - **Retrieval:** finding relevant information from a large pool of data.
 - **Generation:** using that information to compose a detailed, accurate response.
 
-This makes answers more informed and trustworthy which is ideal for question answering, research assistance, and any scenario where the truth lives in your documents rather than in the model's memory (which is most business scenarios).
+This makes answers more informed and trustworthy, which is ideal for question answering, research assistance, and scenarios where the truth lives in your documents rather than in the model's memory.
 
 ## 🧠 Why vector search? {#why-vector-search}
 
@@ -63,15 +71,18 @@ For example, a search for "software engineering skills" can surface candidates d
 
 ## ⚙️ Prerequisites {#prerequisites}
 
-- Microsoft Copilot Studio trial or paid account with the **new experience** enabled. If you don't have an account, see the [course setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) instructions for a free trial.
+- Microsoft Copilot Studio trial or paid account with access to the **GitHub Copilot harness**. If you don't have an account, see the [course setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) instructions for a free trial.
 - An **Azure subscription** with permission to create resources (Azure AI Search, Storage, and Azure OpenAI / Microsoft Foundry).
 - Familiarity with basic Copilot Studio agent creation and basic Azure resource management.
+
+> [!IMPORTANT] GitHub Copilot harness billing
+> This mission uses the **GitHub Copilot harness in Microsoft Copilot Studio**, which uses usage-based billing. Building, testing in Preview, evaluating, and using the agent might consume **Copilot Credits**. Review the [Copilot Credits billing overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview) before you begin.
 
 ## 🎯 The Scenario {#the-scenario}
 
 Contoso's HR team is drowning in candidate resumes across formats and languages. They want an agent that lets recruiters ask natural-language questions, like "who speaks Spanish and knows Python?", and get accurate, cited answers pulled from the actual resume documents. You're the agent builder wiring up RAG with Azure AI Search.
 
-## 🧪 Lab 1.1 — Setup the Azure AI Search service {#lab1.1-setup-azure-ai-search-service}
+## 🧪 Lab 1.1: Set up the Azure AI Search service {#lab-11-set-up-azure-ai-search-service}
 
 In this exercise you create and configure the Azure AI Search service that will store and index your documents.
 
@@ -89,7 +100,7 @@ Navigate to the [Azure Portal](https://portal.azure.com) and create an Azure AI 
     - **Location:** the same region as your other Azure resources
     - **Pricing tier:** **Basic** (sufficient for this mission)
 
-    ![Azure](assets/azure-search-01.png)
+    ![Azure AI Search service configuration](./assets/azure-search-01.png)
 
 Once the service is created, open the resource and capture two values you'll need later:
 
@@ -114,7 +125,7 @@ You need somewhere to hold the documents before they're indexed.
     - **Performance:** Standard
     - **Redundancy:** Locally redundant storage (LRS)
 
-    ![Storage](assets/azure-storage-01.png)
+    ![Azure Storage account configuration](./assets/azure-storage-01.png)
 
 ### Deploy a text embedding model
 
@@ -135,18 +146,18 @@ Then open [Microsoft Foundry](https://oai.azure.com/portal), select your Azure O
     - **Content Filter:** DefaultV2
 1. Select **Deploy** and wait for it to complete.
 
-    ![Text embedding](assets/openai-embedding-01.png)
+    ![Text embedding model deployment](./assets/openai-embedding-01.png)
 
 > [!NOTE]
 > **What does `text-embedding-ada-002` do?** It converts text into numeric vectors that represent meaning, enabling vector search that finds semantically similar text across languages and formats. Paired with Azure AI Search, it returns the most relevant, contextually accurate content instead of exact keyword matches.
 
-## 🧪 Lab 1.2 — Create and populate the search index {#lab1.2-create-search-index}
+## 🧪 Lab 1.2: Create and populate the search index {#lab-12-create-search-index}
 
 Now you'll create a search index in Azure AI Search and populate it with candidate resume documents using the integrated vectorization feature.
 
 ### Preparing sample documents
 
-For this lab, download the sample resume documents that will be indexed for search. Download [fictitious_resumes.zip](assets/fictitious_resumes.zip) and unzip the folder to access the PDF files.
+For this lab, download [fictitious_resumes.zip](./assets/fictitious_resumes.zip), then extract the PDF files that you'll index for search.
 
 These sample resumes contain diverse candidate profiles with information such as:
 
@@ -159,18 +170,18 @@ These sample resumes contain diverse candidate profiles with information such as
 
 Review the content of these files to understand the type of information that will be searchable through your RAG-enabled agent. Notice also that the documents are written in various languages. This will not be a problem for the text-embedding-ada-002 model or for the vector index.
 
-### Uploading sample documents in the Storage Account
+### Upload sample documents to the storage account
 
-Using Azure AI Search, you'll create a vector index with your resume documents using the integrated vectorization feature.
+First, upload the resume documents to the storage account that Azure AI Search will use as its data source.
 
-Navigate to [Azure Portal](https://portal.azure.com/) and access the Azure Storage Account service instance.
+Navigate to the [Azure portal](https://portal.azure.com/) and open the storage account you created in Lab 1.1.
 
-1. Select **Containers** under **Data storage** from the group of commands in the left navigation
-1. Select **+ Add container** command in the command bar
-1. Provide a name for the new container, for example **resumes**
-1. Select **Create** to create the actual container
+1. Under **Data storage** in the left navigation, select **Containers**.
+1. In the command bar, select **+ Container**.
+1. Enter `resumes` as the container name.
+1. Select **Create**.
 
-    ![Storage](assets/azure-storage-02.png)
+    ![Create the resumes storage container](./assets/azure-storage-02.png)
 
 Once the container has been created, you can upload the resume files following these steps:
 
@@ -178,23 +189,24 @@ Once the container has been created, you can upload the resume files following t
 1. Drag and drop the resume files or select **Browse for files** and select the resume files
 1. Select the **Upload** command and wait for the upload to complete
 
-    ![Upload](assets/azure-storage-03.png)
+    ![Upload resumes to the storage container](./assets/azure-storage-03.png)
 
-### Populating the Vector Index with Integrated Vectorization
+### Populate the vector index with integrated vectorization
 
-Once the resume files are uploaded go back to the home page of the Azure Portal and access the Azure AI Search service instance. Then select the Import data (new) command in the top command bar.
+1. Return to the [Azure portal](https://portal.azure.com/) and open your Azure AI Search service.
+1. In the top command bar, select **Import data (new)**.
 
-![Upload](assets/azure-search-02.png)
+    ![Open the Azure AI Search import wizard](./assets/azure-search-02.png)
 
 A new page will show up, through which you can configure the data import process. Select the Azure Blob Storage data source.
 
-![Import](assets/azure-search-03.png)
+    ![Select Azure Blob Storage as the data source](./assets/azure-search-03.png)
 
-Right after, select RAG as the scenario that you are targeting.
+1. Select **RAG** as the target scenario.
 
-![Import](assets/azure-search-04.png)
+    ![Select RAG as the import scenario](./assets/azure-search-04.png)
 
-Now configure the RAG scenario accordingly to the following settings:
+1. Configure **Azure Blob Storage** with these settings, then select **Next**:
 
 1. Configure your **Azure Blob Storage** section:
     1. **Subscription**: Your Azure subscription
@@ -276,7 +288,7 @@ In this exercise you will create a Microsoft Copilot Studio agent that leverages
 ### Connect Azure AI Search as a tool
 
 > [!IMPORTANT]
-> In the new Copilot Studio experience, **Azure AI Search is not a Knowledge source**. The **Add knowledge** dialog only offers Public websites, SharePoint, and OneDrive. Instead, you connect Azure AI Search as a **connector tool** and let the agent call it for retrieval.
+> For agents powered by the GitHub Copilot harness, **Azure AI Search is not a Knowledge source**. The **Add knowledge** dialog only offers Public websites, SharePoint, and OneDrive. Instead, you connect Azure AI Search as a **connector tool** and let the agent call it for retrieval.
 >
 > ![The Add knowledge dialog does not list Azure AI Search — searching "Azure" returns no results.](./assets/rag-knowledge-no-azure-search.png)
 
@@ -353,7 +365,7 @@ In this mission, you accomplished:
 
 ✅ **Azure AI Search**: created and configured a search service for enterprise knowledge
 ✅ **Integrated Vectorization**: built a vector index from PDFs using an embedding model
-✅ **Connector-based RAG**: connected Azure AI Search as a **tool** in the new Copilot Studio experience — the modern replacement for the retired "Azure AI Search knowledge source"
+✅ **Connector-based RAG**: Connected Azure AI Search as a **tool** for an agent powered by the GitHub Copilot harness, replacing the retired **Azure AI Search knowledge source**
 ✅ **Instruction Engineering**: directed the agent to call the search tool and cite its sources
 ✅ **Semantic Testing**: validated meaning-based retrieval with basic and complex queries
 
@@ -363,11 +375,11 @@ The RAG pattern you built applies far beyond HR — customer support knowledge b
 <!-- markdownlint-disable-next-line MD033 -->
 <p align="center"><img src="./assets/ai-search-badge.png" alt="Azure AI Search RAG Badge" width="220" /></p>
 
-Congrats, agent - mission accomplished! Now it's time to claim your badge.
+Congrats, agent — mission accomplished! Now it's time to claim your badge.
 
 Simply submit the badge request form and answer all required questions:
 
-[https://aka.ms/agent-academy-special-ops/azure-ai-search-rag/form](https://aka.ms/agent-academy-special-ops/azure-ai-search-rag/form)
+[https://aka.ms/agent-academy-special-ops/vector-vanguard/form](https://aka.ms/agent-academy-special-ops/vector-vanguard/form)
 
 Once your submission is reviewed, you will receive an email from Global AI Community with instructions to claim your badge.
 

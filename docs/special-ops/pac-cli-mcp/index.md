@@ -4,7 +4,6 @@ tags:
   - pac-cli
 difficulty: 3
 time: 30
-harness: standard
 description: >-
   Connect the Power Platform CLI to GitHub Copilot using MCP so you can issue
   commands in plain language.
@@ -16,7 +15,7 @@ products:
 industries:
   - it
 created-date: 2026-02-20
-last-edited-date: 2026-03-17
+last-edited-date: 2026-08-10
 ---
 # ⚡ Power Platform CLI MCP Server {#power-platform-cli-mcp-server}
 
@@ -25,20 +24,27 @@ last-edited-date: 2026-03-17
 <!-- markdownlint-disable-next-line MD033 -->
 <p align="center"><img src="../assets/CommandLine_Badge.png" alt="Command Line Badge" width="220" /></p>
 
-Welcome, agent. In this mission, you'll establish a **secure command channel** between the Power Platform CLI and your AI copilot using the **Model Context Protocol (MCP)**. Forget memorizing cryptic command syntax. You'll be issuing orders in plain language while your AI handler translates them into precision strikes across environments, tenant settings, and governance policies. 🎯
+Welcome, agent. In this mission, you'll connect the Power Platform CLI to **GitHub Copilot in Visual Studio Code** using the **Model Context Protocol (MCP)**. Instead of memorizing command syntax, you'll ask for Power Platform operations in plain language and review the commands GitHub Copilot proposes across environments, tenant settings, and governance policies. 🎯
 
-**Mission objectives:**
+## 🎯 Mission objectives {#mission-objectives}
 
 - Establish the Power Platform CLI MCP server as your command relay in Visual Studio Code & GitHub Copilot
 - Deploy AI-powered natural language operations across your Power Platform tenant
 - Run reconnaissance on your tenant configuration and extract strategic governance intel
 - Enforce enterprise-grade governance best practices across the organization
 
-**Prerequisites:** Power Platform admin access, Visual Studio Code, and GitHub Copilot extension.
+## ⚙️ Prerequisites {#prerequisites}
+
+- Power Platform administrator access
+- [Visual Studio Code](https://code.visualstudio.com/)
+- The [GitHub Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and an active GitHub Copilot subscription
+
+> [!NOTE]
+> This mission uses GitHub Copilot in Visual Studio Code as the MCP client. It does not create a Microsoft Copilot Studio agent, so no Copilot Studio harness applies.
 
 ## ❓ What is Microsoft Power Platform CLI? {#what-is-microsoft-power-platform-cli}
 
-Every agent needs a trusty sidearm. The Microsoft Power Platform CLI is your command-line weapon of choice — a powerful interface that empowers developers and ISVs to execute operations across the entire Microsoft Power Platform battlefield. This tool enables you to manage and automate tasks related to:
+The Microsoft Power Platform CLI is a command-line interface that helps developers and ISVs manage and automate operations across Microsoft Power Platform. You can use it for tasks related to:
 
 - **Environment lifecycle** - Create, manage, and configure Power Platform environments
 - **Authentication** - Handle secure connections and auth profiles for multiple tenants
@@ -54,7 +60,7 @@ The CLI provides a consistent interface on Windows — an essential tool in ever
 
 Time to gear up. The .NET Tool installation method enables you to deploy Power Platform CLI commands within PowerShell and CMD shells on Windows.
 
-### ✅ Prerequisites {#prerequisites}
+### ✅ Installation prerequisites {#installation-prerequisites}
 
 Before arming yourself with the Power Platform CLI, ensure you have:
 
@@ -366,7 +372,7 @@ In this mission, you accomplished:
 <!-- markdownlint-disable-next-line MD033 -->
 <p align="center"><img src="./assets/CommandLine_Badge.png" alt="Command Line Badge" width="220" /></p>
 
-Congrats, agent - mission accomplished! Now it's time to claim your badge.
+Congrats, agent — mission accomplished! Now it's time to claim your badge.
 
 Simply submit the badge request form and answer all required questions:
 

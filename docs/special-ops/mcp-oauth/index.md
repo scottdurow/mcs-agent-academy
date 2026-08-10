@@ -1,7 +1,6 @@
 ---
 tags:
   - mcp
-  - oauth
 difficulty: 3
 time: 45
 harness: github-copilot
@@ -9,31 +8,30 @@ description: >-
   Consume a secured MCP server protected with OAuth 2.0 authorization from a
   Microsoft Copilot Studio agent.
 badge: ./assets/mc-oauth-badge.png
-products:
-  - copilot-studio
-  - entra-id
-  - visual-studio-code
-industries:
-  - it
+products: [azure, copilot-studio, visual-studio-code]
+industries: [hr, security]
 created-date: 2026-07-23
-last-edited-date: 2026-07-23
-hide: true
+last-edited-date: 2026-08-10
+hide: false
 ---
 
-# 🔐 Consuming a Secured MCP Server with OAuth 2.0 {#consuming-a-secured-mcp-server-with-oauth-20}
+# 🔐 Secure an MCP Server with OAuth 2.0 {#consuming-a-secured-mcp-server-with-oauth-20}
 
 <mission-meta />
 
-![Badge](./assets/mc-oauth-badge.png)
+<!-- markdownlint-disable-next-line MD033 -->
+<p align="center"><img src="./assets/mc-oauth-badge.png" alt="MCP OAuth Badge" width="220" /></p>
 
-Welcome, agent. Your mission is **Operation Clearance**: connect a **secured MCP server** to a Microsoft Copilot Studio agent, with **OAuth 2.0** standing guard at the door. No token, no entry. You'll register the credentials, wire up the Authorization Code Flow, and prove that only authenticated operatives can reach the HR candidate files. 🎯🔑
-
-> [!NOTE]
-> This mission has been updated for the **new Copilot Studio experience**.
+Welcome, agent. Your mission is **Operation Clearance**: connect a **secured MCP server** to a Microsoft Copilot Studio agent, with **OAuth 2.0** standing guard at the door. No token, no entry. You'll register the credentials, wire up the authorization code flow, and prove that only authenticated operatives can reach the HR candidate files. 🎯🔑
 
 This mission builds on the concepts from the [Microsoft Copilot Studio ❤️ MCP](../mcs-mcp/index.md) mission. You worked with an unauthenticated MCP server there; here you'll secure a custom MCP server with OAuth 2.0 Authorization.
 
-## 🔧 What You'll Build {#what-youll-build}
+> [!IMPORTANT] This mission uses the GitHub Copilot harness
+> The Copilot Studio steps require an agent powered by the **GitHub Copilot harness**. Turn on **New Experience** before you create the agent.
+
+## 🎯 Mission objectives {#mission-objectives}
+
+In this mission, you'll build:
 
 - A pre-built **HR MCP server** (.NET) that validates OAuth 2.0 JWT bearer tokens
 - Two **Microsoft Entra ID** app registrations — a backend (the API) and a client (Copilot Studio)
@@ -41,14 +39,14 @@ This mission builds on the concepts from the [Microsoft Copilot Studio ❤️ MC
 
 ## ⚙️ Prerequisites {#prerequisites}
 
-- Microsoft Copilot Studio trial or paid account. If you don't have one, see the [course setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) instructions.
+- Microsoft Copilot Studio trial or paid account with access to the **GitHub Copilot harness**. If you don't have one, see the [course setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) instructions.
 - Permission to register applications in **Microsoft Entra ID** (and to grant admin consent).
 - **Visual Studio Code**, the **.NET SDK**, and the **dev tunnel** CLI installed locally.
 
-> [!NOTE]
-> Labs 1.1 and 1.2 run on your local machine and in the Entra admin center. Labs 1.3–1.5 run in Copilot Studio. Keep the server and dev tunnel running for the whole mission.
+> [!IMPORTANT] GitHub Copilot harness billing
+> This mission uses the **GitHub Copilot harness in Microsoft Copilot Studio**, which uses usage-based billing. Building, testing in Preview, evaluating, and using the agent might consume **Copilot Credits**. Review the [Copilot Credits billing overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview) before you begin.
 
-### What is OAuth 2.0 Authorization Code Flow?
+### What is the OAuth 2.0 authorization code flow?
 
 Think of OAuth 2.0 as the **clearance checkpoint** for your agent. Here's how the flow plays out in this mission:
 
@@ -63,7 +61,10 @@ This ensures user credentials are never exposed to the server, tokens have limit
 
 Zava's HR team runs a candidate-management MCP server exposing sensitive people data. An unauthenticated endpoint is a non-starter for production. Your job: put OAuth 2.0 in front of it and connect it to a Copilot Studio agent so only authenticated employees can list, search, add, update, or remove candidates.
 
-## 🧪 Lab 1.1 - Set Up the Secured MCP Server {#lab-11-set-up-the-secured-mcp-server}
+> [!NOTE]
+> Labs 1.1 and 1.2 run on your local machine and in the Entra admin center. Labs 1.3–1.5 run in Copilot Studio. Keep the server and dev tunnel running for the whole mission.
+
+## 🧪 Lab 1.1: Set up the secured MCP server {#lab-11-set-up-the-secured-mcp-server}
 
 The secured HR MCP server is an OAuth-protected version of a standard HR candidate server. It exposes the same tools:
 
@@ -93,7 +94,7 @@ The difference: every request requires a valid OAuth 2.0 access token in the `Au
 
 ![Code](./assets/mcp-server-secured-01.png)
 
-## 🧪 Lab 1.2 - Configure Microsoft Entra ID Applications {#lab-12-configure-microsoft-entra-id-applications}
+## 🧪 Lab 1.2: Configure Microsoft Entra ID applications {#lab-12-configure-microsoft-entra-id-applications}
 
 You'll register two applications: one for the HR MCP Server (backend/API) and one for the Copilot Studio client (frontend).
 
@@ -226,7 +227,7 @@ After registration, configure the client application with the necessary permissi
 1. If you haven't installed dev tunnel, follow the [dev tunnels get-started guide](https://learn.microsoft.com/azure/developer/dev-tunnels/get-started), then host a tunnel:
 
     > [!IMPORTANT]
-    > Replace `hr-mcp-secured` with a unique name (e.g., `hr-mcp-secured-alex`).
+    > Replace `hr-mcp-secured` with a unique name (for example, `hr-mcp-secured-alex`).
 
     ```bash
     devtunnel create hr-mcp-secured -a --host-header unchanged
@@ -264,11 +265,13 @@ After registration, configure the client application with the necessary permissi
 <!-- REFORMAT-ONLY: Lab 1.2 runs in the Entra admin center and local terminal; it does not
      depend on the Copilot Studio experience. Screenshots were not recaptured. -->
 
-## 🧪 Lab 1.3 - Create the Agent in Copilot Studio {#lab-13-create-the-agent-in-copilot-studio}
+## 🧪 Lab 1.3: Create the agent in Copilot Studio {#lab-13-create-the-agent-in-copilot-studio}
 
 Now create the agent that will consume the secured MCP server.
 
-1. Navigate to [Microsoft Copilot Studio](https://copilotstudio.microsoft.com) and sign in. On the home page, under **Or select what you'd like to build**, select the **Agent** card. You land directly in the Build editor.
+1. Navigate to [Microsoft Copilot Studio](https://copilotstudio.microsoft.com) and sign in. On the home page, select the **Agent** card. You land directly in the Build editor.
+
+    ![Build your agent](./assets/1.1_01_CreateAgent.png)
 
 1. Copy and paste the following as the **Name your agent** value:
 
@@ -308,7 +311,7 @@ Now create the agent that will consume the secured MCP server.
 
 1. Close **Settings** and select **Save**.
 
-## 🧪 Lab 1.4 - Register the MCP Tool with OAuth 2.0 {#lab-14-register-the-mcp-tool-with-oauth-20}
+## 🧪 Lab 1.4: Register the MCP tool with OAuth 2.0 {#lab-14-register-the-mcp-tool-with-oauth-20}
 
 Now add the secured MCP server as a tool and wire up OAuth 2.0.
 
@@ -356,10 +359,13 @@ Now add the secured MCP server as a tool and wire up OAuth 2.0.
         https://login.microsoftonline.com/[YOUR_TENANT_ID]/oauth2/v2.0/token
         ```
 
-    - **Scopes**: enter the scopes separated by spaces
+    - **Scopes**: enter these scopes, separated by spaces:
 
-        > [!IMPORTANT]
-        > These scopes are temporary — you'll replace them with the secured server's real scope (`[YOUR_DEVTUNNEL_URL]/HR.Manage`) once the connection is established.
+        ```text
+        openid profile offline_access [YOUR_DEVTUNNEL_URL]/HR.Manage
+        ```
+
+        Replace `[YOUR_DEVTUNNEL_URL]` with your dev tunnel URL without a trailing slash.
 
     ![OAuth 2.0 Manual configuration](./assets/step-oauth-config.png)
 
@@ -375,7 +381,7 @@ Now add the secured MCP server as a tool and wire up OAuth 2.0.
 
 1. Open the **HR MCP Server Secured** tool chip to confirm the five available tools: `list_candidates`, `search_candidates`, `add_candidate`, `update_candidate`, `remove_candidate`.
 
-## 🧪 Lab 1.5 - Test the Agent {#lab-15-test-the-agent}
+## 🧪 Lab 1.5: Test the agent {#lab-15-test-the-agent}
 
 Time to verify that OAuth 2.0 is guarding the door.
 
@@ -418,10 +424,19 @@ In this mission, you accomplished:
 ✅ **Authenticated Tool Use**: Consumed secured MCP tools with enterprise-grade authentication
 
 ## 🏅 Claim your completion badge {#claim-your-completion-badge}
+<!-- markdownlint-disable-next-line MD033 -->
+<p align="center"><img src="./assets/mc-oauth-badge.png" alt="MCP OAuth Badge" width="220" /></p>
 
-Congrats, agent — mission accomplished!
+Congrats, agent — mission accomplished! Now it's time to claim your badge.
 
-![Badge](./assets/mc-oauth-badge.png)
+Simply submit the badge request form and answer all required questions:
+
+[https://aka.ms/agent-academy-special-ops/mcp-oauth/form](https://aka.ms/agent-academy-special-ops/mcp-oauth/form)
+
+Once your submission is reviewed, you will receive an email from Global AI Community with instructions to claim your badge.
+
+> [!TIP]
+> If you do not see the email, check your spam or junk folder.
 
 ## 📚 Tactical Resources {#tactical-resources}
 
@@ -433,7 +448,7 @@ Congrats, agent — mission accomplished!
 
 📖 [Microsoft Entra ID app registrations](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app)
 
-📖 [OAuth 2.0 Authorization Code Flow](https://learn.microsoft.com/entra/identity-platform/v2-oauth2-auth-code-flow)
+📖 [OAuth 2.0 authorization code flow](https://learn.microsoft.com/entra/identity-platform/v2-oauth2-auth-code-flow)
 
 📖 [Model Context Protocol overview](https://modelcontextprotocol.io/introduction)
 

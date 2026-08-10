@@ -9,7 +9,7 @@ lastUpdated: false
 Special Ops are focused, one-off missions designed to sharpen your skills in a specific area.
 
 > [!IMPORTANT]
-> Many Special Ops missions that use Microsoft Copilot Studio currently follow the **classic experience** shown in their screenshots and steps. If your screen looks different, turn off **New Experience** in the upper-right corner before you continue. Newer or refreshed missions will call out when they intentionally use the new experience instead.
+> Copilot Studio missions use either the **standard harness** or the **GitHub Copilot harness**. Check the **Harness** label at the top of each mission before you begin. Missions that use the standard harness might ask you to turn off **New Experience**; missions that use the GitHub Copilot harness might ask you to turn it on.
 
 If you want comprehensive, end-to-end training, explore the Courses sections first. Courses are full programs where each mission builds on the previous one, helping you develop deep, connected understanding over time.
 

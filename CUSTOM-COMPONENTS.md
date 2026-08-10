@@ -642,6 +642,7 @@ Tags, products, and industries must use slugs defined in the data files under `d
 | `copilot-cowork` | Copilot Cowork |
 | `copilot-studio` | Microsoft Copilot Studio |
 | `dataverse` | Microsoft Dataverse |
+| `docusign` | Docusign |
 | `excel` | Microsoft Excel |
 | `github-copilot` | GitHub Copilot |
 | `microsoft-365` | Microsoft 365 |
@@ -665,6 +666,8 @@ Tags, products, and industries must use slugs defined in the data files under `d
 | `general` | General |
 | `hr` | HR |
 | `it` | IT |
+| `marketing` | Marketing |
+| `retail` | Retail |
 | `security` | Security |
 <!-- markdownlint-enable MD013 -->
 
