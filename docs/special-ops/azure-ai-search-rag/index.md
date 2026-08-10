@@ -31,6 +31,8 @@ Welcome, agent. Your mission is **Operation Vector Vault**: give a Copilot Studi
 > [!IMPORTANT] This mission uses the GitHub Copilot harness
 > The Copilot Studio steps require an agent powered by the **GitHub Copilot harness**. Turn on **New Experience** before you create the agent.
 
+**Curriculum credit:** This mission adapts material from the [Microsoft Copilot Developer Camp](https://aka.ms/copilot-camp). Thanks to [Paolo Pialorsi](https://github.com/PaoloPia) and the Copilot Camp contributors for the original curriculum. This Agent Academy version updates the lab for the GitHub Copilot harness and presents it in the Special Ops format.
+
 ## 🎯 Mission objectives {#mission-objectives}
 
 In this mission, you'll learn how to:

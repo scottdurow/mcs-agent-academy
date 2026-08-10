@@ -29,6 +29,8 @@ This mission builds on the concepts from the [Microsoft Copilot Studio ❤️ MC
 > [!IMPORTANT] This mission uses the GitHub Copilot harness
 > The Copilot Studio steps require an agent powered by the **GitHub Copilot harness**. Turn on **New Experience** before you create the agent.
 
+**Curriculum credit:** This mission adapts material from the [Microsoft Copilot Developer Camp](https://aka.ms/copilot-camp). Thanks to [Paolo Pialorsi](https://github.com/PaoloPia) and the Copilot Camp contributors for the original curriculum. This Agent Academy version updates the lab for the GitHub Copilot harness and presents it in the Special Ops format.
+
 ## 🎯 Mission objectives {#mission-objectives}
 
 In this mission, you'll build:
@@ -361,11 +363,8 @@ Now add the secured MCP server as a tool and wire up OAuth 2.0.
 
     - **Scopes**: enter these scopes, separated by spaces:
 
-        ```text
-        openid profile offline_access [YOUR_DEVTUNNEL_URL]/HR.Manage
-        ```
-
-        Replace `[YOUR_DEVTUNNEL_URL]` with your dev tunnel URL without a trailing slash.
+        > [!IMPORTANT]
+        > These scopes are temporary — you'll replace them with the secured server's real scope (`[YOUR_DEVTUNNEL_URL]/HR.Manage`) once the connection is established.
 
     ![OAuth 2.0 Manual configuration](./assets/step-oauth-config.png)
 
