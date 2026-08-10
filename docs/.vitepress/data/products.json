@@ -3,6 +3,7 @@
   { "slug": "copilot-cowork",         "label": "Copilot Cowork" },
   { "slug": "copilot-studio",         "label": "Microsoft Copilot Studio" },
   { "slug": "dataverse",              "label": "Microsoft Dataverse" },
+  { "slug": "docusign",               "label": "Docusign" },
   { "slug": "excel",                  "label": "Microsoft Excel" },
   { "slug": "github-copilot",         "label": "GitHub Copilot" },
   { "slug": "microsoft-365",          "label": "Microsoft 365" },

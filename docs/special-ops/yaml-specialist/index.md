@@ -15,7 +15,7 @@ products:
 industries:
   - it
 created-date: 2026-03-30
-last-edited-date: 2026-08-07
+last-edited-date: 2026-08-10
 ---
 
 # 🧬 YAML Specialist {#yaml-specialist}
@@ -25,12 +25,12 @@ last-edited-date: 2026-08-07
 <!-- markdownlint-disable-next-line MD033 -->
 <p align="center"><img src="../assets/YAML_Specialist_Badge.png" alt="YAML Specialist Badge" width="220" /></p>
 
-Welcome, agent. Your mission - should you choose to accept it - is to become a **YAML Specialist** - an operative who builds and extends Microsoft Copilot Studio agents entirely from Visual Studio Code using the Copilot Studio YAML agent definition language. You're going deep cover: cloning agents, writing topics in raw YAML, wiring up knowledge sources, and pushing changes back to the cloud - all from your local command center. With GitHub Copilot as your handler, you'll iterate at speeds the web UI can't match.
+Welcome, agent. Your mission — should you choose to accept it — is to become a **YAML Specialist**: an operative who builds and extends Microsoft Copilot Studio agents entirely from Visual Studio Code using the Copilot Studio YAML agent definition language. You'll clone agents, write topics in raw YAML, wire up knowledge sources, and push changes back to the cloud. With GitHub Copilot in VS Code as your development assistant, you'll iterate faster than you can in the web UI.
 
-> [!IMPORTANT] This mission mixes VS Code with the classic Copilot Studio experience
-> Microsoft Copilot Studio is rolling out a new authoring experience. The screenshots and web UI steps in this mission use the **classic experience**. If your screen looks different, turn off **New Experience** in the upper-right corner before you continue. Refreshed instructions for the new experience are planned, but this mission remains valid in the classic experience.
+> [!IMPORTANT] This mission uses the standard harness
+> The screenshots and Copilot Studio web UI steps in this mission use the **standard harness**. If your screen looks different, turn off **New Experience** in the upper-right corner before you continue. GitHub Copilot is used separately as a development tool in Visual Studio Code; it is not the Copilot Studio harness for this mission.
 
-**Mission objectives:**
+## 🎯 Mission objectives {#mission-objectives}
 
 - Set up the Copilot Studio VS Code extension and clone an agent to your local machine
 - Understand the YAML agent definition file structure - topics, actions, triggers, and knowledge
@@ -44,6 +44,7 @@ This mission assumes you have completed the [Operative course](/operative/) and 
 
 - **Visual Studio Code** - Download and install from [code.visualstudio.com](https://code.visualstudio.com/). Select the installer for your operating system (Windows, macOS, or Linux).
 - **Node.js (LTS)** - Required by the Copilot Studio VS Code extension. Download from [nodejs.org](https://nodejs.org/). Choose the **LTS** version. Verify with `node --version` in a terminal.
+- A [GitHub Copilot subscription](https://docs.github.com/en/copilot/about-github-copilot/subscription-plans-for-github-copilot) for the Visual Studio Code and CLI exercises. The free tier is sufficient for this mission if you have requests remaining in your monthly allocation.
 
 > [!TIP]
 > If you already have VS Code installed, you can install the GitHub Copilot and Copilot Studio extensions later during the hands-on labs. The labs walk you through each extension installation step by step.
@@ -65,7 +66,7 @@ This mission assumes you have completed the [Operative course](/operative/) and 
 >
 > Notice how `settings` is indented under the main level, and `greeting` and `topics` are indented further inside `settings`. That's really all there is to it - **names on the left, values on the right, separated by a colon, with indentation showing structure**. YAML files use the `.yaml` or `.yml` extension. In Copilot Studio, every part of your agent - topics, tools, triggers, and settings - is stored in YAML files.
 
-Every Copilot Studio agent has a definition - a set of YAML files that describe its personality, topics, tools, knowledge sources, and triggers. When you build an agent in the Copilot Studio web UI, you're really editing these YAML files behind the scenes. The web canvas provides a visual representation, but the **source of truth** is always YAML.
+Every Copilot Studio agent has a definition: a set of YAML files that describe its personality, topics, tools, knowledge sources, and triggers. When you build an agent in the Copilot Studio web UI, you're editing these YAML files behind the scenes. The web canvas provides a visual representation, but the **source of truth** is always YAML.
 
 > [!TIP]
 > You can peek at the YAML behind any topic or tool directly in the web canvas. Open a topic, then select **Open code editor** in the toolbar to see the raw YAML. This is a great way to learn the schema before moving to VS Code.
@@ -130,7 +131,7 @@ my-agent/
 
 | File / Folder | Purpose |
 | --- | --- |
-| `agent.mcs.yml` | Main agent definition - name, description, instructions, and schema |
+| `agent.mcs.yml` | Main agent definition: name, description, instructions, and schema |
 | `topics/` | Each `.mcs.yml` file is a topic with triggers, actions, and conversation logic |
 | `actions/` | Connector tool definitions - connectors, REST APIs, MCP servers |
 | `knowledge/files/` | Uploaded knowledge documents |
@@ -299,7 +300,7 @@ Next, install the Copilot Studio extension for VS Code.
 1. In the search bar, type **ms-copilotstudio.vscode-copilotstudio**
 1. Locate the extension published by **Microsoft** and select **Install**  
     ![Install the Copilot Studio Extension](./assets/install-copilot-studio-extension.png)
-1. Wait for the installation to complete - VS Code may prompt you to reload
+1. Wait for the installation to complete. VS Code might prompt you to reload.
 1. Select the **Copilot Studio** icon that now appears in the Activity Bar
 1. Select **Allow** when prompted in the popup notification asking "The extension 'Copilot Studio' wants to sign in using Microsoft"  
     ![Sign in to Copilot Studio](./assets/sign-in-copilot-studio.png)
@@ -329,13 +330,13 @@ Now clone your agent to a local folder so you can work with the YAML files direc
 
 1. Select the **Select Folder** button
 
-1. Wait for the cloning process to complete - a progress notification appears, followed by a success message: **Agent Cloned successfully**. VS Code will automatically open the folder you selected.  
+1. Wait for the cloning process to complete. A progress notification appears, followed by a success message: **Agent Cloned successfully**. VS Code automatically opens the folder you selected.
     ![Cloning Agent](./assets/cloning-agent.png)
 
 1. Verify the cloned file structure in the VS Code **Explorer** panel - you should see `agent.mcs.yml`, the `topics/` folder, and other definition files
 
 > [!NOTE]
-> The clone operation downloads the full agent definition - topics, actions, knowledge, workflows, triggers, and configuration. This is your local working copy. Changes you make here won't affect the cloud agent until you explicitly **Apply** them.
+> The clone operation downloads the full agent definition, including topics, actions, knowledge, workflows, triggers, and configuration. This is your local working copy. Changes you make here won't affect the cloud agent until you explicitly **Apply** them.
 
 ### Lab 1.4: Explore the Agent Definition
 
@@ -551,7 +552,7 @@ The Copilot Studio extension provides three synchronization operations:
 1. The extension will eventually report **Successfully completed previewing changes**. If remote changes exist, select **Get** to download them and resolve any conflicts before proceeding.
 1. Select **Apply changes**, and then select your agent name. This will upload your local changes to Copilot Studio  
     ![Apply changes](./assets/apply-changes.png)
-1. Wait for the apply operation to complete - a success notification confirms your changes are live: **Successfully completed applying changes**
+1. Wait for the apply operation to complete. A success notification confirms your changes are live: **Successfully completed applying changes**.
 
 > [!IMPORTANT]
 > The **Apply** operation uploads your changes to the live agent definition but does **not** publish the agent. You can test changes in the Copilot Studio test pane immediately after applying. To make the agent available to end users on channels, you still need to **Publish** from Copilot Studio.
@@ -590,7 +591,7 @@ The Copilot Studio extension provides three synchronization operations:
 
 ## ✅ Mission Accomplished {#mission-accomplished}
 
-Congrats, agent — you've completed **Operation YAML Specialist**! You now have mastered the following skills:
+Congrats, agent — you've completed the **YAML Specialist** mission! You have now mastered the following skills:
 
 ✅ **Local Agent Development**: Cloned a Copilot Studio agent to your local machine and worked with the YAML definition files directly in VS Code
 
@@ -635,7 +636,7 @@ Congrats, agent — you've completed **Operation YAML Specialist**! You now have
 <!-- markdownlint-disable-next-line MD033 -->
 <p align="center"><img src="../assets/YAML_Specialist_Badge.png" alt="YAML Specialist Badge" width="220" /></p>
 
-Congrats, agent - mission accomplished! Now it's time to claim your badge.
+Congrats, agent — mission accomplished! Now it's time to claim your badge.
 
 Simply submit the badge request form and answer all required questions:
 

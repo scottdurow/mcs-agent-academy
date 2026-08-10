@@ -1,7 +1,7 @@
 ---
 tags:
-  - skills
-  - generative-ai
+    - custom-skills
+    - instructions
 difficulty: 2
 time: 60
 harness: github-copilot
@@ -12,14 +12,13 @@ description: >-
 badge: ../assets/ghostwriter-badge.png
 products:
   - copilot-studio
-industries:
-  - retail
+industries: [marketing, retail]
 created-date: 2026-07-23
-last-edited-date: 2026-08-07
+last-edited-date: 2026-08-10
 hide: false
 ---
 
-# ✍️ Operation Ghostwriter: A Marketing Content Agent Built on Skills {#operation-ghostwriter}
+# ✍️ Build a Marketing Content Agent with Skills {#operation-ghostwriter}
 
 <mission-meta />
 
@@ -29,7 +28,7 @@ hide: false
 Welcome, agent. Your mission is **Operation Ghostwriter**: build a marketing content agent **without** drowning it in a wall of instructions. You'll teach it four separate trade procedures using **Skills** and let the orchestrator reach for the right one on demand. One agent. A series of Skills. Zero bloat. ✍️🎯
 
 > [!NOTE]
-> This mission requires an agent powered by the **GitHub Copilot harness** in the new Copilot Studio experience. Skills aren't available to agents powered by the standard or Copilot Chat harness. Turn on **New experience** with the toggle in the upper-left of the home page before you start.
+> This mission requires an agent powered by the **GitHub Copilot harness**. Skills aren't available to agents powered by the standard harness. Turn on **New experience** with the toggle in the upper-left of the Copilot Studio home page before you start.
 
 ## 🎯 Mission objectives {#mission-objectives}
 
@@ -118,12 +117,12 @@ and never salesy. Route each request to the right skill.
 
 ## ⚙️ Prerequisites {#prerequisites}
 
-- A **Microsoft Copilot Studio** environment with the **new experience** enabled — [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com). If you don't have an account, check out the [course setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) instructions for a free trial.
+- A **Microsoft Copilot Studio** environment with the **GitHub Copilot harness** enabled — [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com). If you don't have an account, check out the [course setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) instructions for a free trial.
 - An agent powered by the **GitHub Copilot harness**. Turn on **New experience**, create or open an agent, and confirm that **Skills** appears on the **Build** tab. If it doesn't appear, contact your administrator to confirm that the harness is available in your environment.
 - A Markdown editor of your choice
 
-> [!IMPORTANT]
-> The GitHub Copilot harness uses usage-based billing. Building, testing in Preview, evaluating, and using the agent might consume **Copilot Credits**. Review the [Copilot Credits billing overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview) before you begin.
+> [!IMPORTANT] GitHub Copilot harness billing
+> This mission uses the **GitHub Copilot harness in Microsoft Copilot Studio**, which uses usage-based billing. Building, testing in Preview, evaluating, and using the agent might consume **Copilot Credits**. Review the [Copilot Credits billing overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview) before you begin.
 
 ## 🏢 The Scenario {#the-scenario}
 
@@ -577,4 +576,4 @@ Once your submission is reviewed, you will receive an email from Global AI Commu
 - 📖 [Memory overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/memory-overview)
 - 🔗 [skills.sh — community agent skills](https://www.skills.sh/)
 
-<analytics-tag section="special-ops" mission="skills-ghostwriter" />
+<analytics-tag section="special-ops" mission="ghostwriter" />

@@ -44,7 +44,7 @@ tags:
   - yaml
 difficulty: 3
 time: 60
-harness: github-copilot
+harness: standard
 description: 'Build and extend Copilot Studio agents entirely from VS Code using the YAML agent definition language.'
 badge: ../assets/YAML_Specialist_Badge.png
 products:
@@ -65,7 +65,7 @@ last-edited-date: 2026-04-02
 | `tags` | string[] | Yes | Array of tag slugs from `docs/.vitepress/data/tags.json`. |
 | `difficulty` | number (1–5) | Yes | Difficulty level from 1 (beginner) to 5 (expert). |
 | `time` | number | Yes | Estimated completion time in minutes. Must be greater than 0. |
-| `harness` | string \| string[] | No | Where the lab is completed: `standard`, `copilot-chat`, or `github-copilot`. Use an array only when the mission supports multiple harnesses. |
+| `harness` | string \| string[] | No | The Microsoft Copilot Studio harness used by the agent: `standard` or `github-copilot`. Use an array only when the mission supports both harnesses. |
 | `description` | string | Yes | Mission description (minimum 10 characters). Used in mission cards and the `<missions />` grid. |
 | `badge` | string | Yes | Relative path to the badge image in the shared assets folder (for example `../assets/Badge_Name.png`). |
 | `products` | string[] | Yes | Array of product slugs from `docs/.vitepress/data/products.json`. |
@@ -78,12 +78,21 @@ last-edited-date: 2026-04-02
 > [!IMPORTANT]
 > Special Ops missions do **not** use `prev`, `next`, `short-description`, `codename`, or `section` in their frontmatter. They are standalone — there is no sequential navigation.
 
-The `<mission-meta />` component displays `harness` as a pill near the top of the page. For a mission that supports more than one harness, use an array:
+The `<mission-meta />` component displays `harness` as a pill near the top of the page. Use **standard harness** and **GitHub Copilot harness** in learner-facing text. The field describes the Copilot Studio agent harness, not whether a mission uses GitHub Copilot in Visual Studio Code or the GitHub Copilot CLI.
+
+For a mission that supports both Copilot Studio harnesses, use an array:
 
 ```yaml
 harness:
-  - copilot-chat
+  - standard
   - github-copilot
+```
+
+Missions that use the GitHub Copilot harness must place this notice at the end of the prerequisites section:
+
+```markdown
+> [!IMPORTANT] GitHub Copilot harness billing
+> This mission uses the **GitHub Copilot harness in Microsoft Copilot Studio**, which uses usage-based billing. Building, testing in Preview, evaluating, and using the agent might consume **Copilot Credits**. Review the [Copilot Credits billing overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview) before you begin.
 ```
 
 ### Frontmatter validation

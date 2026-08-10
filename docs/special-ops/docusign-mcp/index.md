@@ -4,34 +4,16 @@ tags:
     - Docusign
 difficulty: 2
 time: 90
-harness: standard
+harness: github-copilot
 description: >-
     Build a Copilot Studio agent that connects to the Docusign MCP Demo server to
     trigger Workflow Builder agreement automation.
 badge: ../assets/Academy-Docusign_Badge.png
-products:
-    - copilot-studio
-    - power-platform
-    - Docusign
+products: [copilot-studio, docusign, power-platform, sharepoint]
 industries:
-    - it
-    - financial services
-    - healthcare and life sciences
-    - real estate
-    - government and public sector
-    - legal
-    - human resources
-    - education
-    - retail and consumer goods
-    - manufacturing
-    - telecommunications
-    - energy and utilities
-    - media and entertainment
-    - non-profit
-    - hospitality and travel
-    - construction and engineering
+    - hr
 created-date: 2026-06-16
-last-edited-date: 2026-06-16
+last-edited-date: 2026-08-10
 ---
 # 📄 Microsoft Copilot Studio + Docusign MCP {#mcs-docusign-mcp}
 
@@ -42,8 +24,10 @@ last-edited-date: 2026-06-16
 
 Welcome, agent. Your objective is to reuse what already works: connect the Docusign MCP Demo server to your Copilot Studio agent and trigger an existing Workflow Builder workflow. Your agent gathers inputs. Workflow Builder executes the agreement process.
 
+> [!IMPORTANT] This mission uses the GitHub Copilot harness
+> The Copilot Studio steps require an agent powered by the **GitHub Copilot harness**. Turn on **New Experience** before you create the agent.
 
-## 🔎 Objectives {#mcs-docusign-mcp-objectives}
+## 🎯 Mission objectives {#mcs-docusign-mcp-objectives}
 
 In this mission, you'll learn:
 
@@ -112,7 +96,7 @@ Centralize agreement preparation, review, and collaboration across teams.
 
 ### 🚀 How this works with your agent {#how-this-works-with-your-agent}
 
-Your Copilot Studio agent _does not_ replace the workflow - it triggers it. You're not reinventing the wheel or rebuilding agreement logic from scratch; you're reusing a workflow that's already built in Docusign. The agent collects inputs in natural language, then Workflow Builder runs the agreement process end-to-end.
+Your Copilot Studio agent _does not_ replace the workflow — it triggers it. You're not reinventing the wheel or rebuilding agreement logic from scratch; you're reusing a workflow that's already built in Docusign. The agent collects inputs in natural language, then Workflow Builder runs the agreement process end-to-end.
 
 ## 🛡️ Certified MCP spotlight: Docusign MCP Demo {#certified-mcp-docusign-mcp-demo}
 
@@ -209,35 +193,38 @@ Your agent is the control layer.
 
 One prompt. Multiple systems. Coordinated execution.
 
-### ✅ Prerequisites {#docusign-mcp-lab-prerequisites}
+## ⚙️ Prerequisites {#docusign-mcp-lab-prerequisites}
 
 To complete this Special Ops mission, you'll need the following prerequisites.
 
-#### Docusign
+### Docusign
 
 - Sign up for a free **Docusign developer account** if you don't already have one
   - Browse to [https://developers.docusign.com](https://developers.docusign.com) and on the upper right select **Create Account**.
 
     ![Select Create Account](assets/0.0_01_CreateDeveloperAccount.png)
 
-#### Microsoft
+### Microsoft
 
 - Copilot Studio license
-- Access to a Copilot Studio developer environment
+- Access to a Copilot Studio developer environment with the **GitHub Copilot harness** enabled
 - Administrative permissions to create solutions and agents
 - A SharePoint site where you have permissions to create a new folder in the Documents library - this will be used in a workflow step
 
 > [!TIP] Prerequisites help:
 > If you need help getting a Copilot Studio license, please reference the [Recruit Course Setup lab](./../../recruit/00-course-setup/index.md) which walks you through setting up a Power Platform environment with a Copilot Studio trial.
 
-#### Two email addresses
+### Two email addresses
 
 You'll need two different email addresses to complete this lab:
 
 - Email address to use as the employee
 - Email address to use as the hiring manager
 
-## 🧪 1.1 Create a Docusign Web Form {#lab-1-1-create-a-docusign-web-form}
+> [!IMPORTANT] GitHub Copilot harness billing
+> This mission uses the **GitHub Copilot harness in Microsoft Copilot Studio**, which uses usage-based billing. Building, testing in Preview, evaluating, and using the agent might consume **Copilot Credits**. Review the [Copilot Credits billing overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview) before you begin.
+
+## 🧪 Lab 1.1: Create a Docusign Web Form {#lab-1-1-create-a-docusign-web-form}
 
 > [!WARNING] IMPORTANT
 > You need a Docusign developer account to complete these Docusign lab exercises. Follow the steps outlined in the **Prerequisites** section above (see **Docusign**).
@@ -479,7 +466,7 @@ The collected data can then:
 
     ![Web Form showing as Active](assets/1.1_26_ActiveWebForm.png)
 
-## 🧪 1.2 Create Document Templates {#lab-1-2-create-document-templates}
+## 🧪 Lab 1.2: Create Document Templates {#lab-1-2-create-document-templates}
 
 Document Templates are a reusable setup for sending agreements that lets you pre‑define documents, recipient roles, routing order, and messages. This allows you to quickly create and send consistent envelopes without starting from scratch each time.
 
@@ -795,7 +782,7 @@ Let's begin. ⤵️
 
 🏃🏻‍♀️‍➡️ Next, let's move on to creating the workflow in Workflow Builder.
 
-## 🧪 1.3 Create Docusign Workflow Builder workflow {#lab-1-3-create-docusign-workflow-builder-workflow}
+## 🧪 Lab 1.3: Create a Docusign Workflow Builder workflow {#lab-1-3-create-docusign-workflow-builder-workflow}
 
 For our HR scenario, we need to process the following:
 
@@ -1327,7 +1314,7 @@ Workflow Builder can automate all of this, instead of handling it manually. Let'
 
     ![Workflow published](assets/1.3_105_WorkflowPublished.png)
 
-## 🧪 1.4 Test the workflow {#lab-1-4-test-the-workflow}
+## 🧪 Lab 1.4: Test the workflow {#lab-1-4-test-the-workflow}
 
 Before we move onto building the agent in Microsoft Copilot Studio, it's best practice to run the workflow to test it. You can manually run the workflow by starting a new instance.
 
@@ -1439,12 +1426,12 @@ Before we move onto building the agent in Microsoft Copilot Studio, it's best pr
 
     ![View signed document agreements](assets/1.4_23_ViewSignedDocumentAgreements.png)
 
-## 🧪 1.5 Build a custom agent in Microsoft Copilot Studio, connect to Docusign MCP Demo, and trigger the workflow {#lab-1-5-build-custom-agent-docusign-mcp-demo-trigger-workflow}
+## 🧪 Lab 1.5: Build a custom agent in Microsoft Copilot Studio, connect to Docusign MCP Demo, and trigger the workflow {#lab-1-5-build-custom-agent-docusign-mcp-demo-trigger-workflow}
 
 ### Prerequisites
 
 - **New solution**: As a best practice, create a new solution for this agent before you create the agent itself. Refer to our [Recruit mission](../../recruit/04-creating-a-solution/index.md) to learn how to create a solution.
-- **Use the new experience**: This lab intentionally uses the new Copilot Studio experience because the Docusign MCP Demo tool is available there. If you switched back to the classic experience for other Agent Academy lessons, turn **New Experience** back on before continuing.
+- **Use the GitHub Copilot harness**: This lab requires the GitHub Copilot harness because the Docusign MCP Demo tool is available there. Turn **New Experience** on before continuing.
 
     ![Toggle new experience](assets/1.5_00_ToggleNewExperience.png)
 
@@ -1619,7 +1606,7 @@ Let's begin!
 
 If you want to continue to the bonus exercise of this lab, feel free to do so.
 
-## 🧪🌟 1.6 BONUS - Add Work IQ Calendar tool (Frontier program) for multi-MCP capabilities {#lab-1-6-add-work-iq-calendar-tool}
+## 🧪 Lab 1.6 (Optional): Add the Work IQ Calendar tool for multi-MCP capabilities {#lab-1-6-add-work-iq-calendar-tool}
 
 If your tenant and user has been enabled to use Frontier features, try the following exercise for your agent to combine the power of a first-party Microsoft MCP server (Work IQ Calendar) with a third-party service MCP server (Docusign MCP Demo).
 
@@ -1660,7 +1647,7 @@ Refer to the [IT Admin Guide](https://www.microsoft.com/microsoft-365-copilot/fr
 
     ![Select Add Skill icon](assets/1.6_03_AddSkill.png)
 
-1. Click to upload a file.
+1. Select the option to upload a file.
 
     ![Upload a file](assets/1.6_04_ClickToUploadSkill.png)
 
@@ -1771,7 +1758,7 @@ Refer to the [IT Admin Guide](https://www.microsoft.com/microsoft-365-copilot/fr
 
 ## ✅ Mission Accomplished {#mission-accomplished}
 
-Congrats, agent - you've completed **Operation Docusign MCP**! You have now mastered the following skills:
+Congrats, agent — you've completed the **Docusign MCP** mission! You have now mastered the following skills:
 
 ✅ **Workflow Foundation**: Built a Docusign Web Form, created reusable Document Templates, and assembled a full Workflow Builder process end-to-end
 
@@ -1788,7 +1775,7 @@ Congrats, agent - you've completed **Operation Docusign MCP**! You have now mast
 <!-- markdownlint-disable-next-line MD033 -->
 <p align="center"><img src="../assets/Academy-Docusign_Badge.png" alt="Docusign MCP Badge" width="220" /></p>
 
-Congrats, agent - mission accomplished! Now it's time to claim your badge.
+Congrats, agent — mission accomplished! Now it's time to claim your badge.
 
 Simply submit the badge request form and answer all required questions:
 

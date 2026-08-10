@@ -3,7 +3,7 @@ tags:
   - mcp
 difficulty: 1
 time: 15
-harness: standard
+harness: github-copilot
 description: >-
   Connect the Microsoft Learn Docs MCP Server to a Copilot Studio agent for
   real-time documentation access.
@@ -11,11 +11,10 @@ badge: ./assets/Academy_LearnMCP_Badge.png
 products:
   - copilot-studio
   - microsoft-learn
-  - skills
 industries:
   - it
 created-date: 2026-03-12
-last-edited-date: 2026-07-27
+last-edited-date: 2026-08-10
 ---
 
 # 📚 Microsoft Learn MCP Server {#microsoft-learn-mcp-server}
@@ -27,10 +26,12 @@ last-edited-date: 2026-07-27
 
 Welcome, agent. This mission is **Operation Open Book** where you'll connect the **Microsoft Learn Docs MCP Server** to a Copilot Studio agent, giving it real-time access to the entire Microsoft Learn documentation library. No more agents responding with outdated or hallucinated product information. Your agent is about to become the most well-read operative in the field.
 
-> [!IMPORTANT]
-> Copilot Studio is rolling out a new authoring experience. The screenshots and steps in this mission use the **new experience**. If your screen looks different, turn on **New Experience** in the upper-right corner before you continue.
+> [!IMPORTANT] This mission uses the GitHub Copilot harness
+> The screenshots and steps require an agent powered by the **GitHub Copilot harness**. If your screen looks different, turn on **New Experience** in the upper-right corner before you continue.
 
-## 🔧 What You'll Build {#what-youll-build}
+## 🎯 Mission objectives {#mission-objectives}
+
+In this mission, you'll build:
 
 - A Copilot Studio agent connected to the hosted Microsoft Learn Docs MCP Server
 - A working MCP connection that surfaces `microsoft_docs_search` and related tools to your agent
@@ -39,10 +40,10 @@ Welcome, agent. This mission is **Operation Open Book** where you'll connect the
 
 ## ⚙️ Prerequisites {#prerequisites}
 
-- Microsoft Copilot Studio trial or paid account. If you don't have an account, check out the [course setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) instructions to see how to get a free trial.
+- Microsoft Copilot Studio trial or paid account with access to the **GitHub Copilot harness**. If you don't have an account, check out the [course setup](https://microsoft.github.io/agent-academy/recruit/00-course-setup/) instructions to see how to get a free trial.
 
-> [!NOTE]
-> No local tooling required. The Microsoft Learn MCP Server is a **remote, hosted server**. This is one of the easiest ways to get started with MCP in Copilot Studio.
+> [!IMPORTANT] GitHub Copilot harness billing
+> This mission uses the **GitHub Copilot harness in Microsoft Copilot Studio**, which uses usage-based billing. Building, testing in Preview, evaluating, and using the agent might consume **Copilot Credits**. Review the [Copilot Credits billing overview](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/billing-credit-overview) before you begin.
 
 ### What is the Microsoft Learn MCP Server?
 
@@ -74,15 +75,16 @@ Without external grounding, agents rely on model memory, which can be outdated. 
 
 Zava is building an internal agent to support employees with Microsoft 365, Azure, and Power Platform questions. Rather than manually curating a knowledge base of Microsoft product docs, the team wants their agent to pull answers directly from Microsoft Learn in real time — always accurate, always current. You are the agent builder tasked with wiring this up.
 
+> [!NOTE]
+> No local tooling required. The Microsoft Learn MCP Server is a **remote, hosted server**. This is one of the easiest ways to get started with MCP in Copilot Studio.
+
 ## 🧪 Lab 1.1 - Create the Support Agent {#lab-11-create-the-support-agent}
 
 The first step is to create a new Copilot Studio agent that will serve as the foundation for your Microsoft Learn-powered support agent.
 
-1. Navigate to [Microsoft Copilot Studio](https://copilotstudio.microsoft.com) and sign in. Ensure that the **New Experience** option is toggled on in the upper right hand corner.
+1. Navigate to [Microsoft Copilot Studio](https://copilotstudio.microsoft.com) and sign in. Ensure that the **New Experience** option is toggled on in the upper right hand corner. Select **Agent** to create a new agent.
 
-1. Select **Agent** under the **select what you want to build** section on the home page.
-
-    ![Create Agent](./assets/step-01.png)
+    ![Create Agent](./assets/1.1.01_new.png)
 
 1. Copy and paste the following in the **Name your agent** value at the top left of the screen.
 
@@ -205,7 +207,7 @@ Instructions are one way to limit the scope of what your agent should and should
 Let's remove the web knowledge source so the agent relies only on the Microsoft Learn MCP tools and its instructions.
 
 > [!NOTE]
-> In the new Copilot Studio experience, the classic **Use general knowledge** and **Use information from the web** settings toggles no longer exist. Web grounding is now controlled by the **Search all websites** knowledge source on the Build tab, and general model scope is governed through your instructions.
+> For agents powered by the GitHub Copilot harness, the standard harness settings **Use general knowledge** and **Use information from the web** aren't available. Web grounding is controlled by the **Search all websites** knowledge source on the **Build** tab, and general model scope is governed through your instructions.
 
 1. On the Build tab, in the **Knowledge** section, remove the **Search all websites** source by selecting its **X** (Remove) to disable web grounding.
 
@@ -510,7 +512,7 @@ In this mission, you accomplished:
 <!-- markdownlint-disable-next-line MD033 -->
 <p align="center"><img src="./assets/Academy_LearnMCP_Badge.png" alt="Learn MCP Badge" width="220" /></p>
 
-Congrats, agent - mission accomplished! Now it's time to claim your badge.
+Congrats, agent — mission accomplished! Now it's time to claim your badge.
 
 Simply submit the badge request form and answer all required questions:
 

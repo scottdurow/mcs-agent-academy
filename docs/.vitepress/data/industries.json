@@ -4,5 +4,7 @@
   { "slug": "general",             "label": "General" },
   { "slug": "hr",                  "label": "HR" },
   { "slug": "it",                  "label": "IT" },
+  { "slug": "marketing",           "label": "Marketing" },
+  { "slug": "retail",              "label": "Retail" },
   { "slug": "security",            "label": "Security" }
 ]

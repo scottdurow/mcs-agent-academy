@@ -283,6 +283,10 @@ export default defineConfig({
             items: [
               { text: "MCS ❤️ MCP", link: "/special-ops/mcs-mcp/" },
               {
+                text: "Secure MCP with OAuth 2.0",
+                link: "/special-ops/mcp-oauth/",
+              },
+              {
                 text: "Microsoft Learn Docs MCP",
                 link: "/special-ops/ms-learn-mcp/",
               },
@@ -297,6 +301,14 @@ export default defineConfig({
               {
                 text: "MCS + Docusign MCP",
                 link: "/special-ops/docusign-mcp/",
+              },
+              {
+                text: "RAG with Azure AI Search",
+                link: "/special-ops/azure-ai-search-rag/",
+              },
+              {
+                text: "Marketing Agent with Skills",
+                link: "/special-ops/ghostwriter/",
               },
             ],
           },
