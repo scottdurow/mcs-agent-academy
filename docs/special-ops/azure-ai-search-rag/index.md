@@ -159,7 +159,7 @@ Now you'll create a search index in Azure AI Search and populate it with candida
 
 ### Preparing sample documents
 
-For this lab, download [fictitious_resumes.zip](./assets/fictitious_resumes.zip), then extract the PDF files that you'll index for search.
+For this lab, download [fictitious_resumes.zip](https://github.com/microsoft/agent-academy/raw/refs/heads/main/docs/special-ops/azure-ai-search-rag/assets/fictitious_resumes.zip), then extract the PDF files that you'll index for search.
 
 These sample resumes contain diverse candidate profiles with information such as:
 
@@ -202,7 +202,7 @@ Once the container has been created, you can upload the resume files following t
 
 A new page will show up, through which you can configure the data import process. Select the Azure Blob Storage data source.
 
-    ![Select Azure Blob Storage as the data source](./assets/azure-search-03.png)
+![Select Azure Blob Storage as the data source](./assets/azure-search-03.png)
 
 1. Select **RAG** as the target scenario.
 
