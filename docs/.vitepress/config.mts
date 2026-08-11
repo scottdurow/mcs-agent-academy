@@ -281,11 +281,15 @@ export default defineConfig({
             link: "/special-ops/",
             collapsed: true,
             items: [
-              { text: "MCS ❤️ MCP", link: "/special-ops/mcs-mcp/" },
               {
-                text: "Secure MCP with OAuth 2.0",
-                link: "/special-ops/mcp-oauth/",
+                text: "Marketing Agent with Skills",
+                link: "/special-ops/ghostwriter/",
               },
+              {
+                text: "MCS + Docusign MCP",
+                link: "/special-ops/docusign-mcp/",
+              },
+              { text: "MCS ❤️ MCP", link: "/special-ops/mcs-mcp/" },
               {
                 text: "Microsoft Learn Docs MCP",
                 link: "/special-ops/ms-learn-mcp/",
@@ -295,20 +299,16 @@ export default defineConfig({
                 link: "/special-ops/pac-cli-mcp/",
               },
               {
-                text: "YAML Specialist",
-                link: "/special-ops/yaml-specialist/",
-              },
-              {
-                text: "MCS + Docusign MCP",
-                link: "/special-ops/docusign-mcp/",
-              },
-              {
                 text: "RAG with Azure AI Search",
                 link: "/special-ops/azure-ai-search-rag/",
               },
               {
-                text: "Marketing Agent with Skills",
-                link: "/special-ops/ghostwriter/",
+                text: "Secure MCP with OAuth 2.0",
+                link: "/special-ops/mcp-oauth/",
+              },
+              {
+                text: "YAML Specialist",
+                link: "/special-ops/yaml-specialist/",
               },
             ],
           },
@@ -319,12 +319,12 @@ export default defineConfig({
             items: [
               { text: "Badge Check", link: "/cowork-collective/badge-check/" },
               {
-                text: "The Compliance Packet",
-                link: "/cowork-collective/compliance-packet/",
-              },
-              {
                 text: "Out of Office Vacation Handoff",
                 link: "/cowork-collective/out-of-office-prep/",
+              },
+              {
+                text: "The Compliance Packet",
+                link: "/cowork-collective/compliance-packet/",
               },
             ],
           },
