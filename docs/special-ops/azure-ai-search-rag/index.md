@@ -200,23 +200,21 @@ Once the container has been created, you can upload the resume files following t
 
     ![Open the Azure AI Search import wizard](./assets/azure-search-02.png)
 
-A new page will show up, through which you can configure the data import process. Select the Azure Blob Storage data source.
+1. On the data import page, select **Azure Blob Storage** as the data source.
 
-![Select Azure Blob Storage as the data source](./assets/azure-search-03.png)
+    ![Select Azure Blob Storage as the data source](./assets/azure-search-03.png)
 
 1. Select **RAG** as the target scenario.
 
     ![Select RAG as the import scenario](./assets/azure-search-04.png)
 
-1. Configure **Azure Blob Storage** with these settings, then select **Next**:
-
 1. Configure your **Azure Blob Storage** section:
     1. **Subscription**: Your Azure subscription
     1. **Storage account**: the storage account you created before
-    1. **Blog container**: the new container that you just created and where you uploaded the resume files
-    1. **Blog folder**: you can leave it blank, unless you created a folder structure in the storage container
+    1. **Blob container**: the new container that you just created and where you uploaded the resume files
+    1. **Blob folder**: you can leave it blank, unless you created a folder structure in the storage container
     1. **Parsing mode**: use the **Default** value
-    1. Move **Next**
+    1. Select **Next**
 1. **Vectorize your text** section:
     1. **Kind:** Azure OpenAI
     1. **Subscription:** your subscription
@@ -234,7 +232,7 @@ A new page will show up, through which you can configure the data import process
     1. Here you can provide a prefix for the index, indexer, data source, and skill set that will be created. For example you can use the value resumes
     1. Review the settings and when you are ready select Create to create and feed the vector index
 
-![Create](assets/azure-search-05.png)
+    ![Create](assets/azure-search-05.png)
 
 Once the vector index is created, a small dialog confirms the index creation and availability. Select the Start searching command to start playing with the index. In the search index page, you can simply select the Search command and see the output. Notice that, for every value in the index, you also have a text_vector field that contains the text vectorized using the text-embedding-ada-002 model.
 
@@ -248,11 +246,11 @@ In this exercise you will create a Microsoft Copilot Studio agent that leverages
 
 1. Navigate to [Microsoft Copilot Studio](https://copilotstudio.microsoft.com) and sign in. Make sure **New experience** is turned **on**.
 
-![New experience](assets/new-experience.png)
+    ![New experience](assets/new-experience.png)
 
 1. Select **New Agent**
 
-![New agent](assets/new-agent.png)
+    ![New agent](assets/new-agent.png)
 
 1. Enter the following as the agent **Name** (in the title box at the top):
 
@@ -285,7 +283,7 @@ In this exercise you will create a Microsoft Copilot Studio agent that leverages
 
 1. Select **Save** in the upper right hand corner to save your changes.
 
-![Title and description](assets/title-description.png)
+    ![Title and description](assets/title-description.png)
 
 ### Connect Azure AI Search as a tool
 
