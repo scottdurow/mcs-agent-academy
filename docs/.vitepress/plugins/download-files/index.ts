@@ -11,8 +11,6 @@ const EXCLUDED_DIRS = new Set([
   "node_modules",
 ]);
 
-const EXCLUDED_EXTENSIONS = new Set([".md"]);
-
 interface DownloadBundle {
   [folderPath: string]: string[];
 }
@@ -32,8 +30,7 @@ function listFiles(dir: string): string[] {
   const files: string[] = [];
   for (const entry of entries) {
     if (!entry.isFile()) continue;
-    const ext = path.extname(entry.name).toLowerCase();
-    if (EXCLUDED_EXTENSIONS.has(ext)) continue;
+    // Skill bundles and other downloadable folders may legitimately contain markdown files.
     files.push(entry.name);
   }
   return files.sort();
