@@ -44,6 +44,39 @@ const githubFolderUrl = computed(
 const zipName = computed(() => `${folderName.value}.zip`);
 
 const buttonLabel = computed(() => props.label || `Download ${zipName.value}`);
+const archiveFiles = computed(() =>
+  files.value.filter((fileName) => fileName.toLowerCase().endsWith(".zip"))
+);
+
+async function fetchFileBlob(fileName: string): Promise<Blob> {
+  const base = site.value.base || "/";
+  const rawGitHub = "https://raw.githubusercontent.com/microsoft/agent-academy/main/docs/";
+
+  const localUrl = `${base}${normalizedPath.value}/${fileName}`;
+  let response = await fetch(localUrl);
+  if (!response.ok) {
+    const ghUrl = `${rawGitHub}${normalizedPath.value}/${fileName}`;
+    response = await fetch(ghUrl);
+  }
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${fileName} (${response.status})`);
+  }
+
+  return response.blob();
+}
+
+function triggerDownload(blob: Blob, fileName: string) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+  }, 1000);
+}
 
 type Status = "idle" | "loading" | "success" | "error";
 const status = ref<Status>("idle");
@@ -76,39 +109,37 @@ async function download() {
   errorMessage.value = "";
 
   try {
-    const zip = new JSZip();
-    const base = site.value.base || "/";
-    const rawGitHub = "https://raw.githubusercontent.com/microsoft/agent-academy/main/docs/";
+    if (archiveFiles.value.length === 1) {
+      const zipFileName = archiveFiles.value[0];
+      const zipBlob = await fetchFileBlob(zipFileName);
+      triggerDownload(zipBlob, zipFileName);
 
-    const fetchPromises = files.value.map(async (fileName) => {
-      const localUrl = `${base}${normalizedPath.value}/${fileName}`;
-      let response = await fetch(localUrl);
-      if (!response.ok) {
-        // Fall back to raw GitHub download URL
-        const ghUrl = `${rawGitHub}${normalizedPath.value}/${fileName}`;
-        response = await fetch(ghUrl);
-      }
-      if (!response.ok) {
-        throw new Error(`Failed to fetch ${fileName} (${response.status})`);
-      }
-      const blob = await response.blob();
+      status.value = "success";
+      successTimer = setTimeout(() => {
+        status.value = "idle";
+      }, 2500);
+      return;
+    }
+
+    const payloadFiles = files.value.filter(
+      (fileName) => !fileName.toLowerCase().endsWith(".zip")
+    );
+    if (payloadFiles.length === 0) {
+      status.value = "error";
+      errorMessage.value = "No downloadable content found in this folder.";
+      return;
+    }
+
+    const zip = new JSZip();
+    const fetchPromises = payloadFiles.map(async (fileName) => {
+      const blob = await fetchFileBlob(fileName);
       zip.file(fileName, blob);
     });
 
     await Promise.all(fetchPromises);
 
     const zipBlob = await zip.generateAsync({ type: "blob" });
-    const url = URL.createObjectURL(zipBlob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = zipName.value;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(() => {
-      URL.revokeObjectURL(url);
-    }, 1000);
+    triggerDownload(zipBlob, zipName.value);
 
     status.value = "success";
     successTimer = setTimeout(() => {
