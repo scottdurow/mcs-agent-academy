@@ -27,7 +27,7 @@ Agent Academy workshops happening around the world, delivered by MVPs and commun
 | Date | Event | Location | Facilitators | Status |
 |------|-------|----------|--------------|--------|
 | Apr 15, 2026 | [Color Cloud Workshop](https://colorcloud.rocks/) | Hamburg, Germany | Nick Doelman & Ulrikke Akerbæk | ✅ Completed |
-| Jun 29, 2026 | [European Power Platform Conference](https://espc.tech/conference/eppc-2026/) | Copenhagen, Denmark | Nick Doelman & Ulrikke Akerbæk | 🟢 Upcoming |
+| Jun 29, 2026 | [European Power Platform Conference](https://espc.tech/conference/eppc-2026/) | Copenhagen, Denmark | Nick Doelman & Ulrikke Akerbæk | ✅ Completed |
 | Oct 2, 2026 | [Scottish Summit](https://scottishsummit.com/) | Edinburgh, Scotland | April Dunnam, Mats Necker & Daniel Laskewitz | 🟢 Upcoming |
 | Oct 30, 2026 | [Power Platform Community Conference](https://powerplatformconf.com/#!/) | Las Vegas, NV | Scott Durow & Sheila Shahpari | 🟢 Upcoming |
 
@@ -56,6 +56,5 @@ Everything you need to deliver Agent Academy as a live workshop.
 
 <!-- markdownlint-disable-next-line MD033 -->
 <WorkshopsPage />
-
 
 
