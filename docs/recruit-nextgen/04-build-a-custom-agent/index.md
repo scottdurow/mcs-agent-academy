@@ -196,18 +196,6 @@ Before starting this lab, make sure you have:
 
     ![Add the Microsoft support website URL](./assets/04-add-the-microsoft-support-website-url.png)
 
-1. Select **Add to Agent**
-
-    ![Add public website to the agent](./assets/04-add-public-website-to-the-agent.png)
-
-1. Select the **Add Button** next to the **Instructions** section in the configuration panel.
-
-    ![Add another agent knowledge source](./assets/04-add-another-agent-knowledge-source.png)
-
-1. Select the **Public websites** option
-
-    ![Select public website knowledge source again](./assets/04-select-public-website-knowledge-source.png)
-
 1. Copy and paste the following text into the input then select **Add**. Make sure to update the SharePoint site with your site's URL.
 
     ```text
@@ -216,11 +204,11 @@ Before starting this lab, make sure you have:
 
     ![Add the additional public website URL](./assets/04-add-the-additional-public-website-url.png)
 
-1. Select **Add to Agent**
+1. Select **Add to Agent** to add both public website knowledge sources to your agent.
 
     ![Add second public website to agent](./assets/04-add-second-public-website-to-agent.png)
 
-1. Select the **Add Button** next to the **Instructions** section in the configuration panel one last time.
+1. Select the **Add Button** next to the **Knowledge** section in the configuration panel one last time.
 
     ![Add SharePoint as a knowledge source](./assets/04-add-sharepoint-as-a-knowledge-source.png)
 

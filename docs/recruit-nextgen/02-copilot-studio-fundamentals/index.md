@@ -107,14 +107,14 @@ A harness is therefore broader than orchestration. It includes an orchestration 
 
 Once you've chosen **Copilot Studio** as your build surface, choose the harness that matches the work:
 
-| | **GitHub Copilot harness** | **Standard harness** | **Copilot chat harness** |
+| | **Copilot chat harness** | **Standard harness** | **GitHub Copilot harness** |
 |---|---|---|---|
-| **Best when** | The agent must reason through complex, multi-step work | The experience needs structured conversations, maker-defined components, or predictable control | The goal is to ground Microsoft 365 Copilot Chat in enterprise knowledge |
-| **Orchestration** | Enhanced, goal-driven orchestration that plans, acts, reviews results, and adjusts | Configurable classic or generative orchestration over topics and other maker-defined capabilities | Uses the Microsoft 365 Copilot Chat experience |
-| **Key capabilities** | Skills, memory, connected agents, tools, workflows, and file creation | Topics, knowledge, tools, prompts, branches, and structured conversations | Enterprise knowledge inside Microsoft 365 Copilot Chat |
-| **Publishing** | Internal teams or external customers | Internal teams or external customers | Internal teams |
-| **Billing** | Usage-based Copilot Credits | Standard Copilot Studio licensing | Consumption-based or included in eligible Microsoft 365 Copilot user licenses |
-| **In this course** | **Mission 02 onward** | Not built here | Not built here |
+| **Best when** | The goal is to ground Microsoft 365 Copilot Chat in enterprise knowledge | The experience needs structured conversations, maker-defined components, or predictable control | The agent must reason through complex, multi-step work |
+| **Orchestration** | Uses the Microsoft 365 Copilot Chat experience | Configurable classic or generative orchestration over topics and other maker-defined capabilities | Enhanced, goal-driven orchestration that plans, acts, reviews results, and adjusts |
+| **Key capabilities** | Enterprise knowledge inside Microsoft 365 Copilot Chat | Topics, knowledge, tools, prompts, branches, and structured conversations | Skills, memory, connected agents, tools, workflows, and file creation |
+| **Publishing** | Internal teams | Internal teams or external customers | Internal teams or external customers |
+| **Billing** | Consumption-based or included in eligible Microsoft 365 Copilot user licenses | Standard Copilot Studio licensing | Usage-based Copilot Credits |
+| **In this course** | Not built here | Not built here | **Mission 02 onward** |
 
 ![Decision map for choosing the Copilot chat, Standard, or GitHub Copilot harness based on the work an agent must perform](./assets/02-harness-decision.png)
 
@@ -129,6 +129,26 @@ The same business scenario can be implemented with different harnesses depending
 | Interpret varied requests and dynamically combine troubleshooting guidance, live data, reusable skills, and workflows | **GitHub Copilot harness** |
 
 In this course, the completed `Contoso IT Concierge` will use the third approach. It will interpret an employee's request, select the appropriate skill and tool, gather missing information, and invoke a workflow when the request is ready. The scenario is intentionally straightforward so you can learn the architecture before applying it to more complex business processes.
+
+## Why is it called the "GitHub Copilot" Harness
+
+You may be wondering why it's called the **GitHub Copilot harness**.
+
+The name reflects the orchestration technology used by the harness which is built around the Github Copilot SDK. It does **not** mean your agent runs inside GitHub Enterprise Cloud or requires GitHub services to function.
+
+When you build an agent using the GitHub Copilot harness:
+
+- Your agent remains a Microsoft Copilot Studio agent
+- Your agent is managed within Copilot Studio
+- Your agent follows the governance model of your Copilot Studio environment
+
+You do **not** need:
+
+- A GitHub Copilot subscription
+- A GitHub Enterprise Cloud deployment
+- GitHub-specific administration or governance
+
+The harness determines how an agent plans, reasons, and executes work. Copilot Studio continues to determine how the solution is built, governed, managed, and deployed.
 
 ## Why the GitHub Copilot Harness Is Different
 

@@ -204,6 +204,9 @@ A new SharePoint site is required for completing `Mission 04 - Build an agent wi
 
     ![Select IT help desk site template](images/00-select-it-help-desk-site-template.png)
 
+> [!NOTE]
+> Your screen might look slightly different. The templates show in order of most frequently used.
+
 1. Select **Use template** to create a new SharePoint site from the IT help desk template.
 
     ![Use the IT help desk template](images/00-use-the-it-help-desk-template.png)
@@ -258,7 +261,7 @@ A new SharePoint site is required for completing `Mission 04 - Build an agent wi
 
     ![Change column types to Choice](images/00-change-column-types-to-choice.png)
 
-1. Change the following columns manually from `Single line of text` to `Choice`, `Date and time` and `Number` fields.
+1. Scroll to the right and change the following columns manually from `Single line of text` to `Choice`, `Date and time` and `Number` fields, respectively. Then select **Next**.
 
     | Column         | Updated Type  |
     | -------------- | ------------- |
