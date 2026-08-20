@@ -11,6 +11,7 @@ short-description: Create an agent powered by the GitHub Copilot harness using A
 difficulty: 1
 codename: OPERATION ENGINE SHIFT
 time: 60
+harness: github-copilot
 tags: [fundamentals, solutions]
 products:
   - copilot-studio
