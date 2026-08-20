@@ -11,6 +11,7 @@ short-description: 'Publish your agent'
 difficulty: 1
 codename: OPERATION ROLL OUT
 time: 15
+harness: github-copilot
 tags:
   - publishing
 products:
