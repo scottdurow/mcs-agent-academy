@@ -54,7 +54,7 @@ Use a connected agent (rather than one giant agent) when the specialist has its 
 ::: details 🔄 Coming from the classic Operative course?
 The classic course offered two ways to bring in a second agent: **child agents** and **connected agents**. The Powered by GitHub Copilot experience keeps connected agents and **drops child agents entirely** - where we might have used a child agent, we now use specialist **skills**.
 
-A connected agent is a complete agent in its own right: it has its own instructions, its own tools, its own evaluation set, and its own publish cycle. Splitting work out is a decision about ownership and lifecycle, not about picking an authoring construct.
+A connected agent is a complete agent. It has its own instructions, its own tools, its own evaluation set, and its own publish cycle. Splitting work out is a decision about ownership and lifecycle, not about picking an authoring construct.
 
 Grounding changed too. A specialist used to be grounded by adding **Dataverse** as a **Knowledge** source. Here you add the **Dataverse MCP server** as a **tool** instead, and the specialist reads live records rather than an indexed copy.
 :::
@@ -77,7 +77,7 @@ The Hiring Agent needs a separate specialist agent for interview preparation.
 
 1. In the left navigation select **Agents**, then **New Agent**.
 
-    ![New Agent control in the agents list command bar](../assets/screenshot-placeholder.png)
+    ![New Agent control in the agents list command bar](./assets/m03-3-1-1-new-agent-button.png)
 
 1. Name it:
 
@@ -85,7 +85,7 @@ The Hiring Agent needs a separate specialist agent for interview preparation.
    Interview Agent
    ```
 
-    ![New specialist named Interview Agent](../assets/screenshot-placeholder.png)
+    ![New specialist named Interview Agent](./assets/m03-3-1-2-interview-agent-named.png)
 
 1. Set the **Instructions**:
 
@@ -117,7 +117,7 @@ The Hiring Agent needs a separate specialist agent for interview preparation.
    rule that every answer has to be grounded in the hiring data. The **Tools**, **Knowledge**, and
    **Connected agents** panels are still empty, and you fill those in over the next two labs.
 
-    ![Interview Agent instructions and empty component panels](../assets/screenshot-placeholder.png)
+    ![Interview Agent instructions and empty component panels](./assets/m03-3-1-3-interview-agent-build.png)
 
    > [!NOTE] The default model
    > As with the Hiring Agent in Mission 01, a new agent starts on the platform's default model - in
@@ -133,11 +133,11 @@ The Hiring Agent needs a separate specialist agent for interview preparation.
    | **Solution** | Operative |
    | **Primary language** | English |
 
-    ![Interview Agent schema and solution settings](../assets/screenshot-placeholder.png)
+    ![Interview Agent schema and solution settings](./assets/m03-3-1-4-agent-details.png)
 
 1. Close **Settings**, then select **Save**.
 
-    ![The Save control on the Interview Agent command bar](../assets/screenshot-placeholder.png)
+    ![The Save control on the Interview Agent command bar](./assets/m03-3-1-5-interview-agent-saved.png)
 
 ### 3.2 Configure Tools
 
@@ -145,15 +145,15 @@ Before the Hiring Agent can delegate tasks to it, the Interview Agent needs acce
 
 1. On the **Build** canvas, next to **Tools** select **➕ Add tool**.
 
-    ![Add tool control in the Tools building block](../assets/screenshot-placeholder.png)
+    ![Add tool control in the Tools building block](./assets/m03-3-2-1-add-tool-button.png)
 
 1. Select the **Model Context Protocol (MCP)** filter, then choose **Microsoft Dataverse MCP Server**. It's the same tool you gave the Hiring Agent in [Mission 02](../02-instructions-skills-dataverse-mcp/index.md#lab-02-author-the-skill-and-connect-the-data-layer), on a different authentication mode.
 
-    ![Add a tool catalog filtered to MCP servers](../assets/screenshot-placeholder.png)
+    ![Add a tool catalog filtered to MCP servers](./assets/m03-3-2-2-tool-catalog-mcp.png)
 
 1. Select the connection, and select **Add**. Open the installed tool, set **Authentication mode** to **Maker**, then select **Confirm**.
 
-    ![Dataverse MCP server with Maker authentication](../assets/screenshot-placeholder.png)
+    ![Dataverse MCP server with Maker authentication](./assets/m03-3-2-3-dataverse-mcp-added.png)
 
     > [!NOTE] Why Maker here, when the Hiring Agent uses User
     > **User** is normally the right default - every caller stays inside their own Dataverse
@@ -173,23 +173,23 @@ Before the Hiring Agent can delegate tasks to it, the Interview Agent needs acce
 
    The Interview Agent's own instructions say it must never create, update or delete a record, so restrict the tools to remove those that are not needed. This is the same least-privilege reasoning you applied to the Hiring Agent in [Mission 02](../02-instructions-skills-dataverse-mcp/index.md#lab-02-author-the-skill-and-connect-the-data-layer).
 
-   ![Dataverse MCP restricted to three read actions](../assets/screenshot-placeholder.png)
+   ![Dataverse MCP restricted to three read actions](./assets/m03-3-2-4-dataverse-mcp-restricted.png)
 
 1. Remove the default **"Search all websites"** knowledge source so the Interview Agent answers **only** from the hiring data: open the **Knowledge** panel, select the **Search all websites** entry, and delete it. Leaving it in would let the agent answer from the public web instead of grounding every answer in your Dataverse records.
 
-    ![Knowledge panel listing the Search all websites source](../assets/screenshot-placeholder.png)
+    ![Knowledge panel listing the Search all websites source](./assets/m03-3-2-5-web-knowledge-source.png)
 
 1. Open the more options menu, **Settings**.
 
-    ![More options menu with Settings command](../assets/screenshot-placeholder.png)
+    ![More options menu with Settings command](./assets/m03-3-2-6-open-settings.png)
 
 1. Select the **AI & behavior** tab and confirm **Orchestration**, **Allow other agents to connect** is **on** - this is what lets the Hiring Agent invoke this agent as a tool.
 
-    ![Allow other agents to connect enabled](../assets/screenshot-placeholder.png)
+    ![Allow other agents to connect enabled](./assets/m03-3-2-7-build-43-allow-connect.png)
 
-1. Select **Save**, then **Publish** the Interview Agent. When publishing finishes, the **Monitor** tab becomes available.
+1. Select **Save**, then **Publish** the Interview Agent. Publishing asks you to confirm: the dialog names the channels the release goes to and when the agent was last published, and **Publish agent** is what actually ships it. The command bar reads **Publishing…** for about a minute, then a dialog confirms **Your agent published successfully** - select **Close**. When publishing finishes, the **Monitor** tab becomes available.
 
-    ![Save and Publish on the Interview Agent command bar](../assets/screenshot-placeholder.png)
+    ![Save and Publish on the Interview Agent command bar](./assets/m03-3-2-8-interview-agent-published.png)
 
 > [!NOTE] Publishing vs Channels
 > This is the first of many publishes, so it's worth being precise about what one does. **Publishing**
@@ -210,29 +210,28 @@ With the specialist published and available for connections, we'll add it to the
 
 1. In the left navigation select **Agents**, then open the **Hiring Agent**.
 
-    ![Hiring Agent in the Copilot Studio agents list](../assets/screenshot-placeholder.png)
+    ![Hiring Agent in the Copilot Studio agents list](./assets/m03-3-3-1-hiring-agent-selected.png)
 
 1. Go to its **Build** tab. Next to **Connected agents**, select **➕ Add connected agent**.
 
-    ![Add connected agent control on the Build canvas](../assets/screenshot-placeholder.png)
+    ![Add connected agent control on the Build canvas](./assets/m03-3-3-2-connected-agents-add.png)
 
 1. Choose **Interview Agent** from the list of published agents.
 
-    ![Published Interview Agent in connection picker](../assets/screenshot-placeholder.png)
+    ![Published Interview Agent in connection picker](./assets/m03-3-3-3-build-23-add-connected.png)
 
-1. Set the delegation **description**. This description is *critical*: the orchestrator reads it to decide when to hand work over, so scope it tightly to **interview preparation only** - otherwise it will also route data lookups and matching (which the Hiring Agent's own skill and tools handle) to the specialist:
+1. Set the delegation **description**. The orchestrator reads this description to decide when to hand work over, so scope it tightly to **interview preparation**:
 
    ```text
-   Use ONLY to prepare interviewers for a specific candidate and role: generate
-   tailored interview
-    questions and an interviewer briefing grounded in the hiring data. Do NOT
-    use for document or file generation, interview prep packs, requests handled
-    by local skills, listing, counting, searching, matching or scoring
-    candidates to roles, or creating records; the Hiring Agent handles those
-    itself with its own skills and tools.
+   Use for interview preparation: tailored interview questions and an
+   interviewer briefing for a named candidate and job role, grounded in the
+   hiring data and that role's evaluation criteria. Do NOT use for generating
+   documents or files, for resume intake, for matching or scoring a resume
+   against open roles, or for creating or updating records; the Hiring Agent
+   does those itself with its own skills and tools.
    ```
 
-    ![Connected agent delegation description configuration](../assets/screenshot-placeholder.png)
+    ![Connected agent delegation description configuration](./assets/m03-3-3-4-build-24-connect-config.png)
 
    > [!IMPORTANT] A broad description causes misrouting
    > If the description says the specialist "answers questions about Resumes, Job Roles, Evaluation
@@ -243,7 +242,7 @@ With the specialist published and available for connections, we'll add it to the
 
 1. Select **Connect**, then select **Save**. The Interview Agent now appears under **Connected agents**.
 
-    ![Interview Agent listed under Connected agents](../assets/screenshot-placeholder.png)
+    ![Interview Agent listed under Connected agents](./assets/m03-3-3-5-build-25-connected-added.png)
 
 ### 3.4 Test multi-agent collaboration
 
@@ -251,9 +250,9 @@ To check the routing, send the Hiring Agent one request that needs its own data 
 
 1. Still in the **Hiring Agent**, select the **Preview** tab.
 
-    ![Hiring Agent Preview ready for collaboration test](../assets/screenshot-placeholder.png)
+    ![Hiring Agent Preview ready for collaboration test](./assets/m03-3-4-1-hiring-agent-preview.png)
 
-1. Ask for something that needs both agents. The candidate profile is supplied in the prompt because resume intake starts in Mission 05; the Hiring Agent still reads J1004 and its weighted criteria from Dataverse:
+1. Ask for something that needs both agents. The candidate profile is supplied in the prompt because resume intake starts in Mission 05:
 
    ```text
    Prepare me to interview Jordan Example for the Power Platform Developer role
@@ -265,7 +264,7 @@ To check the routing, send the Hiring Agent one request that needs its own data 
 
     Watch the orchestrator **delegate** the interview-prep part to the Interview Agent - you'll see a connected-agent call in the trace. Expand the **Interview Agent** call to see the exact context the Hiring Agent passed across:
 
-   ![Hiring Agent delegation trace for Interview Agent](../assets/screenshot-placeholder.png)
+   ![Hiring Agent delegation trace for Interview Agent](./assets/m03-3-4-2-build-44-delegation-trace.png)
 
 1. Try a few more prompts and watch which ones the orchestrator keeps for itself and which it hands over:
 
@@ -274,7 +273,7 @@ To check the routing, send the Hiring Agent one request that needs its own data 
     How many evaluation criteria does J1004 have, and what are their weights?
    ```
 
-    ![Hiring Agent keeps an ordinary J1004 criteria lookup local](../assets/screenshot-placeholder.png)
+    ![Hiring Agent keeps an ordinary J1004 criteria lookup local](./assets/m03-3-4-3-hiring-agent-local-routing.png)
 
 > [!TIP] Distinct descriptions drive good delegation
 > The orchestrator picks a connected agent using its **description** - the same rule as skills
@@ -289,15 +288,15 @@ Like the Hiring Agent's baseline in Mission 02, this first set asks the speciali
 
 1. If you are not already in the **Interview Agent**, select **Agents** in the left navigation and open it. Go to its **Evaluate** tab. The agent has no test sets yet, so it opens the **Data source** screen straight away.
 
-    ![Evaluate tab open on the Data source screen](../assets/screenshot-placeholder.png)
+    ![Evaluate tab open on the Data source screen](./assets/m03-3-5-1-evaluate-tab.png)
 
 1. Choose **Or, write some questions yourself**, keeping **Data type: Conversation** and the **General quality** test method.
 
-    ![Manual Interview Agent evaluation ready for authored cases](../assets/screenshot-placeholder.png)
+    ![Manual Interview Agent evaluation ready for authored cases](./assets/m03-3-5-2-manual-evaluation-editor.png)
 
 1. Select **Add conversations** (next to *Review your test cases*), then choose **Write**.
 
-    ![Add conversations menu with Write highlighted](../assets/screenshot-placeholder.png)
+    ![Add conversations menu with Write highlighted](./assets/m03-3-5-3-add-conversations.png)
 
 1. Add these four **positive** cases. For each one, paste the **Question** and the **Expected answer** into the **Reference** box, then select **Done**:
 
@@ -308,46 +307,30 @@ Like the Hiring Agent's baseline in Mission 02, this first set asks the speciali
    | 3 | What do you do when required information is missing or the hiring data does not support an answer? | I ask a clarifying question when required information is missing, ground every answer in the hiring data, and never invent or guess facts. |
    | 4 | Will you ever contact a candidate directly? Why or why not? | No. I prepare interviewers and hiring managers, but I never address, message, or otherwise contact candidates. |
 
-    ![Write dialog with the first question and reference](../assets/screenshot-placeholder.png)
+    ![Write dialog with the first question and reference](./assets/m03-3-5-4-write-case-dialog.png)
 
 1. Check all four cases are listed before you go on.
 
-    ![Four specialist baseline cases listed in the evaluation](../assets/screenshot-placeholder.png)
+    ![Four specialist baseline cases listed in the evaluation](./assets/m03-3-5-5-four-cases-listed.png)
 
-1. Select **Manage**, select your signed-in account as the **user profile**, open the **User** list and verify the account says **Connected**, then **Save** it. Saving the intended identity now gives any grounded case you add later a known account to call tools using.
+1. Select **Manage**, select your signed-in account as the **user profile**, then select **Save**. This gives grounded evaluation cases a known account to call tools with.
 
-    ![Connected evaluation profile for signed-in account](../assets/screenshot-placeholder.png)
+    ![Connected evaluation profile for signed-in account](./assets/m03-3-5-6-manage-user-profile.png)
 
-1. Name the set `Interview Agent baseline` and **Save** it. Reopen it and confirm all four cases remain in the saved set:
+1. Name the set `Interview Agent baseline` and **Save** it:
 
-    ![Saved Interview Agent test set with all four cases](../assets/screenshot-placeholder.png)
+    ![Saved Interview Agent test set with all four cases](./assets/m03-3-5-7-interview-test-set-saved.png)
 
 1. Select **Evaluate**. All four cases should come back **Pass** - each one asks about a rule that is
     already written into the agent's instructions, so there is nothing here the agent has to work out
     for itself:
 
-    ![Interview Agent evaluation with four passing cases](../assets/screenshot-placeholder.png)
+    ![Interview Agent evaluation with four passing cases](./assets/m03-3-5-8-eval-live-21-interview-100pass.png)
 
 A **Fail** in this set therefore means the instructions aren't doing what you expect. A baseline should be green today, so that a red result tomorrow tells you something changed.
 
-### 3.6 Re-run the whole set after every change
-
-A **regression test** re-runs *all* our existing checks after a change so we catch anything the change broke. We do this every time we change an agent:
-
-1. In the **Interview Agent**, go to the **Evaluate** tab and note the set's **current score** under **Recent results** before you re-run it - that's the number you'll compare against.
-
-    ![Evaluate landing page with test sets and Recent results](../assets/screenshot-placeholder.png)
-
-1. Find the saved **Interview Agent baseline** test set, then select **Evaluate** to run the **entire** set.
-
-    ![Re-running the saved test set from Evaluate](../assets/screenshot-placeholder.png)
-
-1. When the run finishes, compare its result with the score you noted. Confirm all four cases completed
-    and inspect any case that changed from **Pass** to **Fail**:
-
-    ![Latest Interview Agent rerun with four passes](../assets/screenshot-placeholder.png)
-
-You'll do this over and over from here on. In **Mission 04**, for example, you give this agent new rules about date formats and protected topics. Once those rules exist you add cases that check them - and then re-run the *whole* set, so you can see the new behavior working and confirm at the same time that identity, identifiers, grounding and the contact boundary all still behave as they did before.
+> [!NOTE]
+> Re-run the complete evaluation set after every agent change to check that the change has not introduced a regression.
 
 ## ✅ Mission Complete {#mission-complete}
 
