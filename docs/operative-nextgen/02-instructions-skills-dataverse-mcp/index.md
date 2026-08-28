@@ -168,11 +168,11 @@ To keep the hiring system maintainable, we need to build it as a small set of **
 
 1. Open your **Hiring Agent**, **Build**. Next to **Skills** on the right, select **➕ Add skill**.
 
-   ![Add skill control in the Skills building block](../assets/screenshot-placeholder.png)
+   ![Add skill control in the Skills building block](./assets/m02-2-1-1-build-15-add-skill.png)
 
 1. Choose **Create from blank**.
 
-   ![Add skill dialog with Create from blank highlighted](../assets/screenshot-placeholder.png)
+   ![Add skill dialog with Create from blank highlighted](./assets/m02-2-1-2-blank-skill-editor.png)
 
 1. Set the **Name**:
 
@@ -180,7 +180,7 @@ To keep the hiring system maintainable, we need to build it as a small set of **
    resume-intake
    ```
 
-   ![Resume intake skill name entered](../assets/screenshot-placeholder.png)
+   ![Resume intake skill name entered](./assets/m02-2-1-3-resume-intake-name.png)
 
 1. Set the **Description** - the orchestrator reads this to decide *when* to load the skill:
 
@@ -190,14 +190,16 @@ To keep the hiring system maintainable, we need to build it as a small set of **
    Resume records in Dataverse. Does not match roles or create Job Applications.
    ```
 
-   ![Resume intake routing description entered](../assets/screenshot-placeholder.png)
+   ![Resume intake routing description entered](./assets/m02-2-1-4-resume-intake-description.png)
 
 1. Replace the **Instructions** template with the procedure below. The **Guidelines**, **File handling**, and **Error handling & observability** sections are what make the skill resilient and testable:
 
    ```text
-   Use this skill when a candidate's resume is provided (attached in chat or
-   received by email). This skill only handles intake - it does not match roles
-   or create Job Applications.
+   Use this skill whenever a file is offered as a candidate's resume (attached
+   in chat or received by email), including one that turns out to be the wrong
+   type or too large - the File handling checks below are what decide that.
+   This skill only handles intake - it does not match roles or create Job
+   Applications.
 
    1. Read the resume. If a file is attached, read it directly (it may be a PDF
       or image). Extract the candidate's full name, email address, phone (if
@@ -256,11 +258,11 @@ To keep the hiring system maintainable, we need to build it as a small set of **
 
    All three go on the same **Create from blank** panel - **Name**, **Description**, and **Instructions**:
 
-    ![Completed resume-intake skill creation form](../assets/screenshot-placeholder.png)
+    ![Completed resume-intake skill creation form](./assets/m02-2-1-5-build-16-skill-blank.png)
 
 1. Select **Create**. The skill appears under **Skills** on the Build canvas, then select **Save**.
 
-    ![Skill created on the agent](../assets/screenshot-placeholder.png)
+    ![Skill created on the agent](./assets/m02-2-1-6-build-17-skill-created.png)
 
 > [!TIP] One skill, one job
 > `resume-intake` does exactly one thing - intake - and its description says so. Matching and creating
@@ -276,27 +278,27 @@ The skill now describes the intake procedure but still cannot reach a hiring rec
 
 1. Open your **Hiring Agent**, **Build**. In the **Tools** section, select **➕ Add tool**.
 
-   ![Add tool control in the Tools building block](../assets/screenshot-placeholder.png)
+   ![Add tool control in the Tools building block](./assets/m02-2-2-1-tool-catalog-open.png)
 
 1. In the **Add a tool** dialog, select the **Model Context Protocol (MCP)** filter. The catalog lists the available MCP servers.
 
-    ![Tool catalog filtered to Dataverse MCP servers](../assets/screenshot-placeholder.png)
+    ![Tool catalog filtered to Dataverse MCP servers](./assets/m02-2-2-2-build-04-mcp-list.png)
 
 1. Select **Microsoft Dataverse MCP Server**. Its detail panel opens (*"Provides Remote MCP Server access to Dataverse"*). Choose a **connection** - an existing Dataverse connection for your account shows a green check - then select **Add**.
 
-    ![Connected Dataverse MCP server ready to add](../assets/screenshot-placeholder.png)
+    ![Connected Dataverse MCP server ready to add](./assets/m02-2-2-3-build-05-dataverse-mcp-detail.png)
 
 1. Confirm the server now appears under **Tools** on the Build canvas.
 
-    ![Dataverse MCP server added successfully](../assets/screenshot-placeholder.png)
+    ![Dataverse MCP server added successfully](./assets/m02-2-2-4-build-06-dataverse-mcp-added.png)
 
 1. Select the **Microsoft Dataverse MCP Server** tool to review the actions it exposes - `read_query`, `create_table`, `update_table`, `delete_table`, `create_record`, `update_record`, and more - all switched on by default (**Enable all tools**). Note the **Authentication mode** is **User**, so the agent's data calls run as the **signed-in user**.
 
-    ![Dataverse MCP actions and User authentication](../assets/screenshot-placeholder.png)
+    ![Dataverse MCP actions and User authentication](./assets/m02-2-2-5-dataverse-mcp-tools.png)
 
 1. An agent should only ever hold the permissions it actually uses, so we need to restrict the actions to the ones the Hiring Agent needs. Turn **off** the master **Enable all tools** toggle at the top of the list, then switch **on** only the record and query actions the Hiring Agent uses - **`search`**, **`describe`**, **`read_query`**, **`create_record`**, and **`update_record`**. Leave the schema-level actions (**`create_table`**, **`update_table`**, **`delete_table`**) off - the agent reads and writes *records*, it never changes the data model.
 
-    ![Restricted Dataverse MCP action selection](../assets/screenshot-placeholder.png)
+    ![Restricted Dataverse MCP action selection](./assets/m02-2-2-6-dataverse-mcp-selected.png)
 
    Restricting an agent to only the operations it needs is a core safety practice - an agent that *can't* drop a table can't be talked into dropping one - so give it the least access that still does the job.
 
@@ -304,7 +306,7 @@ The skill now describes the intake procedure but still cannot reach a hiring rec
 
 1. Remove the default **"Search all websites"** knowledge source so the agent answers **only** from your hiring data: open the **Knowledge** panel, select the **Search all websites** entry, and delete it. Leaving it in lets the agent answer a question like *"what job roles are open?"* from public job boards instead of your Job Role table - which we want to prevent from ever happening.
 
-   ![The Search all websites knowledge source selected for removal](../assets/screenshot-placeholder.png)
+   ![The Search all websites knowledge source selected for removal](./assets/m02-2-2-8-web-knowledge-removed.png)
 
 > [!TIP] One MCP Server, many tools
 > You added a single MCP server, but the agent can now use `search`, `describe`, `read_query`,
@@ -315,7 +317,7 @@ The skill now describes the intake procedure but still cannot reach a hiring rec
 
 To check that the MCP connection returns current Dataverse records, ask the agent a question that its instructions and skill cannot answer on their own.
 
-1. Select the **Preview** tab to open the test chat. Three controls sit above the conversation, and it is worth knowing what each one does before you start testing:
+1. Select the **Preview** tab to open the test chat. Three controls sit above the conversation:
 
    | Control | What it does |
    | --- | --- |
@@ -323,7 +325,7 @@ To check that the MCP connection returns current Dataverse records, ask the agen
    | **History** | Reopens earlier Preview conversations, which is how you go back and compare what the agent said before a change |
    | **End user preview** | Switches between the builder's view and the published experience. Leave it **off** while you build and you see the agent's reasoning and every tool call; turn it **on** and you see only the reply, exactly as a real user would |
 
-    ![Hiring Agent Preview session controls](../assets/screenshot-placeholder.png)
+    ![Hiring Agent Preview session controls](./assets/m02-2-3-1-build-07-preview.png)
 
 1. Ask a question that requires live data:
 
@@ -333,24 +335,23 @@ To check that the MCP connection returns current Dataverse records, ask the agen
 
 1. The first time the agent invokes the MCP server, a **Permission Required** card appears (*"This agent is requesting permission to use shared_commondataserviceforapps to perform: InvokeMCP"*). Select **Allow**.
 
-    ![Agent invokes the MCP server](../assets/screenshot-placeholder.png)
+    ![Agent invokes the MCP server](./assets/m02-2-3-2-build-08-mcp-test.png)
 
 1. The agent runs `search` / `describe` / `read_query` and returns the live rows - the **5 active job roles** you imported in Mission 01:
 
-    ![Five job roles returned from Dataverse](../assets/screenshot-placeholder.png)
+    ![Five job roles returned from Dataverse](./assets/m02-2-3-3-build-09-mcp-result.png)
 
    The agent lists all five imported sample roles - **J1000 Power Automate Specialist, J1001 Power BI Analyst, J1002 Power Platform Architect, J1003 Power Platform Consultant,** and **J1004 Power Platform Developer** - and summarizes them as *"5 active job roles."*
 
-1. Next we need to check that the skill can use the newly added tool, so ask a question that makes the agent read a role's related criteria through MCP:
+1. Next we need to check that the agent can discover and explain the skill we created. Select **New chat**, then ask:
 
    ```text
-   How many evaluation criteria does the Power Platform Developer role (J1004)
-   have, and what are they?
+   What can the resume-intake skill do for me?
    ```
 
-   The agent calls the MCP tool and answers from **live data** - the criteria and weightings for J1004, not a guess. Your instructions, the `resume-intake` skill, and the Dataverse MCP server are now working together end to end.
+   The reply should explain that `resume-intake` reads an uploaded resume, creates or reuses the linked **Candidate** and **Resume** records in Dataverse, and reports their record numbers. This confirms that the skill is available to the Hiring Agent. We will run the complete intake procedure with a resume in Mission 05.
 
-   ![Hiring Agent reads five weighted criteria](../assets/screenshot-placeholder.png)
+   ![Hiring Agent explains the resume-intake skill](./assets/m02-2-3-4-build-41-j1004-criteria.png)
 
    > [!TIP] End user preview
    > The **End user preview** toggle above the chat changes what Preview shows you. Leave it **off**
@@ -371,7 +372,7 @@ A **Connected user** profile can also run cases that use tools. For each one, re
 
    Choose **"Or, write some questions yourself"** here, so you control exactly what each case asks.
 
-   ![Manual conversation evaluation ready for test cases](../assets/screenshot-placeholder.png)
+   ![Manual conversation evaluation ready for test cases](./assets/m02-2-4-1-manual-evaluation-ready.png)
 
    > [!NOTE] Other test methods exist, but are out of scope here
    > **General quality** is the only test method available in agent evaluations, and the only one
@@ -385,60 +386,36 @@ A **Connected user** profile can also run cases that use tools. For each one, re
    > - **Custom** - checks and labels answers according to instructions you define
    > - **Keyword match** - looks for matching words and phrases
 
-1. Add these four **positive** cases - each asks the agent about **itself**, so it always has a complete, in-scope answer:
-
-   | # | Question | Expected answer contains |
-   | --- | --- | --- |
-   | 1 | Who are you, and what is your role in the hiring process? | Introduces itself as the Hiring Agent that runs intake, matching, and applications |
-   | 2 | What kinds of tasks can you help me with, and what is outside your scope? | Lists its hiring tasks *and* notes it declines unrelated topics - a **positive** way to check scope |
-   | 3 | What are the identifier formats you use for candidates, resumes, job roles, and job applications? | C#####, R#####, J#####, A##### |
-   | 4 | Describe the steps you take when I give you a new candidate's resume. | Reads the resume, dedups by email, creates/links Candidate + Resume, reports the numbers |
-
 1. Select **Add conversations** (next to *Review your test cases*), then choose **Write**.
 
-    ![Add conversations menu with Write option](../assets/screenshot-placeholder.png)
+    ![Add conversations menu with Write option](./assets/m02-2-4-3-add-conversations.png)
 
-1. In **Review and edit**, paste the **Question** into the user turn and the **Expected answer** into the **Reference** box, then select **Done**.
+1. In **Review and edit**, copy the first **Question** and **Reference** from the table below. Paste them into the user turn and **Reference** box, then select **Done**.
 
-   ![First manual evaluation case listed after selecting Done](../assets/screenshot-placeholder.png)
+   | # | Question | Reference |
+   | --- | --- | --- |
+   | 1 | Who are you, and what is your role in the hiring process? | I'm the Hiring Agent, the orchestrator for the recruitment process. I take in candidate resumes, match candidates to open job roles using each role's weighted evaluation criteria, create job applications, and prepare interviews. |
+   | 2 | What kinds of tasks can you help me with, and what is outside your scope? | I help with candidate and resume intake, matching candidates to active job roles, creating job applications, and preparing interviews. I decline topics unrelated to the hiring process. |
+   | 3 | What are the identifier formats you use for candidates, resumes, job roles, and job applications? | Candidate numbers use C#####, Resume numbers use R#####, Job Role numbers use J#####, and Job Application numbers use A#####. |
+   | 4 | Describe the steps you take when I give you a new candidate's resume. | I read the resume, deduplicate the Candidate by email, create or reuse and link the Candidate and Resume records, then report the C##### and R##### numbers and whether the Candidate was reused or created. |
 
-1. Repeat until all four cases are listed under **Review your test cases**.
+   ![First manual evaluation case listed after selecting Done](./assets/m02-2-4-4-first-evaluation-case.png)
 
-    ![All four self-knowledge cases listed in the test set](../assets/screenshot-placeholder.png)
+1. Repeat the previous two steps with the remaining three rows until all four cases are listed under **Review your test cases**.
+
+    ![All four self-knowledge cases listed in the test set](./assets/m02-2-4-5-four-cases-listed.png)
 
 1. Select **Manage**, choose your signed-in account as the **user profile**, **Save** it, then name the set `Hiring Agent baseline` and **Save** it. Confirm that all four cases remain listed.
 
-    ![Saved evaluation test set with all four cases](../assets/screenshot-placeholder.png)
+    ![Saved evaluation test set with all four cases](./assets/m02-2-4-6-evaluation-profile-saved.png)
 
 1. Select **Evaluate** to run all four cases now.
 
-    ![Saved test set with Evaluate ready to run](../assets/screenshot-placeholder.png)
+    ![Saved test set with Evaluate ready to run](./assets/m02-2-4-7-evaluate-run-started.png)
 
 1. Now read the result - you're aiming for green. All four **Pass**, because every question is answerable from the agent's own instructions and skills:
 
-    ![The evaluation scores 100% - all four self-knowledge cases Pass](../assets/screenshot-placeholder.png)
-
-> [!IMPORTANT] Why start with self-knowledge
-> Self-knowledge cases give you a stable signal as the solution grows. Tool calls are also valid in an
-> evaluation. Before you run one:
->
-> - Select the intended user profile and verify its required connections are **Connected**.
-> - Name the required records and starting state. Prefer stable, read-only sample data.
-> - For writes, use synthetic data, make retries safe, and define cleanup before running.
-> - Check the actual response and the **Tools** section or activity trace. A green `General quality`
->   score alone does not show which tool ran or whether it changed the right data.
->
-> A case that invites a **refusal** has a different problem. `General quality` grades whether the
-> question was answered, so when the agent correctly declines, the judge can record *"one or more
-> questions not answered"* and mark it **Fail** - even though the agent did exactly the right thing.
->
-> The fix is to ask the same thing from the other direction. Instead of *"what's the weather?"*, which
-> can only ever produce a refusal, ask *"what's outside your scope?"* - the agent answers, you check the
-> same guardrail, and the result comes back green. Evaluate can exercise tools. Use **Preview**,
-> **Monitor**, or an activity trace when you need the exact call order, number of calls, inputs,
-> outputs, refusal response, or confirmation that no write occurred.
-
-We will grow this set as the course goes on. Each time a later mission adds behavior, we will add a case to match it - once you build matching, for example, we will add one that asks the agent to describe its scoring rubric - and re-run the **whole** set, as described in [Preview and evaluations](#preview-and-evaluations).
+    ![The evaluation scores 100% - all four self-knowledge cases Pass](./assets/m02-2-4-8-eval-live-20-hiring-100pass.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
