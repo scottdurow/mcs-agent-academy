@@ -141,7 +141,7 @@ Before the agent can read or write hiring data, its Dataverse tables and the Hir
 
 1. Open **[Copilot Studio (new experience)](https://copilotstudio.preview.microsoft.com)**. Confirm the **New experience** toggle at the top of the page is turned on, then check the **environment picker** at the **bottom of the left navigation** and confirm it names your course environment. If it shows a different one, select the picker and switch before going any further.
 
-   ![Copilot Studio open in the course environment](../assets/screenshot-placeholder.png)
+   ![Copilot Studio open in the course environment](./assets/m01-1-1-1-course-environment-home.png)
 
    > [!WARNING] Always check your environment first
    > Get into the habit of checking the picker before you follow any instruction - the rest of the
@@ -151,11 +151,11 @@ Before the agent can read or write hiring data, its Dataverse tables and the Hir
 
 1. At the bottom of the left navigation, select **More**.
 
-   ![Explore menu open in Copilot Studio](../assets/screenshot-placeholder.png)
+   ![Explore menu open in Copilot Studio](./assets/m01-1-1-2-solutions-nav.png)
 
 1. Under **Explore**, select **Solutions**. It opens in a new browser tab.
 
-   ![Solutions area open in the course environment](../assets/screenshot-placeholder.png)
+   ![Solutions area open in the course environment](./assets/m01-1-1-3-solutions-open.png)
 
 1. Download the prepared solution (`Operative_3_0_0_0.zip`):
 
@@ -163,19 +163,19 @@ Before the agent can read or write hiring data, its Dataverse tables and the Hir
 
    When the download finishes, select **Import solution** on the command bar.
 
-   ![Solutions command bar with Import solution highlighted](../assets/screenshot-placeholder.png)
+   ![Solutions command bar with Import solution highlighted](./assets/m01-1-1-4-operative-download-ready.png)
 
 1. In **Import a solution**, select **Browse**.
 
-   ![Import a solution panel ready to browse](../assets/screenshot-placeholder.png)
+   ![Import a solution panel ready to browse](./assets/m01-1-1-5-import-solution-panel.png)
 
 1. Select the downloaded solution, then select **Next**.
 
-   ![Operative solution selected with Next ready](../assets/screenshot-placeholder.png)
+   ![Operative solution selected with Next ready](./assets/m01-1-1-6-browse-solution.png)
 
 1. Check the details, then select **Import**.
 
-   ![Operative import details with publisher and version](../assets/screenshot-placeholder.png)
+   ![Operative import details with publisher and version](./assets/m01-1-1-7-import-confirm.png)
 
    > [!NOTE]
    > On success you'll see a green notification bar: *"Solution 'Operative' imported successfully."*
@@ -184,7 +184,7 @@ Before the agent can read or write hiring data, its Dataverse tables and the Hir
 
    Ensure the following components imported:
 
-   ![Operative solution overview and recent components](../assets/screenshot-placeholder.png)
+   ![Operative solution overview and recent components](./assets/m01-1-1-8-operative-solution.png)
 
    | Display Name | Type | Description |
    | --- | --- | --- |
@@ -198,7 +198,7 @@ Before the agent can read or write hiring data, its Dataverse tables and the Hir
 
 1. Select **Publish all customizations** at the top of the page.
 
-   ![Publish all customizations on the solution command bar](../assets/screenshot-placeholder.png)
+   ![Publish all customizations on the solution command bar](./assets/m01-1-1-9-customizations-published.png)
 
 > [!NOTE] Publisher prefix
 > The Operative solution's publisher prefix is **`ppa`**, so the tables are `ppa_candidate`,
@@ -215,64 +215,64 @@ Now import the Job Role sample data. Follow these steps:
 
 1. Go back to the **Operative** solution and select **Objects** in the left navigation. In the object type tree select **Apps**, tick the checkmark in front of the **Hiring Hub** model-driven app, then open the row's more commands menu and choose **Play**.
 
-   ![Operative solution objects filtered to Apps](../assets/screenshot-placeholder.png)
+   ![Operative solution objects filtered to Apps](./assets/m01-1-2-1-solution-apps.png)
 
    > [!NOTE]
    > You might be prompted to sign in again - do that, and the Hiring Hub app opens.
 
 1. Select **Job Roles** in the left navigation.
 
-   ![Active Job Roles open before data import](../assets/screenshot-placeholder.png)
+   ![Active Job Roles open before data import](./assets/m01-1-2-2-job-roles-open.png)
 
 1. Select the **More** icon (three dots) in the command bar, then select the **right arrow** next to *Import from Excel*.
 
-   ![Import from Excel submenu arrow highlighted](../assets/screenshot-placeholder.png)
+   ![Import from Excel submenu arrow highlighted](./assets/m01-1-2-3-import-from-excel.png)
 
 1. Select **Import from CSV**.
 
-   ![Import from CSV option highlighted](../assets/screenshot-placeholder.png)
+   ![Import from CSV option highlighted](./assets/m01-1-2-4-import-from-csv.png)
 
 1. Select **Choose File**, select the **job-roles.csv** file you downloaded, and select **Open**. Leave **Owner For Imported Records** set to yourself.
 
-   ![Job Roles CSV attached with owner retained](../assets/screenshot-placeholder.png)
+   ![Job Roles CSV attached with owner retained](./assets/m01-1-2-5-csv-upload.png)
 
 1. Select **Next**. The delimiter step already matches the sample file - a comma field delimiter and *First row contains column headings* - so leave it as it is and select **Review Mapping**.
 
-   ![The delimiter settings step of the Import from CSV wizard](../assets/screenshot-placeholder.png)
+   ![The delimiter settings step of the Import from CSV wizard](./assets/m01-1-2-6-csv-delimiter.png)
 
 1. Check the mapping. Every column resolves automatically, because the CSV uses the table's own display names - **Job Title** as the primary field, then **Close Date**, **Description** and **Number of Hires**.
 
-   ![Four Job Roles fields mapped successfully](../assets/screenshot-placeholder.png)
+   ![Four Job Roles fields mapped successfully](./assets/m01-1-2-7-review-mapping-job-roles.png)
 
 1. Make sure the mapping is correct and select **Finish Import**, then select **Done**. The import can take a little while - select **Refresh** to see it succeed.
 
-   ![Five imported Job Roles in active view](../assets/screenshot-placeholder.png)
+   ![Five imported Job Roles in active view](./assets/m01-1-2-8-job-roles-grid.png)
 
 Now import the Evaluation Criteria sample data. Follow these steps:
 
 1. Select **Evaluation Criteria** in the left navigation.
 
-   ![Active Evaluation Criteria before data import](../assets/screenshot-placeholder.png)
+   ![Active Evaluation Criteria before data import](./assets/m01-1-2-9-evaluation-criteria-open.png)
 
 1. Select the **More** icon (three dots), select the **right arrow** next to *Import from Excel*, then **Import from CSV**.
 
-   ![Evaluation Criteria CSV import option highlighted](../assets/screenshot-placeholder.png)
+   ![Evaluation Criteria CSV import option highlighted](./assets/m01-1-2-10-import-from-csv-criteria.png)
 
 1. Select **Choose File**, select the **evaluation-criteria.csv** file, and select **Open**. Select **Next**, then **Review Mapping**.
 
-   ![Evaluation Criteria mapping with Job Role unresolved](../assets/screenshot-placeholder.png)
+   ![Evaluation Criteria mapping with Job Role unresolved](./assets/m01-1-2-11-review-mapping-criteria.png)
 
 1. This one needs a little more mapping. **Job Role** is a **lookup**, so instead of a green tick it shows a magnifying glass - select it.
 
-   ![Job Role lookup reference panel open](../assets/screenshot-placeholder.png)
+   ![Job Role lookup reference panel open](./assets/m01-1-2-12-jobrole-lookup-panel.png)
 
 1. Make sure **Job Title** is selected (add it if it isn't), and select **OK**. That tells the import to match each CSV value against the Job Role's **Job Title**, so every criterion attaches to the right role.
 
-   ![Job Title selected for lookup matching](../assets/screenshot-placeholder.png)
+   ![Job Title selected for lookup matching](./assets/m01-1-2-13-jobrole-lookup-mapped.png)
 
 1. Make sure the rest of the mapping is correct and select **Finish Import**, then select **Done**. Select **Refresh** to see it succeed.
 
-   ![Twenty-five imported criteria linked to Job Roles](../assets/screenshot-placeholder.png)
+   ![Twenty-five imported criteria linked to Job Roles](./assets/m01-1-2-14-evaluation-criteria-grid.png)
 
 ### 1.3 Create the Hiring Agent
 
@@ -280,11 +280,15 @@ With the data layer in place, we'll create the Hiring Agent that later missions 
 
 1. Go to **[Copilot Studio (new experience)](https://copilotstudio.preview.microsoft.com)** and make sure the bottom-left **environment picker** shows the same environment. Confirm the **New experience** toggle is **on**.
 
-   ![Copilot Studio home in course environment](../assets/screenshot-placeholder.png)
+   ![Copilot Studio home in course environment](./assets/m01-1-3-1-hiring-agent-home.png)
 
-1. Select **Agents** in the left navigation, then **New Agent**. The **Build** canvas opens with an *Untitled Agent*.
+1. Select **Agents** in the left navigation, then select **New agent**.
 
-   ![Blank new agent Build canvas](../assets/screenshot-placeholder.png)
+   ![The Agents area with the New agent button](./assets/m01-1-3-2-new-agent-button.png)
+
+1. The **Build** canvas opens with an *Untitled Agent*.
+
+   ![Blank new agent Build canvas](./assets/m01-1-3-2-build-01-new-agent.png)
 
    > [!NOTE] The default model
    > A new agent starts on the platform's default model - in this build, **Claude Opus 5**, shown
@@ -298,7 +302,7 @@ With the data layer in place, we'll create the Hiring Agent that later missions 
    Hiring Agent
    ```
 
-   ![Hiring Agent name applied on Build canvas](../assets/screenshot-placeholder.png)
+   ![Hiring Agent name applied on Build canvas](./assets/m01-1-3-3-hiring-agent-named.png)
 
 1. In the **Instructions** box, paste the orchestrator instructions:
 
@@ -326,11 +330,11 @@ With the data layer in place, we'll create the Hiring Agent that later missions 
      a record, state its number back to the user.
    ```
 
-    ![Hiring Agent recruitment instructions configured](../assets/screenshot-placeholder.png)
+    ![Hiring Agent recruitment instructions configured](./assets/m01-1-3-4-hiring-agent-instructions.png)
 
 1. Before the first save, open the more options menu, **Settings**, **Agent details**.
 
-   ![More options menu with Settings highlighted](../assets/screenshot-placeholder.png)
+   ![More options menu with Settings highlighted](./assets/m01-1-3-5-build-02-more-options.png)
 
 1. On the **Agent details** tab, fill in the agent's **identity** with the values in this table:
 
@@ -340,7 +344,7 @@ With the data layer in place, we'll create the Hiring Agent that later missions 
    | **Solution** | Operative |
    | **Primary language** | English |
 
-   ![Agent details - schema name and solution](../assets/screenshot-placeholder.png)
+   ![Agent details - schema name and solution](./assets/m01-1-3-6-build-02-settings.png)
 
    > [!IMPORTANT] These settings lock on first save
    > **Schema name, solution, and primary language cannot be changed after the first save.** Setting
@@ -349,15 +353,19 @@ With the data layer in place, we'll create the Hiring Agent that later missions 
 
 1. Close **Settings**, then select **Save**. The URL changes to include the new agent's id - your **Hiring Agent** now exists in the **Operative** solution.
 
-   ![Saved Hiring Agent on permanent Build canvas](../assets/screenshot-placeholder.png)
+   ![Saved Hiring Agent on permanent Build canvas](./assets/m01-1-3-7-hiring-agent-saved.png)
 
-1. Before going any further we need to confirm the agent behaves as configured, so select the **Preview** tab and send a couple of messages:
+1. Before going any further we need to confirm the agent behaves as configured, so select the **Preview** tab and ask:
 
    ```text
    What can you help me with?
    ```
 
-   It introduces itself as your hiring assistant and describes what it does. Then ask:
+   It introduces itself as your hiring assistant and describes what it does.
+
+   ![Hiring Agent describing its hiring scope](./assets/m01-1-3-8-hiring-agent-scope-preview.png)
+
+1. Now ask it something outside that scope:
 
    ```text
    What's the weather today?
@@ -365,7 +373,7 @@ With the data layer in place, we'll create the Hiring Agent that later missions 
 
    It politely declines and steers back to hiring.
 
-   ![Hiring Agent handles hiring and declines weather](../assets/screenshot-placeholder.png)
+   ![Hiring Agent declining a question outside hiring](./assets/m01-1-3-9-hiring-agent-refusal.png)
 
    It has no data tools yet, so it only chats for now - you'll wire it to Dataverse in Mission 02.
 
