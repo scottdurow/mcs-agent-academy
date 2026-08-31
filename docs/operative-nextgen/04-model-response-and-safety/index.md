@@ -104,7 +104,7 @@ It is important that you consider all these factors when designing and testing y
 
 The selected model is part of the agent's design. Copilot Studio's models differ in reasoning depth, answer quality, speed, tool orchestration, instruction following, and built-in alignment. An agent that behaves correctly on one model can behave differently on another even with its instructions and tools unchanged.
 
-A model change is therefore a design change rather than just a setting change. By running a set of evaluations before and after the change allows you to make an assessment of the impact of the change, provided you have baselined your tests. [Selecting a model](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/authoring-select-agent-model) carries the same release discipline as any other system change and should be treated with care and fully regression tested before deployment.
+A model change is therefore a design change rather than just a setting change. Running a set of evaluations before and after the change allows you to assess its impact, provided you have established a baseline for your tests. [Selecting a model](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/authoring-select-agent-model) carries the same release discipline as any other system change and should be treated with care and fully regression tested before deployment.
 
 ### Red teaming
 
