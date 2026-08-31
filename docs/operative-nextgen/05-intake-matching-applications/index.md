@@ -119,7 +119,7 @@ Let's start by running the `resume-intake` skill from Mission 02 against a real 
 
 1. Open the **Hiring Hub** (see [Mission 01](../01-get-started/index.md#lab-01-set-up-the-hiring-hub) if you need the route), go to **Candidates**, and confirm there are no Avery or Taylor intake records. This gives you a clean baseline for the writes that follow:
 
-   ![Hiring Hub Candidates grid with no Avery or Taylor records](../assets/screenshot-placeholder.png)
+   ![Hiring Hub Candidates grid with no Avery or Taylor records](./assets/m05-5-1-1-intake-baseline-grid.png)
 
 1. Download the two sample resumes. You'll use them here and again in Missions 07, 08 and 09.
 
@@ -129,7 +129,7 @@ Let's start by running the `resume-intake` skill from Mission 02 against a real 
 
 1. In the left navigation select **Agents**, open the **Hiring Agent**, and go to **Preview**. Ensure the `resume-intake` skill and the **Dataverse MCP server** tool are present from Mission 02. Start a new chat, select **Attach file** (📎), and upload `AVERY EXAMPLE (FICTITIOUS).pdf`:
 
-   ![Avery Example resume attached in a clean Preview chat](../assets/screenshot-placeholder.png)
+   ![Avery Example resume attached in a clean Preview chat](./assets/m05-5-1-3-attach-and-send.png)
 
 1. Send a **natural** message. You don't spell out the steps because the **`resume-intake` skill** already contains them:
 
@@ -139,11 +139,11 @@ Let's start by running the `resume-intake` skill from Mission 02 against a real 
 
    The agent loads `analyzing-pdf`, extracts the name and email, calls the Dataverse MCP `describe` / `read_query` / `create_record` tools, and reports the linked records:
 
-   ![Hiring Agent reports the linked Candidate and Resume](../assets/screenshot-placeholder.png)
+   ![Hiring Agent reports the linked Candidate and Resume](./assets/m05-5-1-4-intake-created.png)
 
 1. Open **Hiring Hub**, **Resumes** and verify the saved row, including its Resume number, linked Candidate, upload date, title, and source email:
 
-   ![Hiring Hub Resumes grid after the first intake](../assets/screenshot-placeholder.png)
+   ![Hiring Hub Resumes grid after the first intake](./assets/m05-5-1-5-resumes-grid.png)
 
    The agent produces a **Candidate** (C#####, *Avery Example*, `avery.example@example.com`) and a **Resume** (R#####), **linked** to each other, with an extracted cover-letter summary - using only the skill and the Dataverse MCP server. Your record numbers may differ, so check the *shape* of the result rather than the values.
 
@@ -153,8 +153,6 @@ Before adding more records, check the first intake in the Hiring Hub and repeat 
 
 1. Start a new Preview chat and attach the **same** Avery PDF again.
 
-   ![The same Avery resume attached a second time](../assets/screenshot-placeholder.png)
-
 1. Send the same natural prompt you used in Lab 5.1 - don't tell the agent what to do about the duplicate, because the point is to find out whether the skill handles it:
 
    ```text
@@ -163,27 +161,23 @@ Before adding more records, check the first intake in the Hiring Hub and repeat 
 
    The reply should report a **reused** Candidate and a **newly created** Resume. If it creates a second Candidate, the skill's deduplication rule is not doing its job. Telling the agent to reuse the record would only prove it follows instructions.
 
-   ![Hiring Agent reuses Avery's Candidate and creates a new Resume](../assets/screenshot-placeholder.png)
+   ![Hiring Agent reuses Avery's Candidate and creates a new Resume](./assets/m05-5-2-2-duplicate-candidate-reused.png)
 
 1. Open **Hiring Hub**, **Resumes**. Confirm there is still one Avery Candidate identity but now two Resume rows with the same source email:
 
-   ![Two Avery Resume rows linked to one Candidate](../assets/screenshot-placeholder.png)
+   ![Two Avery Resume rows linked to one Candidate](./assets/m05-5-2-3-deduplicated-resumes-grid.png)
 
 1. Start another new chat and attach both the Avery and Taylor PDFs:
 
-   ![Avery and Taylor resumes attached together](../assets/screenshot-placeholder.png)
+   ![Avery and Taylor resumes attached together](./assets/m05-5-2-4-two-resumes-attached.png)
 
 1. Send `Process these resumes.` The skill processes one file at a time, reuses Avery, and creates Taylor as a new Candidate:
 
-   ![Sequential intake reports Avery reused and Taylor created](../assets/screenshot-placeholder.png)
+   ![Sequential intake reports Avery reused and Taylor created](./assets/m05-5-2-5-multifile-dedup.png)
 
 1. Return to **Hiring Hub**, **Resumes** and confirm the two-file run leaves two Candidates and four Resume rows in total:
 
-   ![Four Resume rows after the two-file intake](../assets/screenshot-placeholder.png)
-
-> [!TIP] Intake rules encoded in the skill
-> The skill enforces *one resume at a time*, a *2000-char* cover-letter cap, and *never inventing
-> identifiers*. These rules are present whenever the orchestrator loads the skill.
+   ![Four Resume rows after the two-file intake](./assets/m05-5-2-6-two-file-intake-grid.png)
 
 ### 5.3 File limits & error handling
 
@@ -191,15 +185,15 @@ Before the agent opens an attachment, it should reject an unsupported type or ov
 
 1. Start a new Preview chat and attach an unsupported ZIP, such as the Operative solution archive:
 
-   ![Unsupported ZIP attached before the pre-flight request](../assets/screenshot-placeholder.png)
+   ![Unsupported ZIP attached before the pre-flight request](./assets/m05-5-3-1-unsupported-zip-attached.png)
 
 1. Ask the agent to process the attachment. The `resume-intake` skill runs its **pre-flight check** before reading anything, names the unsupported type, lists the accepted types, and states the size limit:
 
-   ![Unsupported ZIP rejected before intake](../assets/screenshot-placeholder.png)
+   ![Unsupported ZIP rejected before intake](./assets/m05-5-3-2-unsupported-file.png)
 
 1. Open **Hiring Hub**, **Resumes** and confirm the rejected file created no records, leaving the grid at the same four rows:
 
-   ![Resume grid unchanged after the unsupported ZIP](../assets/screenshot-placeholder.png)
+   ![Resume grid unchanged after the unsupported ZIP](./assets/m05-5-3-3-rejected-file-no-records-grid.png)
 
 > [!IMPORTANT] The skill's File-handling rule
 > The `resume-intake` skill includes a **File handling** section with two **pre-flight checks** that run
@@ -220,7 +214,7 @@ The **`role-matching` skill** applies the rubric above to every open role and sh
 
    Compare the second result with the first. The numbers and reasoning can drift between runs, and that inconsistency is exactly what the rubric constrains:
 
-   ![Second unconstrained role match ready for comparison](../assets/screenshot-placeholder.png)
+   ![Second unconstrained role match ready for comparison](./assets/m05-5-4-1-unconstrained-match-comparison.png)
 
 To fix the weights, arithmetic, and output structure, continue building the `role-matching` skill:
 
@@ -235,7 +229,7 @@ To fix the weights, arithmetic, and output structure, continue building the `rol
    does not create Job Applications.
    ```
 
-   ![Creating the role-matching skill - Name and scoping Description](../assets/screenshot-placeholder.png)
+   ![Creating the role-matching skill - Name and scoping Description](./assets/m05-5-4-2-role-matching-create.png)
 
 1. Set the **Instructions** to the rubric procedure below. It requires every criterion, shows the evidence for each level, and defines the calculation:
 
@@ -284,11 +278,11 @@ To fix the weights, arithmetic, and output structure, continue building the `rol
    Identifiers: Resume = R#####, Candidate = C#####, Job Role = J#####.
    ```
 
-   ![The role-matching skill's rubric instructions pasted into the editor](../assets/screenshot-placeholder.png)
+   ![The role-matching skill's rubric instructions pasted into the editor](./assets/m05-5-4-3-role-matching-instructions.png)
 
 1. Select **Create**, then **Save** the agent. The Skills list now shows `role-matching` beside `resume-intake`:
 
-   ![The saved role-matching skill beside resume-intake](../assets/screenshot-placeholder.png)
+   ![The saved role-matching skill beside resume-intake](./assets/m05-5-4-4-role-matching-created.png)
 
 1. Run the match with a natural prompt. You don't describe the rubric because the `role-matching` skill does. In **Hiring Agent**, **Preview**, ask:
 
@@ -299,7 +293,7 @@ To fix the weights, arithmetic, and output structure, continue building the `rol
 
    Replace `R#####` with the Resume number returned by your intake run. The orchestrator loads **`role-matching`**, reads all five roles' criteria and weights through Dataverse MCP, and returns per-criterion evidence, points, totals, and a ranked recommendation:
 
-   ![Rubric match with weighted criteria and ranking](../assets/screenshot-placeholder.png)
+   ![Rubric match with weighted criteria and ranking](./assets/m05-5-4-5-rubric-role-match.png)
 
    What is reproducible is the *structure*, not the exact percentages - those depend on the resume:
    - A table **per role** with one row per criterion, each showing an **evidence phrase**, an **evidence level**, and **points = factor × weight**.
@@ -325,7 +319,7 @@ The **role-matching** skill is a read-only skill. Creating the actual **Job Appl
    confirmed.
    ```
 
-   ![Creating the application-handling skill - Name and Description](../assets/screenshot-placeholder.png)
+   ![Creating the application-handling skill - Name and Description](./assets/m05-5-5-1-application-handling-create.png)
 
 1. Set the **Instructions**:
 
@@ -376,11 +370,11 @@ The **role-matching** skill is a read-only skill. Creating the actual **Job Appl
    Identifiers: Application = A#####, Candidate = C#####, Resume = R#####, Job Role = J#####.
    ```
 
-   ![Application-handling instructions with confirmed-role and failure safeguards](../assets/screenshot-placeholder.png)
+   ![Application-handling instructions with confirmed-role and failure safeguards](./assets/m05-5-5-2-application-handling-instructions.png)
 
 1. Select **Create**, then **Save**. Confirm all three focused skills now appear together:
 
-   ![Hiring Agent with intake, matching, and application-handling skills](../assets/screenshot-placeholder.png)
+   ![Hiring Agent with intake, matching, and application-handling skills](./assets/m05-5-5-3-build-42-three-skills.png)
 
 1. Apply the candidate with a **natural** prompt. The skill supplies the procedure:
 
@@ -391,11 +385,11 @@ The **role-matching** skill is a read-only skill. Creating the actual **Job Appl
 
    Replace `R#####` with the exact Resume number you matched in Lab 5.4. The agent loads **`application-handling`**, checks for duplicates, and handles only the two roles you confirmed.
 
-   ![Creating two confirmed Job Applications](../assets/screenshot-placeholder.png)
+   ![Creating two confirmed Job Applications](./assets/m05-5-5-4-build-12-jobapp-result.png)
 
 1. Open **Hiring Hub**, **Job Applications** and verify exactly two valid `A#####` rows link Avery's Candidate and Resume to the two confirmed roles:
 
-   ![Two valid Job Application rows for Avery](../assets/screenshot-placeholder.png)
+   ![Two valid Job Application rows for Avery](./assets/m05-5-5-5-job-applications-grid.png)
 
 1. Ask the agent to read the records back:
 
@@ -407,9 +401,9 @@ The **role-matching** skill is a read-only skill. Creating the actual **Job Appl
 
    The response should list both Application numbers, roles, dates, and statuses without another write:
 
-   ![Hiring Agent lists Avery's two saved applications](../assets/screenshot-placeholder.png)
+   ![Hiring Agent lists Avery's two saved applications](./assets/m05-5-5-6-applications-created.png)
 
-### 5.6 Error handling & observability (test it)
+### 5.6 Error handling & observability
 
 The `application-handling` skill tells the agent to stop when a tool fails, ask for correction when an identifier is **not found**, and report every record number it touches. Test the not-found path before you rely on it for real applications.
 
@@ -422,17 +416,15 @@ The `application-handling` skill tells the agent to stop when a tool fails, ask 
 
    The agent looks up the identifiers through MCP, finds no matching resume, and refuses to fabricate an application. It reports exactly what's missing and asks a focused clarifying question:
 
-   ![R99999 refused without creating an application](../assets/screenshot-placeholder.png)
+   ![R99999 refused without creating an application](./assets/m05-5-6-1-not-found-resume.png)
 
 1. Open **Hiring Hub**, **Job Applications** and confirm the failed request wrote nothing, leaving the same two valid applications:
 
-   ![Job Applications grid unchanged after the not-found request](../assets/screenshot-placeholder.png)
+   ![Job Applications grid unchanged after the not-found request](./assets/m05-5-6-2-not-found-no-write-grid.png)
 
 > [!TIP] Check the identifiers and tool calls
 > The reply names the identifier it did not find (*R99999*), while the **tool
-> trace** shows every `search` / `describe` / `read_query` call it made. In
-> **Mission 10** you'll see those same calls - and any failures - in the **Monitor** tab for published
-> runs.
+> trace** shows every `search` / `describe` / `read_query` call it made.
 
 ### 5.7 Re-run your evaluations with the new skills
 
@@ -446,11 +438,11 @@ We gave the Hiring Agent two new skills - **role-matching** and **application-ha
 
    Select the connected evaluation profile and **Save**. Verify the set now contains all five conversations:
 
-   ![Saved five-case Hiring Agent baseline set](../assets/screenshot-placeholder.png)
+   ![Saved five-case Hiring Agent baseline set](./assets/m05-5-7-1-hiring-regression-configured.png)
 
 1. Select **Evaluate** to run the whole set. It stays **green** because every case is answerable from the agent's own skills and rules, with no live lookup:
 
-   ![Five-case regression at 100 percent](../assets/screenshot-placeholder.png)
+   ![Five-case regression at 100 percent](./assets/m05-5-7-2-hiring-regression-result.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
