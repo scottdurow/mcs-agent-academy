@@ -47,7 +47,7 @@ In this mission, you'll learn:
 
 ## 🧠 Workflows and their triggers {#workflows-and-their-triggers}
 
-A **Workflow** is a standalone, versioned automation - a graph of **nodes** that runs **deterministically**, the same way every time. It's the new home for the "**when X happens, do Y**" automation that used to live in **agent flows** and event-triggered **Power Automate**: you build, test, publish, and version it **inside Copilot Studio**, and - unlike a topic - it isn't owned by any single agent.
+A **Workflow** is a standalone, versioned automation - a graph of **nodes** that runs **deterministically**, the same way every time. It's the new home for the "**when X happens, do Y**" automation that used to live in **agent flows** and event-triggered **Power Automate**: you build, test, publish, and version it **inside Copilot Studio**.
 
 The division of labor runs through the next two missions:
 
@@ -118,15 +118,15 @@ Most fields in a node panel accept three different kinds of value, and the small
 
 1. Type straight into the box and the field holds exactly what you typed - a literal value such as `Inbox` or `application/pdf`. The row above it holds three buttons: **⚡ Insert dynamic content**, **✨ Ask Copilot to generate an expression**, and **`</>` Switch to expression mode**.
 
-    ![The three field editor buttons above a node field](../assets/screenshot-placeholder.png)
+    ![The three field editor buttons above a node field](./assets/m07-7-7-1-field-editor-buttons.png)
 
 1. **⚡ Insert dynamic content** lists the values earlier nodes produced - the email's **Subject**, an attachment's **Name**. Choosing one drops a blue **token** into the box. Tokens and typed text mix freely in the same field, which is how Lab 7.5 builds a value out of both.
 
-    ![A field holding a blue dynamic content token](../assets/screenshot-placeholder.png)
+    ![A field holding a blue dynamic content token](./assets/m07-7-7-2-field-with-token.png)
 
 1. **`</>` Switch to expression mode** turns the box into a formula editor for the workflow expression language, so you can call functions such as `concat()` and `base64ToString()` instead of picking a single value. This is what a lab means when it tells you to *switch the field to expression mode*.
 
-    ![A field switched into workflow expression mode](../assets/screenshot-placeholder.png)
+    ![A field switched into workflow expression mode](./assets/m07-7-7-3-field-expression-mode.png)
 
 **✨ Ask Copilot** writes an expression from a description of what you want. The labs give you every expression you need, so you will not need it here.
 
@@ -173,47 +173,45 @@ flowchart TB
   end
 ```
 
-One supporting node is left out to keep the shape readable: a **variable** that collects what the loop filed, so the next mission's agents can act on all of it at once. You build it in Lab 7.5.
-
 ### 7.1 Create the email-triggered workflow
 
 Next we are going to create the workflow itself and point it at the recruitment mailbox with Office 365 Outlook. Nothing else can run until the trigger is in place.
 
 1. In the left navigation select **Workflows**. The list of workflows in this environment opens - this is where every workflow you build lives.
 
-   ![Workflows area open in the left navigation](../assets/screenshot-placeholder.png)
+   ![Workflows area open in the left navigation](./assets/m07-7-1-1-workflows-area.png)
 
 1. On the command bar select **New workflow**. The canvas opens with a single **Start** node whose trigger is **Manual**.
 
-   ![New workflow canvas with one Start node](../assets/screenshot-placeholder.png)
+   ![New workflow canvas with one Start node](./assets/m07-7-1-2-new-canvas-manual.png)
 
 1. At the top left, select the name **Untitled workflow**, type `Autonomous Resume Intake`, and press **Enter**.
 
-   ![Workflow name field containing Autonomous Resume Intake](../assets/screenshot-placeholder.png)
+   ![Workflow name field containing Autonomous Resume Intake](./assets/m07-7-1-3-name-the-workflow.png)
 
 1. Select the **Start** node to open its panel on the right, then select the **Trigger type** box - it currently reads **Manual**. A list of five trigger types opens: **Manual**, **Recurrence**, **Connector**, **When a HTTP request is received**, and **When an agent calls the workflow**. Select **Connector**.
 
-   ![The five trigger types listed with Connector highlighted](../assets/screenshot-placeholder.png)
+   ![The five trigger types listed with Connector highlighted](./assets/m07-7-1-4-trigger-type-list.png)
 
 1. A **Select a trigger** dialog opens. In its **Search** box, type `Office 365 Outlook`.
 
-   The **Office 365 Outlook** group previews four triggers, but that preview set can change between openings. Don't rely on a particular card appearing there, and don't search for the trigger name instead - `When a new email arrives` returns hundreds of results, and **Outlook.com** and **Gmail** both publish a trigger with the identical name.
+   The **Office 365 Outlook** group previews four triggers, but that preview set can change between openings.
 
-   ![Select a trigger dialog searched for Office 365 Outlook](../assets/screenshot-placeholder.png)
+   ![Select a trigger dialog searched for Office 365 Outlook](./assets/m07-7-1-5-trigger-search-outlook.png)
 
-1. Under the **Office 365 Outlook** heading, select **See all triggers**. The dialog switches to the connector's own page and lists all **eight** Office 365 Outlook triggers in a stable list. Select **When a new email arrives** - not *When a new email arrives in a shared mailbox*, which needs a separate shared mailbox and its own permissions. This one watches the mailbox of the account you connect with, which is what this mission uses.
+1. Under the **Office 365 Outlook** heading, select **See all triggers**. The dialog switches to the connector's own page and lists all **eight** Office 365 Outlook triggers in a stable list. Select **When a new email arrives** - not *When a new email arrives in a shared mailbox*, which needs a separate shared mailbox and its own permissions. This one watches the mailbox of the account you connect with, which we will use to receive resumes into for this mission.
 
-   ![All eight Office 365 Outlook triggers listed](../assets/screenshot-placeholder.png)
+   ![All eight Office 365 Outlook triggers listed](./assets/m07-7-1-6-see-all-triggers.png)
 
 1. The dialog closes and the trigger's own panel opens. The **Start** node is now the **When a new email arrives** trigger, carrying a *Needs setup* badge until you finish configuring it.
 
-   ![Panel naming the Outlook new email trigger](../assets/screenshot-placeholder.png)
+   ![Panel naming the Outlook new email trigger](./assets/m07-7-1-7-trigger-selected.png)
 
 1. Look at the **Connection** box at the top of the panel. If it already shows your account, the environment has an Office 365 Outlook connection and you can move on. If it shows a warning instead, select **Create new connection**, select your account tile, and complete the sign-in prompt.
 
    If the panel asks for an *Original Mailbox Address* you picked the shared-mailbox trigger by mistake - go back and choose **When a new email arrives**.
 
-   ![The trigger Connection box showing your signed-in account](../assets/screenshot-placeholder.png)
+   ![The trigger Connection box showing your signed-in account](./assets/m07-7-1-8-trigger-connection.png)
 
 1. Below the connection, select **Show all** to reveal every trigger parameter. The count changes from *Showing 4 of 9* to *Showing 9 of 9*. Then fill in the trigger exactly as follows, and leave every other parameter empty.
 
@@ -224,51 +222,49 @@ Next we are going to create the workflow itself and point it at the recruitment 
    | **Include Attachments** | **Yes** - so the email's files come through with the trigger |
    | **Only with Attachments** | **Yes** - so an email with no file never starts a run |
 
-   ![Outlook email trigger configured with attachment filters](../assets/screenshot-placeholder.png)
+   ![Outlook email trigger configured with attachment filters](./assets/m07-7-1-9-trigger-configured.png)
 
 1. On the command bar select **Save** - it is the **disk icon**, not a text button.
 
    The Start node is now titled *When a new email arrives* and the *Needs setup* badge has gone.
 
-   ![Saved workflow with configured Outlook trigger](../assets/screenshot-placeholder.png)
+   ![Configured Outlook trigger ready to save](./assets/m07-7-1-10-workflow-saved.png)
 
 ### 7.2 Screen the inbox with Classify
 
-A monitored mailbox receives more than applications: **out-of-office auto-replies**, newsletters, and **junk mail that can be ignored**. We only want to process the genuine application emails. A subject filter of `Application` is easily fooled, because an auto-reply keeps the original subject (`RE: Application`). Next we are going to add a **Classify** node, which uses a **language model** to read the message and work out what it is, rather than matching exact text.
+A monitored mailbox receives more than applications: **out-of-office auto-replies**, newsletters, and **junk mail that can be ignored**. We only want to process the genuine application emails. Next we are going to add a **Classify** node, which uses a **language model** to read the message and work out what it is, rather than matching exact text.
 
 Let's add that node and teach it the three kinds of mail this inbox receives.
 
 1. On the canvas, select the **+** immediately after the *When a new email arrives* node. The **Add** dialog opens on its **Actions** group.
 
-   ![Add a step control below the email trigger](../assets/screenshot-placeholder.png)
+   ![Add a step control below the email trigger](./assets/m07-7-2-1-plus-after-trigger.png)
 
 1. In the **Add** dialog's search box, type `Classify`. Many third-party connectors ship an action with *Classify* in its name, so the results are crowded. The one you want is the **first** result, listed on its own under the **Other** heading with a purple tag icon and no connector name beneath it. Select it.
 
    The node is inserted with a *Needs setup* badge and three empty branches beneath it - **Category 1**, **Category 2** and **Other**.
 
-   ![Add dialog search results for Classify](../assets/screenshot-placeholder.png)
+   ![Add dialog search results for Classify](./assets/m07-7-2-2-add-dialog-classify.png)
 
 1. Rename the node to `Sort the email` - select the node's name at the top of its panel, type the new name and press **Enter**.
 
    Use that name exactly. Missions 07 and 08 both refer to this node by it, and an expression that mentions a node quotes the node's name.
 
-   ![Classify node renamed to Sort the email](../assets/screenshot-placeholder.png)
+   ![Classify node renamed to Sort the email](./assets/m07-7-2-3-classify-named.png)
 
-1. Classify runs on a **language model**, so it needs an **Agents** connection. In the node panel select **Not connected** in the **Connection** box, then **Create new connection**, then **Create**, and pick your course account tile in the **Pick an account** window. Until a connection exists the panel shows only the message **Connect to Agent**, and the node's own fields stay hidden.
+1. Classify runs on a **language model**. Check the model picker beside **Input to classify** and leave it at its default selection. The models available to your environment can change, so the model name in your panel may differ from the screenshot.
 
-   The window closes on its own, the **Connection** box shows your account with a green tick, and the rest of the node's fields appear. If the box already showed your account, this environment already has a connection - move straight on.
+   ![Sort the email showing its model picker](./assets/m07-7-2-4-classify-connection.png)
 
-   ![Sort the email using the Agents connection](../assets/screenshot-placeholder.png)
+1. Select **`</>` Switch to expression mode** for **Input to classify**, then enter the message's subject and body so the model reads both:
 
-1. Fill the **Input to classify** box with the message's subject and its body, so the model reads both:
+   ```text
+   @{triggerOutputs()?['body/subject']} @{triggerOutputs()?['body/body']}
+   ```
 
-   1. Select the ⚡ **Insert dynamic content** button, search `Subject`, and select **Subject** *(The subject of the message)*.
-   1. Press the **spacebar**, so the two values don't run together.
-   1. Select ⚡ **Insert dynamic content** again, search `Body`, and select **Body** *(The body of the message)*.
+   The field expands into a multiline expression editor. Leave the model picker - the button to the right of the **Input to classify** label - at its default.
 
-   The input box now shows a **Subject** chip, a space, then a **Body** chip. Leave the model picker - the button to the right of the **Input to classify** label - at its default.
-
-   ![Input to classify holding the Subject and Body tokens](../assets/screenshot-placeholder.png)
+   ![Input to classify in expression mode](./assets/m07-7-2-5-classify-input.png)
 
 1. In the **Categories** list, select the **Category 1** heading. A category name is a select-to-edit heading rather than a field that is always visible, so it turns into an editable box with the placeholder **Category name**. Select **Add category** so the list holds three, then name and describe each one as follows. Select a heading to type its name, and use the **Describe what belongs in this category…** box underneath it for the description.
 
@@ -276,17 +272,19 @@ Let's add that node and teach it the three kinds of mail this inbox receives.
 
    | Category name | Describe what belongs in this category… |
    | --- | --- |
-   | `Application` | `A genuine job application in which the sender asks to be considered for a role and provides a resume. Do not choose this category for automatic replies, even when the subject contains Application.` |
+   | `Application` | `A genuine job application in which a candidate asks to be considered for a role and provides a resume. This includes applications forwarded by a recruiter on behalf of one or more candidates. Do not choose this category for automatic replies, even when the subject contains Application. Do not choose it when the sender says they are not applying, asks a general question about the recruitment process, or sends a speculative or sample document rather than applying for a role - those belong in Other, even when the subject contains Application and a file is attached.` |
    | `OutOfOffice` | `An automatic reply, vacation notice, absence notification, or out-of-office message. Choose this whenever the body says the sender is away or the subject says automatic reply, even when Application appears elsewhere.` |
    | `Junk` | `Marketing, newsletters, promotions, spam, or content unrelated to hiring. Choose this instead of Application when promotional wording appears, even when the subject contains Application.` |
 
    Select **Expand to full screen** in the panel's upper-right corner before checking the finished categories. Full screen is worth using for any node with a lot to configure - it gives every box room to show its whole value instead of clipping it - and the rest of this mission uses it wherever a node offers it. The panel then lists three named categories, and the note underneath explains that a *Default* category is created automatically for inputs that match none of them - that is the **Other** branch on the canvas.
 
-   ![The three named categories and their routing descriptions](../assets/screenshot-placeholder.png)
+   ![The three named categories and their routing descriptions](./assets/m07-7-2-6-classify-categories.png)
 
 1. Collapse the full screen view, then on the command bar select **Save**. The canvas branch labels change from *Category 1/2/3* to **Application**, **OutOfOffice** and **Junk**, with **Other** still last.
 
-   ![Classify canvas branches with configured category names](../assets/screenshot-placeholder.png)
+   ![Configured Classify node ready to save](./assets/m07-7-2-7-save-classify.png)
+
+   ![Classify canvas branches with configured category names](./assets/m07-7-2-7-classify-branches.png)
 
 1. Wherever a node can be run on its own, test it there rather than waiting for a whole run. Open the **Sort the email** node again and select the **Run node** tab, next to **Configure**. It executes just the node you have selected against sample values you type in, so you get an answer in seconds instead of publishing the workflow and emailing the mailbox.
 
@@ -299,7 +297,7 @@ Let's add that node and teach it the three kinds of mail this inbox receives.
    | **Subject** | `RE: Application - Automatic reply` |
    | **Body** | `I am currently out of the office until Monday and will respond on my return.` |
 
-   ![The Run node tab returning the OutOfOffice category](../assets/screenshot-placeholder.png)
+   ![The Run node tab returning the OutOfOffice category](./assets/m07-7-2-8-node-run-out-of-office.png)
 
 1. Select **Clear**, then repeat with a genuine application and confirm it returns **Application**:
 
@@ -308,7 +306,7 @@ Let's add that node and teach it the three kinds of mail this inbox receives.
    | **Subject** | `Application - Power Platform Consultant` |
    | **Body** | `Please find my resume attached for the opening.` |
 
-   ![The Run node tab returning the Application category](../assets/screenshot-placeholder.png)
+   ![The Run node tab returning the Application category](./assets/m07-7-2-9-node-run-application.png)
 
 1. Select **Clear**, then repeat once more with obvious marketing text and confirm it returns **Junk**:
 
@@ -317,7 +315,7 @@ Let's add that node and teach it the three kinds of mail this inbox receives.
    | **Subject** | `Application - Product newsletter` |
    | **Body** | `Limited-time marketing offer. Subscribe now for product promotions and event news.` |
 
-   ![The Run node tab returning the Junk category](../assets/screenshot-placeholder.png)
+   ![The Run node tab returning the Junk category](./assets/m07-7-2-10-node-run-junk.png)
 
 Each sample should return its intended category. Change a category description, run the same sample again, and see the effect straight away - no publishing, no email, no waiting for a trigger. If an auto-reply comes back as **Application**, sharpen the descriptions and re-run until every sample lands where it should.
 
@@ -327,41 +325,41 @@ The **Sort the email** node now sorts the mail, but every branch is empty. Next 
 
 1. On the **Application** branch, select the **+** (its tooltip reads *Add a step*).
 
-   ![Add a step control on the Application branch](../assets/screenshot-placeholder.png)
+   ![Add a step control on the Application branch](./assets/m07-7-3-1-application-branch-plus.png)
 
 1. In the **Add** dialog, leave the search box empty, scroll the **Actions** group past **If/Else**, **Switch** and **Loop**, and select **Scope**. If you would rather search than scroll, type `scope` and select the entry listed on its own under **Other**.
 
    A dashed container appears on the **Application** branch. A Scope succeeds or fails as one unit, so if any action inside it fails, the whole Scope is marked failed. [Mission 09](../09-human-oversight/index.md) builds its error handling on exactly that.
 
-   ![Add dialog search results for Scope](../assets/screenshot-placeholder.png)
+   ![Add dialog search results for Scope](./assets/m07-7-3-2-add-dialog-scope.png)
 
 1. At the top of the Scope's panel, select the name **Scope** - it turns into an editable box - and change it to `Process application`. Press **Enter**. Leave the **OutOfOffice** and **Junk** branches empty, so those emails are read and then ignored, and leave **Other** empty for now - we will be attaching the human step to it in [Mission 09](../09-human-oversight/index.md).
 
-   ![Scope panel renamed to Process application](../assets/screenshot-placeholder.png)
+   ![Scope panel renamed to Process application](./assets/m07-7-3-3-scope-named.png)
 
 1. On the command bar select **Save**.
 
    The **Sort the email** node now shows four branches, and only **Application** carries the still-empty **Process application** box.
 
-   ![Empty Process application scope on Application branch](../assets/screenshot-placeholder.png)
+   ![Empty Process application scope on Application branch](./assets/m07-7-3-4-application-branch-scope.png)
 
 ### 7.4 Add the loop and the PDF guard
 
 One email can carry more than one resume, so the workflow loops over **every** attachment and files each one separately. Not every attachment is a resume, though - an inline signature image or a `.docx` would otherwise produce a meaningless Resume row - so each attachment first passes a guard that checks its file type and skips anything that is not a PDF.
 
-Next we are going to build that guard, and the loop will arrive with it. We only have to write the condition. Because it reads one of the **attachments** carried by the triggering email, the designer automatically wraps the guard in a loop that walks that list for us. We will then fill the guard with the filing steps in the next lab.
+Next we are going to build that guard and a loop for each attachment. The attachment loop is added automatically by the designer because the condition reads one of the **attachments** carried by the triggering email. We will then fill the guard with the filing steps in the next lab.
 
 1. Hover the **Process application** container and select the **➕** labeled **Add a step inside Process application**. The plus on the container's right-hand edge reads **Add a step after Process application** and would put the node next to the box rather than in it.
 
-   ![Add a step inside control on the Process application scope](../assets/screenshot-placeholder.png)
+   ![Add a step inside control on the Process application scope](./assets/m07-7-4-1-plus-inside-scope.png)
 
 1. In the **Add** dialog, under **Actions**, select **If/Else**. By default, the node is configured with two branches, labeled **If** and **Else**.
 
-   ![Add dialog Actions group holding the If Else node](../assets/screenshot-placeholder.png)
+   ![Add dialog Actions group holding the If Else node](./assets/m07-7-4-2-add-dialog-if-else.png)
 
 1. Select the **If/Else** node and rename it to `Is it a PDF?` - select its name at the top of the panel, type the new name and press **Enter**. Do this before you write the condition, so every later expression can quote the finished name.
 
-   Leave the **Branch name** field alone. It reads **If** and labels the arm, not the node. Select **Expand to full screen** in the panel's upper-right corner and keep that view open while you fill the condition.
+   Select **Expand to full screen** in the panel's upper-right corner and keep that view open while you fill the condition.
 
    > [!NOTE] A node's name is how expressions refer to it
    > Later steps read a node's output with an expression such as
@@ -373,7 +371,7 @@ Next we are going to build that guard, and the loop will arrive with it. We only
    > it. Then you can paste every expression that follows verbatim. Rename a node afterwards and any
    > expression you typed by hand still points at the old name.
 
-   ![If Else node renamed to Is it a PDF](../assets/screenshot-placeholder.png)
+   ![If Else node renamed to Is it a PDF](./assets/m07-7-4-3-guard-renamed.png)
 
 1. Build the condition that lets a PDF through:
 
@@ -383,17 +381,17 @@ Next we are going to build that guard, and the loop will arrive with it. We only
 
    **Content-Type** is a property in the array of attachments that arrives with the triggering email, so the designer automatically wraps this node in a loop over those attachments. The condition now reads **Content-Type Equals** `application/pdf`, with the token showing in **Property** as a chip labeled **contentType**. The panel also notes that an **Else** branch is created automatically for when no condition matches.
 
-   ![The guard comparing attachment Content-Type to application/pdf](../assets/screenshot-placeholder.png)
+   ![The guard comparing attachment Content-Type to application/pdf](./assets/m07-7-4-4-pdf-condition.png)
 
 1. Rename the surrounding automatically created loop to `For each attachment`.
 
-   ![Attachment loop renamed to For each attachment](../assets/screenshot-placeholder.png)
+   ![Attachment loop renamed to For each attachment](./assets/m07-7-4-5-loop-renamed.png)
 
 1. On the command bar select **Save**.
 
    **Process application** now holds the **For each attachment** loop, and inside that the **Is it a PDF?** guard with its empty **If** and **Else** branches. We fill the **If** branch with the filing steps in the **next lab**. The **Else** branch stays empty, so an attachment that is not a PDF does nothing and the loop moves straight on to the next attachment.
 
-   ![Scope containing the attachment loop and PDF guard](../assets/screenshot-placeholder.png)
+   ![Scope nesting ready to save with the attachment loop and PDF guard](./assets/m07-7-4-6-scope-loop-guard.png)
 
 ### 7.5 File the resume and attach its PDF as a note
 
@@ -405,21 +403,21 @@ As we go you will see a small ⚡ icon on many fields. That is the **dynamic con
 
 1. Inside the **Is it a PDF?** guard, select the ➕ labeled **Add a step after If**. That button adds the step *into* the **If** branch. Use it for every step in this lab.
 
-   ![Add a step after If inside the PDF guard](../assets/screenshot-placeholder.png)
+   ![Add a step after If inside the PDF guard](./assets/m07-7-5-1-add-step-after-if.png)
 
 1. In the **Add** panel's search box, type `add a new row`, then select **Microsoft Dataverse**, **Add a new row**. The node is added **inside the If branch** with its **Connection** already showing your Dataverse account as **Connected**.
 
-   ![Add dialog search results for add a new row](../assets/screenshot-placeholder.png)
+   ![Add dialog search results for add a new row](./assets/m07-7-5-2-add-dialog-add-row.png)
 
 1. Rename it to `File resume in Dataverse` - select its name at the top of the panel, type the new name and press **Enter**. Do this before you set any field, because every later expression refers to the node as `outputs('File_resume_in_Dataverse')`.
 
-   ![Row action renamed to File resume in Dataverse](../assets/screenshot-placeholder.png)
+   ![Row action renamed to File resume in Dataverse](./assets/m07-7-5-3-addrow-named.png)
 
 1. Open **Table name** and select **Resumes** from the drop-down list.
 
    Once a table is chosen, its columns appear under **Row Item**, listed alphabetically. Only **Resume Title** is marked required, because it is defined as **Required** in the Dataverse table definition.
 
-   ![The filing action pointed at the Resumes table](../assets/screenshot-placeholder.png)
+   ![The filing action pointed at the Resumes table](./assets/m07-7-5-4-addrow-table.png)
 
 1. In **Resume Title**, select ⚡ **Insert dynamic content**, search for `Name`, and choose the attachment's **Name** from the picker.
 
@@ -431,30 +429,30 @@ As we go you will see a small ⚡ icon on many fields. That is the **dynamic con
    > ⚡ **Insert dynamic content** picker instead, because it names the value you are choosing and
    > behaves the same way on every field.
 
-   ![Resume Title mapped to the attachment file name](../assets/screenshot-placeholder.png)
+   ![Resume Title mapped to the attachment file name](./assets/m07-7-5-5-addrow-resume-title.png)
 
 1. In **Cover Letter**, select ⚡ **Insert dynamic content**, search for `Body`, and choose **Body**.
 
-   ![Cover Letter mapped to the email body token](../assets/screenshot-placeholder.png)
+   ![Cover Letter mapped to the email body token](./assets/m07-7-5-6-addrow-cover-letter.png)
 
 1. In **Source Email Address**, select ⚡ **Insert dynamic content**, search for `From`, and choose **From**.
 
    Those three boxes now show blue tokens - **Name**, **From** and **Body** - and the *Needs setup* badge disappears from the node, because we have now filled in all of its required parameters.
 
-   ![Source Email Address mapped to the sender token](../assets/screenshot-placeholder.png)
+   ![Source Email Address mapped to the sender token](./assets/m07-7-5-7-addrow-source-email.png)
 
 1. Now we will upload the attached PDF as a **Note** on that Resume row. Select the **➕** after the **File resume in Dataverse** node - it is inside the **If** branch - then choose **Connector**, **Microsoft Dataverse**, **Add a new row**. Rename the node to `Attach the resume as a note` straight away, then open **Table name** and select **Notes**.
 
    Notes live in Dataverse's `annotation` table, and the file's bytes sit in its `documentbody` column - which is where the agent you add in [Mission 08](../08-workflow-agents/index.md) reads them from.
 
-   ![The second Dataverse action pointed at the Notes table](../assets/screenshot-placeholder.png)
+   ![The second Dataverse action pointed at the Notes table](./assets/m07-7-5-8-note-table.png)
 
 1. Give the note the attachment's own file name:
 
    1. In **Title**, select ⚡ **Insert dynamic content**, search for `Name`, and choose **Name** *(Attachment name)*.
    1. In **File Name**, insert the same **Name** token.
 
-   ![Note Title and File Name carrying the attachment name](../assets/screenshot-placeholder.png)
+   ![Note Title and File Name carrying the attachment name](./assets/m07-7-5-9-note-names.png)
 
 1. Set **Is Document** to **Yes**, then switch **Document** to **expression** mode - the `</>` button from [How to fill in a field](#field-editors) - and paste this expression:
 
@@ -468,7 +466,7 @@ As we go you will see a small ⚡ icon on many fields. That is the **dynamic con
    > `base64ToString(base64(...))` is the pair that decodes and re-encodes cleanly, leaving the bytes
    > exactly as they arrived.
 
-   ![The Note Document field holding the decoded PDF bytes](../assets/screenshot-placeholder.png)
+   ![The Note Document field holding the decoded PDF bytes](./assets/m07-7-5-10-note-document.png)
 
 1. Build the **Regarding (Resumes)** value:
 
@@ -484,27 +482,27 @@ As we go you will see a small ⚡ icon on many fields. That is the **dynamic con
    > supposed to look like that. A value that does *not* begin `%PDF-` means the wrong token reached
    > the field.
 
-   ![The Note linked to the Resume row through Regarding](../assets/screenshot-placeholder.png)
+   ![The Note linked to the Resume row through Regarding](./assets/m07-7-5-11-note-regarding.png)
 
 1. Each turn of the loop files one resume on its own, and nothing outside the loop can see what an earlier turn did. The agents in [Mission 08](../08-workflow-agents/index.md) need to see them all together as a single list - the resume number, the id of the Note holding its PDF, and the file name, one line per resume - so we build that list up as the loop runs, in a **variable**.
 
    A variable has to be initialized at the top level of the workflow, once, before anything reads it, and you cannot initialize one inside a loop or a branch. Select the **➕** immediately after the **When a new email arrives** trigger, *outside and before* everything else.
 
-   ![The add step control immediately after the email trigger](../assets/screenshot-placeholder.png)
+   ![The add step control immediately after the email trigger](./assets/m07-7-5-12-plus-after-trigger.png)
 
 1. Add **Variable**, choose **Initialize Variable**, then rename the node to `Start the resume list` and fill it in as follows.
 
    | Field | Value |
    | --- | --- |
-   | **Variable name** | `ProcessedResumes` *(the field is called Variable name, not Name)* |
+   | **Variable name** | `ProcessedResumes` |
    | **Type** | **String** |
    | **Value** | Leave empty - the placeholder *Type / to insert dynamic content* stays as it is |
 
-   ![The ProcessedResumes string variable initialized before classification](../assets/screenshot-placeholder.png)
+   ![The ProcessedResumes string variable initialized before classification](./assets/m07-7-5-13-variable-initialized.png)
 
 1. Now go back **inside** the loop, below **Attach the resume as a note**, and select the ➕ there. In the **Add** panel search for `Variable` and select it.
 
-   ![Add dialog search results for the Variable node](../assets/screenshot-placeholder.png)
+   ![Add dialog search results for the Variable node](./assets/m07-7-5-14-add-variable-in-loop.png)
 
 1. Configure the **Variable** node you just added:
 
@@ -525,7 +523,7 @@ As we go you will see a small ⚡ icon on many fields. That is the **dynamic con
    R01048 | note 4b180b90-8a89-f111-8077-70a8a5b2f7b1 | TAYLOR TESTPERSON (FICTITIOUS).pdf
    ```
 
-   ![The accumulator node appending each resume to the list](../assets/screenshot-placeholder.png)
+   ![The accumulator node appending each resume to the list](./assets/m07-7-5-15-resume-accumulator-config.png)
 
 > [!NOTE] Why do we need this variable?
 > The loop handles one attachment at a time, and each turn forgets the one before it. Without somewhere
@@ -572,7 +570,7 @@ We can do the quick check without publishing anything and without sending any em
    > from a run that already happened, which saves a lot of typing once a workflow has some history.
    > This one has never run, so there is nothing to load and we type the two values in by hand.
 
-   ![Run node inputs holding the sample From and Body](../assets/screenshot-placeholder.png)
+   ![Run node inputs holding the sample From and Body](./assets/m07-7-6-1-run-node-inputs.png)
 
 1. Select **Run**, then review the action's **Output** after the green check appears. The list shows every column on the row that was just created, with **Cover Letter** holding the sample **Body** value you entered. Scroll the **Output** list down to the **Resume** columns: **Resume Number** holds a generated value such as `R01064` and **Source Email Address** holds your sample value, while **Resume Title** is blank. The PDF is not here either - it is stored as a **note** by the next step, and **Run node** runs only the action you selected.
 
@@ -584,23 +582,27 @@ We can do the quick check without publishing anything and without sending any em
    > box for it and the created row has a blank title. This check exercises the connection, the table,
    > and the two trigger-driven columns, and the loop is covered by the full run below.
 
-   ![Resume fields in Run node output](../assets/screenshot-placeholder.png)
+   ![Resume fields in Run node output](./assets/m07-7-6-2-run-node-output.png)
 
 1. Now run the full end-to-end test, which is the only way to exercise the trigger *and* the note attachment together. On the command bar select **Publish** and wait for it to finish.
 
-   ![The published workflow ready for the trigger to fire](../assets/screenshot-placeholder.png)
+   ![The published workflow ready for the trigger to fire](./assets/m07-7-6-3-workflow-published.png)
 
-1. Select **Test** on the command bar, immediately to the right of **Save**. A panel opens and the workflow arms its trigger, so wait for the banner that reads *Your flow is waiting for the trigger event*. Leave it waiting - the next step sends the email that starts the run.
+1. Select **Run** on the command bar - it is the triangular control immediately to the right of **Save**.
 
-   ![The Test panel waiting for the trigger event](../assets/screenshot-placeholder.png)
+   ![The Run control ready to arm the workflow](./assets/m07-7-6-4-test-button.png)
+
+1. Wait for the banner that reads *Your flow is waiting for the trigger event*. Leave the workflow waiting while you send the email in the next step.
+
+   ![The Run panel waiting for the trigger event](./assets/m07-7-6-5-test-armed.png)
 
 1. From another mailbox (or send to yourself if you don't have another mailbox to use), prepare an email to the monitored mailbox with `Application` in the subject and one resume **PDF attached** - use one of the sample resumes you downloaded in [Mission 05](../05-intake-matching-applications/index.md) - then select **Send** while the workflow is still waiting.
 
-   ![An application email with a resume PDF attached](../assets/screenshot-placeholder.png)
+   ![An application email with a resume PDF attached](./assets/m07-7-6-6-application-email-sent.png)
 
 1. Wait for the trigger to poll. A brand-new connector trigger can take a couple of minutes on its first run. When it fires, a run appears in the **Activity** tab.
 
-   ![The Activity tab listing the run the email started](../assets/screenshot-placeholder.png)
+   ![The Activity tab listing the run the email started](./assets/m07-7-6-7-run-started.png)
 
    > [!IMPORTANT] Why your test email may never start a run
    > The **When a new email arrives** trigger node checks the mailbox on a schedule rather than the
@@ -613,7 +615,7 @@ We can do the quick check without publishing anything and without sending any em
    >
    > - **Arm the trigger before you send**, which is what the last two steps did. The banner reads
    >   *"Your flow is waiting for the trigger event"*, so send your email while it is up and the run starts
-   >   within a minute or so. After a page reload the **Test** button loses its tooltip and label, but it
+   >   within a minute or so. After a page reload the **Run** button can lose its tooltip and label, but it
    >   is still the control immediately right of **Save**.
    > - **Use Resubmit as your test loop.** In the **Activity** tab choose **Select runs**, tick **one**
    >   previous run, then select **Resubmit**. It replays that run's real trigger payload - attachments
@@ -623,27 +625,27 @@ We can do the quick check without publishing anything and without sending any em
 
 1. Open the **Activity** tab and select the newest run. Every node shows **Succeeded**. Expand the **Process application** path and confirm **Is it a PDF?**, **File resume in Dataverse** and **Attach the resume as a note** all show **Succeeded**.
 
-   ![Successful PDF filing workflow run](../assets/screenshot-placeholder.png)
+   ![Successful PDF filing workflow run](./assets/m07-7-6-8-filing-run-succeeded.png)
 
 1. Select the **Attach the resume as a note** node inside that run. Its **Inputs** show the attachment's file name and its decoded `%PDF-1.7…` bytes in **documentbody**, and its **Outputs** return an **annotationid** - so the PDF really was written to the **Notes** table and linked to the Resume row. Select **Remember this resume** and confirm it also shows **Succeeded**, because that step appended the Resume number, Note id, and file name to `ProcessedResumes` for the agent steps in the next mission.
 
-   ![The note step inputs and outputs inside the run](../assets/screenshot-placeholder.png)
+   ![The note step inputs and outputs inside the run](./assets/m07-7-6-9-note-run-details.png)
 
 1. Open the **Hiring Hub** app and go to **Resumes**. The list is sorted by **Resume Number** descending, so the row the workflow just filed is at the top.
 
-   ![The Resumes list with the newest row at the top](../assets/screenshot-placeholder.png)
+   ![The Resumes list with the newest row at the top](./assets/m07-7-6-10-hiring-hub-resumes-grid.png)
 
 1. Open that row. It holds the sender's address in **Source Email Address** and the email body in **Cover Letter**, and its **Resume Title** is the attachment's file name.
 
-   ![The new Resume record created by the workflow](../assets/screenshot-placeholder.png)
+   ![The new Resume record created by the workflow](./assets/m07-7-6-11-hiring-hub-resume-record.png)
 
 1. Check the record's **All Notes** subgrid: the attached PDF is listed there as a note, named after the file.
 
-   ![The resume PDF listed as a note in the All Notes subgrid](../assets/screenshot-placeholder.png)
+   ![Resume PDF listed in the Attachments subgrid](./assets/m07-7-6-12-resume-note-subgrid.png)
 
-1. Open that note. Its own record is titled with the file name and holds the attached PDF - this is where the file the workflow wrote to the **Notes** table actually lives. A run can show **Succeeded** even when a value was mapped to the wrong field, so this last look at the created row and its note - title, sender, body, and PDF - is what actually proves the mapping.
+1. Open that note, select the linked file name, then open the downloaded PDF. The document viewer should show the same resume that arrived with the email. A run can show **Succeeded** even when a value was mapped to the wrong field, so this last look at the created row, its note, and the readable PDF is what actually proves the mapping.
 
-   ![The note record holding the attached resume PDF](../assets/screenshot-placeholder.png)
+   ![The stored resume PDF open in the document viewer](./assets/m07-7-6-13-resume-note-record.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
