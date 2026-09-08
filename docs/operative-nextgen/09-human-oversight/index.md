@@ -121,7 +121,7 @@ log you would need to diagnose it. Give it the answer it is waiting for instead.
 
    The rest of the mission refers to the node by that name, and its compiled identifier becomes `Triage_an_unclear_email`.
 
-   ![The renamed review node](./assets/m09-9-1-2-review-renamed.png)
+   ![The review node renamed for email triage](./assets/m09-9-1-2-review-renamed.png)
 
 1. In **Title**, enter `Review flagged application`. This is the subject line the reviewer sees.
 
@@ -149,7 +149,7 @@ log you would need to diagnose it. Give it the answer it is waiting for instead.
 
 1. Select **➕ Add an input**, then choose **Yes/No** from the **Choose the type of user input** menu.
 
-   ![The Yes or No input type added to the review node](./assets/m09-9-1-2-review-input-type.png)
+   ![The Yes or No input type selected](./assets/m09-9-1-2-review-input-type.png)
 
 1. Select the box next to the type and replace the placeholder with `Is this an application?`
 
@@ -163,7 +163,7 @@ log you would need to diagnose it. Give it the answer it is waiting for instead.
 
 1. On the command bar select **Save**.
 
-   ![The configured Human review node with its question](./assets/m09-9-1-2-human-review-config.png)
+   ![The Save button for the configured review node](./assets/m09-9-1-2-human-review-config.png)
 
 ### 9.2 Route the answer and end the dead branches
 
@@ -207,7 +207,7 @@ Right now the reviewer's answer is recorded and then thrown away - the run ends 
 
    The **Process application** scope is now reachable from two routes - the **Application** classification and the **Did the reviewer confirm it** branch.
 
-   ![Process application on the main line with two connectors feeding it](./assets/m09-9-2-2-merged-layout.png)
+   ![Process application receiving both workflow routes](./assets/m09-9-2-2-merged-layout.png)
 
 **Process application** now sits *after* the Classify node, so it runs whenever the switch completes - no matter which branch was taken. **OutOfOffice**, **Junk** and the **Else** lane you are about to use for "No" have no path to that merge, so the compiler injects a hidden terminate step into each one and marks the whole run **Failed** with `PartialJoinNotReached ... (code: CROSS_SCOPE_MERGE)`. An out-of-office reply would no longer be read and ignored - it would fail the run.
 
@@ -267,6 +267,8 @@ Next we answer **No** and watch the run stop, then we replay that run, answer **
    action needed.
    ```
 
+   ![The non-application email sent with an attachment](./assets/m09-9-3-1-not-an-application-email.png)
+
    The trigger fires only on mail **with** attachments, so a bare text email never starts a run at all.
 
 1. Open the **Activity** tab and select the running item. **Triage an unclear email** shows **Waiting**, and the actions after it show **Waiting** too because they are queued behind the review.
@@ -280,6 +282,8 @@ Next we answer **No** and watch the run stop, then we replay that run, answer **
    The card shows your **Title**, the **Message** with the sender and subject filled in, the heading **Yes/No**, two radio buttons and a **Submit** button.
 
 1. Select **No**, then select **Submit** on the card.
+
+   ![The review card with No selected](./assets/m09-9-3-2-review-card-no.png)
 
    Use the card's own **Submit** control - replying to the email does not resume the run. If the buttons do nothing, select **Show content** first. The card is replaced by *"Your response has been successfully submitted."*
 
@@ -304,6 +308,8 @@ Next we answer **No** and watch the run stop, then we replay that run, answer **
 1. Wait for the new **Request information** card to arrive in the reviewer's mailbox.
 
 1. Select **Yes** on the card, then select **Submit**.
+
+   ![The review card with Yes selected](./assets/m09-9-3-4-review-card-yes.png)
 
 1. Open the new run in **Activity**. This time **Stop - not an application** is **Skipped** and **Process application** runs the full pipeline: the resume is filed, the Hiring Agent matches it, and the Teams card is posted.
 
@@ -367,6 +373,8 @@ First, look at the settings the connector already gives you. Every action has it
 
 1. At the top of its panel select the more options menu, then **Settings**. The panel is headed **‹ Settings** and every section is already open: **Networking**, **Run after**, **Security** and **Tracking**.
 
+   ![The File resume node Settings panel](./assets/m09-9-5-1-settings-panel.png)
+
 1. Read the **Networking** section without changing anything:
 
    | Setting | What you should see | What it means |
@@ -398,7 +406,11 @@ First, look at the settings the connector already gives you. Every action has it
 
 1. Put the alert inside the catch. Hover the **Handle failure** container and select the **➕** labeled **Add a step inside Handle failure**.
 
+   ![Add a step inside Handle failure](./assets/m09-9-5-3-add-step-inside-catch.png)
+
 1. In the **Add** dialog's search box, type `post message`.
+
+   ![Add dialog filtered to post message](./assets/m09-9-5-3-add-dialog-post-message.png)
 
 1. Under the **Microsoft Teams** heading, select **Post message in a chat or channel**.
 
@@ -415,9 +427,15 @@ First, look at the settings the connector already gives you. Every action has it
 
 1. Select **Save**. **Handle failure** now contains a single step, **Alert - filing failed**.
 
+   ![Alert step saved inside Handle failure](./assets/m09-9-5-3-alert-saved.png)
+
 1. Make the catch run only on failure. On the canvas select the **Handle failure** container, choose the more options menu, then **Settings**.
 
+   ![The Handle failure scope Settings panel](./assets/m09-9-5-4-handle-failure-settings.png)
+
 1. Find the **Run after** section. The **first** card is headed **Process application** - the step that runs before this one. Edit only this card. A **second** card underneath is headed **Alert - filing failed**, which is the alert step *inside* this scope.
+
+   ![Run after section for Handle failure](./assets/m09-9-5-4-run-after-section.png)
 
 1. Set the four states on the **Process application** card as follows, so the alert fires only when something inside **Process application** breaks.
 
@@ -430,7 +448,7 @@ First, look at the settings the connector already gives you. Every action has it
 
    ![Run after set to Failed and TimedOut](./assets/m09-9-5-4-run-after-failed.png)
 
-1. Select the **‹** chevron next to **Settings**, then select **Save** and **Publish**.
+1. Select the **‹** chevron next to **Settings**, then select **Save**.
 
 Keep the catch as the **last** step on the branch. A step that runs after a **skipped** step is skipped too, so on a healthy run - where **Handle failure** is skipped - anything placed after it would be skipped as well, and the run would still report **Succeeded** while doing nothing at all. If you ever do need a step after a catch, open its **Run after** and tick **Skipped** as well as **Succeeded**, which is the *finally* half of the pattern.
 
@@ -461,7 +479,7 @@ Keep the catch as the **last** step on the branch. A step that runs after a **sk
 
    ![End node set to Failed with error code](./assets/m09-9-5-5-end-failed.png)
 
-1. **Save** and **Publish**.
+1. **Save**.
 
 Now test the catch. You need a step inside **Process application** to fail while the workflow is running, so next you break the **Resume Title** expression on **File resume in Dataverse**.
 
@@ -473,10 +491,10 @@ Now test the catch. You need a step inside **Process application** to fail while
 1. Enter the following expression and confirm it with **Add** or **Update**:
 
    ```text
-   substring(triggerOutputs()?['body/subject'],0,850)
+   int('not-a-number')
    ```
 
-   The designer cannot know the subject's length in advance, so the expression saves and publishes. At runtime a short subject cannot supply an 850-character substring. The filing action fails with `InvalidTemplate` before its Dataverse connector call begins.
+   The expression is valid, so the designer saves and publishes it. At runtime, `not-a-number` cannot be converted to an integer. The filing action fails with `InvalidTemplate` before its Dataverse connector call begins.
 
 1. Select **Save**, then **Publish**. The header changes from **Draft** to **Published**.
 
@@ -504,11 +522,17 @@ Now test the catch. You need a step inside **Process application** to fail while
 
 1. Check Teams. The **Flow bot** chat now carries the message *ALERT: Resume filing failed - review the run in Activity*.
 
+   ![Failure alert delivered in Teams](./assets/m09-9-5-5-alert-in-teams.png)
+
 Now undo the break.
 
 1. Inside **Process application**, select **File resume in Dataverse** again.
 
-1. In **Resume Title**, remove the **substring** expression and re-insert the **Name** token.
+   ![File resume node reopened after the test](./assets/m09-9-5-5-file-resume-reopened.png)
+
+1. In **Resume Title**, remove the **int** expression and re-insert the **Name** token.
+
+   ![Resume Title restored to the Name token](./assets/m09-9-5-5-resume-title-restored.png)
 
    That is the *attachment's file name* from the loop's current item, not the email **Subject**. After a clean run the column should read exactly `AVERY EXAMPLE (FICTITIOUS).pdf`.
 
