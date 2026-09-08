@@ -137,7 +137,7 @@ There are two ways to test the behavior of our agents:
 
 **Preview** is the test chat that sits inside the agent. It is where you test how your agent will behave when users interact with it, including where it calls its tools and connects to data. Preview shows you *what the agent does* on one question - including its reasoning and every tool call - which makes it the place to investigate behavior you don't understand.
 
-**Evaluations** are a saved set of questions, each with a reference answer describing what a good reply contains. You run the whole set on demand and get a score back. Evaluations tell you *whether the agent is getting better or worse* as you change it.
+**Evaluations** are a saved set of questions, each with an expected response describing what a good reply contains. You run the whole set on demand and get a score back. Evaluations tell you *whether the agent is getting better or worse* as you change it.
 
 Evaluation sets can then be used as **regression tests** - a set of checks you re-run after every change, to be sure the work you just did didn't break something that already worked. From here on, every mission that changes the agent adds a case to its set and re-runs the **whole** set rather than just the new case. If something that used to pass starts failing, you find out now instead of three missions later.
 
@@ -298,6 +298,27 @@ The skill now describes the intake procedure but still cannot reach a hiring rec
 
 1. An agent should only ever hold the permissions it actually uses, so we need to restrict the actions to the ones the Hiring Agent needs. Turn **off** the master **Enable all tools** toggle at the top of the list, then switch **on** only the record and query actions the Hiring Agent uses - **`search`**, **`describe`**, **`read_query`**, **`create_record`**, and **`update_record`**. Leave the schema-level actions (**`create_table`**, **`update_table`**, **`delete_table`**) off - the agent reads and writes *records*, it never changes the data model.
 
+   Set the tools in the order they appear in the dialog:
+
+   | Tool | State |
+   | --- | --- |
+   | `read_query` | ✅ |
+   | `create_table` | ❌ |
+   | `update_table` | ❌ |
+   | `delete_table` | ❌ |
+   | `create_record` | ✅ |
+   | `update_record` | ✅ |
+   | `delete_record` | ❌ |
+   | `search` | ✅ |
+   | `upsert_skill` | ❌ |
+   | `create_skill_resource` | ❌ |
+   | `delete_skill` | ❌ |
+   | `describe` | ✅ |
+   | `search_data` | ❌ |
+   | `init_file_upload` | ❌ |
+   | `commit_file_upload` | ❌ |
+   | `file_download` | ❌ |
+
     ![Restricted Dataverse MCP action selection](./assets/m02-2-2-6-dataverse-mcp-selected.png)
 
    Restricting an agent to only the operations it needs is a core safety practice - an agent that *can't* drop a table can't be talked into dropping one - so give it the least access that still does the job.
@@ -363,59 +384,68 @@ To check that the MCP connection returns current Dataverse records, ask the agen
 
 Now we can start adding evals to our agent. This first set is a **baseline** that asks what the agent knows about itself - its scope, identity, identifiers, and working rules. Those cases are portable, because they don't depend on a connection, a particular row, or data created by an earlier run.
 
-A **Connected user** profile can also run cases that use tools. For each one, record the required rows and starting state, the expected result, and how writes will be repeated safely and cleaned up. Mission 10 adds a read-only Dataverse MCP case using the stable sample data from Mission 01.
+A **Connected user** profile can also run cases that use tools. For each one, record the required rows and starting state, the expected result, and how writes will be repeated safely and cleaned up. Mission 11 adds a read-only Dataverse MCP case using the stable sample data from Mission 01.
 
-1. In the left navigation select **Agents**, open the **Hiring Agent**, then select its **Evaluate** tab and choose **New evaluation**. Keep **Data type: Conversation** and the **General quality** test method. On the **Data source** screen, choose how to add cases:
-   - **Import a CSV** - upload a prepared file of questions and references (useful for a large, pre-written set).
-   - **Generate** - let the tool draft a starter set of cases from the agent's description and instructions, which you then review and edit.
-   - **"Or, write some questions yourself"** - type each **Question** and a short **Reference** answer yourself.
+1. **Publish** the Hiring Agent. AgentOps can create a set before an agent is published, but its **Evaluate** tab does not surface that set until the agent has a published runtime.
 
-   Choose **"Or, write some questions yourself"** here, so you control exactly what each case asks.
+1. In the left navigation select **AgentOps**, then **Evaluation**. Select **New evaluation**, choose the **Hiring Agent**, choose **Single responses**, and choose to write the cases yourself.
 
    ![Manual conversation evaluation ready for test cases](./assets/m02-2-4-1-manual-evaluation-ready.png)
 
-   > [!NOTE] Other test methods exist, but are out of scope here
-   > **General quality** is the only test method available in agent evaluations, and the only one
-   > this course uses. It checks that answers meet quality standards such as relevance and
-   > completeness, without comparing them against an expected answer.
-   >
-   > Three further methods exist today only in **Agent Ops**, not in agent evaluations. They are
-   > listed here so you recognize them if you meet them there, and this may change in future:
-   >
-   > - **Tool use** - checks whether the agent used the right tools
-   > - **Custom** - checks and labels answers according to instructions you define
-   > - **Keyword match** - looks for matching words and phrases
+1. Name the evaluation `Hiring Agent baseline`.
 
-1. Select **Add conversations** (next to *Review your test cases*), then choose **Write**.
+   ![AgentOps Single response evaluation named Hiring Agent baseline](./assets/m02-2-4-2-single-response-baseline.png)
 
-    ![Add conversations menu with Write option](./assets/m02-2-4-3-add-conversations.png)
+1. Open the **General quality** menu and select **Delete test method**.
 
-1. In **Review and edit**, copy the first **Question** and **Reference** from the table below. Paste them into the user turn and **Reference** box, then select **Done**.
+   ![General quality menu with Delete test method](./assets/m02-2-4-3-delete-general-quality.png)
 
-   | # | Question | Reference |
+1. Select **Add test method**, then select **Compare meaning**.
+
+   ![Test method picker with Compare meaning](./assets/m02-2-4-4-compare-meaning-picker.png)
+
+1. Set **Pass score** to **70**, then select **Done**. Compare meaning scores how closely the agent's response matches the intent of the expected response, without requiring the same wording.
+
+   ![Compare meaning pass score set to 70](./assets/m02-2-4-5-compare-meaning-score.png)
+
+1. Select **Add**, then **Write**.
+
+   ![Add questions menu with the Write action](./assets/m02-2-4-6-add-conversations.png)
+
+1. Copy the first **Question** and **Expected response** from the table below into the new row.
+
+   | # | Question | Expected response |
    | --- | --- | --- |
    | 1 | Who are you, and what is your role in the hiring process? | I'm the Hiring Agent, the orchestrator for the recruitment process. I take in candidate resumes, match candidates to open job roles using each role's weighted evaluation criteria, create job applications, and prepare interviews. |
    | 2 | What kinds of tasks can you help me with, and what is outside your scope? | I help with candidate and resume intake, matching candidates to active job roles, creating job applications, and preparing interviews. I decline topics unrelated to the hiring process. |
    | 3 | What are the identifier formats you use for candidates, resumes, job roles, and job applications? | Candidate numbers use C#####, Resume numbers use R#####, Job Role numbers use J#####, and Job Application numbers use A#####. |
    | 4 | Describe the steps you take when I give you a new candidate's resume. | I read the resume, deduplicate the Candidate by email, create or reuse and link the Candidate and Resume records, then report the C##### and R##### numbers and whether the Candidate was reused or created. |
 
-   ![First manual evaluation case listed after selecting Done](./assets/m02-2-4-4-first-evaluation-case.png)
+   ![First Single response evaluation case](./assets/m02-2-4-7-first-evaluation-case.png)
 
-1. Repeat the previous two steps with the remaining three rows until all four cases are listed under **Review your test cases**.
+1. Repeat the previous two steps with the remaining three rows until all four cases are listed under **Review your test cases**, then select **Save**.
 
-    ![All four self-knowledge cases listed in the test set](./assets/m02-2-4-5-four-cases-listed.png)
+   ![All four self-knowledge cases listed in the test set](./assets/m02-2-4-8-four-cases-listed.png)
 
-1. Select **Manage**, choose your signed-in account as the **user profile**, **Save** it, then name the set `Hiring Agent baseline` and **Save** it. Confirm that all four cases remain listed.
+1. Open the Hiring Agent's **Evaluate** tab and confirm `Hiring Agent baseline` appears as **Data type: Single response** with four cases.
 
-    ![Saved evaluation test set with all four cases](./assets/m02-2-4-6-evaluation-profile-saved.png)
+   ![Saved evaluation test set with all four cases](./assets/m02-2-4-9-evaluation-profile-saved.png)
 
-1. Select **Evaluate** to run all four cases now.
+1. Open the set and confirm **Compare meaning** and **Pass score: 70/100** persisted, then select **Manage**.
 
-    ![Saved test set with Evaluate ready to run](./assets/m02-2-4-7-evaluate-run-started.png)
+   ![Saved test set with Evaluate ready to run](./assets/m02-2-4-10-evaluate-run-started.png)
 
-1. Now read the result - you're aiming for green. All four **Pass**, because every question is answerable from the agent's own instructions and skills:
+1. In **User**, choose your signed-in account and confirm its connection shows **Connected**.
 
-    ![The evaluation scores 100% - all four self-knowledge cases Pass](./assets/m02-2-4-8-eval-live-20-hiring-100pass.png)
+   ![Connected account selected for the evaluation profile](./assets/m02-2-4-11-evaluation-profile-account.png)
+
+1. Select **Save**.
+
+   ![Connected evaluation profile ready to save](./assets/m02-2-4-12-evaluation-profile-save.png)
+
+1. Select **Evaluate**, then read the result. All four cases should **Pass**, and the score must be at least **70%**. A semantic answer can pass without scoring exactly 100%:
+
+   ![All four self-knowledge cases pass the Compare meaning threshold](./assets/m02-2-4-13-eval-live-20-hiring-100pass.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
