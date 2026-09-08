@@ -125,6 +125,7 @@ Perhaps the biggest change is the capability of the harness itself, with the bui
 Before you start this lab you need:
 
 - The [course prerequisites](../index.md#prerequisites) - work through those first if you haven't
+- Completion of all **[Recruit Nextgen](../../recruit-nextgen/index.md)** missions, because this course builds on those agent-authoring fundamentals
 - A Power Platform environment with **Microsoft Dataverse**, and the **System Customizer** or **System Administrator** security role in it, since importing a solution creates tables
 - Permission to create agents in that environment
 
@@ -213,7 +214,7 @@ The matching and interview-prep missions need **Job Roles** and their weighted *
 
 Now import the Job Role sample data. Follow these steps:
 
-1. Go back to the **Operative** solution and select **Objects** in the left navigation. In the object type tree select **Apps**, tick the checkmark in front of the **Hiring Hub** model-driven app, then open the row's more commands menu and choose **Play**.
+1. Go back to the **Operative** solution and select **Objects** in the left navigation. In the object type tree select **Apps**, tick the checkmark in front of the **Hiring Hub** model-driven app, then open the row's more commands menu and choose **Play**, or select **Play** on the command bar.
 
    ![Operative solution objects filtered to Apps](./assets/m01-1-2-1-solution-apps.png)
 
