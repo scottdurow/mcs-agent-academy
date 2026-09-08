@@ -171,13 +171,34 @@ Before the Hiring Agent can delegate tasks to it, the Interview Agent needs acce
 
 1. Restrict the tool to the actions this agent actually needs. In the installed tool, turn **Enable all tools** off and enable only **search**, **describe** and **read_query**.
 
+    Set the tools in the order they appear in the dialog:
+
+    | Tool | State |
+    | --- | --- |
+    | `read_query` | ✅ |
+    | `create_table` | ❌ |
+    | `update_table` | ❌ |
+    | `delete_table` | ❌ |
+    | `create_record` | ❌ |
+    | `update_record` | ❌ |
+    | `delete_record` | ❌ |
+    | `search` | ✅ |
+    | `upsert_skill` | ❌ |
+    | `create_skill_resource` | ❌ |
+    | `delete_skill` | ❌ |
+    | `describe` | ✅ |
+    | `search_data` | ❌ |
+    | `init_file_upload` | ❌ |
+    | `commit_file_upload` | ❌ |
+    | `file_download` | ❌ |
+
    The Interview Agent's own instructions say it must never create, update or delete a record, so restrict the tools to remove those that are not needed. This is the same least-privilege reasoning you applied to the Hiring Agent in [Mission 02](../02-instructions-skills-dataverse-mcp/index.md#lab-02-author-the-skill-and-connect-the-data-layer).
 
    ![Dataverse MCP restricted to three read actions](./assets/m03-3-2-4-dataverse-mcp-restricted.png)
 
-1. Remove the default **"Search all websites"** knowledge source so the Interview Agent answers **only** from the hiring data: open the **Knowledge** panel, select the **Search all websites** entry, and delete it. Leaving it in would let the agent answer from the public web instead of grounding every answer in your Dataverse records.
+1. Under **Knowledge**, remove **Search all websites** so the Interview Agent answers **only** from the hiring data. Leaving public web search enabled would let the agent answer from the web instead of grounding every answer in your Dataverse records.
 
-    ![Knowledge panel listing the Search all websites source](./assets/m03-3-2-5-web-knowledge-source.png)
+    ![Search all websites ready for removal](./assets/m03-3-2-5-web-knowledge-source.png)
 
 1. Open the more options menu, **Settings**.
 
@@ -189,7 +210,7 @@ Before the Hiring Agent can delegate tasks to it, the Interview Agent needs acce
 
 1. Select **Save**, then **Publish** the Interview Agent. Publishing asks you to confirm: the dialog names the channels the release goes to and when the agent was last published, and **Publish agent** is what actually ships it. The command bar reads **Publishing…** for about a minute, then a dialog confirms **Your agent published successfully** - select **Close**. When publishing finishes, the **Monitor** tab becomes available.
 
-    ![Save and Publish on the Interview Agent command bar](./assets/m03-3-2-8-interview-agent-published.png)
+    ![Publish on the Interview Agent command bar](./assets/m03-3-2-8-interview-agent-published.png)
 
 > [!NOTE] Publishing vs Channels
 > This is the first of many publishes, so it's worth being precise about what one does. **Publishing**
@@ -240,9 +261,15 @@ With the specialist published and available for connections, we'll add it to the
    > strictly about **preparing interviewers**, and the orchestrator delegates only genuine interview-prep
    > work while handling data and matching itself.
 
-1. Select **Connect**, then select **Save**. The Interview Agent now appears under **Connected agents**.
+1. Select **Connect**, then select **Save**. The Interview Agent now appears under **Connected agents**. Keep the Hiring Agent as a saved draft while you test this connection in Preview.
 
     ![Interview Agent listed under Connected agents](./assets/m03-3-3-5-build-25-connected-added.png)
+
+> [!IMPORTANT] Test before publishing the Hiring Agent
+> In the Powered by GitHub Copilot experience, Preview tests the Hiring Agent's current saved draft.
+> Publishing the Hiring Agent immediately after adding a connected agent can leave that connected
+> agent out of the next Preview session. Save the connection here, test it in the next lab, and leave
+> the Hiring Agent's channel publication until Mission 11.
 
 ### 3.4 Test multi-agent collaboration
 
@@ -255,11 +282,11 @@ To check the routing, send the Hiring Agent one request that needs its own data 
 1. Ask for something that needs both agents. The candidate profile is supplied in the prompt because resume intake starts in Mission 05:
 
    ```text
-   Prepare me to interview Jordan Example for the Power Platform Developer role
-   J1004. For this test, Jordan has four years of Power Platform experience,
-   PL-400 certification, strong Power Apps and Power Automate skills, and weaker
-   stakeholder communication. Use J1004 evaluation criteria. Do not create
-   records.
+    Ask the Interview Agent to prepare me to interview Jordan Example for the
+    Power Platform Developer role J1004. For this test, Jordan has four years of
+    Power Platform experience, PL-400 certification, strong Power Apps and Power
+    Automate skills, and weaker stakeholder communication. Use J1004 evaluation
+    criteria. Do not create records.
    ```
 
     Watch the orchestrator **delegate** the interview-prep part to the Interview Agent - you'll see a connected-agent call in the trace. Expand the **Interview Agent** call to see the exact context the Hiring Agent passed across:
@@ -286,42 +313,58 @@ The **Evaluate** tab tests one agent at a time, so the Hiring Agent's set from M
 
 Like the Hiring Agent's baseline in Mission 02, this first set asks the specialist about itself: who it is, which identifiers it uses, what it does when the hiring data doesn't support an answer, and where its boundaries are. None of those cases need live data, so the set behaves the same in any environment and you can re-run it after any change without setting anything up first.
 
-1. If you are not already in the **Interview Agent**, select **Agents** in the left navigation and open it. Go to its **Evaluate** tab. The agent has no test sets yet, so it opens the **Data source** screen straight away.
+1. In the left navigation select **AgentOps**, then **Evaluation**. Select **New evaluation**, choose the published **Interview Agent**, choose **Single responses**, and choose to write the cases yourself.
 
     ![Evaluate tab open on the Data source screen](./assets/m03-3-5-1-evaluate-tab.png)
 
-1. Choose **Or, write some questions yourself**, keeping **Data type: Conversation** and the **General quality** test method.
+1. Name the set `Interview Agent baseline`.
 
     ![Manual Interview Agent evaluation ready for authored cases](./assets/m03-3-5-2-manual-evaluation-editor.png)
 
-1. Select **Add conversations** (next to *Review your test cases*), then choose **Write**.
+1. On **General quality**, open the **…** menu. Select **Delete test method**, then confirm the deletion.
 
-    ![Add conversations menu with Write highlighted](./assets/m03-3-5-3-add-conversations.png)
+    ![General quality menu with Delete test method](./assets/m03-3-5-3-delete-general-quality.png)
 
-1. Add these four **positive** cases. For each one, paste the **Question** and the **Expected answer** into the **Reference** box, then select **Done**:
+1. Select **Add test method**.
 
-   | # | Question | Reference answer |
+    ![Empty test-method area with Add test method](./assets/m03-3-5-4-add-test-method.png)
+
+1. Choose **Compare meaning**.
+
+    ![Test-method picker with Compare meaning](./assets/m03-3-5-5-compare-meaning-picker.png)
+
+1. Set **Pass score** to **70**, then select **Confirm**.
+
+    ![Compare meaning configured with a pass score of 70](./assets/m03-3-5-6-compare-meaning.png)
+
+1. Select **Add**, then **Write**.
+
+    ![AgentOps Add menu with Write highlighted](./assets/m03-3-5-3-add-conversations.png)
+
+1. Add these four **positive** cases as Question and Expected response pairs:
+
+    | # | Question | Expected response |
    | --- | --- | --- |
    | 1 | Who are you, and what do you help interviewers with? | I am the Interview Agent. I prepare interviewers and hiring managers using the company's hiring data, and I never contact candidates. |
    | 2 | What identifier formats do you use for resumes, candidates, applications, and job roles? | Resume numbers use R#####, Candidate numbers use C#####, Application numbers use A#####, and Job Role numbers use J#####. |
    | 3 | What do you do when required information is missing or the hiring data does not support an answer? | I ask a clarifying question when required information is missing, ground every answer in the hiring data, and never invent or guess facts. |
    | 4 | Will you ever contact a candidate directly? Why or why not? | No. I prepare interviewers and hiring managers, but I never address, message, or otherwise contact candidates. |
 
-    ![Write dialog with the first question and reference](./assets/m03-3-5-4-write-case-dialog.png)
+    ![First Question and Expected response pair](./assets/m03-3-5-4-write-case-dialog.png)
 
 1. Check all four cases are listed before you go on.
 
     ![Four specialist baseline cases listed in the evaluation](./assets/m03-3-5-5-four-cases-listed.png)
 
-1. Select **Manage**, select your signed-in account as the **user profile**, then select **Save**. This gives grounded evaluation cases a known account to call tools with.
+1. **Save** the set. Open the Interview Agent's **Evaluate** tab and confirm `Interview Agent baseline` appears as **Data type: Single response** with four cases.
 
-    ![Connected evaluation profile for signed-in account](./assets/m03-3-5-6-manage-user-profile.png)
+    ![Completed Interview Agent baseline ready to save](./assets/m03-3-5-7-interview-test-set-saved.png)
 
-1. Name the set `Interview Agent baseline` and **Save** it:
+1. Open the saved set and confirm it uses **Compare meaning**, then select **Manage** and save your signed-in account as the user profile. The evaluation run uses the pass score of **70** that you saved earlier:
 
-    ![Saved Interview Agent test set with all four cases](./assets/m03-3-5-7-interview-test-set-saved.png)
+    ![Saved Interview Agent baseline with user profile management](./assets/m03-3-5-6-manage-user-profile.png)
 
-1. Select **Evaluate**. All four cases should come back **Pass** - each one asks about a rule that is
+1. Select **Evaluate**. All four cases should come back **Pass** and the score should be at least **70%** - each one asks about a rule that is
     already written into the agent's instructions, so there is nothing here the agent has to work out
     for itself:
 
