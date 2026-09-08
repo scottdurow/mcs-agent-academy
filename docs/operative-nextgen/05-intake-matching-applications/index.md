@@ -351,7 +351,11 @@ The **role-matching** skill is a read-only skill. Creating the actual **Job Appl
 
    4. Listing. If asked to list a candidate's applications, read
       ppa_jobapplication filtered by that candidate and return each Application
-      number, its role, and status.
+      number, its role, and status. If the user names roles, resolve those roles
+      to their IDs and use a server-side filter that combines the candidate ID
+      and the named role IDs. Do not make a candidate-only application query
+      when roles were named. Return only matching applications; do not mention,
+      count, retrieve, or quote applications for other roles.
 
    ## Guidelines
    - Never invent identifiers or record numbers; always read them from tool
@@ -394,7 +398,10 @@ The **role-matching** skill is a read-only skill. Creating the actual **Job Appl
 1. Ask the agent to read the records back:
 
    ```text
-   List the Job Applications for candidate C##### with their role and status.
+   List the Job Applications for candidate C##### for the J1000 Power Automate
+   Specialist and J1004 Power Platform Developer roles, with their status. Use
+   a candidate-and-role filter. Do not retrieve or mention applications for
+   other roles.
    ```
 
    Replace `C#####` with Avery's Candidate number from Lab 5.1.
@@ -432,17 +439,17 @@ We gave the Hiring Agent two new skills - **role-matching** and **application-ha
 
 1. On **Hiring Agent**, **Evaluate**, open the **Hiring Agent baseline** set you created in [Mission 02](../02-instructions-skills-dataverse-mcp/index.md). Add this fifth case to it - you're extending the existing set, not building a new one:
 
-   | # | Question | Reference answer |
+   | # | Question | Expected response |
    | --- | --- | --- |
    | 5 | What do you do if you're asked to act on a candidate or resume that doesn't exist? | Report that the candidate or resume cannot be found and ask the user to confirm the identifier. Never fabricate a candidate, resume, application, or record number. |
 
-   Select the connected evaluation profile and **Save**. Verify the set now contains all five conversations:
+   Add the Question and Expected response to the saved Single response set. Confirm **Compare meaning** and **Pass score: 70/100** are unchanged, select the connected evaluation profile, and **Save**. Verify the set now contains five cases:
 
    ![Saved five-case Hiring Agent baseline set](./assets/m05-5-7-1-hiring-regression-configured.png)
 
 1. Select **Evaluate** to run the whole set. It stays **green** because every case is answerable from the agent's own skills and rules, with no live lookup:
 
-   ![Five-case regression at 100 percent](./assets/m05-5-7-2-hiring-regression-result.png)
+   ![Five-case regression passing the Compare meaning threshold](./assets/m05-5-7-2-hiring-regression-result.png)
 
 ## ✅ Mission Complete {#mission-complete}
 
