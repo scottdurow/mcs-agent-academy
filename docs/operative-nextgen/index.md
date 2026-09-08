@@ -64,9 +64,10 @@ Each mission extends the same hiring system, so the agent, skills, data, and wor
 | `08` | 🤖 [Add Agents to a Workflow](./08-workflow-agents/index.md) | Put an inline agent and your published Hiring Agent inside the pipeline, then notify Teams |
 | `09` | 🧯 [Human Oversight and Handling Alternative Flows](./09-human-oversight/index.md) | **Human review**, alternate flows, observability and a regression pass |
 | `10` | 📅 [Schedule Interviews with Work IQ](./10-work-iq-scheduling/index.md) | Turn on **Work IQ** so the Interview Agent can read calendars and book a supervised meeting |
-| `11` | 🏅 [Evaluate, Publish, and Monitor Your Agent](./11-publish-and-monitor/index.md) | Evaluation sets, publishing to **Microsoft 365 Copilot** and **Teams**, **Monitor**, and your badge |
+| `11` | 🏅 [Evaluate, Publish, and Monitor Your Agent](./11-publish-and-monitor/index.md) | Evaluation sets, publishing to **Microsoft 365 Copilot** and **Teams**, and **Monitor** |
+| `12` | 🏅 [Secure Your Operative Badge](./course-completion-badges-operative/index.md) | Validate your completed Operative work and claim your badge |
 
 > [!NOTE]
-> Completing the curriculum earns you the **New Copilot Studio Operative** badge, claimed at the end of Mission 11.
+> Completing the curriculum earns you the **New Copilot Studio Operative** badge, claimed on the final badge page.
 
 <analytics-tag section="operative-nextgen" />
