@@ -284,7 +284,9 @@ Let's add that node and teach it the three kinds of mail this inbox receives.
 
    ![Configured Classify node ready to save](./assets/m07-7-2-7-save-classify.png)
 
-   ![Classify canvas branches with configured category names](./assets/m07-7-2-7-classify-branches.png)
+   After Save completes, the canvas shows the configured branch names.
+
+![Classify canvas branches with configured category names](./assets/m07-7-2-7-classify-branches.png)
 
 1. Wherever a node can be run on its own, test it there rather than waiting for a whole run. Open the **Sort the email** node again and select the **Run node** tab, next to **Configure**. It executes just the node you have selected against sample values you type in, so you get an answer in seconds instead of publishing the workflow and emailing the mailbox.
 
@@ -391,7 +393,7 @@ Next we are going to build that guard and a loop for each attachment. The attach
 
    **Process application** now holds the **For each attachment** loop, and inside that the **Is it a PDF?** guard with its empty **If** and **Else** branches. We fill the **If** branch with the filing steps in the **next lab**. The **Else** branch stays empty, so an attachment that is not a PDF does nothing and the loop moves straight on to the next attachment.
 
-   ![Scope nesting ready to save with the attachment loop and PDF guard](./assets/m07-7-4-6-scope-loop-guard.png)
+   ![Scope containing the attachment loop and PDF guard](./assets/m07-7-4-6-scope-loop-guard.png)
 
 ### 7.5 File the resume and attach its PDF as a note
 
