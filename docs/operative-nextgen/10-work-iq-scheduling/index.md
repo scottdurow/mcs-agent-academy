@@ -38,9 +38,9 @@ By the end of this mission the Interview Agent prepares questions, offers to boo
 In this mission, you'll learn:
 
 1. What the **Work IQ** MCP servers are, and which ones scheduling needs
-1. How to ask the agent, in its **Preview** pane, when you and a colleague are both free
+1. How to add supervised scheduling instructions before testing the agent in **Preview**
+1. How to ask the agent when you and a colleague are both free
 1. Why creating a calendar event deserves the same care as writing to Dataverse - it sends real invitations
-1. How to make the agent offer to book the meeting instead of waiting to be asked
 1. How to test the new scheduling behavior without booking anything real
 
 ## 🧠 Work IQ - one server per capability {#microsoft-iq}
@@ -77,9 +77,9 @@ Before you start this lab you need:
 - A **second test user** in your tenant with a provisioned mailbox and **at least one appointment in the next 24 hours**, so the availability lookups have something to find
 - A **controlled course identity** for the Work IQ connection - never a personal or production account
 
-### 10.1 Add the Work IQ tools to the Interview Agent
+### 10.1 Add Work IQ and supervised scheduling
 
-First we need to give the Interview Agent the two Work IQ servers scheduling needs, and to configure the user account that is used to connect.
+First we need to give the Interview Agent the two Work IQ servers scheduling needs, configure the user account used to connect, and add the rules that govern when it may send an invitation.
 
 1. In the left navigation select **Agents**, open the **Interview Agent**, and go to its **Build** tab. In the right-hand configuration panel, find **Tools** and select **Add tool**.
 
@@ -107,9 +107,30 @@ First we need to give the Interview Agent the two Work IQ servers scheduling nee
 
    ![The Calendar MCP detail panel](./assets/m10-10-1-5-calendar-connection.png)
 
-1. Create or select the same controlled **connection**, select **Add**, then **Save** and **Publish** the agent, confirming with **Publish agent**. Confirm both **User** and **Calendar** appear under **Tools**.
+1. Create or select the same controlled **connection**, select **Add**, and confirm both **User** and **Calendar** appear under **Tools**.
 
    ![Both Work IQ servers installed under Tools](./assets/m10-10-1-6-calendar-connected.png)
+
+1. On the **Build** tab, select **Instructions**.
+
+   ![The Interview Agent Build tab with Instructions open](./assets/m10-10-3-1-interview-agent-build.png)
+
+1. Add this to the end of the existing text:
+
+   ```text
+   After you deliver interview questions for a candidate, offer to book a
+   30-minute interview-prep meeting with the interviewers. If the user accepts,
+   ask who should attend and for a timeframe, find mutually free times, and send
+   the meeting invitation only after the user confirms one specific slot. Never
+   contact the candidate, and never send an invitation without an explicit
+   confirmation.
+   ```
+
+   ![The scheduling instructions appended to the agent](./assets/m10-10-3-2-scheduling-instructions.png)
+
+1. Select **Save**, then **Publish**, and confirm with **Publish agent**.
+
+   ![The completed scheduling instructions ready to save and publish](./assets/m10-10-3-3-scheduling-instructions-published.png)
 
 ### 10.2 Find times and book a meeting from the agent's Preview pane
 
@@ -147,32 +168,11 @@ Next we put those tools to work in **Preview**, where we can watch the availabil
 
    Creating a calendar event **sends a real invitation to a real person**. That makes it a write like any other, so the same rules apply as when you wrote to Dataverse: do it with controlled identities in a sandbox, and read back the attendees and the time before you let the agent book anything.
 
-### 10.3 Let the agent offer to book
+### 10.3 Verify the supervised scheduling offer
 
-Now, rather than waiting to be asked, the agent will **offer** to book the prep meeting as soon as it has delivered its questions.
+Next we will check that the published rules make the agent offer the meeting after preparing the interview, without creating an event before the user confirms a slot.
 
-1. You should still be in the **Interview Agent** from the previous lab. On its **Build** tab, select **Instructions**.
-
-   ![The Interview Agent Build tab with Instructions open](./assets/m10-10-3-1-interview-agent-build.png)
-
-1. Add this to the end of the existing text:
-
-   ```text
-   After you deliver interview questions for a candidate, offer to book a
-   30-minute interview-prep meeting with the interviewers. If the user accepts,
-   ask who should attend and for a timeframe, find mutually free times, and send
-   the meeting invitation only after the user confirms one specific slot. Never
-   contact the candidate, and never send an invitation without an explicit
-   confirmation.
-   ```
-
-   ![The scheduling instructions appended to the agent](./assets/m10-10-3-2-scheduling-instructions.png)
-
-1. Select **Save**, then **Publish**.
-
-   ![The saved scheduling instructions ready to publish](./assets/m10-10-3-3-scheduling-instructions-published.png)
-
-1. In **Preview**, ask for interview questions for Taylor Testperson's application `A01003` for job role `J1004`. The agent should end its answer by offering to book the prep meeting, and still wait for your confirmation before it creates anything.
+1. In **Preview**, ask for interview questions for Avery Example's application for job role `J1004`. The agent should end its answer by offering to book the prep meeting, and still wait for your confirmation before it creates anything.
 
    Include the application number because `J1004` has more than one applicant. The application number identifies Taylor's record without making the agent ask which candidate you mean.
 
@@ -186,7 +186,7 @@ Next we will add a scheduling case to the saved evaluation set, so the agent's s
 
    ![The Interview Agent baseline set ready to be extended](./assets/m10-10-4-1-evaluate-agent-open.png)
 
-1. Select **Add conversations**, **Write**, choose **Edit conversation** on the new row, enter the case below, and select **Done**:
+1. Add this Question and Expected response:
 
    | Question | A passing answer describes… |
    | --- | --- |
@@ -194,7 +194,7 @@ Next we will add a scheduling case to the saved evaluation set, so the agent's s
 
    ![The scheduling case saved into the Interview Agent baseline set](./assets/m10-10-4-2-scheduling-evaluation-case.png)
 
-1. **Save** the test set and select **Evaluate** to run it. It stays **green** because the agent explains its process without booking anything.
+1. **Save** the test set and select **Evaluate** to run it. All five cases should pass and the score should remain at least **70%** because the agent explains its process without booking anything.
 
    ![The five-case evaluation passing every case](./assets/m10-10-4-3-scheduling-evaluation-green.png)
 
