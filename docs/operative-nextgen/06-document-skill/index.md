@@ -159,7 +159,7 @@ We do not have to write the Python by hand. Next we will create a **builder agen
      that says when the skill should be used.
    ```
 
-   ![The Skill Builder agent with its authoring instructions](../assets/screenshot-placeholder.png)
+   ![The Skill Builder agent with its authoring instructions](./assets/m06-6-1-1-builder-agent-create.png)
 
 1. Open the draft agent's **Preview** and check it really can run code before you rely on it:
 
@@ -170,7 +170,7 @@ We do not have to write the Python by hand. Next we will create a **builder agen
 
    You should get `45` back and a confirmation that `python-docx` is available.
 
-   ![Skill Builder confirms Python and python-docx availability](../assets/screenshot-placeholder.png)
+   ![Skill Builder confirms Python and python-docx availability](./assets/m06-6-1-2-builder-runtime-check.png)
 
 1. Send the **first prompt with the template inside it**. Copy the block below, and where it says «paste the template here» paste the whole template from [The document template](#the-document-template) above. The layout has to be in the conversation so the builder can refer back to it in the next step:
 
@@ -190,7 +190,7 @@ We do not have to write the Python by hand. Next we will create a **builder agen
 
    It should read the layout back to you before writing anything:
 
-   ![The builder agent confirming it understands the document template](../assets/screenshot-placeholder.png)
+   ![The builder agent confirming it understands the document template](./assets/m06-6-1-3-builder-template.png)
 
 1. Now ask it to write the **generator**, pointing back at the template you just pasted:
 
@@ -208,7 +208,7 @@ We do not have to write the Python by hand. Next we will create a **builder agen
    Include the generation date supplied by the script at run time.
    ```
 
-   ![Skill Builder reports the verified generator structure](../assets/screenshot-placeholder.png)
+   ![Skill Builder reports the verified generator structure](./assets/m06-6-1-4-builder-generator.png)
 
 1. Make it **test its own work** before you trust it:
 
@@ -222,7 +222,7 @@ We do not have to write the Python by hand. Next we will create a **builder agen
 
    A good builder agent runs the script, then inspects the document it produced and reports what it checked - section order, table shape, question count and grouping:
 
-   ![The builder agent verifying the document it generated](../assets/screenshot-placeholder.png)
+   ![The builder agent verifying the document it generated](./assets/m06-6-1-5-builder-selftest.png)
 
    > [!NOTE] It may do several steps at once
    > A capable model often writes the script, tests it, drafts the `SKILL.md` and packages the zip in a
@@ -242,7 +242,7 @@ We do not have to write the Python by hand. Next we will create a **builder agen
    interpreter sandbox, so import it directly - do not pip install at run time.
    ```
 
-   ![Skill Builder returning SKILL.md as a downloadable file](../assets/screenshot-placeholder.png)
+   ![Skill Builder returning SKILL.md as a downloadable file](./assets/m06-6-1-6-builder-skillmd.png)
 
 1. Now package everything up. Check the file list it reports - `SKILL.md` must be at the root - then download the zip:
 
@@ -253,7 +253,7 @@ We do not have to write the Python by hand. Next we will create a **builder agen
    list.
    ```
 
-   ![Skill Builder returning the packaged skill zip for download](../assets/screenshot-placeholder.png)
+   ![Skill Builder returning the packaged skill zip for download](./assets/m06-6-1-7-builder-package.png)
 
 > [!IMPORTANT] Review everything the builder agent produces
 > Review everything it produces - check the Python for any obvious errors or omissions. You don't need to
@@ -269,19 +269,19 @@ The Hiring Agent cannot use the renderer until the package is part of its publis
 
 1. In the left navigation select **Agents**, open the **Hiring Agent**, and go to its **Build** tab. In the building-blocks panel on the right, find **Skills** and select **➕**.
 
-   ![The Skills building block on the Build canvas](../assets/screenshot-placeholder.png)
+   ![The Skills building block on the Build canvas](./assets/m06-6-2-1-add-skill-button.png)
 
 1. Choose **Upload a skill**.
 
-   ![Upload a skill (SKILL.md or .zip with Python)](../assets/screenshot-placeholder.png)
+   ![Upload a skill (SKILL.md or .zip with Python)](./assets/m06-6-2-2-upload-a-skill.png)
 
 1. Drag in your **`interview-prep-document-skill.zip`** (or the provided reference zip). **`SKILL.md` must sit at the root of the zip**, not inside a nested folder - if it's nested, the skill fails to import. The skill then appears under **Skills** alongside `resume-intake`, `role-matching` and `application-handling`. Select **Save**.
 
-   ![The Skills panel showing all four skills](../assets/screenshot-placeholder.png)
+   ![The Skills panel showing all four skills](./assets/m06-6-2-3-document-skill-added.png)
 
-1. **Publish** the agent.
+1. **Publish** the agent, confirming with **Publish agent** in the dialog.
 
-   ![The Hiring Agent published with the uploaded skill deployed](../assets/screenshot-placeholder.png)
+   ![The Hiring Agent published with the uploaded skill deployed](./assets/m06-6-2-4-document-skill-published.png)
 
 ### 6.3 Generate the document and compare the layout
 
@@ -295,19 +295,19 @@ With the skill uploaded and published, we'll generate a document from live data,
    Create an interview prep document for job application A#####.
    ```
 
-   ![Preview returning the generated document for that application](../assets/screenshot-placeholder.png)
+   ![Preview returning the generated document for that application](./assets/m06-6-3-1-generate-document-preview.png)
 
 1. Watch the agent read the application, candidate, resume, role, and weighted evaluation criteria via the **Dataverse MCP server**, write `interview_input.json`, **run** `generate_interview_doc.py`, and return **`interview_prep.docx`** as a downloadable file. It loads the **interview-prep-document** skill, gathers the data, and returns the `.docx` with a grounded **Evaluation Criteria** table (evidence level per weighted criterion) and 10 questions mapped to the criteria:
 
-   ![The generated interview_prep.docx attachment available to download from Preview](../assets/screenshot-placeholder.png)
+   ![The generated interview_prep.docx attachment available to download from Preview](./assets/m06-6-3-2-document-download.png)
 
 1. Open the document and confirm the Candidate, Role, criteria table, and grouped questions are correct and grounded in the data.
 
-   ![Preview holding the document whose structure was verified](../assets/screenshot-placeholder.png)
+   ![Generated interview preparation document open in Word](./assets/m06-6-3-3-document-structure-verified.png)
 
 1. Ask for the document **again** for the same application. The same sections, order, table columns, and styles should appear. The summary, evidence wording, or questions can differ because the agent prepares that JSON content, and the **Generated** date changes when the run day changes.
 
-   ![Preview after the second document preserves the code-defined layout](../assets/screenshot-placeholder.png)
+   ![Preview after the second document preserves the code-defined layout](./assets/m06-6-3-4-document-second-run.png)
 
 > [!TIP] Deterministic Python code
 > Compare the two `.docx` files for the title block, section order, table columns, heading styles, and
@@ -322,19 +322,19 @@ We gave the agent a new **document-generation skill**, so now we need to extend 
 
 1. In the left navigation select **Agents**, open the **Hiring Agent**, and go to its **Evaluate** tab.
 
-   ![Agents list with the Hiring Agent ready to open](../assets/screenshot-placeholder.png)
+   ![Agents list with the Hiring Agent ready to open](./assets/m06-6-4-1-hiring-agent-evaluate.png)
 
-1. Open your **Hiring Agent baseline** test set and select **Add conversations**, **Write**. An empty row appears in the case list.
+1. Open your **Hiring Agent baseline** test set. Confirm it remains **Single response**, scored by **Compare meaning** with **Pass score: 70/100**.
 
-   ![Hiring Agent baseline open with five conversations](../assets/screenshot-placeholder.png)
+   ![Hiring Agent baseline open with five conversations](./assets/m06-6-4-2-add-conversations-write.png)
 
-1. Select the new row to open **Review and edit**, enter the **question** below and the **Reference** answer, then select **Done**:
+1. Add a case and enter the **Question** and **Expected response** below:
 
    | # | Question | Expected answer contains |
    | --- | --- | --- |
    | 6 | Without looking anything up, which of your skills generates documents, and what is that document used for? | Names the **`interview-prep-document`** skill, the **`interview_prep.docx`** it produces from a Job Application, and that it's used to brief interviewers |
 
-   ![Six-case Hiring Agent regression saved](../assets/screenshot-placeholder.png)
+   ![Six-case Hiring Agent regression saved](./assets/m06-6-4-3-hiring-regression-configured.png)
 
    > [!TIP] Word this case carefully
    > The case looks trivial, but two small changes in wording make it fail for reasons that have nothing
@@ -349,9 +349,9 @@ We gave the agent a new **document-generation skill**, so now we need to extend 
    >   the agent correctly says it cannot be sure without reading the skill definition. The judge scores
    >   that partial answer as *"one or more questions not answered"* and the case fails.
 
-1. **Save** the test set, then select **Evaluate** to run the whole set. It stays **green** - describing the document skill needs no tool call:
+1. **Save** the test set, then select **Evaluate** to run the whole set. All six cases should pass and the score should remain at least **70%** - describing the document skill needs no tool call:
 
-   ![Hiring Agent test set green after adding the document case](../assets/screenshot-placeholder.png)
+   ![Hiring Agent test set green after adding the document case](./assets/m06-6-4-4-eval-green.png)
 
 > [!TIP] When to use skills for document generation
 > A Python skill is the right choice when you need the *same* document every time. The model still
