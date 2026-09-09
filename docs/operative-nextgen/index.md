@@ -9,7 +9,7 @@ lastUpdated: false
 
 # Operative - New Copilot Studio Experience
 
-![Copilot Studio Agent Academy Operative](../images/banner_operative.png)
+![Copilot Studio Agent Academy Operative](../images/banner_operative_nextgen.png)
 
 **Welcome, Operative.**
 

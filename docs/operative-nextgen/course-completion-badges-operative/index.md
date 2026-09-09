@@ -30,7 +30,7 @@ You have completed the Operative path. This final page verifies your course work
 
 Every Agent Academy path includes a verifiable digital badge issued through the [Global AI Community](https://globalai.community/).
 
-![Operative Badge](/images/mcs-agent-academy-operative-badge.png)
+![Operative Badge](/images/mcs-agent-academy-operative-nextgen-badge.png)
 
 ### Final readiness checklist {#final-readiness-checklist}
 
