@@ -296,6 +296,8 @@ The first skill we're going to create is one to handle device requests. We'll ta
 
     Download `device-guidance-v1-0-1.zip` and extract it.
 
+    > If you have issues with downloading the zip file, the original SKILL.md files can be found [here](https://github.com/microsoft/agent-academy/tree/main/docs/recruit-nextgen/06-add-skills/assets)
+
     ![Select the device guidance skill file](./assets/06-select-the-device-guidance-skill-file.png)
 
 1. In the **Build** tab of your agent, select the **Add +** button next to the **Skills** section.
