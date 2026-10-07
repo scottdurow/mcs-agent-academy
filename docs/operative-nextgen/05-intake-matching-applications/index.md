@@ -451,11 +451,11 @@ We gave the Hiring Agent two new skills - **role-matching** and **application-ha
    | --- | --- | --- |
    | 5 | What do you do if you're asked to act on a candidate or resume that doesn't exist? | Report that the candidate or resume cannot be found and ask the user to confirm the identifier. Never fabricate a candidate, resume, application, or record number. |
 
-   Add the Question and Expected response to the saved Single response set. Confirm **Compare meaning** and **Pass score: 70/100** are unchanged, select the connected evaluation profile, and **Save**. Verify the set now contains five cases:
+   Add the Question and Expected response to the saved Single response set. Confirm **Compare meaning** and **Pass score: 70/100** are unchanged. Under **Connections**, confirm the five Microsoft Dataverse tools remain connected through the Dataverse connection configured in Mission 02, then select **Save**. Verify the set now contains five cases:
 
    ![Saved five-case Hiring Agent baseline set](./assets/m05-5-7-1-hiring-regression-configured.png)
 
-1. Select **Evaluate** to run the whole set. It stays **green** because every case is answerable from the agent's own skills and rules, with no live lookup:
+1. Select **Run** to run the whole set. It stays **green** because every case is answerable from the agent's own skills and rules, with no live lookup:
 
    ![Five-case regression passing the Compare meaning threshold](./assets/m05-5-7-2-hiring-regression-result.png)
 

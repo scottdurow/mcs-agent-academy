@@ -318,12 +318,18 @@ We'll upload and save the `.zip`, confirm the saved skill is available in **Prev
 
    ```text
    Document generation:
-   - Use the installed interview-prep-document skill for interview-prep documents and all file generation.
-   - Do not delegate document or file generation to the Interview Agent.
+   - Use the installed interview-prep-document skill for interview-prep documents and interview-prep packs.
+   - Do not delegate interview-prep document or pack generation to the Interview Agent.
    - Never claim a document was generated unless interview_prep.docx is returned as a downloadable attachment.
    ```
 
 1. Start a **New chat** in Preview and confirm the skill can load without running its procedure or changing hiring records. If it is not available after a couple of turns, refresh the browser and reopen the Hiring Agent.
+
+   ```text
+   Load only the interview-prep-document skill and confirm its name and purpose.
+   Do not run its procedure, read or change hiring data, generate a file, or call
+   other tools. If it is unavailable, say so without using a substitute.
+   ```
 
    > [!NOTE]
    > Asking for `interview-prep-document` by name is a Preview verification technique that proves the
@@ -367,7 +373,7 @@ Extending the skill. To change the layout, such as adding a scoring page, compan
 
 ### 6.4 Re-run the Hiring Agent's evaluations with the document skill
 
-We gave the agent a new **document-generation skill**, so now we need to extend the test set and re-run it. The case we add checks the agent **knows it can produce the document** - not one that makes it generate a file live. An evaluation can call tools through a Connected profile, but its judge cannot open the returned `.docx` or verify its bytes and layout.
+We gave the agent a new **document-generation skill**, so now we need to extend the test set and re-run it. The case we add checks the agent **knows it can produce the document** - not one that makes it generate a file live. An evaluation can call tools through its configured **Connections**, but its judge cannot open the returned `.docx` or verify its bytes and layout.
 
 1. In the left navigation select **Agents**, open the **Hiring Agent**, and go to its **Evaluate** tab.
 
@@ -391,14 +397,14 @@ We gave the agent a new **document-generation skill**, so now we need to extend 
    >
    > - **Start with *"Without looking anything up"*.** Without that, the agent can read the question as
    >   being about live hiring **data** and call the **Dataverse MCP** tool. That makes the result depend
-   >   on the selected profile's connection and on current records, instead of testing what the agent
+   >   on the configured Microsoft Dataverse connection and on current records, instead of testing what the agent
    >   knows about its own skill. The opening phrase keeps this regression case stable.
    > - **Ask what the document is *used for*, not what *sections* it contains.** The skill description
    >   tells the agent what the document is for, but not its internal layout - so asked about sections
    >   the agent correctly says it cannot be sure without reading the skill definition. The judge scores
    >   that partial answer as *"one or more questions not answered"* and the case fails.
 
-1. **Save** the test set, then select **Evaluate** to run the whole set. All six cases should pass and the score should remain at least **70%** - describing the document skill needs no tool call:
+1. **Save** the test set, then select **Run** to run the whole set. All six cases should pass and the score should remain at least **70%** - describing the document skill needs no tool call:
 
    ![Hiring Agent test set green after adding the document case](./assets/m06-6-4-4-eval-green.png)
 

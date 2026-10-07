@@ -115,7 +115,7 @@ The previous missions established three evaluation lineages. Run all three befor
 
    ![Hiring Agent baseline configuration with six test cases](./assets/m11-11-1-1-build-26-evaluate-landing.png)
 
-1. Under **Connections**, confirm the Hiring Agent evaluation binds its **Microsoft Dataverse** tool to the connected **Agent Academy Dataverse MCP** connection. Run all six cases, and investigate any **failed test** before continuing.
+1. Under **Connections**, confirm the Hiring Agent evaluation binds its **Microsoft Dataverse** tool to the Dataverse connection configured in Mission 02. The screenshot shows that connection as **Agent Academy Dataverse MCP**, but your connection's display name may differ. Run all six cases, and investigate any **failed test** before continuing.
 
 1. Open the **Interview Agent** and review **Interview Agent baseline**. It should contain the four specialist cases from Mission 03 and the scheduling case from Mission 10. Confirm the saved configuration is **Single response**, **Compare meaning**, and **Pass score: 70/100**.
 
@@ -125,7 +125,7 @@ The previous missions established three evaluation lineages. Run all three befor
 
    ![Manage connections with both Work IQ tools connected](./assets/m11-11-1-5-evaluation-profile-connected.png)
 
-1. Select **Evaluate**. Wait for the cases to progress from 0/5 to 5/5 - one set runs at a time, and each case takes a minute or two. When the run finishes, read the **Evaluation summary** for the overall **Score %**, **Pass/Fail** badge, duration, cases completed, test set, data type, and who ran it. Verify connection ownership separately in **Manage connections**.
+1. Select **Run**. Wait for the cases to progress from 0/5 to 5/5 - one set runs at a time, and each case takes a minute or two. When the run finishes, read the **Evaluation summary** for the overall **Score %**, **Pass/Fail** badge, duration, cases completed, test set, data type, and who ran it. A completed result may also show a **User profile** summary; verify the actual per-tool connection ownership separately in **Manage connections**.
 
    ![The self-knowledge set after every case has run](./assets/m11-11-1-6-self-knowledge-run.png)
 
@@ -151,7 +151,7 @@ A tool case is different. It runs against a real system, as a real identity, ove
 
 | Tool | Reason |
 | --- | --- |
-| **Which identity runs it** | Each tool uses the connection selected under **Connections**. Check its owner and Connected state; the modern surface has no single **User profile** field |
+| **Which identity runs it** | Each tool uses the connection selected under **Connections**. Check its owner and Connected state |
 | **Which records it reads** | Name the exact rows and the state you expect them in. A case that reads "the first job role" breaks the day someone adds one |
 | **Whether it writes** | A read is repeatable without changing records. A write needs synthetic data, a unique key so re-runs don't collide, and a cleanup step you have actually tested |
 | **What counts as evidence** | A green judge score says the *answer* looked good. It doesn't say which tool ran, or whether one ran at all |
@@ -174,7 +174,7 @@ The case below is read-only, against a sample row from Mission 01 that nothing i
 
    ![The two user-bound Work IQ connections selected for the MCP evaluation](./assets/m11-11-2-3-mcp-profile-connected.png)
 
-1. **Save** the six-case set and select **Evaluate**. All six cases must pass and the score must be at least **70%**.
+1. **Save** the six-case set and select **Run**. All six cases must pass and the score must be at least **70%**.
 
    ![The extended run passing with the live case](./assets/m11-11-2-4-mcp-run-pass.png)
 

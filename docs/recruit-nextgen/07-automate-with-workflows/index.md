@@ -631,7 +631,13 @@ Confirm the exact skill in the trace, then keep that conversation for the scenar
 
    ![Submit device request test case two](./assets/07-submit-device-request-test-case-two.png)
 
-1. The agent invokes the workflow and summarizes your request, just as it did in the first test case.
+1. Review the request summary. When the agent asks whether it should proceed, copy and paste the following confirmation:
+
+   ```text
+   Yes please proceed
+   ```
+
+1. The agent invokes the workflow and confirms the completed request, just as it did in the first test case.
 
    ![Test Case 2 summarized response](./assets/07-test-case-2-summarized-response.png)
 

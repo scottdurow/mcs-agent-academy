@@ -316,7 +316,7 @@ The baseline tests the protections already present in the agent. We will now add
 
    ![Three threat cases added to evaluation](./assets/m04-4-3-3-threat-cases.png)
 
-1. Select **Save**, then select **Evaluate**.
+1. Select **Save**, then select **Run**.
 
 1. Compare the first eight cases with the baseline run, then inspect the three new cases. For any case below the threshold, read the response and the judge's scoring explanation on the right. Check whether the response followed the guardrails, whether the expected response fits the test, or whether a platform error prevented an answer. Keep the threshold unchanged while comparing runs.
 
@@ -346,7 +346,7 @@ The guardrails and test cases we have created so far will stay fixed for the res
 
    ![GPT model with Minimum moderation selected](./assets/m04-4-4-3-gpt-minimum.png)
 
-1. Open **Interview Agent - AI Safety Evals** and select **Evaluate**.
+1. Open **Interview Agent - AI Safety Evals** and select **Run**.
 
 1. Compare this run with the recorded run from Lab 4.3. Look at individual answers rather than treating the aggregate score as a model ranking.
 

@@ -210,7 +210,7 @@ Next we will add a scheduling case to the saved evaluation set, so the agent's s
 
    ![The scheduling case saved into the Interview Agent baseline set](./assets/m10-10-4-2-scheduling-evaluation-case.png)
 
-1. **Save** the test set and select **Evaluate** to run it. Each case must meet the configured **Pass score of 70/100**. All five cases must pass, giving an overall **100% pass rate**, without booking anything.
+1. **Save** the test set and select **Run** to run it. Each case must meet the configured **Pass score of 70/100**. All five cases must pass, giving an overall **100% pass rate**, without booking anything.
 
    ![The five-case evaluation passing every case](./assets/m10-10-4-3-scheduling-evaluation-green.png)
 
