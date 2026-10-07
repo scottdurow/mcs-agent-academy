@@ -124,6 +124,8 @@ First we need to give the Interview Agent the two Work IQ servers scheduling nee
    the meeting invitation only after the user confirms one specific slot. Never
    contact the candidate, and never send an invitation without an explicit
    confirmation.
+   When the user says do not book yet, still offer to book a 30-minute
+   interview-prep meeting after the questions; offering is not booking.
    ```
 
    ![The scheduling instructions appended to the agent](./assets/m10-10-3-2-scheduling-instructions.png)

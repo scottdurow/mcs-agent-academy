@@ -134,7 +134,7 @@ Let's start by running the `resume-intake` skill from Mission 02 against a real 
 1. Send a **natural** message. You don't spell out the steps because the **`resume-intake` skill** already contains them:
 
    ```text
-   Here's a candidate's resume - please take it in.
+   Here's a candidate's resume - please take it in. Report the Candidate and Resume numbers and whether the Candidate was reused or created.
    ```
 
    The agent loads `analyzing-pdf`, extracts the name and email, calls the Dataverse MCP `describe` / `read_query` / `create_record` tools, and reports the linked records:
@@ -156,7 +156,7 @@ Before adding more records, check the first intake in the Hiring Hub and repeat 
 1. Send the same natural prompt you used in Lab 5.1 - don't tell the agent what to do about the duplicate, because the point is to find out whether the skill handles it:
 
    ```text
-   Here's a candidate's resume - please take it in.
+   Here's a candidate's resume - please take it in. Report the Candidate and Resume numbers and whether the Candidate was reused or created.
    ```
 
    The reply should report a **reused** Candidate and a **newly created** Resume. If it creates a second Candidate, the skill's deduplication rule is not doing its job. Telling the agent to reuse the record would only prove it follows instructions.
@@ -280,9 +280,13 @@ To fix the weights, arithmetic, and output structure, continue building the `rol
 
    ![The role-matching skill's rubric instructions pasted into the editor](./assets/m05-5-4-3-role-matching-instructions.png)
 
-1. Select **Create**, then **Save** the agent. Wait for Save to finish, then refresh the browser page so Preview loads the saved skill. Confirm the Skills list shows `role-matching` beside `resume-intake`:
+1. Select **Create**, then **Save** the agent. Allow time for the saved configuration to settle, then start a **New chat** in Preview. If the skill is not available after a couple of turns, refresh the browser page and reopen the agent. Confirm the Skills list shows `role-matching` beside `resume-intake`:
 
    ![The saved role-matching skill beside resume-intake](./assets/m05-5-4-4-role-matching-created.png)
+
+   > [!NOTE]
+   > Naming the skill explicitly is a Preview verification technique that proves the intended skill
+   > was selected. End users can make a natural matching request without naming the skill.
 
 1. Run the match, naming the skill to load. You don't describe the rubric because the `role-matching` skill does. In **Hiring Agent**, **Preview**, ask:
 
@@ -380,7 +384,7 @@ The **role-matching** skill is a read-only skill. Creating the actual **Job Appl
 
    ![Application-handling instructions with confirmed-role and failure safeguards](./assets/m05-5-5-2-application-handling-instructions.png)
 
-1. Select **Create**, then **Save**. Wait for Save to finish, then refresh the browser page. Confirm all three focused skills now appear together:
+1. Select **Create**, then **Save**. Allow time for the saved configuration to settle, then start a **New chat** in Preview. If the skill is not available after a couple of turns, refresh the browser page and reopen the agent. Confirm all three focused skills now appear together:
 
    ![Hiring Agent with intake, matching, and application-handling skills](./assets/m05-5-5-3-build-42-three-skills.png)
 
