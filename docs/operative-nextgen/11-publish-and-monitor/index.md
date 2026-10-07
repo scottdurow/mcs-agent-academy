@@ -18,7 +18,7 @@ products: [copilot-studio, dataverse, teams, microsoft-365-copilot]
 industries:
   - hr
 created-date: 2026-01-14
-last-edited-date: 2026-08-14
+last-edited-date: 2026-10-06
 ---
 
 # 🚨 Mission 11: Evaluate, Publish, and Monitor Your Agent {#mission-11-evaluate-publish-and-monitor-your-agent}

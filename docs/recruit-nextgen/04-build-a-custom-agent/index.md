@@ -20,7 +20,7 @@ products:
 industries:
   - it
 created-date: 2026-08-05
-last-edited-date: 2026-08-05
+last-edited-date: 2026-10-06
 ---
 
 # 🚨 Mission 04: Build an Agent with the GitHub Copilot Harness {#mission-04-build-an-agent-with-the-github-copilot-harness}

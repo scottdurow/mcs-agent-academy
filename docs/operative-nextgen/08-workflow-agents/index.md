@@ -18,7 +18,7 @@ products: [copilot-studio, dataverse, outlook, teams]
 industries:
   - hr
 created-date: 2026-08-12
-last-edited-date: 2026-08-12
+last-edited-date: 2026-10-06
 ---
 
 # 🚨 Mission 08: Add Agents to a Workflow {#mission-08-add-agents-to-a-workflow}

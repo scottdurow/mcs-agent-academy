@@ -19,7 +19,7 @@ products: [copilot-studio, power-automate, outlook, sharepoint]
 industries:
   - it
 created-date: 2026-08-05
-last-edited-date: 2026-08-05
+last-edited-date: 2026-10-06
 
 ---
 

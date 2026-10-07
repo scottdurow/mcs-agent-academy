@@ -18,7 +18,7 @@ products: [copilot-studio]
 industries:
   - hr
 created-date: 2026-01-14
-last-edited-date: 2026-08-29
+last-edited-date: 2026-10-06
 ---
 
 # 🚨 Mission 04: Model, Response and AI Safety {#mission-04-model-response-and-ai-safety}

@@ -20,7 +20,7 @@ products:
 industries:
   - it
 created-date: 2026-08-05
-last-edited-date: 2026-08-05
+last-edited-date: 2026-10-06
 ---
 # 🚨 Mission 03: Creating a Solution for Your Agent {#mission-03-creating-a-solution-for-your-agent}
 

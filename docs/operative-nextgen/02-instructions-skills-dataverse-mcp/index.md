@@ -19,7 +19,7 @@ products: [copilot-studio, dataverse]
 industries:
   - hr
 created-date: 2026-01-14
-last-edited-date: 2026-08-12
+last-edited-date: 2026-10-06
 ---
 
 # 🚨 Mission 02: Instructions, Skills and Dataverse MCP {#mission-02-instructions-skills-and-dataverse-mcp}

@@ -17,7 +17,7 @@ products: [copilot-studio, dataverse]
 industries:
   - hr
 created-date: 2026-01-14
-last-edited-date: 2026-08-13
+last-edited-date: 2026-10-06
 ---
 
 # 🚨 Mission 03: Add a Connected Interview Agent {#mission-03-add-a-connected-interview-agent}

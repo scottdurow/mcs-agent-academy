@@ -18,7 +18,7 @@ products: [copilot-studio, dataverse]
 industries:
   - hr
 created-date: 2026-01-14
-last-edited-date: 2026-08-12
+last-edited-date: 2026-10-06
 ---
 
 # 🚨 Mission 06: Generate Documents with a Python Skill {#mission-06-generate-documents-with-a-python-skill}

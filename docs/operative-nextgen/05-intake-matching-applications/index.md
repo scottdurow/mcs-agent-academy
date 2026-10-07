@@ -18,7 +18,7 @@ products: [copilot-studio, dataverse]
 industries:
   - hr
 created-date: 2026-01-14
-last-edited-date: 2026-08-12
+last-edited-date: 2026-10-06
 ---
 
 # 🚨 Mission 05: Resume Intake, Matching and Applications {#mission-05-resume-intake-matching-and-applications}

@@ -18,7 +18,7 @@ products: [copilot-studio, microsoft-365, outlook]
 industries:
   - hr
 created-date: 2026-08-14
-last-edited-date: 2026-08-14
+last-edited-date: 2026-10-06
 ---
 
 # 🚨 Mission 10: Schedule Interviews with Work IQ {#mission-10-schedule-interviews-with-work-iq}
